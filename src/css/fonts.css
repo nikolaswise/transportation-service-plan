@@ -1,0 +1,25 @@
+:root {
+  --system-sans: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+                 'segoe ui',
+                 'fira sans',
+                 roboto, noto, 'droid sans',
+                 'liberation sans',
+                 'lucida grande', 'helvetica neue', helvetica,
+                 'franklin gothic medium', 'century gothic',
+                 cantarell, oxygen, ubuntu,
+                 sans-serif;
+
+  --system-mono: menlo,
+                 inconsolata, consolas,
+                 'fira mono',
+                 'noto mono', 'droid sans mono',
+                 'liberation mono', 'dejavu sans mono', 'ubuntu mono',
+                 monaco, 'courier new',
+                 monospace;
+
+  --system-serif: charter, constantia,
+                  'lucida bright', lucidabright, 'lucida serif', lucida,
+                  'dejavu serif', 'bitstream vera serif', 'liberation serif',
+                  georgia,
+                  serif;
+}

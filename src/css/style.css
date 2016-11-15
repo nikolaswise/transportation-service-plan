@@ -1,0 +1,17 @@
+
+@import "variables.css";
+@import "fonts.css";
+
+body {
+  color: var(--purple);
+  font-family: var(--system-sans)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--system-serif);
+}
