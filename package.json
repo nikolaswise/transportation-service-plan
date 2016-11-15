@@ -1,0 +1,19 @@
+{
+  "name": "transportation-service-plan",
+  "version": "1.0.0",
+  "description": "Portland Bureau of Transportation Service Plan 2035",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaswise/transportation-service-plan.git"
+  },
+  "author": "Nikolas WIse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikolaswise/transportation-service-plan/issues"
+  },
+  "homepage": "https://github.com/nikolaswise/transportation-service-plan#readme"
+}
