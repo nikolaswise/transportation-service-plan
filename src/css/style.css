@@ -2,16 +2,47 @@
 @import "variables.css";
 @import "fonts.css";
 
-body {
-  color: var(--purple);
-  font-family: var(--system-sans)
+:root {
+  --font-size: 26px;
+  --baseline: 1.6rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+html {
+  font-size: 26px;
+  line-height: var(--baseline);
+}
+
+body {
+  background-color: #F8F8F8;
+  color: #242425;
   font-family: var(--system-serif);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-feature-settings:"kern","liga" 1,"calt" 0;
+}
+
+p,
+ol,
+li {
+  line-height: var(--baseline);
+  margin-top: 0;
+  margin-bottom: var(--baseline);
+}
+
+h1, h2, h3, h4, h5 {
+  color: #393939;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: calc(var(--baseline) * 1.5);
+  margin-bottom: var(--baseline);
+}
+
+
+
+.article {
+  margin: auto;
+  border-left: 1px dashed var(--purple);
+  border-right: 1px dashed var(--purple);
+  max-width: 36rem;
 }
