@@ -1,0 +1,127 @@
+/* Base Type Styles */
+html {
+  font-family: var(--system-serif);
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-feature-settings:"kern","liga" 1,"calt" 0;
+}
+
+/* Type Colors */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-small);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-text-big);
+}
+
+/* Type Sizes */
+h1 {
+  font-size: var(--36pt);
+}
+h2 {
+  font-size: var(--24pt);
+}
+h3 {
+  font-size: var(--21pt);
+}
+h4 {
+  font-size: var(--18pt);
+}
+h5 {
+  font-size: var(--14pt);
+}
+h6 {
+  font-size: var(--12pt);
+}
+
+/* Base Styles */
+ul,
+ol {
+  padding: 0;
+}
+
+@media (--medium-measure) {
+  body {
+    font-size: var(--medium-font-size);
+    line-height: var(--medium-baseline);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: calc(var(--medium-baseline) * 1.5);
+    margin-bottom: var(--medium-baseline);
+  }
+  h5 {
+    margin-bottom: calc(var(--medium-baseline) / 2);
+  }
+  p,
+  ol {
+    line-height: var(--medium-baseline);
+    margin-bottom: var(--medium-baseline);
+  }
+  li {
+    line-height: var(--medium-baseline);
+  }
+}
+
+@media (--small-measure) {
+  body {
+    font-size: var(--small-font-size);
+    line-height: var(--small-baseline);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: calc(var(--small-baseline) * 1.5);
+    margin-bottom: var(--small-baseline);
+  }
+  h5 {
+    margin-bottom: calc(var(--small-baseline) / 2);
+  }
+  p,
+  ol {
+    line-height: var(--small-baseline);
+    margin-bottom: var(--small-baseline);
+  }
+  li {
+    line-height: var(--small-baseline);
+  }
+}
+
+@media (--large-measure) {
+  html {
+    font-size: var(--root-font-size);
+    line-height: var(--root-baseline);
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: calc(var(--root-baseline) * 1.5);
+    margin-bottom: var(--root-baseline);
+  }
+
+  h5 {
+    margin-bottom: calc(var(--root-baseline) / 2);
+  }
+  h6 {
+    margin-bottom: 0;
+  }
+  p,
+  ol {
+    line-height: var(--root-baseline);
+    margin-bottom: var(--root-baseline);
+  }
+  li {
+    line-height: var(--root-baseline);
+    margin-bottom: 0;
+  }
+}
+
