@@ -7,13 +7,18 @@ export function drawDemo () {
 
   map.addControl(L.control.zoom({position: 'topright'}));
 
-  L.esri.basemapLayer("Gray").addTo(map);
+  L.esri.tiledMapLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
+  }).addTo(map);
 
-  var parks = L.esri.featureLayer({
-    url: "https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Portland_Parks/FeatureServer/0",
-    style: function () {
-      return { color: "#70ca49", weight: 2 };
-    }
+  var points = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1",
+  }).addTo(map);
+  var lines = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5",
+  }).addTo(map);
+  var polygons = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6",
   }).addTo(map);
 
   var searchControl = L.esri.Geocoding.geosearch({
