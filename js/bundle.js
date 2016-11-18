@@ -76,6 +76,7 @@ function removeActive(array) {
 var checkJs = function () {
   var body = document.querySelector('body');
   add(body, 'js-is-active');
+  add(body, 'split-screen');
 };
 
 function drawDemo() {
@@ -147,6 +148,71 @@ function add$1(domNode, e, fn) {
 // return a function that will only execute
 // once it is NOT called for delay milliseconds
 
+function E() {
+  // Keep this empty so it's easier to inherit from
+  // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
+}
+
+E.prototype = {
+  on: function on(name, callback, ctx) {
+    var e = this.e || (this.e = {});
+
+    (e[name] || (e[name] = [])).push({
+      fn: callback,
+      ctx: ctx
+    });
+
+    return this;
+  },
+
+  once: function once(name, callback, ctx) {
+    var self = this;
+    function listener() {
+      self.off(name, listener);
+      callback.apply(ctx, arguments);
+    }
+
+    listener._ = callback;
+    return this.on(name, listener, ctx);
+  },
+
+  emit: function emit(name) {
+    var data = [].slice.call(arguments, 1);
+    var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
+    var i = 0;
+    var len = evtArr.length;
+
+    for (i; i < len; i++) {
+      evtArr[i].fn.apply(evtArr[i].ctx, data);
+    }
+
+    return this;
+  },
+
+  off: function off(name, callback) {
+    var e = this.e || (this.e = {});
+    var evts = e[name];
+    var liveEvents = [];
+
+    if (evts && callback) {
+      for (var i = 0, len = evts.length; i < len; i++) {
+        if (evts[i].fn !== callback && evts[i].fn._ !== callback) {
+          liveEvents.push(evts[i]);
+        }
+      }
+    }
+
+    // Remove event from queue to prevent memory leak
+    // Suggested by https://github.com/lazd
+    // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
+
+    liveEvents.length ? e[name] = liveEvents : delete e[name];
+    return this;
+  }
+};
+
+var bus = new E();
+
 checkJs();
 
 findElements('.js-hide-map').map(function (btn) {
@@ -168,6 +234,35 @@ function hideText(e) {
   e.preventDefault();
   remove(document.querySelector('body'), 'split-screen');
   add(document.querySelector('body'), 'map-view');
+}
+
+// ┌──────────────────────┐
+// │ Emit Keyboard Events │
+// └──────────────────────┘
+// emit presses of escape and return keys
+add$1(document, 'keyup', translateKeypress);
+function translateKeypress(e) {
+  if (e.keyCode === 27) {
+    bus.emit('keyboard:escape');
+  } else if (e.keyCode === 13) {
+    bus.emit('keyboard:return');
+  } else if (e.keyCode === 32) {
+    bus.emit('keyboard:space');
+  } else if (e.keyCode === 38) {
+    bus.emit('keyboard:arrow:up');
+  } else if (e.keyCode === 40) {
+    bus.emit('keyboard:arrow:down');
+  } else if (e.keyCode === 37) {
+    bus.emit('keyboard:arrow:left');
+  } else if (e.keyCode === 39) {
+    bus.emit('keyboard:arrow:right');
+  }
+}
+
+bus.on('keyboard:escape', pingEscape);
+
+function pingEscape() {
+  console.log('esc hit');
 }
 
 drawDemo();

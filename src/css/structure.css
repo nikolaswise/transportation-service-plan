@@ -25,6 +25,7 @@ figure {
 .article-body {
   position: relative;
   padding: var(--gutter);
+  padding-top: calc(var(--root-font-size) * 5);
   max-width: var(--text-measure);
 
   /*border-left: 1px dashed var(--dark-gray);*/
