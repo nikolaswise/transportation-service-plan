@@ -1,7 +1,7 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.tsp = factory());
+  (factory());
 }(this, (function () { 'use strict';
 
 // ┌─────┐
@@ -22,6 +22,11 @@ function nodeListToArray(domNodeList) {
 }
 
 // Finds all the elements inside a node, or the document and returns them as an array
+function findElements(query, domNode) {
+  var context = domNode || document;
+  var elements = context.querySelectorAll(query);
+  return nodeListToArray(elements);
+}
 
 // Cool Helpers
 // ┌────────────────────┐
@@ -111,14 +116,60 @@ function drawDemo() {
   });
 }
 
+// ┌──────────────────────┐
+// │ DOM Event Management │
+// └──────────────────────┘
+
+// returns standard interaction event, later will add touch support
+
+
+// add a callback function to an event on a DOM node
+function add$1(domNode, e, fn) {
+  if (domNode.addEventListener) {
+    return domNode.addEventListener(e, fn, false);
+  } else if (domNode.attachEvent) {
+    return domNode.attachEvent('on' + e, fn);
+  }
+}
+
+// remove a specific function binding from a DOM node event
+
+
+// get the target element of an event
+
+
+// prevent default behavior of an event
+
+
+// stop and event from bubbling up the DOM tree
+
+
+// return a function that will only execute
+// once it is NOT called for delay milliseconds
+
 checkJs();
 
+findElements('.js-hide-map').map(function (btn) {
+  add$1(btn, 'click', hideMap);
+});
+
+findElements('.js-hide-text').map(function (btn) {
+  add$1(btn, 'click', hideText);
+});
+
+function hideMap(e) {
+  console.log(e.target);
+  e.preventDefault();
+  remove(document.querySelector('body'), 'split-screen');
+}
+
+function hideText(e) {
+  console.log(e.target);
+  e.preventDefault();
+  remove(document.querySelector('body'), 'split-screen');
+  add(document.querySelector('body'), 'map-view');
+}
+
 drawDemo();
-
-var main = function () {
-  console.log('your value is ' + foo);
-};
-
-return main;
 
 })));
