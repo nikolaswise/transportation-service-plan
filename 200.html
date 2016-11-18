@@ -21,6 +21,17 @@
     <meta property="og:title" content="T.S.P. 2035">
     <meta property="og:url" content="{{url}}">
 
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
+
+    <!-- Esri Leaflet Geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
+
     <link rel="stylesheet" href="/css/style.css">
   </head>
 
@@ -116,13 +127,11 @@
 
       <!-- Map Goodness -->
       <div class="map-block">
-
         <div class="navigation-item map-navigation-view-control">
           <a href="#">Hide Text</a>
         </div>
 
-        <h1>oh hey there</h1>
-
+        <div id="map"></div>
       </div>
     </main>
 

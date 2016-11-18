@@ -29,6 +29,7 @@
   "homepage": "https://github.com/nikolaswise/transportation-service-plan#readme",
   "devDependencies": {
     "babel-preset-es2015-rollup": "^1.2.0",
+    "esri-leaflet": "^2.0.6",
     "live-server": "^1.1.0",
     "myth": "github:pin3da/myth",
     "npm-run-all": "^3.1.1",

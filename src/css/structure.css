@@ -8,6 +8,8 @@ figure {
 }
 
 .map-block {
+  border-left: 1px solid var(--lighter-gray);
+  box-shadow: 3px 3px 3px var(--gray);
   display: none;
 }
 

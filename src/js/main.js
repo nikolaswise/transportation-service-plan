@@ -1,7 +1,11 @@
-import foo from './foo.js';
+import checkJs from './js-checker.js';
+import * as map from './map.js';
 
-console.log(`your value is ${foo}`);
+checkJs()
+
+map.drawDemo();
 
 export default function () {
   console.log(`your value is ${foo}`);
 }
+
