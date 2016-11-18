@@ -29,6 +29,7 @@
     "live-server": "^1.1.0",
     "myth": "github:pin3da/myth",
     "npm-run-all": "^3.1.1",
-    "rerun-script": "^0.6.0"
+    "rerun-script": "^0.6.0",
+    "rollup": "^0.36.3"
   }
 }
