@@ -45,8 +45,12 @@ ol {
   padding: 0;
 }
 
+p {
+  margin-top: 0;
+}
+
 @media (--medium-measure) {
-  body {
+  html {
     font-size: var(--medium-font-size);
     line-height: var(--medium-baseline);
   }
@@ -71,7 +75,7 @@ ol {
 }
 
 @media (--small-measure) {
-  body {
+  html {
     font-size: var(--small-font-size);
     line-height: var(--small-baseline);
   }
