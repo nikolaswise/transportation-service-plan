@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "npm-run-all --parallel css serve watch",
+    "dev": "npm-run-all --parallel css js serve watch",
     "serve": "live-server --entry-file=200.html",
     "css": "myth src/css/style.css css/style.css -c -s",
+    "js": "rollup -c",
     "watch": "rerun-script",
     "test": "test"
   },
   "watches": {
     "html": "src/**/*.html",
-    "css": "src/**/*.css"
+    "css": "src/**/*.css",
+    "js": "src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,12 @@
   },
   "homepage": "https://github.com/nikolaswise/transportation-service-plan#readme",
   "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.2.0",
     "live-server": "^1.1.0",
     "myth": "github:pin3da/myth",
     "npm-run-all": "^3.1.1",
     "rerun-script": "^0.6.0",
-    "rollup": "^0.36.3"
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1"
   }
 }
