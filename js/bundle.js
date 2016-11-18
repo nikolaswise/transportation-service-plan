@@ -86,14 +86,14 @@ function drawDemo() {
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
 
+  var polygons = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6"
+  }).addTo(map);
   var points = L.esri.featureLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1"
   }).addTo(map);
   var lines = L.esri.featureLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5"
-  }).addTo(map);
-  var polygons = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6"
   }).addTo(map);
 
   var searchControl = L.esri.Geocoding.geosearch({
