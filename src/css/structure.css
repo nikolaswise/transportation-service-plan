@@ -16,8 +16,8 @@ figure {
   width: var(--wrapper-min-width);
   max-width: var(--wrapper-max-width);
 
-  border-left: 1px dashed var(--dark-gray);
-  border-right: 1px dashed var(--dark-gray);
+  /*border-left: 1px dashed var(--dark-gray);*/
+  /*border-right: 1px dashed var(--dark-gray);*/
 }
 
 .article-body {
@@ -25,8 +25,8 @@ figure {
   padding: var(--gutter);
   max-width: var(--text-measure);
 
-  border-left: 1px dashed var(--dark-gray);
-  border-right: 1px dashed var(--dark-gray);
+  /*border-left: 1px dashed var(--dark-gray);*/
+  /*border-right: 1px dashed var(--dark-gray);*/
 }
 
 .split-screen .text-block {
