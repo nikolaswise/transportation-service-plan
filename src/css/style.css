@@ -8,6 +8,7 @@
 @import "type/typography.scss";
 @import "type/large-typography.scss";
 
+@import "layout/show-hide.scss";
 @import "layout/structure.scss";
 
 @import "components/navigation.scss";

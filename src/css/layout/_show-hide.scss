@@ -1,0 +1,35 @@
+.js-is-active  {
+  .hide-if-js-is-active {
+    display: none;
+  }
+  .show-if-js-is-active {
+    display: initial;
+  }
+}
+
+.map-is-active {
+  .hide-if-map-is-active {
+    display: none;
+  }
+  .show-if-map-is-active {
+    display: initial;
+  }
+}
+
+.text-is-active {
+  .hide-if-text-is-active {
+    display: none;
+  }
+  .show-if-text-is-active {
+    display: initial;
+  }
+}
+
+.map-is-active.text-is-active {
+  .hide-if-split-is-active {
+    display: none;
+  }
+  .show-if-split-is-active {
+    display: initial;
+  }
+}

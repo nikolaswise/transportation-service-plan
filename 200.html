@@ -35,13 +35,11 @@
     <!-- Load Esri Leaflet Renderers -->
     <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
     <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
-
     <link rel="stylesheet" href="/css/style.css">
   </head>
 
   <body>
-    <nav class="navigation-text">
-
+    <nav class="navigation-text hide-if-map-is-active show-if-text-is-active show-if-split-is-active">
       <div class="article-wrapper">
         <div class="navigation-item navigation-item-left">
           <a href="#" class="js-open-search">Search Document</a>
@@ -61,7 +59,7 @@
     <main class="main-wrapper">
 
       <!-- Text Goodness -->
-      <div class="text-block">
+      <div class="text-block show-if-text-is-active hide-if-map-is-active show-if-split-is-active">
         <div class="article-wrapper">
           <div class="article-body">
             <p>qwertyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm</p>
@@ -133,7 +131,7 @@
       </div>
 
       <!-- Map Goodness -->
-      <div class="map-block">
+      <div class="map-block show-if-map-is-active hide-if-text-is-active show-if-split-is-active">
         <div class="navigation-item map-navigation-view-control">
           <a href="#" class="js-hide-text">Hide Text</a>
         </div>

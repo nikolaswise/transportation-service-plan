@@ -7,10 +7,18 @@ figure {
   max-width: $text-measure;
 }
 
+.main-wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
 .map-block {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   border-left: 1px solid $lighter-gray;
   box-shadow: 3px 3px 3px $gray;
-  display: none;
 }
 
 .article-wrapper {
@@ -30,18 +38,4 @@ figure {
 
   border-left: 1px dashed $dark-gray;
   border-right: 1px dashed $dark-gray;
-}
-
-.map-view .text-block {
-  display: none;
-}
-
-.map-view .map-block {
-  display: block;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  position: fixed;
-  background-color: $black;
 }
