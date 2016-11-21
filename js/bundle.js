@@ -152,8 +152,11 @@ var checkJs = function () {
   return true;
 };
 
-function drawDemo() {
-  var map = L.map('map', {
+var map = void 0;
+
+function draw() {
+  console.log('draw map');
+  map = L.map('map', {
     center: [45.528, -122.680],
     zoom: 13,
     zoomControl: false
@@ -168,12 +171,12 @@ function drawDemo() {
   // var polygons = L.esri.featureLayer({
   //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6",
   // }).addTo(map);
-  var points = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1"
-  }).addTo(map);
-  var lines = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5"
-  }).addTo(map);
+  // var points = L.esri.featureLayer({
+  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1",
+  // }).addTo(map);
+  // var lines = L.esri.featureLayer({
+  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5",
+  // }).addTo(map);
 
   var searchControl = L.esri.Geocoding.geosearch({
     position: 'topright',
@@ -188,6 +191,16 @@ function drawDemo() {
       results.addLayer(L.marker(data.results[i].latlng));
     }
   });
+}
+
+function remove$1() {
+  console.log('remove map', map);
+  map.remove();
+}
+
+function redraw() {
+  remove$1();
+  draw();
 }
 
 // ┌──────────────────────┐
@@ -320,17 +333,26 @@ function logMapHide() {
   console.log('map:hide');
   var html = document.querySelector('html');
   remove(html, 'map-is-active');
+  bus.emit('map:remove');
 }
 function logMapShow() {
   console.log('map:show');
   var html = document.querySelector('html');
   add(html, 'map-is-active');
+  bus.emit('map:draw');
 }
 function logTextHide() {
   console.log('text:hide');
   var html = document.querySelector('html');
   remove(html, 'text-is-active');
+  bus.emit('map:remove');
+  window.setTimeout(resizeMap, 300);
 }
+
+function resizeMap() {
+  bus.emit('map:draw');
+}
+
 function logTextShow() {
   console.log('text:show');
   var html = document.querySelector('html');
@@ -350,8 +372,12 @@ function contentsClose() {
   console.log('contents:close');
 }
 
+bus.on('map:draw', draw);
+bus.on('map:remove', remove$1);
+bus.on('map:redraw', redraw);
+
 checkJs();
 
-drawDemo();
+window.bus = bus;
 
 })));
