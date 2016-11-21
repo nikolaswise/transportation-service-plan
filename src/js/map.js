@@ -41,7 +41,9 @@ export function draw () {
 
 export function remove () {
   console.log('remove map', map)
-  map.remove();
+  if (map) {
+    map.remove();
+  }
 }
 
 export function redraw () {

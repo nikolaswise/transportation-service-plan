@@ -10,7 +10,5 @@ function flagJS () {
 
 export default function () {
   bus.emit('has:javascript')
-  bus.emit('map:show')
-  bus.emit('text:show')
   return true
 }

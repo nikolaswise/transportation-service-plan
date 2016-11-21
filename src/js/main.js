@@ -1,4 +1,5 @@
 import checkJs from './js-checker.js';
+import route from './routing.js';
 
 import * as map from './map.js';
 import * as classy from './helpers/classy.js'
@@ -14,5 +15,11 @@ import intent from './intent.js'
 import view from './view.js'
 
 checkJs()
+route()
 
-window.bus = bus
+window.onload = function() {
+  let body = document.querySelector('body')
+  classy.remove(body, 'preload')
+  window.bus = bus
+};
+
