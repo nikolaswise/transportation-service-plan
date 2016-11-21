@@ -1,0 +1,60 @@
+$transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+             transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+             max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+.article-wrapper {
+  transition: $transition;
+  width: $wrapper-min-width;
+  max-width: $wrapper-max-width;
+}
+
+.text-block,
+.navigation-text {
+  transition: $transition;
+  transform: translate3d(0,0,0);
+  width: 50%;
+}
+.map-block {
+  transition: $transition;
+  transform: translate3d(0,0,0);
+  width: 50%;
+}
+
+// Map Is Active
+.map-is-active {
+  .text-block,
+  .navigation-text {
+    transform: translate3d(-100%,0,0);
+    width: 50%;
+  }
+  .map-block {
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
+}
+
+// Text Is Active
+.text-is-active {
+  .text-block,
+  .navigation-text {
+    width: 100%;
+    transform: translate3d(0,0,0);
+  }
+  .map-block {
+    transform: translate3d(100%,0,0);
+    width: 50%;
+  }
+}
+
+// Split Screen is Active
+.map-is-active.text-is-active {
+  .text-block,
+  .navigation-text {
+    transform: translate3d(0,0,0);
+    width: 50%;
+  }
+  .map-block {
+    transform: translate3d(0,0,0);
+    width: 50%;
+  }
+}

@@ -1,23 +1,7 @@
 .map-is-active.text-is-active {
-  .text-block {
-    float: left;
-    width: 50%;
-  }
-
-  .map-block {
-    right: 0;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    position: fixed;
-    background-color: $black;
-  }
-
   figure {
     display: none;
   }
-
   .article-wrapper {
     width: $half-wrapper-min-width;
     max-width: $half-wrapper-max-width;
