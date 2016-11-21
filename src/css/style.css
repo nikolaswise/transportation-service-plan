@@ -8,24 +8,17 @@
 
 @custom-media --hide-split-screen  (max-width: 1000px);
 
-@import "reset.css";
+@import "base/reset.css";
 
 @import "vars/colors.css";
 @import "vars/fonts.css";
 @import "vars/type.css";
 @import "vars/layout.css";
 
-@import "typography.css";
-@import "structure.css";
+@import "type/typography.css";
+@import "type/split-screen-typography.css";
 
-@import "split-screen-typography.css";
+@import "layout/structure.css";
 
 @import "components/navigation.css";
-
-#map {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 0;
-}
+@import "components/map.css";

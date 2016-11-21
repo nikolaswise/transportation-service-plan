@@ -41,4 +41,14 @@ $ npm install
 $ npm test
 ```
 
+## Notes
+
+### Body Classes
+
+The following are classes set on the body of the HTML to pass information to the rest of the DOM.
+
+| class | denotes |
+| ----- | ------- |
+| js-is-active | Javascript will run on this page. Go for the full experience |
+| map-is-active | The map pane is visible, and the map is drawn. |
 
