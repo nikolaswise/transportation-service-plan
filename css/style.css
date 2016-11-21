@@ -104,6 +104,9 @@ h4 {
   margin-top: calc(1.6rem * 1.5);
   margin-bottom: 1.6rem; }
 
+h1 {
+  line-height: calc(1.6rem * 2); }
+
 h5 {
   margin-bottom: calc(1.6rem / 2); }
 
@@ -255,6 +258,14 @@ figure {
   margin-left: 26px;
   top: 0;
   z-index: 10; }
+
+.introduction {
+  background-color: #CADDE9;
+  padding-top: 400px;
+  padding-bottom: 400px; }
+  .introduction h1 {
+    word-spacing: -0.03em;
+    letter-spacing: 0.03em; }
 
 #map {
   height: 100%;
@@ -429,3 +440,6 @@ html.map-is-active.text-is-active {
     margin-bottom: 1.5rem; }
   .map-is-active.text-is-active li {
     line-height: 1.5rem; } }
+
+.preload * {
+  transition: none !important; }
