@@ -1,0 +1,30 @@
+html.map-is-active.text-is-active {
+  font-size: $root-font-size;
+  line-height: $root-baseline;
+}
+
+.map-is-active.text-is-active {
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: calc($root-baseline * 1.5);
+    margin-bottom: $root-baseline;
+  }
+
+  h5 {
+    margin-bottom: calc($root-baseline / 2);
+  }
+  h6 {
+    margin-bottom: 0;
+  }
+  p,
+  ol {
+    line-height: $root-baseline;
+    margin-bottom: $root-baseline;
+  }
+  li {
+    line-height: $root-baseline;
+    margin-bottom: 0;
+  }
+}

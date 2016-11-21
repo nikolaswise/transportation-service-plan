@@ -1,24 +1,51 @@
-@custom-media --large-measure  (min-width: 851px);
-@custom-media --medium-measure (max-width: 850px);
-@custom-media --small-measure  (max-width: 500px);
+@import "base/reset.scss";
 
-@custom-media --half-large-measure  (min-width: 1901px);
-@custom-media --half-medium-measure (max-width: 1900px);
-@custom-media --half-small-measure  (max-width: 1300px);
+@import "vars/colors.scss";
+@import "vars/fonts.scss";
+@import "vars/type.scss";
+@import "vars/layout.scss";
 
-@custom-media --hide-split-screen  (max-width: 1000px);
+@import "type/typography.scss";
+@import "type/large-typography.scss";
 
-@import "base/reset.css";
+@import "layout/structure.scss";
 
-@import "vars/colors.css";
-@import "vars/fonts.css";
-@import "vars/type.css";
-@import "vars/layout.css";
+@import "components/navigation.scss";
+@import "components/map.scss";
 
-@import "type/typography.css";
-@import "type/split-screen-typography.css";
+/* Medium Screen Size */
+@media (max-width: 850px) {
+  @import "type/medium-typography.scss";
+}
 
-@import "layout/structure.css";
+/* Small Screen Size */
+@media (max-width: 650px) {
+  @import "type/small-typography.scss";
+}
 
-@import "components/navigation.css";
-@import "components/map.css";
+/* Split Screen Defaults*/
+@import "type/split-screen-typography";
+@import "layout/split-screen-structure.scss";
+@import "components/navigation-split-screen.scss";
+
+/* Split Screen Medium */
+@media (max-width: 1700px) {
+  @import "type/split-screen-typography-medium";
+}
+
+/* Split Screen Small */
+@media (max-width: 1300px) {
+  @import "type/split-screen-typography-small";
+}
+
+/* Split Screen, but only one Pane Visible */
+@media (max-width: 1000px) {
+  @import "layout/split-screen-reset.scss";
+  @import "type/split-screen-typography-medium-reset.scss";
+  @import "components/navigation-split-screen-small.scss";
+}
+
+/* Split Screen, but only one Pane Visible, and Small */
+@media (max-width: 650px) {
+  @import "type/split-screen-typography-small-reset";
+}

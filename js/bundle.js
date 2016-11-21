@@ -141,8 +141,8 @@ var bus = new E();
 bus.on('has:javascript', flagJS);
 
 function flagJS() {
-  var body = document.querySelector('body');
-  add(body, 'js-is-active');
+  var html = document.querySelector('html');
+  add(html, 'js-is-active');
 }
 
 var checkJs = function () {
@@ -318,23 +318,23 @@ bus.on('contents:close', contentsClose);
 
 function logMapHide() {
   console.log('map:hide');
-  var body = document.querySelector('body');
-  remove(body, 'map-is-active');
+  var html = document.querySelector('html');
+  remove(html, 'map-is-active');
 }
 function logMapShow() {
   console.log('map:show');
-  var body = document.querySelector('body');
-  add(body, 'map-is-active');
+  var html = document.querySelector('html');
+  add(html, 'map-is-active');
 }
 function logTextHide() {
   console.log('text:hide');
-  var body = document.querySelector('body');
-  remove(body, 'text-is-active');
+  var html = document.querySelector('html');
+  remove(html, 'text-is-active');
 }
 function logTextShow() {
   console.log('text:show');
-  var body = document.querySelector('body');
-  add(body, 'text-is-active');
+  var html = document.querySelector('html');
+  add(html, 'text-is-active');
 }
 
 function searchOpen() {

@@ -1,0 +1,14 @@
+.map-is-active.text-is-active {
+  .text-block {
+    width: 100%;
+  }
+
+  .map-block {
+    display: none;
+  }
+
+  .article-wrapper {
+    width: $wrapper-min-width;
+    max-width: $wrapper-max-width;
+  }
+}

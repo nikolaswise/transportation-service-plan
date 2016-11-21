@@ -13,23 +13,23 @@ bus.on('contents:close', contentsClose)
 
 function logMapHide () {
   console.log('map:hide')
-  let body = document.querySelector('body')
-  classy.remove(body, 'map-is-active')
+  let html = document.querySelector('html')
+  classy.remove(html, 'map-is-active')
 }
 function logMapShow () {
   console.log('map:show')
-  let body = document.querySelector('body')
-  classy.add(body, 'map-is-active')
+  let html = document.querySelector('html')
+  classy.add(html, 'map-is-active')
 }
 function logTextHide () {
   console.log('text:hide')
-  let body = document.querySelector('body')
-  classy.remove(body, 'text-is-active')
+  let html = document.querySelector('html')
+  classy.remove(html, 'text-is-active')
 }
 function logTextShow () {
   console.log('text:show')
-  let body = document.querySelector('body')
-  classy.add(body, 'text-is-active')
+  let html = document.querySelector('html')
+  classy.add(html, 'text-is-active')
 }
 
 function searchOpen () {

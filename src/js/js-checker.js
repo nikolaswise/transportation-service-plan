@@ -4,8 +4,8 @@ import bus from './helpers/bus.js'
 bus.on('has:javascript', flagJS)
 
 function flagJS () {
-  let body = document.querySelector('body')
-  classy.add(body, 'js-is-active')
+  let html = document.querySelector('html')
+  classy.add(html, 'js-is-active')
 }
 
 export default function () {

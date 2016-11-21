@@ -7,14 +7,14 @@
     "start": "npm run dev",
     "dev": "npm-run-all --parallel css js serve watch",
     "serve": "live-server --entry-file=200.html",
-    "css": "myth src/css/style.css css/style.css -c -s",
+    "css": "node-sass src/css/style.css css/style.css",
     "js": "rollup -c",
     "watch": "rerun-script",
     "test": "test"
   },
   "watches": {
     "html": "src/**/*.html",
-    "css": "src/**/*.css",
+    "css": ["src/**/*.scss","src/**/*.css"],
     "js": "src/**/*.js"
   },
   "repository": {
@@ -32,6 +32,7 @@
     "esri-leaflet": "^2.0.6",
     "live-server": "^1.1.0",
     "myth": "github:pin3da/myth",
+    "node-sass": "^3.13.0",
     "npm-run-all": "^3.1.1",
     "rerun-script": "^0.6.0",
     "rollup": "^0.36.3",

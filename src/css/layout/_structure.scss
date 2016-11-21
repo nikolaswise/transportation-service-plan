@@ -1,0 +1,47 @@
+
+figure {
+  position: absolute;
+  left: 100%;
+  right: calc(#{$figure-width} * -1);
+  margin-top: -10em;
+  max-width: $text-measure;
+}
+
+.map-block {
+  border-left: 1px solid $lighter-gray;
+  box-shadow: 3px 3px 3px $gray;
+  display: none;
+}
+
+.article-wrapper {
+  margin: auto;
+  width: $wrapper-min-width;
+  max-width: $wrapper-max-width;
+
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
+}
+
+.article-body {
+  position: relative;
+  padding: $gutter;
+  padding-top: calc(#{$root-font-size} * 5);
+  max-width: $text-measure;
+
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
+}
+
+.map-view .text-block {
+  display: none;
+}
+
+.map-view .map-block {
+  display: block;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: $black;
+}

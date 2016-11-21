@@ -1,0 +1,22 @@
+html {
+  font-size: $small-font-size;
+  line-height: $small-baseline;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-top: calc(#{$small-baseline} * 1.5);
+  margin-bottom: $small-baseline;
+}
+h5 {
+  margin-bottom: calc(#{$small-baseline} / 2);
+}
+p,
+ol {
+  line-height: $small-baseline;
+  margin-bottom: $small-baseline;
+}
+li {
+  line-height: $small-baseline;
+}

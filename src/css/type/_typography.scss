@@ -1,0 +1,51 @@
+/* Base Type Styles */
+html {
+  font-family: $system-serif;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-feature-settings:"kern","liga" 1,"calt" 0;
+}
+
+/* Type Colors */
+body {
+  background-color: $color-background;
+  color: $color-text-small;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $color-text-big;
+}
+
+/* Type Sizes */
+h1 {
+  font-size: $pt36;
+}
+h2 {
+  font-size: $pt24;
+}
+h3 {
+  font-size: $pt21;
+}
+h4 {
+  font-size: $pt18;
+}
+h5 {
+  font-size: $pt14;
+}
+h6 {
+  font-size: $pt12;
+}
+
+/* Base Styles */
+ul,
+ol {
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+}
+

@@ -1,0 +1,10 @@
+$gutter: 1rem;
+$figure-width: 20rem;
+
+$wrapper-min-width: (10/12) * 100%;
+$wrapper-max-width: $text-measure + $figure-width + $gutter + $gutter;
+
+$half-wrapper-min-width: (10/12) * 100%;
+$half-wrapper-max-width: $text-measure + $gutter + $gutter;
+
+$wrapper-small-min-width: (10/11) * 100% ;
