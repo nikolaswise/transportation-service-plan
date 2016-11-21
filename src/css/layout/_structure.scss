@@ -26,8 +26,8 @@ figure {
   width: $wrapper-min-width;
   max-width: $wrapper-max-width;
 
-  border-left: 1px dashed $dark-gray;
-  border-right: 1px dashed $dark-gray;
+  // border-left: 1px dashed $dark-gray;
+  // border-right: 1px dashed $dark-gray;
 }
 
 .article-body {
@@ -36,6 +36,6 @@ figure {
   padding-top: calc(#{$root-font-size} * 5);
   max-width: $text-measure;
 
-  border-left: 1px dashed $dark-gray;
-  border-right: 1px dashed $dark-gray;
+  // border-left: 1px dashed $dark-gray;
+  // border-right: 1px dashed $dark-gray;
 }

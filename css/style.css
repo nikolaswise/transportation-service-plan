@@ -165,17 +165,13 @@ figure {
 .article-wrapper {
   margin: auto;
   width: 83.33333%;
-  max-width: 58rem;
-  border-left: 1px dashed #9ea4a9;
-  border-right: 1px dashed #9ea4a9; }
+  max-width: 58rem; }
 
 .article-body {
   position: relative;
   padding: 1rem;
   padding-top: calc(26px * 5);
-  max-width: 36rem;
-  border-left: 1px dashed #9ea4a9;
-  border-right: 1px dashed #9ea4a9; }
+  max-width: 36rem; }
 
 .navigation-text {
   background-color: #fafafa;
