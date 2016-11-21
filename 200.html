@@ -50,7 +50,8 @@
       </div>
 
       <div class="navigation-item navigation-item-view-control">
-        <a href="#" class="js-hide-map">Hide Map</a>
+        <a href="#" class="js-hide-map show-if-map-is-active show-if-split-is-active hide-if-text-is-active">Hide Map</a>
+        <a href="#" class="js-show-map hide-if-map-is-active hide-if-split-is-active">Show Map</a>
       </div>
 
     </nav>
@@ -133,7 +134,8 @@
       <!-- Map Goodness -->
       <div class="map-block show-if-map-is-active hide-if-text-is-active show-if-split-is-active">
         <div class="navigation-item map-navigation-view-control">
-          <a href="#" class="js-hide-text">Hide Text</a>
+          <a href="#" class="js-hide-text show-if-text-is-active show-if-split-is-active hide-if-map-is-active">Hide Text</a>
+          <a href="#" class="js-show-text hide-if-text-is-active hide-if-split-is-active">Show Text</a>
         </div>
 
         <div id="map"></div>
