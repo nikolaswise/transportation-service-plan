@@ -10,7 +10,9 @@ h4 {
   margin-top: calc(#{$root-baseline} * 1.5);
   margin-bottom: $root-baseline;
 }
-
+h1 {
+  line-height: calc(#{$root-baseline} * 2);
+}
 h5 {
   margin-bottom: calc(#{$root-baseline} / 2);
 }
