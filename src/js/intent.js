@@ -10,28 +10,32 @@ import * as event from './helpers/event.js'
 dom.findElements('.js-hide-map').map(function (btn) {
   event.add(btn, 'click', hideMap)
 })
-function hideMap () {
+function hideMap (e) {
+  e.preventDefault()
   bus.emit('map:hide')
 }
 
 dom.findElements('.js-show-map').map(function (btn) {
   event.add(btn, 'click', showMap)
 })
-function showMap () {
+function showMap (e) {
+  e.preventDefault()
   bus.emit('map:show')
 }
 
 dom.findElements('.js-hide-text').map(function (btn) {
   event.add(btn, 'click', hideText)
 })
-function hideText () {
+function hideText (e) {
+  e.preventDefault()
   bus.emit('text:hide')
 }
 
 dom.findElements('.js-show-text').map(function (btn) {
   event.add(btn, 'click', showText)
 })
-function showText () {
+function showText (e) {
+  e.preventDefault()
   bus.emit('text:show')
 }
 
@@ -89,3 +93,11 @@ function translateKeypress (e) {
   }
 }
 
+// ┌────────────────────┐
+// │ Emit Scroll Events │
+// └────────────────────┘
+// throttled for performance
+event.add(window, 'scroll', event.throttle(isScrolling, 100));
+function isScrolling () {
+  bus.emit('scrolling:at', window.pageYOffset);
+}

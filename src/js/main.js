@@ -13,9 +13,11 @@ bus.on('map:redraw', map.redraw)
 
 import intent from './intent.js'
 import view from './view.js'
+import sticky from './sticky-navigation.js'
 
 checkJs()
 route()
+sticky()
 
 window.onload = function() {
   let body = document.querySelector('body')
