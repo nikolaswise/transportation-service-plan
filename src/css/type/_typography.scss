@@ -42,10 +42,24 @@ h6 {
 /* Base Styles */
 ul,
 ol {
+  margin-top: 0;
   padding: 0;
 }
 
 p {
   margin-top: 0;
+}
+
+/* Link Styles */
+a {
+  color: $color-text-small;
+
+  &:visited {
+    color: $color-text-small;
+  }
+  &:hover {
+    color: $rich-blue;
+    text-decoration: underline;
+  }
 }
 

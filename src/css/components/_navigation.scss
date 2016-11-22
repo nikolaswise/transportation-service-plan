@@ -1,12 +1,9 @@
 .navigation-text {
+  overflow: auto;
   background-color: $off-white;
   border-bottom: 1px solid $lighter-gray;
   box-shadow: 0px 0px 3px $gray;
-  position: fixed;
   z-index: 10;
-  left: 0;
-  right: 0;
-  top: 0;
 }
 
 .navigation-item {
@@ -16,19 +13,35 @@
   padding-bottom: calc(#{$root-font-size} / 2);
 }
 
+.navigation-link {
+  padding: calc(#{$root-font-size} / 2) $root-font-size;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: $rich-blue;
+  font-size: $pt10;
+  transition: all 300ms linear;
+  &:visited {
+    color: $rich-blue;
+  }
+  &:hover {
+    text-decoration: none;
+    transition: all 300ms linear;
+    color: $white;
+    background-color: $rich-blue;
+  }
+}
+
 .navigation-item-left {
-  margin-left: $root-font-size;
-  padding-right: $root-font-size;
+  margin-left: -$root-font-size;
   border-right: 1px solid $lighter-gray;
 }
 
 .navigation-item-right {
-  margin-left: $root-font-size;
 }
 
 .navigation-item-view-control {
   float: right;
-  padding-right: $root-font-size;
 }
 
 .map-view .navigation-text {
@@ -37,7 +50,10 @@
 
 .map-navigation-view-control {
   position: absolute;
-  margin-left: $root-font-size;
   top: 0;
   z-index: 10;
+}
+
+.is-sticky {
+  position: fixed;
 }

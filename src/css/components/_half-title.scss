@@ -1,0 +1,28 @@
+.half-title {
+  padding-top: 4*$root-baseline;
+  padding-top: 18vh;
+
+  padding-bottom: 12*$root-baseline;
+  padding-bottom: 35vh;
+}
+
+.half-title-plate {
+  border: 5px solid $black;
+  background-color: $off-white;
+}
+
+.half-title-header {
+  font-weight: 500;
+  font-size: $pt36;
+  text-align: center;
+}
+
+.half-title-sub-head {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  font-family: $system-sans;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+

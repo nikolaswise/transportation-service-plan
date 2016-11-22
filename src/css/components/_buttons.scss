@@ -1,0 +1,60 @@
+.btn,
+button {
+  position: relative;
+  display: inline-block;
+  padding: 0.66em;
+  width: auto;
+  color: $rich-blue;
+  border: 4px solid $rich-blue;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: all 300ms linear;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: $pt11;
+  font-family: $system-sans;
+  letter-spacing: 0.05em;
+  &:hover {
+    transition: all 300ms linear;
+    text-decoration: none;
+    background-color: $rich-blue;
+    color: $white;
+  }
+}
+
+.button-white {
+  color: $white;
+  border: 4px solid $white;
+  &:hover {
+    text-decoration: none;
+    background-color: $white;
+    color: $rich-blue;
+  }
+}
+
+.map-is-active {
+  .button-white.show-if-map-is-active {
+    color: $rich-blue;
+    border: 4px solid $white;
+    background-color: $white;
+    &:hover {
+      text-decoration: none;
+      background-color: $rich-blue;
+      color: $white;
+    }
+  }
+}
+
+.text-is-active {
+  .button-white.show-if-text-is-active {
+    color: $rich-blue;
+    border: 4px solid $white;
+    background-color: $white;
+    &:hover {
+      text-decoration: none;
+      background-color: $rich-blue;
+      color: $white;
+    }
+  }
+}
+

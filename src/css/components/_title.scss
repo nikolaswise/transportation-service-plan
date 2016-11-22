@@ -1,0 +1,42 @@
+.title {
+  position: relative;
+  z-index: 10;
+
+  background-color: $rich-blue;
+  box-shadow: 0px 0px 10px $black;
+}
+
+.title-view-control {
+  float: right;
+  margin: $root-font-size;
+}
+
+.title-buffer {
+  padding-top: $root-baseline * 3;
+  padding-top: 18vh;
+
+  padding-bottom: $root-baseline * 5;
+  padding-bottom: 23vh;
+}
+
+.title-header {
+  font-weight: 300;
+  color: $off-white;
+
+}
+
+.title-rule {
+  width: 50%;
+  margin-right: 50%;
+  float: left;
+  border-bottom: 3px solid $off-white;
+}
+
+.title-subhead {
+  padding-top: $root-baseline * 1.5;
+  font-size: $pt14;
+  color: $off-white;
+  font-family: $system-sans;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}

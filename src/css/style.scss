@@ -12,12 +12,18 @@
 @import "layout/structure.scss";
 @import "layout/transitions.scss";
 
+@import "components/buttons.scss";
+@import "components/title.scss";
+@import "components/table-of-contents.scss";
 @import "components/navigation.scss";
+@import "components/half-title.scss";
+@import "components/search.scss";
 @import "components/introduction.scss";
+@import "components/colophon.scss";
 @import "components/map.scss";
 
 /* Medium Screen Size */
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   @import "type/medium-typography.scss";
 }
 
@@ -51,6 +57,21 @@
 /* Split Screen, but only one Pane Visible, and Small */
 @media (max-width: 650px) {
   @import "type/split-screen-typography-small-reset";
+}
+
+.text-section {
+  border-top: 5px solid $black;
+  margin-bottom: $root-baseline * 6;
+}
+
+svg {
+  display: inline-block; // make sure icons display inline with other elements but have a defined width/height
+  width: .875em; // slightly less then the same font size
+  height: .875em; // slightly less then the same font size
+  vertical-align: -.125em; // offset the image slightly from the top to center it
+  padding-right: .125em; // pad the image slightly to the right
+  fill: currentColor; // inherit current color
+  pointer-events: none; // no pointer events
 }
 
 .preload * {
