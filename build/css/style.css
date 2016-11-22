@@ -288,6 +288,8 @@ button {
   position: relative;
   z-index: 10;
   background-color: #293EC8;
+  background: url("/img/freemont-bridge2.gif") center center/cover no-repeat fixed padding-box content-box #293EC8;
+  /* color */
   box-shadow: 0px 0px 10px #2e3133; }
 
 .title-view-control {

@@ -1,8 +1,15 @@
 .title {
   position: relative;
   z-index: 10;
-
   background-color: $rich-blue;
+  background:
+     url('/img/freemont-bridge2.gif')    /* image */
+     center center / cover              /* position / size */
+     no-repeat                   /* repeat */
+     fixed                       /* attachment */
+     padding-box                 /* origin */
+     content-box                 /* clip */
+     $rich-blue;                     /* color */
   box-shadow: 0px 0px 10px $black;
 }
 
