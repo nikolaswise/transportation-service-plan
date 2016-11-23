@@ -1,7 +1,26 @@
 <div class="map-block">
-  <div class="navigation-item map-navigation-view-control">
+<!--   <div class="navigation-item map-navigation-view-control">
     <button class="js-hide-text show-if-text-is-active show-if-split-is-active hide-if-map-is-active">Hide Text</button>
     <button class="js-show-text hide-if-text-is-active hide-if-split-is-active">Show Text</button>
   </div>
+ -->
+  <div class="map-control-container">
+    <form>
+      <fieldset class="fieldset-checkbox">
+        <legend>Map Contents</legend>
+        <label>
+          <input type="checkbox" class="js-layer-control" data-layer="one"> Programs
+        </label>
+        <label>
+          <input type="checkbox" class="js-layer-control" data-layer="two"> Projects
+        </label>
+        <label>
+          <input type="checkbox" class="js-layer-control" data-layer="three"> Classifications
+        </label>
+      </fieldset>
+    </form>
+  </div>
+
   <div id="map"></div>
+
 </div>

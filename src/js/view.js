@@ -11,6 +11,12 @@ bus.on('search:close', searchClose)
 bus.on('contents:open', contentsOpen)
 bus.on('contents:close', contentsClose)
 
+bus.on('layer:toggle', handleLayerToggle)
+
+function handleLayerToggle (layer) {
+  console.log(`toggle layer ${layer} plz`);
+}
+
 function logMapHide () {
   console.log('map:hide')
   let html = document.querySelector('html')

@@ -5,3 +5,18 @@
   padding: 0;
   z-index: 0;
 }
+
+.map-navigation-view-control {
+  margin: $root-font-size;
+}
+
+.map-control-container {
+  opacity: 0.95;
+  background-color: $off-white;
+  // width: 20em;
+  position: absolute;
+  z-index: 10;
+  margin: $root-font-size;
+  padding: $root-font-size;
+  // top: $root-font-size * 4;
+}

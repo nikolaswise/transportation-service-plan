@@ -404,6 +404,61 @@
             <section class="text-section">
               <h2 id="appendix-b">Appendix B</h2>
               <h3>Compiled Projects, Plans, and Classifications</h3>
+                <div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>OBJECTID</th>
+<th>Transportation Plan ID</th>
+<th>Project Number</th>
+<th>Short Project Title</th>
+<th>Project Name</th>
+<th>Project Status</th>
+<th>Project Description</th>
+<th>Project Source</th>
+<th>Lead Agency</th>
+<th>Estimated Cost</th>
+<th>Estimated Timeframe</th>
+<th>TSP District</th>
+<th>RTP Number</th>
+<th>RTP Fiscally Constrained</th>
+<th>Display Cost</th>
+<th>TSP Feature Type</th>
+<th>bps_status</th>
+<th>GlobalID</th>
+<th>Shape Area</th>
+<th>Shape Length</th>
+<th>TestimonyID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OBJECTID</td>
+<td>Transportation Plan ID</td>
+<td>Project Number</td>
+<td>Short Project Title</td>
+<td>Project Name</td>
+<td>Project Status</td>
+<td>Project Description</td>
+<td>Project Source</td>
+<td>Lead Agency</td>
+<td>Estimated Cost</td>
+<td>Estimated Timeframe</td>
+<td>TSP District</td>
+<td>RTP Number</td>
+<td>RTP Fiscally Constrained</td>
+<td>Display Cost</td>
+<td>TSP Feature Type</td>
+<td>bps_status</td>
+<td>GlobalID</td>
+<td>Shape Area</td>
+<td>Shape Length</td>
+<td>TestimonyID&quot;</td>
+</tr>
+</tbody>
+</table>
+
+                </div>
             </section>
           </div>
         </div>
@@ -443,11 +498,30 @@
 
       </div>
       <div class="map-block">
-  <div class="navigation-item map-navigation-view-control">
+<!--   <div class="navigation-item map-navigation-view-control">
     <button class="js-hide-text show-if-text-is-active show-if-split-is-active hide-if-map-is-active">Hide Text</button>
     <button class="js-show-text hide-if-text-is-active hide-if-split-is-active">Show Text</button>
   </div>
+ -->
+  <div class="map-control-container">
+    <form>
+      <fieldset class="fieldset-checkbox">
+        <legend>Map Contents</legend>
+        <label>
+          <input type="checkbox" class="js-layer-control" data-layer="one"> Programs
+        </label>
+        <label>
+          <input type="checkbox" class="js-layer-control" data-layer="two"> Projects
+        </label>
+        <label>
+          <input type="checkbox" class="js-layer-control" data-layer="three"> Classifications
+        </label>
+      </fieldset>
+    </form>
+  </div>
+
   <div id="map"></div>
+
 </div>
     </main>
 

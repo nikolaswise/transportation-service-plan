@@ -1,0 +1,25 @@
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: block;
+}
+
+.fieldset-radio, .fieldset-checkbox {
+  label {
+    margin-bottom: .25rem;
+    line-height: 1.25rem;
+    color: $darkest-gray;
+  }
+}
+
+label, legend {
+  font-size: $pt10;
+  position: relative;
+  display: block;
+  margin: 0 0 $root-baseline 0;
+}
+
+legend {
+  margin-bottom: .1rem;
+}

@@ -39,6 +39,14 @@ function showText (e) {
   bus.emit('text:show')
 }
 
+dom.findElements('.js-layer-control').map(function (btn) {
+  event.add(btn, 'click', toggleControl)
+})
+function toggleControl (e) {
+  let layer = e.target.getAttribute('data-layer')
+  bus.emit('layer:toggle', layer)
+}
+
 // ┌─────────────────────────┐
 // │ Emit Nav Control Events │
 // └─────────────────────────┘

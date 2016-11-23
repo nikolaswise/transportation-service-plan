@@ -427,6 +427,14 @@ function showText(e) {
   bus.emit('text:show');
 }
 
+findElements('.js-layer-control').map(function (btn) {
+  add$1(btn, 'click', toggleControl);
+});
+function toggleControl(e) {
+  var layer = e.target.getAttribute('data-layer');
+  bus.emit('layer:toggle', layer);
+}
+
 // ┌─────────────────────────┐
 // │ Emit Nav Control Events │
 // └─────────────────────────┘
@@ -498,6 +506,12 @@ bus.on('search:open', searchOpen);
 bus.on('search:close', searchClose);
 bus.on('contents:open', contentsOpen);
 bus.on('contents:close', contentsClose);
+
+bus.on('layer:toggle', handleLayerToggle);
+
+function handleLayerToggle(layer) {
+  console.log('toggle layer ' + layer + ' plz');
+}
 
 function logMapHide() {
   console.log('map:hide');
