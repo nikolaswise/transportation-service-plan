@@ -193,20 +193,24 @@ figure {
   max-width: 36rem; }
 
 .article-wrapper {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   width: 83.33333%;
   max-width: 58rem; }
 
 .text-block,
 .navigation-text {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transform: translate3d(0, 0, 0);
   width: 50%; }
 
 .map-block {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transform: translate3d(0, 0, 0);
   width: 50%; }
+
+#map {
+  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  left: 0px; }
 
 .map-is-active .text-block,
 .map-is-active .navigation-text {
@@ -217,6 +221,9 @@ figure {
   width: 100%;
   transform: translate3d(0, 0, 0); }
 
+.map-is-active #map {
+  left: 53px; }
+
 .text-is-active .text-block,
 .text-is-active .navigation-text {
   width: 100%;
@@ -226,6 +233,9 @@ figure {
   transform: translate3d(100%, 0, 0);
   width: 50%; }
 
+.text-is-active #map {
+  left: 0px; }
+
 .map-is-active.text-is-active .text-block,
 .map-is-active.text-is-active .navigation-text {
   transform: translate3d(0, 0, 0);
@@ -234,6 +244,9 @@ figure {
 .map-is-active.text-is-active .map-block {
   transform: translate3d(0, 0, 0);
   width: 50%; }
+
+.map-is-active.text-is-active #map {
+  left: 0px; }
 
 fieldset {
   margin: 0;
@@ -388,7 +401,8 @@ button {
   background-color: #fafafa;
   border-bottom: 1px solid #e4e6e7;
   box-shadow: 0px 0px 3px #c4c7ca;
-  z-index: 10; }
+  z-index: 10;
+  height: 53px; }
 
 .navigation-item {
   float: left;
@@ -504,9 +518,14 @@ button {
   background-color: #CEDBAF;
   padding-bottom: 6.4rem; }
 
+.map-block {
+  background-color: #fafafa; }
+
 #map {
-  height: 100%;
-  width: 100%;
+  top: 53px;
+  right: 53px;
+  bottom: 53px;
+  position: absolute;
   margin: 0;
   padding: 0;
   z-index: 0; }

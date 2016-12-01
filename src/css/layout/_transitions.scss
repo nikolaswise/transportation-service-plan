@@ -1,5 +1,6 @@
 $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
              transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
+             left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
              max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 
 .article-wrapper {
@@ -19,6 +20,10 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
   transform: translate3d(0,0,0);
   width: 50%;
 }
+#map {
+  transition: $transition;
+  left: 0px;
+}
 
 // Map Is Active
 .map-is-active {
@@ -30,6 +35,9 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
   .map-block {
     width: 100%;
     transform: translate3d(0,0,0);
+  }
+  #map {
+    left: $frame;
   }
 }
 
@@ -44,6 +52,9 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
     transform: translate3d(100%,0,0);
     width: 50%;
   }
+  #map {
+    left: 0px;
+  }
 }
 
 // Split Screen is Active
@@ -56,5 +67,8 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
   .map-block {
     transform: translate3d(0,0,0);
     width: 50%;
+  }
+  #map {
+    left: 0px;
   }
 }
