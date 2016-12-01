@@ -281,6 +281,312 @@ function route() {
   }
 }
 
+var asyncGenerator = function () {
+  function AwaitValue(value) {
+    this.value = value;
+  }
+
+  function AsyncGenerator(gen) {
+    var front, back;
+
+    function send(key, arg) {
+      return new Promise(function (resolve, reject) {
+        var request = {
+          key: key,
+          arg: arg,
+          resolve: resolve,
+          reject: reject,
+          next: null
+        };
+
+        if (back) {
+          back = back.next = request;
+        } else {
+          front = back = request;
+          resume(key, arg);
+        }
+      });
+    }
+
+    function resume(key, arg) {
+      try {
+        var result = gen[key](arg);
+        var value = result.value;
+
+        if (value instanceof AwaitValue) {
+          Promise.resolve(value.value).then(function (arg) {
+            resume("next", arg);
+          }, function (arg) {
+            resume("throw", arg);
+          });
+        } else {
+          settle(result.done ? "return" : "normal", result.value);
+        }
+      } catch (err) {
+        settle("throw", err);
+      }
+    }
+
+    function settle(type, value) {
+      switch (type) {
+        case "return":
+          front.resolve({
+            value: value,
+            done: true
+          });
+          break;
+
+        case "throw":
+          front.reject(value);
+          break;
+
+        default:
+          front.resolve({
+            value: value,
+            done: false
+          });
+          break;
+      }
+
+      front = front.next;
+
+      if (front) {
+        resume(front.key, front.arg);
+      } else {
+        back = null;
+      }
+    }
+
+    this._invoke = send;
+
+    if (typeof gen.return !== "function") {
+      this.return = undefined;
+    }
+  }
+
+  if (typeof Symbol === "function" && Symbol.asyncIterator) {
+    AsyncGenerator.prototype[Symbol.asyncIterator] = function () {
+      return this;
+    };
+  }
+
+  AsyncGenerator.prototype.next = function (arg) {
+    return this._invoke("next", arg);
+  };
+
+  AsyncGenerator.prototype.throw = function (arg) {
+    return this._invoke("throw", arg);
+  };
+
+  AsyncGenerator.prototype.return = function (arg) {
+    return this._invoke("return", arg);
+  };
+
+  return {
+    wrap: function (fn) {
+      return function () {
+        return new AsyncGenerator(fn.apply(this, arguments));
+      };
+    },
+    await: function (value) {
+      return new AwaitValue(value);
+    }
+  };
+}();
+
+
+
+
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+
+
+
+
+
+
+
+
+var get = function get(object, property, receiver) {
+  if (object === null) object = Function.prototype;
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent === null) {
+      return undefined;
+    } else {
+      return get(parent, property, receiver);
+    }
+  } else if ("value" in desc) {
+    return desc.value;
+  } else {
+    var getter = desc.get;
+
+    if (getter === undefined) {
+      return undefined;
+    }
+
+    return getter.call(receiver);
+  }
+};
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+
+
+
+
+
+
+
+
+
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+
+
+
+var set = function set(object, property, value, receiver) {
+  var desc = Object.getOwnPropertyDescriptor(object, property);
+
+  if (desc === undefined) {
+    var parent = Object.getPrototypeOf(object);
+
+    if (parent !== null) {
+      set(parent, property, value, receiver);
+    }
+  } else if ("value" in desc && desc.writable) {
+    desc.value = value;
+  } else {
+    var setter = desc.set;
+
+    if (setter !== undefined) {
+      setter.call(receiver, value);
+    }
+  }
+
+  return value;
+};
+
+function getScale() {
+  var map = this.map;
+  var centerLatLng = map.getCenter(); // get map center
+
+  var pointC = map.latLngToContainerPoint(centerLatLng); // convert to containerpoint (pixels)
+  var pointX = [pointC.x + 1, pointC.y]; // add one pixel to x
+  var pointY = [pointC.x, pointC.y + 1]; // add one pixel to y
+
+  // convert containerpoints to latlng's
+  var latLngC = map.containerPointToLatLng(pointC);
+  var latLngX = map.containerPointToLatLng(pointX);
+  var latLngY = map.containerPointToLatLng(pointY);
+
+  var distanceX = latLngC.distanceTo(latLngX); // calculate distance between c and x (latitude)
+  var distanceY = latLngC.distanceTo(latLngY); // calculate distance between c and y (longitude)
+
+  var times = [distanceX, distanceY];
+
+  var sum = times.reduce(function (distanceX, distanceY) {
+    return distanceX + distanceY;
+  });
+  var avg = sum / times.length;
+
+  var meters = avg; // meters per meter : 1
+  var kilometer = avg / 1000; // meters per kilometer : 1000
+  var feet = avg * 3.2804; // feet per meter : 3.2804
+  var mile = feet / 5280; // feet per mile : 5280
+  var nauticalMile = avg / 1852; // meters per nautical mile
+
+  var scale = {
+    'pixelTo': {
+      'meters': meters.toFixed(3),
+      'kilometer': kilometer.toFixed(3),
+      'feet': feet.toFixed(3),
+      'mile': mile.toFixed(3),
+      'nauticalMile': nauticalMile.toFixed(3)
+    },
+    'pixelFrom': {
+      'meter': 1 / meters,
+      'kilometer': 1 / kilometer,
+      'halfKilometer': 0.5 / kilometer,
+      'quarterKilometer': 0.25 / kilometer,
+      'eigthKilometer': 0.125 / kilometer,
+      'feet': 1 / feet,
+      'mile': 1 / mile,
+      'halfMile': 0.5 / mile,
+      'quarterMile': 0.25 / mile,
+      'eigthMile': 0.125 / mile,
+      'nauticalMile': 1 / nauticalMile
+    }
+  };
+  return scale;
+}
+
+function custom(element, template) {
+  var _this = this;
+
+  console.log('' + element);
+
+  var render = function render() {
+    var scale = _this.getScale();
+    console.log(scale);
+  };
+
+  this.map.whenReady(function () {
+    render();
+  });
+  this.map.on('zoomend', function () {
+    render();
+  });
+}
+
+var Scalebar = function (_L$control$scale) {
+  inherits(Scalebar, _L$control$scale);
+
+  function Scalebar(map, fn) {
+    classCallCheck(this, Scalebar);
+
+    var _this2 = possibleConstructorReturn(this, (Scalebar.__proto__ || Object.getPrototypeOf(Scalebar)).call(this));
+
+    _this2.map = map;
+    _this2.fn = fn ? fn : false;
+    _this2.getScale = getScale;
+    _this2.custom = custom;
+    console.log(_this2.fn);
+    console.log('this is', _this2);
+    return _this2;
+  }
+
+  return Scalebar;
+}(L.control.scale);
+
 var map = void 0;
 
 function draw() {
@@ -292,6 +598,10 @@ function draw() {
   });
 
   map.addControl(L.control.zoom({ position: 'topright' }));
+
+  // Scale bar
+  var scalebar = new Scalebar(map);
+  scalebar.custom('scalebar-miles');
 
   L.esri.tiledMapLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"

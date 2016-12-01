@@ -1,3 +1,4 @@
+import Scalebar from './scale'
 let map
 
 export function draw () {
@@ -9,6 +10,10 @@ export function draw () {
   })
 
   map.addControl(L.control.zoom({position: 'topright'}));
+
+  // Scale bar
+  let scalebar = new Scalebar(map)
+  scalebar.custom('scalebar-miles')
 
   L.esri.tiledMapLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"

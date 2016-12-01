@@ -12,11 +12,8 @@
   z-index: 0;
 }
 
-.map-navigation-view-control {
-  margin: $root-font-size;
-}
-
 .map-control-container {
+  display: none;
   opacity: 0.95;
   background-color: $off-white;
   // width: 20em;
