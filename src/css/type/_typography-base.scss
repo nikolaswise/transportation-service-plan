@@ -1,9 +1,25 @@
 /* Base Type Styles */
 html {
-  font-family: $system-serif;
+  font-family: $system-sans;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
   font-feature-settings:"kern","liga" 1,"calt" 0;
+}
+
+html {
+  line-height: $root-baseline;
+  font-size: $root-font-size;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: $medium-font-size;
+  }
+}
+@media (max-width: 800px) {
+  html {
+    font-size: $small-font-size;
+  }
 }
 
 /* Type Colors */
@@ -17,11 +33,14 @@ h2,
 h3,
 h4 {
   color: $color-text-big;
+  margin-top: calc(#{$root-baseline} * 1.5);
+  margin-bottom: $root-baseline;
 }
 
 /* Type Sizes */
 h1 {
   font-size: $pt36;
+  line-height: calc(#{$root-baseline} * 2);
 }
 h2 {
   font-size: $pt24;
@@ -34,20 +53,25 @@ h4 {
 }
 h5 {
   font-size: $pt14;
+  margin-bottom: calc(#{$root-baseline} / 2);
 }
 h6 {
   font-size: $pt12;
+  margin-bottom: 0;
 }
 
 /* Base Styles */
+p,
 ul,
 ol {
-  margin-top: 0;
   padding: 0;
-}
-
-p {
   margin-top: 0;
+  line-height: $root-baseline;
+  margin-bottom: $root-baseline;
+}
+li {
+  line-height: $root-baseline;
+  margin-bottom: 0;
 }
 
 /* Link Styles */
@@ -62,4 +86,5 @@ a {
     text-decoration: underline;
   }
 }
+
 

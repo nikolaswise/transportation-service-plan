@@ -24,77 +24,77 @@
 
     <!-- Load Leaflet from CDN-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
-
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
-
     <!-- Esri Leaflet Geocoder -->
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
-
     <!-- Load Esri Leaflet Renderers -->
     <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
     <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
-
     <!-- Load fancy leaflet scalebar technology -->
     <script src="/js/Leaflet.GraphicScale.min.js"></script>
-
     <link rel="stylesheet" href="/css/style.css">
 
   </head>
 
   <body class="preload">
     <main class="main-wrapper">
-      <div class="text-block">
-        <div class="title">
-  <div class="title-view-control">
-    <button class="button-white js-hide-map show-if-map-is-active show-if-split-is-active hide-if-text-is-active">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-        <path d="M0 12l20-8v48l-20 8z"></path>
-        <path d="M24 2l20 12v46l-20-10z"></path>
-        <path d="M48 14l16-12v48l-16 12z"></path>
-      </svg>
-    </button>
-    <button class="button-white js-show-map hide-if-map-is-active hide-if-split-is-active">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-        <path d="M0 12l20-8v48l-20 8z"></path>
-        <path d="M24 2l20 12v46l-20-10z"></path>
-        <path d="M48 14l16-12v48l-16 12z"></path>
-      </svg>
-    </button>
 
-    <button class="button-white js-hide-text show-if-text-is-active show-if-split-is-active hide-if-map-is-active">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-        <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
-      </svg>
-    </button>
-    <button class="button-white js-show-text hide-if-text-is-active hide-if-split-is-active">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
-        <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
-      </svg>
-    </button>
+      <div class="text-block text-body">
+        <div class="title">
+  <div class="article-wrapper">
+    <div class="title-view-control">
+      <button class="button-white js-hide-map show-if-map-is-active show-if-split-is-active hide-if-text-is-active">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+          <path d="M0 12l20-8v48l-20 8z"></path>
+          <path d="M24 2l20 12v46l-20-10z"></path>
+          <path d="M48 14l16-12v48l-16 12z"></path>
+        </svg>
+      </button>
+      <button class="button-white js-show-map hide-if-map-is-active hide-if-split-is-active">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+          <path d="M0 12l20-8v48l-20 8z"></path>
+          <path d="M24 2l20 12v46l-20-10z"></path>
+          <path d="M48 14l16-12v48l-16 12z"></path>
+        </svg>
+      </button>
+
+      <button class="button-white js-hide-text show-if-text-is-active show-if-split-is-active hide-if-map-is-active">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+          <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
+        </svg>
+      </button>
+      <button class="button-white js-show-text hide-if-text-is-active hide-if-split-is-active">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+          <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
+        </svg>
+      </button>
+    </div>
   </div>
+
   <div class="title-buffer">
     <div class="article-wrapper">
-      <h1 class="title-header">Portland Transportation System Plan 2035</h1>
-      <hr class="title-rule">
       <p class="title-subhead">Portland Bureau of Transportation</p>
+      <hr class="title-rule">
+      <h1 class="title-header">Portland Transportation System Plan 2035</h1>
+      <form method="GET" action="search/">
+  <button type="submit" class="search-button">Search</button>
+  <label>
+    <span class="search-label">Search the text of the plan</span>
+    <input class="search-input js-search-input" type="search" placeholder="Search for …" name="q">
+  </label>
+</form>
     </div>
   </div>
 </div>
         <div class="table-of-contents">
           <div class="article-wrapper">
             <div class="article-body">
-              <form method="GET" action="search/">
-  <button type="submit" class="search-button">Search</button>
-  <label>
-    <span>Search the Transportation System Plan</span>
-    <input class="search-input js-search-input" type="search" placeholder="Search for …" name="q">
-  </label>
-</form>
-              <h6><a href="#">Introduction</a></h6>
+              <h5>Table of Contents</h5>
+
+<h6><a href="#">Introduction</a></h6>
 
 <h6><a href="#">Transportation</a></h6>
 <ol>
@@ -147,9 +147,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <nav class="navigation-text js-sticky" data-top=0>
+        <nav class="navigation-text js-sticky" data-top=0>
   <div class="article-wrapper">
   <div class="navigation-item navigation-item-left">
     <a href="#" class="navigation-link js-open-search">Search Document</a>
@@ -163,9 +162,6 @@
     <a href="#" class="navigation-link js-show-map hide-if-map-is-active hide-if-split-is-active">Show Map</a>
   </div>
 </nav>
-
-
-      <div class="text-block">
 
         <div class="half-title">
   <div class="article-wrapper">
@@ -187,6 +183,9 @@
           <div class="article-body">
             <section class="text-section">
               <h2>Introduction</h2>
+
+<p>qweyuiopasdfghjklzxcvbnmqweyuiopasdfghjklzxcvbnm</p>
+<p>qweyuiopasdfghjklzxcvbnmqweyuiopasdfghjklzxcvbnmqwertyuiopasdfghjklzxcvbnm</p>
 
 <p>Portland is projected to add 140,000 new jobs and 260,000 new residents over the next 20 years. As Portland and the region grow, however, there is a continuing challenge to maintain the natural environment, economic prosperity, and overall quality of life. If in 2035 the percentage of people who drive alone to work remains near 60% as is was in 2015, traffic, carbon emissions, and household spending on vehicles and fuel will all worsen significantly. In order to accommodate this growth, our transportation system must provide Portlanders safer and more convenient ways to walk, bike, and take transit for more trips. The Transportation System Plan is the 20-year plan to guide transportation policies and investments in Portland. The 2035 Transportation System Plan guides investments to maintain and improve the livability of Portland by:</p>
 
@@ -500,8 +499,8 @@
             </div>
           </div>
         </div>
-
       </div>
+
       <div class="map-block">
 
   <div class="navigation-item map-navigation-view-control">

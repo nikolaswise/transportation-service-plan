@@ -9,8 +9,7 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
   max-width: $wrapper-max-width;
 }
 
-.text-block,
-.navigation-text {
+.text-block {
   transition: $transition;
   transform: translate3d(0,0,0);
   width: 50%;
@@ -28,8 +27,7 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
 
 // Map Is Active
 .map-is-active {
-  .text-block,
-  .navigation-text {
+  .text-block {
     transform: translate3d(-100%,0,0);
     width: 50%;
   }
@@ -45,8 +43,7 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
 
 // Text Is Active
 .text-is-active {
-  .text-block,
-  .navigation-text {
+  .text-block {
     width: 100%;
     transform: translate3d(0,0,0);
   }
@@ -62,8 +59,7 @@ $transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955),
 
 // Split Screen is Active
 .map-is-active.text-is-active {
-  .text-block,
-  .navigation-text {
+  .text-block {
     transform: translate3d(0,0,0);
     width: 50%;
   }

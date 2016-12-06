@@ -24,45 +24,35 @@
 
     <!-- Load Leaflet from CDN-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-
     <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
-
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
-
     <!-- Esri Leaflet Geocoder -->
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
-
     <!-- Load Esri Leaflet Renderers -->
     <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
     <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
-
     <!-- Load fancy leaflet scalebar technology -->
     <script src="/js/Leaflet.GraphicScale.min.js"></script>
-
     <link rel="stylesheet" href="/css/style.css">
 
   </head>
 
   <body class="preload">
     <main class="main-wrapper">
-      <div class="text-block">
+
+      <div class="text-block text-body">
         {% include "_title.html" %}
         <div class="table-of-contents">
           <div class="article-wrapper">
             <div class="article-body">
-              {% include "_search-form.html" %}
               {% include "_table-of-contents.html" %}
             </div>
           </div>
         </div>
-      </div>
 
-      {% include "_navigation.html" %}
-
-      <div class="text-block">
-
+        {% include "_navigation.html" %}
         {% include "_half-title.html" %}
 
         <div class="article-wrapper">
@@ -100,8 +90,8 @@
             </div>
           </div>
         </div>
-
       </div>
+
       {% include "_map.html" %}
     </main>
 

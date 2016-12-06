@@ -5,8 +5,8 @@
 @import "vars/type.scss";
 @import "vars/layout.scss";
 
-@import "type/typography.scss";
-@import "type/large-typography.scss";
+@import "type/typography-base.scss";
+@import "type/typography-text.scss";
 
 @import "layout/show-hide.scss";
 @import "layout/structure.scss";
@@ -25,42 +25,6 @@
 @import "components/map.scss";
 @import "components/scale.scss";
 
-/* Medium Screen Size */
-@media (max-width: 1000px) {
-  @import "type/medium-typography.scss";
-}
-
-/* Small Screen Size */
-@media (max-width: 650px) {
-  @import "type/small-typography.scss";
-}
-
-/* Split Screen Defaults*/
-@import "type/split-screen-typography";
-@import "layout/split-screen-structure.scss";
-@import "components/navigation-split-screen.scss";
-
-/* Split Screen Medium */
-@media (max-width: 1700px) {
-  @import "type/split-screen-typography-medium";
-}
-
-/* Split Screen Small */
-@media (max-width: 1300px) {
-  @import "type/split-screen-typography-small";
-}
-
-/* Split Screen, but only one Pane Visible */
-@media (max-width: 1000px) {
-  @import "layout/split-screen-reset.scss";
-  @import "type/split-screen-typography-medium-reset.scss";
-  // /*@import "components/navigation-split-screen-small.scss";*/
-}
-
-/* Split Screen, but only one Pane Visible, and Small */
-@media (max-width: 650px) {
-  @import "type/split-screen-typography-small-reset";
-}
 
 .text-section {
   border-top: 5px solid $black;

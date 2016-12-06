@@ -17,10 +17,8 @@ figure {
   right: 0;
   top: 0;
   bottom: 0;
-  height: 100vh;
   position: fixed;
   background-color: #DDDDDD;
-  // width: 50%;
   border-left: 1px solid $lighter-gray;
   box-shadow: 3px 3px 3px $gray;
 }
@@ -29,9 +27,8 @@ figure {
   margin: auto;
   width: $wrapper-min-width;
   max-width: $wrapper-max-width;
-
-  // border-left: 1px dashed $dark-gray;
-  // border-right: 1px dashed $dark-gray;
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
 }
 
 .article-body {
@@ -39,7 +36,7 @@ figure {
   padding: $gutter;
   padding-top: calc(#{$root-font-size} * 5);
   max-width: $text-measure;
-
-  // border-left: 1px dashed $dark-gray;
-  // border-right: 1px dashed $dark-gray;
+  margin: auto;
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
 }
