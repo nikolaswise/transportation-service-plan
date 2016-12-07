@@ -562,6 +562,10 @@ var Scalebar = function (_L$control$scale) {
 
 var map = void 0;
 
+var streets = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
+});
+
 function draw() {
   console.log('draw map');
   map = L.map('map', {
@@ -580,15 +584,17 @@ function draw() {
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
 
-  var polygons = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6"
-  }).addTo(map);
-  var points = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1"
-  }).addTo(map);
-  var lines = L.esri.featureLayer({
-    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5"
-  }).addTo(map);
+  // var polygons = L.esri.featureLayer({
+  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6",
+  // }).addTo(map);
+
+  // var points = L.esri.featureLayer({
+  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1",
+  // }).addTo(map);
+
+  // var lines = L.esri.featureLayer({
+  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5",
+  // }).addTo(map);
 
   var searchControl = L.esri.Geocoding.geosearch({
     position: 'topright',

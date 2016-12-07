@@ -127,6 +127,9 @@ a {
     color: #293EC8;
     text-decoration: underline; }
 
+.sans-serif {
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif; }
+
 .show-if-text {
   display: none; }
 
@@ -243,13 +246,18 @@ fieldset {
   color: #51575c; }
 
 label, legend {
-  font-size: 0.833rem;
+  font-size: 0.75rem;
   position: relative;
   display: block;
   margin: 0 0 1.6rem 0; }
 
 legend {
   margin-bottom: .1rem; }
+
+input[type='radio'], input[type='checkbox'] {
+  float: left;
+  width: 1rem;
+  height: 1rem; }
 
 .table-wrapper {
   overflow: scroll; }
@@ -377,8 +385,6 @@ button {
 
 .navigation-link {
   padding: calc(26px / 2) 26px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
   text-decoration: none;
   color: #293EC8;
   font-size: 0.833rem;
