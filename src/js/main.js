@@ -7,21 +7,14 @@ import * as dom from './helpers/dom.js'
 import * as event from './helpers/event.js'
 import bus from './helpers/bus.js'
 
-bus.on('map:draw', map.draw)
-bus.on('map:remove', map.remove)
-bus.on('map:redraw', map.redraw)
-
+// View and Intent
 import intent from './intent.js'
 import view from './view.js'
-import sticky from './sticky-navigation.js'
 
-checkJs()
-route()
-sticky()
 
-window.onload = function() {
-  let body = document.querySelector('body')
-  classy.remove(body, 'preload')
-  window.bus = bus
-};
+bus.on('map:redraw', redrawMap)
+function redrawMap () {
+  map.redraw()
+}
 
+map.draw()

@@ -58,7 +58,13 @@ function remove(domNode, classes) {
 }
 
 // if domNode has the class, remove it, else add it
-
+function toggle(domNode, className) {
+  if (has(domNode, className)) {
+    remove(domNode, className);
+  } else {
+    add(domNode, className);
+  }
+}
 
 // remove 'is-active' class from every element in an array
 function removeActive(array) {
@@ -144,11 +150,6 @@ function flagJS() {
   var html = document.querySelector('html');
   add(html, 'js-is-active');
 }
-
-var checkJs = function () {
-  bus.emit('has:javascript');
-  return true;
-};
 
 var reEscape = /[\-\[\]{}()+?.,\\\^$|#\s]/g;
 // Match named :param or *splat placeholders.
@@ -252,34 +253,6 @@ var routeMatcher$1 = Object.freeze({
 
 console.log(routeMatcher$1);
 var match = routeMatcher;
-/**
-* Parse URL and navigate to correct pane/state
-*/
-function route() {
-  var url = document.location.pathname + '/';
-  url = url.replace('//', '/');
-  var home = match('/').parse(url);
-  var view = match('/:mode/').parse(url);
-
-  console.log(url);
-
-  if (home) {
-    console.log('default');
-    bus.emit('map:show');
-    bus.emit('text:show');
-  }
-  if (view) {
-    console.log(view);
-    if (view.mode === 'map') {
-      bus.emit('map:show');
-      bus.emit('text:hide');
-    }
-    if (view.mode === 'text') {
-      bus.emit('text:show');
-      bus.emit('map:hide');
-    }
-  }
-}
 
 var asyncGenerator = function () {
   function AwaitValue(value) {
@@ -607,15 +580,15 @@ function draw() {
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
 
-  // var polygons = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6",
-  // }).addTo(map);
-  // var points = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1",
-  // }).addTo(map);
-  // var lines = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5",
-  // }).addTo(map);
+  var polygons = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6"
+  }).addTo(map);
+  var points = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1"
+  }).addTo(map);
+  var lines = L.esri.featureLayer({
+    url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5"
+  }).addTo(map);
 
   var searchControl = L.esri.Geocoding.geosearch({
     position: 'topright',
@@ -705,77 +678,37 @@ function throttle(fn, time, context) {
 // │ Emit View Toggle Intents │
 // └──────────────────────────┘
 // emit toggle button clicks
-findElements('.js-hide-map').map(function (btn) {
-  add$1(btn, 'click', hideMap);
-});
-function hideMap(e) {
-  e.preventDefault();
-  bus.emit('map:hide');
-}
 
-findElements('.js-show-map').map(function (btn) {
-  add$1(btn, 'click', showMap);
+findElements('.js-layer-toggle').map(function (btn) {
+  add$1(btn, 'click', toggleLayer);
 });
-function showMap(e) {
-  e.preventDefault();
-  bus.emit('map:show');
-}
-
-findElements('.js-hide-text').map(function (btn) {
-  add$1(btn, 'click', hideText);
-});
-function hideText(e) {
-  e.preventDefault();
-  bus.emit('text:hide');
-}
-
-findElements('.js-show-text').map(function (btn) {
-  add$1(btn, 'click', showText);
-});
-function showText(e) {
-  e.preventDefault();
-  bus.emit('text:show');
+function toggleLayer(e) {
+  var layer = e.target.getAttribute('data-layer');
+  bus.emit('layer:toggle', layer);
 }
 
 findElements('.js-layer-control').map(function (btn) {
   add$1(btn, 'click', toggleControl);
 });
 function toggleControl(e) {
-  var layer = e.target.getAttribute('data-layer');
-  bus.emit('layer:toggle', layer);
+  e.preventDefault();
+  bus.emit('layer:control');
+}
+
+findElements('.js-pane-toggle').map(function (btn) {
+  add$1(btn, 'click', togglePane);
+});
+function togglePane(e) {
+  e.preventDefault();
+  var pane = e.target.getAttribute('data-pane');
+  bus.emit('pane:toggle', pane);
 }
 
 // ┌─────────────────────────┐
 // │ Emit Nav Control Events │
 // └─────────────────────────┘
 // Search and Table of contents.
-findElements('.js-open-search').map(function (btn) {
-  add$1(btn, 'click', openSearch);
-});
-function openSearch() {
-  bus.emit('search:open');
-}
 
-findElements('.js-close-search').map(function (btn) {
-  add$1(btn, 'click', closeSearch);
-});
-function closeSearch() {
-  bus.emit('search:close');
-}
-
-findElements('.js-open-contents').map(function (btn) {
-  add$1(btn, 'click', opencontents);
-});
-function opencontents() {
-  bus.emit('contents:open');
-}
-
-findElements('.js-close-contents').map(function (btn) {
-  add$1(btn, 'click', closecontents);
-});
-function closecontents() {
-  bus.emit('contents:close');
-}
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
 // └──────────────────────┘
@@ -808,153 +741,46 @@ function isScrolling() {
   bus.emit('scrolling:at', window.pageYOffset);
 }
 
-bus.on('map:hide', logMapHide);
-bus.on('map:show', logMapShow);
-bus.on('text:hide', logTextHide);
-bus.on('text:show', logTextShow);
-bus.on('search:open', searchOpen);
-bus.on('search:close', searchClose);
-bus.on('contents:open', contentsOpen);
-bus.on('contents:close', contentsClose);
-
+bus.on('pane:toggle', togglePane$1);
 bus.on('layer:toggle', handleLayerToggle);
+bus.on('layer:control', handleControlToggle);
+
+function handleControlToggle() {
+  var controlPanel = document.querySelector('.js-layer-control-panel');
+  toggle(controlPanel, 'is-active');
+}
 
 function handleLayerToggle(layer) {
   console.log('toggle layer ' + layer + ' plz');
 }
 
-function logMapHide() {
-  console.log('map:hide');
-  var html = document.querySelector('html');
-  remove(html, 'map-is-active');
-  bus.emit('map:remove');
-}
-function logMapShow() {
-  console.log('map:show');
-  var html = document.querySelector('html');
-  add(html, 'map-is-active');
-  bus.emit('map:draw');
-}
-function logTextHide() {
-  console.log('text:hide');
-  var html = document.querySelector('html');
-  remove(html, 'text-is-active');
-  bus.emit('map:remove');
-  window.setTimeout(resizeMap, 300);
-}
-
-function resizeMap() {
-  bus.emit('map:draw');
-}
-
-function logTextShow() {
-  console.log('text:show');
-  var html = document.querySelector('html');
-  add(html, 'text-is-active');
-}
-
-function searchOpen() {
-  console.log('search:open');
-}
-function searchClose() {
-  console.log('search:close');
-}
-function contentsOpen() {
-  console.log('contents:open');
-}
-function contentsClose() {
-  console.log('contents:close');
-}
-
-// Cool Helpers
-// ┌────────┐
-// │ Sticky │
-// └────────┘
-// sticks things to the window
-
-function sticky() {
-  bus.on('scrolling:at', scrollHandler);
-  bus.on('sticky:stick', stickItem);
-  bus.on('sticky:unstick', unstickItem);
-
-  var elements = findElements('.js-sticky');
-  var stickies = elements.map(function (el) {
-    var offset = el.offsetTop;
-    var dataTop = el.getAttribute('data-top') || 0;
-    el.style.top = dataTop + 'px';
-    var hasId = el.getAttribute('data-sticky-id');
-    if (!hasId) createShim(el);
-    return {
-      top: offset - parseInt(dataTop, 0),
-      element: el
-    };
-  });
-
-  function createShim(el) {
-    var guid = 'sticky-navigation';
-    el.setAttribute('data-sticky-id', guid);
-    var parent = el.parentNode;
-    var shim = el.cloneNode('deep');
-    add(shim, 'js-shim');
-    remove(shim, 'js-sticky');
-    shim.setAttribute('data-sticky-id', guid);
-    shim.style.visibility = 'hidden';
-    shim.style.display = 'none';
-    parent.insertBefore(shim, el);
-  }
-
-  function stickItem(item) {
-    var id = item.element.getAttribute('data-sticky-id');
-    var shim = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
-    if (id && shim) {
-      add(item.element, 'is-sticky');
-      shim.style.display = '';
-    }
-  }
-
-  function unstickItem(item) {
-    var id = item.element.getAttribute('data-sticky-id');
-    var shim = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
-    if (id && shim) {
-      remove(item.element, 'is-sticky');
-      shim.style.display = 'none';
-    }
-  }
-
-  function scrollHandler(pageYOffset) {
-    stickies.forEach(function (item) {
-      var referenceElement = item.element;
-      if (has(item.element, 'is-sticky')) {
-        var id = item.element.getAttribute('data-sticky-id');
-        referenceElement = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
-      }
-
-      if (referenceElement) {
-        var dataTop = referenceElement.getAttribute('data-top') || 0;
-        item.top = referenceElement.offsetTop - parseInt(dataTop, 0);
-      }
-
-      if (item.top < pageYOffset) {
-        bus.emit('sticky:stick', item);
-      } else {
-        bus.emit('sticky:unstick', item);
-      }
-    });
-  }
-}
-
-bus.on('map:draw', draw);
-bus.on('map:remove', remove$1);
-bus.on('map:redraw', redraw);
-
-checkJs();
-route();
-sticky();
-
-window.onload = function () {
+function togglePane$1(pane) {
   var body = document.querySelector('body');
-  remove(body, 'preload');
-  window.bus = bus;
-};
+  if (has(body, 'split-view')) {
+    remove(body, 'split-view');
+    add(body, pane + '-view');
+  } else if (has(body, pane + '-view')) {
+    add(body, 'split-view');
+    remove(body, pane + '-view');
+  } else {
+    remove(body, 'map-view');
+    remove(body, 'text-view');
+    add(body, 'split-view');
+  }
+
+  window.setTimeout(emitRedraw, 300);
+}
+
+function emitRedraw() {
+  bus.emit('map:redraw');
+}
+
+// View and Intent
+bus.on('map:redraw', redrawMap);
+function redrawMap() {
+  redraw();
+}
+
+draw();
 
 })));

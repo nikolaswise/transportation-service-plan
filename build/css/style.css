@@ -53,7 +53,7 @@ img {
 /* ui colors */
 /* Base Type Styles */
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
+  font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern","liga" 1,"calt" 0; }
@@ -127,125 +127,109 @@ a {
     color: #293EC8;
     text-decoration: underline; }
 
-.text-body {
-  font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif; }
-
-.js-is-active .hide-if-js-is-active {
+.show-if-text {
   display: none; }
 
-.js-is-active .show-if-js-is-active {
-  display: initial; }
-
-.map-is-active .hide-if-map-is-active {
+.show-if-map {
   display: none; }
 
-.map-is-active .show-if-map-is-active {
-  display: initial; }
-
-.text-is-active .hide-if-text-is-active {
+.show-if-split {
   display: none; }
 
-.text-is-active .show-if-text-is-active {
-  display: initial; }
-
-.map-is-active.text-is-active .hide-if-split-is-active {
+.text-view .hide-if-text {
   display: none; }
 
-.map-is-active.text-is-active .show-if-split-is-active {
+.text-view .show-if-text {
   display: initial; }
 
-figure {
-  position: absolute;
-  left: 100%;
-  right: calc(20rem * -1);
-  margin-top: -10em;
-  max-width: 36rem; }
+.map-view .hide-if-map {
+  display: none; }
 
-.main-wrapper {
-  position: relative;
-  height: 100vh;
-  width: 100%; }
+.map-view .show-if-map {
+  display: initial; }
 
-.map-block {
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: fixed;
-  background-color: #DDDDDD;
-  border-left: 1px solid #e4e6e7;
-  box-shadow: 3px 3px 3px #c4c7ca; }
+.split-view .hide-if-split {
+  display: none; }
 
-.article-wrapper {
+.split-view .show-if-split {
+  display: initial; }
+
+.text-container {
   margin: auto;
   width: 83.33333%;
-  max-width: 58rem;
   border-left: 1px dashed #9ea4a9;
   border-right: 1px dashed #9ea4a9; }
-
-.article-body {
-  position: relative;
-  padding: 1rem;
-  padding-top: calc(26px * 5);
-  max-width: 36rem;
-  margin: auto;
-  border-left: 1px dashed #9ea4a9;
-  border-right: 1px dashed #9ea4a9; }
-
-.article-wrapper {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  width: 83.33333%;
-  max-width: 58rem; }
 
 .text-block {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transform: translate3d(0, 0, 0);
+  position: relative;
+  padding: 1rem;
+  max-width: 36rem;
+  border-left: 1px dashed #9ea4a9;
+  border-right: 1px dashed #9ea4a9; }
+
+.text-pane,
+.map-pane {
+  background-color: #fafafa;
+  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.text-pane {
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0px 0px 10px #2e3133; }
+
+.map-pane {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0; }
+
+.split-view .text-pane {
   width: 50%; }
 
-.map-block {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transform: translate3d(0, 0, 0);
+.split-view .map-pane {
   width: 50%; }
 
-.map-navigation-view-control,
-#map {
-  transition: width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), left 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  left: 0px; }
-
-.map-is-active .text-block {
+.map-view .text-pane {
   transform: translate3d(-100%, 0, 0);
-  width: 50%; }
+  width: 100%; }
 
-.map-is-active .map-block {
-  width: 100%;
-  transform: translate3d(0, 0, 0); }
+.map-view .map-pane {
+  width: 100%; }
 
-.map-is-active .map-navigation-view-control,
-.map-is-active #map {
+.map-view .map-navigation-view-control {
+  margin-left: 53px; }
+
+.map-view #map {
   left: 53px; }
 
-.text-is-active .text-block {
-  width: 100%;
-  transform: translate3d(0, 0, 0); }
+.text-view .text-pane {
+  width: 100%; }
 
-.text-is-active .map-block {
+.text-view .map-pane {
   transform: translate3d(100%, 0, 0);
-  width: 50%; }
+  width: 100%; }
 
-.text-is-active .map-navigation-view-control,
-.text-is-active #map {
-  left: 0px; }
+#map {
+  top: 53px;
+  right: 53px;
+  bottom: 53px;
+  left: 0;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 0; }
 
-.map-is-active.text-is-active .text-block {
-  transform: translate3d(0, 0, 0);
-  width: 50%; }
+.navigation-layer-control {
+  float: right;
+  margin-right: 53px; }
 
-.map-is-active.text-is-active .map-block {
-  transform: translate3d(0, 0, 0);
-  width: 50%; }
-
-.map-is-active.text-is-active .map-navigation-view-control,
-.map-is-active.text-is-active #map {
-  left: 0px; }
+.map-block-controls {
+  position: absolute;
+  z-index: 5;
+  background-color: #fafafa;
+  left: 0;
+  right: 0;
+  top: 0; }
 
 fieldset {
   margin: 0;
@@ -303,7 +287,7 @@ table {
     table tr:last-child {
       border-bottom: none; }
 
-.btn,
+1.btn,
 button {
   position: relative;
   display: inline-block;
@@ -319,7 +303,7 @@ button {
   font-size: 0.9166rem;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
   letter-spacing: 0.05em; }
-  .btn:hover,
+  1.btn:hover,
   button:hover {
     transition: all 300ms linear;
     text-decoration: none;
@@ -334,31 +318,12 @@ button {
     background-color: white;
     color: #293EC8; }
 
-.map-is-active .button-white.show-if-map-is-active {
-  color: #293EC8;
-  border: 4px solid white;
-  background-color: white; }
-  .map-is-active .button-white.show-if-map-is-active:hover {
-    text-decoration: none;
-    background-color: #293EC8;
-    color: white; }
-
-.text-is-active .button-white.show-if-text-is-active {
-  color: #293EC8;
-  border: 4px solid white;
-  background-color: white; }
-  .text-is-active .button-white.show-if-text-is-active:hover {
-    text-decoration: none;
-    background-color: #293EC8;
-    color: white; }
-
 .title {
   position: relative;
   z-index: 10;
   background-color: #293EC8;
   background: url("/img/freemont-bridge2.gif") center top/cover no-repeat fixed padding-box content-box #293EC8;
-  /* color */
-  box-shadow: 0px 0px 10px #2e3133; }
+  /* color */ }
 
 .title-view-control {
   float: right;
@@ -521,26 +486,27 @@ button {
   background-color: #CEDBAF;
   padding-bottom: 6.4rem; }
 
-.map-block {
-  background-color: #fafafa; }
-
 #map {
   top: 53px;
   right: 53px;
   bottom: 53px;
+  left: 0;
   position: absolute;
   margin: 0;
   padding: 0;
   z-index: 0; }
 
-.map-control-container {
-  display: none;
-  opacity: 0.95;
-  background-color: #fafafa;
+.navigation-layer-control {
+  float: right;
+  margin-right: 53px; }
+
+.map-block-controls {
   position: absolute;
-  z-index: 10;
-  margin: 26px;
-  padding: 26px; }
+  z-index: 5;
+  background-color: #fafafa;
+  left: 0;
+  right: 0;
+  top: 0; }
 
 .scale-unit {
   text-align: center;
@@ -593,18 +559,25 @@ button {
   .scale-labels .label:last-of-type {
     margin-right: -0.66em; }
 
-.text-section {
-  border-top: 5px solid #2e3133;
-  margin-bottom: 9.6rem; }
+.layer-panel {
+  position: absolute;
+  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: translate3d(0, -100%, 0);
+  left: 53px;
+  right: 53px;
+  top: 53px;
+  background-color: #fafafa;
+  padding: 1rem;
+  border-bottom: 1px solid #e4e6e7; }
 
-svg {
-  display: inline-block;
-  width: .875em;
-  height: .875em;
-  vertical-align: -.125em;
-  padding-right: .125em;
-  fill: currentColor;
-  pointer-events: none; }
+.layer-panel-section {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 33%;
+  float: left; }
 
-.preload * {
-  transition: none !important; }
+.layer-panel.is-active {
+  transform: translate3d(0, 0, 0); }
+
+.split-view .layer-panel {
+  left: 0; }

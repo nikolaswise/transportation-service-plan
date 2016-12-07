@@ -1,20 +1,25 @@
-@import "base/reset.scss";
+// Reset
+@import "base/reset";
 
-@import "vars/colors.scss";
-@import "vars/fonts.scss";
-@import "vars/type.scss";
-@import "vars/layout.scss";
+// Variables
+@import "vars/colors";
+@import "vars/layout";
+@import "vars/fonts";
+@import "vars/type";
 
-@import "type/typography-base.scss";
-@import "type/typography-text.scss";
+// Typography
+@import "type/typography";
 
+// Components
 @import "layout/show-hide.scss";
-@import "layout/structure.scss";
-@import "layout/transitions.scss";
+@import "components/text-block";
+@import "components/panes";
+@import "components/map";
 
 @import "components/forms.scss";
 @import "components/tables.scss";
 @import "components/buttons.scss";
+@import "components/svg.scss";
 @import "components/title.scss";
 @import "components/table-of-contents.scss";
 @import "components/navigation.scss";
@@ -24,23 +29,4 @@
 @import "components/colophon.scss";
 @import "components/map.scss";
 @import "components/scale.scss";
-
-
-.text-section {
-  border-top: 5px solid $black;
-  margin-bottom: $root-baseline * 6;
-}
-
-svg {
-  display: inline-block; // make sure icons display inline with other elements but have a defined width/height
-  width: .875em; // slightly less then the same font size
-  height: .875em; // slightly less then the same font size
-  vertical-align: -.125em; // offset the image slightly from the top to center it
-  padding-right: .125em; // pad the image slightly to the right
-  fill: currentColor; // inherit current color
-  pointer-events: none; // no pointer events
-}
-
-.preload * {
-  transition: none !important;
-}
+@import "components/layer-control.scss";

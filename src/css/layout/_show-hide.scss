@@ -1,35 +1,37 @@
-.js-is-active  {
-  .hide-if-js-is-active {
+.show-if-text {
+  display: none;
+}
+.show-if-map {
+  display: none;
+}
+.show-if-split {
+  display: none;
+}
+
+.text-view {
+  .hide-if-text {
     display: none;
   }
-  .show-if-js-is-active {
+  .show-if-text {
     display: initial;
   }
 }
 
-.map-is-active {
-  .hide-if-map-is-active {
+.map-view {
+  .hide-if-map {
     display: none;
   }
-  .show-if-map-is-active {
+  .show-if-map {
     display: initial;
   }
 }
 
-.text-is-active {
-  .hide-if-text-is-active {
+.split-view {
+  .hide-if-split {
     display: none;
   }
-  .show-if-text-is-active {
+  .show-if-split {
     display: initial;
   }
 }
 
-.map-is-active.text-is-active {
-  .hide-if-split-is-active {
-    display: none;
-  }
-  .show-if-split-is-active {
-    display: initial;
-  }
-}

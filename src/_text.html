@@ -1,0 +1,49 @@
+{% include "_title.html" %}
+
+
+  <div class="table-of-contents">
+    <div class="text-container">
+      <div class="text-block">
+        {% include "_table-of-contents.html" %}
+      </div>
+    </div>
+  </div>
+
+  {% include "_navigation.html" %}
+  {% include "_half-title.html" %}
+
+  <div class="text-container">
+    <article class="text-block">
+      <section class="text-section">
+        {% include "_plan.html" %}
+      </section>
+
+      <section class="text-section">
+        <h2 id="appendix-a">Appendix A</h2>
+        <h3>Compiled goals, policies, and objectives</h3>
+      </section>
+
+      <section class="text-section">
+        <h2 id="appendix-b">Appendix B</h2>
+        <h3>Compiled Projects, Plans, and Classifications</h3>
+          <div class="table-wrapper">
+{% markdown %}
+{% include "_features.md" %}
+{% endmarkdown %}
+          </div>
+      </section>
+    </div>
+
+    <div class="colophon">
+      <div class="text-block">
+        <p>
+          Published by Portland Bureau of Transportation 2017
+        </p>
+        <p>Department Press is a publishing house and design studio specializing in printed matter, digital experiences, and special projects. Department works with artists, public bureaus, and other partners who are open to collaborative process and value art and design.</p>
+{% markdown %}
+{% include "_table-of-contents.md" %}
+{% endmarkdown %}
+      </div>
+    </div>
+  </article>
+</div>

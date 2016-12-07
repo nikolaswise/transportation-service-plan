@@ -7,77 +7,37 @@ import * as event from './helpers/event.js'
 // │ Emit View Toggle Intents │
 // └──────────────────────────┘
 // emit toggle button clicks
-dom.findElements('.js-hide-map').map(function (btn) {
-  event.add(btn, 'click', hideMap)
-})
-function hideMap (e) {
-  e.preventDefault()
-  bus.emit('map:hide')
-}
 
-dom.findElements('.js-show-map').map(function (btn) {
-  event.add(btn, 'click', showMap)
+dom.findElements('.js-layer-toggle').map(function (btn) {
+  event.add(btn, 'click', toggleLayer)
 })
-function showMap (e) {
-  e.preventDefault()
-  bus.emit('map:show')
-}
-
-dom.findElements('.js-hide-text').map(function (btn) {
-  event.add(btn, 'click', hideText)
-})
-function hideText (e) {
-  e.preventDefault()
-  bus.emit('text:hide')
-}
-
-dom.findElements('.js-show-text').map(function (btn) {
-  event.add(btn, 'click', showText)
-})
-function showText (e) {
-  e.preventDefault()
-  bus.emit('text:show')
+function toggleLayer (e) {
+  let layer = e.target.getAttribute('data-layer')
+  bus.emit('layer:toggle', layer)
 }
 
 dom.findElements('.js-layer-control').map(function (btn) {
   event.add(btn, 'click', toggleControl)
 })
 function toggleControl (e) {
-  let layer = e.target.getAttribute('data-layer')
-  bus.emit('layer:toggle', layer)
+  e.preventDefault()
+  bus.emit('layer:control')
+}
+
+dom.findElements('.js-pane-toggle').map(function (btn) {
+  event.add(btn, 'click', togglePane)
+})
+function togglePane (e) {
+  e.preventDefault()
+  let pane = e.target.getAttribute('data-pane')
+  bus.emit('pane:toggle', pane)
 }
 
 // ┌─────────────────────────┐
 // │ Emit Nav Control Events │
 // └─────────────────────────┘
 // Search and Table of contents.
-dom.findElements('.js-open-search').map(function (btn) {
-  event.add(btn, 'click', openSearch)
-})
-function openSearch () {
-  bus.emit('search:open')
-}
 
-dom.findElements('.js-close-search').map(function (btn) {
-  event.add(btn, 'click', closeSearch)
-})
-function closeSearch () {
-  bus.emit('search:close')
-}
-
-dom.findElements('.js-open-contents').map(function (btn) {
-  event.add(btn, 'click', opencontents)
-})
-function opencontents () {
-  bus.emit('contents:open')
-}
-
-dom.findElements('.js-close-contents').map(function (btn) {
-  event.add(btn, 'click', closecontents)
-})
-function closecontents () {
-  bus.emit('contents:close')
-}
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
 // └──────────────────────┘

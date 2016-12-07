@@ -1,9 +1,9 @@
 .search-input {
   width: 75%;
   font-size: $pt24;
-  margin-top: $root-baseline/4;
-  margin-bottom: $root-baseline;
-  height: 2.5*$root-baseline;
+  margin-top: $baseline/4;
+  margin-bottom: $baseline;
+  height: 2.5*$baseline;
   border: 1px solid rgba($white, 0.2);
   background-color: rgba($white, 0.1);
   box-shadow: none;
@@ -16,7 +16,7 @@
 }
 
 .search-button {
-  margin-top: $root-baseline*1.25;
+  margin-top: $baseline*1.25;
   padding: 1em;
   float: right;
   color: $white;

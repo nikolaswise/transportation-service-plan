@@ -1,0 +1,14 @@
+.text-container {
+  margin: auto;
+  width: $wrapper-width;
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
+}
+
+.text-block {
+  position: relative;
+  padding: $gutter;
+  max-width: $text-measure;
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
+}

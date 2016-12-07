@@ -1,0 +1,15 @@
+// Reset
+
+// Variables
+
+// Typography
+
+// Components
+.text-block {
+  margin: auto;
+  width: $wrapper-min-width;
+  max-width: $wrapper-max-width;
+
+  border-left: 1px dashed $dark-gray;
+  border-right: 1px dashed $dark-gray;
+}

@@ -1,25 +1,24 @@
-.map-block {
-  background-color: $off-white;
-}
-
 #map {
   top: $frame;
   right: $frame;
   bottom: $frame;
+  left: 0;
   position: absolute;
   margin: 0;
   padding: 0;
   z-index: 0;
 }
 
-.map-control-container {
-  display: none;
-  opacity: 0.95;
-  background-color: $off-white;
-  // width: 20em;
+.navigation-layer-control {
+  float: right;
+  margin-right: $frame;
+}
+
+.map-block-controls {
   position: absolute;
-  z-index: 10;
-  margin: $root-font-size;
-  padding: $root-font-size;
-  // top: $root-font-size * 4;
+  z-index: 5;
+  background-color: $off-white;
+  left: 0;
+  right: 0;
+  top: 0;
 }

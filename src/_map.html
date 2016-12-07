@@ -1,28 +1,43 @@
 <div class="map-block">
+  <div class="map-block-controls">
+    <div class="navigation-item map-navigation-view-control">
+      <a href="#" class="navigation-link js-pane-toggle" data-pane='map'>
+        <span class="show-if-split" data-pane='map'>Hide Text</span>
+        <span class="show-if-map" data-pane='map'>Show Text</span>
+      </a>
+    </div>
 
-  <div class="navigation-item map-navigation-view-control">
-    <a href="#" class="navigation-link js-hide-text show-if-text-is-active show-if-split-is-active hide-if-map-is-active">Hide Text</a>
-    <a href="#" class="navigation-link js-show-text hide-if-text-is-active hide-if-split-is-active">Show Text</a>
-  </div>
-
-  <div class="map-control-container">
-    <form>
-      <fieldset class="fieldset-checkbox">
-        <legend>Map Contents</legend>
-        <label>
-          <input type="checkbox" class="js-layer-control" data-layer="one"> Programs
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-control" data-layer="two"> Projects
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-control" data-layer="three"> Street Classifications
-        </label>
-      </fieldset>
-    </form>
+    <div class="navigation-item navigation-layer-control">
+      <a href="#" class="navigation-link js-layer-control">
+        Edit Layers
+      </a>
+    </div>
   </div>
 
   <div id="map"></div>
+
+  <div class="js-layer-control-panel layer-panel">
+    <form>
+      <fieldset class="layer-panel-section fieldset-checkbox">
+        <legend>Viewing Layers:</legend>
+        <label><input type="checkbox">Layer One</label>
+        <label><input type="checkbox">Layer Two</label>
+        <label><input type="checkbox">Layer Three</label>
+      </fieldset>
+      <fieldset class="layer-panel-section fieldset-checkbox">
+        <legend>Viewing Layers:</legend>
+        <label><input type="checkbox">Layer One</label>
+        <label><input type="checkbox">Layer Two</label>
+        <label><input type="checkbox">Layer Three</label>
+      </fieldset>
+      <fieldset class="layer-panel-section fieldset-checkbox">
+        <legend>Viewing Layers:</legend>
+        <label><input type="checkbox">Layer One</label>
+        <label><input type="checkbox">Layer Two</label>
+        <label><input type="checkbox">Layer Three</label>
+      </fieldset>
+    </form>
+  </div>
 
   <div class="scalebar-miles"></div>
 </div>

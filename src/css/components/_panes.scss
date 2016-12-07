@@ -1,0 +1,51 @@
+.text-pane,
+.map-pane {
+  background-color: $off-white;
+  transition: $transition;
+}
+
+.text-pane {
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0px 0px 10px $black;
+}
+
+.map-pane {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.split-view {
+  .text-pane {
+    width: 50%;
+  }
+  .map-pane {
+    width: 50%;
+  }
+}
+.map-view {
+  .text-pane {
+    transform: translate3d(-100%,0,0);
+    width: 100%;
+  }
+  .map-pane {
+    width: 100%;
+  }
+  .map-navigation-view-control {
+    margin-left: $frame;
+  }
+  #map {
+    left: $frame;
+  }
+}
+.text-view {
+  .text-pane {
+    width: 100%;
+  }
+  .map-pane {
+    transform: translate3d(100%,0,0);
+    width: 100%;
+  }
+}

@@ -1,0 +1,42 @@
+Searching 27 files for "root-font-size"
+
+/Users/nwiselocal/Projects/transportation-service-plan/src/css/components/_navigation.scss:
+   12    float: left;
+   13    box-sizing: border-box;
+   14:   padding-top: calc(#{$root-font-size} / 2);
+   15:   padding-bottom: calc(#{$root-font-size} / 2);
+   16  }
+   17
+   18  .navigation-link {
+   19:   padding: calc(#{$root-font-size} / 2) $root-font-size;
+   20    text-transform: uppercase;
+   21    letter-spacing: 0.04em;
+   ..
+   36
+   37  .navigation-item-left {
+   38:   margin-left: -$root-font-size;
+   39    border-right: 1px solid $lighter-gray;
+   40  }
+
+/Users/nwiselocal/Projects/transportation-service-plan/src/css/components/_title.scss:
+   16  .title-view-control {
+   17    float: right;
+   18:   margin: $root-font-size;
+   19  }
+   20
+
+/Users/nwiselocal/Projects/transportation-service-plan/src/css/layout/_structure.scss:
+   35  //   position: relative;
+   36  //   padding: $gutter;
+   37: //   padding-top: calc(#{$root-font-size} * 5);
+   38  //   max-width: $text-measure;
+   39  //   margin: auto;
+
+/Users/nwiselocal/Projects/transportation-service-plan/src/css/type/_typography-base.scss:
+    9  html {
+   10    line-height: $baseline;
+   11:   font-size: $root-font-size;
+   12  }
+   13
+
+8 matches across 4 files
