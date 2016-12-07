@@ -11,10 +11,17 @@ import bus from './helpers/bus.js'
 import intent from './intent.js'
 import view from './view.js'
 
+route()
 
 bus.on('map:redraw', redrawMap)
 function redrawMap () {
   map.redraw()
 }
 
+bus.on('layer:toggle', handleLayerToggle)
+function handleLayerToggle (layer) {
+  map.toggleLayer(layer)
+}
+
 map.draw()
+

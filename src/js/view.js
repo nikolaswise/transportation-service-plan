@@ -3,7 +3,6 @@ import * as classy from './helpers/classy.js'
 import * as dom from './helpers/dom.js'
 
 bus.on('pane:toggle', togglePane)
-bus.on('layer:toggle', handleLayerToggle)
 bus.on('layer:control', handleControlToggle)
 
 function handleControlToggle () {
@@ -11,9 +10,6 @@ function handleControlToggle () {
   classy.toggle(controlPanel, 'is-active')
 }
 
-function handleLayerToggle (layer) {
-  console.log(`toggle layer ${layer} plz`);
-}
 
 function togglePane (pane) {
   let body = document.querySelector('body')

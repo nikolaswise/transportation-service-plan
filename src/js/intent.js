@@ -13,7 +13,10 @@ dom.findElements('.js-layer-toggle').map(function (btn) {
 })
 function toggleLayer (e) {
   let layer = e.target.getAttribute('data-layer')
-  bus.emit('layer:toggle', layer)
+  bus.emit('layer:toggle', {
+    layerId: layer,
+    checked: e.target.checked
+  })
 }
 
 dom.findElements('.js-layer-control').map(function (btn) {

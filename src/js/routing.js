@@ -15,18 +15,10 @@ export default function route () {
 
   if (home) {
     console.log('default')
-    bus.emit('map:show')
-    bus.emit('text:show')
+    bus.emit('pane:toggle')
   }
   if (view) {
     console.log(view)
-    if (view.mode === 'map') {
-      bus.emit('map:show')
-      bus.emit('text:hide')
-    }
-    if (view.mode === 'text') {
-      bus.emit('text:show')
-      bus.emit('map:hide')
-    }
+    bus.emit('pane:toggle', view.mode)
   }
 }

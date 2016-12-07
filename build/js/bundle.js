@@ -253,6 +253,26 @@ var routeMatcher$1 = Object.freeze({
 
 console.log(routeMatcher$1);
 var match = routeMatcher;
+/**
+* Parse URL and navigate to correct pane/state
+*/
+function route() {
+  var url = document.location.pathname + '/';
+  url = url.replace('//', '/');
+  var home = match('/').parse(url);
+  var view = match('/:mode/').parse(url);
+
+  console.log(url);
+
+  if (home) {
+    console.log('default');
+    bus.emit('pane:toggle');
+  }
+  if (view) {
+    console.log(view);
+    bus.emit('pane:toggle', view.mode);
+  }
+}
 
 var asyncGenerator = function () {
   function AwaitValue(value) {
@@ -560,9 +580,64 @@ var Scalebar = function (_L$control$scale) {
   return Scalebar;
 }(L.control.scale);
 
+var streets$1 = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
+});
+
+var urbanThroughway = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'UT'"
+});
+
+var urbanHighway = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'UH'"
+});
+var industrialRoad = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'IR'"
+});
+var civicMainSteet = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'CIMS'"
+});
+var neighborhoodMainStreet = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign='NMS'"
+});
+var civicCorridor = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'CIC'"
+});
+var neighborhoodCorridor = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'NC'"
+});
+var regionalCorridor = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'RC'"
+});
+var communityCorridor = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+  where: "ProposedDesign = 'CC'"
+});
+
+var layers = Object.freeze({
+	streets: streets$1,
+	urbanThroughway: urbanThroughway,
+	urbanHighway: urbanHighway,
+	industrialRoad: industrialRoad,
+	civicMainSteet: civicMainSteet,
+	neighborhoodMainStreet: neighborhoodMainStreet,
+	civicCorridor: civicCorridor,
+	neighborhoodCorridor: neighborhoodCorridor,
+	regionalCorridor: regionalCorridor,
+	communityCorridor: communityCorridor
+});
+
 var map = void 0;
 
-var streets = L.esri.featureLayer({
+var streets$$1 = L.esri.featureLayer({
   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
 });
 
@@ -584,18 +659,6 @@ function draw() {
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
 
-  // var polygons = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6",
-  // }).addTo(map);
-
-  // var points = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1",
-  // }).addTo(map);
-
-  // var lines = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5",
-  // }).addTo(map);
-
   var searchControl = L.esri.Geocoding.geosearch({
     position: 'topright',
     url: 'https://www.portlandmaps.com/api/agslocator/'
@@ -609,6 +672,14 @@ function draw() {
       results.addLayer(L.marker(data.results[i].latlng));
     }
   });
+}
+
+function toggleLayer(layer) {
+  if (layer.checked) {
+    layers[layer.layerId].addTo(map);
+  } else {
+    layers[layer.layerId].removeFrom(map);
+  }
 }
 
 function remove$1() {
@@ -686,11 +757,14 @@ function throttle(fn, time, context) {
 // emit toggle button clicks
 
 findElements('.js-layer-toggle').map(function (btn) {
-  add$1(btn, 'click', toggleLayer);
+  add$1(btn, 'click', toggleLayer$1);
 });
-function toggleLayer(e) {
+function toggleLayer$1(e) {
   var layer = e.target.getAttribute('data-layer');
-  bus.emit('layer:toggle', layer);
+  bus.emit('layer:toggle', {
+    layerId: layer,
+    checked: e.target.checked
+  });
 }
 
 findElements('.js-layer-control').map(function (btn) {
@@ -748,16 +822,11 @@ function isScrolling() {
 }
 
 bus.on('pane:toggle', togglePane$1);
-bus.on('layer:toggle', handleLayerToggle);
 bus.on('layer:control', handleControlToggle);
 
 function handleControlToggle() {
   var controlPanel = document.querySelector('.js-layer-control-panel');
   toggle(controlPanel, 'is-active');
-}
-
-function handleLayerToggle(layer) {
-  console.log('toggle layer ' + layer + ' plz');
 }
 
 function togglePane$1(pane) {
@@ -782,9 +851,16 @@ function emitRedraw() {
 }
 
 // View and Intent
+route();
+
 bus.on('map:redraw', redrawMap);
 function redrawMap() {
   redraw();
+}
+
+bus.on('layer:toggle', handleLayerToggle);
+function handleLayerToggle(layer) {
+  toggleLayer(layer);
 }
 
 draw();

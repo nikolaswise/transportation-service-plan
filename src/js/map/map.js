@@ -1,4 +1,5 @@
 import Scalebar from './scale'
+import * as layers from './layers'
 let map
 
 let streets = L.esri.featureLayer({
@@ -23,19 +24,6 @@ export function draw () {
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
 
-
-  // var polygons = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6",
-  // }).addTo(map);
-
-  // var points = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1",
-  // }).addTo(map);
-
-  // var lines = L.esri.featureLayer({
-  //   url: "https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5",
-  // }).addTo(map);
-
   var searchControl = L.esri.Geocoding.geosearch({
     position: 'topright',
     url: 'https://www.portlandmaps.com/api/agslocator/'
@@ -49,6 +37,15 @@ export function draw () {
       results.addLayer(L.marker(data.results[i].latlng));
     }
   });
+}
+
+export function toggleLayer (layer) {
+  if (layer.checked) {
+    layers[layer.layerId].addTo(map)
+  } else {
+    layers[layer.layerId].removeFrom(map)
+  }
+
 }
 
 export function remove () {
