@@ -11,7 +11,8 @@
     "js": "rollup -c",
     "html": "static-site -s src/ -b build/",
     "watch": "rerun-script",
-    "test": "test"
+    "test": "test",
+    "preview": "surge build/ -d pbot-tsp.surge.sh"
   },
   "watches": {
     "html": [

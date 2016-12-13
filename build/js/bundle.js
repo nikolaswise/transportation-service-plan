@@ -257,20 +257,21 @@ var match = routeMatcher;
 * Parse URL and navigate to correct pane/state
 */
 function route() {
+  var width = window.innerWidth;
   var url = document.location.pathname + '/';
   url = url.replace('//', '/');
   var home = match('/').parse(url);
   var view = match('/:mode/').parse(url);
 
-  console.log(url);
-
-  if (home) {
+  if (home && width > 800) {
     console.log('default');
-    bus.emit('pane:toggle');
-  }
-  if (view) {
-    console.log(view);
-    bus.emit('pane:toggle', view.mode);
+    bus.emit('pane:set', 'split');
+  } else if (view.mode === 'map') {
+    bus.emit('pane:set', 'map');
+  } else if (view.mode === 'text') {
+    bus.emit('pane:set', 'text');
+  } else {
+    bus.emit('pane:set', 'split');
   }
 }
 
@@ -821,8 +822,31 @@ function isScrolling() {
   bus.emit('scrolling:at', window.pageYOffset);
 }
 
+window.onresize = didResize;
+function didResize() {
+  console.log(window.innerWidth);
+  bus.emit('resize:width', window.innerWidth);
+}
+
 bus.on('pane:toggle', togglePane$1);
+bus.on('pane:set', setPane);
 bus.on('layer:control', handleControlToggle);
+bus.on('resize:width', checkWidth);
+
+var body = document.querySelector('body');
+
+function checkWidth(width) {
+  if (width < 800) {
+    if (has(body, 'split-view')) {
+      bus.emit('pane:set', 'text');
+    }
+  } else if (width > 800) {
+    if (has(body, 'text-view')) {
+      console.log('back??');
+      bus.emit('pane:set', 'split');
+    }
+  }
+}
 
 function handleControlToggle() {
   var controlPanel = document.querySelector('.js-layer-control-panel');
@@ -830,7 +854,6 @@ function handleControlToggle() {
 }
 
 function togglePane$1(pane) {
-  var body = document.querySelector('body');
   if (has(body, 'split-view')) {
     remove(body, 'split-view');
     add(body, pane + '-view');
@@ -842,8 +865,21 @@ function togglePane$1(pane) {
     remove(body, 'text-view');
     add(body, 'split-view');
   }
-
   window.setTimeout(emitRedraw, 300);
+}
+
+function setPane(pane) {
+  if (has(body, 'map-view')) {
+    remove(body, 'map-view');
+  }
+  if (has(body, 'text-view')) {
+    remove(body, 'text-view');
+  }
+  if (has(body, 'split-view')) {
+    remove(body, 'split-view');
+  }
+  console.log('set to ' + pane);
+  add(body, pane + '-view');
 }
 
 function emitRedraw() {

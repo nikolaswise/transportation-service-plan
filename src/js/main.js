@@ -23,5 +23,6 @@ function handleLayerToggle (layer) {
   map.toggleLayer(layer)
 }
 
+
 map.draw()
 

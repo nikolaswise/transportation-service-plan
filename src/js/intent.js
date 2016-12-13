@@ -72,3 +72,10 @@ event.add(window, 'scroll', event.throttle(isScrolling, 100));
 function isScrolling () {
   bus.emit('scrolling:at', window.pageYOffset);
 }
+
+window.onresize = didResize;
+function didResize () {
+  console.log(window.innerWidth)
+  bus.emit('resize:width', window.innerWidth);
+}
+
