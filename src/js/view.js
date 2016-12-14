@@ -7,6 +7,26 @@ bus.on('pane:set', setPane)
 bus.on('layer:control', handleControlToggle)
 bus.on('resize:width', checkWidth)
 
+bus.on('resize:textPane', log)
+
+let html = document.querySelector('html')
+
+function log (width) {
+  console.log(`text pane width is ${width}`)
+  // | size   | min width | max width |
+  // | ------ | --------- | --------- |
+  // | large  | 786       | n/a       |
+  // | medium | 600       | 785       |
+  // | small  | n/a       | 599       |
+  if (width > 785) {
+    bus.emit('type:large')
+  } else if (width > 599) {
+    bus.emit('type:medium')
+  } else if (width < 600) {
+    bus.emit('type:small')
+  }
+}
+
 let body = document.querySelector('body')
 
 function checkWidth (width) {
@@ -16,7 +36,6 @@ function checkWidth (width) {
     }
   } else if (width > 800) {
     if (classy.has(body, 'text-view')) {
-      console.log('back??')
       bus.emit('pane:set', 'split')
     }
   }
@@ -52,7 +71,6 @@ function setPane (pane) {
   if (classy.has(body, `split-view`) ) {
     classy.remove(body, `split-view`)
   }
-  console.log(`set to ${pane}`)
   classy.add(body, `${pane}-view`)
 }
 

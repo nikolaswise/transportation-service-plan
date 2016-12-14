@@ -74,8 +74,9 @@ function isScrolling () {
 }
 
 window.onresize = didResize;
+let textPane = document.querySelector('.js-text-area')
 function didResize () {
-  console.log(window.innerWidth)
   bus.emit('resize:width', window.innerWidth);
+  bus.emit('resize:textPane', textPane.offsetWidth);
 }
 

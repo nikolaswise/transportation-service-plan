@@ -6,20 +6,20 @@ html {
   font-feature-settings:"kern","liga" 1,"calt" 0;
 }
 
-html {
+html,
+html.type-large {
   line-height: $baseline;
   font-size: $font-size;
 }
 
-@media (max-width: 1200px) {
-  html {
-    font-size: $medium-font-size;
-  }
+html.type-medium {
+  line-height: $medium-baseline;
+  font-size: $medium-font-size;
 }
-@media (max-width: 800px) {
-  html {
-    font-size: $small-font-size;
-  }
+
+html.type-small {
+  line-height: $small-baseline;
+  font-size: $small-font-size;
 }
 
 /* Type Colors */

@@ -74,15 +74,12 @@ function getScale() {
 }
 
 function addTo(element) {
-  console.log(`add this scale bar to the element #${element}`)
 }
 
 function custom(element, template) {
-  console.log(`${element}`)
 
   let render = () => {
     let scale = this.getScale()
-    console.log(scale)
   }
 
   this.map.whenReady(function(){
@@ -100,8 +97,6 @@ class Scalebar extends L.control.scale {
     this.fn = fn ? fn : false
     this.getScale = getScale
     this.custom = custom
-    console.log(this.fn)
-    console.log('this is', this)
   }
 }
 

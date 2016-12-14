@@ -23,6 +23,38 @@ function handleLayerToggle (layer) {
   map.toggleLayer(layer)
 }
 
+let html = document.querySelector('html')
+
+bus.on('type:large', logLarge)
+function logLarge () {
+  console.log(`make type large`)
+  if (!classy.has(html, 'type-large')) {
+    classy.remove(html, 'type-medium')
+    classy.remove(html, 'type-small')
+    classy.add(html, 'type-large')
+  }
+}
+bus.on('type:medium', logMedium)
+function logMedium () {
+  console.log(`make type medium`)
+  if (!classy.has(html, 'type-medium')) {
+    classy.remove(html, 'type-large')
+    classy.remove(html, 'type-small')
+    classy.add(html, 'type-medium')
+  }
+}
+bus.on('type:small', logSmall)
+function logSmall () {
+  console.log(`make type small`)
+  if (!classy.has(html, 'type-small')) {
+    classy.remove(html, 'type-medium')
+    classy.remove(html, 'type-large')
+    classy.add(html, 'type-small')
+  }
+}
+
+let textPane = document.querySelector('.js-text-area')
+bus.emit('resize:textPane', textPane.offsetWidth);
 
 map.draw()
 

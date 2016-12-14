@@ -247,11 +247,6 @@ function routeMatcher(route, rules) {
   return self;
 }
 
-var routeMatcher$1 = Object.freeze({
-	routeMatcher: routeMatcher
-});
-
-console.log(routeMatcher$1);
 var match = routeMatcher;
 /**
 * Parse URL and navigate to correct pane/state
@@ -264,7 +259,6 @@ function route() {
   var view = match('/:mode/').parse(url);
 
   if (home && width > 800) {
-    console.log('default');
     bus.emit('pane:set', 'split');
   } else if (view.mode === 'map') {
     bus.emit('pane:set', 'map');
@@ -546,11 +540,8 @@ function getScale() {
 function custom(element, template) {
   var _this = this;
 
-  console.log('' + element);
-
   var render = function render() {
     var scale = _this.getScale();
-    console.log(scale);
   };
 
   this.map.whenReady(function () {
@@ -573,8 +564,6 @@ var Scalebar = function (_L$control$scale) {
     _this2.fn = fn ? fn : false;
     _this2.getScale = getScale;
     _this2.custom = custom;
-    console.log(_this2.fn);
-    console.log('this is', _this2);
     return _this2;
   }
 
@@ -643,7 +632,6 @@ var streets$$1 = L.esri.featureLayer({
 });
 
 function draw() {
-  console.log('draw map');
   map = L.map('map', {
     center: [45.528, -122.680],
     zoom: 13,
@@ -684,7 +672,6 @@ function toggleLayer(layer) {
 }
 
 function remove$1() {
-  console.log('remove map', map);
   if (map) {
     map.remove();
   }
@@ -823,15 +810,36 @@ function isScrolling() {
 }
 
 window.onresize = didResize;
+var textPane$1 = document.querySelector('.js-text-area');
 function didResize() {
-  console.log(window.innerWidth);
   bus.emit('resize:width', window.innerWidth);
+  bus.emit('resize:textPane', textPane$1.offsetWidth);
 }
 
 bus.on('pane:toggle', togglePane$1);
 bus.on('pane:set', setPane);
 bus.on('layer:control', handleControlToggle);
 bus.on('resize:width', checkWidth);
+
+bus.on('resize:textPane', log);
+
+var html$1 = document.querySelector('html');
+
+function log(width) {
+  console.log('text pane width is ' + width);
+  // | size   | min width | max width |
+  // | ------ | --------- | --------- |
+  // | large  | 786       | n/a       |
+  // | medium | 600       | 785       |
+  // | small  | n/a       | 599       |
+  if (width > 785) {
+    bus.emit('type:large');
+  } else if (width > 599) {
+    bus.emit('type:medium');
+  } else if (width < 600) {
+    bus.emit('type:small');
+  }
+}
 
 var body = document.querySelector('body');
 
@@ -842,7 +850,6 @@ function checkWidth(width) {
     }
   } else if (width > 800) {
     if (has(body, 'text-view')) {
-      console.log('back??');
       bus.emit('pane:set', 'split');
     }
   }
@@ -878,7 +885,6 @@ function setPane(pane) {
   if (has(body, 'split-view')) {
     remove(body, 'split-view');
   }
-  console.log('set to ' + pane);
   add(body, pane + '-view');
 }
 
@@ -898,6 +904,39 @@ bus.on('layer:toggle', handleLayerToggle);
 function handleLayerToggle(layer) {
   toggleLayer(layer);
 }
+
+var html = document.querySelector('html');
+
+bus.on('type:large', logLarge);
+function logLarge() {
+  console.log('make type large');
+  if (!has(html, 'type-large')) {
+    remove(html, 'type-medium');
+    remove(html, 'type-small');
+    add(html, 'type-large');
+  }
+}
+bus.on('type:medium', logMedium);
+function logMedium() {
+  console.log('make type medium');
+  if (!has(html, 'type-medium')) {
+    remove(html, 'type-large');
+    remove(html, 'type-small');
+    add(html, 'type-medium');
+  }
+}
+bus.on('type:small', logSmall);
+function logSmall() {
+  console.log('make type small');
+  if (!has(html, 'type-small')) {
+    remove(html, 'type-medium');
+    remove(html, 'type-large');
+    add(html, 'type-small');
+  }
+}
+
+var textPane = document.querySelector('.js-text-area');
+bus.emit('resize:textPane', textPane.offsetWidth);
 
 draw();
 

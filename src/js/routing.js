@@ -1,5 +1,4 @@
 import * as routeMatcher from './helpers/route-matcher'
-console.log(routeMatcher)
 let match = routeMatcher.routeMatcher
 import bus from './helpers/bus'
 /**
@@ -13,7 +12,6 @@ export default function route () {
   let view = match('/:mode/').parse(url)
 
   if (home && width > 800) {
-    console.log('default')
     bus.emit('pane:set', 'split')
   } else if (view.mode === 'map') {
     bus.emit('pane:set', 'map')

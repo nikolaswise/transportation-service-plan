@@ -7,7 +7,6 @@ let streets = L.esri.featureLayer({
 })
 
 export function draw () {
-  console.log('draw map')
   map = L.map('map', {
     center: [45.528, -122.680],
     zoom: 13,
@@ -49,7 +48,6 @@ export function toggleLayer (layer) {
 }
 
 export function remove () {
-  console.log('remove map', map)
   if (map) {
     map.remove();
   }
