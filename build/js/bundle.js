@@ -258,8 +258,10 @@ function route() {
   var home = match('/').parse(url);
   var view = match('/:mode/').parse(url);
 
-  if (home && width > 800) {
+  if (home | width > 800) {
     bus.emit('pane:set', 'split');
+  } else if (width < 800) {
+    bus.emit('pane:set', 'text');
   } else if (view.mode === 'map') {
     bus.emit('pane:set', 'map');
   } else if (view.mode === 'text') {
@@ -775,7 +777,8 @@ function togglePane(e) {
 // ┌─────────────────────────┐
 // │ Emit Nav Control Events │
 // └─────────────────────────┘
-// Search and Table of contents.
+// Search and Table of contents and Pane View.
+
 
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
@@ -826,7 +829,6 @@ bus.on('resize:textPane', log);
 var html$1 = document.querySelector('html');
 
 function log(width) {
-  console.log('text pane width is ' + width);
   // | size   | min width | max width |
   // | ------ | --------- | --------- |
   // | large  | 786       | n/a       |
@@ -844,14 +846,13 @@ function log(width) {
 var body = document.querySelector('body');
 
 function checkWidth(width) {
-  if (width < 800) {
-    if (has(body, 'split-view')) {
-      bus.emit('pane:set', 'text');
-    }
-  } else if (width > 800) {
-    if (has(body, 'text-view')) {
-      bus.emit('pane:set', 'split');
-    }
+  console.log(width < 800 && window.location.pathname === '/');
+  if (width < 800 && window.location.pathname === '/') {
+    remove(body, 'split-view');
+    add(body, 'text-view');
+  } else if (width > 800 && window.location.pathname === '/') {
+    remove(body, 'text-view');
+    add(body, 'split-view');
   }
 }
 
@@ -863,14 +864,17 @@ function handleControlToggle() {
 function togglePane$1(pane) {
   if (has(body, 'split-view')) {
     remove(body, 'split-view');
-    add(body, pane + '-view');
+    // classy.add(body, `${pane}-view`)
+    bus.emit('pane:set', pane);
   } else if (has(body, pane + '-view')) {
-    add(body, 'split-view');
+    // classy.add(body, 'split-view')
     remove(body, pane + '-view');
+    bus.emit('pane:set', 'split');
   } else {
     remove(body, 'map-view');
     remove(body, 'text-view');
-    add(body, 'split-view');
+    // classy.add(body, 'split-view')
+    bus.emit('pane:set', 'split');
   }
   window.setTimeout(emitRedraw, 300);
 }
@@ -886,6 +890,11 @@ function setPane(pane) {
     remove(body, 'split-view');
   }
   add(body, pane + '-view');
+  if (pane === 'split') {
+    window.history.replaceState(null, null, '/');
+  } else {
+    window.history.replaceState(null, null, pane);
+  }
 }
 
 function emitRedraw() {
@@ -909,7 +918,6 @@ var html = document.querySelector('html');
 
 bus.on('type:large', logLarge);
 function logLarge() {
-  console.log('make type large');
   if (!has(html, 'type-large')) {
     remove(html, 'type-medium');
     remove(html, 'type-small');
@@ -918,7 +926,6 @@ function logLarge() {
 }
 bus.on('type:medium', logMedium);
 function logMedium() {
-  console.log('make type medium');
   if (!has(html, 'type-medium')) {
     remove(html, 'type-large');
     remove(html, 'type-small');
@@ -927,7 +934,6 @@ function logMedium() {
 }
 bus.on('type:small', logSmall);
 function logSmall() {
-  console.log('make type small');
   if (!has(html, 'type-small')) {
     remove(html, 'type-medium');
     remove(html, 'type-large');

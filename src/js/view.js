@@ -12,7 +12,6 @@ bus.on('resize:textPane', log)
 let html = document.querySelector('html')
 
 function log (width) {
-  console.log(`text pane width is ${width}`)
   // | size   | min width | max width |
   // | ------ | --------- | --------- |
   // | large  | 786       | n/a       |
@@ -30,14 +29,13 @@ function log (width) {
 let body = document.querySelector('body')
 
 function checkWidth (width) {
-  if (width < 800) {
-    if (classy.has(body, 'split-view')) {
-      bus.emit('pane:set', 'text')
-    }
-  } else if (width > 800) {
-    if (classy.has(body, 'text-view')) {
-      bus.emit('pane:set', 'split')
-    }
+  console.log(width < 800 && window.location.pathname === '/')
+  if (width < 800 && window.location.pathname === '/') {
+    classy.remove(body, 'split-view')
+    classy.add(body, `text-view`)
+  } else if (width > 800 && window.location.pathname === '/') {
+    classy.remove(body, 'text-view')
+    classy.add(body, `split-view`)
   }
 }
 
@@ -49,14 +47,17 @@ function handleControlToggle () {
 function togglePane (pane) {
   if (classy.has(body, 'split-view')) {
     classy.remove(body, 'split-view')
-    classy.add(body, `${pane}-view`)
+    // classy.add(body, `${pane}-view`)
+    bus.emit('pane:set', pane)
   } else if (classy.has(body, `${pane}-view`)) {
-    classy.add(body, 'split-view')
+    // classy.add(body, 'split-view')
     classy.remove(body, `${pane}-view`)
+    bus.emit('pane:set', 'split')
   } else {
     classy.remove(body, `map-view`)
     classy.remove(body, `text-view`)
-    classy.add(body, 'split-view')
+    // classy.add(body, 'split-view')
+    bus.emit('pane:set', 'split')
   }
   window.setTimeout(emitRedraw, 300);
 }
@@ -72,6 +73,12 @@ function setPane (pane) {
     classy.remove(body, `split-view`)
   }
   classy.add(body, `${pane}-view`)
+  if (pane === 'split') {
+    window.history.replaceState(null, null, '/')
+  } else {
+    window.history.replaceState(null, null, pane)
+  }
+
 }
 
 function emitRedraw () {

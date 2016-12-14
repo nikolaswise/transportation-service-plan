@@ -39,7 +39,9 @@ function togglePane (e) {
 // ┌─────────────────────────┐
 // │ Emit Nav Control Events │
 // └─────────────────────────┘
-// Search and Table of contents.
+// Search and Table of contents and Pane View.
+
+
 
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
