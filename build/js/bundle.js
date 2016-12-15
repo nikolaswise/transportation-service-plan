@@ -846,7 +846,6 @@ function log(width) {
 var body = document.querySelector('body');
 
 function checkWidth(width) {
-  console.log(width < 800 && window.location.pathname === '/');
   if (width < 800 && window.location.pathname === '/') {
     remove(body, 'split-view');
     add(body, 'text-view');
@@ -864,16 +863,13 @@ function handleControlToggle() {
 function togglePane$1(pane) {
   if (has(body, 'split-view')) {
     remove(body, 'split-view');
-    // classy.add(body, `${pane}-view`)
     bus.emit('pane:set', pane);
   } else if (has(body, pane + '-view')) {
-    // classy.add(body, 'split-view')
     remove(body, pane + '-view');
     bus.emit('pane:set', 'split');
   } else {
     remove(body, 'map-view');
     remove(body, 'text-view');
-    // classy.add(body, 'split-view')
     bus.emit('pane:set', 'split');
   }
   window.setTimeout(emitRedraw, 300);
@@ -901,7 +897,85 @@ function emitRedraw() {
   bus.emit('map:redraw');
 }
 
+// Cool Helpers
+// ┌────────┐
+// │ Sticky │
+// └────────┘
+// sticks things to the window
+
+function sticky() {
+  bus.on('scrolling:at', scrollHandler);
+  bus.on('sticky:stick', stickItem);
+  bus.on('sticky:unstick', unstickItem);
+
+  var elements = findElements('.js-sticky');
+  var stickies = elements.map(function (el) {
+    var offset = el.offsetTop;
+    var dataTop = el.getAttribute('data-top') || 0;
+    el.style.top = dataTop + 'px';
+    var hasId = el.getAttribute('data-sticky-id');
+    if (!hasId) createShim(el);
+    return {
+      top: offset - parseInt(dataTop, 0),
+      element: el
+    };
+  });
+
+  function createShim(el) {
+    var guid = 'sticky-navigation';
+    el.setAttribute('data-sticky-id', guid);
+    var parent = el.parentNode;
+    var shim = el.cloneNode('deep');
+    add(shim, 'js-shim');
+    remove(shim, 'js-sticky');
+    shim.setAttribute('data-sticky-id', guid);
+    shim.style.visibility = 'hidden';
+    shim.style.display = 'none';
+    parent.insertBefore(shim, el);
+  }
+
+  function stickItem(item) {
+    var id = item.element.getAttribute('data-sticky-id');
+    var shim = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
+    if (id && shim) {
+      add(item.element, 'is-sticky');
+      shim.style.display = '';
+    }
+  }
+
+  function unstickItem(item) {
+    var id = item.element.getAttribute('data-sticky-id');
+    var shim = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
+    if (id && shim) {
+      remove(item.element, 'is-sticky');
+      shim.style.display = 'none';
+    }
+  }
+
+  function scrollHandler(pageYOffset) {
+    stickies.forEach(function (item) {
+      var referenceElement = item.element;
+      if (has(item.element, 'is-sticky')) {
+        var id = item.element.getAttribute('data-sticky-id');
+        referenceElement = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
+      }
+
+      if (referenceElement) {
+        var dataTop = referenceElement.getAttribute('data-top') || 0;
+        item.top = referenceElement.offsetTop - parseInt(dataTop, 0);
+      }
+
+      if (item.top < pageYOffset) {
+        bus.emit('sticky:stick', item);
+      } else {
+        bus.emit('sticky:unstick', item);
+      }
+    });
+  }
+}
+
 // View and Intent
+// Cool Components
 route();
 
 bus.on('map:redraw', redrawMap);
@@ -944,6 +1018,7 @@ function logSmall() {
 var textPane = document.querySelector('.js-text-area');
 bus.emit('resize:textPane', textPane.offsetWidth);
 
+sticky();
 draw();
 
 })));

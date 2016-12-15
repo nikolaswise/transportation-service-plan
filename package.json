@@ -43,6 +43,7 @@
     "myth": "github:pin3da/myth",
     "node-sass": "^3.13.0",
     "npm-run-all": "^3.1.1",
+    "postcss-cli": "^2.6.0",
     "rerun-script": "^0.6.0",
     "rollup": "^0.36.3",
     "rollup-plugin-babel": "^2.6.1",

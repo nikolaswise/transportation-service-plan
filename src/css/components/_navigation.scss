@@ -17,8 +17,6 @@
 
 .navigation-link {
   padding: calc(#{$font-size} / 2) $font-size;
-  // text-transform: uppercase;
-  // letter-spacing: 0.04em;
   text-decoration: none;
   color: $rich-blue;
   font-size: $pt10;
@@ -58,4 +56,8 @@
 
 .is-sticky {
   position: fixed;
+}
+
+.split-view .is-sticky {
+  width: 50%;
 }

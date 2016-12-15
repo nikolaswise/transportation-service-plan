@@ -11,6 +11,8 @@ import bus from './helpers/bus.js'
 import intent from './intent.js'
 import view from './view.js'
 
+// Cool Components
+import sticky from './sticky-navigation.js'
 route()
 
 bus.on('map:redraw', redrawMap)
@@ -53,5 +55,6 @@ function logSmall () {
 let textPane = document.querySelector('.js-text-area')
 bus.emit('resize:textPane', textPane.offsetWidth);
 
+sticky()
 map.draw()
 

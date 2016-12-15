@@ -29,7 +29,6 @@ function log (width) {
 let body = document.querySelector('body')
 
 function checkWidth (width) {
-  console.log(width < 800 && window.location.pathname === '/')
   if (width < 800 && window.location.pathname === '/') {
     classy.remove(body, 'split-view')
     classy.add(body, `text-view`)
@@ -47,16 +46,13 @@ function handleControlToggle () {
 function togglePane (pane) {
   if (classy.has(body, 'split-view')) {
     classy.remove(body, 'split-view')
-    // classy.add(body, `${pane}-view`)
     bus.emit('pane:set', pane)
   } else if (classy.has(body, `${pane}-view`)) {
-    // classy.add(body, 'split-view')
     classy.remove(body, `${pane}-view`)
     bus.emit('pane:set', 'split')
   } else {
     classy.remove(body, `map-view`)
     classy.remove(body, `text-view`)
-    // classy.add(body, 'split-view')
     bus.emit('pane:set', 'split')
   }
   window.setTimeout(emitRedraw, 300);
