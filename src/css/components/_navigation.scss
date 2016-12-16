@@ -1,0 +1,27 @@
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: $off-white;
+}
+
+.map-is-active,
+.split-is-active {
+  .navigation {
+    width: 50%;
+  }
+}
+
+.map-is-active {
+  .navigation {
+    width: 50%;
+    transform: translateX(-100%);
+  }
+}
+
+.panel-text {
+  .navigation {
+    width: 100%;
+    transform: translateX(0);
+  }
+}

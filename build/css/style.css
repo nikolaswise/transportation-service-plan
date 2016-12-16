@@ -416,7 +416,26 @@ button {
   padding-bottom: 8rem;
   background-color: #CADDE9; }
 
+.navigation {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: #fafafa; }
+
+.map-is-active .navigation,
+.split-is-active .navigation {
+  width: 50%; }
+
+.map-is-active .navigation {
+  width: 50%;
+  transform: translateX(-100%); }
+
+.panel-text .navigation {
+  width: 100%;
+  transform: translateX(0); }
+
 .half-title {
+  background-color: #fafafa;
   padding-top: 9.6rem;
   padding-bottom: 12.8rem; }
 

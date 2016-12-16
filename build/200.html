@@ -41,8 +41,28 @@
   </head>
 
   <body>
-
     <div class="panels js-panels">
+      <nav class="navigation js-sticky-target" hidden>
+        <a href="#" class="js-open-search">
+          Search Document
+        </a>
+        <a href="#" class="js-open-contents">
+          Running Head
+        </a>
+        <div class="right">
+          <button class="button js-view-control hide-small hide-text" data-panel="text">
+            hide map
+          </button>
+          <button class="button js-view-control show-small" data-panel="map">
+            show map
+          </button>
+          <button class="button js-view-control hide-small hide-split" data-panel="split">
+            show map
+          </button>
+        </div>
+      </nav>
+
+
       <div class="panel panel-text js-text-area">
         <div class="title">
   <div class="title-buffer text-container">
@@ -141,7 +161,7 @@
   </div>
 </div>
 
-<nav class="navigation js-sticky" data-top=0>
+<nav class="navigation js-sticky-reference">
   <a href="#" class="js-open-search">
     Search Document
   </a>

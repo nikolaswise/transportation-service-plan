@@ -13,8 +13,9 @@ import view from './view.js'
 
 // Cool Components
 import sticky from './sticky-navigation.js'
-route()
 
-// sticky()
+route()
+sticky()
+
 map.draw()
 

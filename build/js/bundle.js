@@ -866,12 +866,45 @@ function toggleMapLayer(layer) {
 }
 
 // Cool Helpers
+// ┌────────┐
+// │ Sticky │
+// └────────┘
+// sticks things to the window
+
+function sticky() {
+  console.log('stickify');
+  var referenceElement = document.querySelector('.js-sticky-reference');
+  var targetElement = document.querySelector('.js-sticky-target');
+  bus.on('scrolling:at', scrollHandler);
+  bus.on('sticky:stick', stickItem);
+  bus.on('sticky:unstick', unstickItem);
+
+  function scrollHandler(pageYOffset) {
+    var position = referenceElement.offsetTop;
+    if (position > pageYOffset) {
+      bus.emit('sticky:unstick');
+    } else {
+      bus.emit('sticky:stick');
+    }
+  }
+
+  function unstickItem() {
+    if (!targetElement.hasAttribute('hidden')) {
+      targetElement.setAttribute('hidden', 'hidden');
+    }
+  }
+  function stickItem() {
+    if (targetElement.hasAttribute('hidden')) {
+      targetElement.removeAttribute('hidden');
+    }
+  }
+}
 
 // View and Intent
 // Cool Components
 route();
+sticky();
 
-// sticky()
 draw();
 
 })));
