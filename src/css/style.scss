@@ -31,6 +31,38 @@
 @import "components/scale.scss";
 @import "components/layer-control.scss";
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #2E3133;
+  z-index: 30;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: $transition;
+  visibility: hidden;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.map-is-active,
+.split-is-active {
+  .modal-overlay  {
+    width: 50%;
+  }
+}
+
+.map-is-active {
+  .modal-overlay  {
+    width: 50%;
+    transform: translateX(-100%);
+  }
+}
+
 .left { float: left; }
 .right { float: right; }
 

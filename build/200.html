@@ -42,24 +42,46 @@
 
   <body>
     <div class="panels js-panels">
-      <nav class="navigation js-sticky-target" hidden>
-        <a href="#" class="js-open-search">
-          Search Document
-        </a>
-        <a href="#" class="js-open-contents">
-          Running Head
-        </a>
-        <div class="right">
-          <button class="button js-view-control hide-small hide-text" data-panel="text">
-            hide map
-          </button>
-          <button class="button js-view-control show-small" data-panel="map">
-            show map
-          </button>
-          <button class="button js-view-control hide-small hide-split" data-panel="split">
-            show map
-          </button>
+
+      <div class="js-modal modal-overlay" data-modal='search'>
+        <div class="modal">
+          <div class="text-container">
+            oh hey whats up
+          </div>
         </div>
+      </div>
+
+      <div class="js-modal modal-overlay" data-modal='contents'>
+        <div class="modal">
+          <div class="text-container">
+            oh hey whats up
+          </div>
+        </div>
+      </div>
+
+      <nav class="navigation js-sticky-target" hidden>
+        
+  <button class="js-modal-toggle" data-modal="search">
+    Search Document
+  </button>
+
+  <button class="js-modal-toggle" data-modal="contents">
+    Running Head
+  </button>
+
+  <div class="right">
+    <button class="button js-view-control hide-small hide-text" data-panel="text">
+      hide map
+    </button>
+    <button class="button js-view-control show-small" data-panel="map">
+      show map
+    </button>
+    <button class="button js-view-control hide-small hide-split" data-panel="split">
+      show map
+    </button>
+  </div>
+
+
       </nav>
 
 
@@ -85,7 +107,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="table-of-contents">
   <div class="text-container">
@@ -162,12 +183,15 @@
 </div>
 
 <nav class="navigation js-sticky-reference">
-  <a href="#" class="js-open-search">
+  
+  <button class="js-modal-toggle" data-modal="search">
     Search Document
-  </a>
-  <a href="#" class="js-open-contents">
+  </button>
+
+  <button class="js-modal-toggle" data-modal="contents">
     Running Head
-  </a>
+  </button>
+
   <div class="right">
     <button class="button js-view-control hide-small hide-text" data-panel="text">
       hide map
@@ -179,6 +203,8 @@
       show map
     </button>
   </div>
+
+
 </nav>
 
 

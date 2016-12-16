@@ -10,7 +10,15 @@
 // Handles dom nodes
 
 // returns closest element up the DOM tree matching a given class
-
+function closest(className, context) {
+  var current;
+  for (current = context; current; current = current.parentNode) {
+    if (current.nodeType === 1 && has(current, className)) {
+      break;
+    }
+  }
+  return current;
+}
 
 // turn a domNodeList into an array
 function nodeListToArray(domNodeList) {
@@ -682,7 +690,9 @@ function remove$1() {
 // └──────────────────────┘
 
 // returns standard interaction event, later will add touch support
-
+function click() {
+  return 'click';
+}
 
 // add a callback function to an event on a DOM node
 function add$1(domNode, e, fn) {
@@ -694,13 +704,25 @@ function add$1(domNode, e, fn) {
 }
 
 // remove a specific function binding from a DOM node event
-
+function remove$2(domNode, e, fn) {
+  if (domNode.removeEventListener) {
+    return domNode.removeEventListener(e, fn, false);
+  } else if (domNode.detachEvent) {
+    return domNode.detachEvent('on' + e, fn);
+  }
+}
 
 // get the target element of an event
 
 
 // prevent default behavior of an event
-
+function preventDefault(e) {
+  if (e.preventDefault) {
+    return e.preventDefault();
+  } else if (e.returnValue) {
+    e.returnValue = false;
+  }
+}
 
 // stop and event from bubbling up the DOM tree
 
@@ -900,10 +922,120 @@ function sticky() {
   }
 }
 
+// ┌────────────────┐
+// │ Aria Adjusters │
+// └────────────────┘
+// utilities to help manage aria properties
+
+// toggles `aria-hidden` on a domNode
+
+
+// adds `aria-hidden` on a domNode
+function hide(array) {
+  array.forEach(function (node) {
+    if (!node) {
+      return;
+    }
+    node.setAttribute('aria-hidden', true);
+  });
+}
+
+// removes `aria-hidden` on a domNode
+function show(array) {
+  array.forEach(function (node) {
+    if (!node) {
+      return;
+    }
+    node.removeAttribute('aria-hidden');
+  });
+}
+
+// ┌───────┐
+// │ Modal │
+// └───────┘
+// show and hide modal dialogues
+// Listens to a 'modal:bind' optionally takes a node
+// Emits and listens on the 'modal:open' channel. Takes a data-modal attr
+// Emits and listens to on the 'modal:close' channel. Optionally takes a data-modal
+// Emitting a modal id toggle that modals state.
+// Emitting false or null closes all modals.
+
+function modal() {
+  // Cool nodes
+  var toggles = findElements('.js-modal-toggle');
+  var modals = findElements('.js-modal');
+
+  // Bus events
+  bus.on('modal:open', openModal);
+  bus.on('keyboard:escape', closeModal);
+  bus.on('modal:close', closeModal);
+  bus.on('modal:bind', bindModals);
+
+  function dependentNodes() {
+    var nodes = [];
+    if (wrapper) {
+      nodes.push(wrapper);
+    }
+    if (footer) {
+      nodes.push(footer);
+    }
+    return nodes;
+  }
+
+  function openModal(modalId) {
+    bus.emit('modal:close');
+    if (!modalId) return;
+    var modal = document.querySelector('.js-modal[data-modal="' + modalId + '"]');
+    modal.removeAttribute('tabindex');
+    add$1(document, 'focusin', fenceModal);
+    add(modal, 'is-active');
+    hide(dependentNodes());
+    modal.focus();
+  }
+
+  function closeModal(modalId) {
+    if (!modalId) return removeActive(modals);
+    var modal = document.querySelector('.js-modal[data-modal="' + modalId + '"]');
+    remove(modal, 'is-active');
+    modal.setAttribute('tabindex', 0);
+    remove$2(document, 'focusin', fenceModal);
+    show(dependentNodes());
+  }
+
+  function bindModals(node) {
+    if (!node) {
+      toggles.forEach(function (toggle$$1) {
+        add$1(toggle$$1, click(), toggleClick);
+      });
+    } else {
+      add$1(node, click(), toggleClick);
+    }
+  }
+
+  function fenceModal(e) {
+    if (!closest('js-modal', e.target)) {
+      modals.forEach(function (modal) {
+        if (has(modal, 'is-active')) {
+          modal.focus();
+        }
+      });
+    }
+  }
+
+  function toggleClick(e) {
+    preventDefault(e);
+    var modalId = e.target.dataset.modal;
+    bus.emit('modal:open', modalId);
+  }
+
+  bus.emit('modal:bind');
+}
+
 // View and Intent
 // Cool Components
 route();
 sticky();
+modal();
 
 draw();
 
