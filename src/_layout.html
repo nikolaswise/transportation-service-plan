@@ -46,13 +46,16 @@
     <div class="panels js-panels">
 
       <div class="panel panel-text" id="text">
-        <button class="js-view-control hide-small hide-split show-text" data-panel="split">
-          split view
+        <button class="js-view-control hide-small hide-text" data-panel="text">
+          hide map
+        </button>
+        <button class="js-view-control show-small" data-panel="map">
+          show map
+        </button>
+        <button class="js-view-control hide-small hide-split" data-panel="split">
+          show map
         </button>
 
-        <button class="js-view-control show-small show-split show-text" data-panel="map">
-          map view
-        </button>
 
         <br>
 
@@ -73,9 +76,11 @@
       </div>
 
       <div class="panel panel-map">
-        <button class="js-view-control" data-panel="text">text view</button>
-        <button class="js-view-control hide-small" data-panel="split">split view</button>
-        <button class="js-view-control" data-panel="map">map view</button>
+        <button class="js-view-control show-small" data-panel="split">show text</button>
+
+        <button class="js-view-control hide-small hide-split" data-panel="split">show text</button>
+
+        <button class="js-view-control hide-map hide-small" data-panel="map">hide text</button>
       </div>
 
     </div>

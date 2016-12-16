@@ -34,13 +34,15 @@
 // shame.css
 .panels  {
   display: block;
-  background: red;
-  overflow: hidden;
+  background: $off-white;
   position: absolute;
   left:0;
   right:0;
   top:0;
   bottom:0;
+  &.map-is-active {
+    overflow: hidden;
+  }
 }
 
 .panel {
@@ -57,12 +59,11 @@
 }
 
 .panel-text {
-  background: #F8F6F3;
+  background: $off-white;
   left: 0;
-
-  color: #2E3133;
 }
 .panel-map {
+  position: fixed;
   background: #2E3133;
   left: 50%;
   color: #F8F6F3;

@@ -563,13 +563,14 @@ button {
 
 .panels {
   display: block;
-  background: red;
-  overflow: hidden;
+  background: #fafafa;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0; }
+  .panels.map-is-active {
+    overflow: hidden; }
 
 .panel {
   width: 50%;
@@ -583,11 +584,11 @@ button {
   transform: scale(1); }
 
 .panel-text {
-  background: #F8F6F3;
-  left: 0;
-  color: #2E3133; }
+  background: #fafafa;
+  left: 0; }
 
 .panel-map {
+  position: fixed;
   background: #2E3133;
   left: 50%;
   color: #F8F6F3; }
