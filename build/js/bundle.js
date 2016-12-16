@@ -836,12 +836,14 @@ function didResize() {
 
 bus.on('set:view', setToPanel);
 bus.on('set:view', setLocation);
-bus.on('layer:control', handleControlToggle);
+bus.on('layer:control', toggleControl$1);
+bus.on('keyboard:escape', closeControl);
 bus.on('layer:toggle', toggleMapLayer);
 bus.on('type:size', sizeTextTo);
 
 var body = document.querySelector('body');
 var panelContainer = document.querySelector('.js-panels');
+var controlPanel = document.querySelector('.js-layer-control-panel');
 
 function setToPanel(panel) {
   if (has(panelContainer, 'text-is-active')) {
@@ -878,9 +880,14 @@ function sizeTextTo(size) {
   html = undefined;
 }
 
-function handleControlToggle() {
-  var controlPanel = document.querySelector('.js-layer-control-panel');
+function toggleControl$1() {
   toggle(controlPanel, 'is-active');
+}
+
+function closeControl() {
+  if (has(controlPanel, 'is-active')) {
+    remove(controlPanel, 'is-active');
+  }
 }
 
 function toggleMapLayer(layer) {
@@ -973,12 +980,6 @@ function modal() {
 
   function dependentNodes() {
     var nodes = [];
-    if (wrapper) {
-      nodes.push(wrapper);
-    }
-    if (footer) {
-      nodes.push(footer);
-    }
     return nodes;
   }
 

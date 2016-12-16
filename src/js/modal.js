@@ -27,12 +27,6 @@ function modal () {
 
   function dependentNodes () {
     var nodes = [];
-    if (wrapper) {
-      nodes.push(wrapper);
-    }
-    if (footer) {
-      nodes.push(footer);
-    }
     return nodes;
   }
 

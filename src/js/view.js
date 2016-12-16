@@ -5,12 +5,14 @@ import { toggleLayer as toggleLayer } from './map/map.js'
 
 bus.on('set:view', setToPanel)
 bus.on('set:view', setLocation)
-bus.on('layer:control', handleControlToggle)
+bus.on('layer:control', toggleControl)
+bus.on('keyboard:escape', closeControl)
 bus.on('layer:toggle', toggleMapLayer)
 bus.on('type:size', sizeTextTo)
 
 let body = document.querySelector('body')
 let panelContainer = document.querySelector('.js-panels')
+let controlPanel = document.querySelector('.js-layer-control-panel')
 
 function setToPanel (panel) {
   if (classy.has(panelContainer, `text-is-active`)) {
@@ -47,9 +49,14 @@ function sizeTextTo (size) {
   html = undefined
 }
 
-function handleControlToggle () {
-  let controlPanel = document.querySelector('.js-layer-control-panel')
+function toggleControl () {
   classy.toggle(controlPanel, 'is-active')
+}
+
+function closeControl () {
+  if (classy.has(controlPanel, 'is-active')) {
+    classy.remove(controlPanel, 'is-active')
+  }
 }
 
 function toggleMapLayer (layer) {
