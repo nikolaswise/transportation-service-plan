@@ -7,18 +7,37 @@
   margin: 0;
   padding: 0;
   z-index: 0;
+  background: #2E3133;
+  transition: $transition;
 }
 
-.navigation-layer-control {
-  float: right;
-  margin-right: $frame;
+.map-is-active {
+  #map {
+    left: $frame;
+  }
 }
 
-.map-block-controls {
-  position: absolute;
-  z-index: 5;
+.map-frame {
   background-color: $off-white;
+  position: absolute;
+  right: $frame;
   left: 0;
-  right: 0;
-  top: 0;
+  z-index: 20;
+  transition: $transition;
+}
+
+.map-is-active {
+  .map-frame {
+    left: $frame;
+  }
+}
+
+@media (max-width: $single-pane-break) {
+  .map-is-active {
+    #map,
+    .map-frame {
+      left: 0;
+      right: 0;
+    }
+  }
 }

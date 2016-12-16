@@ -1,37 +1,28 @@
-.show-if-text {
+.show-text,
+.show-map,
+.show-split,
+.show-small {
   display: none;
 }
-.show-if-map {
-  display: none;
+.hide-text,
+.hide-map,
+.hide-split,
+.hide-small {
+  display: block;
 }
-.show-if-split {
-  display: none;
+.text-is-active {
+  .show-text { display: block; }
+  .hide-text { display: none; }
 }
-
-.text-view {
-  .hide-if-text {
-    display: none;
-  }
-  .show-if-text {
-    display: initial;
-  }
+.map-is-active {
+  .show-map { display: block; }
+  .hide-map { display: none; }
 }
-
-.map-view {
-  .hide-if-map {
-    display: none;
-  }
-  .show-if-map {
-    display: initial;
-  }
+.split-is-active {
+  .show-split { display: block; }
+  .hide-split { display: none; }
 }
-
-.split-view {
-  .hide-if-split {
-    display: none;
-  }
-  .show-if-split {
-    display: initial;
-  }
+@media (max-width: $single-pane-break) {
+  .show-small { display: block; }
+  .hide-small { display: none; }
 }
-

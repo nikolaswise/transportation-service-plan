@@ -1,0 +1,61 @@
+.panels  {
+  display: block;
+  background: $off-white;
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  &.map-is-active {
+    overflow: hidden;
+  }
+}
+
+.panel {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  z-index: 0;
+  transition: $transition;
+  transform: scale(1);
+}
+
+.panel-text {
+  background: $off-white;
+  left: 0;
+}
+.panel-map {
+  position: fixed;
+  background: $off-white;
+  left: 50%;
+}
+
+@media (max-width: $single-pane-break) {
+  .panel-text {
+    width: 100%;
+  }
+  .panel-map {
+    transform: translateX(100%);
+  }
+}
+
+.text-is-active {
+  .panel-text {
+    width: 100%;
+  }
+  .panel-map {
+    transform: translateX(100%);
+  }
+}
+.map-is-active {
+  .panel-map {
+    width: 100%;
+    transform: translateX(-50%);
+  }
+  .panel-text {
+    transform: translateX(-100%);
+  }
+}

@@ -13,7 +13,7 @@
 // Components
 @import "layout/show-hide.scss";
 @import "components/text-block";
-// @import "components/panes";
+@import "components/panels";
 @import "components/map";
 
 @import "components/forms.scss";
@@ -31,96 +31,18 @@
 @import "components/scale.scss";
 @import "components/layer-control.scss";
 
-// shame.css
-.panels  {
+.left { float: left; }
+.right { float: right; }
+
+.clearfix:after {
+  content: "";
   display: block;
-  background: $off-white;
-  position: absolute;
-  left:0;
-  right:0;
-  top:0;
-  bottom:0;
-  &.map-is-active {
-    overflow: hidden;
-  }
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
-.panel {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 1;
-  z-index: 0;
-
-  transition: width 300ms, transform 300ms;
-  transform: scale(1);
-}
-
-.panel-text {
-  background: $off-white;
-  left: 0;
-}
-.panel-map {
-  position: fixed;
-  background: #2E3133;
-  left: 50%;
-  color: #F8F6F3;
-}
-
-@media (max-width: 800px) {
-  .panel-text {
-    width: 100%;
-  }
-  .panel-map {
-    transform: translateX(100%);
-  }
-}
-
-.text-is-active {
-  .panel-text {
-    width: 100%;
-  }
-  .panel-map {
-    transform: translateX(100%);
-  }
-}
-.map-is-active {
-  .panel-map {
-    width: 100%;
-    transform: translateX(-50%);
-  }
-  .panel-text {
-    transform: translateX(-100%);
-  }
-}
-
-.show-text,
-.show-map,
-.show-split,
-.show-small {
-  display: none;
-}
-.hide-text,
-.hide-map,
-.hide-split,
-.hide-small {
+.clearfix {
   display: block;
-}
-.text-is-active {
-  .show-text { display: block; }
-  .hide-text { display: none; }
-}
-.map-is-active {
-  .show-map { display: block; }
-  .hide-map { display: none; }
-}
-.split-is-active {
-  .show-split { display: block; }
-  .hide-split { display: none; }
-}
-@media (max-width: 800px) {
-  .show-small { display: block; }
-  .hide-small { display: none; }
 }
