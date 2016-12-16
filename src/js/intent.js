@@ -27,21 +27,14 @@ function toggleControl (e) {
   bus.emit('layer:control')
 }
 
-dom.findElements('.js-pane-toggle').map(function (btn) {
-  event.add(btn, 'click', togglePane)
+dom.findElements('.js-view-control').map(function (btn) {
+  event.add(btn, 'click', translateView)
 })
-function togglePane (e) {
+function translateView (e) {
   e.preventDefault()
-  let pane = e.target.getAttribute('data-pane')
-  bus.emit('pane:toggle', pane)
+  let panel = e.target.getAttribute('data-panel')
+  bus.emit(`set:view`, panel)
 }
-
-// ┌─────────────────────────┐
-// │ Emit Nav Control Events │
-// └─────────────────────────┘
-// Search and Table of contents and Pane View.
-
-
 
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
@@ -78,7 +71,13 @@ function isScrolling () {
 window.onresize = didResize;
 let textPane = document.querySelector('.js-text-area')
 function didResize () {
-  bus.emit('resize:width', window.innerWidth);
-  bus.emit('resize:textPane', textPane.offsetWidth);
+  let width =  textPane.offsetWidth
+  if (width > 785) {
+    bus.emit(`type:size`, 'large')
+  } else if (width > 599) {
+    bus.emit(`type:size`, 'medium')
+  } else if (width < 600) {
+    bus.emit(`type:size`, 'small')
+  }
 }
 

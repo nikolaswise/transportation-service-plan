@@ -2,81 +2,50 @@ import bus from './helpers/bus.js'
 import * as classy from './helpers/classy.js'
 import * as dom from './helpers/dom.js'
 
-bus.on('pane:toggle', togglePane)
-bus.on('pane:set', setPane)
+bus.on('set:view', setToPanel)
+bus.on('set:view', setLocation)
 bus.on('layer:control', handleControlToggle)
-bus.on('resize:width', checkWidth)
+bus.on('type:size', sizeTextTo)
 
-bus.on('resize:textPane', log)
+let body = document.querySelector('body')
+let panelContainer = document.querySelector('.js-panels')
 
-let html = document.querySelector('html')
+function setToPanel (panel) {
+  if (classy.has(panelContainer, `text-is-active`)) {
+    classy.remove(panelContainer, `text-is-active`)
+  }
+  if (classy.has(panelContainer, `map-is-active`)) {
+    classy.remove(panelContainer, `map-is-active`)
+  }
+  if (classy.has(panelContainer, `split-is-active`)) {
+    classy.remove(panelContainer, `split-is-active`)
+  }
+  classy.add(panelContainer, `${panel}-is-active`)
+}
 
-function log (width) {
-  // | size   | min width | max width |
-  // | ------ | --------- | --------- |
-  // | large  | 786       | n/a       |
-  // | medium | 600       | 785       |
-  // | small  | n/a       | 599       |
-  if (width > 785) {
-    bus.emit('type:large')
-  } else if (width > 599) {
-    bus.emit('type:medium')
-  } else if (width < 600) {
-    bus.emit('type:small')
+function setLocation (panel) {
+  panel === 'split' ? panel = '/' : panel = panel
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, panel)
   }
 }
 
-let body = document.querySelector('body')
-
-function checkWidth (width) {
-  if (width < 800 && window.location.pathname === '/') {
-    classy.remove(body, 'split-view')
-    classy.add(body, `text-view`)
-  } else if (width > 800 && window.location.pathname === '/') {
-    classy.remove(body, 'text-view')
-    classy.add(body, `split-view`)
+function sizeTextTo (size) {
+  let html = document.querySelector('html')
+  if (classy.has(html, `type-small`)) {
+    classy.remove(html, `type-small`)
   }
+  if (classy.has(html, `type-medium`)) {
+    classy.remove(html, `type-medium`)
+  }
+  if (classy.has(html, `type-large`)) {
+    classy.remove(html, `type-large`)
+  }
+  classy.add(html, `type-${size}`)
+  html = undefined
 }
 
 function handleControlToggle () {
   let controlPanel = document.querySelector('.js-layer-control-panel')
   classy.toggle(controlPanel, 'is-active')
-}
-
-function togglePane (pane) {
-  if (classy.has(body, 'split-view')) {
-    classy.remove(body, 'split-view')
-    bus.emit('pane:set', pane)
-  } else if (classy.has(body, `${pane}-view`)) {
-    classy.remove(body, `${pane}-view`)
-    checkWidth()
-  } else {
-    classy.remove(body, `map-view`)
-    classy.remove(body, `text-view`)
-    checkWidth()
-  }
-  window.setTimeout(emitRedraw, 300);
-}
-
-function setPane (pane) {
-  if ( classy.has(body, `map-view`) ) {
-    classy.remove(body, `map-view`)
-  }
-  if (classy.has(body, `text-view`) ) {
-    classy.remove(body, `text-view`)
-  }
-  if (classy.has(body, `split-view`) ) {
-    classy.remove(body, `split-view`)
-  }
-  classy.add(body, `${pane}-view`)
-  if (pane === 'split') {
-    window.history.replaceState(null, null, '/')
-  } else {
-    window.history.replaceState(null, null, pane)
-  }
-
-}
-
-function emitRedraw () {
-  bus.emit('map:redraw')
 }

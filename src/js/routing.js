@@ -11,11 +11,7 @@ export default function route () {
   let home = match('/').parse(url)
   let view = match('/:mode/').parse(url)
 
-  if (home | width > 800) {
-    bus.emit('pane:set', 'split')
-  } else if ( width < 800 ) {
-    bus.emit('pane:set', 'text')
-  } else if (view.mode === 'map') {
+  if (view.mode === 'map') {
     bus.emit('pane:set', 'map')
   } else if (view.mode === 'text') {
     bus.emit('pane:set', 'text')

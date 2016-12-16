@@ -732,20 +732,14 @@ function toggleControl(e) {
   bus.emit('layer:control');
 }
 
-findElements('.js-pane-toggle').map(function (btn) {
-  add$1(btn, 'click', togglePane);
+findElements('.js-view-control').map(function (btn) {
+  add$1(btn, 'click', translateView);
 });
-function togglePane(e) {
+function translateView(e) {
   e.preventDefault();
-  var pane = e.target.getAttribute('data-pane');
-  bus.emit('pane:toggle', pane);
+  var panel = e.target.getAttribute('data-panel');
+  bus.emit('set:view', panel);
 }
-
-// ┌─────────────────────────┐
-// │ Emit Nav Control Events │
-// └─────────────────────────┘
-// Search and Table of contents and Pane View.
-
 
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
@@ -782,149 +776,22 @@ function isScrolling() {
 window.onresize = didResize;
 var textPane = document.querySelector('.js-text-area');
 function didResize() {
-  bus.emit('resize:width', window.innerWidth);
-  bus.emit('resize:textPane', textPane.offsetWidth);
-}
-
-bus.on('pane:toggle', togglePane$1);
-bus.on('pane:set', setPane);
-bus.on('layer:control', handleControlToggle);
-bus.on('resize:width', checkWidth);
-
-bus.on('resize:textPane', log);
-
-var html$1 = document.querySelector('html');
-
-function log(width) {
-  // | size   | min width | max width |
-  // | ------ | --------- | --------- |
-  // | large  | 786       | n/a       |
-  // | medium | 600       | 785       |
-  // | small  | n/a       | 599       |
+  var width = textPane.offsetWidth;
   if (width > 785) {
-    bus.emit('type:large');
+    bus.emit('type:size', 'large');
   } else if (width > 599) {
-    bus.emit('type:medium');
+    bus.emit('type:size', 'medium');
   } else if (width < 600) {
-    bus.emit('type:small');
+    bus.emit('type:size', 'small');
   }
-}
-
-var body = document.querySelector('body');
-
-function checkWidth(width) {
-  if (width < 800 && window.location.pathname === '/') {
-    remove(body, 'split-view');
-    add(body, 'text-view');
-  } else if (width > 800 && window.location.pathname === '/') {
-    remove(body, 'text-view');
-    add(body, 'split-view');
-  }
-}
-
-function handleControlToggle() {
-  var controlPanel = document.querySelector('.js-layer-control-panel');
-  toggle(controlPanel, 'is-active');
-}
-
-function togglePane$1(pane) {
-  if (has(body, 'split-view')) {
-    remove(body, 'split-view');
-    bus.emit('pane:set', pane);
-  } else if (has(body, pane + '-view')) {
-    remove(body, pane + '-view');
-    checkWidth();
-  } else {
-    remove(body, 'map-view');
-    remove(body, 'text-view');
-    checkWidth();
-  }
-  window.setTimeout(emitRedraw, 300);
-}
-
-function setPane(pane) {
-  if (has(body, 'map-view')) {
-    remove(body, 'map-view');
-  }
-  if (has(body, 'text-view')) {
-    remove(body, 'text-view');
-  }
-  if (has(body, 'split-view')) {
-    remove(body, 'split-view');
-  }
-  add(body, pane + '-view');
-  if (pane === 'split') {
-    window.history.replaceState(null, null, '/');
-  } else {
-    window.history.replaceState(null, null, pane);
-  }
-}
-
-function emitRedraw() {
-  bus.emit('map:redraw');
-}
-
-// Cool Helpers
-
-// View and Intent
-// Cool Components
-// route()
-
-// bus.on('map:redraw', redrawMap)
-// function redrawMap () {
-//   map.redraw()
-// }
-
-// bus.on('layer:toggle', handleLayerToggle)
-// function handleLayerToggle (layer) {
-//   map.toggleLayer(layer)
-// }
-
-// let html = document.querySelector('html')
-
-// bus.on('type:large', logLarge)
-// function logLarge () {
-//   if (!classy.has(html, 'type-large')) {
-//     classy.remove(html, 'type-medium')
-//     classy.remove(html, 'type-small')
-//     classy.add(html, 'type-large')
-//   }
-// }
-// bus.on('type:medium', logMedium)
-// function logMedium () {
-//   if (!classy.has(html, 'type-medium')) {
-//     classy.remove(html, 'type-large')
-//     classy.remove(html, 'type-small')
-//     classy.add(html, 'type-medium')
-//   }
-// }
-// bus.on('type:small', logSmall)
-// function logSmall () {
-//   if (!classy.has(html, 'type-small')) {
-//     classy.remove(html, 'type-medium')
-//     classy.remove(html, 'type-large')
-//     classy.add(html, 'type-small')
-//   }
-// }
-
-// let textPane = document.querySelector('.js-text-area')
-// bus.emit('resize:textPane', textPane.offsetWidth);
-
-// sticky()
-// map.draw()
-
-var viewControlButtons = document.querySelectorAll('.js-view-control');
-nodeListToArray(viewControlButtons).forEach(function (btn) {
-  add$1(btn, 'click', translateView);
-});
-function translateView(e) {
-  e.preventDefault();
-  var panel = e.target.getAttribute('data-panel');
-  bus.emit('set:view', panel);
 }
 
 bus.on('set:view', setToPanel);
+bus.on('set:view', setLocation);
+bus.on('layer:control', handleControlToggle);
+bus.on('type:size', sizeTextTo);
 
+var body = document.querySelector('body');
 var panelContainer = document.querySelector('.js-panels');
 
 function setToPanel(panel) {
@@ -940,21 +807,15 @@ function setToPanel(panel) {
   add(panelContainer, panel + '-is-active');
 }
 
-var textControlButtons = document.querySelectorAll('.js-text-control');
-nodeListToArray(textControlButtons).forEach(function (btn) {
-  add$1(btn, 'click', sizeText);
-});
-function sizeText(e) {
-  e.preventDefault();
-  var size = e.target.getAttribute('data-size');
-  bus.emit('type:size', size);
+function setLocation(panel) {
+  panel === 'split' ? panel = '/' : panel = panel;
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, panel);
+  }
 }
 
-bus.on('type:size', sizeTextTo);
-
-var html = document.querySelector('html');
-
 function sizeTextTo(size) {
+  var html = document.querySelector('html');
   if (has(html, 'type-small')) {
     remove(html, 'type-small');
   }
@@ -965,7 +826,22 @@ function sizeTextTo(size) {
     remove(html, 'type-large');
   }
   add(html, 'type-' + size);
+  html = undefined;
 }
+
+function handleControlToggle() {
+  var controlPanel = document.querySelector('.js-layer-control-panel');
+  toggle(controlPanel, 'is-active');
+}
+
+// Cool Helpers
+
+// View and Intent
+// Cool Components
+// route()
+
+// sticky()
+// map.draw()
 
 bus.emit('set:view', 'split');
 
