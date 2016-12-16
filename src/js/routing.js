@@ -11,11 +11,14 @@ export default function route () {
   let home = match('/').parse(url)
   let view = match('/:mode/').parse(url)
 
-  if (view.mode === 'map') {
-    bus.emit('pane:set', 'map')
+  if (home) {
+    console.log('home')
+    bus.emit('set:view', 'split')
+  } else if (view.mode === 'map') {
+    bus.emit('set:view', 'map')
   } else if (view.mode === 'text') {
-    bus.emit('pane:set', 'text')
+    bus.emit('set:view', 'text')
   } else {
-    bus.emit('pane:set', 'split')
+    bus.emit('set:view', 'split')
   }
 }

@@ -248,6 +248,27 @@ function routeMatcher(route, rules) {
 }
 
 var match = routeMatcher;
+/**
+* Parse URL and navigate to correct pane/state
+*/
+function route() {
+  var width = window.innerWidth;
+  var url = document.location.pathname + '/';
+  url = url.replace('//', '/');
+  var home = match('/').parse(url);
+  var view = match('/:mode/').parse(url);
+
+  if (home) {
+    console.log('home');
+    bus.emit('set:view', 'split');
+  } else if (view.mode === 'map') {
+    bus.emit('set:view', 'map');
+  } else if (view.mode === 'text') {
+    bus.emit('set:view', 'text');
+  } else {
+    bus.emit('set:view', 'split');
+  }
+}
 
 var asyncGenerator = function () {
   function AwaitValue(value) {
@@ -838,11 +859,9 @@ function handleControlToggle() {
 
 // View and Intent
 // Cool Components
-// route()
+route();
 
 // sticky()
 // map.draw()
-
-bus.emit('set:view', 'split');
 
 })));

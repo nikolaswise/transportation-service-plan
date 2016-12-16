@@ -13,9 +13,8 @@ import view from './view.js'
 
 // Cool Components
 import sticky from './sticky-navigation.js'
-// route()
+route()
 
 // sticky()
 // map.draw()
 
-bus.emit(`set:view`, 'split')
