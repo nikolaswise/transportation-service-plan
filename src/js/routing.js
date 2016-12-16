@@ -12,7 +12,6 @@ export default function route () {
   let view = match('/:mode/').parse(url)
 
   if (home) {
-    console.log('home')
     bus.emit('set:view', 'split')
   } else if (view.mode === 'map') {
     bus.emit('set:view', 'map')

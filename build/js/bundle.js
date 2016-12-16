@@ -259,7 +259,6 @@ function route() {
   var view = match('/:mode/').parse(url);
 
   if (home) {
-    console.log('home');
     bus.emit('set:view', 'split');
   } else if (view.mode === 'map') {
     bus.emit('set:view', 'map');
@@ -664,7 +663,13 @@ function draw() {
   });
 }
 
-
+function toggleLayer(layer) {
+  if (layer.checked) {
+    layers[layer.layerId].addTo(map);
+  } else {
+    layers[layer.layerId].removeFrom(map);
+  }
+}
 
 function remove$1() {
   if (map) {
@@ -810,6 +815,7 @@ function didResize() {
 bus.on('set:view', setToPanel);
 bus.on('set:view', setLocation);
 bus.on('layer:control', handleControlToggle);
+bus.on('layer:toggle', toggleMapLayer);
 bus.on('type:size', sizeTextTo);
 
 var body = document.querySelector('body');
@@ -855,6 +861,10 @@ function handleControlToggle() {
   toggle(controlPanel, 'is-active');
 }
 
+function toggleMapLayer(layer) {
+  toggleLayer(layer);
+}
+
 // Cool Helpers
 
 // View and Intent
@@ -862,6 +872,6 @@ function handleControlToggle() {
 route();
 
 // sticky()
-// map.draw()
+draw();
 
 })));

@@ -1,10 +1,12 @@
 import bus from './helpers/bus.js'
 import * as classy from './helpers/classy.js'
 import * as dom from './helpers/dom.js'
+import { toggleLayer as toggleLayer } from './map/map.js'
 
 bus.on('set:view', setToPanel)
 bus.on('set:view', setLocation)
 bus.on('layer:control', handleControlToggle)
+bus.on('layer:toggle', toggleMapLayer)
 bus.on('type:size', sizeTextTo)
 
 let body = document.querySelector('body')
@@ -48,4 +50,8 @@ function sizeTextTo (size) {
 function handleControlToggle () {
   let controlPanel = document.querySelector('.js-layer-control-panel')
   classy.toggle(controlPanel, 'is-active')
+}
+
+function toggleMapLayer (layer) {
+  toggleLayer(layer)
 }

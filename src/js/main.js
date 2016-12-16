@@ -16,5 +16,5 @@ import sticky from './sticky-navigation.js'
 route()
 
 // sticky()
-// map.draw()
+map.draw()
 
