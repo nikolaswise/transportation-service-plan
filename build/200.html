@@ -4,7 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <meta name="viewport" content="width=device-width">
+
   <meta name="description" content="Portland Bureau of Transportation Service Plan 2035">
 
   <title>T.S.P. 2035 | P.B.O.T.</title>
@@ -39,9 +41,34 @@
 
   </head>
 
-  <body class="text-view">
-    <div class="text-pane js-text-area">
-      <div class="title">
+  <body>
+
+    <div class="panels js-panels">
+
+      <div class="panel panel-text" id="text">
+        <button class="js-view-control hide-small hide-split show-text" data-panel="split">
+          split view
+        </button>
+
+        <button class="js-view-control show-small show-split show-text" data-panel="map">
+          map view
+        </button>
+
+        <br>
+
+        <button class="js-text-control" data-size="small">
+          small text
+        </button>
+        <button class="js-text-control" data-size="medium">
+          medium text
+        </button>
+        <button class="js-text-control" data-size="large">
+          large text
+        </button>
+
+        <br>
+
+        <div class="title">
   <div class="title-buffer text-container">
     <div class="text-block">
       <h1 class="title-header">Portland Transportation System Plan 2035</h1>
@@ -52,10 +79,10 @@
 </div>
 
 
-  <div class="table-of-contents">
-    <div class="text-container">
-      <div class="text-block">
-        <h5>Table of Contents</h5>
+<div class="table-of-contents">
+  <div class="text-container">
+    <div class="text-block">
+      <h5>Table of Contents</h5>
 
 <h6><a href="#">Introduction</a></h6>
 
@@ -107,11 +134,26 @@
 <p>Compiled projects, plans, and classifications</p>
 
 <h6><a href="#">Index</a></h6>
+    </div>
+  </div>
+</div>
+
+<div class="half-title">
+  <div class="text-container">
+    <div class="text-block">
+      <div class="half-title-plate">
+        <h1 class="half-title-header">
+          Portland Transporation System Plan 2035
+        </h1>
+        <p class="half-title-sub-head">
+          Portland Bureau of Transportation
+        </p>
       </div>
     </div>
   </div>
+</div>
 
-  <nav class="navigation-text js-sticky" data-top=0>
+<nav class="navigation-text js-sticky" data-top=0>
   <div class="text-container">
     <div class="navigation-item navigation-item-left">
       <a href="#" class="navigation-link js-open-search">Search Document</a>
@@ -130,25 +172,12 @@
   </div>
 </nav>
 
-  <div class="half-title">
-  <div class="text-container">
-    <div class="text-block">
-      <div class="half-title-plate">
-        <h1 class="half-title-header">
-          Portland Transporation System Plan 2035
-        </h1>
-        <p class="half-title-sub-head">
-          Portland Bureau of Transportation
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 
-  <div class="text-container">
-    <article class="text-block">
-      <section class="text-section">
-        <h2>Introduction</h2>
+
+<div class="text-container">
+  <article class="text-block">
+    <section class="text-section">
+      <h2>Introduction</h2>
 
 <p>Portland is projected to add 140,000 new jobs and 260,000 new residents over the next 20 years. As Portland and the region grow, however, there is a continuing challenge to maintain the natural environment, economic prosperity, and overall quality of life. If in 2035 the percentage of people who drive alone to work remains near 60% as is was in 2015, traffic, carbon emissions, and household spending on vehicles and fuel will all worsen significantly. In order to accommodate this growth, our transportation system must provide Portlanders safer and more convenient ways to walk, bike, and take transit for more trips. The Transportation System Plan is the 20-year plan to guide transportation policies and investments in Portland. The 2035 Transportation System Plan guides investments to maintain and improve the livability of Portland by:</p>
 
@@ -362,17 +391,17 @@
 <li>Prioritize the most cost-effective projects</li>
 </ol>
 
-      </section>
+    </section>
 
-      <section class="text-section">
-        <h2 id="appendix-a">Appendix A</h2>
-        <h3>Compiled goals, policies, and objectives</h3>
-      </section>
+    <section class="text-section">
+      <h2 id="appendix-a">Appendix A</h2>
+      <h3>Compiled goals, policies, and objectives</h3>
+    </section>
 
-      <section class="text-section">
-        <h2 id="appendix-b">Appendix B</h2>
-        <h3>Compiled Projects, Plans, and Classifications</h3>
-          <div class="table-wrapper">
+    <section class="text-section">
+      <h2 id="appendix-b">Appendix B</h2>
+      <h3>Compiled Projects, Plans, and Classifications</h3>
+      <div class="table-wrapper">
 <table>
 <thead>
 <tr>
@@ -426,16 +455,14 @@
 </tbody>
 </table>
 
-          </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </article>
 
-    <div class="colophon">
-      <div class="text-block">
-        <p>
-          Published by Portland Bureau of Transportation 2017
-        </p>
-        <p>Department Press is a publishing house and design studio specializing in printed matter, digital experiences, and special projects. Department works with artists, public bureaus, and other partners who are open to collaborative process and value art and design.</p>
+  <div class="colophon">
+    <div class="text-block">
+      <p>Published by Portland Bureau of Transportation 2017</p>
+      <p>Department Press is a publishing house and design studio specializing in printed matter, digital experiences, and special projects. Department works with artists, public bureaus, and other partners who are open to collaborative process and value art and design.</p>
 <ol start="0">
 <li>Cover</li>
 <li>Blank</li>
@@ -458,94 +485,20 @@
 <li>Back Cover</li>
 </ol>
 
+    </div>
+  </div>
+</div>
+
       </div>
-    </div>
-  </article>
-</div>
-    </div>
-    <div class="map-pane">
-      <div class="map-block sans-serif">
-  <div class="map-block-controls">
-    <div class="navigation-item map-navigation-view-control">
-      <a href="#" class="navigation-link js-pane-toggle" data-pane='map'>
-        <span class="show-if-split" data-pane='map'>Hide Text</span>
-        <span class="show-if-map" data-pane='map'>Show Text</span>
-      </a>
+
+      <div class="panel panel-map">
+        <button class="js-view-control" data-panel="text">text view</button>
+        <button class="js-view-control hide-small" data-panel="split">split view</button>
+        <button class="js-view-control" data-panel="map">map view</button>
+      </div>
+
     </div>
 
-    <div class="navigation-item navigation-layer-control">
-      <a href="#" class="navigation-link js-layer-control">
-        Edit Layers
-      </a>
-    </div>
-  </div>
-
-  <div id="map"></div>
-
-  <div class="js-layer-control-panel layer-panel">
-    <form>
-      <fieldset class="layer-panel-section fieldset-checkbox">
-        <legend><b>Projects:</b></legend>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">View All
-        </label>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer One
-        </label>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Two
-        </label>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Three
-        </label>
-      </fieldset>
-
-      <fieldset class="layer-panel-section fieldset-checkbox">
-        <legend><b>Plans:</b></legend>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">View All
-        </label>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer One
-        </label>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Two
-        </label>
-        <label>
-          <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Three
-        </label>
-      </fieldset>
-
-      <fieldset class="layer-panel-section fieldset-checkbox">
-        <legend><b>Street Classifications:</b></legend>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="urbanThroughway">Design
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="urbanHighway">Bicycle
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="industrialRoad">Transit
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="civicMainSteet">Pedestrian
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="neighborhoodMainStreet">Freight
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="civicCorridor">Traffic
-        </label>
-        <label>
-          <input type="checkbox" class="js-layer-toggle" data-layer="neighborhoodCorridor">Emergency Response
-        </label>
-    </form>
-  </div>
-
-  <div class="scalebar-miles"></div>
-</div>
-    </div>
-
-  <script src="/js/bundle.js"></script>
+  <script src="js/bundle.js"></script>
   </body>
 </html>

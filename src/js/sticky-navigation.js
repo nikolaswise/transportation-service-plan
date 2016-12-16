@@ -9,6 +9,7 @@ import bus from './helpers/bus';
 // sticks things to the window
 
 function sticky () {
+  console.log('stickify')
   bus.on('scrolling:at', scrollHandler);
   bus.on('sticky:stick', stickItem);
   bus.on('sticky:unstick', unstickItem);
@@ -16,12 +17,9 @@ function sticky () {
   var elements = dom.findElements('.js-sticky');
   var stickies = elements.map(function (el) {
     var offset = el.offsetTop;
-    var dataTop = el.getAttribute('data-top') || 0;
-    el.style.top = dataTop + 'px';
     var hasId = el.getAttribute('data-sticky-id');
     if (!hasId) createShim(el);
     return {
-      top: offset - parseInt(dataTop, 0),
       element: el
     };
   });
@@ -40,6 +38,7 @@ function sticky () {
   }
 
   function stickItem (item) {
+    console.log('its stuck!')
     var id = item.element.getAttribute('data-sticky-id');
     var shim = document.querySelector(`.js-shim[data-sticky-id="${id}"]`);
     if (id && shim) {
@@ -59,6 +58,7 @@ function sticky () {
 
   function scrollHandler (pageYOffset) {
     stickies.forEach(function (item) {
+      console.log('ping')
       var referenceElement = item.element;
       if (classy.has(item.element, 'is-sticky')) {
         var id = item.element.getAttribute('data-sticky-id');
@@ -71,8 +71,10 @@ function sticky () {
       }
 
       if (item.top < pageYOffset) {
+        console.log('stick it!')
         bus.emit('sticky:stick', item);
       } else {
+        console.log('unstick it!')
         bus.emit('sticky:unstick', item);
       }
     });

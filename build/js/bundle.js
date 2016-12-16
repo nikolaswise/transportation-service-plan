@@ -248,28 +248,6 @@ function routeMatcher(route, rules) {
 }
 
 var match = routeMatcher;
-/**
-* Parse URL and navigate to correct pane/state
-*/
-function route() {
-  var width = window.innerWidth;
-  var url = document.location.pathname + '/';
-  url = url.replace('//', '/');
-  var home = match('/').parse(url);
-  var view = match('/:mode/').parse(url);
-
-  if (home | width > 800) {
-    bus.emit('pane:set', 'split');
-  } else if (width < 800) {
-    bus.emit('pane:set', 'text');
-  } else if (view.mode === 'map') {
-    bus.emit('pane:set', 'map');
-  } else if (view.mode === 'text') {
-    bus.emit('pane:set', 'text');
-  } else {
-    bus.emit('pane:set', 'split');
-  }
-}
 
 var asyncGenerator = function () {
   function AwaitValue(value) {
@@ -665,23 +643,12 @@ function draw() {
   });
 }
 
-function toggleLayer(layer) {
-  if (layer.checked) {
-    layers[layer.layerId].addTo(map);
-  } else {
-    layers[layer.layerId].removeFrom(map);
-  }
-}
+
 
 function remove$1() {
   if (map) {
     map.remove();
   }
-}
-
-function redraw() {
-  remove$1();
-  draw();
 }
 
 // ┌──────────────────────┐
@@ -813,10 +780,10 @@ function isScrolling() {
 }
 
 window.onresize = didResize;
-var textPane$1 = document.querySelector('.js-text-area');
+var textPane = document.querySelector('.js-text-area');
 function didResize() {
   bus.emit('resize:width', window.innerWidth);
-  bus.emit('resize:textPane', textPane$1.offsetWidth);
+  bus.emit('resize:textPane', textPane.offsetWidth);
 }
 
 bus.on('pane:toggle', togglePane$1);
@@ -866,11 +833,11 @@ function togglePane$1(pane) {
     bus.emit('pane:set', pane);
   } else if (has(body, pane + '-view')) {
     remove(body, pane + '-view');
-    bus.emit('pane:set', 'split');
+    checkWidth();
   } else {
     remove(body, 'map-view');
     remove(body, 'text-view');
-    bus.emit('pane:set', 'split');
+    checkWidth();
   }
   window.setTimeout(emitRedraw, 300);
 }
@@ -898,127 +865,108 @@ function emitRedraw() {
 }
 
 // Cool Helpers
-// ┌────────┐
-// │ Sticky │
-// └────────┘
-// sticks things to the window
-
-function sticky() {
-  bus.on('scrolling:at', scrollHandler);
-  bus.on('sticky:stick', stickItem);
-  bus.on('sticky:unstick', unstickItem);
-
-  var elements = findElements('.js-sticky');
-  var stickies = elements.map(function (el) {
-    var offset = el.offsetTop;
-    var dataTop = el.getAttribute('data-top') || 0;
-    el.style.top = dataTop + 'px';
-    var hasId = el.getAttribute('data-sticky-id');
-    if (!hasId) createShim(el);
-    return {
-      top: offset - parseInt(dataTop, 0),
-      element: el
-    };
-  });
-
-  function createShim(el) {
-    var guid = 'sticky-navigation';
-    el.setAttribute('data-sticky-id', guid);
-    var parent = el.parentNode;
-    var shim = el.cloneNode('deep');
-    add(shim, 'js-shim');
-    remove(shim, 'js-sticky');
-    shim.setAttribute('data-sticky-id', guid);
-    shim.style.visibility = 'hidden';
-    shim.style.display = 'none';
-    parent.insertBefore(shim, el);
-  }
-
-  function stickItem(item) {
-    var id = item.element.getAttribute('data-sticky-id');
-    var shim = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
-    if (id && shim) {
-      add(item.element, 'is-sticky');
-      shim.style.display = '';
-    }
-  }
-
-  function unstickItem(item) {
-    var id = item.element.getAttribute('data-sticky-id');
-    var shim = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
-    if (id && shim) {
-      remove(item.element, 'is-sticky');
-      shim.style.display = 'none';
-    }
-  }
-
-  function scrollHandler(pageYOffset) {
-    stickies.forEach(function (item) {
-      var referenceElement = item.element;
-      if (has(item.element, 'is-sticky')) {
-        var id = item.element.getAttribute('data-sticky-id');
-        referenceElement = document.querySelector('.js-shim[data-sticky-id="' + id + '"]');
-      }
-
-      if (referenceElement) {
-        var dataTop = referenceElement.getAttribute('data-top') || 0;
-        item.top = referenceElement.offsetTop - parseInt(dataTop, 0);
-      }
-
-      if (item.top < pageYOffset) {
-        bus.emit('sticky:stick', item);
-      } else {
-        bus.emit('sticky:unstick', item);
-      }
-    });
-  }
-}
 
 // View and Intent
 // Cool Components
-route();
+// route()
 
-bus.on('map:redraw', redrawMap);
-function redrawMap() {
-  redraw();
+// bus.on('map:redraw', redrawMap)
+// function redrawMap () {
+//   map.redraw()
+// }
+
+// bus.on('layer:toggle', handleLayerToggle)
+// function handleLayerToggle (layer) {
+//   map.toggleLayer(layer)
+// }
+
+// let html = document.querySelector('html')
+
+// bus.on('type:large', logLarge)
+// function logLarge () {
+//   if (!classy.has(html, 'type-large')) {
+//     classy.remove(html, 'type-medium')
+//     classy.remove(html, 'type-small')
+//     classy.add(html, 'type-large')
+//   }
+// }
+// bus.on('type:medium', logMedium)
+// function logMedium () {
+//   if (!classy.has(html, 'type-medium')) {
+//     classy.remove(html, 'type-large')
+//     classy.remove(html, 'type-small')
+//     classy.add(html, 'type-medium')
+//   }
+// }
+// bus.on('type:small', logSmall)
+// function logSmall () {
+//   if (!classy.has(html, 'type-small')) {
+//     classy.remove(html, 'type-medium')
+//     classy.remove(html, 'type-large')
+//     classy.add(html, 'type-small')
+//   }
+// }
+
+// let textPane = document.querySelector('.js-text-area')
+// bus.emit('resize:textPane', textPane.offsetWidth);
+
+// sticky()
+// map.draw()
+
+var viewControlButtons = document.querySelectorAll('.js-view-control');
+nodeListToArray(viewControlButtons).forEach(function (btn) {
+  add$1(btn, 'click', translateView);
+});
+function translateView(e) {
+  e.preventDefault();
+  var panel = e.target.getAttribute('data-panel');
+  bus.emit('set:view', panel);
 }
 
-bus.on('layer:toggle', handleLayerToggle);
-function handleLayerToggle(layer) {
-  toggleLayer(layer);
+bus.on('set:view', setToPanel);
+
+var panelContainer = document.querySelector('.js-panels');
+
+function setToPanel(panel) {
+  if (has(panelContainer, 'text-is-active')) {
+    remove(panelContainer, 'text-is-active');
+  }
+  if (has(panelContainer, 'map-is-active')) {
+    remove(panelContainer, 'map-is-active');
+  }
+  if (has(panelContainer, 'split-is-active')) {
+    remove(panelContainer, 'split-is-active');
+  }
+  add(panelContainer, panel + '-is-active');
 }
+
+var textControlButtons = document.querySelectorAll('.js-text-control');
+nodeListToArray(textControlButtons).forEach(function (btn) {
+  add$1(btn, 'click', sizeText);
+});
+function sizeText(e) {
+  e.preventDefault();
+  var size = e.target.getAttribute('data-size');
+  bus.emit('type:size', size);
+}
+
+bus.on('type:size', sizeTextTo);
 
 var html = document.querySelector('html');
 
-bus.on('type:large', logLarge);
-function logLarge() {
-  if (!has(html, 'type-large')) {
-    remove(html, 'type-medium');
+function sizeTextTo(size) {
+  if (has(html, 'type-small')) {
     remove(html, 'type-small');
-    add(html, 'type-large');
   }
-}
-bus.on('type:medium', logMedium);
-function logMedium() {
-  if (!has(html, 'type-medium')) {
-    remove(html, 'type-large');
-    remove(html, 'type-small');
-    add(html, 'type-medium');
-  }
-}
-bus.on('type:small', logSmall);
-function logSmall() {
-  if (!has(html, 'type-small')) {
+  if (has(html, 'type-medium')) {
     remove(html, 'type-medium');
-    remove(html, 'type-large');
-    add(html, 'type-small');
   }
+  if (has(html, 'type-large')) {
+    remove(html, 'type-large');
+  }
+  add(html, 'type-' + size);
 }
 
-var textPane = document.querySelector('.js-text-area');
-bus.emit('resize:textPane', textPane.offsetWidth);
-
-sticky();
-draw();
+bus.emit('set:view', 'split');
 
 })));

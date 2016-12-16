@@ -1,10 +1,9 @@
 .text-pane,
 .map-pane {
+  overflow: hide;
+  // word-break: break-all;
   background-color: $off-white;
   transition: $transition;
-  -webkit-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
 }
 
 .text-pane {
@@ -30,9 +29,9 @@
 }
 .map-view {
   .text-pane {
-    -webkit-transform: translate3d(-100%,0,0);
-        -ms-transform: translate3d(-100%,0,0);
-            transform: translate3d(-100%,0,0);
+    // -webkit-transform: translate3d(-100%,0,0);
+    //     -ms-transform: translate3d(-100%,0,0);
+    //         transform: translate3d(-100%,0,0);
     width: 100%;
   }
   .map-pane {
@@ -50,9 +49,9 @@
     width: 100%;
   }
   .map-pane {
-    -webkit-transform: translate3d(100%,0,0);
-        -ms-transform: translate3d(100%,0,0);
-            transform: translate3d(100%,0,0);
+    // -webkit-transform: translate3d(100%,0,0);
+    //     -ms-transform: translate3d(100%,0,0);
+    //         transform: translate3d(100%,0,0);
     width: 100%;
   }
 }

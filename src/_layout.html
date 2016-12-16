@@ -4,7 +4,9 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <meta name="viewport" content="width=device-width">
+
   <meta name="description" content="Portland Bureau of Transportation Service Plan 2035">
 
   <title>T.S.P. 2035 | P.B.O.T.</title>
@@ -39,14 +41,45 @@
 
   </head>
 
-  <body class="text-view">
-    <div class="text-pane js-text-area">
-      {% include "_text.html" %}
-    </div>
-    <div class="map-pane">
-      {% include "_map.html" %}
+  <body>
+
+    <div class="panels js-panels">
+
+      <div class="panel panel-text" id="text">
+        <button class="js-view-control hide-small hide-split show-text" data-panel="split">
+          split view
+        </button>
+
+        <button class="js-view-control show-small show-split show-text" data-panel="map">
+          map view
+        </button>
+
+        <br>
+
+        <button class="js-text-control" data-size="small">
+          small text
+        </button>
+        <button class="js-text-control" data-size="medium">
+          medium text
+        </button>
+        <button class="js-text-control" data-size="large">
+          large text
+        </button>
+
+        <br>
+
+        {% include "_text.html" %}
+
+      </div>
+
+      <div class="panel panel-map">
+        <button class="js-view-control" data-panel="text">text view</button>
+        <button class="js-view-control hide-small" data-panel="split">split view</button>
+        <button class="js-view-control" data-panel="map">map view</button>
+      </div>
+
     </div>
 
-  <script src="/js/bundle.js"></script>
+  <script src="js/bundle.js"></script>
   </body>
 </html>

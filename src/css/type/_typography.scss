@@ -60,6 +60,26 @@ h6 {
   margin-bottom: 0;
 }
 
+.type-small {
+  h1 {
+    font-size: $pt24;
+    line-height: $small-baseline*1.5;
+  }
+  h2 {
+    font-size: $pt21;
+  }
+  h3 {
+    font-size: $pt18;
+  }
+  h4 {
+    font-size: $pt14;
+  }
+  h5 {
+    font-size: $pt12;
+    margin-bottom: calc(#{$baseline} / 2);
+  }
+}
+
 /* Base Styles */
 p,
 ul,

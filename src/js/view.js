@@ -49,11 +49,11 @@ function togglePane (pane) {
     bus.emit('pane:set', pane)
   } else if (classy.has(body, `${pane}-view`)) {
     classy.remove(body, `${pane}-view`)
-    bus.emit('pane:set', 'split')
+    checkWidth()
   } else {
     classy.remove(body, `map-view`)
     classy.remove(body, `text-view`)
-    bus.emit('pane:set', 'split')
+    checkWidth()
   }
   window.setTimeout(emitRedraw, 300);
 }
