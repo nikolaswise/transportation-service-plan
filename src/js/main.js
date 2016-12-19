@@ -14,14 +14,12 @@ import view from './view.js'
 // Cool Components
 import sticky from './sticky-navigation.js'
 import modal from './modal.js'
+import runningHead from './running-head.js'
 
 route()
 sticky()
 modal()
-
-let sections = dom.findElements('.js-section').map(function (section) {
-  console.log(section.innerHTML)
-})
+runningHead()
 
 map.draw()
 

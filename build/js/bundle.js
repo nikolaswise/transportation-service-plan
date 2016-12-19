@@ -1052,15 +1052,42 @@ function modal() {
   bus.emit('modal:bind');
 }
 
+function runningHead() {
+  bus.on('scrolling:at', runningHandler);
+  bus.on('running:section', renderSection);
+
+  var sections = findElements('.js-section');
+
+  sections.map(function (section) {
+    var node = section;
+    var position = section.offsetTop + section.offsetParent.offsetTop;
+    return {
+      node: section,
+      position: position
+    };
+  });
+
+  var heads = findElements('.js-running-section');
+  var current = void 0;
+
+  function closestToTop(sections) {}
+
+  function runningHandler(pageYOffset) {}
+
+  function getCurrentSection(sections) {}
+
+  function renderSection(section) {
+    heads.map(function (head) {});
+  }
+  console.log(sections);
+}
+
 // View and Intent
 // Cool Components
 route();
 sticky();
 modal();
-
-var sections = findElements('.js-section').map(function (section) {
-  console.log(section.innerHTML);
-});
+runningHead();
 
 draw();
 
