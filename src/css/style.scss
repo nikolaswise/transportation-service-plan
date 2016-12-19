@@ -42,6 +42,7 @@
   pointer-events: none;
   transition: $transition;
   visibility: hidden;
+  overflow: auto;
   &.is-active {
     visibility: visible;
     opacity: 1;
@@ -84,3 +85,18 @@
 }
 
 .gutter-left { margin-left: $gutter }
+
+.links-white {
+  a {
+    color: $white;
+    &:hover, &:focus {
+      color: $pale-blue;
+    }
+  }
+}
+
+.text-white {
+  color: $white;
+}
+
+
