@@ -1,11 +1,16 @@
+.search {
+  margin-top: $baseline*3;
+}
+
 .search-input {
-  width: 75%;
+  width: 100%;
   font-size: $pt24;
   margin-top: $baseline/4;
   margin-bottom: $baseline;
   height: 2.5*$baseline;
-  border: 1px solid rgba($white, 0.2);
-  background-color: rgba($white, 0.1);
+  border: transparent;
+  border-bottom: 4px solid rgba($white, 1);
+  background-color: transparent;
   box-shadow: none;
   font-family: $system-serif;
   color: $white;
@@ -13,29 +18,56 @@
 
 .search-label {
   color: $white;
+  font-size: $pt12;
 }
 
 .search-button {
-  margin-top: $baseline*1.25;
   padding: 1em;
-  float: right;
   color: $white;
   border-color: $white;
 }
 
+
+.cancel-button {
+  padding: 1em;
+  float: right;
+  color: $white;
+  border-color: transparent;
+  &:hover, &:focus {
+    background-color: $orange;
+  }
+}
+
+.close-button {
+  margin: 0 1em 0 0;
+  padding: 0;
+  float: right;
+  font-family: $system-serif;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: $white;
+  z-index: 10;
+  &:hover, &:focus {
+    color: $white;
+    background-color: transparent;
+    border-bottom: 2px solid $white;
+  }
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: $lighter-gray;
+  color: $light-gray;
   font-family: $system-serif;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: $lighter-gray;
+  color: $light-gray;
   font-family: $system-serif;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: $lighter-gray;
+  color: $light-gray;
   font-family: $system-serif;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: $lighter-gray;
+  color: $light-gray;
   font-family: $system-serif;
 }

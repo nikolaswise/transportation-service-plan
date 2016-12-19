@@ -1079,7 +1079,6 @@ function runningHead() {
   function renderSection(section) {
     heads.map(function (head) {});
   }
-  console.log(sections);
 }
 
 // View and Intent
