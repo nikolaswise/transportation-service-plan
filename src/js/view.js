@@ -1,10 +1,11 @@
 import bus from './helpers/bus.js'
 import * as classy from './helpers/classy.js'
 import * as dom from './helpers/dom.js'
-import { toggleLayer as toggleLayer } from './map/map.js'
+import * as map from './map/map.js'
 
 bus.on('set:view', setToPanel)
 bus.on('set:view', setLocation)
+bus.on('set:view', slowRedrawMap)
 bus.on('layer:control', toggleControl)
 bus.on('keyboard:escape', closeControl)
 bus.on('layer:toggle', toggleMapLayer)
@@ -15,6 +16,8 @@ let panelContainer = document.querySelector('.js-panels')
 let controlPanel = document.querySelector('.js-layer-control-panel')
 
 function setToPanel (panel) {
+  console.log('changing view')
+
   if (classy.has(panelContainer, `text-is-active`)) {
     classy.remove(panelContainer, `text-is-active`)
   }
@@ -60,5 +63,12 @@ function closeControl () {
 }
 
 function toggleMapLayer (layer) {
-  toggleLayer(layer)
+  map.toggleLayer(layer)
 }
+
+function slowRedrawMap () {
+  var timeoutID = window.setTimeout(map.redraw, 300);
+}
+
+
+

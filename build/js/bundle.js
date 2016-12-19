@@ -641,6 +641,7 @@ var streets$$1 = L.esri.featureLayer({
 
 function draw() {
   map = L.map('map', {
+    trackResize: true,
     center: [45.528, -122.680],
     zoom: 13,
     zoomControl: false
@@ -658,7 +659,7 @@ function draw() {
 
   var searchControl = L.esri.Geocoding.geosearch({
     position: 'topright',
-    url: 'https://www.portlandmaps.com/api/agslocator/'
+    url: 'https://beta.portlandmaps.com/arcgis/rest/services/Public/Assessor_IDs/GeocodeServer/geocodeAddresses'
   }).addTo(map);
 
   var results = L.layerGroup().addTo(map);
@@ -679,10 +680,25 @@ function toggleLayer(layer) {
   }
 }
 
+function checkActiveLayers() {
+  findElements('.js-layer-toggle').map(function (toggle) {
+    if (toggle.checked) {
+      var layer = toggle.getAttribute('data-layer');
+      layers[layer].addTo(map);
+    }
+  });
+}
+
 function remove$1() {
   if (map) {
     map.remove();
   }
+}
+
+function redraw() {
+  remove$1();
+  draw();
+  checkActiveLayers();
 }
 
 // ┌──────────────────────┐
@@ -836,6 +852,7 @@ function didResize() {
 
 bus.on('set:view', setToPanel);
 bus.on('set:view', setLocation);
+bus.on('set:view', slowRedrawMap);
 bus.on('layer:control', toggleControl$1);
 bus.on('keyboard:escape', closeControl);
 bus.on('layer:toggle', toggleMapLayer);
@@ -846,6 +863,8 @@ var panelContainer = document.querySelector('.js-panels');
 var controlPanel = document.querySelector('.js-layer-control-panel');
 
 function setToPanel(panel) {
+  console.log('changing view');
+
   if (has(panelContainer, 'text-is-active')) {
     remove(panelContainer, 'text-is-active');
   }
@@ -892,6 +911,10 @@ function closeControl() {
 
 function toggleMapLayer(layer) {
   toggleLayer(layer);
+}
+
+function slowRedrawMap() {
+  var timeoutID = window.setTimeout(redraw, 300);
 }
 
 // Cool Helpers
