@@ -1,5 +1,5 @@
 <div class="js-layer-control-panel layer-panel">
-  <form>
+  <form class="sans-serif">
     <fieldset class="layer-panel-section fieldset-checkbox">
       <legend><b>Projects:</b></legend>
       <label>
@@ -58,12 +58,13 @@
 
 <div class="map-frame map-frame-top clearfix">
   <div class="left">
-    <button class="js-view-control show-small" data-panel="split">show text</button>
-    <button class="js-view-control hide-small hide-split" data-panel="split">show text</button>
-    <button class="js-view-control hide-map hide-small" data-panel="map">
-      hide text</button>
+    <button class="pt8 js-view-control show-small" data-panel="split">  {% include "_icon-text.html" %} show text</button>
+    <button class="pt8 js-view-control hide-small hide-split" data-panel="split">
+      {% include "_icon-text.html" %} show text</button>
+    <button class="pt8 js-view-control hide-map hide-small clear-border-left" data-panel="map">
+      {% include "_icon-text.html" %} hide text</button>
   </div>
-  <button class="js-layer-control right">Edit Layers</button>
+  <button class="pt8 js-layer-control right">Edit Layers</button>
 </div>
 
 <div id="map"></div>

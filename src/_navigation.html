@@ -1,21 +1,19 @@
 
-  <button class="js-modal-toggle" data-modal="search">
+  <button class="left js-modal-toggle serif pt8" data-modal="search">
     Search Document
   </button>
 
-  <button class="js-modal-toggle" data-modal="contents">
-    Running Head
+  <button class="left js-modal-toggle serif pt8 button-clear" data-modal="contents">
+    Introduction
   </button>
 
-  <div class="right">
-    <button class="button js-view-control hide-small hide-text" data-panel="text">
-      hide map
-    </button>
-    <button class="button js-view-control show-small" data-panel="map">
-      show map
-    </button>
-    <button class="button js-view-control hide-small hide-split" data-panel="split">
-      show map
-    </button>
-  </div>
+  <button class="right pt8 serif js-view-control hide-small hide-text" data-panel="text">
+    {% include "_icon-map-2.html" %} hide map
+  </button>
+  <button class="right pt8 serif js-view-control show-small" data-panel="map">
+    {% include "_icon-map-2.html" %} show map
+  </button>
+  <button class="right pt8 serif js-view-control hide-small hide-split" data-panel="split">
+    {% include "_icon-map-2.html" %} show map
+  </button>
 

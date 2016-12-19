@@ -3,6 +3,8 @@
   width: 100%;
   z-index: 10;
   background-color: $off-white;
+  border-bottom: 1px solid $gray;
+  transition: $transition;
 }
 
 .map-is-active,
@@ -23,5 +25,14 @@
   .navigation {
     width: 100%;
     transform: translateX(0);
+  }
+}
+
+@media (max-width: $single-pane-break) {
+  .split-is-active {
+    .navigation {
+      width: 100%;
+      transform: translateX(0);
+    }
   }
 }

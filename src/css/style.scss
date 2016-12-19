@@ -78,3 +78,9 @@
 .clearfix {
   display: block;
 }
+
+.clear-border-left {
+  border-left: none;
+}
+
+.gutter-left { margin-left: $gutter }
