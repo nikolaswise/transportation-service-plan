@@ -863,8 +863,6 @@ var panelContainer = document.querySelector('.js-panels');
 var controlPanel = document.querySelector('.js-layer-control-panel');
 
 function setToPanel(panel) {
-  console.log('changing view');
-
   if (has(panelContainer, 'text-is-active')) {
     remove(panelContainer, 'text-is-active');
   }
@@ -924,7 +922,6 @@ function slowRedrawMap() {
 // sticks things to the window
 
 function sticky() {
-  console.log('stickify');
   var referenceElement = document.querySelector('.js-sticky-reference');
   var targetElement = document.querySelector('.js-sticky-target');
   bus.on('scrolling:at', scrollHandler);
@@ -1060,6 +1057,10 @@ function modal() {
 route();
 sticky();
 modal();
+
+var sections = findElements('.js-section').map(function (section) {
+  console.log(section.innerHTML);
+});
 
 draw();
 

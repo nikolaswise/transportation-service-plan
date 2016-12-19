@@ -9,7 +9,6 @@ import bus from './helpers/bus';
 // sticks things to the window
 
 function sticky () {
-  console.log('stickify')
   var referenceElement = document.querySelector('.js-sticky-reference')
   var targetElement = document.querySelector('.js-sticky-target')
   bus.on('scrolling:at', scrollHandler);

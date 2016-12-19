@@ -16,8 +16,6 @@ let panelContainer = document.querySelector('.js-panels')
 let controlPanel = document.querySelector('.js-layer-control-panel')
 
 function setToPanel (panel) {
-  console.log('changing view')
-
   if (classy.has(panelContainer, `text-is-active`)) {
     classy.remove(panelContainer, `text-is-active`)
   }

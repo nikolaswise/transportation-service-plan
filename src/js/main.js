@@ -19,5 +19,9 @@ route()
 sticky()
 modal()
 
+let sections = dom.findElements('.js-section').map(function (section) {
+  console.log(section.innerHTML)
+})
+
 map.draw()
 
