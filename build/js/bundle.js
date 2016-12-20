@@ -863,6 +863,10 @@ function didResize() {
   }
 }
 
+var render = function (feature) {
+  return "\n    <h5 class=\"flush-top\">\n      " + feature.StreetName + "\n    </h5>\n    <table class=\"lead-bottom lead-top\">\n      <tbody>\n        <tr>\n          <td>Current Design:</td>\n          <td>" + feature.Design + "</td>\n        </tr>\n        <tr>\n          <td>Proposed Design:</td>\n          <td>" + feature.ProposedDesign + "</td>\n        </tr>\n      </tbody>\n    </table>\n    <p class=\"flush-bottom\"><b>" + feature.Design + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p class=\"flush-bottom\"><b>" + feature.ProposedDesign + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p>Transportation Plan ID: <a href=\"#\">" + feature.TranPlanID + "</a></p>\n  ";
+};
+
 bus.on('set:view', setToPanel);
 bus.on('set:view', setLocation);
 bus.on('set:view', slowRedrawMap);
@@ -879,9 +883,11 @@ var body = document.querySelector('body');
 var panelContainer = document.querySelector('.js-panels');
 var controlPanel = document.querySelector('.js-layer-control-panel');
 var popUpContainer = document.querySelector('.js-pop-up');
+var popUpTemplate = document.querySelector('.js-template');
 
 function handlePopUp(feature) {
   add(popUpContainer, 'is-active');
+  popUpTemplate.innerHTML = render(feature);
   console.log(feature);
 }
 
@@ -937,7 +943,6 @@ function closeControl() {
 function toggleMapLayer(layer) {
   var target = toggleLayer(layer);
   if (layer.checked) {
-    bus.on('popup:closed', layer.closePopup);
     target.bindPopup(function (evt) {
       bus.emit('popup:opened', evt.feature.properties);
       return '';
@@ -946,6 +951,7 @@ function toggleMapLayer(layer) {
       bus.emit('popup:leafletclosed');
       console.log(bus);
     });
+    bus.on('popup:closed', layer.closePopup);
   } else {
     target.unbindPopup();
   }

@@ -2,6 +2,7 @@ import bus from './helpers/bus.js'
 import * as classy from './helpers/classy.js'
 import * as dom from './helpers/dom.js'
 import * as map from './map/map.js'
+import render from './map/popup-template.js'
 
 bus.on('set:view', setToPanel)
 bus.on('set:view', setLocation)
@@ -19,9 +20,11 @@ let body = document.querySelector('body')
 let panelContainer = document.querySelector('.js-panels')
 let controlPanel = document.querySelector('.js-layer-control-panel')
 let popUpContainer = document.querySelector('.js-pop-up')
+let popUpTemplate = document.querySelector('.js-template')
 
 function handlePopUp (feature) {
   classy.add(popUpContainer, 'is-active')
+  popUpTemplate.innerHTML = render(feature)
   console.log(feature)
 }
 
@@ -77,7 +80,6 @@ function closeControl () {
 function toggleMapLayer (layer) {
   let target = map.toggleLayer(layer)
   if (layer.checked) {
-    bus.on('popup:closed', layer.closePopup)
     target.bindPopup(function (evt) {
       bus.emit('popup:opened', evt.feature.properties)
       return ''
@@ -86,6 +88,7 @@ function toggleMapLayer (layer) {
       bus.emit('popup:leafletclosed')
       console.log(bus)
     })
+    bus.on('popup:closed', layer.closePopup)
   } else {
     target.unbindPopup()
   }
