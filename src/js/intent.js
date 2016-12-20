@@ -36,6 +36,17 @@ function translateView (e) {
   bus.emit(`set:view`, panel)
 }
 
+dom.findElements('.js-close-popup').map(function (btn) {
+  console.log(btn)
+  event.add(btn, 'click', closePopUp)
+})
+function closePopUp (e) {
+  console.log('close plz')
+  e.preventDefault()
+  bus.emit('popup:close');
+}
+
+
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
 // └──────────────────────┘

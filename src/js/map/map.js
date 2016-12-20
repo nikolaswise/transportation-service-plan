@@ -13,7 +13,8 @@ export function draw () {
     trackResize: true,
     center: [45.528, -122.680],
     zoom: 13,
-    zoomControl: false
+    zoomControl: false,
+    scrollWheelZoom: false
   })
 
   map.addControl(L.control.zoom({position: 'topright'}));
@@ -45,8 +46,10 @@ export function toggleLayer (layer) {
   if (layer.checked) {
     layers[layer.layerId].addTo(map)
   } else {
+    layers[layer.layerId].unbindPopup()
     layers[layer.layerId].removeFrom(map)
   }
+  return layers[layer.layerId]
 }
 
 export function checkActiveLayers () {

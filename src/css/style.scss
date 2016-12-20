@@ -31,6 +31,59 @@
 @import "components/scale.scss";
 @import "components/layer-control.scss";
 
+// PopUp Theft
+.leaflet-popup {
+  // display: none;
+}
+.pop-up-container {
+  visibility: hidden;
+  position: absolute;
+  left: 2*$frame;
+  top: $frame;
+  bottom: $frame;
+  right: 50%;
+  pointer-events: none;
+  transition: $transition;
+  opacity: 0;
+  transform: translateY(-1%);
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    display: inline-block;
+    vertical-align: middle;
+    transition: $transition;
+    transform: translateX(0);
+    .pop-up-panel {
+      display: inline-block;
+      opacity: 1;
+    }
+  }
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; /* Adjusts for spacing */
+  }
+}
+
+.pop-up-panel {
+  display: none;
+  opacity: 0;
+  vertical-align: middle;
+  background-color: $off-white;
+  box-shadow: 0 0 10px $light-gray;
+  border: 1px solid $light-gray;
+  border-radius: 5px;
+  padding: $gutter;
+  pointer-events: auto;
+  max-height: 80%;
+  overflow: auto;
+}
+
+
+// Modal Component
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -99,4 +152,15 @@
   color: $white;
 }
 
-
+.flush-top {
+  margin-top: 0;
+}
+.flush-bottom {
+  margin-bottom: 0;
+}
+.lead-bottom {
+  margin-bottom: $baseline;
+}
+.lead-top {
+  margin-top: $baseline;
+}

@@ -644,7 +644,8 @@ function draw() {
     trackResize: true,
     center: [45.528, -122.680],
     zoom: 13,
-    zoomControl: false
+    zoomControl: false,
+    scrollWheelZoom: false
   });
 
   map.addControl(L.control.zoom({ position: 'topright' }));
@@ -676,8 +677,10 @@ function toggleLayer(layer) {
   if (layer.checked) {
     layers[layer.layerId].addTo(map);
   } else {
+    layers[layer.layerId].unbindPopup();
     layers[layer.layerId].removeFrom(map);
   }
+  return layers[layer.layerId];
 }
 
 function checkActiveLayers() {
@@ -805,6 +808,16 @@ function translateView(e) {
   bus.emit('set:view', panel);
 }
 
+findElements('.js-close-popup').map(function (btn) {
+  console.log(btn);
+  add$1(btn, 'click', closePopUp);
+});
+function closePopUp(e) {
+  console.log('close plz');
+  e.preventDefault();
+  bus.emit('popup:close');
+}
+
 // ┌──────────────────────┐
 // │ Emit Keyboard Events │
 // └──────────────────────┘
@@ -855,12 +868,25 @@ bus.on('set:view', setLocation);
 bus.on('set:view', slowRedrawMap);
 bus.on('layer:control', toggleControl$1);
 bus.on('keyboard:escape', closeControl);
+bus.on('keyboard:escape', closePopUp$1);
 bus.on('layer:toggle', toggleMapLayer);
+bus.on('popup:opened', handlePopUp);
+bus.on('popup:close', closePopUp$1);
 bus.on('type:size', sizeTextTo);
 
 var body = document.querySelector('body');
 var panelContainer = document.querySelector('.js-panels');
 var controlPanel = document.querySelector('.js-layer-control-panel');
+var popUpContainer = document.querySelector('.js-pop-up');
+
+function handlePopUp(feature) {
+  add(popUpContainer, 'is-active');
+  console.log(feature);
+}
+
+function closePopUp$1() {
+  remove(popUpContainer, 'is-active');
+}
 
 function setToPanel(panel) {
   if (has(panelContainer, 'text-is-active')) {
@@ -908,7 +934,18 @@ function closeControl() {
 }
 
 function toggleMapLayer(layer) {
-  toggleLayer(layer);
+  var target = toggleLayer(layer);
+  if (layer.checked) {
+    bus.on('popup:closed', layer.closePopup);
+    target.bindPopup(function (evt) {
+      bus.emit('popup:opened', evt.feature.properties);
+      return '';
+    }).on('popupclose', function () {
+      bus.emit('popup:closed');
+    });
+  } else {
+    target.unbindPopup();
+  }
 }
 
 function slowRedrawMap() {

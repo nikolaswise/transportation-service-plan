@@ -8,12 +8,25 @@ bus.on('set:view', setLocation)
 bus.on('set:view', slowRedrawMap)
 bus.on('layer:control', toggleControl)
 bus.on('keyboard:escape', closeControl)
+bus.on('keyboard:escape', closePopUp)
 bus.on('layer:toggle', toggleMapLayer)
+bus.on('popup:opened', handlePopUp)
+bus.on('popup:close', closePopUp)
 bus.on('type:size', sizeTextTo)
 
 let body = document.querySelector('body')
 let panelContainer = document.querySelector('.js-panels')
 let controlPanel = document.querySelector('.js-layer-control-panel')
+let popUpContainer = document.querySelector('.js-pop-up')
+
+function handlePopUp (feature) {
+  classy.add(popUpContainer, 'is-active')
+  console.log(feature)
+}
+
+function closePopUp () {
+  classy.remove(popUpContainer, 'is-active')
+}
 
 function setToPanel (panel) {
   if (classy.has(panelContainer, `text-is-active`)) {
@@ -61,7 +74,18 @@ function closeControl () {
 }
 
 function toggleMapLayer (layer) {
-  map.toggleLayer(layer)
+  let target = map.toggleLayer(layer)
+  if (layer.checked) {
+    bus.on('popup:closed', layer.closePopup)
+    target.bindPopup(function (evt) {
+      bus.emit('popup:opened', evt.feature.properties)
+      return ''
+    }).on('popupclose', function () {
+      bus.emit('popup:closed')
+    })
+  } else {
+    target.unbindPopup()
+  }
 }
 
 function slowRedrawMap () {
