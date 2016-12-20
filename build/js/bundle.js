@@ -872,6 +872,7 @@ bus.on('keyboard:escape', closePopUp$1);
 bus.on('layer:toggle', toggleMapLayer);
 bus.on('popup:opened', handlePopUp);
 bus.on('popup:close', closePopUp$1);
+bus.on('popup:leafletclosed', closePopUp$1);
 bus.on('type:size', sizeTextTo);
 
 var body = document.querySelector('body');
@@ -941,7 +942,9 @@ function toggleMapLayer(layer) {
       bus.emit('popup:opened', evt.feature.properties);
       return '';
     }).on('popupclose', function () {
-      bus.emit('popup:closed');
+      console.log('yup that closed');
+      bus.emit('popup:leafletclosed');
+      console.log(bus);
     });
   } else {
     target.unbindPopup();
