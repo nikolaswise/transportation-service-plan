@@ -72,3 +72,7 @@ export function redraw () {
   draw()
   checkActiveLayers()
 }
+
+export function closeAllPopUps () {
+  map.closePopup()
+}

@@ -33,7 +33,7 @@
 
 // PopUp Theft
 .leaflet-popup {
-  // display: none;
+  display: none;
 }
 .pop-up-container {
   visibility: hidden;
@@ -70,7 +70,7 @@
   .pop-up-container {
     top: auto;
     left: 0;
-    right: $frame;
+    right: 32px;
     bottom: 0;
   }
   .pop-up-panel {

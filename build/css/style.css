@@ -718,6 +718,9 @@ button {
     left: 0;
     right: 0; } }
 
+.leaflet-popup {
+  display: none; }
+
 .pop-up-container {
   visibility: hidden;
   position: absolute;
@@ -750,7 +753,7 @@ button {
   .pop-up-container {
     top: auto;
     left: 0;
-    right: 53px;
+    right: 32px;
     bottom: 0; }
   .pop-up-panel {
     width: 100%; } }

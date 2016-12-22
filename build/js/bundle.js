@@ -704,6 +704,10 @@ function redraw() {
   checkActiveLayers();
 }
 
+function closeAllPopUps() {
+  map.closePopup();
+}
+
 // ┌──────────────────────┐
 // │ DOM Event Management │
 // └──────────────────────┘
@@ -888,10 +892,10 @@ var popUpTemplate = document.querySelector('.js-template');
 function handlePopUp(feature) {
   add(popUpContainer, 'is-active');
   popUpTemplate.innerHTML = render(feature);
-  console.log(feature);
 }
 
 function closePopUp$1() {
+  closeAllPopUps();
   remove(popUpContainer, 'is-active');
 }
 
@@ -942,16 +946,21 @@ function closeControl() {
 
 function toggleMapLayer(layer) {
   var target = toggleLayer(layer);
+  target.resetStyle();
   if (layer.checked) {
     target.bindPopup(function (evt) {
+      evt.bringToFront();
+      evt.setStyle({
+        lineCap: 'round',
+        weight: 30,
+        color: '#34F644'
+      });
       bus.emit('popup:opened', evt.feature.properties);
       return '';
     }).on('popupclose', function () {
-      console.log('yup that closed');
+      target.resetStyle();
       bus.emit('popup:leafletclosed');
-      console.log(bus);
     });
-    bus.on('popup:closed', layer.closePopup);
   } else {
     target.unbindPopup();
   }
