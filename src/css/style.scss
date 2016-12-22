@@ -41,7 +41,6 @@
   left: 2*$frame;
   top: $frame;
   bottom: $frame;
-  right: 50%;
   pointer-events: none;
   transition: $transition;
   opacity: 0;
@@ -64,6 +63,18 @@
     height: 100%;
     vertical-align: middle;
     margin-right: -0.25em; /* Adjusts for spacing */
+  }
+}
+
+@media (max-width: $single-pane-break) {
+  .pop-up-container {
+    top: auto;
+    left: 0;
+    right: $frame;
+    bottom: 0;
+  }
+  .pop-up-panel {
+    width: 100%;
   }
 }
 
