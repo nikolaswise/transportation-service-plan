@@ -268,12 +268,14 @@ a {
 
 .panel-text {
   background: #fafafa;
-  left: 0; }
+  left: 0;
+  z-index: 1; }
 
 .panel-map {
   position: fixed;
   background: #fafafa;
-  left: 50%; }
+  left: 50%;
+  z-index: 0; }
 
 @media (max-width: 800px) {
   .panel-text {
@@ -795,6 +797,13 @@ button {
 .map-is-active .modal-overlay {
   width: 50%;
   transform: translateX(-100%); }
+
+.title,
+.half-title,
+.table-of-contents,
+.text-wrapper,
+.colophone {
+  box-shadow: 3px 0px 3px #9ea4a9; }
 
 .left {
   float: left; }

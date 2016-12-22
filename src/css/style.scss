@@ -128,6 +128,19 @@
   }
 }
 
+
+// box-shadow
+
+.title,
+.half-title,
+.table-of-contents,
+.text-wrapper,
+.colophone {
+  box-shadow: 3px 0px 3px $dark-gray;
+}
+
+// helpers
+
 .left { float: left; }
 .right { float: right; }
 

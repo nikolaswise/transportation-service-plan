@@ -1,4 +1,4 @@
-  .panels  {
+.panels  {
   display: block;
   background: $off-white;
   position: absolute;
@@ -26,11 +26,13 @@
 .panel-text {
   background: $off-white;
   left: 0;
+  z-index: 1;
 }
 .panel-map {
   position: fixed;
   background: $off-white;
   left: 50%;
+  z-index: 0;
 }
 
 @media (max-width: $single-pane-break) {
