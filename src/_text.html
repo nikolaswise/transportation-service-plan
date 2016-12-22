@@ -37,9 +37,24 @@
 </div>
 
 <div class="table-wrapper">
-{% markdown %}
-{% include "_features.md" %}
-{% endmarkdown %}
+  <div class="clusterize">
+    <table>
+      <thead>
+        <tr>
+          <th>Headers</th>
+        </tr>
+      </thead>
+    </table>
+    <div id="classificationsScroll" class="clusterize-scroll">
+      <table>
+        <tbody id="classificationsContent" class="clusterize-content">
+          <tr class="clusterize-no-data">
+            <td>Loading data…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 <div class="colophon">

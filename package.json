@@ -37,6 +37,7 @@
   "homepage": "https://github.com/nikolaswise/transportation-service-plan#readme",
   "devDependencies": {
     "babel-preset-es2015-rollup": "^1.2.0",
+    "clusterize.js": "^0.17.2",
     "esri-leaflet": "^2.0.6",
     "leaflet-graphicscale": "0.0.2",
     "live-server": "^1.1.0",

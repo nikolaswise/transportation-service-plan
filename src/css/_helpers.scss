@@ -1,0 +1,50 @@
+
+// helpers
+
+.left { float: left; }
+.right { float: right; }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: block;
+}
+
+.clear-border-left {
+  border-left: none;
+}
+
+.gutter-left { margin-left: $gutter }
+
+.links-white {
+  a {
+    color: $white;
+    &:hover, &:focus {
+      color: $pale-blue;
+    }
+  }
+}
+
+.text-white {
+  color: $white;
+}
+
+.flush-top {
+  margin-top: 0;
+}
+.flush-bottom {
+  margin-bottom: 0;
+}
+.lead-bottom {
+  margin-bottom: $baseline;
+}
+.lead-top {
+  margin-top: $baseline;
+}

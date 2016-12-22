@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (factory());
-}(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('clusterize.js')) :
+  typeof define === 'function' && define.amd ? define(['clusterize.js'], factory) :
+  (factory(global.clusterize_js));
+}(this, (function (clusterize_js) { 'use strict';
 
 // ┌─────┐
 // │ DOM │
@@ -692,6 +692,14 @@ function checkActiveLayers() {
   });
 }
 
+function getLayerData() {
+  return L.esri.query({
+    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+  }).where('1=1').run(function (error, featureCollection, response) {
+    console.log(featureCollection.features);
+  });
+}
+
 function remove$1() {
   if (map) {
     map.remove();
@@ -1136,6 +1144,15 @@ function runningHead() {
   }
 }
 
+function renderTable(data, target) {
+  console.log(data);
+  // var clusterize = new Clusterize({
+  //   rows: data,
+  //   scrollId: `${target}Scroll`,
+  //   contentId: `${target}Content`
+  // });
+}
+
 // View and Intent
 // Cool Components
 route();
@@ -1144,5 +1161,8 @@ modal();
 runningHead();
 
 draw();
+
+var classificationData = getLayerData();
+renderTable(classificationData);
 
 })));

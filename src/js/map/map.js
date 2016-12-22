@@ -61,6 +61,14 @@ export function checkActiveLayers () {
   })
 }
 
+export function getLayerData () {
+  return L.esri.query({
+      url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
+  }).where('1=1').run(function(error, featureCollection, response){
+    console.log(featureCollection.features);
+  })
+}
+
 export function remove () {
   if (map) {
     map.remove()
