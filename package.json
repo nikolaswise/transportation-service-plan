@@ -12,6 +12,7 @@
     "html": "static-site -s src/ -b build/",
     "watch": "rerun-script",
     "test": "test",
+    "prepreview": "postcss --use autoprefixer build/css/style.css -r "
     "preview": "surge build/ -d pbot-tsp.surge.sh"
   },
   "watches": {
@@ -36,6 +37,7 @@
   },
   "homepage": "https://github.com/nikolaswise/transportation-service-plan#readme",
   "devDependencies": {
+    "autoprefixer": "^6.6.0",
     "babel-preset-es2015-rollup": "^1.2.0",
     "clusterize.js": "^0.17.2",
     "esri-leaflet": "^2.0.6",
