@@ -700,6 +700,8 @@ button {
   background-color: #fafafa;
   padding: 1rem;
   border-bottom: 1px solid #e4e6e7;
+  max-height: 60vh;
+  overflow: auto;
   z-index: 10; }
 
 .layer-panel-section {
@@ -718,7 +720,9 @@ button {
   .map-is-active .layer-panel,
   .map-is-active .layer-panel {
     left: 0;
-    right: 0; } }
+    right: 0; }
+  .layer-panel-section {
+    width: 100%; } }
 
 .modal-overlay {
   position: fixed;

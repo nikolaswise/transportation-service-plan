@@ -12,7 +12,7 @@
     "html": "static-site -s src/ -b build/",
     "watch": "rerun-script",
     "test": "test",
-    "prepreview": "postcss --use autoprefixer build/css/style.css -r "
+    "prepreview": "postcss --use autoprefixer build/css/style.css -r",
     "preview": "surge build/ -d pbot-tsp.surge.sh"
   },
   "watches": {
