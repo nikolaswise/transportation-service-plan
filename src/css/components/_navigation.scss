@@ -29,6 +29,19 @@
   }
 }
 
+.type-small .navigation,
+.type-small .map-frame {
+  button {
+    margin-top: 8px
+  }
+}
+.type-medium .navigation,
+.type-medium .map-frame {
+  button {
+    margin-top: 6px
+  }
+}
+
 @media (max-width: $single-pane-break) {
   .split-is-active {
     .navigation {
@@ -37,3 +50,4 @@
     }
   }
 }
+

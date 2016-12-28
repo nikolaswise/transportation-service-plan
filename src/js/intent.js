@@ -74,10 +74,10 @@ function translateKeypress (e) {
 // │ Emit Scroll Events │
 // └────────────────────┘
 // throttled for performance
-event.add(window, 'scroll', event.throttle(isScrolling, 100));
-function isScrolling () {
-  bus.emit('scrolling:at', window.pageYOffset);
-}
+// event.add(window, 'scroll', event.throttle(isScrolling, 100));
+// function isScrolling () {
+//   bus.emit('scrolling:at', window.pageYOffset);
+// }
 
 window.onresize = didResize;
 let textPane = document.querySelector('.js-text-area')

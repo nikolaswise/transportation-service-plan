@@ -18,9 +18,7 @@ import runningHead from './running-head.js'
 import renderTable from './table.js'
 
 route()
-sticky()
 modal()
-runningHead()
 
 map.draw()
 

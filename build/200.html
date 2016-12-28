@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="type-small">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -44,11 +44,15 @@
     <div class="panels js-panels">
 
       <div class="js-modal modal-overlay" data-modal='search'>
-        <div class="modal">
+        <div class="text-container">
 
+            <button class="search-label js-modal-toggle close-button">close</button>
+
+        </div>
+        <div class="modal">
           <div class="text-container">
-            <form method="GET" action="search/" class="search">
-  <button class="search-label js-modal-toggle close-button">close</button>
+            <form method="GET" action="search/" class="search text-block">
+
   <label>
     <span class="search-label left">Search the Transporation System Plan</span>
     <input class="search-input js-search-input" type="search" placeholder="Search for …" name="q">
@@ -56,6 +60,61 @@
   <button type="submit" class="search-button">Search</button>
   <button class="cancel-button js-modal-toggle">cancel</button>
 </form>
+            <div class="text-block links-white text-white">
+              <h5>Table of Contents</h5>
+
+<h6><a href="#">Introduction</a></h6>
+
+<h6><a href="#">Transportation</a></h6>
+<ol>
+  <li><a href="#">Designing and planning</a></li>
+  <li><a href="#">Land use, development, and placemaking</a></li>
+  <li><a href="#">Streets as public spaces</a></li>
+  <li><a href="#">Modal Policies</a></li>
+  <li><a href="#">Airport Futures</a></li>
+  <li><a href="#">System Management</a></li>
+  <li><a href="#">Transportation Demand Management</a></li>
+  <li><a href="#">Parking Management</a></li>
+  <li><a href="#">Finance, Programs and Coordination</a></li>
+</ol>
+
+<h6><a href="#">Public Facilities</a></h6>
+<ol>
+  <li><a href="#">Funding</a></li>
+  <li><a href="#">Public Benefits</a></li>
+  <li><a href="#">Public Rights of Way</a></li>
+  <li><a href="#">Trails</a></li>
+  <li><a href="#">Stormwater systems</a></li>
+</ol>
+
+<h6><a href="#">Urban Form</a></h6>
+<ol>
+  <li><a href="#">Citywide design and development</a></li>
+  <li><a href="#">Centers</a></li>
+  <li><a href="#">Corridors</a></li>
+  <li><a href="#">Transit Station Areas</a></li>
+  <li><a href="#">City Greenways</a></li>
+  <li><a href="#">Employment areas</a></li>
+  <li><a href="#">Pattern Areas</a></li>
+</ol>
+
+<h6><a href="#">Design and Development</a></h6>
+<ol>
+  <li><a href="#">Design and Development of centers and corridors</a></li>
+  <li><a href="#">Designing with nature</a></li>
+</ol>
+
+<h6><a href="#">Chapter 2 ???</a></h6>
+
+<h6><a href="#appendix-a">Appendix A</a></h6>
+<p>Compiled goals, policies, and objectives</p>
+
+<h6><a href="#appendix-b">Appendix B</a></h6>
+<p>Compiled projects, plans, and classifications</p>
+
+<h6><a href="#">Index</a></h6>
+            </div>
+
           </div>
         </div>
       </div>
@@ -123,28 +182,32 @@
         </div>
       </div>
 
-      <nav class="navigation js-sticky-target" hidden>
+      <nav class="navigation">
         
   <button class="left js-modal-toggle serif pt8" data-modal="search">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
+  <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
+</svg>
+
     Search Document
   </button>
 
-  <button class="left js-modal-toggle js-running-section serif pt8 button-clear" data-modal="contents">Transportation Service Plan
-  </button>
+<!--   <button class="left js-modal-toggle js-running-section serif pt8 button-clear" >Transportation Service Plan
+  </button> -->
 
-  <button class="right pt8 serif js-view-control hide-small hide-text" data-panel="text">
+  <button class="right pt8 serif js-view-control hide-small hide-text  button-clear" data-panel="text">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
  hide map
   </button>
-  <button class="right pt8 serif js-view-control show-small" data-panel="map">
+  <button class="right pt8 serif js-view-control show-small  button-clear" data-panel="map">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
  show map
   </button>
-  <button class="right pt8 serif js-view-control hide-small hide-split" data-panel="split">
+  <button class="right pt8 serif js-view-control hide-small hide-split  button-clear" data-panel="split">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
@@ -256,39 +319,6 @@
     </div>
   </div>
 </div>
-
-
-
-<nav class="navigation js-sticky-reference">
-  
-  <button class="left js-modal-toggle serif pt8" data-modal="search">
-    Search Document
-  </button>
-
-  <button class="left js-modal-toggle js-running-section serif pt8 button-clear" data-modal="contents">Transportation Service Plan
-  </button>
-
-  <button class="right pt8 serif js-view-control hide-small hide-text" data-panel="text">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
-  <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
-</svg>
- hide map
-  </button>
-  <button class="right pt8 serif js-view-control show-small" data-panel="map">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
-  <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
-</svg>
- show map
-  </button>
-  <button class="right pt8 serif js-view-control hide-small hide-split" data-panel="split">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
-  <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
-</svg>
- show map
-  </button>
-
-
-</nav>
 
 <div class="half-title">
   <div class="text-container">
@@ -593,14 +623,14 @@
       <div class="panel panel-map">
         <div class="map-frame map-frame-top clearfix">
   <div class="left">
-    <button class="pt8 js-view-control show-small" data-panel="split">  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
+    <button class=" button-clear pt8 js-view-control show-small" data-panel="split">  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg> show text</button>
-    <button class="pt8 js-view-control hide-small hide-split" data-panel="split">
+    <button class=" button-clear pt8 js-view-control hide-small hide-split" data-panel="split">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg> show text</button>
-    <button class="pt8 js-view-control hide-map hide-small clear-border-left" data-panel="map">
+    <button class=" button-clear pt8 js-view-control hide-map hide-small clear-border-left" data-panel="map">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg> hide text</button>

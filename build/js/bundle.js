@@ -760,32 +760,6 @@ function preventDefault(e) {
 
 // return a function that will only execute
 // once it is NOT called for delay milliseconds
-function throttle(fn, time, context) {
-  var lock, args, wrapperFn, later;
-
-  later = function later() {
-    // reset lock and call if queued
-    lock = false;
-    if (args) {
-      wrapperFn.apply(context, args);
-      args = false;
-    }
-  };
-
-  wrapperFn = function wrapperFn() {
-    if (lock) {
-      // called too soon, queue to call later
-      args = arguments;
-    } else {
-      // call and lock until later
-      fn.apply(context, arguments);
-      setTimeout(later, time);
-      lock = true;
-    }
-  };
-
-  return wrapperFn;
-}
 
 // ┌──────────────────────────┐
 // │ Emit View Toggle Intents │
@@ -857,10 +831,10 @@ function translateKeypress(e) {
 // │ Emit Scroll Events │
 // └────────────────────┘
 // throttled for performance
-add$1(window, 'scroll', throttle(isScrolling, 100));
-function isScrolling() {
-  bus.emit('scrolling:at', window.pageYOffset);
-}
+// event.add(window, 'scroll', event.throttle(isScrolling, 100));
+// function isScrolling () {
+//   bus.emit('scrolling:at', window.pageYOffset);
+// }
 
 window.onresize = didResize;
 var textPane = document.querySelector('.js-text-area');
@@ -979,38 +953,6 @@ function slowRedrawMap() {
 }
 
 // Cool Helpers
-// ┌────────┐
-// │ Sticky │
-// └────────┘
-// sticks things to the window
-
-function sticky() {
-  var referenceElement = document.querySelector('.js-sticky-reference');
-  var targetElement = document.querySelector('.js-sticky-target');
-  bus.on('scrolling:at', scrollHandler);
-  bus.on('sticky:stick', stickItem);
-  bus.on('sticky:unstick', unstickItem);
-
-  function scrollHandler(pageYOffset) {
-    var position = referenceElement.offsetTop;
-    if (position > pageYOffset) {
-      bus.emit('sticky:unstick');
-    } else {
-      bus.emit('sticky:stick');
-    }
-  }
-
-  function unstickItem() {
-    if (!targetElement.hasAttribute('hidden')) {
-      targetElement.setAttribute('hidden', 'hidden');
-    }
-  }
-  function stickItem() {
-    if (targetElement.hasAttribute('hidden')) {
-      targetElement.removeAttribute('hidden');
-    }
-  }
-}
 
 // ┌────────────────┐
 // │ Aria Adjusters │
@@ -1115,35 +1057,6 @@ function modal() {
   bus.emit('modal:bind');
 }
 
-function runningHead() {
-  bus.on('scrolling:at', runningHandler);
-  bus.on('running:section', renderSection);
-
-  var sections = findElements('.js-section');
-
-  sections.map(function (section) {
-    var node = section;
-    var position = section.offsetTop + section.offsetParent.offsetTop;
-    return {
-      node: section,
-      position: position
-    };
-  });
-
-  var heads = findElements('.js-running-section');
-  var current = void 0;
-
-  function closestToTop(sections) {}
-
-  function runningHandler(pageYOffset) {}
-
-  function getCurrentSection(sections) {}
-
-  function renderSection(section) {
-    heads.map(function (head) {});
-  }
-}
-
 function renderTable(data, target) {
   console.log(data);
   // var clusterize = new Clusterize({
@@ -1156,9 +1069,7 @@ function renderTable(data, target) {
 // View and Intent
 // Cool Components
 route();
-sticky();
 modal();
-runningHead();
 
 draw();
 

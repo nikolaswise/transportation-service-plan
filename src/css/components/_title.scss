@@ -34,3 +34,11 @@
   font-weight: 300;
   letter-spacing: 0.05em;
 }
+
+
+@media (max-width: $single-pane-break) {
+  .title-buffer {
+    padding-top: $baseline * 1;
+    padding-bottom: $baseline * 3;
+  }
+}

@@ -9,3 +9,13 @@
   max-width: $text-measure;
   overflow: hide;
 }
+
+@media (max-width: $single-pane-break) {
+  .text-container {
+    width: 100%;
+  }
+  .text-block {
+    padding: $gutter;
+    padding-left: 1.5*$gutter;
+  }
+}

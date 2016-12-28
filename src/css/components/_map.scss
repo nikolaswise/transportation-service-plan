@@ -34,10 +34,26 @@
 
 @media (max-width: $single-pane-break) {
   .map-is-active {
+    .leaflet-control-zoom {
+      display: none;
+    }
+    .leaflet-top {
+      top: auto;
+      bottom: 2rem;
+    }
+    .map-frame {
+      background-color: transparent;
+      padding: 0.5rem;
+    }
     #map,
     .map-frame {
+      background-color: transparent;
       left: 0;
       right: 0;
+    }
+    #map {
+      top: 0;
+      bottom: 0;
     }
   }
 }

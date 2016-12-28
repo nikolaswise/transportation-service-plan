@@ -67,11 +67,11 @@ html.type-large {
 
 html.type-medium {
   line-height: 1.55rem;
-  font-size: 20px; }
+  font-size: 22px; }
 
 html.type-small {
   line-height: 1.5rem;
-  font-size: 16px; }
+  font-size: 20px; }
 
 /* Type Colors */
 body {
@@ -244,6 +244,13 @@ a {
   max-width: 36rem;
   overflow: hide; }
 
+@media (max-width: 800px) {
+  .text-container {
+    width: 100%; }
+  .text-block {
+    padding: 1rem;
+    padding-left: 1.5rem; } }
+
 .panels {
   display: block;
   background: #fafafa;
@@ -252,8 +259,6 @@ a {
   right: 0;
   top: 0;
   bottom: 0; }
-  .panels.map-is-active {
-    overflow: hidden; }
 
 .panel {
   width: 50%;
@@ -323,10 +328,22 @@ a {
   left: 53px; }
 
 @media (max-width: 800px) {
+  .map-is-active .leaflet-control-zoom {
+    display: none; }
+  .map-is-active .leaflet-top {
+    top: auto;
+    bottom: 2rem; }
+  .map-is-active .map-frame {
+    background-color: transparent;
+    padding: 0.5rem; }
   .map-is-active #map,
   .map-is-active .map-frame {
+    background-color: transparent;
     left: 0;
-    right: 0; } }
+    right: 0; }
+  .map-is-active #map {
+    top: 0;
+    bottom: 0; } }
 
 fieldset {
   margin: 0;
@@ -474,6 +491,11 @@ button {
   font-weight: 300;
   letter-spacing: 0.05em; }
 
+@media (max-width: 800px) {
+  .title-buffer {
+    padding-top: 1.6rem;
+    padding-bottom: 4.8rem; } }
+
 .table-of-contents {
   padding-top: 4.8rem;
   padding-bottom: 8rem;
@@ -499,6 +521,14 @@ button {
 .panel-text .navigation {
   width: 100%;
   transform: translateX(0); }
+
+.type-small .navigation button,
+.type-small .map-frame button {
+  margin-top: 8px; }
+
+.type-medium .navigation button,
+.type-medium .map-frame button {
+  margin-top: 6px; }
 
 @media (max-width: 800px) {
   .split-is-active .navigation {
@@ -634,10 +664,22 @@ button {
   left: 53px; }
 
 @media (max-width: 800px) {
+  .map-is-active .leaflet-control-zoom {
+    display: none; }
+  .map-is-active .leaflet-top {
+    top: auto;
+    bottom: 2rem; }
+  .map-is-active .map-frame {
+    background-color: transparent;
+    padding: 0.5rem; }
   .map-is-active #map,
   .map-is-active .map-frame {
+    background-color: transparent;
     left: 0;
-    right: 0; } }
+    right: 0; }
+  .map-is-active #map {
+    top: 0;
+    bottom: 0; } }
 
 .scale-unit {
   text-align: center;
@@ -719,8 +761,10 @@ button {
 @media (max-width: 800px) {
   .map-is-active .layer-panel,
   .map-is-active .layer-panel {
+    padding-top: 53px;
     left: 0;
-    right: 0; }
+    right: 0;
+    top: 0; }
   .layer-panel-section {
     width: 100%; } }
 
