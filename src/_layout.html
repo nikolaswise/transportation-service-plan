@@ -76,9 +76,20 @@
         {% include "_navigation.html" %}
       </nav>
 
-
       <div class="panel panel-text js-text-area">
-        {% include "_text.html" %}
+        {% include "_first-half.html" %}
+        <div class="text-wrapper">
+          <div class="text-container">
+            <article class="text-block">
+              <section class="text-section">
+                {% autoescape false %}
+                  {{ content }}
+                {% endautoescape %}
+              </section>
+            </article>
+          </div>
+        </div>
+        {% include "_last-half.html" %}
       </div>
       <div class="panel panel-map">
         {% include "_map.html" %}
