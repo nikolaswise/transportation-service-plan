@@ -858,6 +858,7 @@ bus.on('keyboard:escape', closeControl);
 bus.on('keyboard:escape', closePopUp$1);
 bus.on('layer:toggle', toggleMapLayer);
 bus.on('popup:opened', handlePopUp);
+bus.on('popup:opened', closeControl);
 bus.on('popup:close', closePopUp$1);
 bus.on('popup:leafletclosed', closePopUp$1);
 bus.on('type:size', sizeTextTo);
