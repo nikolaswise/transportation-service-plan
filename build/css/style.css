@@ -73,6 +73,18 @@ html.type-small {
   line-height: 1.5rem;
   font-size: 20px; }
 
+@media print {
+  html,
+  html.type-large,
+  html.type-medium,
+  html.type-small {
+    line-height: 1.5rem;
+    font-size: 20px;
+    max-width: 600px; }
+  html,
+  body {
+    height: 99%; } }
+
 /* Type Colors */
 body {
   background-color: #fafafa;
@@ -301,6 +313,10 @@ a {
 .map-is-active .panel-text {
   transform: translateX(-100%); }
 
+@media print {
+  .panel-map {
+    display: none; } }
+
 #map {
   top: 53px;
   right: 53px;
@@ -344,6 +360,11 @@ a {
   .map-is-active #map {
     top: 0;
     bottom: 0; } }
+
+@media print {
+  #map,
+  .map-frame {
+    display: none; } }
 
 fieldset {
   margin: 0;
@@ -496,6 +517,11 @@ button {
     padding-top: 1.6rem;
     padding-bottom: 4.8rem; } }
 
+@media print {
+  .title {
+    page-break-before: always;
+    page-break-after: always; } }
+
 .table-of-contents {
   padding-top: 4.8rem;
   padding-bottom: 8rem;
@@ -535,6 +561,10 @@ button {
     width: 100%;
     transform: translateX(0); } }
 
+@media print {
+  .navigation {
+    display: none; } }
+
 .half-title {
   background-color: #fafafa;
   padding-top: 9.6rem;
@@ -556,6 +586,11 @@ button {
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
   font-weight: 300;
   letter-spacing: 0.05em; }
+
+@media print {
+  .half-title {
+    page-break-before: always;
+    page-break-after: always; } }
 
 .search {
   margin-top: 4.8rem; }
@@ -681,6 +716,11 @@ button {
     top: 0;
     bottom: 0; } }
 
+@media print {
+  #map,
+  .map-frame {
+    display: none; } }
+
 .scale-unit {
   text-align: center;
   margin: 0; }
@@ -796,6 +836,10 @@ button {
 @media (max-width: 800px) {
   .split-is-active .modal-overlay {
     width: 100%; } }
+
+@media print {
+  .modal-overlay {
+    display: none; } }
 
 .leaflet-popup {
   display: none; }

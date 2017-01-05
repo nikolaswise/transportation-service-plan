@@ -22,6 +22,21 @@ html.type-small {
   font-size: $small-font-size;
 }
 
+@media print {
+  html,
+  html.type-large,
+  html.type-medium,
+  html.type-small {
+    line-height: $small-baseline;
+    font-size: $small-font-size;
+    max-width: 600px;
+  }
+  html,
+  body {
+    height: 99%;
+  }
+}
+
 /* Type Colors */
 body {
   background-color: $color-background;

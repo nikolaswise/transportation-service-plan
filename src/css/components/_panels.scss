@@ -61,3 +61,10 @@
     transform: translateX(-100%);
   }
 }
+
+
+@media print {
+  .panel-map {
+    display: none;
+  }
+}

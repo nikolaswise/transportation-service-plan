@@ -40,3 +40,9 @@
     }
   }
 }
+
+@media print {
+  .modal-overlay {
+    display: none;
+  }
+}

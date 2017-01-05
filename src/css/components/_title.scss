@@ -42,3 +42,10 @@
     padding-bottom: $baseline * 3;
   }
 }
+
+@media print {
+  .title {
+    page-break-before: always;
+    page-break-after: always;
+  }
+}
