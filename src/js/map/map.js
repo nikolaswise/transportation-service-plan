@@ -42,21 +42,19 @@ export function draw () {
   });
 }
 
-export function toggleLayer (layer) {
-  if (layer.checked) {
-    layers[layer.layerId].addTo(map)
-  } else {
-    layers[layer.layerId].unbindPopup()
-    layers[layer.layerId].removeFrom(map)
-  }
+export function getLayer (layer) {
   return layers[layer.layerId]
 }
 
 export function checkActiveLayers () {
   dom.findElements('.js-layer-toggle').map(function (toggle) {
-    if (toggle.checked) {
-      let layer = toggle.getAttribute('data-layer')
-      layers[layer].addTo(map)
+    let layer = toggle.getAttribute('data-layer')
+    if (layer) {
+      if (toggle.checked) {
+        layers[layer].addTo(map)
+      } else {
+        layers[layer].removeFrom(map)
+      }
     }
   })
 }

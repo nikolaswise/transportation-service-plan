@@ -2299,55 +2299,59 @@ ser­vices to neigh­bor­hood-serv­ing com­mer­cial and em­ploy­ment uses.
     <fieldset class="layer-panel-section fieldset-checkbox">
       <legend><b>Projects:</b></legend>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">View All
+        <input class="js-layer-toggle" type="checkbox">View All
       </label>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer One
+        <input class="js-layer-toggle" type="checkbox">Layer One
       </label>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Two
+        <input class="js-layer-toggle" type="checkbox">Layer Two
       </label>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Three
+        <input class="js-layer-toggle" type="checkbox">Layer Three
       </label>
     </fieldset>
     <fieldset class="layer-panel-section fieldset-checkbox">
       <legend><b>Plans:</b></legend>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">View All
+        <input class="js-layer-toggle" type="checkbox">View All
       </label>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer One
+        <input class="js-layer-toggle" type="checkbox">Layer One
       </label>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Two
+        <input class="js-layer-toggle" type="checkbox">Layer Two
       </label>
       <label>
-        <input class="js-layer-toggle" data-layer='foo' type="checkbox">Layer Three
+        <input class="js-layer-toggle" type="checkbox">Layer Three
       </label>
     </fieldset>
-    <fieldset class="layer-panel-section fieldset-checkbox">
+
+    <fieldset class="layer-panel-section fieldset-radio">
       <legend><b>Street Classifications:</b></legend>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="urbanThroughway">Design
+        <input type="radio" name="streetClass" class="js-layer-toggle" checked>None
       </label>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="urbanHighway">Bicycle
+        <input type="radio" name="streetClass" class="js-layer-toggle" data-layer="designClassifications">Design
       </label>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="industrialRoad">Transit
+        <input type="radio" name="streetClass" class="js-layer-toggle" data-layer="bicycleClassifications">Bicycle
       </label>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="civicMainSteet">Pedestrian
+        <input type="radio" name="streetClass" class="js-layer-toggle" >Transit
       </label>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="neighborhoodMainStreet">Freight
+        <input type="radio" name="streetClass" class="js-layer-toggle" >Pedestrian
       </label>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="civicCorridor">Traffic
+        <input type="radio" name="streetClass" class="js-layer-toggle" >Freight
       </label>
       <label>
-        <input type="checkbox" class="js-layer-toggle" data-layer="neighborhoodCorridor">Emergency Response
+        <input type="radio" name="streetClass" class="js-layer-toggle" >Traffic
+      </label>
+      <label>
+        <input type="radio" name="streetClass" class="js-layer-toggle">Emergency Response
       </label>
   </form>
 </div>

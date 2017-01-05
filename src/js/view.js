@@ -78,9 +78,12 @@ function closeControl () {
 }
 
 function toggleMapLayer (layer) {
-  let target = map.toggleLayer(layer)
-  target.resetStyle()
-  if (layer.checked) {
+  let target = map.getLayer(layer)
+  map.checkActiveLayers()
+  if (target) {
+    target.resetStyle()
+  }
+  if (target && layer.checked) {
     target.bindPopup(function (evt) {
       evt.bringToFront()
       evt.setStyle({

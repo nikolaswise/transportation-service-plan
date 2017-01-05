@@ -578,13 +578,12 @@ var Scalebar = function (_L$control$scale) {
   return Scalebar;
 }(L.control.scale);
 
-var streets$1 = L.esri.featureLayer({
+var designClassifications = L.esri.featureLayer({
   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
 });
 
-var urbanThroughway = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'UT'"
+var bicycleClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
 });
 
 var urbanHighway = L.esri.featureLayer({
@@ -621,8 +620,8 @@ var communityCorridor = L.esri.featureLayer({
 });
 
 var layers = Object.freeze({
-	streets: streets$1,
-	urbanThroughway: urbanThroughway,
+	designClassifications: designClassifications,
+	bicycleClassifications: bicycleClassifications,
 	urbanHighway: urbanHighway,
 	industrialRoad: industrialRoad,
 	civicMainSteet: civicMainSteet,
@@ -635,7 +634,7 @@ var layers = Object.freeze({
 
 var map = void 0;
 
-var streets$$1 = L.esri.featureLayer({
+var streets = L.esri.featureLayer({
   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
 });
 
@@ -673,21 +672,19 @@ function draw() {
   });
 }
 
-function toggleLayer(layer) {
-  if (layer.checked) {
-    layers[layer.layerId].addTo(map);
-  } else {
-    layers[layer.layerId].unbindPopup();
-    layers[layer.layerId].removeFrom(map);
-  }
+function getLayer(layer) {
   return layers[layer.layerId];
 }
 
 function checkActiveLayers() {
   findElements('.js-layer-toggle').map(function (toggle) {
-    if (toggle.checked) {
-      var layer = toggle.getAttribute('data-layer');
-      layers[layer].addTo(map);
+    var layer = toggle.getAttribute('data-layer');
+    if (layer) {
+      if (toggle.checked) {
+        layers[layer].addTo(map);
+      } else {
+        layers[layer].removeFrom(map);
+      }
     }
   });
 }
@@ -767,9 +764,9 @@ function preventDefault(e) {
 // emit toggle button clicks
 
 findElements('.js-layer-toggle').map(function (btn) {
-  add$1(btn, 'click', toggleLayer$1);
+  add$1(btn, 'click', toggleLayer);
 });
-function toggleLayer$1(e) {
+function toggleLayer(e) {
   var layer = e.target.getAttribute('data-layer');
   bus.emit('layer:toggle', {
     layerId: layer,
@@ -927,9 +924,12 @@ function closeControl() {
 }
 
 function toggleMapLayer(layer) {
-  var target = toggleLayer(layer);
-  target.resetStyle();
-  if (layer.checked) {
+  var target = getLayer(layer);
+  checkActiveLayers();
+  if (target) {
+    target.resetStyle();
+  }
+  if (target && layer.checked) {
     target.bindPopup(function (evt) {
       evt.bringToFront();
       evt.setStyle({

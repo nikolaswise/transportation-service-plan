@@ -1,10 +1,9 @@
-export const streets = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+export const designClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
 })
 
-export const urbanThroughway = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'UT'"
+export const bicycleClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
 })
 
 export const urbanHighway = L.esri.featureLayer({
