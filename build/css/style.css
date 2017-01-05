@@ -286,7 +286,10 @@ a {
 .panel-text {
   background: #fafafa;
   left: 0;
-  z-index: 1; }
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  overflow-y: scroll; }
 
 .panel-map {
   position: fixed;
@@ -296,11 +299,13 @@ a {
 
 @media (max-width: 800px) {
   .panel-text {
-    width: 100%; }
+    width: 100%;
+    overflow-y: initial; }
   .panel-map {
     transform: translateX(100%); } }
 
 .text-is-active .panel-text {
+  overflow-y: initial;
   width: 100%; }
 
 .text-is-active .panel-map {
