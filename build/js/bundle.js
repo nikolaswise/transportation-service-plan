@@ -350,8 +350,7 @@ function draw() {
   map.on('moveend', savePosition);
 }
 
-function savePosition(e) {
-  // console.log(e)
+function savePosition() {
   position.center = map.getCenter();
   position.zoom = map.getZoom();
 }
@@ -548,9 +547,9 @@ function translateKeypress(e) {
 // }
 
 window.onresize = didResize;
-var textPane = document.querySelector('.js-text-area');
+var textPane$1 = document.querySelector('.js-text-area');
 function didResize() {
-  var width = textPane.offsetWidth;
+  var width = textPane$1.offsetWidth;
   if (width > 785) {
     bus.emit('type:size', 'large');
   } else if (width > 599) {
@@ -580,6 +579,7 @@ bus.on('type:size', sizeTextTo);
 var body = document.querySelector('body');
 var panelContainer = document.querySelector('.js-panels');
 var controlPanel = document.querySelector('.js-layer-control-panel');
+var controlButton = document.querySelector('.js-layer-control');
 var popUpContainer = document.querySelector('.js-pop-up');
 var popUpTemplate = document.querySelector('.js-template');
 
@@ -630,6 +630,7 @@ function sizeTextTo(size) {
 
 function toggleControl$1() {
   toggle(controlPanel, 'is-active');
+  toggle(controlButton, 'is-active');
 }
 
 function closeControl() {
@@ -790,5 +791,16 @@ route();
 modal();
 
 draw();
+
+var textPane = document.querySelector('.js-text-area');
+var width = textPane.offsetWidth;
+
+if (width > 785) {
+  bus.emit('type:size', 'large');
+} else if (width > 599) {
+  bus.emit('type:size', 'medium');
+} else if (width < 600) {
+  bus.emit('type:size', 'small');
+}
 
 })));

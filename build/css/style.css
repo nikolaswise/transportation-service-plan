@@ -348,6 +348,13 @@ a {
 .map-is-active .map-frame {
   left: 53px; }
 
+.rotate-if-active {
+  transition: 100ms linear all; }
+
+.is-active .rotate-if-active {
+  transform: rotate(90deg);
+  transition: 100ms linear all; }
+
 @media (max-width: 800px) {
   .map-is-active .leaflet-control-zoom {
     display: none; }
@@ -702,6 +709,13 @@ button {
 
 .map-is-active .map-frame {
   left: 53px; }
+
+.rotate-if-active {
+  transition: 100ms linear all; }
+
+.is-active .rotate-if-active {
+  transform: rotate(90deg);
+  transition: 100ms linear all; }
 
 @media (max-width: 800px) {
   .map-is-active .leaflet-control-zoom {

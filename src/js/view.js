@@ -20,6 +20,7 @@ bus.on('type:size', sizeTextTo)
 let body = document.querySelector('body')
 let panelContainer = document.querySelector('.js-panels')
 let controlPanel = document.querySelector('.js-layer-control-panel')
+let controlButton = document.querySelector('.js-layer-control')
 let popUpContainer = document.querySelector('.js-pop-up')
 let popUpTemplate = document.querySelector('.js-template')
 
@@ -70,6 +71,7 @@ function sizeTextTo (size) {
 
 function toggleControl () {
   classy.toggle(controlPanel, 'is-active')
+  classy.toggle(controlButton, 'is-active')
 }
 
 function closeControl () {

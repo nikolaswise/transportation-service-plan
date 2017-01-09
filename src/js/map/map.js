@@ -26,8 +26,7 @@ export function draw () {
   map.on('moveend', savePosition)
 }
 
-function savePosition (e) {
-  // console.log(e)
+function savePosition () {
   position.center = map.getCenter()
   position.zoom = map.getZoom()
 }

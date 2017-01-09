@@ -85,4 +85,3 @@ function didResize () {
     bus.emit(`type:size`, 'small')
   }
 }
-

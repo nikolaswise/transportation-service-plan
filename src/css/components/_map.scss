@@ -32,6 +32,17 @@
   }
 }
 
+
+.rotate-if-active {
+  transition: 100ms linear all;
+}
+.is-active {
+  .rotate-if-active {
+    transform: rotate(90deg);
+    transition: 100ms linear all;
+  }
+}
+
 @media (max-width: $single-pane-break) {
   .map-is-active {
     .leaflet-control-zoom {
