@@ -1,12 +1,6 @@
 import * as dom from '../helpers/dom.js'
-
-import Scalebar from './scale'
 import * as layers from './layers'
 let map
-
-let streets = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
-})
 
 export function draw () {
   map = L.map('map', {
@@ -19,51 +13,40 @@ export function draw () {
 
   map.addControl(L.control.zoom({position: 'topright'}));
 
-  // Scale bar
-  let scalebar = new Scalebar(map)
-  scalebar.custom('scalebar-miles')
-
   L.esri.tiledMapLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
-
-  var searchControl = L.esri.Geocoding.geosearch({
-    position: 'topright',
-    url: 'https://beta.portlandmaps.com/arcgis/rest/services/Public/Assessor_IDs/GeocodeServer/geocodeAddresses'
-  }).addTo(map);
-
-  var results = L.layerGroup().addTo(map);
-
-  searchControl.on('results', function(data){
-    results.clearLayers();
-    for (var i = data.results.length - 1; i >= 0; i--) {
-      results.addLayer(L.marker(data.results[i].latlng));
-    }
-  });
 }
 
 export function getLayer (layer) {
   return layers[layer.layerId]
 }
 
-export function checkActiveLayers () {
-  dom.findElements('.js-layer-toggle').map(function (toggle) {
-    let layer = toggle.getAttribute('data-layer')
-    if (layer) {
-      if (toggle.checked) {
-        layers[layer].addTo(map)
-      } else {
-        layers[layer].removeFrom(map)
-      }
-    }
+export function getActiveLayers () {
+  let activeLayers = dom.findElements('.js-layer-toggle').filter(function (toggle) {
+    return toggle.checked
+  })
+  return activeLayers
+}
+export function getInactiveLayers () {
+  let inactiveLayers = dom.findElements('.js-layer-toggle').filter(function (toggle) {
+    return !toggle.checked
+  })
+  return inactiveLayers
+}
+
+export function addLayers (layerSet) {
+  if (!layerSet) { return }
+  layerSet.split(',').forEach(function (layer) {
+    console.log(layers[layer])
+    layers[layer].addTo(map)
   })
 }
 
-export function getLayerData () {
-  return L.esri.query({
-      url:'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
-  }).where('1=1').run(function(error, featureCollection, response){
-    console.log(featureCollection.features);
+export function removeLayers (layerSet) {
+  if (!layerSet) { return }
+  layerSet.split(',').forEach(function (layer) {
+    layers[layer].removeFrom(map)
   })
 }
 
@@ -76,7 +59,7 @@ export function remove () {
 export function redraw () {
   remove()
   draw()
-  checkActiveLayers()
+  // checkActiveLayers()
 }
 
 export function closeAllPopUps () {

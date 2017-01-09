@@ -12,11 +12,7 @@ dom.findElements('.js-layer-toggle').map(function (btn) {
   event.add(btn, 'click', toggleLayer)
 })
 function toggleLayer (e) {
-  let layer = e.target.getAttribute('data-layer')
-  bus.emit('layer:toggle', {
-    layerId: layer,
-    checked: e.target.checked
-  })
+  bus.emit('layers:draw')
 }
 
 dom.findElements('.js-layer-control').map(function (btn) {
@@ -37,11 +33,9 @@ function translateView (e) {
 }
 
 dom.findElements('.js-close-popup').map(function (btn) {
-  console.log(btn)
   event.add(btn, 'click', closePopUp)
 })
 function closePopUp (e) {
-  console.log('close plz')
   e.preventDefault()
   bus.emit('popup:close');
 }

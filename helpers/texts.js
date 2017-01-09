@@ -30,7 +30,6 @@ module.exports = function (site, cb) {
         page.content = text
         page.content = md.render(page.content)
         page.content = typeset(page.content)
-        console.log(page.content)
         return page
       })
       cb(null, site)

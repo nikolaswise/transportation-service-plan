@@ -10,7 +10,7 @@ bus.on('set:view', slowRedrawMap)
 bus.on('layer:control', toggleControl)
 bus.on('keyboard:escape', closeControl)
 bus.on('keyboard:escape', closePopUp)
-bus.on('layer:toggle', toggleMapLayer)
+bus.on('layers:draw', drawMapLayers)
 bus.on('popup:opened', handlePopUp)
 bus.on('popup:opened', closeControl)
 bus.on('popup:close', closePopUp)
@@ -78,29 +78,40 @@ function closeControl () {
   }
 }
 
-function toggleMapLayer (layer) {
-  let target = map.getLayer(layer)
-  map.checkActiveLayers()
-  if (target) {
-    target.resetStyle()
-  }
-  if (target && layer.checked) {
-    target.bindPopup(function (evt) {
-      evt.bringToFront()
-      evt.setStyle({
-        lineCap: 'round',
-        weight: 30,
-        color: '#34F644'
-      });
-      bus.emit('popup:opened', evt.feature.properties)
-      return ''
-    }).on('popupclose', function () {
-      target.resetStyle();
-      bus.emit('popup:leafletclosed')
-    })
-  } else {
-    target.unbindPopup()
-  }
+function drawMapLayers () {
+  let activeLayers = map.getActiveLayers()
+  let inactiveLayers = map.getInactiveLayers()
+  activeLayers.forEach(function (toggle) {
+    let layerSet = toggle.getAttribute('data-layers')
+    map.addLayers(layerSet)
+  })
+  inactiveLayers.forEach(function (toggle) {
+    let layerSet = toggle.getAttribute('data-layers')
+    map.removeLayers(layerSet)
+  })
+
+  // if (target) {
+  //   target.resetStyle()
+  // } else {
+  //   return
+  // }
+  // if (target && layer.checked) {
+  //   target.bindPopup(function (evt) {
+  //     evt.bringToFront()
+  //     evt.setStyle({
+  //       lineCap: 'round',
+  //       weight: 30,
+  //       color: '#34F644'
+  //     });
+  //     bus.emit('popup:opened', evt.feature.properties)
+  //     return ''
+  //   }).on('popupclose', function () {
+  //     target.resetStyle();
+  //     bus.emit('popup:leafletclosed')
+  //   })
+  // } else {
+  //   target.unbindPopup()
+  // }
 }
 
 function slowRedrawMap () {

@@ -277,307 +277,6 @@ function route() {
   }
 }
 
-var asyncGenerator = function () {
-  function AwaitValue(value) {
-    this.value = value;
-  }
-
-  function AsyncGenerator(gen) {
-    var front, back;
-
-    function send(key, arg) {
-      return new Promise(function (resolve, reject) {
-        var request = {
-          key: key,
-          arg: arg,
-          resolve: resolve,
-          reject: reject,
-          next: null
-        };
-
-        if (back) {
-          back = back.next = request;
-        } else {
-          front = back = request;
-          resume(key, arg);
-        }
-      });
-    }
-
-    function resume(key, arg) {
-      try {
-        var result = gen[key](arg);
-        var value = result.value;
-
-        if (value instanceof AwaitValue) {
-          Promise.resolve(value.value).then(function (arg) {
-            resume("next", arg);
-          }, function (arg) {
-            resume("throw", arg);
-          });
-        } else {
-          settle(result.done ? "return" : "normal", result.value);
-        }
-      } catch (err) {
-        settle("throw", err);
-      }
-    }
-
-    function settle(type, value) {
-      switch (type) {
-        case "return":
-          front.resolve({
-            value: value,
-            done: true
-          });
-          break;
-
-        case "throw":
-          front.reject(value);
-          break;
-
-        default:
-          front.resolve({
-            value: value,
-            done: false
-          });
-          break;
-      }
-
-      front = front.next;
-
-      if (front) {
-        resume(front.key, front.arg);
-      } else {
-        back = null;
-      }
-    }
-
-    this._invoke = send;
-
-    if (typeof gen.return !== "function") {
-      this.return = undefined;
-    }
-  }
-
-  if (typeof Symbol === "function" && Symbol.asyncIterator) {
-    AsyncGenerator.prototype[Symbol.asyncIterator] = function () {
-      return this;
-    };
-  }
-
-  AsyncGenerator.prototype.next = function (arg) {
-    return this._invoke("next", arg);
-  };
-
-  AsyncGenerator.prototype.throw = function (arg) {
-    return this._invoke("throw", arg);
-  };
-
-  AsyncGenerator.prototype.return = function (arg) {
-    return this._invoke("return", arg);
-  };
-
-  return {
-    wrap: function (fn) {
-      return function () {
-        return new AsyncGenerator(fn.apply(this, arguments));
-      };
-    },
-    await: function (value) {
-      return new AwaitValue(value);
-    }
-  };
-}();
-
-
-
-
-
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-
-
-
-
-
-
-
-
-var get = function get(object, property, receiver) {
-  if (object === null) object = Function.prototype;
-  var desc = Object.getOwnPropertyDescriptor(object, property);
-
-  if (desc === undefined) {
-    var parent = Object.getPrototypeOf(object);
-
-    if (parent === null) {
-      return undefined;
-    } else {
-      return get(parent, property, receiver);
-    }
-  } else if ("value" in desc) {
-    return desc.value;
-  } else {
-    var getter = desc.get;
-
-    if (getter === undefined) {
-      return undefined;
-    }
-
-    return getter.call(receiver);
-  }
-};
-
-var inherits = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-
-
-
-
-
-
-
-
-
-
-var possibleConstructorReturn = function (self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return call && (typeof call === "object" || typeof call === "function") ? call : self;
-};
-
-
-
-var set = function set(object, property, value, receiver) {
-  var desc = Object.getOwnPropertyDescriptor(object, property);
-
-  if (desc === undefined) {
-    var parent = Object.getPrototypeOf(object);
-
-    if (parent !== null) {
-      set(parent, property, value, receiver);
-    }
-  } else if ("value" in desc && desc.writable) {
-    desc.value = value;
-  } else {
-    var setter = desc.set;
-
-    if (setter !== undefined) {
-      setter.call(receiver, value);
-    }
-  }
-
-  return value;
-};
-
-function getScale() {
-  var map = this.map;
-  var centerLatLng = map.getCenter(); // get map center
-
-  var pointC = map.latLngToContainerPoint(centerLatLng); // convert to containerpoint (pixels)
-  var pointX = [pointC.x + 1, pointC.y]; // add one pixel to x
-  var pointY = [pointC.x, pointC.y + 1]; // add one pixel to y
-
-  // convert containerpoints to latlng's
-  var latLngC = map.containerPointToLatLng(pointC);
-  var latLngX = map.containerPointToLatLng(pointX);
-  var latLngY = map.containerPointToLatLng(pointY);
-
-  var distanceX = latLngC.distanceTo(latLngX); // calculate distance between c and x (latitude)
-  var distanceY = latLngC.distanceTo(latLngY); // calculate distance between c and y (longitude)
-
-  var times = [distanceX, distanceY];
-
-  var sum = times.reduce(function (distanceX, distanceY) {
-    return distanceX + distanceY;
-  });
-  var avg = sum / times.length;
-
-  var meters = avg; // meters per meter : 1
-  var kilometer = avg / 1000; // meters per kilometer : 1000
-  var feet = avg * 3.2804; // feet per meter : 3.2804
-  var mile = feet / 5280; // feet per mile : 5280
-  var nauticalMile = avg / 1852; // meters per nautical mile
-
-  var scale = {
-    'pixelTo': {
-      'meters': meters.toFixed(3),
-      'kilometer': kilometer.toFixed(3),
-      'feet': feet.toFixed(3),
-      'mile': mile.toFixed(3),
-      'nauticalMile': nauticalMile.toFixed(3)
-    },
-    'pixelFrom': {
-      'meter': 1 / meters,
-      'kilometer': 1 / kilometer,
-      'halfKilometer': 0.5 / kilometer,
-      'quarterKilometer': 0.25 / kilometer,
-      'eigthKilometer': 0.125 / kilometer,
-      'feet': 1 / feet,
-      'mile': 1 / mile,
-      'halfMile': 0.5 / mile,
-      'quarterMile': 0.25 / mile,
-      'eigthMile': 0.125 / mile,
-      'nauticalMile': 1 / nauticalMile
-    }
-  };
-  return scale;
-}
-
-function custom(element, template) {
-  var _this = this;
-
-  var render = function render() {
-    var scale = _this.getScale();
-  };
-
-  this.map.whenReady(function () {
-    render();
-  });
-  this.map.on('zoomend', function () {
-    render();
-  });
-}
-
-var Scalebar = function (_L$control$scale) {
-  inherits(Scalebar, _L$control$scale);
-
-  function Scalebar(map, fn) {
-    classCallCheck(this, Scalebar);
-
-    var _this2 = possibleConstructorReturn(this, (Scalebar.__proto__ || Object.getPrototypeOf(Scalebar)).call(this));
-
-    _this2.map = map;
-    _this2.fn = fn ? fn : false;
-    _this2.getScale = getScale;
-    _this2.custom = custom;
-    return _this2;
-  }
-
-  return Scalebar;
-}(L.control.scale);
-
 var designClassifications = L.esri.featureLayer({
   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
 });
@@ -586,57 +285,47 @@ var bicycleClassifications = L.esri.featureLayer({
   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
 });
 
-var urbanHighway = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'UH'"
+var transitClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
 });
-var industrialRoad = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'IR'"
+
+var trafficClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
 });
-var civicMainSteet = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'CIMS'"
+
+var emergencyClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
 });
-var neighborhoodMainStreet = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign='NMS'"
+
+var pedestrianClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
 });
-var civicCorridor = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'CIC'"
+
+var pedestrianDistricts = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
 });
-var neighborhoodCorridor = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'NC'"
+
+var freightClassifications = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
 });
-var regionalCorridor = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'RC'"
-});
-var communityCorridor = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
-  where: "ProposedDesign = 'CC'"
+
+var freightDistricts = L.esri.featureLayer({
+  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
 });
 
 var layers = Object.freeze({
 	designClassifications: designClassifications,
 	bicycleClassifications: bicycleClassifications,
-	urbanHighway: urbanHighway,
-	industrialRoad: industrialRoad,
-	civicMainSteet: civicMainSteet,
-	neighborhoodMainStreet: neighborhoodMainStreet,
-	civicCorridor: civicCorridor,
-	neighborhoodCorridor: neighborhoodCorridor,
-	regionalCorridor: regionalCorridor,
-	communityCorridor: communityCorridor
+	transitClassifications: transitClassifications,
+	trafficClassifications: trafficClassifications,
+	emergencyClassifications: emergencyClassifications,
+	pedestrianClassifications: pedestrianClassifications,
+	pedestrianDistricts: pedestrianDistricts,
+	freightClassifications: freightClassifications,
+	freightDistricts: freightDistricts
 });
 
 var map = void 0;
-
-var streets = L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
-});
 
 function draw() {
   map = L.map('map', {
@@ -649,51 +338,42 @@ function draw() {
 
   map.addControl(L.control.zoom({ position: 'topright' }));
 
-  // Scale bar
-  var scalebar = new Scalebar(map);
-  scalebar.custom('scalebar-miles');
-
   L.esri.tiledMapLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
+}
 
-  var searchControl = L.esri.Geocoding.geosearch({
-    position: 'topright',
-    url: 'https://beta.portlandmaps.com/arcgis/rest/services/Public/Assessor_IDs/GeocodeServer/geocodeAddresses'
-  }).addTo(map);
 
-  var results = L.layerGroup().addTo(map);
 
-  searchControl.on('results', function (data) {
-    results.clearLayers();
-    for (var i = data.results.length - 1; i >= 0; i--) {
-      results.addLayer(L.marker(data.results[i].latlng));
-    }
+function getActiveLayers() {
+  var activeLayers = findElements('.js-layer-toggle').filter(function (toggle) {
+    return toggle.checked;
+  });
+  return activeLayers;
+}
+function getInactiveLayers() {
+  var inactiveLayers = findElements('.js-layer-toggle').filter(function (toggle) {
+    return !toggle.checked;
+  });
+  return inactiveLayers;
+}
+
+function addLayers(layerSet) {
+  if (!layerSet) {
+    return;
+  }
+  layerSet.split(',').forEach(function (layer) {
+    console.log(layers[layer]);
+    layers[layer].addTo(map);
   });
 }
 
-function getLayer(layer) {
-  return layers[layer.layerId];
-}
-
-function checkActiveLayers() {
-  findElements('.js-layer-toggle').map(function (toggle) {
-    var layer = toggle.getAttribute('data-layer');
-    if (layer) {
-      if (toggle.checked) {
-        layers[layer].addTo(map);
-      } else {
-        layers[layer].removeFrom(map);
-      }
-    }
-  });
-}
-
-function getLayerData() {
-  return L.esri.query({
-    url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/stops/FeatureServer/0'
-  }).where('1=1').run(function (error, featureCollection, response) {
-    console.log(featureCollection.features);
+function removeLayers(layerSet) {
+  if (!layerSet) {
+    return;
+  }
+  layerSet.split(',').forEach(function (layer) {
+    layers[layer].removeFrom(map);
   });
 }
 
@@ -706,7 +386,7 @@ function remove$1() {
 function redraw() {
   remove$1();
   draw();
-  checkActiveLayers();
+  // checkActiveLayers()
 }
 
 function closeAllPopUps() {
@@ -767,11 +447,7 @@ findElements('.js-layer-toggle').map(function (btn) {
   add$1(btn, 'click', toggleLayer);
 });
 function toggleLayer(e) {
-  var layer = e.target.getAttribute('data-layer');
-  bus.emit('layer:toggle', {
-    layerId: layer,
-    checked: e.target.checked
-  });
+  bus.emit('layers:draw');
 }
 
 findElements('.js-layer-control').map(function (btn) {
@@ -792,11 +468,9 @@ function translateView(e) {
 }
 
 findElements('.js-close-popup').map(function (btn) {
-  console.log(btn);
   add$1(btn, 'click', closePopUp);
 });
 function closePopUp(e) {
-  console.log('close plz');
   e.preventDefault();
   bus.emit('popup:close');
 }
@@ -856,7 +530,7 @@ bus.on('set:view', slowRedrawMap);
 bus.on('layer:control', toggleControl$1);
 bus.on('keyboard:escape', closeControl);
 bus.on('keyboard:escape', closePopUp$1);
-bus.on('layer:toggle', toggleMapLayer);
+bus.on('layers:draw', drawMapLayers);
 bus.on('popup:opened', handlePopUp);
 bus.on('popup:opened', closeControl);
 bus.on('popup:close', closePopUp$1);
@@ -924,29 +598,40 @@ function closeControl() {
   }
 }
 
-function toggleMapLayer(layer) {
-  var target = getLayer(layer);
-  checkActiveLayers();
-  if (target) {
-    target.resetStyle();
-  }
-  if (target && layer.checked) {
-    target.bindPopup(function (evt) {
-      evt.bringToFront();
-      evt.setStyle({
-        lineCap: 'round',
-        weight: 30,
-        color: '#34F644'
-      });
-      bus.emit('popup:opened', evt.feature.properties);
-      return '';
-    }).on('popupclose', function () {
-      target.resetStyle();
-      bus.emit('popup:leafletclosed');
-    });
-  } else {
-    target.unbindPopup();
-  }
+function drawMapLayers() {
+  var activeLayers = getActiveLayers();
+  var inactiveLayers = getInactiveLayers();
+  activeLayers.forEach(function (toggle$$1) {
+    var layerSet = toggle$$1.getAttribute('data-layers');
+    addLayers(layerSet);
+  });
+  inactiveLayers.forEach(function (toggle$$1) {
+    var layerSet = toggle$$1.getAttribute('data-layers');
+    removeLayers(layerSet);
+  });
+
+  // if (target) {
+  //   target.resetStyle()
+  // } else {
+  //   return
+  // }
+  // if (target && layer.checked) {
+  //   target.bindPopup(function (evt) {
+  //     evt.bringToFront()
+  //     evt.setStyle({
+  //       lineCap: 'round',
+  //       weight: 30,
+  //       color: '#34F644'
+  //     });
+  //     bus.emit('popup:opened', evt.feature.properties)
+  //     return ''
+  //   }).on('popupclose', function () {
+  //     target.resetStyle();
+  //     bus.emit('popup:leafletclosed')
+  //   })
+  // } else {
+  //   target.unbindPopup()
+  // }
 }
 
 function slowRedrawMap() {
@@ -1058,23 +743,11 @@ function modal() {
   bus.emit('modal:bind');
 }
 
-function renderTable(data, target) {
-  console.log(data);
-  // var clusterize = new Clusterize({
-  //   rows: data,
-  //   scrollId: `${target}Scroll`,
-  //   contentId: `${target}Content`
-  // });
-}
-
 // View and Intent
 // Cool Components
 route();
 modal();
 
 draw();
-
-var classificationData = getLayerData();
-renderTable(classificationData);
 
 })));

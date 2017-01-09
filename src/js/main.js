@@ -21,6 +21,3 @@ route()
 modal()
 
 map.draw()
-
-let classificationData = map.getLayerData()
-renderTable(classificationData)
