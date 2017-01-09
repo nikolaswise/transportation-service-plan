@@ -326,12 +326,16 @@ var layers = Object.freeze({
 });
 
 var map = void 0;
+var position = {
+  center: [45.528, -122.680],
+  zoom: 13
+};
 
 function draw() {
   map = L.map('map', {
     trackResize: true,
-    center: [45.528, -122.680],
-    zoom: 13,
+    center: position.center,
+    zoom: position.zoom,
     zoomControl: false,
     scrollWheelZoom: false
   });
@@ -341,6 +345,15 @@ function draw() {
   L.esri.tiledMapLayer({
     url: "https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer"
   }).addTo(map);
+
+  drawLayers();
+  map.on('moveend', savePosition);
+}
+
+function savePosition(e) {
+  // console.log(e)
+  position.center = map.getCenter();
+  position.zoom = map.getZoom();
 }
 
 
@@ -363,8 +376,21 @@ function addLayers(layerSet) {
     return;
   }
   layerSet.split(',').forEach(function (layer) {
-    console.log(layers[layer]);
     layers[layer].addTo(map);
+    layers[layer].resetStyle();
+    layers[layer].bindPopup(function (evt) {
+      evt.bringToFront();
+      evt.setStyle({
+        lineCap: 'round',
+        weight: 30,
+        color: '#34F644'
+      });
+      bus.emit('popup:opened', evt.feature.properties);
+      return '';
+    }).on('popupclose', function () {
+      layers[layer].resetStyle();
+      bus.emit('popup:leafletclosed');
+    });
   });
 }
 
@@ -374,6 +400,20 @@ function removeLayers(layerSet) {
   }
   layerSet.split(',').forEach(function (layer) {
     layers[layer].removeFrom(map);
+    layers[layer].unbindPopup();
+  });
+}
+
+function drawLayers() {
+  var activeLayers = getActiveLayers();
+  var inactiveLayers = getInactiveLayers();
+  activeLayers.forEach(function (toggle) {
+    var layerSet = toggle.getAttribute('data-layers');
+    addLayers(layerSet);
+  });
+  inactiveLayers.forEach(function (toggle) {
+    var layerSet = toggle.getAttribute('data-layers');
+    removeLayers(layerSet);
   });
 }
 
@@ -599,16 +639,17 @@ function closeControl() {
 }
 
 function drawMapLayers() {
-  var activeLayers = getActiveLayers();
-  var inactiveLayers = getInactiveLayers();
-  activeLayers.forEach(function (toggle$$1) {
-    var layerSet = toggle$$1.getAttribute('data-layers');
-    addLayers(layerSet);
-  });
-  inactiveLayers.forEach(function (toggle$$1) {
-    var layerSet = toggle$$1.getAttribute('data-layers');
-    removeLayers(layerSet);
-  });
+  drawLayers();
+  // let activeLayers = map.getActiveLayers()
+  // let inactiveLayers = map.getInactiveLayers()
+  // activeLayers.forEach(function (toggle) {
+  //   let layerSet = toggle.getAttribute('data-layers')
+  //   map.addLayers(layerSet)
+  // })
+  // inactiveLayers.forEach(function (toggle) {
+  //   let layerSet = toggle.getAttribute('data-layers')
+  //   map.removeLayers(layerSet)
+  // })
 
   // if (target) {
   //   target.resetStyle()

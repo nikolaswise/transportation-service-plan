@@ -79,16 +79,17 @@ function closeControl () {
 }
 
 function drawMapLayers () {
-  let activeLayers = map.getActiveLayers()
-  let inactiveLayers = map.getInactiveLayers()
-  activeLayers.forEach(function (toggle) {
-    let layerSet = toggle.getAttribute('data-layers')
-    map.addLayers(layerSet)
-  })
-  inactiveLayers.forEach(function (toggle) {
-    let layerSet = toggle.getAttribute('data-layers')
-    map.removeLayers(layerSet)
-  })
+  map.drawLayers()
+  // let activeLayers = map.getActiveLayers()
+  // let inactiveLayers = map.getInactiveLayers()
+  // activeLayers.forEach(function (toggle) {
+  //   let layerSet = toggle.getAttribute('data-layers')
+  //   map.addLayers(layerSet)
+  // })
+  // inactiveLayers.forEach(function (toggle) {
+  //   let layerSet = toggle.getAttribute('data-layers')
+  //   map.removeLayers(layerSet)
+  // })
 
   // if (target) {
   //   target.resetStyle()
