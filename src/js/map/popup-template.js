@@ -22,5 +22,5 @@ export default function (feature) {
     <p>What does that mean do you thing?</p>
 
     <p>Transportation Plan ID: <a href="#">${feature.TranPlanID}</a></p>
-  `
+  `;
 }
