@@ -48,20 +48,22 @@ h2,
 h3,
 h4 {
   color: $color-text-big;
-  margin-top: calc(#{$baseline} * 1.5);
+  margin-top: $baseline*1.5;
   margin-bottom: $baseline;
 }
 
 /* Type Sizes */
 h1 {
   font-size: $pt36;
-  line-height: calc(#{$baseline} * 2);
+  line-height: $baseline*2;
 }
 h2 {
   font-size: $pt24;
+  line-height: $baseline*1.5;
 }
 h3 {
   font-size: $pt21;
+  line-height: $baseline*1.25;
 }
 h4 {
   font-size: $pt18;

@@ -5,18 +5,17 @@
       <hr class="title-rule">
       <p class="title-subhead">Portland Bureau of Transportation</p>
 
-      <button class="button-white-fill left js-view-control hide-small hide-text" data-panel="text">
+      <button class="button-white-fill left js-view-control hide-small hide-text" data-panel="text" aria-label="toggle map view" >
         {% include "_icon-map.html" %}
+      </button>
+      <button class="button-white left js-view-control show-small" data-panel="map" aria-label="toggle map view" >
+        {% include "_icon-map.html" %}
+      </button>
+      <button class="button-white left js-view-control hide-small hide-split" data-panel="split" aria-label="toggle map view" >
+        {% include "_icon-map.html" %}
+      </button>
 
-      </button>
-      <button class="button-white left js-view-control show-small" data-panel="map">
-        {% include "_icon-map.html" %}
-      </button>
-      <button class="button-white left js-view-control hide-small hide-split" data-panel="split">
-        {% include "_icon-map.html" %}
-      </button>
-
-      <button class="button-white-fill left gutter-left js-view-control hide-map hide-small" data-panel="map">
+      <button class="button-white-fill left gutter-left js-view-control hide-map hide-small" data-panel="map" aria-label="toggle text view" >
         {% include "_icon-text.html" %}
       </button>
     </div>
