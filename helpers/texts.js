@@ -8,6 +8,8 @@ var md = require('markdown-it')({
   removeUnknown: true
 });
 
+var md2toc = require('markdown-toc');
+
 var typeset = require('typeset');
 
 module.exports = function (site, cb) {
@@ -16,7 +18,7 @@ module.exports = function (site, cb) {
     if (err) {
       return err
     }
-    let text
+    let text = ''
     files.map(function (file) {
       text += fs.readFileSync('./src/text/' + file, 'utf8')
       text += "\n"
@@ -26,7 +28,10 @@ module.exports = function (site, cb) {
 
   var stuff = function (site, cb) {
     return function (text) {
+      let toc = md2toc(text, {maxdepth: 2}).content
+      console.log(toc)
       site = site.map(function (page) {
+        page.toc = md.render(toc)
         page.content = text
         page.content = md.render(page.content)
         page.content = typeset(page.content)

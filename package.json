@@ -4,6 +4,7 @@
   "description": "Portland Bureau of Transportation Service Plan 2035",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm run html",
     "start": "npm run dev",
     "dev": "npm-run-all --parallel css js serve watch",
     "serve": "live-server build/ --entry-file=200.html",
@@ -48,6 +49,7 @@
     "live-server": "^1.1.0",
     "markdown-it": "^8.2.2",
     "markdown-it-sanitizer": "^0.4.3",
+    "markdown-toc": "^1.0.3",
     "myth": "github:pin3da/myth",
     "node-sass": "^3.13.0",
     "npm-run-all": "^3.1.1",

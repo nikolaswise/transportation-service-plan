@@ -61,24 +61,25 @@
         </div>
       </div>
 
-      <div class="js-modal modal-overlay" data-modal='contents'>
-        <div class="modal">
-          <button class="cancel-button js-modal-toggle">close</button>
-          <div class="text-container">
-            <div class="text-block links-white text-white">
-              {% include "_table-of-contents.html" %}
-            </div>
-            <button class="cancel-button js-modal-toggle">close</button>
-          </div>
-        </div>
-      </div>
-
       <nav class="navigation">
         {% include "_navigation.html" %}
       </nav>
 
       <div class="panel panel-text js-text-area">
-        {% include "_first-half.html" %}
+        {% include "_title.html" %}
+
+        <div class="table-of-contents">
+          <div class="text-container">
+            <div class="text-block">
+              {% autoescape false %}
+                {{ toc }}
+              {% endautoescape %}
+            </div>
+          </div>
+        </div>
+
+        {% include "_half-title.html" %}
+
         <div class="text-wrapper">
           <div class="text-container">
             <article class="text-block">
