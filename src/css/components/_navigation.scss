@@ -18,14 +18,14 @@
 .map-is-active {
   .navigation {
     width: 50%;
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 .panel-text {
   .navigation {
     width: 100%;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -46,7 +46,7 @@
   .split-is-active {
     .navigation {
       width: 100%;
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 }

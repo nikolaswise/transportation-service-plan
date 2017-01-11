@@ -12,15 +12,10 @@ import intent from './intent.js'
 import view from './view.js'
 
 // Cool Components
-import sticky from './sticky-navigation.js'
 import modal from './modal.js'
-import runningHead from './running-head.js'
-import renderTable from './table.js'
 
 route()
 modal()
-
-map.draw()
 
 let textPane = document.querySelector('.js-text-area')
 let width =  textPane.offsetWidth
@@ -32,3 +27,5 @@ if (width > 785) {
 } else if (width < 600) {
   bus.emit(`type:size`, 'small')
 }
+
+map.draw()

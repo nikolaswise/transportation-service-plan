@@ -13,14 +13,14 @@
   pointer-events: none;
   transition: $transition;
   opacity: 0;
-  transform: translateY(-1%);
+  transform: translate3d(0, -1%, 0);
   &.is-active {
     visibility: visible;
     opacity: 1;
     display: inline-block;
     vertical-align: middle;
     transition: $transition;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
     .pop-up-panel {
       display: inline-block;
       opacity: 1;

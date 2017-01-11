@@ -99,7 +99,6 @@ export function remove () {
 export function redraw () {
   remove()
   draw()
-  // checkActiveLayers()
 }
 
 export function closeAllPopUps () {

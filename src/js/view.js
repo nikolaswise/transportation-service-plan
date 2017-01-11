@@ -26,6 +26,7 @@ let popUpTemplate = document.querySelector('.js-template')
 
 function handlePopUp (feature) {
   classy.add(popUpContainer, 'is-active')
+  // will need a more all purpose pop up template — or standardized GIS data for the features.
   popUpTemplate.innerHTML = render(feature)
 }
 
@@ -82,39 +83,6 @@ function closeControl () {
 
 function drawMapLayers () {
   map.drawLayers()
-  // let activeLayers = map.getActiveLayers()
-  // let inactiveLayers = map.getInactiveLayers()
-  // activeLayers.forEach(function (toggle) {
-  //   let layerSet = toggle.getAttribute('data-layers')
-  //   map.addLayers(layerSet)
-  // })
-  // inactiveLayers.forEach(function (toggle) {
-  //   let layerSet = toggle.getAttribute('data-layers')
-  //   map.removeLayers(layerSet)
-  // })
-
-  // if (target) {
-  //   target.resetStyle()
-  // } else {
-  //   return
-  // }
-  // if (target && layer.checked) {
-  //   target.bindPopup(function (evt) {
-  //     evt.bringToFront()
-  //     evt.setStyle({
-  //       lineCap: 'round',
-  //       weight: 30,
-  //       color: '#34F644'
-  //     });
-  //     bus.emit('popup:opened', evt.feature.properties)
-  //     return ''
-  //   }).on('popupclose', function () {
-  //     target.resetStyle();
-  //     bus.emit('popup:leafletclosed')
-  //   })
-  // } else {
-  //   target.unbindPopup()
-  // }
 }
 
 function slowRedrawMap () {

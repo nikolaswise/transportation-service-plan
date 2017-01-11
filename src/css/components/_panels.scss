@@ -44,7 +44,7 @@
     overflow-y: initial;
   }
   .panel-map {
-    transform: translateX(100%);
+    transform: translate3d(100%, 0, 0);
   }
 }
 
@@ -54,16 +54,16 @@
     width: 100%;
   }
   .panel-map {
-    transform: translateX(100%);
+    transform: translate3d(100%, 0, 0);
   }
 }
 .map-is-active {
   .panel-map {
     width: 100%;
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   .panel-text {
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 

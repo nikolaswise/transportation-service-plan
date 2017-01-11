@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('clusterize.js')) :
-  typeof define === 'function' && define.amd ? define(['clusterize.js'], factory) :
-  (factory(global.clusterize_js));
-}(this, (function (clusterize_js) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (factory());
+}(this, (function () { 'use strict';
 
 // ┌─────┐
 // │ DOM │
@@ -425,7 +425,6 @@ function remove$1() {
 function redraw() {
   remove$1();
   draw();
-  // checkActiveLayers()
 }
 
 function closeAllPopUps() {
@@ -560,7 +559,7 @@ function didResize() {
 }
 
 var render = function (feature) {
-  return "\n    <h5 class=\"flush-top\">\n      " + feature.StreetName + "\n    </h5>\n    <table class=\"lead-bottom lead-top\">\n      <tbody>\n        <tr>\n          <td>Current Design:</td>\n          <td>" + feature.Design + "</td>\n        </tr>\n        <tr>\n          <td>Proposed Design:</td>\n          <td>" + feature.ProposedDesign + "</td>\n        </tr>\n      </tbody>\n    </table>\n    <p class=\"flush-bottom\"><b>" + feature.Design + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p class=\"flush-bottom\"><b>" + feature.ProposedDesign + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p>Transportation Plan ID: <a href=\"#\">" + feature.TranPlanID + "</a></p>\n  ";
+  return "\n    <h5 class=\"flush-top\">\n      " + feature.StreetName + "\n    </h5>\n    <table class=\"lead-bottom lead-top\">\n      <tbody>\n        <tr>\n          <td>Current Classification:</td>\n          <td>" + feature.Design + "</td>\n        </tr>\n        <tr>\n          <td>Proposed Classification:</td>\n          <td>" + feature.ProposedDesign + "</td>\n        </tr>\n      </tbody>\n    </table>\n    <p class=\"flush-bottom\"><b>" + feature.Design + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p class=\"flush-bottom\"><b>" + feature.ProposedDesign + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p>Transportation Plan ID: <a href=\"#\">" + feature.TranPlanID + "</a></p>\n  ";
 };
 
 bus.on('set:view', setToPanel);
@@ -585,6 +584,7 @@ var popUpTemplate = document.querySelector('.js-template');
 
 function handlePopUp(feature) {
   add(popUpContainer, 'is-active');
+  // will need a more all purpose pop up template — or standardized GIS data for the features.
   popUpTemplate.innerHTML = render(feature);
 }
 
@@ -641,46 +641,11 @@ function closeControl() {
 
 function drawMapLayers() {
   drawLayers();
-  // let activeLayers = map.getActiveLayers()
-  // let inactiveLayers = map.getInactiveLayers()
-  // activeLayers.forEach(function (toggle) {
-  //   let layerSet = toggle.getAttribute('data-layers')
-  //   map.addLayers(layerSet)
-  // })
-  // inactiveLayers.forEach(function (toggle) {
-  //   let layerSet = toggle.getAttribute('data-layers')
-  //   map.removeLayers(layerSet)
-  // })
-
-  // if (target) {
-  //   target.resetStyle()
-  // } else {
-  //   return
-  // }
-  // if (target && layer.checked) {
-  //   target.bindPopup(function (evt) {
-  //     evt.bringToFront()
-  //     evt.setStyle({
-  //       lineCap: 'round',
-  //       weight: 30,
-  //       color: '#34F644'
-  //     });
-  //     bus.emit('popup:opened', evt.feature.properties)
-  //     return ''
-  //   }).on('popupclose', function () {
-  //     target.resetStyle();
-  //     bus.emit('popup:leafletclosed')
-  //   })
-  // } else {
-  //   target.unbindPopup()
-  // }
 }
 
 function slowRedrawMap() {
   var timeoutID = window.setTimeout(redraw, 300);
 }
-
-// Cool Helpers
 
 // ┌────────────────┐
 // │ Aria Adjusters │
@@ -790,8 +755,6 @@ function modal() {
 route();
 modal();
 
-draw();
-
 var textPane = document.querySelector('.js-text-area');
 var width = textPane.offsetWidth;
 
@@ -802,5 +765,7 @@ if (width > 785) {
 } else if (width < 600) {
   bus.emit('type:size', 'small');
 }
+
+draw();
 
 })));

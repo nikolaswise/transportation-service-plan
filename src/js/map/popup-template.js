@@ -6,11 +6,11 @@ export default function (feature) {
     <table class="lead-bottom lead-top">
       <tbody>
         <tr>
-          <td>Current Design:</td>
+          <td>Current Classification:</td>
           <td>${feature.Design}</td>
         </tr>
         <tr>
-          <td>Proposed Design:</td>
+          <td>Proposed Classification:</td>
           <td>${feature.ProposedDesign}</td>
         </tr>
       </tbody>

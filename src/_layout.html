@@ -28,15 +28,15 @@
   <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
   <!-- Load Esri Leaflet from CDN -->
   <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
+
   <!-- Esri Leaflet Geocoder -->
-  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
-  <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css"> -->
+  <!-- <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script> -->
+
   <!-- Load Esri Leaflet Renderers -->
   <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
   <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
 
-  <!-- Load fancy leaflet scalebar technology -->
-  <script src="/js/Leaflet.GraphicScale.min.js"></script>
   <link rel="stylesheet" href="/css/style.css">
 
   </head>
@@ -54,7 +54,9 @@
           <div class="text-container">
             {% include "_search-form.html" %}
             <div class="text-block links-white text-white">
-              {% include "_table-of-contents.html" %}
+              {% autoescape false %}
+                {{ toc }}
+              {% endautoescape %}
             </div>
 
           </div>
