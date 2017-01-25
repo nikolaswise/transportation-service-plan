@@ -23,10 +23,11 @@ export default function () {
   let popUpContainer = document.querySelector('.js-pop-up');
   let popUpTemplate = document.querySelector('.js-template');
 
-  function handlePopUp (feature) {
+  function handlePopUp (feature, renderTemplate) {
     classy.add(popUpContainer, 'is-active');
     // will need a more all purpose pop up template — or standardized GIS data for the features.
-    popUpTemplate.innerHTML = render(feature);
+    console.log(feature);
+    popUpTemplate.innerHTML = renderTemplate(feature);
   }
 
   function closePopUp () {

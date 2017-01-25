@@ -168,41 +168,74 @@ function findElements(query, domNode) {
   return nodeListToArray(elements);
 }
 
-var designClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
-});
+var popupRenderer = function (current, proposed) {
+  return function (feature) {
+    return "\n      <h5 class=\"flush-top\">\n        " + feature.StreetName + "\n      </h5>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Current Classification:</td>\n            <td>" + feature[current] + "</td>\n          </tr>\n          <tr>\n            <td>Proposed Classification:</td>\n            <td>" + feature[proposed] + "</td>\n          </tr>\n        </tbody>\n      </table>\n      <p class=\"flush-bottom\"><b>" + feature[current] + ":</b></p>\n      <p>What does that mean do you thing?</p>\n\n      <p class=\"flush-bottom\"><b>" + feature[proposed] + ":</b></p>\n      <p>What does that mean do you thing?</p>\n\n      <p>Transportation Plan ID: <a href=\"#\">" + feature.TranPlanID + "</a></p>\n    ";
+  };
+};
 
-var bicycleClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
-});
+var designClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
+  }),
+  popup: popupRenderer('Design', 'ProposedDesign')
+};
 
-var transitClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
-});
+var bicycleClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
+  }),
+  popup: popupRenderer('Bicycle', 'ProposedBicycle')
+};
 
-var trafficClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
-});
+var transitClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
+  }),
+  popup: popupRenderer('Transit', 'ProposedTransit')
+};
 
-var emergencyClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
-});
+var trafficClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
+  }),
+  popup: popupRenderer('Traffic', 'ProposedTraffic')
+};
 
-var pedestrianClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
-});
+var emergencyClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
+  }),
+  popup: popupRenderer('Emergency', 'ProposedEmergency')
+};
 
-var pedestrianDistricts = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
-});
+var pedestrianClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
+  }),
+  popup: popupRenderer('Pedestrian', 'ProposedPedestrian')
+};
 
-var freightClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
-});
+var pedestrianDistricts = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
+  }),
+  popup: popupRenderer('Pedestrian', 'ProposedPedestrian')
+};
 
-var freightDistricts = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
-});
+var freightClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
+  }),
+  popup: popupRenderer('Freight', 'ProposedFreight')
+};
+
+var freightDistricts = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
+  }),
+  popup: popupRenderer('Freight', 'ProposedFreight')
+};
 
 var layers = Object.freeze({
 	designClassifications: designClassifications,
@@ -266,19 +299,20 @@ function addLayers(layerSet) {
     return;
   }
   layerSet.split(',').forEach(function (layer) {
-    layers[layer].addTo(map);
-    layers[layer].resetStyle();
-    layers[layer].bindPopup(function (evt) {
+    layers[layer].features.addTo(map);
+    layers[layer].features.resetStyle();
+    layers[layer].features.bindPopup(function (evt) {
       evt.bringToFront();
       evt.setStyle({
         lineCap: 'round',
         weight: 30,
         color: '#34F644'
       });
-      bus.emit('popup:opened', evt.feature.properties);
+      console.log(layers[layer]);
+      bus.emit('popup:opened', evt.feature.properties, layers[layer].popup);
       return '';
     }).on('popupclose', function () {
-      layers[layer].resetStyle();
+      layers[layer].features.resetStyle();
       bus.emit('popup:leafletclosed');
     });
   });
@@ -289,8 +323,8 @@ function removeLayers(layerSet) {
     return;
   }
   layerSet.split(',').forEach(function (layer) {
-    layers[layer].removeFrom(map);
-    layers[layer].unbindPopup();
+    layers[layer].features.removeFrom(map);
+    layers[layer].features.unbindPopup();
   });
 }
 
@@ -441,10 +475,6 @@ var intent = function () {
   }
 };
 
-var render = function (feature) {
-  return "\n    <h5 class=\"flush-top\">\n      " + feature.StreetName + "\n    </h5>\n    <table class=\"lead-bottom lead-top\">\n      <tbody>\n        <tr>\n          <td>Current Classification:</td>\n          <td>" + feature.Design + "</td>\n        </tr>\n        <tr>\n          <td>Proposed Classification:</td>\n          <td>" + feature.ProposedDesign + "</td>\n        </tr>\n      </tbody>\n    </table>\n    <p class=\"flush-bottom\"><b>" + feature.Design + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p class=\"flush-bottom\"><b>" + feature.ProposedDesign + ":</b></p>\n    <p>What does that mean do you thing?</p>\n\n    <p>Transportation Plan ID: <a href=\"#\">" + feature.TranPlanID + "</a></p>\n  ";
-};
-
 var view = function () {
   bus.on('set:view', setToPanel);
   bus.on('set:view', setLocation);
@@ -465,10 +495,11 @@ var view = function () {
   var popUpContainer = document.querySelector('.js-pop-up');
   var popUpTemplate = document.querySelector('.js-template');
 
-  function handlePopUp(feature) {
+  function handlePopUp(feature, renderTemplate) {
     add(popUpContainer, 'is-active');
     // will need a more all purpose pop up template — or standardized GIS data for the features.
-    popUpTemplate.innerHTML = render(feature);
+    console.log(feature);
+    popUpTemplate.innerHTML = renderTemplate(feature);
   }
 
   function closePopUp() {

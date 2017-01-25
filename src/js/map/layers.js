@@ -1,35 +1,64 @@
-export const designClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
-});
+import popupRenderer from './classification-renderer';
 
-export const bicycleClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
-});
+export const designClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
+  }),
+  popup: popupRenderer('Design', 'ProposedDesign')
+};
 
-export const transitClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
-});
+export const bicycleClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
+  }),
+  popup: popupRenderer('Bicycle', 'ProposedBicycle')
+};
 
-export const trafficClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
-});
+export const transitClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
+  }),
+  popup: popupRenderer('Transit', 'ProposedTransit')
+};
 
-export const emergencyClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
-});
+export const trafficClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
+  }),
+  popup: popupRenderer('Traffic', 'ProposedTraffic')
+};
 
-export const pedestrianClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
-});
+export const emergencyClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
+  }),
+  popup: popupRenderer('Emergency', 'ProposedEmergency')
+};
 
-export const pedestrianDistricts = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
-});
+export const pedestrianClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
+  }),
+  popup: popupRenderer('Pedestrian', 'ProposedPedestrian')
+};
 
-export const freightClassifications = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
-});
+export const pedestrianDistricts = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
+  }),
+  popup: popupRenderer('Pedestrian', 'ProposedPedestrian')
+};
 
-export const freightDistricts = window.L.esri.featureLayer({
-  url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
-});
+export const freightClassifications = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
+  }),
+  popup: popupRenderer('Freight', 'ProposedFreight')
+};
+
+export const freightDistricts = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
+  }),
+  popup: popupRenderer('Freight', 'ProposedFreight')
+};

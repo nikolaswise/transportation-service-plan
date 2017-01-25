@@ -51,19 +51,20 @@ export function getInactiveLayers () {
 export function addLayers (layerSet) {
   if (!layerSet) { return; }
   layerSet.split(',').forEach(function (layer) {
-    layers[layer].addTo(map);
-    layers[layer].resetStyle();
-    layers[layer].bindPopup(function (evt) {
+    layers[layer].features.addTo(map);
+    layers[layer].features.resetStyle();
+    layers[layer].features.bindPopup(function (evt) {
       evt.bringToFront();
       evt.setStyle({
         lineCap: 'round',
         weight: 30,
         color: '#34F644'
       });
-      bus.emit('popup:opened', evt.feature.properties);
+      console.log(layers[layer]);
+      bus.emit('popup:opened', evt.feature.properties, layers[layer].popup);
       return '';
     }).on('popupclose', function () {
-      layers[layer].resetStyle();
+      layers[layer].features.resetStyle();
       bus.emit('popup:leafletclosed');
     });
   });
@@ -72,8 +73,8 @@ export function addLayers (layerSet) {
 export function removeLayers (layerSet) {
   if (!layerSet) { return; }
   layerSet.split(',').forEach(function (layer) {
-    layers[layer].removeFrom(map);
-    layers[layer].unbindPopup();
+    layers[layer].features.removeFrom(map);
+    layers[layer].features.unbindPopup();
   });
 }
 
