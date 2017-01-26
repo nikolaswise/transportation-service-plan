@@ -16,6 +16,8 @@ export function draw () {
     scrollWheelZoom: false
   });
 
+  map.createPane('bottom');
+  map.createPane('top');
   map.addControl(window.L.control.zoom({position: 'topright'}));
 
   window.L.esri.tiledMapLayer({

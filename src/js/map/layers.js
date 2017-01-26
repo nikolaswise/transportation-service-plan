@@ -62,3 +62,26 @@ export const freightDistricts = {
   }),
   popup: popupRenderer('Freight', 'ProposedFreight')
 };
+
+export const projectPoints = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo','bar')
+};
+export const projectLines = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo','bar')
+};
+export const projectPolygons = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupRenderer('foo','bar')
+};
+

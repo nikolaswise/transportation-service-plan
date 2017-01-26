@@ -237,6 +237,28 @@ var freightDistricts = {
   popup: popupRenderer('Freight', 'ProposedFreight')
 };
 
+var projectPoints = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projectLines = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projectPolygons = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+
 var layers = Object.freeze({
 	designClassifications: designClassifications,
 	bicycleClassifications: bicycleClassifications,
@@ -246,7 +268,10 @@ var layers = Object.freeze({
 	pedestrianClassifications: pedestrianClassifications,
 	pedestrianDistricts: pedestrianDistricts,
 	freightClassifications: freightClassifications,
-	freightDistricts: freightDistricts
+	freightDistricts: freightDistricts,
+	projectPoints: projectPoints,
+	projectLines: projectLines,
+	projectPolygons: projectPolygons
 });
 
 var map = void 0;
@@ -264,6 +289,8 @@ function draw() {
     scrollWheelZoom: false
   });
 
+  map.createPane('bottom');
+  map.createPane('top');
   map.addControl(window.L.control.zoom({ position: 'topright' }));
 
   window.L.esri.tiledMapLayer({
