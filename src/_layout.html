@@ -30,8 +30,8 @@
   <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
 
   <!-- Esri Leaflet Geocoder -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css"> -->
-  <!-- <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script> -->
+  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
 
   <!-- Load Esri Leaflet Renderers -->
   <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
@@ -42,8 +42,19 @@
   </head>
 
   <body>
-    <div class="panels js-panels">
 
+   <div class="drawer drawer-left js-drawer" data-drawer="navigation" tabindex="0">
+      <nav class="drawer-nav" role="navigation">
+        <aside class="side-nav">
+          {% include "_search-form.html" %}
+          {% autoescape false %}
+            {{ toc }}
+          {% endautoescape %}
+        </aside>
+      </nav>
+    </div>
+
+    <div class="panels js-panels">
       <div class="js-modal modal-overlay" data-modal='search'>
         <div class="text-container">
           <div class="text-block">
@@ -99,7 +110,13 @@
         {% include "_map.html" %}
       </div>
     </div>
-
+    <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
+      <nav class="drawer-nav layer-panel" role="navigation">
+        <aside class="side-nav">
+          {% include "_layers.html" %}
+        </aside>
+      </nav>
+    </div>
   <script src="js/bundle.js"></script>
   </body>
 </html>

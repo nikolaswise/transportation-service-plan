@@ -297,6 +297,41 @@ function draw() {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
   }).addTo(map);
 
+  // var arcgisOnline = window.L.esri.Geocoding.arcgisOnlineProvider();
+  // var portlandMaps = new window.L.esri.Geocoding.geocodeServiceProvider({
+  //   label: 'Portland Maps',
+  //   maxResults: 10,
+  //   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Address_Geocoding_PDX/GeocodeServer'
+  // });
+
+  // console.log(portlandMaps)
+  // window.provider = portlandMaps
+
+  // var searchControl = window.L.esri.Geocoding.geosearch({
+  //   position: 'topright',
+  //   zoomToResult: true,
+  //   useMapBounds: 10,
+  //   allowMultipleResults: false,
+  //   providers: [portlandMaps]
+  // }).addTo(map);
+
+  // create the geocoding control and add it to the map
+  var searchControl = L.esri.Geocoding.geosearch({
+    position: 'topright',
+    zoomToResult: true,
+    useMapBounds: 10,
+    allowMultipleResults: false
+  }).addTo(map);
+
+  var results = window.L.layerGroup().addTo(map);
+  searchControl.on('results', function (data) {
+    console.log(data);
+    results.clearLayers();
+    for (var i = data.results.length - 1; i >= 0; i--) {
+      results.addLayer(L.marker(data.results[i].latlng));
+    }
+  });
+
   drawLayers();
   map.on('moveend', savePosition);
 }
@@ -694,6 +729,97 @@ function modal() {
   bus.emit('modal:bind');
 }
 
+// Cool Helpers
+function drawer() {
+  var wrapper = document.querySelector('.js-panels');
+  var toggles = findElements('.js-drawer-toggle');
+  var drawers = findElements('.js-drawer');
+  var lastOn;
+
+  // Bus events
+  bus.on('drawer:open', openDrawer);
+  bus.on('keyboard:escape', closeDrawer);
+  bus.on('drawer:close', closeDrawer);
+  bus.on('drawer:bind', bindDrawers);
+
+  function openDrawer(options) {
+    bus.emit('drawer:close');
+    var drawer = document.querySelector('.js-drawer[data-drawer="' + options.id + '"]');
+    var right = has(drawer, 'drawer-right');
+    var left = has(drawer, 'drawer-left');
+
+    drawer.setAttribute('tabindex', 0);
+    add(drawer, 'is-active');
+
+    if (right) {
+      add(wrapper, 'drawer-right-is-active');
+    } else if (left) {
+      add(wrapper, 'drawer-left-is-active');
+    }
+
+    hide([wrapper]);
+    add$1(drawer, click(), closeClick);
+    add$1(document, 'focusin', fenceDrawer);
+  }
+
+  function closeDrawer(options) {
+    if (!options) {
+      drawers.forEach(function (drawer) {
+        drawer.removeAttribute('tabindex');
+        remove$1(drawer, 'is-active');
+      });
+    } else {
+      var drawer = document.querySelector('.js-drawer[data-drawer="' + options.id + '"]');
+      drawer.removeAttribute('tabindex');
+      remove$1(drawer, 'is-active');
+    }
+    remove$1(wrapper, 'drawer-left-is-active');
+    remove$1(wrapper, 'drawer-right-is-active');
+    toggles.forEach(function (toggle$$1) {
+      remove$1(toggle$$1, 'is-active');
+    });
+    show([wrapper]);
+    remove$2(document, 'focusin', fenceDrawer);
+    if (lastOn) lastOn.focus();
+  }
+
+  function fenceDrawer(e) {
+    if (!closest('js-drawer', e.target)) {
+      drawers.forEach(function (drawer) {
+        if (has(drawer, 'is-active')) {
+          drawer.focus();
+        }
+      });
+    }
+  }
+
+  function bindDrawers(options) {
+    if (!options) {
+      toggles.forEach(function (toggle$$1) {
+        add$1(toggle$$1, click(), toggleClick);
+      });
+    } else {
+      add$1(options.node, click(), toggleClick);
+    }
+  }
+
+  function closeClick(e) {
+    if (has(e.target, 'js-drawer')) {
+      bus.emit('drawer:close');
+    }
+  }
+
+  function toggleClick(e) {
+    console.log('ping!');
+    preventDefault(e);
+    var drawerId = e.target.getAttribute('data-drawer');
+    add(e.target, 'is-active');
+    bus.emit('drawer:open', { id: drawerId });
+  }
+
+  bus.emit('drawer:bind');
+}
+
 // View and Intent
 // Cool Components
 intent();
@@ -701,6 +827,7 @@ view();
 
 route();
 modal();
+drawer();
 
 var textPane = document.querySelector('.js-text-area');
 var width = textPane.offsetWidth;

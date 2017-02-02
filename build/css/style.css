@@ -9,7 +9,7 @@ html {
 
 /*Make body full height*/
 body {
-  overflow: hide;
+  overflow: hidden;
   min-height: 100%;
   max-width: 100%;
   margin: 0; }
@@ -354,7 +354,7 @@ a {
   transition: 100ms linear all; }
 
 .is-active .rotate-if-active {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   transition: 100ms linear all; }
 
 @media (max-width: 800px) {
@@ -385,11 +385,6 @@ fieldset {
   padding: 0;
   border: none;
   display: block; }
-
-.fieldset-radio label, .fieldset-checkbox label {
-  margin-bottom: .25rem;
-  line-height: 1.25rem;
-  color: #51575c; }
 
 label, legend {
   font-size: 0.75rem;
@@ -716,7 +711,7 @@ button {
   transition: 100ms linear all; }
 
 .is-active .rotate-if-active {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   transition: 100ms linear all; }
 
 @media (max-width: 800px) {
@@ -743,40 +738,50 @@ button {
     display: none; } }
 
 .layer-panel {
-  position: absolute;
-  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transform: translate3d(0, -120%, 0);
-  left: 53px;
-  right: 53px;
-  top: 53px;
-  background-color: #fafafa;
-  padding: 1rem;
-  border-bottom: 1px solid #e4e6e7;
-  max-height: 60vh;
-  overflow: auto;
-  z-index: 10; }
-
-.layer-panel-section {
   box-sizing: border-box;
-  padding: 1rem;
-  width: 33%;
-  float: left; }
+  background-color: #fafafa;
+  padding-top: 53px;
+  padding-right: 26.5px;
+  padding-left: 26.5px; }
 
-.layer-panel.is-active {
-  transform: translate3d(0, 0, 0); }
+.fieldset {
+  margin-bottom: 1.6rem;
+  border-bottom: 0.25em solid #293EC8; }
 
-.split-is-active .layer-panel {
-  left: 0; }
+.legend {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.4rem 0.4rem 0.4rem 2.4rem;
+  border: 0.25em solid #293EC8;
+  margin: 0; }
 
-@media (max-width: 800px) {
-  .map-is-active .layer-panel,
-  .map-is-active .layer-panel {
-    padding-top: 53px;
-    left: 0;
-    right: 0;
-    top: 0; }
-  .layer-panel-section {
-    width: 100%; } }
+.label {
+  line-height: 1.2rem;
+  margin: 0;
+  padding: 0.4rem 0.4rem 0.4rem 2.4rem;
+  border-bottom: 0.25em solid #293EC8;
+  border-left: 0.25em solid #293EC8;
+  border-right: 0.25em solid #293EC8; }
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.92rem;
+  height: 1.92rem;
+  margin: 0; }
+  .input:before {
+    font-size: 0.833rem;
+    width: 1.92rem;
+    height: 1.92rem;
+    display: block;
+    content: "";
+    background-color: #fafafa;
+    border-right: 0.25em solid #293EC8;
+    border-bottom: 0.25em solid #293EC8; }
+
+.input:checked:before {
+  background-color: #293EC8; }
 
 .modal-overlay {
   position: fixed;
@@ -810,6 +815,65 @@ button {
 @media print {
   .modal-overlay {
     display: none; } }
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  background: black;
+  transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  z-index: 1001; }
+  .drawer.is-active {
+    visibility: visible;
+    opacity: 1;
+    background-color: transparent; }
+    .drawer.is-active.drawer-left .drawer-nav {
+      transform: translate3d(20rem, 0, 0);
+      transision: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
+    .drawer.is-active.drawer-right .drawer-nav {
+      transform: translate3d(-20rem, 0, 0);
+      transision: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
+
+.drawer-nav {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 20rem;
+  margin: 0;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+  transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
+
+.drawer-left .drawer-nav {
+  left: -20rem;
+  transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
+
+.drawer-right .drawer-nav {
+  left: 100%;
+  transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
+
+.panels {
+  opacity: 1;
+  visibillity: visible;
+  transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
+
+.drawer-left-is-active {
+  opacity: 1;
+  transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88);
+  transform: translate3d(20rem, 0, 0); }
+
+.drawer-right-is-active {
+  opacity: 1;
+  transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88);
+  transform: translate3d(-20rem, 0, 0); }
 
 .leaflet-popup {
   display: none; }

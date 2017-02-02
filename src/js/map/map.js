@@ -24,6 +24,42 @@ export function draw () {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
   }).addTo(map);
 
+
+  // var arcgisOnline = window.L.esri.Geocoding.arcgisOnlineProvider();
+  // var portlandMaps = new window.L.esri.Geocoding.geocodeServiceProvider({
+  //   label: 'Portland Maps',
+  //   maxResults: 10,
+  //   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Address_Geocoding_PDX/GeocodeServer'
+  // });
+
+  // console.log(portlandMaps)
+  // window.provider = portlandMaps
+
+  // var searchControl = window.L.esri.Geocoding.geosearch({
+  //   position: 'topright',
+  //   zoomToResult: true,
+  //   useMapBounds: 10,
+  //   allowMultipleResults: false,
+  //   providers: [portlandMaps]
+  // }).addTo(map);
+
+  // create the geocoding control and add it to the map
+  var searchControl = L.esri.Geocoding.geosearch({
+    position: 'topright',
+    zoomToResult: true,
+    useMapBounds: 10,
+    allowMultipleResults: false,
+  }).addTo(map);
+
+  var results = window.L.layerGroup().addTo(map);
+  searchControl.on('results', function(data){
+    console.log(data);
+    results.clearLayers();
+    for (var i = data.results.length - 1; i >= 0; i--) {
+      results.addLayer(L.marker(data.results[i].latlng));
+    }
+  });
+
   drawLayers();
   map.on('moveend', savePosition);
 }

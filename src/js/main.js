@@ -9,12 +9,14 @@ import view from './view.js';
 
 // Cool Components
 import modal from './modal.js';
+import drawer from './drawers.js';
 
 intent();
 view();
 
 route();
 modal();
+drawer();
 
 let textPane = document.querySelector('.js-text-area');
 let width = textPane.offsetWidth;
