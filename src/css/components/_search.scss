@@ -1,5 +1,10 @@
 .search-panel {
-  padding: $frame/2 $frame;
+  // padding: $frame/2 $frame;
+}
+
+.search {
+ padding: $frame/2 $frame;
+ border-bottom: 1px solid $gray;
 }
 
 .search-input {

@@ -1,6 +1,7 @@
 /*Always show vertical scroll bars, standardize type size*/
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100%;
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -143,7 +144,6 @@ h6 {
 p,
 ul,
 ol {
-  padding: 0;
   margin-top: 0;
   line-height: 1.6rem;
   margin-bottom: 1.6rem; }
@@ -536,6 +536,23 @@ button {
   padding-bottom: 8rem;
   background-color: #CADDE9; }
 
+.toc ul {
+  list-style-type: none;
+  padding-left: 0; }
+
+.toc li {
+  padding: 0; }
+
+.toc a {
+  text-decoration: none;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 26.5px;
+  border-bottom: 1px solid #c4c7ca; }
+  .toc a:hover {
+    background-color: #f1f2f3; }
+
 .navigation {
   position: fixed;
   height: 53px;
@@ -601,8 +618,9 @@ button {
     page-break-before: always;
     page-break-after: always; } }
 
-.search-panel {
-  padding: 26.5px 53px; }
+.search {
+  padding: 26.5px 53px;
+  border-bottom: 1px solid #c4c7ca; }
 
 .search-input {
   width: 100%;

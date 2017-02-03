@@ -3,3 +3,24 @@
   padding-bottom: $baseline * 5;
   background-color: $pale-blue;
 }
+
+.toc {
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+   padding: 0;
+  }
+  a {
+    text-decoration: none;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: $frame/2 ;
+    border-bottom: 1px solid $gray;
+    &:hover {
+      background-color: $lightest-gray;
+    }
+  }
+}

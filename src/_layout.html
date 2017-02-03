@@ -47,9 +47,11 @@
       <nav class="drawer-nav" role="navigation">
         <aside class="side-nav search-panel">
           {% include "_search-form.html" %}
-          {% autoescape false %}
-            {{ toc }}
-          {% endautoescape %}
+          <div class="toc">
+            {% autoescape false %}
+              {{ toc }}
+            {% endautoescape %}
+          </div>
         </aside>
       </nav>
     </div>
