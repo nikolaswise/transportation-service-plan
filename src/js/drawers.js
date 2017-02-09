@@ -85,7 +85,6 @@ function drawer () {
   }
 
   function toggleClick (e) {
-    console.log('ping!');
     event.preventDefault(e);
     var drawerId = e.target.getAttribute('data-drawer');
     classy.add(e.target, 'is-active')

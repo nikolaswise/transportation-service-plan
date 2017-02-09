@@ -98,8 +98,7 @@ export function addLayers (layerSet) {
         weight: 30,
         color: '#34F644'
       });
-      console.log(layers[layer]);
-      bus.emit('popup:opened', evt.feature.properties, layers[layer].popup);
+      bus.emit('popup:opened', evt, layers[layer].popup);
       return '';
     }).on('popupclose', function () {
       layers[layer].features.resetStyle();
@@ -142,4 +141,23 @@ export function redraw () {
 
 export function closeAllPopUps () {
   map.closePopup();
+}
+
+export function zoomToFeature (feature, popup) {
+  console.log(`Feature Properties: ${feature}`)
+  console.log(feature)
+  if (feature.getBounds) {
+    console.log('fit bunds plz')
+    let bounds = feature.getBounds()
+    map.fitBounds(bounds)
+  } else {
+    console.log('no bounds thre buddy just this point:')
+    window.feature = feature
+    console.log(feature)
+    map.flyTo(feature._latlng, 16)
+    // map.setZoom(16)
+    // position.zoom = 16;
+  }
+
+  // feature.getBounds()
 }

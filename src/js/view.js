@@ -12,7 +12,8 @@ export default function () {
   bus.on('keyboard:escape', closePopUp);
   bus.on('layers:draw', drawMapLayers);
   bus.on('popup:opened', handlePopUp);
-  bus.on('popup:opened', closeControl);
+  // bus.on('popup:opened', closeControl);
+  bus.on('popup:opened', map.zoomToFeature);
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   bus.on('type:size', sizeTextTo);
@@ -23,11 +24,11 @@ export default function () {
   let popUpContainer = document.querySelector('.js-pop-up');
   let popUpTemplate = document.querySelector('.js-template');
 
-  function handlePopUp (feature, renderTemplate) {
+  function handlePopUp (evt, renderTemplate) {
+    console.log(evt, renderTemplate)
     classy.add(popUpContainer, 'is-active');
-    // will need a more all purpose pop up template — or standardized GIS data for the features.
-    console.log(feature);
-    popUpTemplate.innerHTML = renderTemplate(feature);
+    console.log(evt.feature.properties)
+    popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
   }
 
   function closePopUp () {
@@ -45,7 +46,6 @@ export default function () {
     if (classy.has(panelContainer, `split-is-active`)) {
       classy.remove(panelContainer, `split-is-active`);
     }
-    console.log(panel);
     classy.add(panelContainer, `${panel}-is-active`);
   }
 

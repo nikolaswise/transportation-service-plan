@@ -170,6 +170,7 @@ function findElements(query, domNode) {
 
 var popupRenderer = function (current, proposed) {
   return function (feature) {
+    console.log(feature);
     return "\n      <h5 class=\"flush-top\">\n        " + feature.StreetName + "\n      </h5>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Current Classification:</td>\n            <td>" + feature[current] + "</td>\n          </tr>\n          <tr>\n            <td>Proposed Classification:</td>\n            <td>" + feature[proposed] + "</td>\n          </tr>\n        </tbody>\n      </table>\n      <p class=\"flush-bottom\"><b>" + feature[current] + ":</b></p>\n      <p>What does that mean do you thing?</p>\n\n      <p class=\"flush-bottom\"><b>" + feature[proposed] + ":</b></p>\n      <p>What does that mean do you thing?</p>\n\n      <p>Transportation Plan ID: <a href=\"#\">" + feature.TranPlanID + "</a></p>\n    ";
   };
 };
@@ -370,8 +371,7 @@ function addLayers(layerSet) {
         weight: 30,
         color: '#34F644'
       });
-      console.log(layers[layer]);
-      bus.emit('popup:opened', evt.feature.properties, layers[layer].popup);
+      bus.emit('popup:opened', evt, layers[layer].popup);
       return '';
     }).on('popupclose', function () {
       layers[layer].features.resetStyle();
@@ -416,6 +416,25 @@ function redraw() {
 
 function closeAllPopUps() {
   map.closePopup();
+}
+
+function zoomToFeature(feature, popup) {
+  console.log('Feature Properties: ' + feature);
+  console.log(feature);
+  if (feature.getBounds) {
+    console.log('fit bunds plz');
+    var bounds = feature.getBounds();
+    map.fitBounds(bounds);
+  } else {
+    console.log('no bounds thre buddy just this point:');
+    window.feature = feature;
+    console.log(feature);
+    map.flyTo(feature._latlng, 16);
+    // map.setZoom(16)
+    // position.zoom = 16;
+  }
+
+  // feature.getBounds()
 }
 
 // ┌──────────────────────┐
@@ -546,7 +565,8 @@ var view = function () {
   bus.on('keyboard:escape', closePopUp);
   bus.on('layers:draw', drawMapLayers);
   bus.on('popup:opened', handlePopUp);
-  bus.on('popup:opened', closeControl);
+  // bus.on('popup:opened', closeControl);
+  bus.on('popup:opened', zoomToFeature);
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   bus.on('type:size', sizeTextTo);
@@ -557,11 +577,11 @@ var view = function () {
   var popUpContainer = document.querySelector('.js-pop-up');
   var popUpTemplate = document.querySelector('.js-template');
 
-  function handlePopUp(feature, renderTemplate) {
+  function handlePopUp(evt, renderTemplate) {
+    console.log(evt, renderTemplate);
     add(popUpContainer, 'is-active');
-    // will need a more all purpose pop up template — or standardized GIS data for the features.
-    console.log(feature);
-    popUpTemplate.innerHTML = renderTemplate(feature);
+    console.log(evt.feature.properties);
+    popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
   }
 
   function closePopUp() {
@@ -579,7 +599,6 @@ var view = function () {
     if (has(panelContainer, 'split-is-active')) {
       remove$1(panelContainer, 'split-is-active');
     }
-    console.log(panel);
     add(panelContainer, panel + '-is-active');
   }
 
@@ -810,7 +829,6 @@ function drawer() {
   }
 
   function toggleClick(e) {
-    console.log('ping!');
     preventDefault(e);
     var drawerId = e.target.getAttribute('data-drawer');
     add(e.target, 'is-active');
