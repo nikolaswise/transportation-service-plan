@@ -11,13 +11,19 @@ import view from './view.js';
 import modal from './modal.js';
 import drawer from './drawers.js';
 
+// if intent and views are not a single function
+// do this still need to get called?
+// the base function could just set the bus listners.
 intent();
 view();
 
+// same as these suckers do
 route();
 modal();
 drawer();
 
+
+// this needs to happen in a slightly different way I think...
 let textPane = document.querySelector('.js-text-area');
 let width = textPane.offsetWidth;
 

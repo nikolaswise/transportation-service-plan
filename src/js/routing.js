@@ -2,6 +2,8 @@ import bus from './helpers/bus';
 /**
 * Parse URL and navigate to correct pane/state
 */
+
+// this needs to a little more robust, and be able to handle queries maybe? for sure hashes.
 export default function route () {
   let url = document.location.pathname + '/';
   url = url.replace('//', '/');

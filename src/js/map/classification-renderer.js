@@ -1,3 +1,5 @@
+// gonna need more of these for the popup templates.
+// keep these suckers in their own subdirectory??
 export default function (current, proposed) {
   return function (feature) {
     console.log(feature)

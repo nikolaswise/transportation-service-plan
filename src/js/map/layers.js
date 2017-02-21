@@ -1,3 +1,6 @@
+// this needs to be named better, and there will be more of them I think.
+// this file just maps GIS data layers to their popups, and gives them a reference handle
+// so they can be got at by the map app
 import popupRenderer from './classification-renderer';
 
 export const designClassifications = {

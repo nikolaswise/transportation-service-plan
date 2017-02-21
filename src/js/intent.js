@@ -7,6 +7,12 @@ import * as event from './helpers/event.js';
 // └──────────────────────────┘
 // emit toggle button clicks
 export default function () {
+
+  // each of this element binders could be it's own function
+  // function bindLayerToggle() {etc}
+  // They could get called on a 'bind' event like the bus
+  // and this default intent function could just ping the events out.
+  // or just set the bus listeners: on 'bind:foo' => foo()
   dom.findElements('.js-layer-toggle').map(function (btn) {
     event.add(btn, 'click', toggleLayer);
   });
@@ -43,6 +49,8 @@ export default function () {
   // │ Emit Keyboard Events │
   // └──────────────────────┘
   // emit presses of escape and return keys
+
+  // this would be 'bind:keyup'
   event.add(document, 'keyup', translateKeypress);
   function translateKeypress (e) {
     if (e.keyCode === 27) {
@@ -62,6 +70,8 @@ export default function () {
     }
   }
 
+  // this would be 'bind:window:resize'
+  // this technique would allow the unbinding of listeners, for a simple progessive enhancement.
   window.onresize = didResize;
   let textPane = document.querySelector('.js-text-area');
   function didResize () {

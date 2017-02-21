@@ -18,6 +18,9 @@ export default function () {
   bus.on('popup:leafletclosed', closePopUp);
   bus.on('type:size', sizeTextTo);
 
+
+  // none of this garbage needs to be inside this function. functions can get hoisted outside,
+  // the default export function would just call the bus bindings. Just like the intent will! wow!
   let panelContainer = document.querySelector('.js-panels');
   let controlPanel = document.querySelector('.js-layer-control-panel');
   let controlButton = document.querySelector('.js-layer-control');
@@ -25,9 +28,7 @@ export default function () {
   let popUpTemplate = document.querySelector('.js-template');
 
   function handlePopUp (evt, renderTemplate) {
-    console.log(evt, renderTemplate)
     classy.add(popUpContainer, 'is-active');
-    console.log(evt.feature.properties)
     popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
   }
 
@@ -49,6 +50,7 @@ export default function () {
     classy.add(panelContainer, `${panel}-is-active`);
   }
 
+  // this might beed to be a little better about hashes
   function setLocation (panel) {
     if (panel === 'split') {
       panel = '/';

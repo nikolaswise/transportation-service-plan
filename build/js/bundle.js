@@ -72,6 +72,8 @@ var bus = new E();
 /**
 * Parse URL and navigate to correct pane/state
 */
+
+// this needs to a little more robust, and be able to handle queries maybe? for sure hashes.
 function route() {
   var url = document.location.pathname + '/';
   url = url.replace('//', '/');
@@ -168,6 +170,8 @@ function findElements(query, domNode) {
   return nodeListToArray(elements);
 }
 
+// gonna need more of these for the popup templates.
+// keep these suckers in their own subdirectory??
 var popupRenderer = function (current, proposed) {
   return function (feature) {
     console.log(feature);
@@ -175,6 +179,9 @@ var popupRenderer = function (current, proposed) {
   };
 };
 
+// this needs to be named better, and there will be more of them I think.
+// this file just maps GIS data layers to their popups, and gives them a reference handle
+// so they can be got at by the map app
 var designClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
@@ -281,6 +288,7 @@ var position = {
   zoom: 13
 };
 
+// this is the the _main_ side effect - draw that map!
 function draw() {
   map = window.L.map('map', {
     trackResize: true,
@@ -342,8 +350,15 @@ function savePosition() {
   position.zoom = map.getZoom();
 }
 
+// does exporting inidivual functions make this better?
+// or would this be better served by using the bus?
+// ie: hoist the functions and just set the bindings in the default function.
 
 
+// but these functions return data ...
+// they would need to invoked as a promise maybe? or a callback?
+// function (input, cb) { let return = manipulate(input); cb(return) }
+// would probably be a cleaner way to deal with this.
 function getActiveLayers() {
   var activeLayers = findElements('.js-layer-toggle').filter(function (toggle) {
     return toggle.checked;
@@ -357,6 +372,7 @@ function getInactiveLayers() {
   return inactiveLayers;
 }
 
+// again, this is a sude effect so should only happen via explicit bus command.
 function addLayers(layerSet) {
   if (!layerSet) {
     return;
@@ -403,6 +419,8 @@ function drawLayers() {
   });
 }
 
+// these are just side effect functions —
+// could probably be done with the bus
 function remove() {
   if (map) {
     map.remove();
@@ -418,6 +436,7 @@ function closeAllPopUps() {
   map.closePopup();
 }
 
+// same here ...
 function zoomToFeature(feature, popup) {
   console.log('Feature Properties: ' + feature);
   console.log(feature);
@@ -487,6 +506,12 @@ function preventDefault(e) {
 // └──────────────────────────┘
 // emit toggle button clicks
 var intent = function () {
+
+  // each of this element binders could be it's own function
+  // function bindLayerToggle() {etc}
+  // They could get called on a 'bind' event like the bus
+  // and this default intent function could just ping the events out.
+  // or just set the bus listeners: on 'bind:foo' => foo()
   findElements('.js-layer-toggle').map(function (btn) {
     add$1(btn, 'click', toggleLayer);
   });
@@ -523,6 +548,8 @@ var intent = function () {
   // │ Emit Keyboard Events │
   // └──────────────────────┘
   // emit presses of escape and return keys
+
+  // this would be 'bind:keyup'
   add$1(document, 'keyup', translateKeypress);
   function translateKeypress(e) {
     if (e.keyCode === 27) {
@@ -542,6 +569,8 @@ var intent = function () {
     }
   }
 
+  // this would be 'bind:window:resize'
+  // this technique would allow the unbinding of listeners, for a simple progessive enhancement.
   window.onresize = didResize;
   var textPane = document.querySelector('.js-text-area');
   function didResize() {
@@ -555,6 +584,8 @@ var intent = function () {
     }
   }
 };
+
+// this is deprecated and should probably not be used.
 
 var view = function () {
   bus.on('set:view', setToPanel);
@@ -571,6 +602,8 @@ var view = function () {
   bus.on('popup:leafletclosed', closePopUp);
   bus.on('type:size', sizeTextTo);
 
+  // none of this garbage needs to be inside this function. functions can get hoisted outside,
+  // the default export function would just call the bus bindings. Just like the intent will! wow!
   var panelContainer = document.querySelector('.js-panels');
   var controlPanel = document.querySelector('.js-layer-control-panel');
   var controlButton = document.querySelector('.js-layer-control');
@@ -578,9 +611,7 @@ var view = function () {
   var popUpTemplate = document.querySelector('.js-template');
 
   function handlePopUp(evt, renderTemplate) {
-    console.log(evt, renderTemplate);
     add(popUpContainer, 'is-active');
-    console.log(evt.feature.properties);
     popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
   }
 
@@ -602,6 +633,7 @@ var view = function () {
     add(panelContainer, panel + '-is-active');
   }
 
+  // this might beed to be a little better about hashes
   function setLocation(panel) {
     if (panel === 'split') {
       panel = '/';
@@ -840,13 +872,22 @@ function drawer() {
 
 // View and Intent
 // Cool Components
+var ArcGIS = require('arcgis');
+
+console.log(ArcGIS);
+
+// if intent and views are not a single function
+// do this still need to get called?
+// the base function could just set the bus listners.
 intent();
 view();
 
+// same as these suckers do
 route();
 modal();
 drawer();
 
+// this needs to happen in a slightly different way I think...
 var textPane = document.querySelector('.js-text-area');
 var width = textPane.offsetWidth;
 

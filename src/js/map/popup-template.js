@@ -1,3 +1,4 @@
+// this is deprecated and should probably not be used.
 export default function (feature, current, proposed) {
   return `
     <h5 class="flush-top">

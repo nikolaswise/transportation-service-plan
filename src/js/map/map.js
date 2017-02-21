@@ -7,6 +7,7 @@ let position = {
   zoom: 13
 };
 
+// this is the the _main_ side effect - draw that map!
 export function draw () {
   map = window.L.map('map', {
     trackResize: true,
@@ -69,10 +70,18 @@ function savePosition () {
   position.zoom = map.getZoom();
 }
 
+
+// does exporting inidivual functions make this better?
+// or would this be better served by using the bus?
+// ie: hoist the functions and just set the bindings in the default function.
 export function getLayer (layer) {
   return layers[layer.layerId];
 }
 
+// but these functions return data ...
+// they would need to invoked as a promise maybe? or a callback?
+// function (input, cb) { let return = manipulate(input); cb(return) }
+// would probably be a cleaner way to deal with this.
 export function getActiveLayers () {
   let activeLayers = dom.findElements('.js-layer-toggle').filter(function (toggle) {
     return toggle.checked;
@@ -86,6 +95,7 @@ export function getInactiveLayers () {
   return inactiveLayers;
 }
 
+// again, this is a sude effect so should only happen via explicit bus command.
 export function addLayers (layerSet) {
   if (!layerSet) { return; }
   layerSet.split(',').forEach(function (layer) {
@@ -128,6 +138,8 @@ export function drawLayers () {
   });
 }
 
+// these are just side effect functions —
+// could probably be done with the bus
 export function remove () {
   if (map) {
     map.remove();
@@ -143,6 +155,7 @@ export function closeAllPopUps () {
   map.closePopup();
 }
 
+// same here ...
 export function zoomToFeature (feature, popup) {
   console.log(`Feature Properties: ${feature}`)
   console.log(feature)
