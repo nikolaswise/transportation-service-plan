@@ -8,6 +8,12 @@ var md = require('markdown-it')({
 });
 var typeset = require('typeset');
 
+/**
+ * Generates HTML from Markdown
+ *
+ * @param {String} String of Markdown
+ * @returns {String} String of HTML
+ */
 module.exports = function (text) {
   return typeset(md.render(text));
 };

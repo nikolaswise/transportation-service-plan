@@ -6,6 +6,13 @@ function validateRule (rule, value) {
   return type === 'R' ? rule.test(value) : type === 'F' ? rule(value) : rule === value;
 }
 
+/**
+ * A route matching function. I didnt write this, should prolly find the original doc.
+ *
+ * @param {String} Route to match
+ * @param {Array} Array of validation rules
+ * @returns {Object} Object of route matching results.
+ */
 export function routeMatcher (route, rules) {
   var self = {};
   var names = [];

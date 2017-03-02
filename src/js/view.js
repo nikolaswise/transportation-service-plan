@@ -1,95 +1,124 @@
 import bus from './helpers/bus.js';
 import * as classy from './helpers/classy.js';
-import * as map from './map/map.js';
-import render from './map/popup-template.js';
 
+/**
+ * Renders the HTML for a popup, given a click event on a leaflet feature and a popup template
+ * Places rendered popip html in DOM Node with the 'js-pop-up' class.
+ *
+ * @param {Event} Leaflet feature click event
+ * @param {Function} Render template function from `./layers.hs`
+ */
+const handlePopUp = (evt, renderTemplate) => {
+  let popUpContainer = document.querySelector('.js-pop-up');
+  let popUpTemplate = document.querySelector('.js-template');
+  classy.add(popUpContainer, 'is-active');
+  popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
+};
+
+/**
+ * Removes `is-active` class from pop node.
+ * Emits event on bus.
+ *
+ * @param {Event} Leaflet feature click event
+ * @param {Function} Render template function from `./layers.hs`
+ */
+const closePopUp = () => {
+  let popUpContainer = document.querySelector('.js-pop-up');
+  classy.remove(popUpContainer, 'is-active');
+  bus.emit('popup:closed');
+};
+
+/**
+ * Adds panel view class to panel container DOM nodel
+ *
+ * @param {String} `map`, `text`, or `split`
+ */
+const setToPanel = panel => {
+  let panelContainer = document.querySelector('.js-panels');
+  if (classy.has(panelContainer, `text-is-active`)) {
+    classy.remove(panelContainer, `text-is-active`);
+  }
+  if (classy.has(panelContainer, `map-is-active`)) {
+    classy.remove(panelContainer, `map-is-active`);
+  }
+  if (classy.has(panelContainer, `split-is-active`)) {
+    classy.remove(panelContainer, `split-is-active`);
+  }
+  classy.add(panelContainer, `${panel}-is-active`);
+};
+
+/**
+ * Sets URL to reflect panel view.
+ *
+ * @param {String} `map`, `text`, or `split`
+ */
+const setLocation = panel => {
+  if (panel === 'split') {
+    panel = '/';
+  }
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, panel);
+  }
+};
+
+/**
+ * Sets class on root HTML node that defines text size.
+ *
+ * @param {String} `small`, `medium`, or `large`
+ */
+const sizeTextTo = size => {
+  let html = document.querySelector('html');
+  if (classy.has(html, `type-small`)) {
+    classy.remove(html, `type-small`);
+  }
+  if (classy.has(html, `type-medium`)) {
+    classy.remove(html, `type-medium`);
+  }
+  if (classy.has(html, `type-large`)) {
+    classy.remove(html, `type-large`);
+  }
+  classy.add(html, `type-${size}`);
+};
+
+/**
+ * Shows or hides the layer control panel
+ */
+const toggleControl = () => {
+  let controlPanel = document.querySelector('.js-layer-control-panel');
+  let controlButton = document.querySelector('.js-layer-control');
+  classy.toggle(controlPanel, 'is-active');
+  classy.toggle(controlButton, 'is-active');
+};
+
+/**
+ * Hides the layer control panel
+ */
+const closeControl = () => {
+  let controlPanel = document.querySelector('.js-layer-control-panel');
+  if (classy.has(controlPanel, 'is-active')) {
+    classy.remove(controlPanel, 'is-active');
+  }
+};
+
+/**
+ * Emits a map redraw event on the bus.
+ */
+const redrawMap = () => {
+  bus.emit('map:redraw');
+};
+
+/**
+ * Binds event listeners for view functions.
+ */
 export default function () {
   bus.on('set:view', setToPanel);
   bus.on('set:view', setLocation);
-  bus.on('set:view', slowRedrawMap);
+  bus.on('set:view', redrawMap);
   bus.on('layer:control', toggleControl);
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
-  bus.on('layers:draw', drawMapLayers);
   bus.on('popup:opened', handlePopUp);
-  // bus.on('popup:opened', closeControl);
-  bus.on('popup:opened', map.zoomToFeature);
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   bus.on('type:size', sizeTextTo);
-
-
-  // none of this garbage needs to be inside this function. functions can get hoisted outside,
-  // the default export function would just call the bus bindings. Just like the intent will! wow!
-  let panelContainer = document.querySelector('.js-panels');
-  let controlPanel = document.querySelector('.js-layer-control-panel');
-  let controlButton = document.querySelector('.js-layer-control');
-  let popUpContainer = document.querySelector('.js-pop-up');
-  let popUpTemplate = document.querySelector('.js-template');
-
-  function handlePopUp (evt, renderTemplate) {
-    classy.add(popUpContainer, 'is-active');
-    popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
-  }
-
-  function closePopUp () {
-    map.closeAllPopUps();
-    classy.remove(popUpContainer, 'is-active');
-  }
-
-  function setToPanel (panel) {
-    if (classy.has(panelContainer, `text-is-active`)) {
-      classy.remove(panelContainer, `text-is-active`);
-    }
-    if (classy.has(panelContainer, `map-is-active`)) {
-      classy.remove(panelContainer, `map-is-active`);
-    }
-    if (classy.has(panelContainer, `split-is-active`)) {
-      classy.remove(panelContainer, `split-is-active`);
-    }
-    classy.add(panelContainer, `${panel}-is-active`);
-  }
-
-  // this might beed to be a little better about hashes
-  function setLocation (panel) {
-    if (panel === 'split') {
-      panel = '/';
-    }
-    if (window.history.replaceState) {
-      window.history.replaceState(null, null, panel);
-    }
-  }
-
-  function sizeTextTo (size) {
-    let html = document.querySelector('html');
-    if (classy.has(html, `type-small`)) {
-      classy.remove(html, `type-small`);
-    }
-    if (classy.has(html, `type-medium`)) {
-      classy.remove(html, `type-medium`);
-    }
-    if (classy.has(html, `type-large`)) {
-      classy.remove(html, `type-large`);
-    }
-    classy.add(html, `type-${size}`);
-  }
-
-  function toggleControl () {
-    classy.toggle(controlPanel, 'is-active');
-    classy.toggle(controlButton, 'is-active');
-  }
-
-  function closeControl () {
-    if (classy.has(controlPanel, 'is-active')) {
-      classy.remove(controlPanel, 'is-active');
-    }
-  }
-
-  function drawMapLayers () {
-    map.drawLayers();
-  }
-
-  function slowRedrawMap () {
-    window.setTimeout(map.redraw, 300);
-  }
 }

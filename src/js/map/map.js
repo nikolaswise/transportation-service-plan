@@ -1,14 +1,19 @@
 import * as dom from '../helpers/dom.js';
 import bus from '../helpers/bus.js';
 import * as layers from './layers';
+
+// this stuff is statefull.
 let map;
 let position = {
   center: [45.528, -122.680],
   zoom: 13
 };
 
-// this is the the _main_ side effect - draw that map!
-export function draw () {
+/**
+ * Interacts with the Esri Leaflet API to draw a map in the dom Node with an id of 'map'
+ */
+
+const drawMap = () => {
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -19,158 +24,223 @@ export function draw () {
 
   map.createPane('bottom');
   map.createPane('top');
-  map.addControl(window.L.control.zoom({position: 'topright'}));
 
   window.L.esri.tiledMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
   }).addTo(map);
 
+  // stateful side effects!!
+  map.on('moveend', function () {
+    position.center = map.getCenter();
+    position.zoom = map.getZoom();
+  });
+  createGeocoder();
+};
 
-  // var arcgisOnline = window.L.esri.Geocoding.arcgisOnlineProvider();
-  // var portlandMaps = new window.L.esri.Geocoding.geocodeServiceProvider({
-  //   label: 'Portland Maps',
-  //   maxResults: 10,
-  //   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Address_Geocoding_PDX/GeocodeServer'
-  // });
-
-  // console.log(portlandMaps)
-  // window.provider = portlandMaps
-
-  // var searchControl = window.L.esri.Geocoding.geosearch({
-  //   position: 'topright',
-  //   zoomToResult: true,
-  //   useMapBounds: 10,
-  //   allowMultipleResults: false,
-  //   providers: [portlandMaps]
-  // }).addTo(map);
-
-  // create the geocoding control and add it to the map
-  var searchControl = L.esri.Geocoding.geosearch({
+/**
+ * Adds a Geocoding widget to the map, if the map exists.
+ */
+const createGeocoder = () => {
+  map.addControl(window.L.control.zoom({position: 'topright'}));
+  var searchControl = window.L.esri.Geocoding.geosearch({
     position: 'topright',
     zoomToResult: true,
     useMapBounds: 10,
-    allowMultipleResults: false,
+    allowMultipleResults: false
   }).addTo(map);
 
   var results = window.L.layerGroup().addTo(map);
-  searchControl.on('results', function(data){
+  searchControl.on('results', function (data) {
     console.log(data);
     results.clearLayers();
     for (var i = data.results.length - 1; i >= 0; i--) {
-      results.addLayer(L.marker(data.results[i].latlng));
+      results.addLayer(window.L.marker(data.results[i].latlng));
     }
   });
+};
 
-  drawLayers();
-  map.on('moveend', savePosition);
-}
+/**
+ * Locates all layer toggle elements currently checked.
+ *
+ * @returns {NodeList} NodeList of active input elements.
+ */
 
-function savePosition () {
-  position.center = map.getCenter();
-  position.zoom = map.getZoom();
-}
-
-
-// does exporting inidivual functions make this better?
-// or would this be better served by using the bus?
-// ie: hoist the functions and just set the bindings in the default function.
-export function getLayer (layer) {
-  return layers[layer.layerId];
-}
-
-// but these functions return data ...
-// they would need to invoked as a promise maybe? or a callback?
-// function (input, cb) { let return = manipulate(input); cb(return) }
-// would probably be a cleaner way to deal with this.
-export function getActiveLayers () {
+const getActiveLayers = () => {
   let activeLayers = dom.findElements('.js-layer-toggle').filter(function (toggle) {
     return toggle.checked;
   });
   return activeLayers;
-}
-export function getInactiveLayers () {
+};
+
+/**
+ * Locates all layer toggle elements which are not currently checked.
+ *
+ * @returns {NodeList} NodeList of inactive input elements.
+ */
+const getInactiveLayers = () => {
   let inactiveLayers = dom.findElements('.js-layer-toggle').filter(function (toggle) {
     return !toggle.checked;
   });
   return inactiveLayers;
-}
+};
 
-// again, this is a sude effect so should only happen via explicit bus command.
-export function addLayers (layerSet) {
+/**
+ * Adds a set of layers from './layers.js' to the map.
+ *
+ * @param {String} Comma seperated string of layer names. eg "projectPoints, projectLines"
+ */
+const addLayers = (layerSet) => {
   if (!layerSet) { return; }
-  layerSet.split(',').forEach(function (layer) {
-    layers[layer].features.addTo(map);
-    layers[layer].features.resetStyle();
-    layers[layer].features.bindPopup(function (evt) {
-      evt.bringToFront();
-      evt.setStyle({
-        lineCap: 'round',
-        weight: 30,
-        color: '#34F644'
-      });
-      bus.emit('popup:opened', evt, layers[layer].popup);
-      return '';
-    }).on('popupclose', function () {
-      layers[layer].features.resetStyle();
-      bus.emit('popup:leafletclosed');
-    });
-  });
-}
+  layerSet.split(',').forEach((layer) => addLayer(layer));
+};
 
-export function removeLayers (layerSet) {
+/**
+ * Adds a single of layers from './layers.js' to the map.
+ *
+ * @param {String} Layer key, eg 'projectPoints'
+ */
+const addLayer = layer => {
+  layers[layer].features.addTo(map);
+  bus.emit('layer:reset', layer);
+  layers[layer].features.bindPopup((evt) => {
+    openPopUp(evt, layer);
+    return '';
+  }).on('popupclose', function () {
+    bus.emit('layer:reset', layer);
+  });
+};
+
+/**
+ * Opens the independant (aka non-leaflet) popup from a click on a feature for a given layer.
+ *
+ * @param {Event} Click event from map feature.
+ * @param {String} Layer key, eg 'projectPoints'
+ */
+const openPopUp = (evt, layer) => {
+  evt.bringToFront();
+  evt.setStyle({
+    lineCap: 'round',
+    weight: 30,
+    color: '#34F644'
+  });
+  bus.emit('popup:opened', evt, layers[layer].popup);
+};
+
+/**
+ * Resets a layers style to default renderer. Used to undo highlighting from a click.
+ *
+ * @param {String} Layer key, eg 'projectPoints'
+ */
+const resetLayerStyle = layer => {
+  layers[layer].features.resetStyle();
+};
+
+/**
+ * Removes a set of layers from './layers.js' to the map.
+ *
+ * @param {String} Comma seperated string of layer names. eg "projectPoints, projectLines"
+ */
+const removeLayers = (layerSet) => {
   if (!layerSet) { return; }
-  layerSet.split(',').forEach(function (layer) {
-    layers[layer].features.removeFrom(map);
-    layers[layer].features.unbindPopup();
-  });
-}
+  layerSet.split(',').forEach((layer) => removeLayer(layer));
+};
 
-export function drawLayers () {
-  let activeLayers = getActiveLayers();
-  let inactiveLayers = getInactiveLayers();
-  activeLayers.forEach(function (toggle) {
-    let layerSet = toggle.getAttribute('data-layers');
-    addLayers(layerSet);
-  });
-  inactiveLayers.forEach(function (toggle) {
-    let layerSet = toggle.getAttribute('data-layers');
-    removeLayers(layerSet);
-  });
-}
+/**
+ * Removes a single of layers from './layers.js' to the map.
+ *
+ * @param {String} Layer key, eg 'projectPoints'
+ */
+const removeLayer = layer => {
+  layers[layer].features.removeFrom(map);
+  layers[layer].features.unbindPopup();
+};
 
-// these are just side effect functions —
-// could probably be done with the bus
-export function remove () {
+/**
+ * Adds any layers indicated as active from the layer toggle list to the map.
+ */
+const drawLayers = () => {
+  getActiveLayers().forEach((toggle) => {
+    let layerSet = toggle.getAttribute('data-layers');
+    bus.emit('map:layer:add', layerSet);
+  });
+  getInactiveLayers().forEach((toggle) => {
+    let layerSet = toggle.getAttribute('data-layers');
+    bus.emit('map:layer:remove', layerSet);
+  });
+};
+
+/**
+ * Tears down the map from the DOM.
+ */
+const destroyMap = () => {
   if (map) {
     map.remove();
   }
-}
+};
 
-export function redraw () {
-  remove();
-  draw();
-}
+/**
+ * Destroys and redraws the map.
+ */
+const redrawMap = () => {
+  bus.emit('map:destroy');
+  bus.emit('map:create');
+};
 
-export function closeAllPopUps () {
+/**
+ * Closes all popups active on the map.
+ */
+const closePopUps = () => {
   map.closePopup();
-}
+};
 
-// same here ...
-export function zoomToFeature (feature, popup) {
-  console.log(`Feature Properties: ${feature}`)
-  console.log(feature)
+/**
+ * Fits the current map view to a leaflet bound.
+ *
+ * @param {Object} A Leaflet bounds object
+ */
+const setMapToBounds = bounds => {
+  map.fitBounds(bounds);
+};
+
+/**
+ * Moves map view to a specific point and zoom level.
+ *
+ * @param {Object} A Leaflet LatLng object
+ * @param {Integer} Leaflet map zoom level
+ */
+const setMapToFeature = (latlng, zoom) => {
+  map.flyTo(latlng, zoom);
+  position.zoom = zoom;
+};
+
+/**
+ * Moves map view to a specific feature.
+ *
+ * @param {Object} A Leaflet feature
+ */
+const zoomToFeature = feature => {
   if (feature.getBounds) {
-    console.log('fit bunds plz')
-    let bounds = feature.getBounds()
-    map.fitBounds(bounds)
+    let bounds = feature.getBounds();
+    bus.emit('map:fitBounds', bounds);
   } else {
-    console.log('no bounds thre buddy just this point:')
-    window.feature = feature
-    console.log(feature)
-    map.flyTo(feature._latlng, 16)
-    // map.setZoom(16)
-    // position.zoom = 16;
+    let letlng = feature._latlng
+    let zoom = 16
+    bus.emit('map:setFeature', latlng, zoom)
   }
+};
 
-  // feature.getBounds()
+/**
+ * Binds all side effect listeners, exposes the API, and draws the map
+ */
+export default function () {
+  bus.on('popup:opened', console.log);
+  bus.on('popup:closed', console.log);
+  bus.on('map:redraw', redrawMap);
+  bus.on('map:destroy', destroyMap);
+  bus.on('map:create', drawMap);
+  bus.on('layers:draw', drawLayers);
+  bus.on('map:layer:add', addLayers);
+  bus.on('layer:reset', resetLayerStyle);
+
+  bus.emit('map:create');
 }

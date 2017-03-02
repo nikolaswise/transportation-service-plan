@@ -5,6 +5,9 @@ import * as aria from './helpers/aria';
 import * as event from './helpers/event';
 import bus from './helpers/bus';
 
+/**
+ * Initializes drawer pattern and binds events.
+ */
 function drawer () {
   var wrapper = document.querySelector('.js-panels');
   var toggles = dom.findElements('.js-drawer-toggle');
@@ -17,6 +20,12 @@ function drawer () {
   bus.on('drawer:close', closeDrawer);
   bus.on('drawer:bind', bindDrawers);
 
+  /**
+   * Adds the 'is-active' class to the target drawer component.
+   * Manages ARIA and tab indexing.
+   *
+   * @param {Object} Options object: {id: drawer-id}
+   */
   function openDrawer (options) {
     bus.emit('drawer:close');
     var drawer = document.querySelector(`.js-drawer[data-drawer="${options.id}"]`);
@@ -37,6 +46,13 @@ function drawer () {
     event.add(document, 'focusin', fenceDrawer);
   }
 
+  /**
+   * Removes the 'is-active' class to the target drawer component.
+   * Manages ARIA and tab indexing.
+   * If no drawer is specified, closes all drawers.
+   *
+   * @param {Object} Options object: {id: string}
+   */
   function closeDrawer (options) {
     if (!options) {
       drawers.forEach(function (drawer) {
@@ -52,12 +68,17 @@ function drawer () {
     classy.remove(wrapper, 'drawer-right-is-active');
     toggles.forEach(function (toggle) {
       classy.remove(toggle, 'is-active');
-    })
+    });
     aria.show([wrapper]);
     event.remove(document, 'focusin', fenceDrawer);
     if (lastOn) lastOn.focus();
   }
 
+  /**
+   * Prevents focus from leaving drawer component while drawer is open.
+   *
+   * @param {Event} Event
+   */
   function fenceDrawer (e) {
     if (!dom.closest('js-drawer', e.target)) {
       drawers.forEach(function (drawer) {
@@ -68,6 +89,12 @@ function drawer () {
     }
   }
 
+  /**
+   * Adds listeners from drawer toggle buttons for all drawers,
+   * or just specified drawer.
+   *
+   * @param {Object} {node: DOMnode}
+   */
   function bindDrawers (options) {
     if (!options) {
       toggles.forEach(function (toggle) {
@@ -78,16 +105,27 @@ function drawer () {
     }
   }
 
+  /**
+   * Closes drawer when the drawer wrapper is clicked.
+   * The drawer wrapper is everything outside the drawer.
+   *
+   * @param {Event} Event
+   */
   function closeClick (e) {
     if (classy.has(e.target, 'js-drawer')) {
       bus.emit('drawer:close');
     }
   }
 
+  /**
+   * Toggles the state of a drawer when the drawers controller is clicked.
+   *
+   * @param {Event} Event
+   */
   function toggleClick (e) {
     event.preventDefault(e);
     var drawerId = e.target.getAttribute('data-drawer');
-    classy.add(e.target, 'is-active')
+    classy.add(e.target, 'is-active');
     bus.emit('drawer:open', {id: drawerId});
   }
 
