@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="type-small">
+<html lang="en" class="type-small js-is-inactive is-loading">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -103,78 +103,16 @@
         </aside>
       </nav>
     </div>
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <p class="loader-text">Loading &hellip;</p>
+    </div>
 
-    <div class="panels js-panels">
-      <div class="js-modal modal-overlay" data-modal='search'>
-        <div class="text-container">
-          <div class="text-block">
-            <button class="sans-serif search-label js-modal-toggle close-button">close</button>
-          </div>
-        </div>
-        <div class="modal">
-          <div class="text-container">
-            <form method="GET" action="search/" class="search">
-  <label>
-    <span class="search-label left">Search the Transporation System Plan</span>
-    <input class="search-input js-search-input" type="search" placeholder="Search for …" name="q">
-  </label>
-  <button type="submit" class="search-button">Search</button>
-  <button class="cancel-button js-modal-toggle">cancel</button>
-</form>
-            <div class="text-block links-white text-white">
-              
-                <ul>
-<li><a href="#introduction">Introduction</a>
-<ul>
-<li><a href="#why-is-this-important">Why is this im­por­tant?</a></li>
-<li><a href="#what-is-the-transportation-system-plan">What is the Transportation System Plan?</a></li>
-<li><a href="#elements-of-the-tsp">Elements of the <span class="small-caps">TSP</span></a></li>
-<li><a href="#transportation-system-plan-updates">Transportation System Plan Updates</a></li>
-<li><a href="#regulatory-framework"><span class="small-caps">REGULATORY</span> <span class="small-caps">FRAMEWORK</span></a></li>
-<li><a href="#chapter-9-transportation">Chapter 9: Transportation</a></li>
-<li><a href="#chapter-8-public-facilities">Chapter 8: Public Facilities</a></li>
-<li><a href="#chapter-3-urban-form">Chapter 3: Urban Form</a></li>
-<li><a href="#chapter-4-development">Chapter 4: Development</a></li>
-<li><a href="#chapter-2-has-seven-goals-and-41-policies">Chapter 2 has seven goals and 41 poli­cies.</a></li>
-<li><a href="#seven-outcomes"><span class="small-caps">SEVEN</span> <span class="small-caps">OUTCOMES</span></a></li>
-</ul>
-</li>
-<li><a href="#transportation-objectives"><strong>Transportation Objectives</strong></a></li>
-<li><a href="#public-facilities-and-services-objectives"><strong>Public Facilities and Services Objectives</strong></a>
-<ul>
-<li><a href="#land-use-development-and-placemaking">Land use, de­vel­op­ment, and place­mak­ing</a></li>
-<li><a href="#land-use-development-and-placemaking-1">Land use, de­vel­op­ment, and place­mak­ing</a></li>
-</ul>
-</li>
-<li><a href="#introduction-1">Introduction</a>
-<ul>
-<li><a href="#why-is-this-important-1">Why is this im­por­tant?</a></li>
-<li><a href="#what-is-the-transportation-system-plan-1">What is the Transportation System Plan?</a></li>
-<li><a href="#elements-of-the-tsp-1">Elements of the <span class="small-caps">TSP</span></a></li>
-<li><a href="#transportation-system-plan-updates-1">Transportation System Plan Updates</a></li>
-<li><a href="#regulatory-framework-1"><span class="small-caps">REGULATORY</span> <span class="small-caps">FRAMEWORK</span></a></li>
-<li><a href="#chapter-9-transportation-1">Chapter 9: Transportation</a></li>
-<li><a href="#chapter-8-public-facilities-1">Chapter 8: Public Facilities</a></li>
-<li><a href="#chapter-3-urban-form-1">Chapter 3: Urban Form</a></li>
-<li><a href="#chapter-4-development-1">Chapter 4: Development</a></li>
-<li><a href="#chapter-2-has-seven-goals-and-41-policies-1">Chapter 2 has seven goals and 41 poli­cies.</a></li>
-<li><a href="#seven-outcomes-1"><span class="small-caps">SEVEN</span> <span class="small-caps">OUTCOMES</span></a></li>
-</ul>
-</li>
-<li><a href="#transportation-objectives-1"><strong>Transportation Objectives</strong></a></li>
-<li><a href="#public-facilities-and-services-objectives-1"><strong>Public Facilities and Services Objectives</strong></a></li>
-</ul>
 
-              
-            </div>
-
-          </div>
-        </div>
-      </div>
-
+    <div class="panels js-panels text-is-active">
       <nav class="navigation">
         
-  <button class="left js-drawer-toggle serif pt8" data-drawer="navigation">
+  <button class="left js-drawer-toggle serif pt8 hide-if-no-js" data-drawer="navigation">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
@@ -185,19 +123,19 @@
 <!--   <button class="left js-modal-toggle js-running-section serif pt8 button-clear" >Transportation Service Plan
   </button> -->
 
-  <button class="right pt8 serif js-view-control hide-small hide-text  button-clear" data-panel="text">
+  <button class="right pt8 serif js-view-control hide-small hide-text button-clear hide-if-no-js" data-panel="text">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
  hide map
   </button>
-  <button class="right pt8 serif js-view-control show-small  button-clear" data-panel="map">
+  <button class="right pt8 serif js-view-control show-small button-clear hide-if-no-js" data-panel="map">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
  show map
   </button>
-  <button class="right pt8 serif js-view-control hide-small hide-split  button-clear" data-panel="split">
+  <button class="right pt8 serif js-view-control hide-small hide-split button-clear hide-if-no-js" data-panel="split">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
@@ -205,6 +143,10 @@
   </button>
 
 
+
+  <div class="text-container show-if-no-js">
+    <p class="navigation-no-js-text">Portland Transportation Service Plan</p>
+  </div>
       </nav>
 
       <div class="panel panel-text js-text-area">
@@ -215,7 +157,7 @@
       <hr class="title-rule">
       <p class="title-subhead">Portland Bureau of Transportation</p>
 
-      <button class="button-white-fill left js-view-control hide-small hide-text" data-panel="text" aria-label="toggle map view" >
+      <button class="button-white-fill left js-view-control hide-small hide-text hide-if-no-js" data-panel="text" aria-label="toggle map view" >
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 12l20-8v48l-20 8z"></path>
   <path d="M24 2l20 12v46l-20-10z"></path>
@@ -223,7 +165,7 @@
 </svg>
 
       </button>
-      <button class="button-white left js-view-control show-small" data-panel="map" aria-label="toggle map view" >
+      <button class="button-white left js-view-control show-small hide-if-no-js" data-panel="map" aria-label="toggle map view" >
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 12l20-8v48l-20 8z"></path>
   <path d="M24 2l20 12v46l-20-10z"></path>
@@ -231,7 +173,7 @@
 </svg>
 
       </button>
-      <button class="button-white left js-view-control hide-small hide-split" data-panel="split" aria-label="toggle map view" >
+      <button class="button-white left js-view-control hide-small hide-split hide-if-no-js" data-panel="split" aria-label="toggle map view" >
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 12l20-8v48l-20 8z"></path>
   <path d="M24 2l20 12v46l-20-10z"></path>
@@ -240,7 +182,7 @@
 
       </button>
 
-      <button class="button-white-fill left gutter-left js-view-control hide-map hide-small" data-panel="map" aria-label="toggle text view" >
+      <button class="button-white-fill left gutter-left js-view-control hide-map hide-small hide-if-no-js" data-panel="map" aria-label="toggle text view">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg>
@@ -3905,6 +3847,7 @@ ser­vices to neigh­bor­hood-serv­ing com­mer­cial and em­ploy­ment uses.
   </div>
 </div>
       </div>
+
       <div class="panel panel-map">
         <div class="map-frame map-frame-top clearfix">
   <div class="left">
@@ -3942,6 +3885,11 @@ ser­vices to neigh­bor­hood-serv­ing com­mer­cial and em­ploy­ment uses.
 
 
       </div>
+
+      <nav class="navigation bottom-navigation">
+        <small>cool footer stuff maybe</small>
+      </nav>
+
     </div>
     <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
       <nav class="drawer-nav layer-panel" role="navigation">

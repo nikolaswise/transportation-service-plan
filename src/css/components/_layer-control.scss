@@ -10,14 +10,14 @@
 
 .fieldset {
   margin-bottom: 1*$baseline;
-  border-bottom: 0.25em solid $rich-blue;
+  border-bottom: 0.25em solid $blue;
 }
 
 .legend {
   box-sizing: border-box;
   width: 100%;
   padding: $baseline/4 $baseline/4 $baseline/4 1.5*$baseline;
-  border: 0.25em solid $rich-blue;
+  border: 0.25em solid $blue;
   margin: 0;
 }
 
@@ -25,9 +25,9 @@
   line-height: 0.75*$baseline;
   margin: 0;
   padding: $baseline/4 $baseline/4 $baseline/4 1.5*$baseline;
-  border-bottom: 0.25em solid $rich-blue;
-  border-left:   0.25em solid $rich-blue;
-  border-right:  0.25em solid $rich-blue;
+  border-bottom: 0.25em solid $blue;
+  border-left:   0.25em solid $blue;
+  border-right:  0.25em solid $blue;
 }
 .input {
   position: absolute;
@@ -43,13 +43,13 @@
     display: block;
     content: "";
     background-color: $off-white;
-    border-right: 0.25em solid $rich-blue;
-    border-bottom: 0.25em solid $rich-blue;
+    border-right: 0.25em solid $blue;
+    border-bottom: 0.25em solid $blue;
   }
 }
 .input:checked {
   &:before {
-    background-color: $rich-blue;
+    background-color: $blue;
   }
 }
 

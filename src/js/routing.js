@@ -7,7 +7,6 @@ import bus from './helpers/bus';
 export default function route () {
   let url = document.location.pathname + '/';
   url = url.replace('//', '/');
-
   if (url === '/map/') {
     bus.emit('set:view', 'map');
   } else if (url === '/text/') {
@@ -15,4 +14,5 @@ export default function route () {
   } else {
     bus.emit('set:view', 'split');
   }
+  bus.emit('routing:done')
 }

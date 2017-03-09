@@ -50,9 +50,6 @@ img {
   height: auto; }
 
 /* grayscale */
-/* Bright Colors */
-/* Muted Colors */
-/* Rich Colors */
 /* ui colors */
 /* Base Type Styles */
 html {
@@ -158,7 +155,7 @@ a {
   a:visited {
     color: #2e3133; }
   a:hover {
-    color: #293EC8;
+    color: #00a0ae;
     text-decoration: underline; }
 
 .sans-serif {
@@ -248,6 +245,15 @@ a {
   .hide-small {
     display: none; } }
 
+.show-if-no-js {
+  display: none; }
+
+.js-is-inactive .hide-if-no-js {
+  display: none; }
+
+.js-is-inactive .show-if-no-js {
+  display: block; }
+
 .text-container {
   margin: auto;
   width: 83.33333%; }
@@ -265,6 +271,14 @@ a {
     padding: 1rem;
     padding-left: 1.5rem; } }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  75% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .panels {
   display: block;
   background: #fafafa;
@@ -272,7 +286,12 @@ a {
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0; }
+  bottom: 0;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  opacity: 1; }
 
 .panel {
   width: 50%;
@@ -291,7 +310,10 @@ a {
   z-index: 1;
   top: 0;
   bottom: 0;
-  overflow-y: scroll; }
+  padding-left: 53px;
+  overflow-y: scroll;
+  overflow-x: none;
+  box-sizing: border-box; }
 
 .panel-map {
   position: fixed;
@@ -308,7 +330,8 @@ a {
 
 .text-is-active .panel-text {
   overflow-y: initial;
-  width: 100%; }
+  width: 100%;
+  padding-right: 53px; }
 
 .text-is-active .panel-map {
   transform: translate3d(100%, 0, 0); }
@@ -443,8 +466,8 @@ button {
   display: inline-block;
   padding: 0.66em;
   width: auto;
-  color: #293EC8;
-  border: 0.25em solid #293EC8;
+  color: #00a0ae;
+  border: 0.25em solid #00a0ae;
   background-color: transparent;
   box-sizing: border-box;
   transition: all 300ms linear;
@@ -458,7 +481,7 @@ button {
   button:focus {
     transition: all 300ms linear;
     text-decoration: none;
-    background-color: #293EC8;
+    background-color: #00a0ae;
     color: white; }
 
 .button-white {
@@ -467,15 +490,15 @@ button {
   .button-white:hover, .button-white:focus {
     text-decoration: none;
     background-color: white;
-    color: #293EC8; }
+    color: #00a0ae; }
 
 .button-white-fill {
-  color: #293EC8;
+  color: #00a0ae;
   background-color: white;
   border: 4px solid white; }
   .button-white-fill:hover, .button-white-fill:focus {
     text-decoration: none;
-    background-color: #293EC8;
+    background-color: #00a0ae;
     color: white; }
 
 .button-clear {
@@ -493,7 +516,7 @@ button {
 .title {
   position: relative;
   z-index: 10;
-  background-color: #293EC8; }
+  background-color: #00a0ae; }
 
 .title-view-control {
   float: right;
@@ -534,7 +557,7 @@ button {
 .table-of-contents {
   padding-top: 4.8rem;
   padding-bottom: 8rem;
-  background-color: #CADDE9; }
+  background-color: #98cbcc; }
 
 .toc ul {
   list-style-type: none;
@@ -556,11 +579,18 @@ button {
 .navigation {
   position: fixed;
   height: 53px;
+  padding-left: 53px;
   width: 100%;
   z-index: 10;
   background-color: #fafafa;
-  border-bottom: 1px solid #c4c7ca;
-  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  padding-right: 53px;
+  box-sizing: border-box; }
+
+.bottom-navigation {
+  bottom: 0;
+  padding-top: 12px;
+  text-align: center; }
 
 .map-is-active .navigation,
 .split-is-active .navigation {
@@ -591,10 +621,15 @@ button {
   .navigation {
     display: none; } }
 
+.navigation-no-js-text {
+  padding-top: 0.53333rem; }
+
 .half-title {
   background-color: #fafafa;
   padding-top: 9.6rem;
-  padding-bottom: 12.8rem; }
+  padding-bottom: 12.8rem;
+  margin-right: 53px;
+  border-bottom: 3px solid #e7e8ea; }
 
 .half-title-plate {
   border: 5px solid #2e3133;
@@ -629,28 +664,28 @@ button {
   margin-bottom: 0;
   height: 4rem;
   border: transparent;
-  border-bottom: 4px solid #293ec8;
+  border-bottom: 4px solid #00a0ae;
   background-color: transparent;
   box-shadow: none;
   font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif;
-  color: #293EC8; }
+  color: #00a0ae; }
 
 .search-label {
-  color: #293EC8;
+  color: #00a0ae;
   font-size: 1rem; }
 
 .search-button {
   padding: 1em;
-  color: #293EC8;
-  border-color: #293EC8; }
+  color: #00a0ae;
+  border-color: #00a0ae; }
 
 .cancel-button {
   padding: 1em;
   float: right;
-  color: #293EC8;
+  color: #00a0ae;
   border-color: transparent; }
   .cancel-button:hover, .cancel-button:focus {
-    background-color: #FF8671; }
+    background-color: #fcb043; }
 
 .close-button {
   margin: 0 1em 0 0;
@@ -660,12 +695,12 @@ button {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  color: #293EC8;
+  color: #00a0ae;
   z-index: 10; }
   .close-button:hover, .close-button:focus {
-    color: #293EC8;
+    color: #00a0ae;
     background-color: transparent;
-    border-bottom: 2px solid #293EC8; }
+    border-bottom: 2px solid #00a0ae; }
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -688,7 +723,7 @@ button {
   font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif; }
 
 .introduction {
-  background-color: #CADDE9;
+  background-color: #00a0ae;
   padding-top: 400px;
   padding-bottom: 400px; }
   .introduction h1 {
@@ -696,7 +731,7 @@ button {
     letter-spacing: 0.03em; }
 
 .colophon {
-  background-color: #CEDBAF;
+  background-color: #98cbcc;
   padding-bottom: 6.4rem; }
 
 #map {
@@ -764,22 +799,22 @@ button {
 
 .fieldset {
   margin-bottom: 1.6rem;
-  border-bottom: 0.25em solid #293EC8; }
+  border-bottom: 0.25em solid #00a0ae; }
 
 .legend {
   box-sizing: border-box;
   width: 100%;
   padding: 0.4rem 0.4rem 0.4rem 2.4rem;
-  border: 0.25em solid #293EC8;
+  border: 0.25em solid #00a0ae;
   margin: 0; }
 
 .label {
   line-height: 1.2rem;
   margin: 0;
   padding: 0.4rem 0.4rem 0.4rem 2.4rem;
-  border-bottom: 0.25em solid #293EC8;
-  border-left: 0.25em solid #293EC8;
-  border-right: 0.25em solid #293EC8; }
+  border-bottom: 0.25em solid #00a0ae;
+  border-left: 0.25em solid #00a0ae;
+  border-right: 0.25em solid #00a0ae; }
 
 .input {
   position: absolute;
@@ -795,11 +830,11 @@ button {
     display: block;
     content: "";
     background-color: #fafafa;
-    border-right: 0.25em solid #293EC8;
-    border-bottom: 0.25em solid #293EC8; }
+    border-right: 0.25em solid #00a0ae;
+    border-bottom: 0.25em solid #00a0ae; }
 
 .input:checked:before {
-  background-color: #293EC8; }
+  background-color: #00a0ae; }
 
 .modal-overlay {
   position: fixed;
@@ -946,13 +981,49 @@ button {
   max-height: 80%;
   overflow: auto; }
 
-.title,
-.half-title,
-.table-of-contents,
-.text-wrapper,
-.table-wrapper,
-.colophon {
-  box-shadow: 3px 0px 3px #9ea4a9; }
+.loader-wrapper {
+  width: auto;
+  margin: auto;
+  margin-top: 33%;
+  margin-top: 45vh;
+  text-align: center;
+  animation-name: slowOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  opacity: 0; }
+
+.loader {
+  position: relative;
+  margin: auto;
+  border: 8px solid #e7e8ea;
+  /* Light grey */
+  border-top: 8px solid #00a0ae;
+  /* Blue */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 0.66s linear infinite; }
+
+.loader-text {
+  font-size: 18px;
+  padding-top: 0px;
+  margin-top: 9px;
+  line-height: 2; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes slowOut {
+  0% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 .left {
   float: left; }
@@ -980,7 +1051,7 @@ button {
 .links-white a {
   color: white; }
   .links-white a:hover, .links-white a:focus {
-    color: #CADDE9; }
+    color: #98cbcc; }
 
 .text-white {
   color: white; }
@@ -996,3 +1067,6 @@ button {
 
 .lead-top {
   margin-top: 1.6rem; }
+
+.is-loading * {
+  transition-duration: 0s; }

@@ -1,3 +1,15 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .panels  {
   display: block;
   background: $off-white;
@@ -6,9 +18,11 @@
   right:0;
   top:0;
   bottom:0;
-  // &.map-is-active {
-  //   overflow: hidden;
-  // }
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  opacity: 1;
 }
 
 .panel {
@@ -29,7 +43,10 @@
   z-index: 1;
   top: 0;
   bottom: 0;
+  padding-left: $frame;
   overflow-y: scroll;
+  overflow-x: none;
+  box-sizing: border-box;
 }
 .panel-map {
   position: fixed;
@@ -52,6 +69,7 @@
   .panel-text {
     overflow-y: initial;
     width: 100%;
+    padding-right: $frame;
   }
   .panel-map {
     transform: translate3d(100%, 0, 0);
@@ -73,3 +91,4 @@
     display: none;
   }
 }
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="type-small">
+<html lang="en" class="type-small js-is-inactive is-loading">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -55,27 +55,13 @@
         </aside>
       </nav>
     </div>
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <p class="loader-text">Loading &hellip;</p>
+    </div>
 
-    <div class="panels js-panels">
-      <div class="js-modal modal-overlay" data-modal='search'>
-        <div class="text-container">
-          <div class="text-block">
-            <button class="sans-serif search-label js-modal-toggle close-button">close</button>
-          </div>
-        </div>
-        <div class="modal">
-          <div class="text-container">
-            {% include "_search-form.html" %}
-            <div class="text-block links-white text-white">
-              {% autoescape false %}
-                {{ toc }}
-              {% endautoescape %}
-            </div>
 
-          </div>
-        </div>
-      </div>
-
+    <div class="panels js-panels text-is-active">
       <nav class="navigation">
         {% include "_navigation.html" %}
       </nav>
@@ -108,9 +94,15 @@
         </div>
         {% include "_last-half.html" %}
       </div>
+
       <div class="panel panel-map">
         {% include "_map.html" %}
       </div>
+
+      <nav class="navigation bottom-navigation">
+        <small>cool footer stuff maybe</small>
+      </nav>
+
     </div>
     <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
       <nav class="drawer-nav layer-panel" role="navigation">

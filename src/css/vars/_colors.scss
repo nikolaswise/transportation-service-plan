@@ -11,25 +11,19 @@ $darkest-gray:          hsl(206, 6%, 34%);
 $off-black:             hsl(206, 6%, 25%);
 $black:                 hsl(206, 6%, 19%);
 
-/* Bright Colors */
-$green: #8BEAC1;
-$blue: #20BBFC;
-$orange: #FF8671;
-
-/* Muted Colors */
-$green-white: #DDF9ED;
-$pale-green: #CEDBAF;
-// $pale-blue: #A7CAE0;
-$pale-blue: #CADDE9;
-$pale-orange: #DDDDDD;
-
-/* Rich Colors */
-// $rich-blue: #0079C1;
-$rich-blue: #293EC8;
-$rich-green: #00AA17;
-
 /* ui colors */
 $color-background:      $off-white;
 $color-text-small:      $black;
 $color-text-big:        $off-black;
 
+
+// branded colors
+$light-blue:    rgba(152, 203, 204, 1);
+$blue:          rgba(0, 160, 174, 1);
+$dark-blue:     rgba(22, 51, 52, 1);
+
+$orange:        rgba(252,176, 67, 1);
+$darker-orange: rgba(245, 130, 32, 1);
+
+$pbot-light-gray: rgba(231, 232, 234, 1);
+$pbot-dark-gray:  rgba(77, 77, 79, 1);

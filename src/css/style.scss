@@ -33,6 +33,14 @@
 @import "components/drawers.scss";
 @import "components/pop-up.scss";
 @import "components/text-panel-shadow.scss";
+@import "components/loader.scss";
 
 // Helpers
 @import "helpers.scss";
+
+.is-loading {
+  * {
+    transition-duration: 0s;
+  }
+}
+

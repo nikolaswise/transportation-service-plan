@@ -20,20 +20,19 @@ import drawer from './drawers.js';
  */
 
 const initApp = () => {
+  // Model, View, Intent
+  // Intent and View are the larger, containing component.
+  // This app has no model: all data is consumed via GIS API.
+  view();
+  intent();
+
   // The router controls the application state
   // everything derives from URL
   route();
 
-  // Model, View, Intent
-  // Intent and View are the larger, containing component.
-  // This app has no model: all data is consumed via GIS API.
-  intent();
-  view();
-
   // Components each handle their own MVI loops:
   // This makes them compasble, replaceable, and easier to work on.
   // Easy to maintain, easy to delete!
-  responsiveType();
   modal();
   drawer();
   map();

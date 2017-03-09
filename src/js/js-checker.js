@@ -8,7 +8,7 @@ bus.on('has:javascript', flagJS);
  */
 function flagJS () {
   let html = document.querySelector('html');
-  classy.add(html, 'js-is-active');
+  classy.remove(html, 'js-is-inactive');
 }
 
 /**

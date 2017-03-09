@@ -1,5 +1,5 @@
 var test = require('tape');
-var getTexts = require('../helpers/get-texts');
+var getTexts = require('../../helpers/get-texts');
 
 test('Get texts from files', function (t) {
   t.plan(1);

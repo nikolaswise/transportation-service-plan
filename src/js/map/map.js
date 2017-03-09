@@ -40,6 +40,7 @@ const drawMap = () => {
 /**
  * Adds a Geocoding widget to the map, if the map exists.
  */
+
 const createGeocoder = () => {
   map.addControl(window.L.control.zoom({position: 'topright'}));
   var searchControl = window.L.esri.Geocoding.geosearch({
@@ -51,7 +52,6 @@ const createGeocoder = () => {
 
   var results = window.L.layerGroup().addTo(map);
   searchControl.on('results', function (data) {
-    console.log(data);
     results.clearLayers();
     for (var i = data.results.length - 1; i >= 0; i--) {
       results.addLayer(window.L.marker(data.results[i].latlng));
@@ -223,7 +223,7 @@ const zoomToFeature = feature => {
     let bounds = feature.getBounds();
     bus.emit('map:fitBounds', bounds);
   } else {
-    let letlng = feature._latlng
+    let latlng = feature._latlng
     let zoom = 16
     bus.emit('map:setFeature', latlng, zoom)
   }
@@ -233,13 +233,17 @@ const zoomToFeature = feature => {
  * Binds all side effect listeners, exposes the API, and draws the map
  */
 export default function () {
-  bus.on('popup:opened', console.log);
-  bus.on('popup:closed', console.log);
+  bus.on('popup:opened', zoomToFeature);
+  bus.on('popup:closed', closePopUps);
   bus.on('map:redraw', redrawMap);
   bus.on('map:destroy', destroyMap);
   bus.on('map:create', drawMap);
+  bus.on('map:create', drawLayers);
+  bus.on('map:fitBounds', setMapToBounds);
+  bus.on('map:setFeature', setMapToFeature);
   bus.on('layers:draw', drawLayers);
   bus.on('map:layer:add', addLayers);
+  bus.on('map:layer:remove', removeLayers);
   bus.on('layer:reset', resetLayerStyle);
 
   bus.emit('map:create');

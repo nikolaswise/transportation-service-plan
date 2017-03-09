@@ -1,5 +1,6 @@
 import bus from './helpers/bus.js';
 import * as classy from './helpers/classy.js';
+import responsiveType from './responsive-type.js';
 
 /**
  * Renders the HTML for a popup, given a click event on a leaflet feature and a popup template
@@ -45,6 +46,8 @@ const setToPanel = panel => {
     classy.remove(panelContainer, `split-is-active`);
   }
   classy.add(panelContainer, `${panel}-is-active`);
+  responsiveType();
+
 };
 
 /**
@@ -107,6 +110,10 @@ const redrawMap = () => {
   bus.emit('map:redraw');
 };
 
+const viewLoaded = () => {
+  classy.remove(document.querySelector('html'), 'is-loading')
+}
+
 /**
  * Binds event listeners for view functions.
  */
@@ -121,4 +128,5 @@ export default function () {
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   bus.on('type:size', sizeTextTo);
+  bus.on('routing:done', viewLoaded)
 }

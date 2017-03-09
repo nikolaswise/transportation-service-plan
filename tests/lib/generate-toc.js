@@ -1,5 +1,5 @@
 var test = require('tape');
-var generateToC = require('../helpers/generate-toc');
+var generateToC = require('../../helpers/generate-toc');
 
 test('Generate Table of Contents', function (t) {
   t.plan(1);

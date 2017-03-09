@@ -14,10 +14,12 @@
     "lib": "jandoc -d lib/ -o src/text -r docx -w markdown_github --extract-media=src/img",
     "pdf": "jandoc -d lib/ -o src/text -r docx -w latex",
     "watch": "rerun-script",
-    "test": "npm run lint && tape tests/**/*.js | tap-spec ",
+    "test": "npm run lint && npm run test:lib && npm run test:app ",
+    "test:lib": "tape tests/lib/**/*.js | tap-spec ",
+    "test:app": "tape tests/app/**/*.js | tap-spec ",
     "lint": "semistandard | snazzy",
-    "prepreview": "postcss --use autoprefixer build/css/style.css -r",
-    "preview": "surge build/ -d pbot-tsp.surge.sh"
+    "prestage": "postcss --use autoprefixer build/css/style.css -r",
+    "stage": "surge build/ -d pbot-tsp.surge.sh"
   },
   "watches": {
     "html": [
@@ -43,10 +45,16 @@
   "devDependencies": {
     "autoprefixer": "^6.7.4",
     "babel": "^6.5.2",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
     "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.18.0",
     "babel-tape-runner": "^2.0.1",
     "clusterize.js": "^0.17.2",
+    "faucet": "0.0.1",
     "jandoc": "0.0.2",
     "live-server": "^1.1.0",
     "markdown-it": "^8.2.2",

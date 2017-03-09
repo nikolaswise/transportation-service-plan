@@ -1,5 +1,5 @@
 var test = require('tape');
-var renderMarkdown = require('../helpers/render-markdown');
+var renderMarkdown = require('../../helpers/render-markdown');
 
 test('Render markdown test', function (t) {
   t.plan(1);

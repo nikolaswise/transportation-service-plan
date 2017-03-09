@@ -14,29 +14,29 @@
   margin-bottom: 0;
   height: 2.5*$baseline;
   border: transparent;
-  border-bottom: 4px solid rgba($rich-blue, 1);
+  border-bottom: 4px solid $blue;
   background-color: transparent;
   box-shadow: none;
   font-family: $system-serif;
-  color: $rich-blue;
+  color: $blue;
 }
 
 .search-label {
-  color: $rich-blue;
+  color: $blue;
   font-size: $pt12;
 }
 
 .search-button {
   padding: 1em;
-  color: $rich-blue;
-  border-color: $rich-blue;
+  color: $blue;
+  border-color: $blue;
 }
 
 
 .cancel-button {
   padding: 1em;
   float: right;
-  color: $rich-blue;
+  color: $blue;
   border-color: transparent;
   &:hover, &:focus {
     background-color: $orange;
@@ -51,12 +51,12 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid transparent;
-  color: $rich-blue;
+  color: $blue;
   z-index: 10;
   &:hover, &:focus {
-    color: $rich-blue;
+    color: $blue;
     background-color: transparent;
-    border-bottom: 2px solid $rich-blue;
+    border-bottom: 2px solid $blue;
   }
 }
 

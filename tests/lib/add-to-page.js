@@ -1,5 +1,5 @@
 var test = require('tape');
-var addToPage = require('../helpers/add-to-page');
+var addToPage = require('../../helpers/add-to-page');
 
 var site = [{
   toc: '',

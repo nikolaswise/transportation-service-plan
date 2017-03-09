@@ -1,11 +1,20 @@
 .navigation {
   position: fixed;
   height: $frame;
+  padding-left: $frame;
   width: 100%;
   z-index: 10;
   background-color: $off-white;
-  border-bottom: 1px solid $gray;
   transition: $transition;
+  padding-right: $frame;
+
+  box-sizing: border-box;
+}
+
+.bottom-navigation {
+  bottom: 0;
+  padding-top: 12px;
+  text-align: center;
 }
 
 .map-is-active,
@@ -57,3 +66,6 @@
   }
 }
 
+.navigation-no-js-text {
+  padding-top: $baseline/3;
+}

@@ -2,6 +2,8 @@
   background-color: $off-white;
   padding-top: 6*$baseline;
   padding-bottom: 8*$baseline;
+  margin-right: $frame;
+  border-bottom: 3px solid $pbot-light-gray;
 }
 
 .half-title-plate {
