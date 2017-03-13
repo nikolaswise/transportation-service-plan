@@ -46,6 +46,7 @@
     "autoprefixer": "^6.7.4",
     "live-server": "^1.1.0",
     "markdown-it": "^8.2.2",
+    "markdown-it-anchor": "^4.0.0",
     "markdown-it-sanitizer": "^0.4.3",
     "markdown-toc": "^1.0.3",
     "node-sass": "^3.13.0",
