@@ -1,6 +1,7 @@
 import bus from './helpers/bus.js';
 import * as dom from './helpers/dom.js';
 import * as event from './helpers/event.js';
+import scrollMonitor from 'scrollmonitor'; // if you're not using require, you can use the scrollMonitor global.
 
 // ┌──────────────────────────┐
 // │ Emit View Toggle Intents │
@@ -90,6 +91,20 @@ const bindKeyup = () => {
 };
 
 /**
+ * Binds scroll monitor module and emits events when event things happen
+ */
+const bindScrollWatcher = () => {
+  let myElement = document.getElementById("itemToWatch");
+  const watcher = scrollMonitor.create(myElement);
+  watcher.enterViewport(function() {
+    console.log( 'I have entered the viewport' );
+  });
+  watcher.exitViewport(function() {
+    console.log( 'I have left the viewport' );
+  });
+}
+
+/**
  * Emits type resizing events on window resize.
  */
 const bindWindowResize = () => {
@@ -114,6 +129,7 @@ const bindIntents = () => {
   bus.emit('bind:layer:toggles');
   bus.emit('bind:layer:controllers');
   bus.emit('bind:view:controller');
+  bus.emit('bind:scroll:watcher');
   bus.emit('bind:popup:closers');
   bus.emit('bind:keyup');
   bus.emit('bind:window:resize');
@@ -126,6 +142,7 @@ const bindIntents = () => {
 export default function () {
   bus.on('bind:layer:toggles', bindLayerToggles);
   bus.on('bind:layer:controllers', bindLayerControllers);
+  bus.on('bind:scroll:watcher', bindScrollWatcher);
   bus.on('bind:view:controller', bindViewController);
   bus.on('bind:popup:closers', bindPopUpClosers);
   bus.on('bind:keyup', bindKeyup);

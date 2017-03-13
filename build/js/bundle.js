@@ -1,8 +1,5 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (factory());
-}(this, (function () { 'use strict';
+(function () {
+'use strict';
 
 // Dom needs Classy! It's a mutually dependant deal.
 // ┌─────┐
@@ -249,7 +246,7 @@ bus.on('has:javascript', flagJS);
  * Adds 'js-is-active' class to root HTML node
  */
 function flagJS () {
-  let html = document.querySelector('html');
+  var html = document.querySelector('html');
   remove(html, 'js-is-inactive');
 }
 
@@ -267,7 +264,7 @@ var hasJS = function () {
 
 // this needs to a little more robust, and be able to handle queries maybe? for sure hashes.
 function route () {
-  let url = document.location.pathname + '/';
+  var url = document.location.pathname + '/';
   url = url.replace('//', '/');
   if (url === '/map/') {
     bus.emit('set:view', 'map');
@@ -368,6 +365,26 @@ function preventDefault (e) {
  * @returns {Function} A function that will intercept the original function.
  */
 
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+
+
+
+
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var scrollMonitor = createCommonjsModule(function (module, exports) {
+!function(t,e){"object"=='object'&&"object"=='object'?module.exports=e():"function"==typeof undefined&&undefined.amd?undefined("scrollMonitor",[],e):exports.scrollMonitor=e();}(commonjsGlobal,function(){return function(t){function e(o){if(i[o]){ return i[o].exports; }var s=i[o]={exports:{},id:o,loaded:!1};return t[o].call(s.exports,s,s.exports,e),s.loaded=!0,s.exports}var i={};return e.m=t,e.c=i,e.p="",e(0)}([function(t,e,i){"use strict";var o=i(1),s=o.isInBrowser,n=i(2),r=new n(s?document.body:null);r.setStateFromDOM(null),r.listenToDOM(),s&&(window.scrollMonitor=r),t.exports=r;},function(t,e){"use strict";e.VISIBILITYCHANGE="visibilityChange",e.ENTERVIEWPORT="enterViewport",e.FULLYENTERVIEWPORT="fullyEnterViewport",e.EXITVIEWPORT="exitViewport",e.PARTIALLYEXITVIEWPORT="partiallyExitViewport",e.LOCATIONCHANGE="locationChange",e.STATECHANGE="stateChange",e.eventTypes=[e.VISIBILITYCHANGE,e.ENTERVIEWPORT,e.FULLYENTERVIEWPORT,e.EXITVIEWPORT,e.PARTIALLYEXITVIEWPORT,e.LOCATIONCHANGE,e.STATECHANGE],e.isOnServer="undefined"==typeof window,e.isInBrowser=!e.isOnServer,e.defaultOffsets={top:0,bottom:0};},function(t,e,i){"use strict";function o(t,e){if(!(t instanceof e)){ throw new TypeError("Cannot call a class as a function") }}function s(t){return c?0:t===document.body?window.innerHeight||document.documentElement.clientHeight:t.clientHeight}function n(t){return c?0:t===document.body?Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.documentElement.clientHeight):t.scrollHeight}function r(t){return c?0:t===document.body?window.pageYOffset||document.documentElement&&document.documentElement.scrollTop||document.body.scrollTop:t.scrollTop}var h=i(1),c=h.isOnServer,a=h.isInBrowser,l=h.eventTypes,p=i(3),w=function(){function t(e,i){function h(){if(a.viewportTop=r(e),a.viewportBottom=a.viewportTop+a.viewportHeight,a.documentHeight=n(e),a.documentHeight!==p){for(w=a.watchers.length;w--;){ a.watchers[w].recalculateLocation(); }p=a.documentHeight;}}function c(){for(u=a.watchers.length;u--;){ a.watchers[u].update(); }for(u=a.watchers.length;u--;){ a.watchers[u].triggerCallbacks(); }}o(this,t);var a=this;this.item=e,this.watchers=[],this.viewportTop=null,this.viewportBottom=null,this.documentHeight=n(e),this.viewportHeight=s(e),this.DOMListener=function(){t.prototype.DOMListener.apply(a,arguments);},this.eventTypes=l,i&&(this.containerWatcher=i.create(e));var p,w,u;this.update=function(){h(),c();},this.recalculateLocations=function(){this.documentHeight=0,this.update();};}return t.prototype.listenToDOM=function(){a&&(window.addEventListener?(this.item===document.body?window.addEventListener("scroll",this.DOMListener):this.item.addEventListener("scroll",this.DOMListener),window.addEventListener("resize",this.DOMListener)):(this.item===document.body?window.attachEvent("onscroll",this.DOMListener):this.item.attachEvent("onscroll",this.DOMListener),window.attachEvent("onresize",this.DOMListener)),this.destroy=function(){window.addEventListener?(this.item===document.body?(window.removeEventListener("scroll",this.DOMListener),this.containerWatcher.destroy()):this.item.removeEventListener("scroll",this.DOMListener),window.removeEventListener("resize",this.DOMListener)):(this.item===document.body?(window.detachEvent("onscroll",this.DOMListener),this.containerWatcher.destroy()):this.item.detachEvent("onscroll",this.DOMListener),window.detachEvent("onresize",this.DOMListener));});},t.prototype.destroy=function(){},t.prototype.DOMListener=function(t){this.setStateFromDOM(t);},t.prototype.setStateFromDOM=function(t){var e=r(this.item),i=s(this.item),o=n(this.item);this.setState(e,i,o,t);},t.prototype.setState=function(t,e,i,o){
+var this$1 = this;
+var s=e!==this.viewportHeight||i!==this.contentHeight;if(this.latestEvent=o,this.viewportTop=t,this.viewportHeight=e,this.viewportBottom=t+e,this.contentHeight=i,s){ for(var n=this.watchers.length;n--;){ this$1.watchers[n].recalculateLocation(); } }this.updateAndTriggerWatchers(o);},t.prototype.updateAndTriggerWatchers=function(t){
+var this$1 = this;
+for(var e=this.watchers.length;e--;){ this$1.watchers[e].update(); }for(e=this.watchers.length;e--;){ this$1.watchers[e].triggerCallbacks(t); }},t.prototype.createCustomContainer=function(){return new t},t.prototype.createContainer=function(e){"string"==typeof e?e=document.querySelector(e):e&&e.length>0&&(e=e[0]);var i=new t(e,this);return i.setStateFromDOM(),i.listenToDOM(),i},t.prototype.create=function(t,e){"string"==typeof t?t=document.querySelector(t):t&&t.length>0&&(t=t[0]);var i=new p(this,t,e);return this.watchers.push(i),i},t.prototype.beget=function(t,e){return this.create(t,e)},t}();t.exports=w;},function(t,e,i){"use strict";function o(t,e,i){function o(t,e){if(0!==t.length){ for(E=t.length;E--;){ T=t[E],T.callback.call(s,e,s),T.isOne&&t.splice(E,1); } }}var s=this;this.watchItem=e,this.container=t,i?i===+i?this.offsets={top:i,bottom:i}:this.offsets={top:i.top||u.top,bottom:i.bottom||u.bottom}:this.offsets=u,this.callbacks={};for(var d=0,f=w.length;d<f;d++){ s.callbacks[w[d]]=[]; }this.locked=!1;var m,v,b,I,E,T;this.triggerCallbacks=function(t){switch(this.isInViewport&&!m&&o(this.callbacks[r],t),this.isFullyInViewport&&!v&&o(this.callbacks[h],t),this.isAboveViewport!==b&&this.isBelowViewport!==I&&(o(this.callbacks[n],t),v||this.isFullyInViewport||(o(this.callbacks[h],t),o(this.callbacks[a],t)),m||this.isInViewport||(o(this.callbacks[r],t),o(this.callbacks[c],t))),!this.isFullyInViewport&&v&&o(this.callbacks[a],t),!this.isInViewport&&m&&o(this.callbacks[c],t),this.isInViewport!==m&&o(this.callbacks[n],t),!0){case m!==this.isInViewport:case v!==this.isFullyInViewport:case b!==this.isAboveViewport:case I!==this.isBelowViewport:o(this.callbacks[p],t);}m=this.isInViewport,v=this.isFullyInViewport,b=this.isAboveViewport,I=this.isBelowViewport;},this.recalculateLocation=function(){if(!this.locked){var t=this.top,e=this.bottom;if(this.watchItem.nodeName){var i=this.watchItem.style.display;"none"===i&&(this.watchItem.style.display="");for(var s=0,n=this.container;n.containerWatcher;){ s+=n.containerWatcher.top-n.containerWatcher.container.viewportTop,n=n.containerWatcher.container; }var r=this.watchItem.getBoundingClientRect();this.top=r.top+this.container.viewportTop-s,this.bottom=r.bottom+this.container.viewportTop-s,"none"===i&&(this.watchItem.style.display=i);}else { this.watchItem===+this.watchItem?this.watchItem>0?this.top=this.bottom=this.watchItem:this.top=this.bottom=this.container.documentHeight-this.watchItem:(this.top=this.watchItem.top,this.bottom=this.watchItem.bottom); }this.top-=this.offsets.top,this.bottom+=this.offsets.bottom,this.height=this.bottom-this.top,void 0===t&&void 0===e||this.top===t&&this.bottom===e||o(this.callbacks[l],null);}},this.recalculateLocation(),this.update(),m=this.isInViewport,v=this.isFullyInViewport,b=this.isAboveViewport,I=this.isBelowViewport;}var s=i(1),n=s.VISIBILITYCHANGE,r=s.ENTERVIEWPORT,h=s.FULLYENTERVIEWPORT,c=s.EXITVIEWPORT,a=s.PARTIALLYEXITVIEWPORT,l=s.LOCATIONCHANGE,p=s.STATECHANGE,w=s.eventTypes,u=s.defaultOffsets;o.prototype={on:function(t,e,i){switch(!0){case t===n&&!this.isInViewport&&this.isAboveViewport:case t===r&&this.isInViewport:case t===h&&this.isFullyInViewport:case t===c&&this.isAboveViewport&&!this.isInViewport:case t===a&&this.isInViewport&&this.isAboveViewport:if(e.call(this,this.container.latestEvent,this),i){ return }}if(!this.callbacks[t]){ throw new Error("Tried to add a scroll monitor listener of type "+t+". Your options are: "+w.join(", ")); }this.callbacks[t].push({callback:e,isOne:i||!1});},off:function(t,e){
+var this$1 = this;
+if(!this.callbacks[t]){ throw new Error("Tried to remove a scroll monitor listener of type "+t+". Your options are: "+w.join(", ")); }for(var i,o=0;i=this.callbacks[t][o];o++){ if(i.callback===e){this$1.callbacks[t].splice(o,1);break} }},one:function(t,e){this.on(t,e,!0);},recalculateSize:function(){this.height=this.watchItem.offsetHeight+this.offsets.top+this.offsets.bottom,this.bottom=this.top+this.height;},update:function(){this.isAboveViewport=this.top<this.container.viewportTop,this.isBelowViewport=this.bottom>this.container.viewportBottom,this.isInViewport=this.top<this.container.viewportBottom&&this.bottom>this.container.viewportTop,this.isFullyInViewport=this.top>=this.container.viewportTop&&this.bottom<=this.container.viewportBottom||this.isAboveViewport&&this.isBelowViewport;},destroy:function(){var t=this.container.watchers.indexOf(this),e=this;this.container.watchers.splice(t,1);for(var i=0,o=w.length;i<o;i++){ e.callbacks[w[i]].length=0; }},lock:function(){this.locked=!0;},unlock:function(){this.locked=!1;}};for(var d=function(t){return function(e,i){this.on.call(this,t,e,i);}},f=0,m=w.length;f<m;f++){var v=w[f];o.prototype[v]=d(v);}t.exports=o;}])});
+});
+
 // ┌──────────────────────────┐
 // │ Emit View Toggle Intents │
 // └──────────────────────────┘
@@ -376,8 +393,8 @@ function preventDefault (e) {
 /**
  * Locates layer control input nodes. Binds user input to bus event.
  */
-const bindLayerToggles = () => {
-  findElements('.js-layer-toggle').forEach((btn) => {
+var bindLayerToggles = function () {
+  findElements('.js-layer-toggle').forEach(function (btn) {
     add$1(btn, 'click', toggleLayer);
   });
   function toggleLayer (e) {
@@ -388,8 +405,8 @@ const bindLayerToggles = () => {
 /**
  * Locates layer panel controller. Binds user input to bus event.
  */
-const bindLayerControllers = () => {
-  findElements('.js-layer-control').forEach((btn) => {
+var bindLayerControllers = function () {
+  findElements('.js-layer-control').forEach(function (btn) {
     add$1(btn, 'click', toggleControl);
   });
   function toggleControl (e) {
@@ -401,22 +418,22 @@ const bindLayerControllers = () => {
 /**
  * Locates app view controller. Binds user input to bus event.
  */
-const bindViewController = () => {
-  findElements('.js-view-control').forEach((btn) => {
+var bindViewController = function () {
+  findElements('.js-view-control').forEach(function (btn) {
     add$1(btn, 'click', translateView);
   });
   function translateView (e) {
     e.preventDefault();
-    let panel = e.target.getAttribute('data-panel');
-    bus.emit(`set:view`, panel);
+    var panel = e.target.getAttribute('data-panel');
+    bus.emit("set:view", panel);
   }
 };
 
 /**
  * Locates pop up closing buttons. Binds user input to bus event.
  */
-const bindPopUpClosers = () => {
-  findElements('.js-close-popup').forEach((btn) => {
+var bindPopUpClosers = function () {
+  findElements('.js-close-popup').forEach(function (btn) {
     add$1(btn, 'click', closePopUp);
   });
   function closePopUp (e) {
@@ -434,7 +451,7 @@ const bindPopUpClosers = () => {
 /**
  * Adds listenrs to keyup, binds interesting keyups to bus events.
  */
-const bindKeyup = () => {
+var bindKeyup = function () {
   add$1(document, 'keyup', translateKeypress);
   function translateKeypress (e) {
     if (e.keyCode === 27) {
@@ -456,19 +473,33 @@ const bindKeyup = () => {
 };
 
 /**
+ * Binds scroll monitor module and emits events when event things happen
+ */
+var bindScrollWatcher = function () {
+  var myElement = document.getElementById("itemToWatch");
+  var watcher = scrollMonitor.create(myElement);
+  watcher.enterViewport(function() {
+    console.log( 'I have entered the viewport' );
+  });
+  watcher.exitViewport(function() {
+    console.log( 'I have left the viewport' );
+  });
+};
+
+/**
  * Emits type resizing events on window resize.
  */
-const bindWindowResize = () => {
+var bindWindowResize = function () {
   window.onresize = didResize;
-  let textPane = document.querySelector('.js-text-area');
+  var textPane = document.querySelector('.js-text-area');
   function didResize () {
-    let width = textPane.offsetWidth;
+    var width = textPane.offsetWidth;
     if (width > 785) {
-      bus.emit(`type:size`, 'large');
+      bus.emit("type:size", 'large');
     } else if (width > 599) {
-      bus.emit(`type:size`, 'medium');
+      bus.emit("type:size", 'medium');
     } else if (width < 600) {
-      bus.emit(`type:size`, 'small');
+      bus.emit("type:size", 'small');
     }
   }
 };
@@ -476,10 +507,11 @@ const bindWindowResize = () => {
 /**
  * Emits events for binding intent controllers.
  */
-const bindIntents = () => {
+var bindIntents = function () {
   bus.emit('bind:layer:toggles');
   bus.emit('bind:layer:controllers');
   bus.emit('bind:view:controller');
+  bus.emit('bind:scroll:watcher');
   bus.emit('bind:popup:closers');
   bus.emit('bind:keyup');
   bus.emit('bind:window:resize');
@@ -492,6 +524,7 @@ const bindIntents = () => {
 var intent = function () {
   bus.on('bind:layer:toggles', bindLayerToggles);
   bus.on('bind:layer:controllers', bindLayerControllers);
+  bus.on('bind:scroll:watcher', bindScrollWatcher);
   bus.on('bind:view:controller', bindViewController);
   bus.on('bind:popup:closers', bindPopUpClosers);
   bus.on('bind:keyup', bindKeyup);
@@ -501,20 +534,20 @@ var intent = function () {
   bus.emit('bind:intent');
 };
 
-let textPane = document.querySelector('.js-text-area');
+var textPane = document.querySelector('.js-text-area');
 
 
 /**
  * Emits type resizing events on window resize.
  */
 var responsiveType = function () {
-  let width = textPane.offsetWidth;
+  var width = textPane.offsetWidth;
   if (width > 785) {
-    bus.emit(`type:size`, 'large');
+    bus.emit("type:size", 'large');
   } else if (width > 599) {
-    bus.emit(`type:size`, 'medium');
+    bus.emit("type:size", 'medium');
   } else if (width < 600) {
-    bus.emit(`type:size`, 'small');
+    bus.emit("type:size", 'small');
   }
 };
 
@@ -525,9 +558,9 @@ var responsiveType = function () {
  * @param {Event} Leaflet feature click event
  * @param {Function} Render template function from `./layers.hs`
  */
-const handlePopUp = (evt, renderTemplate) => {
-  let popUpContainer = document.querySelector('.js-pop-up');
-  let popUpTemplate = document.querySelector('.js-template');
+var handlePopUp = function (evt, renderTemplate) {
+  var popUpContainer = document.querySelector('.js-pop-up');
+  var popUpTemplate = document.querySelector('.js-template');
   add(popUpContainer, 'is-active');
   popUpTemplate.innerHTML = renderTemplate(evt.feature.properties);
 };
@@ -539,8 +572,8 @@ const handlePopUp = (evt, renderTemplate) => {
  * @param {Event} Leaflet feature click event
  * @param {Function} Render template function from `./layers.hs`
  */
-const closePopUp = () => {
-  let popUpContainer = document.querySelector('.js-pop-up');
+var closePopUp = function () {
+  var popUpContainer = document.querySelector('.js-pop-up');
   remove(popUpContainer, 'is-active');
   bus.emit('popup:closed');
 };
@@ -550,20 +583,19 @@ const closePopUp = () => {
  *
  * @param {String} `map`, `text`, or `split`
  */
-const setToPanel = panel => {
-  let panelContainer = document.querySelector('.js-panels');
-  if (has(panelContainer, `text-is-active`)) {
-    remove(panelContainer, `text-is-active`);
+var setToPanel = function (panel) {
+  var panelContainer = document.querySelector('.js-panels');
+  if (has(panelContainer, "text-is-active")) {
+    remove(panelContainer, "text-is-active");
   }
-  if (has(panelContainer, `map-is-active`)) {
-    remove(panelContainer, `map-is-active`);
+  if (has(panelContainer, "map-is-active")) {
+    remove(panelContainer, "map-is-active");
   }
-  if (has(panelContainer, `split-is-active`)) {
-    remove(panelContainer, `split-is-active`);
+  if (has(panelContainer, "split-is-active")) {
+    remove(panelContainer, "split-is-active");
   }
-  add(panelContainer, `${panel}-is-active`);
+  add(panelContainer, (panel + "-is-active"));
   responsiveType();
-
 };
 
 /**
@@ -571,7 +603,7 @@ const setToPanel = panel => {
  *
  * @param {String} `map`, `text`, or `split`
  */
-const setLocation = panel => {
+var setLocation = function (panel) {
   if (panel === 'split') {
     panel = '/';
   }
@@ -585,26 +617,26 @@ const setLocation = panel => {
  *
  * @param {String} `small`, `medium`, or `large`
  */
-const sizeTextTo = size => {
-  let html = document.querySelector('html');
-  if (has(html, `type-small`)) {
-    remove(html, `type-small`);
+var sizeTextTo = function (size) {
+  var html = document.querySelector('html');
+  if (has(html, "type-small")) {
+    remove(html, "type-small");
   }
-  if (has(html, `type-medium`)) {
-    remove(html, `type-medium`);
+  if (has(html, "type-medium")) {
+    remove(html, "type-medium");
   }
-  if (has(html, `type-large`)) {
-    remove(html, `type-large`);
+  if (has(html, "type-large")) {
+    remove(html, "type-large");
   }
-  add(html, `type-${size}`);
+  add(html, ("type-" + size));
 };
 
 /**
  * Shows or hides the layer control panel
  */
-const toggleControl = () => {
-  let controlPanel = document.querySelector('.js-layer-control-panel');
-  let controlButton = document.querySelector('.js-layer-control');
+var toggleControl = function () {
+  var controlPanel = document.querySelector('.js-layer-control-panel');
+  var controlButton = document.querySelector('.js-layer-control');
   toggle(controlPanel, 'is-active');
   toggle(controlButton, 'is-active');
 };
@@ -612,8 +644,8 @@ const toggleControl = () => {
 /**
  * Hides the layer control panel
  */
-const closeControl = () => {
-  let controlPanel = document.querySelector('.js-layer-control-panel');
+var closeControl = function () {
+  var controlPanel = document.querySelector('.js-layer-control-panel');
   if (has(controlPanel, 'is-active')) {
     remove(controlPanel, 'is-active');
   }
@@ -622,11 +654,13 @@ const closeControl = () => {
 /**
  * Emits a map redraw event on the bus.
  */
-const redrawMap = () => {
-  bus.emit('map:redraw');
+var delayRedrawMap = function () {
+  setTimeout(function() {
+    bus.emit('map:redraw');
+  }, 300);
 };
 
-const viewLoaded = () => {
+var viewLoaded = function () {
   remove(document.querySelector('html'), 'is-loading');
 };
 
@@ -636,7 +670,7 @@ const viewLoaded = () => {
 var view = function () {
   bus.on('set:view', setToPanel);
   bus.on('set:view', setLocation);
-  bus.on('set:view', redrawMap);
+  bus.on('set:view', delayRedrawMap);
   bus.on('layer:control', toggleControl);
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
@@ -659,30 +693,7 @@ var view = function () {
 
 var popupRenderer = function (current, proposed) {
   return function (feature) {
-    return `
-      <h5 class="flush-top">
-        ${feature.StreetName}
-      </h5>
-      <table class="lead-bottom lead-top">
-        <tbody>
-          <tr>
-            <td>Current Classification:</td>
-            <td>${feature[current]}</td>
-          </tr>
-          <tr>
-            <td>Proposed Classification:</td>
-            <td>${feature[proposed]}</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="flush-bottom"><b>${feature[current]}:</b></p>
-      <p>What does that mean do you thing?</p>
-
-      <p class="flush-bottom"><b>${feature[proposed]}:</b></p>
-      <p>What does that mean do you thing?</p>
-
-      <p>Transportation Plan ID: <a href="#">${feature.TranPlanID}</a></p>
-    `;
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.StreetName) + "\n      </h5>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Current Classification:</td>\n            <td>" + (feature[current]) + "</td>\n          </tr>\n          <tr>\n            <td>Proposed Classification:</td>\n            <td>" + (feature[proposed]) + "</td>\n          </tr>\n        </tbody>\n      </table>\n      <p class=\"flush-bottom\"><b>" + (feature[current]) + ":</b></p>\n      <p>What does that mean do you thing?</p>\n\n      <p class=\"flush-bottom\"><b>" + (feature[proposed]) + ":</b></p>\n      <p>What does that mean do you thing?</p>\n\n      <p>Transportation Plan ID: <a href=\"#\">" + (feature.TranPlanID) + "</a></p>\n    ");
   };
 };
 
@@ -694,7 +705,7 @@ var popupRenderer = function (current, proposed) {
  * @property {number} designClassifications.features - Esri Leaflet Feature Layer
  * @property {string} designClassifications.popup    - Rendered HTML string of desired popup.
  */
-const designClassifications = {
+var designClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
   }),
@@ -706,7 +717,7 @@ const designClassifications = {
  * @property {number} bicycleClassifications.features - Esri Leaflet Feature Layer
  * @property {string} bicycleClassifications.popup    - Rendered HTML string of desired popup.
  */
-const bicycleClassifications = {
+var bicycleClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
   }),
@@ -718,7 +729,7 @@ const bicycleClassifications = {
  * @property {number} transitClassifications.features - Esri Leaflet Feature Layer
  * @property {string} transitClassifications.popup    - Rendered HTML string of desired popup.
  */
-const transitClassifications = {
+var transitClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
   }),
@@ -730,7 +741,7 @@ const transitClassifications = {
  * @property {number} trafficClassifications.features - Esri Leaflet Feature Layer
  * @property {string} trafficClassifications.popup    - Rendered HTML string of desired popup.
  */
-const trafficClassifications = {
+var trafficClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
   }),
@@ -742,7 +753,7 @@ const trafficClassifications = {
  * @property {number} emergencyClassifications.features - Esri Leaflet Feature Layer
  * @property {string} emergencyClassifications.popup    - Rendered HTML string of desired popup.
  */
-const emergencyClassifications = {
+var emergencyClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
   }),
@@ -754,7 +765,7 @@ const emergencyClassifications = {
  * @property {number} pedestrianClassifications.features - Esri Leaflet Feature Layer
  * @property {string} pedestrianClassifications.popup    - Rendered HTML string of desired popup.
  */
-const pedestrianClassifications = {
+var pedestrianClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
   }),
@@ -766,7 +777,7 @@ const pedestrianClassifications = {
  * @property {number} pedestrianDistricts.features - Esri Leaflet Feature Layer
  * @property {string} pedestrianDistricts.popup    - Rendered HTML string of desired popup.
  */
-const pedestrianDistricts = {
+var pedestrianDistricts = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
   }),
@@ -778,7 +789,7 @@ const pedestrianDistricts = {
  * @property {number} freightClassifications.features - Esri Leaflet Feature Layer
  * @property {string} freightClassifications.popup    - Rendered HTML string of desired popup.
  */
-const freightClassifications = {
+var freightClassifications = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
   }),
@@ -790,7 +801,7 @@ const freightClassifications = {
  * @property {number} freightDistricts.features - Esri Leaflet Feature Layer
  * @property {string} freightDistricts.popup    - Rendered HTML string of desired popup.
  */
-const freightDistricts = {
+var freightDistricts = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
   }),
@@ -802,7 +813,7 @@ const freightDistricts = {
  * @property {number} projectPoints.features - Esri Leaflet Feature Layer
  * @property {string} projectPoints.popup    - Rendered HTML string of desired popup.
  */
-const projectPoints = {
+var projectPoints = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
     pane: 'top'
@@ -815,7 +826,7 @@ const projectPoints = {
  * @property {number} projectLines.features - Esri Leaflet Feature Layer
  * @property {string} projectLines.popup    - Rendered HTML string of desired popup.
  */
-const projectLines = {
+var projectLines = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
     pane: 'top'
@@ -828,7 +839,7 @@ const projectLines = {
  * @property {number} projectPolygons.features - Esri Leaflet Feature Layer
  * @property {string} projectPolygons.popup    - Rendered HTML string of desired popup.
  */
-const projectPolygons = {
+var projectPolygons = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
     pane: 'bottom'
@@ -854,8 +865,8 @@ var layers = Object.freeze({
 });
 
 // this stuff is statefull.
-let map;
-let position = {
+var map;
+var position = {
   center: [45.528, -122.680],
   zoom: 13
 };
@@ -864,7 +875,7 @@ let position = {
  * Interacts with the Esri Leaflet API to draw a map in the dom Node with an id of 'map'
  */
 
-const drawMap = () => {
+var drawMap = function () {
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -892,9 +903,15 @@ const drawMap = () => {
  * Adds a Geocoding widget to the map, if the map exists.
  */
 
-const createGeocoder = () => {
+var createGeocoder = function () {
   map.addControl(window.L.control.zoom({position: 'topright'}));
+
+  var pbotGeocoder = window.L.esri.Geocoding.geocodeServiceProvider({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Geocoding_PDX/GeocodeServer'
+  });
+
   var searchControl = window.L.esri.Geocoding.geosearch({
+    providers: [pbotGeocoder],
     position: 'topright',
     zoomToResult: true,
     useMapBounds: 10,
@@ -902,6 +919,7 @@ const createGeocoder = () => {
   }).addTo(map);
 
   var results = window.L.layerGroup().addTo(map);
+
   searchControl.on('results', function (data) {
     results.clearLayers();
     for (var i = data.results.length - 1; i >= 0; i--) {
@@ -916,8 +934,8 @@ const createGeocoder = () => {
  * @returns {NodeList} NodeList of active input elements.
  */
 
-const getActiveLayers = () => {
-  let activeLayers = findElements('.js-layer-toggle').filter(function (toggle) {
+var getActiveLayers = function () {
+  var activeLayers = findElements('.js-layer-toggle').filter(function (toggle) {
     return toggle.checked;
   });
   return activeLayers;
@@ -928,8 +946,8 @@ const getActiveLayers = () => {
  *
  * @returns {NodeList} NodeList of inactive input elements.
  */
-const getInactiveLayers = () => {
-  let inactiveLayers = findElements('.js-layer-toggle').filter(function (toggle) {
+var getInactiveLayers = function () {
+  var inactiveLayers = findElements('.js-layer-toggle').filter(function (toggle) {
     return !toggle.checked;
   });
   return inactiveLayers;
@@ -940,9 +958,9 @@ const getInactiveLayers = () => {
  *
  * @param {String} Comma seperated string of layer names. eg "projectPoints, projectLines"
  */
-const addLayers = (layerSet) => {
+var addLayers = function (layerSet) {
   if (!layerSet) { return; }
-  layerSet.split(',').forEach((layer) => addLayer(layer));
+  layerSet.split(',').forEach(function (layer) { return addLayer(layer); });
 };
 
 /**
@@ -950,10 +968,10 @@ const addLayers = (layerSet) => {
  *
  * @param {String} Layer key, eg 'projectPoints'
  */
-const addLayer = layer => {
+var addLayer = function (layer) {
   layers[layer].features.addTo(map);
   bus.emit('layer:reset', layer);
-  layers[layer].features.bindPopup((evt) => {
+  layers[layer].features.bindPopup(function (evt) {
     openPopUp(evt, layer);
     return '';
   }).on('popupclose', function () {
@@ -967,7 +985,7 @@ const addLayer = layer => {
  * @param {Event} Click event from map feature.
  * @param {String} Layer key, eg 'projectPoints'
  */
-const openPopUp = (evt, layer) => {
+var openPopUp = function (evt, layer) {
   evt.bringToFront();
   evt.setStyle({
     lineCap: 'round',
@@ -982,7 +1000,7 @@ const openPopUp = (evt, layer) => {
  *
  * @param {String} Layer key, eg 'projectPoints'
  */
-const resetLayerStyle = layer => {
+var resetLayerStyle = function (layer) {
   layers[layer].features.resetStyle();
 };
 
@@ -991,9 +1009,9 @@ const resetLayerStyle = layer => {
  *
  * @param {String} Comma seperated string of layer names. eg "projectPoints, projectLines"
  */
-const removeLayers = (layerSet) => {
+var removeLayers = function (layerSet) {
   if (!layerSet) { return; }
-  layerSet.split(',').forEach((layer) => removeLayer(layer));
+  layerSet.split(',').forEach(function (layer) { return removeLayer(layer); });
 };
 
 /**
@@ -1001,7 +1019,7 @@ const removeLayers = (layerSet) => {
  *
  * @param {String} Layer key, eg 'projectPoints'
  */
-const removeLayer = layer => {
+var removeLayer = function (layer) {
   layers[layer].features.removeFrom(map);
   layers[layer].features.unbindPopup();
 };
@@ -1009,13 +1027,13 @@ const removeLayer = layer => {
 /**
  * Adds any layers indicated as active from the layer toggle list to the map.
  */
-const drawLayers = () => {
-  getActiveLayers().forEach((toggle) => {
-    let layerSet = toggle.getAttribute('data-layers');
+var drawLayers = function () {
+  getActiveLayers().forEach(function (toggle) {
+    var layerSet = toggle.getAttribute('data-layers');
     bus.emit('map:layer:add', layerSet);
   });
-  getInactiveLayers().forEach((toggle) => {
-    let layerSet = toggle.getAttribute('data-layers');
+  getInactiveLayers().forEach(function (toggle) {
+    var layerSet = toggle.getAttribute('data-layers');
     bus.emit('map:layer:remove', layerSet);
   });
 };
@@ -1023,7 +1041,7 @@ const drawLayers = () => {
 /**
  * Tears down the map from the DOM.
  */
-const destroyMap = () => {
+var destroyMap = function () {
   if (map) {
     map.remove();
   }
@@ -1032,7 +1050,7 @@ const destroyMap = () => {
 /**
  * Destroys and redraws the map.
  */
-const redrawMap$1 = () => {
+var redrawMap = function () {
   bus.emit('map:destroy');
   bus.emit('map:create');
 };
@@ -1040,7 +1058,7 @@ const redrawMap$1 = () => {
 /**
  * Closes all popups active on the map.
  */
-const closePopUps = () => {
+var closePopUps = function () {
   map.closePopup();
 };
 
@@ -1049,7 +1067,7 @@ const closePopUps = () => {
  *
  * @param {Object} A Leaflet bounds object
  */
-const setMapToBounds = bounds => {
+var setMapToBounds = function (bounds) {
   map.fitBounds(bounds);
 };
 
@@ -1059,7 +1077,7 @@ const setMapToBounds = bounds => {
  * @param {Object} A Leaflet LatLng object
  * @param {Integer} Leaflet map zoom level
  */
-const setMapToFeature = (latlng, zoom) => {
+var setMapToFeature = function (latlng, zoom) {
   map.flyTo(latlng, zoom);
   position.zoom = zoom;
 };
@@ -1069,13 +1087,13 @@ const setMapToFeature = (latlng, zoom) => {
  *
  * @param {Object} A Leaflet feature
  */
-const zoomToFeature = feature => {
+var zoomToFeature = function (feature) {
   if (feature.getBounds) {
-    let bounds = feature.getBounds();
+    var bounds = feature.getBounds();
     bus.emit('map:fitBounds', bounds);
   } else {
-    let latlng = feature._latlng;
-    let zoom = 16;
+    var latlng = feature._latlng;
+    var zoom = 16;
     bus.emit('map:setFeature', latlng, zoom);
   }
 };
@@ -1086,7 +1104,7 @@ const zoomToFeature = feature => {
 var map$1 = function () {
   bus.on('popup:opened', zoomToFeature);
   bus.on('popup:closed', closePopUps);
-  bus.on('map:redraw', redrawMap$1);
+  bus.on('map:redraw', redrawMap);
   bus.on('map:destroy', destroyMap);
   bus.on('map:create', drawMap);
   bus.on('map:create', drawLayers);
@@ -1187,8 +1205,8 @@ function modal () {
    */
   function openModal (modalId) {
     bus.emit('modal:close');
-    if (!modalId) return;
-    var modal = document.querySelector(`.js-modal[data-modal="${modalId}"]`);
+    if (!modalId) { return; }
+    var modal = document.querySelector((".js-modal[data-modal=\"" + modalId + "\"]"));
     modal.removeAttribute('tabindex');
     add$1(document, 'focusin', fenceModal);
     add(modal, 'is-active');
@@ -1202,8 +1220,8 @@ function modal () {
    * @param {String} Id of modal to open
    */
   function closeModal (modalId) {
-    if (!modalId) return removeActive(modals);
-    var modal = document.querySelector(`.js-modal[data-modal="${modalId}"]`);
+    if (!modalId) { return removeActive(modals); }
+    var modal = document.querySelector((".js-modal[data-modal=\"" + modalId + "\"]"));
     remove(modal, 'is-active');
     modal.setAttribute('tabindex', 0);
     remove$1(document, 'focusin', fenceModal);
@@ -1278,7 +1296,7 @@ function drawer () {
    */
   function openDrawer (options) {
     bus.emit('drawer:close');
-    var drawer = document.querySelector(`.js-drawer[data-drawer="${options.id}"]`);
+    var drawer = document.querySelector((".js-drawer[data-drawer=\"" + (options.id) + "\"]"));
     var right = has(drawer, 'drawer-right');
     var left = has(drawer, 'drawer-left');
 
@@ -1310,7 +1328,7 @@ function drawer () {
         remove(drawer, 'is-active');
       });
     } else {
-      var drawer = document.querySelector(`.js-drawer[data-drawer="${options.id}"]`);
+      var drawer = document.querySelector((".js-drawer[data-drawer=\"" + (options.id) + "\"]"));
       drawer.removeAttribute('tabindex');
       remove(drawer, 'is-active');
     }
@@ -1321,7 +1339,7 @@ function drawer () {
     });
     show([wrapper]);
     remove$1(document, 'focusin', fenceDrawer);
-    if (lastOn) lastOn.focus();
+    if (lastOn) { lastOn.focus(); }
   }
 
   /**
@@ -1374,6 +1392,7 @@ function drawer () {
    */
   function toggleClick (e) {
     preventDefault(e);
+    console.log('preventDefault');
     var drawerId = e.target.getAttribute('data-drawer');
     add(e.target, 'is-active');
     bus.emit('drawer:open', {id: drawerId});
@@ -1390,7 +1409,7 @@ function drawer () {
  * Initializes app and app components.
  */
 
-const initApp = () => {
+var initApp = function () {
   // Model, View, Intent
   // Intent and View are the larger, containing component.
   // This app has no model: all data is consumed via GIS API.
@@ -1415,4 +1434,4 @@ const initApp = () => {
 bus.on('has:javascript', initApp);
 hasJS();
 
-})));
+}());

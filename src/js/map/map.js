@@ -43,7 +43,13 @@ const drawMap = () => {
 
 const createGeocoder = () => {
   map.addControl(window.L.control.zoom({position: 'topright'}));
+
+  var pbotGeocoder = window.L.esri.Geocoding.geocodeServiceProvider({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Geocoding_PDX/GeocodeServer'
+  });
+
   var searchControl = window.L.esri.Geocoding.geosearch({
+    providers: [pbotGeocoder],
     position: 'topright',
     zoomToResult: true,
     useMapBounds: 10,
@@ -51,6 +57,7 @@ const createGeocoder = () => {
   }).addTo(map);
 
   var results = window.L.layerGroup().addTo(map);
+
   searchControl.on('results', function (data) {
     results.clearLayers();
     for (var i = data.results.length - 1; i >= 0; i--) {

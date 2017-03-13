@@ -47,7 +47,6 @@ const setToPanel = panel => {
   }
   classy.add(panelContainer, `${panel}-is-active`);
   responsiveType();
-
 };
 
 /**
@@ -106,8 +105,10 @@ const closeControl = () => {
 /**
  * Emits a map redraw event on the bus.
  */
-const redrawMap = () => {
-  bus.emit('map:redraw');
+const delayRedrawMap = () => {
+  setTimeout(function() {
+    bus.emit('map:redraw');
+  }, 300);
 };
 
 const viewLoaded = () => {
@@ -120,7 +121,7 @@ const viewLoaded = () => {
 export default function () {
   bus.on('set:view', setToPanel);
   bus.on('set:view', setLocation);
-  bus.on('set:view', redrawMap);
+  bus.on('set:view', delayRedrawMap);
   bus.on('layer:control', toggleControl);
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
