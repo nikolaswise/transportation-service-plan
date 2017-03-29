@@ -12,7 +12,7 @@
 
 .panels  {
   display: block;
-  background: $off-white;
+  background: $pbot-dark-gray;
   position: absolute;
   left:0;
   right:0;
@@ -38,7 +38,6 @@
 }
 
 .panel-text {
-  background: $off-white;
   left: 0;
   z-index: 1;
   top: 0;
@@ -50,7 +49,6 @@
 }
 .panel-map {
   position: fixed;
-  background: $off-white;
   left: 50%;
   z-index: 0;
 }

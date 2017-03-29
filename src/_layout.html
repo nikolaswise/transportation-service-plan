@@ -72,6 +72,10 @@
         <div class="table-of-contents">
           <div class="text-container">
             <div class="text-block">
+              <form class="search-inline-form">
+                <input class="search-inline js-search-input" type="search" placeholder="Search for …" name="q">
+                <button type="submit" class="pt8">Search</button>
+              </form>
               {% autoescape false %}
                 {{ toc }}
               {% endautoescape %}

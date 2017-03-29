@@ -85,7 +85,7 @@ html.type-small {
 
 /* Type Colors */
 body {
-  background-color: #fafafa;
+  background-color: #4d4d4f;
   color: #2e3133; }
 
 h1,
@@ -254,6 +254,9 @@ a {
 .js-is-inactive .show-if-no-js {
   display: block; }
 
+.text-wrapper {
+  background-color: #fafafa; }
+
 .text-container {
   margin: auto;
   width: 83.33333%; }
@@ -281,7 +284,7 @@ a {
 
 .panels {
   display: block;
-  background: #fafafa;
+  background: #4d4d4f;
   position: absolute;
   left: 0;
   right: 0;
@@ -305,7 +308,6 @@ a {
   transform: scale(1); }
 
 .panel-text {
-  background: #fafafa;
   left: 0;
   z-index: 1;
   top: 0;
@@ -317,7 +319,6 @@ a {
 
 .panel-map {
   position: fixed;
-  background: #fafafa;
   left: 50%;
   z-index: 0; }
 
@@ -363,7 +364,7 @@ a {
   left: 53px; }
 
 .map-frame {
-  background-color: #fafafa;
+  background-color: #4d4d4f;
   position: absolute;
   right: 53px;
   left: 0;
@@ -464,25 +465,25 @@ table {
 button {
   position: relative;
   display: inline-block;
-  padding: 0.66em;
+  padding: 0.66em 0.66em 0.75em 0.66em;
   width: auto;
-  color: #00a0ae;
-  border: 0.25em solid #00a0ae;
-  background-color: transparent;
+  color: #4d4d4f;
+  border: none;
+  background-color: #fafafa;
   box-sizing: border-box;
   transition: all 300ms linear;
   cursor: pointer;
   white-space: nowrap;
   font-size: 0.9166rem;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  border-radius: 3px; }
   .btn:hover, .btn:focus,
   button:hover,
   button:focus {
     transition: all 300ms linear;
     text-decoration: none;
-    background-color: #00a0ae;
-    color: white; }
+    background-color: #e7e8ea; }
 
 .button-white {
   color: white;
@@ -502,7 +503,10 @@ button {
     color: white; }
 
 .button-clear {
-  border-color: transparent; }
+  background-color: transparent;
+  color: #fafafa;
+  border: 0.125em solid #fafafa;
+  margin: 0 15px; }
 
 .icon {
   display: inline-block;
@@ -516,19 +520,29 @@ button {
 .title {
   position: relative;
   z-index: 10;
-  background-color: #00a0ae; }
+  background-color: #00a0ae;
+  border-bottom: 2rem solid #60AFAF; }
 
 .title-view-control {
   float: right;
   margin: 26px; }
 
 .title-buffer {
-  padding-top: 4.8rem;
-  padding-bottom: 8rem; }
+  padding-top: 3.2rem; }
 
 .title-header {
-  font-weight: 300;
-  color: #fafafa; }
+  letter-spacing: 0.05em;
+  white-space: pre;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 2.4rem;
+  color: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif; }
+
+.title-image {
+  opacity: 0.75; }
+  .title-image img {
+    width: 100%; }
 
 .title-rule {
   width: 50%;
@@ -537,8 +551,7 @@ button {
   border-bottom: 3px solid #fafafa; }
 
 .title-subhead {
-  padding-top: 2.4rem;
-  font-size: 1.1666rem;
+  font-size: 1rem;
   color: #fafafa;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
   font-weight: 300;
@@ -558,10 +571,21 @@ button {
   padding-top: 4.8rem;
   padding-bottom: 8rem;
   background-color: #98cbcc; }
+  .table-of-contents ul {
+    list-style-type: none;
+    padding-left: 0; }
+  .table-of-contents li {
+    padding: 0; }
+  .table-of-contents a {
+    text-decoration: none; }
+    .table-of-contents a:hover {
+      text-decoration: underline;
+      color: #4d4d4f; }
 
 .toc ul {
   list-style-type: none;
-  padding-left: 0; }
+  padding-left: 0;
+  margin: 0; }
 
 .toc li {
   padding: 0; }
@@ -582,7 +606,8 @@ button {
   padding-left: 53px;
   width: 100%;
   z-index: 10;
-  background-color: #fafafa;
+  background-color: #4d4d4f;
+  color: #fafafa;
   transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   box-sizing: border-box;
   padding-right: 53px; }
@@ -629,7 +654,7 @@ button {
   background-color: #fafafa;
   padding-top: 9.6rem;
   padding-bottom: 12.8rem;
-  margin-right: 53px;
+  padding-right: 53px;
   border-bottom: 3px solid #e7e8ea; }
 
 .half-title-plate {
@@ -654,36 +679,51 @@ button {
     page-break-before: always;
     page-break-after: always; } }
 
+.search-panel {
+  background-color: #fafafa; }
+
 .search {
-  padding: 26.5px 53px;
+  padding: 26.5px;
   border-bottom: 1px solid #c4c7ca; }
+
+.search-inline-form {
+  margin-bottom: 1.6rem; }
+
+.search-inline {
+  width: 50%;
+  font-size: 0.833rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+  height: 1.6rem;
+  border: transparent;
+  border-bottom: 5px solid #fafafa;
+  background-color: #fafafa;
+  box-shadow: none;
+  font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif;
+  color: #3c4044;
+  padding-left: 0.25em; }
 
 .search-input {
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 0.4rem;
   margin-bottom: 0;
   height: 4rem;
   border: transparent;
-  border-bottom: 4px solid #00a0ae;
+  border-bottom: 4px solid #4d4d4f;
   background-color: transparent;
   box-shadow: none;
-  font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif;
-  color: #00a0ae; }
+  font-family: charter, constantia, "lucida bright", lucidabright, "lucida serif", lucida, "dejavu serif", "bitstream vera serif", "liberation serif", georgia, serif; }
 
 .search-label {
-  color: #00a0ae;
   font-size: 1rem; }
 
 .search-button {
-  padding: 1em;
-  color: #00a0ae;
-  border-color: #00a0ae; }
+  padding: 1em; }
 
 .cancel-button {
   padding: 1em;
   float: right;
-  color: #00a0ae;
   border-color: transparent; }
   .cancel-button:hover, .cancel-button:focus {
     background-color: #fcb043; }
@@ -751,7 +791,7 @@ button {
   left: 53px; }
 
 .map-frame {
-  background-color: #fafafa;
+  background-color: #4d4d4f;
   position: absolute;
   right: 53px;
   left: 0;
@@ -878,14 +918,14 @@ button {
   left: 0;
   visibility: hidden;
   overflow: hidden;
-  opacity: 0;
   background: black;
-  transition: visibility 0ms linear 200ms, opacity 200ms linear;
+  transition: visibility 0ms linear, opacity 200ms linear;
   z-index: 1001; }
   .drawer.is-active {
     visibility: visible;
     opacity: 1;
-    background-color: transparent; }
+    background-color: transparent;
+    transition: visibility 0ms linear, opacity 200ms linear; }
     .drawer.is-active.drawer-left .drawer-nav {
       transform: translate3d(20rem, 0, 0);
       transision: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
@@ -921,10 +961,12 @@ button {
 
 .drawer-left-is-active {
   opacity: 1;
+  opacity: 1;
   transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88);
   transform: translate3d(20rem, 0, 0); }
 
 .drawer-right-is-active {
+  opacity: 1;
   opacity: 1;
   transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88);
   transform: translate3d(-20rem, 0, 0); }
@@ -983,10 +1025,12 @@ button {
   overflow: auto; }
 
 .loader-wrapper {
+  position: fixed;
   width: auto;
   margin: auto;
-  margin-top: 33%;
-  margin-top: 45vh;
+  left: 50%;
+  top: 45%;
+  transform: translateX(-50%);
   text-align: center;
   animation-name: slowOut;
   animation-iteration-count: 1;
@@ -1007,6 +1051,7 @@ button {
   animation: spin 0.66s linear infinite; }
 
 .loader-text {
+  color: #fafafa;
   font-size: 18px;
   padding-top: 0px;
   margin-top: 9px;

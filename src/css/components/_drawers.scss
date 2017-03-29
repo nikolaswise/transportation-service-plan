@@ -10,14 +10,16 @@ $opacity-transition: opacity 200ms linear;
   left: 0;
   visibility: hidden;
   overflow: hidden;
-  opacity: 0;
+  // opacity: 0;
   background: black;
-  transition: visibility 0ms linear 200ms, $opacity-transition;
+  transition: visibility 0ms linear, $opacity-transition;
   z-index: 1001;
   &.is-active {
     visibility: visible;
     opacity: 1;
     background-color: transparent;
+    transition: visibility 0ms linear, $opacity-transition;
+
     &.drawer-left .drawer-nav {
       transform: translate3d($drawer-width,0,0);
       transision: $transform-transition;
@@ -44,10 +46,12 @@ $opacity-transition: opacity 200ms linear;
 }
 
 @mixin drawer-left-is-active() {
+  opacity: 1;
   transition: $transform-transition;
   transform: translate3d($drawer-width,0,0);
 }
 @mixin drawer-right-is-active() {
+  opacity: 1;
   transition: $transform-transition;
   transform: translate3d(-$drawer-width,0,0);
 }

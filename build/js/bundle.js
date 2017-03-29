@@ -915,7 +915,7 @@ var createGeocoder = function () {
     position: 'topright',
     zoomToResult: true,
     useMapBounds: 10,
-    allowMultipleResults: false
+    allowMultipleResults: true
   }).addTo(map);
 
   var results = window.L.layerGroup().addTo(map);
