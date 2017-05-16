@@ -2,6 +2,7 @@
   position: fixed;
   height: $frame;
   padding-left: $frame;
+  padding-top: 2px;
   width: 100%;
   z-index: 10;
   background-color: $pbot-dark-gray;
@@ -9,7 +10,6 @@
   transition: $transition;
   box-sizing: border-box;
   padding-right: $frame;
-
 }
 
 .bottom-navigation {
@@ -71,4 +71,14 @@
 
 .navigation-no-js-text {
   padding-top: $baseline/3;
+}
+
+.nav-top-link {
+  color: $white;
+  margin-top: $baseline/4;
+  margin-left: $gutter;
+  display: inline-block;
+  &:visited {
+    color: $white;
+  }
 }

@@ -54,22 +54,22 @@ h4 {
 
 /* Type Sizes */
 h1 {
-  font-size: $pt36;
+  font-size: $pt24;
   line-height: $baseline*2;
 }
 h2 {
-  font-size: $pt24;
+  font-size: $pt21;
   line-height: $baseline*1.5;
 }
 h3 {
-  font-size: $pt21;
+  font-size: $pt18;
   line-height: $baseline*1.25;
 }
 h4 {
-  font-size: $pt18;
+  font-size: $pt14;
 }
 h5 {
-  font-size: $pt14;
+  font-size: $pt12;
   margin-bottom: calc(#{$baseline} / 2);
 }
 h6 {

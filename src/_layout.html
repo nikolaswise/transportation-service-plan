@@ -47,11 +47,17 @@
       <nav class="drawer-nav" role="navigation">
         <aside class="side-nav search-panel">
           {% include "_search-form.html" %}
-          <div class="toc">
+
+          <div class="loader-wrapper js-search-loader">
+            <div class="loader"></div>
+          </div>
+
+          <div class="toc js-search-hide">
             {% autoescape false %}
               {{ toc }}
             {% endautoescape %}
           </div>
+          <div class="js-search-results"></div>
         </aside>
       </nav>
     </div>
@@ -72,10 +78,12 @@
         <div class="table-of-contents">
           <div class="text-container">
             <div class="text-block">
-              <form class="search-inline-form">
-                <input class="search-inline js-search-input" type="search" placeholder="Search for …" name="q">
-                <button type="submit" class="pt8">Search</button>
-              </form>
+              <p>
+                <button class="js-drawer-toggle serif pt8 hide-if-no-js" data-drawer="navigation">
+                  {% include "_icon-text.html" %}
+                  Search the T.S.P.
+                </button>
+              </p>
               {% autoescape false %}
                 {{ toc }}
               {% endautoescape %}
@@ -83,15 +91,10 @@
           </div>
         </div>
 
-        {% include "_half-title.html" %}
-
         <div class="text-wrapper">
           <div class="text-container">
             <article class="text-block">
-              <section class="text-section">
-
-                <h1 id="itemToWatch">Scroll Tester Thang</h1>
-
+              <section class="text-section js-search-content">
                 {% autoescape false %}
                   {{ content }}
                 {% endautoescape %}
@@ -107,7 +110,7 @@
       </div>
 
       <nav class="navigation bottom-navigation">
-        <small>cool footer stuff maybe</small>
+        <small>Built by the Portland Bureau of Transportation 2017</small>
       </nav>
 
     </div>

@@ -473,20 +473,6 @@ var bindKeyup = function () {
 };
 
 /**
- * Binds scroll monitor module and emits events when event things happen
- */
-var bindScrollWatcher = function () {
-  var myElement = document.getElementById("itemToWatch");
-  var watcher = scrollMonitor.create(myElement);
-  watcher.enterViewport(function() {
-    console.log( 'I have entered the viewport' );
-  });
-  watcher.exitViewport(function() {
-    console.log( 'I have left the viewport' );
-  });
-};
-
-/**
  * Emits type resizing events on window resize.
  */
 var bindWindowResize = function () {
@@ -524,7 +510,7 @@ var bindIntents = function () {
 var intent = function () {
   bus.on('bind:layer:toggles', bindLayerToggles);
   bus.on('bind:layer:controllers', bindLayerControllers);
-  bus.on('bind:scroll:watcher', bindScrollWatcher);
+  // bus.on('bind:scroll:watcher', bindScrollWatcher);
   bus.on('bind:view:controller', bindViewController);
   bus.on('bind:popup:closers', bindPopUpClosers);
   bus.on('bind:keyup', bindKeyup);
@@ -848,6 +834,94 @@ var projectPolygons = {
 };
 
 
+var projLinesConstrained = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+
+var projLinesUnconstrained = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+
+var projLinesCC2035 = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projLinesOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPointsConstrained = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPointsUnconstrained = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPointsCC2035 = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPointsOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    pane: 'top'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPolygonsConstrained = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPolygonsUnconstrained = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPolygonsCC2035 = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+var projPolygonsOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupRenderer('foo', 'bar')
+};
+
+
 
 var layers = Object.freeze({
 	designClassifications: designClassifications,
@@ -861,14 +935,26 @@ var layers = Object.freeze({
 	freightDistricts: freightDistricts,
 	projectPoints: projectPoints,
 	projectLines: projectLines,
-	projectPolygons: projectPolygons
+	projectPolygons: projectPolygons,
+	projLinesConstrained: projLinesConstrained,
+	projLinesUnconstrained: projLinesUnconstrained,
+	projLinesCC2035: projLinesCC2035,
+	projLinesOther: projLinesOther,
+	projPointsConstrained: projPointsConstrained,
+	projPointsUnconstrained: projPointsUnconstrained,
+	projPointsCC2035: projPointsCC2035,
+	projPointsOther: projPointsOther,
+	projPolygonsConstrained: projPolygonsConstrained,
+	projPolygonsUnconstrained: projPolygonsUnconstrained,
+	projPolygonsCC2035: projPolygonsCC2035,
+	projPolygonsOther: projPolygonsOther
 });
 
 // this stuff is statefull.
 var map;
 var position = {
-  center: [45.528, -122.680],
-  zoom: 13
+  center: [45.528, -122.63],
+  zoom: 12
 };
 
 /**
@@ -1401,6 +1487,191 @@ function drawer () {
   bus.emit('drawer:bind');
 }
 
+// Cool Helpers
+/**
+ * Initializes drawer pattern and binds events.
+ */
+if (!String.prototype.includes) {
+  String.prototype.includes = function(search, start) {
+    'use strict';
+    if (typeof start !== 'number') {
+      start = 0;
+    }
+
+    if (start + search.length > this.length) {
+      return false;
+    } else {
+      return this.indexOf(search, start) !== -1;
+    }
+  };
+}
+
+function getOffsetTop( elem )
+{
+    var offsetTop = 0;
+    do {
+      if ( !isNaN( elem.offsetTop ) )
+      {
+          offsetTop += elem.offsetTop;
+      }
+    } while( elem = elem.offsetParent );
+    console.log(offsetTop);
+    return offsetTop;
+}
+
+// this is prolly not so good
+var indexContent = function () {
+  window.content = [];
+  var contentArea = document.querySelector('.js-search-content');
+  var headerOnes = nodeListToArray(contentArea.getElementsByTagName('h1'));
+  var headerTwos = nodeListToArray(contentArea.getElementsByTagName('h2'));
+  var headerThrees = nodeListToArray(contentArea.getElementsByTagName('h3'));
+  var headerFourss = nodeListToArray(contentArea.getElementsByTagName('h4'));
+  var headerFivess = nodeListToArray(contentArea.getElementsByTagName('h5'));
+  var headerSixess = nodeListToArray(contentArea.getElementsByTagName('h6'));
+  var paragraphs = nodeListToArray(contentArea.getElementsByTagName('p'));
+  window.content = window.content.concat(headerOnes);
+  window.content = window.content.concat(headerTwos);
+  window.content = window.content.concat(headerThrees);
+  window.content = window.content.concat(headerFourss);
+  window.content = window.content.concat(headerFivess);
+  window.content = window.content.concat(headerSixess);
+  window.content = window.content.concat(paragraphs);
+};
+
+var matchStringToNode = function (node, string) {
+  if (!node.innerHTML) {
+    return false
+  }
+  if (node.innerHTML.toLowerCase().includes(string)) {
+    return true
+  } else {
+    return false
+  }
+};
+
+var searchFor = function (term) {
+  term = term.toLowerCase();
+  var content = window.content.filter(function (node) {
+    return matchStringToNode(node, term)
+  });
+  bus.emit('search:result', content.length, content, term);
+};
+
+var submit = function (e) {
+  preventDefault(e);
+  var input = findElements('.js-search-input', e.target.parentNode)[0];
+  var term = input.value;
+  bus.emit('search:for', term);
+};
+var cancel = function (e) {
+  preventDefault(e);
+  var input = findElements('.js-search-input', e.target.parentNode)[0];
+  input.value = '';
+  bus.emit('search:cancel');
+};
+
+
+var bindSearch = function () {
+  var submitBtns = findElements('.js-search-submit');
+  var cancelBtns = findElements('.js-search-cancel');
+  submitBtns.map(function (btn) {
+    add$1(btn, 'click', submit);
+  });
+  cancelBtns.map(function (btn) {
+    add$1(btn, 'click', cancel);
+  });
+};
+
+var showLoader = function () {
+  var searchViews = findElements('.js-search-loader');
+  var hiddenViews = findElements('.js-search-hide');
+  var resultViews = findElements('.js-search-results');
+  hiddenViews.forEach(function (view) {
+    add(view, 'is-hidden');
+  });
+  searchViews.forEach(function (view) {
+    add(view, 'is-active');
+  });
+  resultViews.forEach(function (view) {
+    remove(view, 'is-active');
+  });
+};
+var showResults = function () {
+  var searchViews = findElements('.js-search-loader');
+  var hiddenViews = findElements('.js-search-hide');
+  var resultViews = findElements('.js-search-results');
+  hiddenViews.forEach(function (view) {
+    add(view, 'is-hidden');
+  });
+  searchViews.forEach(function (view) {
+    remove(view, 'is-active');
+  });
+  resultViews.forEach(function (view) {
+    add(view, 'is-active');
+  });
+};
+var showOriginal = function () {
+  var searchViews = findElements('.js-search-loader');
+  var hiddenViews = findElements('.js-search-hide');
+  var resultViews = findElements('.js-search-results');
+  hiddenViews.forEach(function (view) {
+    remove(view, 'is-hidden');
+  });
+  searchViews.forEach(function (view) {
+    remove(view, 'is-active');
+  });
+  resultViews.forEach(function (view) {
+    remove(view, 'is-active');
+  });
+};
+
+window.scrollToPosition = function (position) {
+  console.log('click!');
+  var contentArea = document.querySelector('.js-text-area');
+  contentArea.scrollTop = position - 60;
+};
+
+var getClosestHeader = function (node) {
+  var lastNode;
+  while (node.tagName[0] != 'H') {
+    lastNode = node;
+    node = node.previousElementSibling;
+    if (!node) {
+      node = lastNode.parentNode;
+    }
+  }
+  return node.innerHTML
+};
+
+var loadResults = function (count, results, term) {
+  var resultsDiv = findElements('.js-search-results');
+  var contentArea = document.querySelector('.js-search-content');
+  resultsDiv.map(function (div) {
+    div.innerHTML = "\n      <h6 class=\"search-result-summary\">" + count + " results for '" + term + "'</h6>\n    ";
+    results.map(function (result) {
+      var section = getClosestHeader(result);
+      var nodePos = getOffsetTop(result);
+      var preview = result.innerHTML.length > 60 ? result.innerHTML.slice(0, 60)+'&hellip;' : result.innerHTML;
+      div.insertAdjacentHTML('beforeend', ("\n        <a class=\"search-result\" onclick=\"scrollToPosition(" + nodePos + ")\">\n          <h6 class=\"search-result-header\">" + section + "</h6>\n          <p class=\"search-result-preview\">" + preview + "</p>\n        </a>\n      "));
+    });
+  });
+  bus.emit('search:render');
+};
+
+function search () {
+  bus.on('search:index', indexContent);
+  bus.on('search:bind', bindSearch);
+  bus.on('search:for', showLoader);
+  bus.on('search:render', showResults);
+  bus.on('search:cancel', showOriginal);
+  bus.on('search:for', searchFor);
+  bus.on('search:result', loadResults);
+
+  bus.emit('search:index');
+  bus.emit('search:bind');
+}
+
 // The JS Checker
 // Neat Helpers
 // View and Intent
@@ -1426,6 +1697,7 @@ var initApp = function () {
   modal();
   drawer();
   map$1();
+  search();
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.

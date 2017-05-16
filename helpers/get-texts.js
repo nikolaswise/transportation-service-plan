@@ -1,4 +1,6 @@
 var fs = require('fs');
+var parser = require("markdown2json").parseMD;
+
 
 /**
  * Generates Markdown table of contents from the body of a markdown file.
@@ -8,6 +10,17 @@ var fs = require('fs');
  */
 module.exports = function (files) {
   let text = '';
+
+parser("./src/content", {
+  "cleanMD" : true,
+}).then(
+  function(jsonObj){
+    fs.writeFile('./src/content.json', jsonObj, function (err) {
+      if (err) return console.log(err);
+    });
+  }
+)
+
   files.map(function (file) {
     text += fs.readFileSync('./src/text/' + file, 'utf8');
     text += '\n';

@@ -14,6 +14,7 @@ import responsiveType from './responsive-type.js';
 import map from './map/map.js';
 import modal from './modal.js';
 import drawer from './drawers.js';
+import search from './search.js';
 
 /**
  * Initializes app and app components.
@@ -36,6 +37,7 @@ const initApp = () => {
   modal();
   drawer();
   map();
+  search();
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.

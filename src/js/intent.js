@@ -142,7 +142,7 @@ const bindIntents = () => {
 export default function () {
   bus.on('bind:layer:toggles', bindLayerToggles);
   bus.on('bind:layer:controllers', bindLayerControllers);
-  bus.on('bind:scroll:watcher', bindScrollWatcher);
+  // bus.on('bind:scroll:watcher', bindScrollWatcher);
   bus.on('bind:view:controller', bindViewController);
   bus.on('bind:popup:closers', bindPopUpClosers);
   bus.on('bind:keyup', bindKeyup);

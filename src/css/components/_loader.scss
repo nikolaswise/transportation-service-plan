@@ -11,7 +11,11 @@
   animation-timing-function: ease-out;
   animation-duration: 1s;
   opacity: 0;
+  &.is-active {
+    opacity: 1;
+  }
 }
+
 
 .loader {
   position: relative;

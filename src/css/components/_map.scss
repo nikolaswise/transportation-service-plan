@@ -26,6 +26,10 @@
   transition: $transition;
 }
 
+.map-frame-top {
+  padding-top: 2px;
+}
+
 .map-is-active {
   .map-frame {
     left: $frame;

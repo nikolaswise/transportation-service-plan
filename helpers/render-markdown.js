@@ -6,7 +6,6 @@ var md = require('markdown-it')({
   removeUnbalanced: true,
   removeUnknown: true
 });
-var typeset = require('typeset');
 
 /**
  * Generates HTML from Markdown
@@ -16,5 +15,5 @@ var typeset = require('typeset');
  */
 
 module.exports = function (text) {
-  return typeset(md.render(text));
+  return md.render(text);
 };

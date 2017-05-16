@@ -5,8 +5,8 @@ import * as layers from './layers';
 // this stuff is statefull.
 let map;
 let position = {
-  center: [45.528, -122.680],
-  zoom: 13
+  center: [45.528, -122.63],
+  zoom: 12
 };
 
 /**

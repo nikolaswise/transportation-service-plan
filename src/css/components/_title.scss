@@ -31,6 +31,10 @@
   }
 }
 
+.title-branding {
+  max-width: 12rem;
+}
+
 .title-rule {
   width: 50%;
   margin-right: 50%;
@@ -44,6 +48,7 @@
   font-family: $system-sans;
   font-weight: 300;
   letter-spacing: 0.05em;
+  margin-bottom: $pt6
 }
 
 
