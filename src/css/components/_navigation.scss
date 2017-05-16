@@ -1,15 +1,16 @@
 .navigation {
   position: fixed;
   height: $frame;
-  padding-left: $frame;
-  padding-top: 2px;
+  padding-left: $frame/2;
+  padding-right: $frame/2;
+  padding-top: 0.1rem;
   width: 100%;
   z-index: 10;
   background-color: $off-white;
   color: $color-text-small;
   transition: $transition;
   box-sizing: border-box;
-  padding-right: $frame;
+  border-bottom: 1px solid $pbot-light-gray;
 }
 
 .bottom-navigation {
@@ -23,7 +24,6 @@
 .split-is-active {
   .navigation {
     width: 50%;
-    padding-right: 0;
   }
 }
 
@@ -69,16 +69,19 @@
   }
 }
 
+.gutter-left {
+  margin-left: $gutter;
+}
+
 .navigation-no-js-text {
   padding-top: $baseline/3;
 }
 
 .nav-top-link {
-  color: $white;
-  margin-top: $baseline/4;
-  margin-left: $gutter;
+  color: $color-text-small;
+  margin-top: $baseline/2;
   display: inline-block;
   &:visited {
-    color: $white;
+    color: $color-text-small;
   }
 }

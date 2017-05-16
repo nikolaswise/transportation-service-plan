@@ -468,7 +468,10 @@ var bindKeyup = function () {
       bus.emit('keyboard:arrow:left');
     } else if (e.keyCode === 39) {
       bus.emit('keyboard:arrow:right');
+    } else if (e.keyCode === 9) {
+      bus.emit('keyboard:tab');
     }
+
   }
 };
 
@@ -520,22 +523,7 @@ var intent = function () {
   bus.emit('bind:intent');
 };
 
-var textPane = document.querySelector('.js-text-area');
-
-
-/**
- * Emits type resizing events on window resize.
- */
-var responsiveType = function () {
-  var width = textPane.offsetWidth;
-  if (width > 785) {
-    bus.emit("type:size", 'large');
-  } else if (width > 599) {
-    bus.emit("type:size", 'medium');
-  } else if (width < 600) {
-    bus.emit("type:size", 'small');
-  }
-};
+// import responsiveType from './responsive-type.js';
 
 /**
  * Renders the HTML for a popup, given a click event on a leaflet feature and a popup template
@@ -581,7 +569,11 @@ var setToPanel = function (panel) {
     remove(panelContainer, "split-is-active");
   }
   add(panelContainer, (panel + "-is-active"));
-  responsiveType();
+  if (panel === 'map' | panel === 'split') {
+    // bus.emit('map:redraw');
+    delayRedrawMap();
+  }
+  // responsiveType();
 };
 
 /**
@@ -596,25 +588,6 @@ var setLocation = function (panel) {
   if (window.history.replaceState) {
     window.history.replaceState(null, null, panel);
   }
-};
-
-/**
- * Sets class on root HTML node that defines text size.
- *
- * @param {String} `small`, `medium`, or `large`
- */
-var sizeTextTo = function (size) {
-  var html = document.querySelector('html');
-  if (has(html, "type-small")) {
-    remove(html, "type-small");
-  }
-  if (has(html, "type-medium")) {
-    remove(html, "type-medium");
-  }
-  if (has(html, "type-large")) {
-    remove(html, "type-large");
-  }
-  add(html, ("type-" + size));
 };
 
 /**
@@ -656,14 +629,14 @@ var viewLoaded = function () {
 var view = function () {
   bus.on('set:view', setToPanel);
   bus.on('set:view', setLocation);
-  bus.on('set:view', delayRedrawMap);
+  // bus.on('set:view', delayRedrawMap);
   bus.on('layer:control', toggleControl);
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
   bus.on('popup:opened', handlePopUp);
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
-  bus.on('type:size', sizeTextTo);
+  // bus.on('type:size', sizeTextTo);
   bus.on('routing:done', viewLoaded);
 };
 
@@ -962,6 +935,7 @@ var position = {
  */
 
 var drawMap = function () {
+  console.log('draw map');
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -1187,6 +1161,20 @@ var zoomToFeature = function (feature) {
 /**
  * Binds all side effect listeners, exposes the API, and draws the map
  */
+var map$1 = function () {
+  bus.on('popup:opened', zoomToFeature);
+  bus.on('popup:closed', closePopUps);
+  bus.on('map:redraw', redrawMap);
+  bus.on('map:destroy', destroyMap);
+  bus.on('map:create', drawMap);
+  bus.on('map:create', drawLayers);
+  bus.on('map:fitBounds', setMapToBounds);
+  bus.on('map:setFeature', setMapToFeature);
+  bus.on('layers:draw', drawLayers);
+  bus.on('map:layer:add', addLayers);
+  bus.on('map:layer:remove', removeLayers);
+  bus.on('layer:reset', resetLayerStyle);
+};
 
 // ┌────────────────┐
 // │ Aria Adjusters │
@@ -1453,6 +1441,9 @@ function drawer () {
     if (has(e.target, 'js-drawer')) {
       bus.emit('drawer:close');
     }
+    if (has(e.target, 'js-drawer-close')) {
+      bus.emit('drawer:close');
+    }
   }
 
   /**
@@ -1656,6 +1647,78 @@ function search () {
   bus.emit('search:bind');
 }
 
+// Cool Helpers
+var contentArea = document.querySelector('.js-text-area');
+var headerOnes = nodeListToArray(contentArea.getElementsByTagName('h1'));
+var nubContainer = document.querySelector('.js-chapter-nubs');
+var nubList = document.querySelector('.js-nub-list');
+var containerMonitor = scrollMonitor.createContainer(contentArea);
+
+var watchers = {};
+
+var bindWatchers = function () {
+  headerOnes.forEach(function (header) {
+    watchers[header.id] = containerMonitor.create(header);
+    watchers[header.id].enterViewport(function() {
+      bus.emit('nubs:active', header.id);
+      bus.emit('breadscrumbs:active', header);
+    });
+  });
+};
+
+var renderNub = function (nub) {
+  return ("\n    <li>\n      <a href=\"#" + (nub.href) + "\"\n         data-nub=\"" + (nub.href) + "\"\n         class=\"nub\n                js-nub\n                tooltip tooltip-right\"\n         aria-label=\"" + (nub.text) + "\">\n      </a>\n    </li>\n  ")
+};
+
+var drawNubs = function () {
+  var headerOnes = nodeListToArray(contentArea.getElementsByTagName('h1'));
+  var nubs = headerOnes.map(function (header) {
+    console.log(header.id);
+    return {
+      href: header.id,
+      text: header.innerHTML
+    }
+  });
+  nubs.forEach(function (nub) {
+    var html = renderNub(nub);
+    nubList.insertAdjacentHTML('beforeend', html);
+  });
+  bus.emit('nubs:active', 'top');
+};
+
+var setActiveNub = function (id) {
+  console.log(id);
+  var nubs = nodeListToArray(nubList.querySelectorAll('.js-nub'));
+  nubs.forEach(function (nub) {
+    remove(nub, 'is-active');
+    if (nub.getAttribute('data-nub') === id) {
+      console.log(nub);
+      add(nub, 'is-active');
+    }
+  });
+};
+
+var nubs = function () {
+  bus.on('nubs:draw', drawNubs);
+  bus.on('nubs:draw', bindWatchers);
+  bus.on('nubs:active', setActiveNub);
+
+  bus.emit('nubs:draw');
+};
+
+// Cool Helpers
+var crumbZone = document.querySelector('.js-breadcrumbs');
+
+var draw = function (crumb) {
+  var html = "\n    <span class=\"pt8\">></span>\n    <a href='#" + (crumb.id) + "' class=\"crumb nav-top-link pt8\">\n      " + (crumb.innerHTML) + "\n    </a>\n  ";
+  crumbZone.innerHTML = '';
+  crumbZone.insertAdjacentHTML('beforeend', html);
+};
+
+var breadcrumbs = function () {
+  bus.on('breadscrumbs:active', draw);
+};
+
 // The JS Checker
 // Neat Helpers
 // View and Intent
@@ -1681,8 +1744,11 @@ var initApp = function () {
   // Easy to maintain, easy to delete!
   modal();
   drawer();
-  // map();
+  map$1();
   search();
+  nubs();
+  breadcrumbs();
+
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.

@@ -14,6 +14,7 @@ let position = {
  */
 
 const drawMap = () => {
+  console.log('draw map')
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -252,6 +253,4 @@ export default function () {
   bus.on('map:layer:add', addLayers);
   bus.on('map:layer:remove', removeLayers);
   bus.on('layer:reset', resetLayerStyle);
-
-  bus.emit('map:create');
 }

@@ -115,6 +115,9 @@ function drawer () {
     if (classy.has(e.target, 'js-drawer')) {
       bus.emit('drawer:close');
     }
+    if (classy.has(e.target, 'js-drawer-close')) {
+      bus.emit('drawer:close');
+    }
   }
 
   /**

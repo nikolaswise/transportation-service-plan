@@ -52,7 +52,7 @@
     <input class="search-input js-search-input" type="search" placeholder="Search for …" name="q">
   </label>
   <button type="submit" class="search-button js-search-submit">Search</button>
-  <button class="cancel-button js-search-cancel">cancel</button>
+  <button class="cancel-button js-search-cancel js-drawer-close" data-drawer="navigation">cancel</button>
 </form>
           <div class="loader-wrapper js-search-loader">
             <div class="loader"></div>
@@ -85,7 +85,7 @@
 
             
           </div>
-          <div class="js-search-results"></div>
+          <div class="js-search-results search-results"></div>
         </aside>
       </nav>
     </div>
@@ -201,32 +201,33 @@
 
 
     <div class="panels js-panels text-is-active">
+
       <nav class="navigation">
         
   <button class="left js-drawer-toggle serif pt8 hide-if-no-js" data-drawer="navigation">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg>
-    Sections
+    Index
   </button>
-  <a href="#top" class="pt8 nav-top-link">Back to Top</a>
-
-<!--   <button class="left js-modal-toggle js-running-section serif pt8 button-clear" >Transportation Service Plan
+  <a href="#top" class="gutter-left pt8 nav-top-link">Back to Top</a>
+  <div class="js-breadcrumbs breadcrumbs"></div>
+<!--   <button class="left js-modal-toggle js-running-section serif pt8" >Transportation Service Plan
   </button> -->
 
-  <button class="right pt8 serif js-view-control hide-small hide-text button-clear hide-if-no-js" data-panel="text">
+  <button class="right pt8 serif js-view-control hide-small hide-text hide-if-no-js" data-panel="text">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
  hide map
   </button>
-  <button class="right pt8 serif js-view-control show-small button-clear hide-if-no-js" data-panel="map">
+  <button class="right pt8 serif js-view-control show-small hide-if-no-js" data-panel="map">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
  show map
   </button>
-  <button class="right pt8 serif js-view-control hide-small hide-split button-clear hide-if-no-js" data-panel="split">
+  <button class="right pt8 serif js-view-control hide-small hide-split hide-if-no-js" data-panel="split">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M42 12l-20-8-22 8v48l22-8 20 8 22-8v-48l-22 8zM24 9.108l16 6.4v39.384l-16-6.4v-39.384zM4 14.802l16-5.818v39.487l-16 5.818v-39.487zM60 49.198l-16 5.818v-39.487l16-5.818v39.487z"></path>
 </svg>
@@ -240,11 +241,17 @@
   </div>
       </nav>
 
+      <aside class="chapter-nubs">
+        <div class="js-chapter-nubs">
+          <ul class="nubs js-nub-list"></ul>
+        </div>
+      </aside>
+
       <div class="panel panel-text js-text-area">
-        <div class="title" id="top">
+        <div class="title">
   <div class="title-buffer text-container">
     <div class="text-block">
-      <h1 class="title-header">Transportation&#10;System&nbsp;Plan</h1>
+      <h1 class="title-header" id="top">Transportation&#10;System&nbsp;Plan</h1>
     </div>
   </div>
 
@@ -263,8 +270,8 @@
         <div class="table-of-contents">
           <div class="text-container">
             <div class="text-block">
-              <h1>Search the TSP</h1>
-              <h1>View Map</h1>
+              <button>Search the TSP</button>
+              <button>View Map</button>
             </div>
           </div>
         </div>
@@ -2184,14 +2191,14 @@ distribution facilities.</p>
       <div class="panel panel-map">
         <div class="map-frame map-frame-top clearfix">
   <div class="left">
-    <button class=" button-clear pt8 js-view-control show-small" data-panel="split">  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
+    <button class=" pt8 js-view-control show-small" data-panel="split">  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg> show text</button>
-    <button class=" button-clear pt8 js-view-control hide-small hide-text hide-split" data-panel="split">
+    <button class=" pt8 js-view-control hide-small hide-text hide-split" data-panel="split">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg> show text</button>
-    <button class=" button-clear pt8 js-view-control hide-map hide-small" data-panel="map">
+    <button class=" pt8 js-view-control hide-map hide-small" data-panel="map">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
   <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
 </svg> hide text</button>

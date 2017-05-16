@@ -1,6 +1,6 @@
 import bus from './helpers/bus.js';
 import * as classy from './helpers/classy.js';
-import responsiveType from './responsive-type.js';
+// import responsiveType from './responsive-type.js';
 
 /**
  * Renders the HTML for a popup, given a click event on a leaflet feature and a popup template
@@ -46,7 +46,11 @@ const setToPanel = panel => {
     classy.remove(panelContainer, `split-is-active`);
   }
   classy.add(panelContainer, `${panel}-is-active`);
-  responsiveType();
+  if (panel === 'map' | panel === 'split') {
+    // bus.emit('map:redraw');
+    delayRedrawMap();
+  }
+  // responsiveType();
 };
 
 /**
@@ -121,13 +125,13 @@ const viewLoaded = () => {
 export default function () {
   bus.on('set:view', setToPanel);
   bus.on('set:view', setLocation);
-  bus.on('set:view', delayRedrawMap);
+  // bus.on('set:view', delayRedrawMap);
   bus.on('layer:control', toggleControl);
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
   bus.on('popup:opened', handlePopUp);
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
-  bus.on('type:size', sizeTextTo);
+  // bus.on('type:size', sizeTextTo);
   bus.on('routing:done', viewLoaded)
 }

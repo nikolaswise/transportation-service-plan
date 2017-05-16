@@ -77,6 +77,13 @@
   }
 }
 
+.search-results {
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}
+
 .search-result {
   text-decoration: none;
   box-sizing: border-box;

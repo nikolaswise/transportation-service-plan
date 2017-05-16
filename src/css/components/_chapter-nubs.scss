@@ -1,0 +1,23 @@
+.chapter-nubs {
+  position: fixed;
+  z-index: 2;
+  top: 35vh;
+  left: $frame/3;
+  width: $frame/3;
+}
+.nubs {
+  padding: 0;
+  list-style-type: none;
+}
+.nub {
+  margin: $baseline/2 0;
+  display: block;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  width: $frame/4;
+  height: $frame/4;
+
+  &.is-active {
+    background-color: $blue;
+  }
+}

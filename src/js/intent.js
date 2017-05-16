@@ -86,7 +86,10 @@ const bindKeyup = () => {
       bus.emit('keyboard:arrow:left');
     } else if (e.keyCode === 39) {
       bus.emit('keyboard:arrow:right');
+    } else if (e.keyCode === 9) {
+      bus.emit('keyboard:tab');
     }
+
   }
 };
 

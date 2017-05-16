@@ -55,7 +55,7 @@
               {{ toc }}
             {% endautoescape %}
           </div>
-          <div class="js-search-results"></div>
+          <div class="js-search-results search-results"></div>
         </aside>
       </nav>
     </div>
@@ -77,9 +77,16 @@
 
 
     <div class="panels js-panels text-is-active">
+
       <nav class="navigation">
         {% include "_navigation.html" %}
       </nav>
+
+      <aside class="chapter-nubs">
+        <div class="js-chapter-nubs">
+          <ul class="nubs js-nub-list"></ul>
+        </div>
+      </aside>
 
       <div class="panel panel-text js-text-area">
         {% include "_title.html" %}
@@ -87,8 +94,8 @@
         <div class="table-of-contents">
           <div class="text-container">
             <div class="text-block">
-              <h1>Search the TSP</h1>
-              <h1>View Map</h1>
+              <button>Search the TSP</button>
+              <button>View Map</button>
             </div>
           </div>
         </div>

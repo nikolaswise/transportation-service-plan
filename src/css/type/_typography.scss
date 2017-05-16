@@ -57,6 +57,9 @@ h4 {
 h1 {
   font-size: $pt24;
   line-height: $baseline*2;
+  margin-top: $baseline*3;
+  padding-top: $baseline*1.5;
+  border-top: 0.5rem solid $blue;
 }
 h2 {
   font-size: $pt21;
