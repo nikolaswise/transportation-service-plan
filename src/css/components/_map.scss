@@ -1,4 +1,5 @@
 #map {
+  background-color: $off-white;
   top: $frame;
   right: $frame;
   bottom: $frame;
@@ -18,7 +19,7 @@
 }
 
 .map-frame {
-  background-color: $pbot-dark-gray;
+  background-color: $off-white;
   position: absolute;
   right: $frame;
   left: 0;

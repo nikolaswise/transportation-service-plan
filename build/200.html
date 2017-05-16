@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" class="type-small js-is-inactive is-loading">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width">
 
-  <meta name="description" content="Portland Bureau of Transportation Service Plan 2035">
+    <meta name="description" content="Portland Bureau of Transportation Service Plan 2035">
 
-  <title>T.S.P. 2035 | P.B.O.T.</title>
+    <title>T.S.P. 2035 | P.B.O.T.</title>
 
-  <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="">
-  <meta name="twitter:site" content="@PBOTinfo">
-  <meta name="twitter:creator" content="@PBOTinfo">
-  <meta name="twitter:title" content="T.S.P. 2035">
-  <meta name="twitter:description" content="Portland Bureau of Transportation Service Plan 2035">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:site" content="@PBOTinfo">
+    <meta name="twitter:creator" content="@PBOTinfo">
+    <meta name="twitter:title" content="T.S.P. 2035">
+    <meta name="twitter:description" content="Portland Bureau of Transportation Service Plan 2035">
 
-  <meta property="og:image" content="">
-  <meta property="og:title" content="T.S.P. 2035">
-  <meta property="og:url" content="/200.html">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="T.S.P. 2035">
+    <meta property="og:url" content="/200.html">
 
-  <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
 
-  <!-- Esri Leaflet Geocoder -->
-  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
-  <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
+    <!-- Esri Leaflet Geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
 
-  <!-- Load Esri Leaflet Renderers -->
-  <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
+    <!-- Load Esri Leaflet Renderers -->
+    <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
+    <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
 
-  <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
   </head>
 
   <body>
-
-   <div class="drawer drawer-left js-drawer" data-drawer="navigation" tabindex="0">
+    <!-- Search Form Sidebar V. Nice -->
+    <div class="drawer drawer-left js-drawer" data-drawer="navigation" tabindex="0">
       <nav class="drawer-nav" role="navigation">
         <aside class="side-nav search-panel">
           <form method="GET" action="search/" class="search">
@@ -54,11 +54,9 @@
   <button type="submit" class="search-button js-search-submit">Search</button>
   <button class="cancel-button js-search-cancel">cancel</button>
 </form>
-
           <div class="loader-wrapper js-search-loader">
             <div class="loader"></div>
           </div>
-
           <div class="toc js-search-hide">
             
               <ul>
@@ -91,6 +89,111 @@
         </aside>
       </nav>
     </div>
+
+    <!-- Layers Drawer V. Nice -->
+    <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
+      <nav class="drawer-nav layer-panel" role="navigation">
+        <aside class="side-nav">
+          <form class="sans-serif">
+  <fieldset class="layer-panel-section fieldset fieldset-checkbox">
+    <legend class="legend"><b>Projects:</b></legend>
+<!--     <label class="label">
+      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projectPoints,projectLines,projectPolygons">View All
+    </label> -->
+    <label class="label">
+      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesConstrained,projPointsConstrained,projPolygonsConstrained">Constrained
+    </label>
+    <label class="label">
+      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesUnconstrained,projPointsUnconstrained,projPolygonsUnconstrained">Unconstrained
+    </label>
+    <label class="label">
+      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesCC2035,projPointsCC2035,projPolygonsCC2035">Central City 2035
+    </label>
+    <label class="label">
+      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesOther,projPointsOther,projPolygonsOther">Other Agencies
+    </label>
+  </fieldset>
+  <fieldset class="layer-panel-section fieldset fieldset-checkbox">
+    <legend class="legend"><b>Programs:</b></legend>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">View All
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Pedestrian Network Completion
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Bikeway Network Completion
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Neighborhood Greenways
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">High Crash Corridor
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Safe Routes to School
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Transit Priority
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Freight Priority
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Transportation System Management
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Transportation & Parking Demand Management
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Alternative Street Design
+    </label>
+  </fieldset>
+  <fieldset class="layer-panel-section fieldset fieldset-radio">
+    <legend class="legend"><b>Street Classifications:</b></legend>
+    <label class="label">
+      <input type="radio" checked name="streetClass" class="input js-layer-toggle" checked >None
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="designClassifications">Design
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="bicycleClassifications">Bicycle
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="transitClassifications">Transit
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="pedestrianClassifications,pedestrianDistricts">Pedestrian
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="freightClassifications,freightDistricts">Freight
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="trafficClassifications">Traffic
+    </label>
+    <label class="label">
+      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="emergencyClassifications">Emergency Response
+    </label>
+  </fieldset>
+  <fieldset class="layer-panel-section fieldset fieldset-checkbox">
+    <legend class="legend"><b>Reference:</b></legend>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Tax Lots
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Zoning
+    </label>
+    <label class="label">
+      <input class="input js-layer-" type="checkbox">Centers & Corridors
+    </label>
+  </fieldset>
+  </form>
+        </aside>
+      </nav>
+    </div>
+
+    <!-- Main Page Loader V. Nice -->
     <div class="loader-wrapper">
       <div class="loader"></div>
       <p class="loader-text">Loading &hellip;</p>
@@ -141,7 +244,7 @@
         <div class="title" id="top">
   <div class="title-buffer text-container">
     <div class="text-block">
-      <h1 class="title-header">2035&#10;Transportation&#10;System Plan</h1>
+      <h1 class="title-header">Transportation&#10;System&nbsp;Plan</h1>
     </div>
   </div>
 
@@ -160,40 +263,8 @@
         <div class="table-of-contents">
           <div class="text-container">
             <div class="text-block">
-              <p>
-                <button class="js-drawer-toggle serif pt8 hide-if-no-js" data-drawer="navigation">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="icon" viewBox="0 0 64 64">
-  <path d="M0 4h64v8h-64zM0 16h40v8h-40zM0 40h40v8h-40zM0 28h64v8h-64zM0 52h64v8h-64z"></path>
-</svg>
-                  Search the T.S.P.
-                </button>
-              </p>
-              
-                <ul>
-<li><a href="#introduction">Introduction</a>
-<ul>
-<li><a href="#why-is-this-important">Why is this important?</a></li>
-<li><a href="#what-is-the-transportation-system-plan">What is the Transportation System Plan?</a></li>
-<li><a href="#elements-of-the-tsp">Elements of the TSP</a></li>
-<li><a href="#transportation-system-plan-updates">Transportation System Plan Updates</a></li>
-<li><a href="#regulatory-framework">REGULATORY FRAMEWORK</a></li>
-<li><a href="#chapter-9-transportation">Chapter 9: Transportation</a></li>
-<li><a href="#chapter-8-public-facilities">Chapter 8: Public Facilities</a></li>
-<li><a href="#chapter-3-urban-form">Chapter 3: Urban Form</a></li>
-<li><a href="#chapter-4-development">Chapter 4: Development</a></li>
-<li><a href="#chapter-2-has-seven-goals-and-41-policies">Chapter 2 has seven goals and 41 policies.</a></li>
-<li><a href="#seven-outcomes">SEVEN OUTCOMES</a></li>
-</ul>
-</li>
-<li><a href="#transportation-objectives"><strong>Transportation Objectives</strong></a></li>
-<li><a href="#public-facilities-and-services-objectives"><strong>Public Facilities and Services Objectives</strong></a>
-<ul>
-<li><a href="#land-use-development-and-placemaking">Land use, development, and placemaking</a></li>
-</ul>
-</li>
-</ul>
-
-              
+              <h1>Search the TSP</h1>
+              <h1>View Map</h1>
             </div>
           </div>
         </div>
@@ -2105,28 +2176,6 @@ distribution facilities.</p>
     <div class="text-block">
       <p>Published by Portland Bureau of Transportation 2017</p>
       <p>Department Press is a publishing house and design studio specializing in printed matter, digital experiences, and special projects. Department works with artists, public bureaus, and other partners who are open to collaborative process and value art and design.</p>
-<ol start="0">
-<li>Cover</li>
-<li>Blank</li>
-<li>Blank</li>
-<li>Dedication</li>
-<li>Title Page</li>
-<li>Blank</li>
-<li>Contents</li>
-<li>Blank</li>
-<li>Half Title</li>
-<li>Preface</li>
-<li>Chapter Title</li>
-<li>Chapter</li>
-<li>Blank</li>
-<li>Appendix</li>
-<li>Index</li>
-<li>Blank</li>
-<li>Copyright / Colophon</li>
-<li>Blank</li>
-<li>Back Cover</li>
-</ol>
-
     </div>
   </div>
 </div>
@@ -2174,113 +2223,12 @@ distribution facilities.</p>
 
 
       </div>
-
+<!--
       <nav class="navigation bottom-navigation">
         <small>Built by the Portland Bureau of Transportation 2017</small>
       </nav>
-
+ -->
     </div>
-    <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
-      <nav class="drawer-nav layer-panel" role="navigation">
-        <aside class="side-nav">
-          <form class="sans-serif">
-  <fieldset class="layer-panel-section fieldset fieldset-checkbox">
-    <legend class="legend"><b>Projects:</b></legend>
-<!--     <label class="label">
-      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projectPoints,projectLines,projectPolygons">View All
-    </label> -->
-    <label class="label">
-      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesConstrained,projPointsConstrained,projPolygonsConstrained">Constrained
-    </label>
-    <label class="label">
-      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesUnconstrained,projPointsUnconstrained,projPolygonsUnconstrained">Unconstrained
-    </label>
-    <label class="label">
-      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesCC2035,projPointsCC2035,projPolygonsCC2035">Central City 2035
-    </label>
-    <label class="label">
-      <input class="input js-layer-toggle" checked type="checkbox" data-layers="projLinesOther,projPointsOther,projPolygonsOther">Other Agencies
-    </label>
-  </fieldset>
-  <fieldset class="layer-panel-section fieldset fieldset-checkbox">
-    <legend class="legend"><b>Programs:</b></legend>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">View All
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Pedestrian Network Completion
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Bikeway Network Completion
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Neighborhood Greenways
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">High Crash Corridor
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Safe Routes to School
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Transit Priority
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Freight Priority
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Transportation System Management
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Transportation & Parking Demand Management
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Alternative Street Design
-    </label>
-  </fieldset>
-  <fieldset class="layer-panel-section fieldset fieldset-radio">
-    <legend class="legend"><b>Street Classifications:</b></legend>
-    <label class="label">
-      <input type="radio" checked name="streetClass" class="input js-layer-toggle" checked >None
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="designClassifications">Design
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="bicycleClassifications">Bicycle
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="transitClassifications">Transit
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="pedestrianClassifications,pedestrianDistricts">Pedestrian
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="freightClassifications,freightDistricts">Freight
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="trafficClassifications">Traffic
-    </label>
-    <label class="label">
-      <input type="radio" name="streetClass" class="input js-layer-toggle" data-layers="emergencyClassifications">Emergency Response
-    </label>
-  </fieldset>
-  <fieldset class="layer-panel-section fieldset fieldset-checkbox">
-    <legend class="legend"><b>Reference:</b></legend>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Tax Lots
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Zoning
-    </label>
-    <label class="label">
-      <input class="input js-layer-" type="checkbox">Centers & Corridors
-    </label>
-  </fieldset>
-  </form>
-        </aside>
-      </nav>
-    </div>
-  <script src="js/bundle.js"></script>
+    <script src="js/bundle.js"></script>
   </body>
 </html>

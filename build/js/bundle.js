@@ -1187,22 +1187,6 @@ var zoomToFeature = function (feature) {
 /**
  * Binds all side effect listeners, exposes the API, and draws the map
  */
-var map$1 = function () {
-  bus.on('popup:opened', zoomToFeature);
-  bus.on('popup:closed', closePopUps);
-  bus.on('map:redraw', redrawMap);
-  bus.on('map:destroy', destroyMap);
-  bus.on('map:create', drawMap);
-  bus.on('map:create', drawLayers);
-  bus.on('map:fitBounds', setMapToBounds);
-  bus.on('map:setFeature', setMapToFeature);
-  bus.on('layers:draw', drawLayers);
-  bus.on('map:layer:add', addLayers);
-  bus.on('map:layer:remove', removeLayers);
-  bus.on('layer:reset', resetLayerStyle);
-
-  bus.emit('map:create');
-};
 
 // ┌────────────────┐
 // │ Aria Adjusters │
@@ -1676,6 +1660,7 @@ function search () {
 // Neat Helpers
 // View and Intent
 // Cool Components
+// import responsiveType from './responsive-type.js';
 /**
  * Initializes app and app components.
  */
@@ -1696,7 +1681,7 @@ var initApp = function () {
   // Easy to maintain, easy to delete!
   modal();
   drawer();
-  map$1();
+  // map();
   search();
 };
 

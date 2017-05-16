@@ -10,7 +10,7 @@ import intent from './intent.js';
 import view from './view.js';
 
 // Cool Components
-import responsiveType from './responsive-type.js';
+// import responsiveType from './responsive-type.js';
 import map from './map/map.js';
 import modal from './modal.js';
 import drawer from './drawers.js';
@@ -36,7 +36,7 @@ const initApp = () => {
   // Easy to maintain, easy to delete!
   modal();
   drawer();
-  map();
+  // map();
   search();
 };
 
