@@ -21,3 +21,8 @@
     background-color: $blue;
   }
 }
+.map-is-active {
+  .chapter-nubs {
+    display: none;
+  }
+}

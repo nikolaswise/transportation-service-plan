@@ -7,7 +7,7 @@
 .pop-up-container {
   visibility: hidden;
   position: absolute;
-  left: 2*$frame;
+  left: $frame;
   top: $frame;
   bottom: $frame;
   pointer-events: none;
@@ -18,7 +18,8 @@
     visibility: visible;
     opacity: 1;
     display: inline-block;
-    vertical-align: middle;
+    // vertical-align: middle;
+    top: 2*$frame;
     transition: $transition;
     transform: translate3d(0, 0, 0);
     .pop-up-panel {
@@ -30,7 +31,8 @@
     content: '';
     display: inline-block;
     height: 100%;
-    vertical-align: middle;
+    // vertical-align: middle;
+    // top: 2*$frame;
     margin-right: -0.25em; /* Adjusts for spacing */
   }
 }
@@ -50,7 +52,8 @@
 .pop-up-panel {
   display: none;
   opacity: 0;
-  vertical-align: middle;
+  // vertical-align: middle;
+  top: 2*$frame;
   background-color: $off-white;
   box-shadow: 0 0 10px $dark-gray;
   border: 1px solid $light-gray;
