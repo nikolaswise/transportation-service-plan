@@ -23,7 +23,7 @@ function apply (text, site, cb) {
  * @returns {String} String of HTML
  */
 module.exports = function (site, cb) {
-  let sources = fs.readdirSync('./src/text/');
+  let sources = fs.readdirSync('./src/lib/');
   let text = getTexts(sources);
   apply(text, site, cb);
 };

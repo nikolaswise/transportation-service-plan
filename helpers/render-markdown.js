@@ -5,7 +5,7 @@ var md = require('markdown-it')({
   imageClass: 'img',
   removeUnbalanced: true,
   removeUnknown: true
-});
+}).use(require('markdown-it-kramdown-attrs'));
 
 /**
  * Generates HTML from Markdown

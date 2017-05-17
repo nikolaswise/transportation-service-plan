@@ -15,6 +15,9 @@
   max-width: $text-measure;
   margin: auto;
   overflow: hide;
+  p img {
+    width: 100%;
+  }
 }
 
 @media (max-width: $single-pane-break) {

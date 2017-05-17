@@ -11,7 +11,7 @@
     "css": "node-sass src/css/style.scss build/css/style.css",
     "js": "rollup -c",
     "html": "static-site -s src/ -b build/ -h helpers/texts.js",
-    "lib": "jandoc -d lib/ -o src/text -r docx -w markdown_github --extract-media=src/img",
+    "lib": "jandoc -d lib/ -r docx -o src/text -t markdown --extract-media=src/img",
     "pdf": "jandoc -d lib/ -o src/text -r docx -w latex",
     "watch": "rerun-script",
     "test": "npm run lint && npm run test:lib && npm run test:app ",

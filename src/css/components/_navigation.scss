@@ -85,3 +85,7 @@
     color: $color-text-small;
   }
 }
+
+@media (max-width: 600px) {
+  .nav-top-link {display: none;}
+}
