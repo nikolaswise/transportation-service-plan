@@ -10,7 +10,6 @@ $opacity-transition: opacity 200ms linear;
   left: 0;
   visibility: hidden;
   overflow: hidden;
-  // opacity: 0;
   background: black;
   transition: visibility 0ms linear, $opacity-transition;
   z-index: 1001;
@@ -76,10 +75,18 @@ $opacity-transition: opacity 200ms linear;
   transition: $transform-transition;
 }
 .drawer-left-is-active {
-  opacity: 1;
-  @include drawer-left-is-active();
+  .navigation,
+  .panel-text,
+  .panel-map {
+    opacity: 1;
+    @include drawer-left-is-active();
+  }
 }
 .drawer-right-is-active {
-  opacity: 1;
-  @include drawer-right-is-active();
+  .navigation,
+  .panel-text,
+  .panel-map {
+    opacity: 1;
+    @include drawer-right-is-active();
+  }
 }

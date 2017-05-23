@@ -30,8 +30,8 @@
     <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
 
     <!-- Esri Leaflet Geocoder -->
-    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
-    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.4/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.4"></script>
 
     <!-- Load Esri Leaflet Renderers -->
     <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
@@ -97,7 +97,13 @@
     <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
       <nav class="drawer-nav layer-panel" role="navigation">
         <aside class="side-nav">
-          <form class="sans-serif">
+          <div class="close-layers">
+  <button class="pt8 js-drawer-toggle" data-drawer="close">
+    close
+  </button>
+</div>
+
+<form class="sans-serif">
   <fieldset class="layer-panel-section fieldset fieldset-checkbox">
     <legend class="legend"><b>Projects:</b></legend>
 <!--     <label class="label">

@@ -12,8 +12,6 @@
 
 .panels  {
   display: block;
-  // overflow: hidden;
-  // background: $pbot-dark-gray;
   position: absolute;
   left:0;
   right:0;
@@ -43,7 +41,6 @@
   z-index: 1;
   top: 0;
   bottom: 0;
-  // padding-left: $frame;
   overflow-y: scroll;
   overflow-x: none;
   box-sizing: border-box;
@@ -57,7 +54,6 @@
 @media (max-width: $single-pane-break) {
   .panel-text {
     width: 100%;
-    // overflow-y: initial;
   }
   .panel-map {
     transform: translate3d(100%, 0, 0);
@@ -67,7 +63,6 @@
 .text-is-active {
   .panel-text {
     width: 100%;
-    // padding-right: $frame;
   }
   .panel-map {
     transform: translate3d(100%, 0, 0);

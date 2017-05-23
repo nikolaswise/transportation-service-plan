@@ -966,26 +966,23 @@ var drawMap = function () {
 var createGeocoder = function () {
   map.addControl(window.L.control.zoom({position: 'topright'}));
 
-  var pbotGeocoder = window.L.esri.Geocoding.geocodeServiceProvider({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Geocoding_PDX/GeocodeServer'
+  var pdxGeocoder = window.L.esri.Geocoding.geocodeServiceProvider({
+    url: 'https://www.portlandmaps.com/locator/Default/GeocodeServer'
   });
 
-  var searchControl = window.L.esri.Geocoding.geosearch({
-    providers: [pbotGeocoder],
+  var searchControl = L.esri.Geocoding.geosearch({
+    // providers: [pdxGeocoder],
     position: 'topright',
     zoomToResult: true,
-    useMapBounds: 10,
-    allowMultipleResults: true
+    allowMultipleResults: false,
+    searchBounds: L.latLngBounds([[45.6574694,-122.8695448],[45.3309588,-122.4284356]])
   }).addTo(map);
-
-  var results = window.L.layerGroup().addTo(map);
-
-  searchControl.on('results', function (data) {
+  var results = L.layerGroup().addTo(map);
+  searchControl.on('results', function(data){
     results.clearLayers();
-    for (var i = data.results.length - 1; i >= 0; i--) {
-      results.addLayer(window.L.marker(data.results[i].latlng));
-    }
+    results.addLayer(L.marker(data.results[0].latlng));
   });
+
 };
 
 /**
@@ -1355,21 +1352,23 @@ function drawer () {
   function openDrawer (options) {
     bus.emit('drawer:close');
     var drawer = document.querySelector((".js-drawer[data-drawer=\"" + (options.id) + "\"]"));
-    var right = has(drawer, 'drawer-right');
-    var left = has(drawer, 'drawer-left');
+    if (drawer) {
+      var right = has(drawer, 'drawer-right');
+      var left = has(drawer, 'drawer-left');
 
-    drawer.setAttribute('tabindex', 0);
-    add(drawer, 'is-active');
+      drawer.setAttribute('tabindex', 0);
+      add(drawer, 'is-active');
 
-    if (right) {
-      add(wrapper, 'drawer-right-is-active');
-    } else if (left) {
-      add(wrapper, 'drawer-left-is-active');
+      if (right) {
+        add(wrapper, 'drawer-right-is-active');
+      } else if (left) {
+        add(wrapper, 'drawer-left-is-active');
+      }
+
+      hide([wrapper]);
+      add$1(drawer, click(), closeClick);
+      add$1(document, 'focusin', fenceDrawer);
     }
-
-    hide([wrapper]);
-    add$1(drawer, click(), closeClick);
-    add$1(document, 'focusin', fenceDrawer);
   }
 
   /**

@@ -29,21 +29,23 @@ function drawer () {
   function openDrawer (options) {
     bus.emit('drawer:close');
     var drawer = document.querySelector(`.js-drawer[data-drawer="${options.id}"]`);
-    var right = classy.has(drawer, 'drawer-right');
-    var left = classy.has(drawer, 'drawer-left');
+    if (drawer) {
+      var right = classy.has(drawer, 'drawer-right');
+      var left = classy.has(drawer, 'drawer-left');
 
-    drawer.setAttribute('tabindex', 0);
-    classy.add(drawer, 'is-active');
+      drawer.setAttribute('tabindex', 0);
+      classy.add(drawer, 'is-active');
 
-    if (right) {
-      classy.add(wrapper, 'drawer-right-is-active');
-    } else if (left) {
-      classy.add(wrapper, 'drawer-left-is-active');
+      if (right) {
+        classy.add(wrapper, 'drawer-right-is-active');
+      } else if (left) {
+        classy.add(wrapper, 'drawer-left-is-active');
+      }
+
+      aria.hide([wrapper]);
+      event.add(drawer, event.click(), closeClick);
+      event.add(document, 'focusin', fenceDrawer);
     }
-
-    aria.hide([wrapper]);
-    event.add(drawer, event.click(), closeClick);
-    event.add(document, 'focusin', fenceDrawer);
   }
 
   /**

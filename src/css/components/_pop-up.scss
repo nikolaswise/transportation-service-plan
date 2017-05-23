@@ -18,8 +18,6 @@
     visibility: visible;
     opacity: 1;
     display: inline-block;
-    // vertical-align: middle;
-    top: 2*$frame;
     transition: $transition;
     transform: translate3d(0, 0, 0);
     .pop-up-panel {
@@ -31,8 +29,6 @@
     content: '';
     display: inline-block;
     height: 100%;
-    // vertical-align: middle;
-    // top: 2*$frame;
     margin-right: -0.25em; /* Adjusts for spacing */
   }
 }

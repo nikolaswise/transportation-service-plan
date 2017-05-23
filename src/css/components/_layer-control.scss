@@ -1,9 +1,14 @@
 .layer-panel {
   box-sizing: border-box;
   background-color: $off-white;
-  padding-top: $frame;
+  // padding-top: $frame;
   padding-right: $frame/2;
   padding-left: $frame/2;
+}
+
+.close-layers {
+  padding-top: $baseline;
+  padding-bottom: $baseline;
 }
 
 .layer-panel-section {}
