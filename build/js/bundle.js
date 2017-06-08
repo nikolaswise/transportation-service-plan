@@ -982,6 +982,8 @@ var createGeocoder = function () {
   searchControl.on('results', function(data){
     results.clearLayers();
     results.addLayer(L.marker(data.results[0].latlng));
+    map.setZoom = 13;
+    position.zoom = 13;
   });
 
 };
