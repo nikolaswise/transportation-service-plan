@@ -42,7 +42,6 @@ const renderNub = nub => {
 const drawNubs = () => {
   let headerOnes = dom.nodeListToArray(contentArea.getElementsByTagName('h1'))
   let nubs = headerOnes.map(header => {
-    console.log(header.id)
     return {
       href: header.id,
       text: header.innerHTML
@@ -56,12 +55,10 @@ const drawNubs = () => {
 }
 
 const setActiveNub = id => {
-  console.log(id)
   let nubs = dom.nodeListToArray(nubList.querySelectorAll('.js-nub'))
   nubs.forEach(nub => {
     classy.remove(nub, 'is-active')
     if (nub.getAttribute('data-nub') === id) {
-      console.log(nub)
       classy.add(nub, 'is-active')
     }
   })

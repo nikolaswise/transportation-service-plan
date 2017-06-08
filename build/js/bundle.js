@@ -657,6 +657,22 @@ var popupRenderer = function (current, proposed) {
   };
 };
 
+/**
+ * Composes an HTML pop-up template that is displayed on feature clicks.
+ * This one is for the Street classification layers, where the user wishes
+ * to see current classification, and proposed classification.
+ *
+ * @param {String} The column in the GIS layer that maps to current classification.
+ * @param {String} The column in the GIS layer that maps to proposed classification.
+ * @returns {String} The rendered HTML string for the popup.
+ */
+
+var popupProject = function (current, proposed) {
+  return function (feature) {
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.ProjectName) + "\n      </h5>\n      <p> " + (feature.ProjectDescription) + " </p>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Status</td>\n            <td>" + (feature.ProjectStatus) + "</td>\n          </tr>\n          <tr>\n            <td>Source</td>\n            <td>" + (feature.ProjectSource) + "</td>\n          </tr>\n          <tr>\n            <td>Lead Agency</td>\n            <td>" + (feature.LeadAgency) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Cost</td>\n            <td>" + (feature.EstimatedCost) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Timeframe</td>\n            <td>" + (feature.EstimatedTimeframe) + "</td>\n          </tr>\n        </tbody>\n      </table>\n      <p>Transportation Plan ID: <a href=\"#\">" + (feature.TranPlanID) + "</a></p>\n    ");
+  };
+};
+
 // this needs to be named better, and there will be more of them I think.
 // this file just maps GIS data layers to their popups, and gives them a reference handle
 // so they can be got at by the map app
@@ -739,9 +755,13 @@ var pedestrianClassifications = {
  */
 var pedestrianDistricts = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/14',
+    style: function (feature) {
+      return {fill: true, fillColor: '#4AAB9C', fillOpacity: 0.2};
+    }
   }),
-  popup: popupRenderer('Pedestrian', 'ProposedPedestrian')
+  popup: popupRenderer('Pedestrian', 'ProposedPedestrian'),
+
 };
 
 /**
@@ -763,9 +783,12 @@ var freightClassifications = {
  */
 var freightDistricts = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18',
+    style: function (feature) {
+      return {fill: true, fillColor: '#DB7BD5', fillOpacity: 0.2};
+    }
   }),
-  popup: popupRenderer('Freight', 'ProposedFreight')
+  popup: popupRenderer('Freight', 'ProposedFreight'),
 };
 
 /**
@@ -778,7 +801,7 @@ var projectPoints = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -791,7 +814,7 @@ var projectLines = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -804,7 +827,7 @@ var projectPolygons = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
     pane: 'bottom'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 
@@ -813,7 +836,7 @@ var projLinesConstrained = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 var projLinesUnconstrained = {
@@ -821,7 +844,7 @@ var projLinesUnconstrained = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 var projLinesCC2035 = {
@@ -829,70 +852,70 @@ var projLinesCC2035 = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projLinesOther = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPointsConstrained = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPointsUnconstrained = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPointsCC2035 = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPointsOther = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
     pane: 'top'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPolygonsConstrained = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
     pane: 'bottom'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPolygonsUnconstrained = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
     pane: 'bottom'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPolygonsCC2035 = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
     pane: 'bottom'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 var projPolygonsOther = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
     pane: 'bottom'
   }),
-  popup: popupRenderer('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 
@@ -936,7 +959,6 @@ var position = {
  */
 
 var drawMap = function () {
-  console.log('draw map');
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -1029,7 +1051,9 @@ var addLayers = function (layerSet) {
  * @param {String} Layer key, eg 'projectPoints'
  */
 var addLayer = function (layer) {
+  console.log(layer);
   layers[layer].features.addTo(map);
+  console.log(layers[layer]);
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup(function (evt) {
     openPopUp(evt, layer);
@@ -1455,7 +1479,6 @@ function drawer () {
    */
   function toggleClick (e) {
     preventDefault(e);
-    console.log('preventDefault');
     var drawerId = e.target.getAttribute('data-drawer');
     add(e.target, 'is-active');
     bus.emit('drawer:open', {id: drawerId});
@@ -1492,7 +1515,6 @@ function getOffsetTop( elem )
           offsetTop += elem.offsetTop;
       }
     } while( elem = elem.offsetParent );
-    console.log(offsetTop);
     return offsetTop;
 }
 
@@ -1604,7 +1626,6 @@ var showOriginal = function () {
 };
 
 window.scrollToPosition = function (position) {
-  console.log('click!');
   var contentArea = document.querySelector('.js-text-area');
   contentArea.scrollTop = position - 60;
 };
@@ -1675,7 +1696,6 @@ var renderNub = function (nub) {
 var drawNubs = function () {
   var headerOnes = nodeListToArray(contentArea.getElementsByTagName('h1'));
   var nubs = headerOnes.map(function (header) {
-    console.log(header.id);
     return {
       href: header.id,
       text: header.innerHTML
@@ -1689,12 +1709,10 @@ var drawNubs = function () {
 };
 
 var setActiveNub = function (id) {
-  console.log(id);
   var nubs = nodeListToArray(nubList.querySelectorAll('.js-nub'));
   nubs.forEach(function (nub) {
     remove(nub, 'is-active');
     if (nub.getAttribute('data-nub') === id) {
-      console.log(nub);
       add(nub, 'is-active');
     }
   });

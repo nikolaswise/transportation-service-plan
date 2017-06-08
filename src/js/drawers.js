@@ -129,7 +129,6 @@ function drawer () {
    */
   function toggleClick (e) {
     event.preventDefault(e);
-    console.log('preventDefault')
     var drawerId = e.target.getAttribute('data-drawer');
     classy.add(e.target, 'is-active');
     bus.emit('drawer:open', {id: drawerId});

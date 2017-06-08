@@ -99,12 +99,8 @@ const bindKeyup = () => {
 const bindScrollWatcher = () => {
   let myElement = document.getElementById("itemToWatch");
   const watcher = scrollMonitor.create(myElement);
-  watcher.enterViewport(function() {
-    console.log( 'I have entered the viewport' );
-  });
-  watcher.exitViewport(function() {
-    console.log( 'I have left the viewport' );
-  });
+  watcher.enterViewport(function() {});
+  watcher.exitViewport(function() {});
 }
 
 /**

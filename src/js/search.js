@@ -32,7 +32,6 @@ function getOffsetTop( elem )
           offsetTop += elem.offsetTop;
       }
     } while( elem = elem.offsetParent );
-    console.log(offsetTop)
     return offsetTop;
 }
 
@@ -144,7 +143,6 @@ const showOriginal = () => {
 }
 
 window.scrollToPosition = function (position) {
-  console.log('click!')
   let contentArea = document.querySelector('.js-text-area')
   contentArea.scrollTop = position - 60;
 }

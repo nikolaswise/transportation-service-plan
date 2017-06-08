@@ -42,13 +42,14 @@
   }
   .pop-up-panel {
     width: 100%;
+
   }
 }
 
 .pop-up-panel {
   display: none;
   opacity: 0;
-  // vertical-align: middle;
+  max-width: 32rem;
   top: 2*$frame;
   background-color: $off-white;
   box-shadow: 0 0 10px $dark-gray;
