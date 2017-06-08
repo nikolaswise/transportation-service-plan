@@ -74,6 +74,7 @@ $opacity-transition: opacity 200ms linear;
   visibillity: visible;
   transition: $transform-transition;
 }
+
 .drawer-left-is-active {
   .navigation,
   .panel-text,
@@ -88,5 +89,12 @@ $opacity-transition: opacity 200ms linear;
   .panel-map {
     opacity: 1;
     @include drawer-right-is-active();
+  }
+}
+
+.map-is-active.drawer-right-is-active {
+  .navigation,
+  .panel-text {
+    transform: translate3d(-100%, 0, 0);
   }
 }
