@@ -1051,9 +1051,7 @@ var addLayers = function (layerSet) {
  * @param {String} Layer key, eg 'projectPoints'
  */
 var addLayer = function (layer) {
-  console.log(layer);
   layers[layer].features.addTo(map);
-  console.log(layers[layer]);
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup(function (evt) {
     openPopUp(evt, layer);
@@ -1696,7 +1694,6 @@ var loadResults = function (count, results, term) {
       var nodePos = getOffsetTop(result);
       var preview = result.innerHTML;
       var highlighted = keywordHighlighter(term, preview);
-      console.log(highlighted);
       div.insertAdjacentHTML('beforeend', ("\n        <a class=\"search-result\" onclick=\"scrollToPosition(" + nodePos + ")\">\n          <h6 class=\"search-result-header\">" + section + "</h6>\n          <p class=\"search-result-preview\">" + highlighted + "</p>\n        </a>\n      "));
     });
   });

@@ -106,9 +106,7 @@ const addLayers = (layerSet) => {
  * @param {String} Layer key, eg 'projectPoints'
  */
 const addLayer = layer => {
-  console.log(layer)
   layers[layer].features.addTo(map);
-  console.log(layers[layer])
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup((evt) => {
     openPopUp(evt, layer);

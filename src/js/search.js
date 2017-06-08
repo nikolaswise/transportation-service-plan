@@ -172,7 +172,6 @@ const loadResults = function (count, results, term) {
       let nodePos = getOffsetTop(result)
       let preview = result.innerHTML
       let highlighted = highlighter(term, preview)
-      console.log(highlighted)
       div.insertAdjacentHTML('beforeend', `
         <a class="search-result" onclick="scrollToPosition(${nodePos})">
           <h6 class="search-result-header">${section}</h6>
