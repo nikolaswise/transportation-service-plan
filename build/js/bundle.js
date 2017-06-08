@@ -1712,7 +1712,7 @@ var nubs = function () {
 var crumbZone = document.querySelector('.js-breadcrumbs');
 
 var draw = function (crumb) {
-  var html = "\n    <span class=\"pt8 nav-top-link\">></span>\n    <a href='#" + (crumb.id) + "' class=\"crumb nav-top-link pt8\">\n      " + (crumb.innerHTML) + "\n    </a>\n  ";
+  var html = "\n    <span class=\"pt8 nav-top-link\">></span>\n    <a href='#" + (crumb.id) + "' class=\"crumb nav-top-link pt10\">\n      " + (crumb.innerHTML) + "\n    </a>\n  ";
   crumbZone.innerHTML = '';
   crumbZone.insertAdjacentHTML('beforeend', html);
 };

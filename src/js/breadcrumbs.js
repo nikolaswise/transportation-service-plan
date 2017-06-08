@@ -12,7 +12,7 @@ let crumbZone = document.querySelector('.js-breadcrumbs')
 const draw = crumb => {
   let html = `
     <span class="pt8 nav-top-link">></span>
-    <a href='#${crumb.id}' class="crumb nav-top-link pt8">
+    <a href='#${crumb.id}' class="crumb nav-top-link pt10">
       ${crumb.innerHTML}
     </a>
   `
