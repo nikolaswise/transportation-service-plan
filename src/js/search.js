@@ -4,6 +4,7 @@ import * as classy from './helpers/classy';
 import * as aria from './helpers/aria';
 import * as event from './helpers/event';
 import bus from './helpers/bus';
+import highlighter from 'keyword-highlighter';
 
 /**
  * Initializes drawer pattern and binds events.
@@ -169,11 +170,13 @@ const loadResults = function (count, results, term) {
     results.map(result => {
       let section = getClosestHeader(result)
       let nodePos = getOffsetTop(result)
-      let preview = result.innerHTML.length > 60 ? result.innerHTML.slice(0, 60)+'&hellip;' : result.innerHTML
+      let preview = result.innerHTML
+      let highlighted = highlighter(term, preview)
+      console.log(highlighted)
       div.insertAdjacentHTML('beforeend', `
         <a class="search-result" onclick="scrollToPosition(${nodePos})">
           <h6 class="search-result-header">${section}</h6>
-          <p class="search-result-preview">${preview}</p>
+          <p class="search-result-preview">${highlighted}</p>
         </a>
       `)
     })

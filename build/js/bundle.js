@@ -1487,6 +1487,50 @@ function drawer () {
   bus.emit('drawer:bind');
 }
 
+var options = {
+  startTag : "<b class='highlight'>", // could be a hyperlink
+  endTag   : "</b>" // or you could use <i> instead of <b> ... want it? ask!
+};
+/**
+ * Want to Set the Desired Start Tag to apply to the highlight?
+ * see: https://github.com/dwyl/search-result-keyword-highlighter/issues/5
+ * Potential future feature ...
+ */
+
+/**
+ * wraps a single string passed to it in the start and end tags of the options
+ * @param {String} match - the string to be wrapped
+ * @returns {String} - the string wraped
+ */
+
+function wrapper (match) {
+  return options.startTag + match + options.endTag;
+}
+
+/**
+
+ * highlight does Simple String Substitution given a set of keywords in
+ * a body of text and substitutes the keyword with a marked up html Tag
+ * @param {String} keywords - a string of one or more keywords
+ *   separated by spaces.
+ * @param {String} text - the body of text where you want to highlight keywords
+ * @returns {String} text - the text with all highlights.
+ */
+function highlight(keywords, text) {
+
+  var regex = keywords.split(' ');
+  regex = regex.filter(function(char){
+    return char !== '';
+  });
+  regex = regex.join('|');
+  regex = regex.replace(/[-[\]{}()*+?.,\\^$]/g, "\\$&");
+  var matcher = new RegExp(regex, 'gi');
+
+  return text.replace(matcher, wrapper);
+}
+
+var keywordHighlighter = highlight;
+
 // Cool Helpers
 /**
  * Initializes drawer pattern and binds events.
@@ -1650,8 +1694,10 @@ var loadResults = function (count, results, term) {
     results.map(function (result) {
       var section = getClosestHeader(result);
       var nodePos = getOffsetTop(result);
-      var preview = result.innerHTML.length > 60 ? result.innerHTML.slice(0, 60)+'&hellip;' : result.innerHTML;
-      div.insertAdjacentHTML('beforeend', ("\n        <a class=\"search-result\" onclick=\"scrollToPosition(" + nodePos + ")\">\n          <h6 class=\"search-result-header\">" + section + "</h6>\n          <p class=\"search-result-preview\">" + preview + "</p>\n        </a>\n      "));
+      var preview = result.innerHTML;
+      var highlighted = keywordHighlighter(term, preview);
+      console.log(highlighted);
+      div.insertAdjacentHTML('beforeend', ("\n        <a class=\"search-result\" onclick=\"scrollToPosition(" + nodePos + ")\">\n          <h6 class=\"search-result-header\">" + section + "</h6>\n          <p class=\"search-result-preview\">" + highlighted + "</p>\n        </a>\n      "));
     });
   });
   bus.emit('search:render');

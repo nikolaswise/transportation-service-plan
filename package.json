@@ -65,5 +65,8 @@
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3",
     "typeset": "^0.2.2"
+  },
+  "dependencies": {
+    "keyword-highlighter": "^1.0.6"
   }
 }
