@@ -18,7 +18,7 @@
     "test:lib": "tape tests/lib/**/*.js | tap-spec ",
     "test:app": "tape tests/app/**/*.js | tap-spec ",
     "lint": "semistandard | snazzy",
-    "prestage": "postcss --use autoprefixer build/css/style.css -r",
+    "prestage": "postcss build/css/style.css -r -u autoprefixer cssnano && uglifyjs build/js/bundle.js -o build/js/bundle.js -c -m ",
     "stage": "surge build/ -d pbot-tsp.surge.sh"
   },
   "watches": {
@@ -64,9 +64,11 @@
     "static-site": "^1.3.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3",
-    "typeset": "^0.2.2"
+    "typeset": "^0.2.2",
+    "uglify-js": "^3.0.15"
   },
   "dependencies": {
+    "cssnano": "^3.10.0",
     "keyword-highlighter": "^1.0.6"
   }
 }
