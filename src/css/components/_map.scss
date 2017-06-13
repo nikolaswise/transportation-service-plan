@@ -49,15 +49,6 @@
   }
 }
 
-@media (max-width: $single-pane-break) {
-  .map-is-active {
-    .leaflet-top {
-      top: auto;
-      bottom: 2rem;
-    }
-  }
-}
-
 @media print {
   #map,
   .map-frame {

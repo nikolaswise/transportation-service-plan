@@ -390,11 +390,6 @@ a {
 .map-is-active .leaflet-top {
   top: 53px; }
 
-@media (max-width: 1200px) {
-  .map-is-active .leaflet-top {
-    top: auto;
-    bottom: 2rem; } }
-
 @media print {
   #map,
   .map-frame {
@@ -874,11 +869,6 @@ button {
 .map-is-active .leaflet-top {
   top: 53px; }
 
-@media (max-width: 1200px) {
-  .map-is-active .leaflet-top {
-    top: auto;
-    bottom: 2rem; } }
-
 @media print {
   #map,
   .map-frame {
@@ -1081,7 +1071,7 @@ button {
 .pop-up-panel {
   display: none;
   opacity: 0;
-  max-width: 32rem;
+  max-width: 24rem;
   top: 106px;
   background-color: #fafafa;
   box-shadow: 0 0 10px #9ea4a9;
