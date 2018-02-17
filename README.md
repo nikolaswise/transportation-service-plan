@@ -52,3 +52,76 @@ The following are classes set on the body of the HTML to pass information to the
 | js-is-active | Javascript will run on this page. Go for the full experience |
 | map-is-active | The map pane is visible, and the map is drawn. |
 
+---
+
+## My Punchlist
+
+- [ ] Feed a table to Pandoc and see what happens
+- [ ] Tooltip to explain what layers are and what they mean
+- [ ] Disabled state for the layer toggles
+- [ ] Projects: => TSP Projects
+  - [ ] One Toggle Button
+  - [ ] One GIS Layer
+- [ ] Programs: => TSP Projects`
+- [ ] View Reset Button on Map
+- [ ] UX Sidebar => More Washington Posty
+
+---
+
+- Most Recent Proposed Classifications: https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer
+- Adopted Zoning: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39
+
+Centers:
+
+- Regional Centers: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/2
+- Town Centers: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/3
+- Neighborhood Centers: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/4
+
+
+Corridors:
+
+- Civic Corridors: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/5
+- Neighborhood Corridors: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/6
+
+- Taxlots: https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8
+
+
+---
+
+# PBOT Meeting Re: TSP
+
+## Goals:
+
+- Understand completely what is missing from the current document
+- Identify Endpoints for all GIS Layers
+- Identify Content & Data that needs to exist in Popups
+- Identify latest canonical content for Word Doc of the TSP
+- Are there any changes that need to happe in the Word Doc?
+- What are those changes?
+
+## Adopted plan / Word Doc Goodness
+
+### TSP 1
+
+- Needs a confimation of savestate on electronic doc
+
+### TSP 2
+
+- Ironing out some final kinks with document formats
+
+### TSP 3
+
+- Will have all changes from Planning commision on Jan 12th
+- Diretion from Planning
+- Hearing with Council Mar 21
+
+### SuperTSP
+
+- Similar state, needs to have some loose ends reconciled with TSP 2.
+- Comp plan going into effect May 25th, everything live and ready to go.
+
+## My Timleine
+
+- Jan will be app edits and UX updates
+- Feb will be spent wrangling data and working through text edits
+- Mar will be spent putting the final polish on before Councilnik
