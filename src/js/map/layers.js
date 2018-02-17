@@ -246,3 +246,55 @@ export const projPolygonsOther = {
   popup: popupProject('foo', 'bar')
 }
 
+export const taxlots = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}
+
+export const zoning = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}
+
+
+export const centersRegional = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/2',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}
+export const centersTown = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/3',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}
+export const centersNeighborhood = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/4',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}
+export const corridorsCivic = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/5',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}
+export const corridorsNeighborhood = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+}

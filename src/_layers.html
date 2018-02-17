@@ -6,11 +6,11 @@
 
 <form class="sans-serif">
   <fieldset class="layer-panel-section fieldset fieldset-checkbox">
-    <legend class="legend"><b>Projects:</b></legend>
-<!--     <label class="label">
-      <input class="input js-layer-toggle" type="checkbox" data-layers="projectPoints,projectLines,projectPolygons">View All
-    </label> -->
+    <legend class="legend"><b>TSP Projects</b></legend>
     <label class="label">
+      <input class="input js-layer-toggle" type="checkbox" data-layers="projectPoints,projectLines,projectPolygons">View All
+    </label>
+    <!-- <label class="label">
       <input checked class="input js-layer-toggle" type="checkbox" data-layers="projLinesConstrained,projPointsConstrained,projPolygonsConstrained">Constrained
     </label>
     <label class="label">
@@ -21,11 +21,11 @@
     </label>
     <label class="label">
       <input class="input js-layer-toggle" type="checkbox" data-layers="projLinesOther,projPointsOther,projPolygonsOther">Other Agencies
-    </label>
+    </label> -->
   </fieldset>
   <fieldset class="layer-panel-section fieldset fieldset-checkbox">
-    <legend class="legend"><b>Programs:</b></legend>
-    <label class="label">
+    <legend class="legend"><b>TSP Programs</b></legend>
+    <!-- <label class="label">
       <input class="input js-layer-" type="checkbox">View All
     </label>
     <label class="label">
@@ -57,10 +57,10 @@
     </label>
     <label class="label">
       <input class="input js-layer-" type="checkbox">Alternative Street Design
-    </label>
+    </label> -->
   </fieldset>
   <fieldset class="layer-panel-section fieldset fieldset-radio">
-    <legend class="legend"><b>Street Classifications:</b></legend>
+    <legend class="legend"><b>Street Classifications</b></legend>
     <label class="label">
       <input type="radio" checked name="streetClass" class="input js-layer-toggle" checked >None
     </label>
@@ -87,15 +87,15 @@
     </label>
   </fieldset>
   <fieldset class="layer-panel-section fieldset fieldset-checkbox">
-    <legend class="legend"><b>Reference:</b></legend>
+    <legend class="legend"><b>Reference</b></legend>
     <label class="label">
-      <input class="input js-layer-" type="checkbox">Tax Lots
+      <input class="input js-layer-toggle" data-layers="taxlots" type="checkbox">Tax Lots
     </label>
     <label class="label">
-      <input class="input js-layer-" type="checkbox">Zoning
+      <input class="input js-layer-toggle" data-layers="zoning" type="checkbox">Zoning
     </label>
     <label class="label">
-      <input class="input js-layer-" type="checkbox">Centers & Corridors
+      <input class="input js-layer-toggle" data-layers="centersRegional,centersTown,centersNeighborhood,corridorsCivic,corridorsNeighborhood" type="checkbox">Centers & Corridors
     </label>
   </fieldset>
   </form>

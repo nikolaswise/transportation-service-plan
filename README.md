@@ -67,25 +67,6 @@ The following are classes set on the body of the HTML to pass information to the
 - [ ] UX Sidebar => More Washington Posty
 
 ---
-
-- Most Recent Proposed Classifications: https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer
-- Adopted Zoning: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39
-
-Centers:
-
-- Regional Centers: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/2
-- Town Centers: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/3
-- Neighborhood Centers: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/4
-
-
-Corridors:
-
-- Civic Corridors: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/5
-- Neighborhood Corridors: https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/6
-
-- Taxlots: https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8
-
-
 ---
 
 # PBOT Meeting Re: TSP

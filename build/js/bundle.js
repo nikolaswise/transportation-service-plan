@@ -918,7 +918,58 @@ var projPolygonsOther = {
   popup: popupProject('foo', 'bar')
 };
 
+var taxlots = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
 
+var zoning = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+
+
+var centersRegional = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/2',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+var centersTown = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/3',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+var centersNeighborhood = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/4',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+var corridorsCivic = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/5',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+var corridorsNeighborhood = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/6',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
 
 var layers = Object.freeze({
 	designClassifications: designClassifications,
@@ -944,7 +995,14 @@ var layers = Object.freeze({
 	projPolygonsConstrained: projPolygonsConstrained,
 	projPolygonsUnconstrained: projPolygonsUnconstrained,
 	projPolygonsCC2035: projPolygonsCC2035,
-	projPolygonsOther: projPolygonsOther
+	projPolygonsOther: projPolygonsOther,
+	taxlots: taxlots,
+	zoning: zoning,
+	centersRegional: centersRegional,
+	centersTown: centersTown,
+	centersNeighborhood: centersNeighborhood,
+	corridorsCivic: corridorsCivic,
+	corridorsNeighborhood: corridorsNeighborhood
 });
 
 // this stuff is statefull.
