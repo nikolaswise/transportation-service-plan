@@ -32,7 +32,7 @@
     box-sizing: border-box;
     display: block;
     width: 100%;
-    padding: $frame/2 ;
+    padding: $baseline/4 $baseline/2;
     border-bottom: 1px solid $gray;
     &:hover {
       background-color: $lightest-gray;

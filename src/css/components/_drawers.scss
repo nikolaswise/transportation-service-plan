@@ -31,6 +31,7 @@ $opacity-transition: opacity 200ms linear;
 }
 
 @mixin drawer-nav() {
+  border-right: 1px solid $gray;
   position: absolute;
   top: 0;
   bottom: 0;
