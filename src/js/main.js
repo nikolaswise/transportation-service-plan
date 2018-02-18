@@ -41,7 +41,6 @@ const initApp = () => {
   search();
   nubs();
   breadcrumbs();
-
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.

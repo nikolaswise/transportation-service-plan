@@ -5,7 +5,7 @@ import * as aria from './helpers/aria';
 import * as event from './helpers/event';
 import bus from './helpers/bus';
 import highlighter from 'keyword-highlighter';
-
+import scrollTo from './helpers/scroll-to';
 /**
  * Initializes drawer pattern and binds events.
  */
@@ -145,7 +145,7 @@ const showOriginal = () => {
 
 window.scrollToPosition = function (position) {
   let contentArea = document.querySelector('.js-text-area')
-  contentArea.scrollTop = position - 60;
+  scrollTo(contentArea, position - 60)
 }
 
 const getClosestHeader = node => {
