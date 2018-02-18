@@ -7,7 +7,7 @@
   - [x] One Toggle Button
   - [x] One GIS Layer
 - [x] Programs: => TSP Projects`
-- [ ] View Reset Button on Map
+- [x] View Reset Button on Map
 - [ ] UX Sidebar => More Washington Posty
 - [x] Integrate Layers from Kevin
 - [ ] Click on search result => scrollto node
