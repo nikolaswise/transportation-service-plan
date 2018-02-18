@@ -1005,6 +1005,47 @@ var layers = Object.freeze({
 	corridorsNeighborhood: corridorsNeighborhood
 });
 
+var initial = {
+  center: [45.528, -122.63],
+  zoom: 12
+};
+
+var ZoomMin = L.Control.Zoom.extend({
+  options: {
+    position: "topright",
+    zoomInText: "+",
+    zoomInTitle: "Zoom in",
+    zoomOutText: "-",
+    zoomOutTitle: "Zoom out",
+    zoomMinText: "Zoom min",
+    zoomMinTitle: "Zoom min"
+  },
+
+  onAdd: function (map) {
+    var zoomName = "leaflet-control-zoom"
+      , container = L.DomUtil.create("div", zoomName + " leaflet-bar")
+      , options = this.options;
+
+    this._map = map;
+
+    this._zoomInButton = this._createButton(options.zoomInText, options.zoomInTitle,
+     zoomName + '-in', container, this._zoomIn, this);
+
+    this._zoomOutButton = this._createButton(options.zoomOutText, options.zoomOutTitle,
+     zoomName + '-out', container, this._zoomOut, this);
+
+    this._zoomMinButton = this._createButton(options.zoomMinText, options.zoomMinTitle,
+     zoomName + '-min', container, this._zoomMin, this);
+
+
+    return container
+  },
+
+  _zoomMin: function () {
+    this._map.flyTo(initial.center, initial.zoom);
+  }
+});
+
 // this stuff is statefull.
 var map;
 var position = {
@@ -1020,6 +1061,7 @@ var drawMap = function () {
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
+    minZoom: 12,
     zoom: position.zoom,
     zoomControl: false,
     scrollWheelZoom: false
@@ -1045,7 +1087,8 @@ var drawMap = function () {
  */
 
 var createGeocoder = function () {
-  map.addControl(window.L.control.zoom({position: 'topright'}));
+  // map.addControl(window.L.control.zoom({position: 'topright'}));
+  map.addControl(new ZoomMin);
 
   var pdxGeocoder = window.L.esri.Geocoding.geocodeServiceProvider({
     url: 'https://www.portlandmaps.com/locator/Default/GeocodeServer'

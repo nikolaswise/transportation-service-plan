@@ -1,6 +1,7 @@
 import * as dom from '../helpers/dom.js';
 import bus from '../helpers/bus.js';
 import * as layers from './layers';
+import ZoomMin from '../lib/L.Control.ZoomMin.js'
 
 // this stuff is statefull.
 let map;
@@ -17,6 +18,7 @@ const drawMap = () => {
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
+    minZoom: 12,
     zoom: position.zoom,
     zoomControl: false,
     scrollWheelZoom: false
@@ -42,7 +44,8 @@ const drawMap = () => {
  */
 
 const createGeocoder = () => {
-  map.addControl(window.L.control.zoom({position: 'topright'}));
+  // map.addControl(window.L.control.zoom({position: 'topright'}));
+  map.addControl(new ZoomMin)
 
   var pdxGeocoder = window.L.esri.Geocoding.geocodeServiceProvider({
     url: 'https://www.portlandmaps.com/locator/Default/GeocodeServer'
