@@ -1942,6 +1942,10 @@ var breadcrumbs = function () {
   bus.on('breadscrumbs:active', draw);
 };
 
+var scrollToAnchor = function () {
+  console.log('a[href^="#"]');
+};
+
 // The JS Checker
 // Neat Helpers
 // View and Intent
@@ -1971,6 +1975,7 @@ var initApp = function () {
   search();
   nubs();
   breadcrumbs();
+  scrollToAnchor();
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.
