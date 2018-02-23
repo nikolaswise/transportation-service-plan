@@ -10,6 +10,6 @@
 - [x] View Reset Button on Map
 - [ ] UX Sidebar => More Washington Posty
 - [x] Integrate Layers from Kevin
-- [ ] Click on search result => scrollto node
-- [ ] Click on nav thingy, scroll to node
+- [x] Click on search result => scrollto node
+- [x] Click on nav thingy, scroll to node
 - [ ] add most recent classifications

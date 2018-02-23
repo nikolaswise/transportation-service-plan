@@ -33,7 +33,13 @@
   border-bottom: 0.25em solid $blue;
   border-left:   0.25em solid $blue;
   border-right:  0.25em solid $blue;
+  &.is-disabled,
+  &:disabled {
+    background-color: $lighter-gray;
+    color: $darkest-gray;
+  }
 }
+
 .input {
   position: absolute;
   top: 0;
@@ -55,6 +61,11 @@
 .input:checked {
   &:before {
     background-color: $blue;
+  }
+}
+.input:disabled {
+  &:before {
+    background-color: $light-gray;
   }
 }
 

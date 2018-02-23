@@ -902,6 +902,9 @@ button {
   border-bottom: 0.25em solid #00a0ae;
   border-left: 0.25em solid #00a0ae;
   border-right: 0.25em solid #00a0ae; }
+  .label.is-disabled, .label:disabled {
+    background-color: #e4e6e7;
+    color: #51575c; }
 
 .input {
   position: absolute;
@@ -922,6 +925,9 @@ button {
 
 .input:checked:before {
   background-color: #00a0ae; }
+
+.input:disabled:before {
+  background-color: #d4d7d9; }
 
 .modal-overlay {
   position: fixed;
