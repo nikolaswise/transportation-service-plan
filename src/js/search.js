@@ -4,6 +4,7 @@ import * as classy from './helpers/classy';
 import * as aria from './helpers/aria';
 import * as event from './helpers/event';
 import bus from './helpers/bus';
+import getOffsetTop from './helpers/get-offset-top';
 import highlighter from 'keyword-highlighter';
 import scrollTo from './helpers/scroll-to';
 /**
@@ -22,18 +23,6 @@ if (!String.prototype.includes) {
       return this.indexOf(search, start) !== -1;
     }
   };
-}
-
-function getOffsetTop( elem )
-{
-    var offsetTop = 0;
-    do {
-      if ( !isNaN( elem.offsetTop ) )
-      {
-          offsetTop += elem.offsetTop;
-      }
-    } while( elem = elem.offsetParent );
-    return offsetTop;
 }
 
 // this is prolly not so good

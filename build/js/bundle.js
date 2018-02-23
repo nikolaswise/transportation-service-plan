@@ -1586,6 +1586,18 @@ function drawer () {
   bus.emit('drawer:bind');
 }
 
+function getOffsetTop( elem )
+{
+    var offsetTop = 0;
+    do {
+      if ( !isNaN( elem.offsetTop ) )
+      {
+          offsetTop += elem.offsetTop;
+      }
+    } while( elem = elem.offsetParent );
+    return offsetTop;
+}
+
 var options = {
   startTag : "<b class='highlight'>", // could be a hyperlink
   endTag   : "</b>" // or you could use <i> instead of <b> ... want it? ask!
@@ -1706,18 +1718,6 @@ if (!String.prototype.includes) {
       return this.indexOf(search, start) !== -1;
     }
   };
-}
-
-function getOffsetTop( elem )
-{
-    var offsetTop = 0;
-    do {
-      if ( !isNaN( elem.offsetTop ) )
-      {
-          offsetTop += elem.offsetTop;
-      }
-    } while( elem = elem.offsetParent );
-    return offsetTop;
 }
 
 // this is prolly not so good
@@ -1942,8 +1942,20 @@ var breadcrumbs = function () {
   bus.on('breadscrumbs:active', draw);
 };
 
-var scrollToAnchor = function () {
-  console.log('a[href^="#"]');
+var bind = function () {
+  var contentArea = document.querySelector('.js-text-area');
+  var anchors = Array.apply(void 0, document.querySelectorAll('a'));
+  var internals = anchors.filter(function (a) { return a.attributes.href.value.charAt(0) == '#'; });
+  internals.forEach(function (a) {
+    var id = a.attributes.href.value;
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log(id);
+      var node = document.querySelector(id);
+      var position = getOffsetTop(node) - 60;
+      scrollTo(contentArea, position);
+    });
+  });
 };
 
 // The JS Checker
@@ -1975,7 +1987,7 @@ var initApp = function () {
   search();
   nubs();
   breadcrumbs();
-  scrollToAnchor();
+  bind();
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.
