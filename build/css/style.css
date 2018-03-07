@@ -995,8 +995,7 @@ button {
   width: 300px;
   margin: 0;
   list-style: none;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
   transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88); }
@@ -1235,7 +1234,7 @@ button {
   margin-right: 5px;
   bottom: 50%;
   margin-bottom: inherit;
-  transform: translateY(-50%); }
+  transform: translateY(50%); }
 
 .tooltip-left:before {
   top: 50%;
