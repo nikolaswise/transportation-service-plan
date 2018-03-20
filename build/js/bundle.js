@@ -1285,7 +1285,6 @@ var zoomToFeature = function (feature) {
 
 var drawLegend = function (layers) {
   var legend = document.querySelector('.js-legend');
-  console.log(legend);
   legend.innerHTML = 'Viewing:';
   layers = layers.filter(function (layer) {
     return layer.getAttribute('data-layers') != null
@@ -1293,6 +1292,9 @@ var drawLegend = function (layers) {
   layers.forEach(function (layer) {
     legend.insertAdjacentHTML('beforeend', ("\n      <span class=\"legend-layer\">\n        " + (layer.getAttribute('data-layers')) + ",\n      </span>\n    "));
   });
+  if ( layers.length < 1 ) {
+    legend.insertAdjacentHTML('beforeend', "None");
+  }
 };
 
 /**

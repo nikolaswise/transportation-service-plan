@@ -242,7 +242,6 @@ const zoomToFeature = feature => {
 
 const drawLegend = layers => {
   let legend = document.querySelector('.js-legend')
-  console.log(legend)
   legend.innerHTML = 'Viewing:'
   layers = layers.filter(layer => {
     return layer.getAttribute('data-layers') != null
@@ -254,6 +253,9 @@ const drawLegend = layers => {
       </span>
     `)
   })
+  if ( layers.length < 1 ) {
+    legend.insertAdjacentHTML('beforeend', `None`)
+  }
 }
 
 /**

@@ -66,8 +66,8 @@ The following are classes set on the body of the HTML to pass information to the
 - [x] View Reset Button on Map
 - [x] UX Sidebar => More Washington Posty
 - [ ] 'PDF this Section'
-- [ ] Slide in the subsections on sidebar
-- [ ] add currenty showing block in footer og map
+- [x] Slide in the subsections on sidebar
+- [x] add currenty showing block in footer og map
 - [ ] sortable table of gis endpoint
 	- [ ] i need endpoints
 	- [ ] fields to show
