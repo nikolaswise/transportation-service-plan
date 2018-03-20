@@ -100,10 +100,10 @@ const toggleControl = () => {
  * Hides the layer control panel
  */
 const closeControl = () => {
-  let controlPanel = document.querySelector('.js-layer-control-panel');
-  if (classy.has(controlPanel, 'is-active')) {
-    classy.remove(controlPanel, 'is-active');
-  }
+  // let controlPanel = document.querySelector('.js-layer-control-panel');
+  // if (classy.has(controlPanel, 'is-active')) {
+  //   classy.remove(controlPanel, 'is-active');
+  // }
 };
 
 /**

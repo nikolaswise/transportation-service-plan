@@ -17,6 +17,7 @@ import drawer from './drawers.js';
 import search from './search.js';
 import nubs from './chapter-nubs.js';
 import breadcrumbs from './breadcrumbs.js';
+import toc from './toc.js';
 import scrollToAnchor from './helpers/scroll-to-anchor.js';
 /**
  * Initializes app and app components.
@@ -43,6 +44,7 @@ const initApp = () => {
   nubs();
   breadcrumbs();
   scrollToAnchor();
+  toc();
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.
