@@ -168,7 +168,9 @@ const removeLayer = layer => {
  * Adds any layers indicated as active from the layer toggle list to the map.
  */
 const drawLayers = () => {
-  getActiveLayers().forEach((toggle) => {
+  let layers = getActiveLayers()
+  bus.emit('map:legend', layers);
+  layers.forEach((toggle) => {
     let layerSet = toggle.getAttribute('data-layers');
     bus.emit('map:layer:add', layerSet);
   });
@@ -238,6 +240,22 @@ const zoomToFeature = feature => {
   }
 };
 
+const drawLegend = layers => {
+  let legend = document.querySelector('.js-legend')
+  console.log(legend)
+  legend.innerHTML = 'Viewing:'
+  layers = layers.filter(layer => {
+    return layer.getAttribute('data-layers') != null
+  })
+  layers.forEach(layer => {
+    legend.insertAdjacentHTML('beforeend', `
+      <span class="legend-layer">
+        ${layer.getAttribute('data-layers')},
+      </span>
+    `)
+  })
+}
+
 /**
  * Binds all side effect listeners, exposes the API, and draws the map
  */
@@ -254,4 +272,5 @@ export default function () {
   bus.on('map:layer:add', addLayers);
   bus.on('map:layer:remove', removeLayers);
   bus.on('layer:reset', resetLayerStyle);
+  bus.on('map:legend', drawLegend);
 }

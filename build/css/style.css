@@ -361,6 +361,12 @@ a {
   background: #fafafa;
   transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
+.map-legend {
+  position: absolute;
+  bottom: 13.25px;
+  left: 13.25px;
+  font-size: 0.833rem; }
+
 .map-frame {
   background-color: #fafafa;
   position: absolute;
@@ -851,6 +857,12 @@ button {
   z-index: 0;
   background: #fafafa;
   transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.map-legend {
+  position: absolute;
+  bottom: 13.25px;
+  left: 13.25px;
+  font-size: 0.833rem; }
 
 .map-frame {
   background-color: #fafafa;

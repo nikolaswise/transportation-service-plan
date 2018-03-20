@@ -1211,7 +1211,9 @@ var removeLayer = function (layer) {
  * Adds any layers indicated as active from the layer toggle list to the map.
  */
 var drawLayers = function () {
-  getActiveLayers().forEach(function (toggle) {
+  var layers = getActiveLayers();
+  bus.emit('map:legend', layers);
+  layers.forEach(function (toggle) {
     var layerSet = toggle.getAttribute('data-layers');
     bus.emit('map:layer:add', layerSet);
   });
@@ -1281,6 +1283,18 @@ var zoomToFeature = function (feature) {
   }
 };
 
+var drawLegend = function (layers) {
+  var legend = document.querySelector('.js-legend');
+  console.log(legend);
+  legend.innerHTML = 'Viewing:';
+  layers = layers.filter(function (layer) {
+    return layer.getAttribute('data-layers') != null
+  });
+  layers.forEach(function (layer) {
+    legend.insertAdjacentHTML('beforeend', ("\n      <span class=\"legend-layer\">\n        " + (layer.getAttribute('data-layers')) + ",\n      </span>\n    "));
+  });
+};
+
 /**
  * Binds all side effect listeners, exposes the API, and draws the map
  */
@@ -1297,6 +1311,7 @@ var map$1 = function () {
   bus.on('map:layer:add', addLayers);
   bus.on('map:layer:remove', removeLayers);
   bus.on('layer:reset', resetLayerStyle);
+  bus.on('map:legend', drawLegend);
 };
 
 // ┌────────────────┐

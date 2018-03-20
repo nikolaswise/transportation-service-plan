@@ -80,6 +80,16 @@ The following are classes set on the body of the HTML to pass information to the
 
 ---
 
+Nik,
+
+Attached is the TSP presentation for the City Council on Wednesday at 2pm. You’ll see we have a placeholder toward the end for you and Kevin to show off the online document. We do need a link to what you are planning to show so that it can be ready to go ahead of time. Could you please send us a link by end of day today?
+
+Thank you,
+
+Bob
+
+---
+
 Reminder we are at City Council on Wednesday, March 21 @ 2:00. City Hall, Council Chambers (2nd floor).
 
 Bob and I are doing a presentation. We would like you and Kevin to join at the table about 1/.2 day through to do a quick 5-8 minutes on the digital document. Focus on what is there vs what is not there, how it will interface for staff and citizens, making it easy to view, search, access information, and update for staff.

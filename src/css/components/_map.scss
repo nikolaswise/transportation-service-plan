@@ -12,6 +12,13 @@
   transition: $transition;
 }
 
+.map-legend {
+  position: absolute;
+  bottom: $frame/4;
+  left: $frame/4;
+  font-size: $pt10;
+}
+
 .map-frame {
   background-color: $off-white;
   position: absolute;
