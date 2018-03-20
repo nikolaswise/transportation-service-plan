@@ -918,6 +918,22 @@ var projPolygonsOther = {
   popup: popupProject('foo', 'bar')
 };
 
+var bikeProgram = {
+  features: window.L.esri.featureLayer({
+    url: 'https://services.arcgis.com/quVN97tn06YNGj9s/arcgis/rest/services/TSPBikePrograms_temp_2018_03_15/FeatureServer/0',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+
+var greenwayProgram = {
+  features: window.L.esri.featureLayer({
+    url: 'https://services.arcgis.com/quVN97tn06YNGj9s/arcgis/rest/services/TSPBikePrograms_temp_2018_03_15/FeatureServer/1',
+    pane: 'bottom'
+  }),
+  popup: popupProject('foo', 'bar')
+};
+
 var taxlots = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
@@ -929,7 +945,8 @@ var taxlots = {
 var zoning = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39',
-    pane: 'bottom'
+    pane: 'bottom',
+    style: function (feature) { return ({fillOpacity: 0.2}); }
   }),
   popup: popupProject('foo', 'bar')
 };
@@ -996,6 +1013,8 @@ var layers = Object.freeze({
 	projPolygonsUnconstrained: projPolygonsUnconstrained,
 	projPolygonsCC2035: projPolygonsCC2035,
 	projPolygonsOther: projPolygonsOther,
+	bikeProgram: bikeProgram,
+	greenwayProgram: greenwayProgram,
 	taxlots: taxlots,
 	zoning: zoning,
 	centersRegional: centersRegional,
