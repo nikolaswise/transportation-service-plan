@@ -1980,7 +1980,13 @@ var breadcrumbs = function () {
 
 var close = function () {
   var nodes = Array.apply(void 0, document.querySelectorAll('.toc ul li ul'));
+  var moreNodes = Array.apply(void 0, document.querySelectorAll('.toc ul'));
   nodes.forEach(function (node) {
+    if (has(node, 'is-active')) {
+      remove(node, 'is-active');
+    }
+  });
+  moreNodes.forEach(function (node) {
     if (has(node, 'is-active')) {
       remove(node, 'is-active');
     }
@@ -1997,22 +2003,27 @@ var bind = function () {
   links.forEach(function (link) {
     link.addEventListener('click', function (e) {
       var parent = e.target.parentNode;
+      var grandpappy = parent.parentNode.parentNode;
       bus.emit('toc:toggle', parent);
+      bus.emit('toc:toggle', grandpappy);
+    });
+  });
+  var backs = Array.apply(void 0, document.querySelectorAll('.toc ul li ul'));
+  backs.forEach(function (back) {
+    back.addEventListener('click', function (e) {
+      bus.emit('toc:close');
     });
   });
 };
 
 
 var listen = function () {
-  console.log('on slider bind, bind');
-  console.log('on close, close');
-  console.log('on open, open');
   bus.on('toc:bind', bind);
   bus.on('toc:toggle', toggle$1);
   bus.on('toc:close', close);
   bus.on('keyboard:escape', close);
   bus.on('drawer:close', close);
-
+  bus.on('keyboard:arrow:left', close);
   bus.emit('toc:bind');
 };
 

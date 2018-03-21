@@ -19,7 +19,7 @@
     "test:app": "tape tests/app/**/*.js | tap-spec ",
     "lint": "semistandard | snazzy",
     "prestage": "postcss build/css/style.css -r -u autoprefixer cssnano && uglifyjs build/js/bundle.js -o build/js/bundle.js -c -m ",
-    "stage": "surge build/ -d tsp.department.company"
+    "stage": "surge build/ -d pbot-tsp.surge.sh"
   },
   "watches": {
     "html": [

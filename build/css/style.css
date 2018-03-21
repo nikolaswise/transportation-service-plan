@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Always show vertical scroll bars, standardize type size*/
 html {
   overflow-y: scroll;
@@ -589,17 +590,33 @@ button {
   position: relative;
   padding-left: 0;
   margin: 0;
-  background-color: white; }
+  background-color: white;
+  transform: translate3d(0, 0, 0);
+  transition: transform 300ms ease-in-out; }
   .toc ul.is-active {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-100%, 0, 0);
     transition: transform 300ms ease-in-out; }
   .toc ul ul {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    transform: translate3d(100%, 0, 0);
+    border-bottom: 1px solid #c4c7ca;
+    transform: translate3d(200%, 0, 0);
     transition: transform 300ms ease-in-out; }
+    .toc ul ul:hover {
+      background-color: #f1f2f3; }
+    .toc ul ul.is-active {
+      transform: translate3d(100%, 0, 0);
+      transition: transform 300ms ease-in-out; }
+    .toc ul ul:after {
+      content: '← Back';
+      display: block;
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer; }
 
 .toc li {
   padding: 0; }
@@ -610,7 +627,8 @@ button {
   display: block;
   width: 100%;
   padding: 0.4rem 0.8rem;
-  border-bottom: 1px solid #c4c7ca; }
+  border-bottom: 1px solid #c4c7ca;
+  background-color: white; }
   .toc a:hover {
     background-color: #f1f2f3; }
 
