@@ -1,0 +1,159 @@
+<div class="text-container">
+  <div class="text-block">
+    <h1 id="data-tables">Data Tables</h1>
+    <script src='/js/tablesort.js'></script>
+
+    <!-- Include sort types you need -->
+    <script src='/js/tablesort.number.js'></script>
+    <script src='/js/tablesort.date.js'></script>
+
+    <h2>Greenways</h2>
+    <div class="table-wrapper">
+      <div class="clusterize">
+        <div id="classificationsScroll" class="clusterize-scroll">
+          <table id="greenway-gis-table">
+            <thead>
+            <!-- <tr class="clusterize-no-data">
+              <th>Loading data…</th>
+            </tr> -->
+            <tr>
+              <th role="columnheader">ID</th>
+              <th role="columnheader">Status</th>
+              <th role="columnheader">Facility</th>
+              <th role="columnheader">Segment Name</th>
+              <th role="columnheader">ProjectNum</th>
+            </tr>
+          </thead>
+            <tbody id="classificationsContent" class="clusterize-content">
+              <tr><td>1</td><td>RECOMM</td><td>NG</td><td>N CHARLESTON AVE</td><td>NA</td></tr>
+              <tr><td>2</td><td>RECOMM</td><td>NG</td><td>NW 8TH AVE</td><td>8184</td></tr>
+              <tr><td>3</td><td>RECOMM</td><td>NG</td><td>MT HOOD TRAIL</td><td>NA</td></tr>
+              <tr><td>4</td><td>RECOMM</td><td>NG</td><td>MT TABOR</td><td>NA</td></tr>
+              <tr><td>5</td><td>RECOMM</td><td>NG</td><td>N AINSWORTH ST</td><td>NA</td></tr>
+              <tr><td>6</td><td>RECOMM</td><td>NG</td><td>N ALBERTA ST</td><td>NA</td></tr>
+              <tr><td>7</td><td>RECOMM</td><td>NG</td><td>N AMHERST ST</td><td>8330</td></tr>
+              <tr><td>8</td><td>RECOMM</td><td>NG</td><td>N ARGYLE ST</td><td>NA</td></tr>
+              <tr><td>9</td><td>RECOMM</td><td>NG</td><td>N ARLINGTON PL</td><td>NA</td></tr>
+              <tr><td>10</td><td>RECOMM</td><td>NG</td><td>N BALLAST ST</td><td>8008</td></tr>
+              <tr><td>11</td><td>RECOMM</td><td>NG</td><td>N BALTIMORE AVE</td><td>NA</td></tr>
+              <tr><td>12</td><td>RECOMM</td><td>NG</td><td>N BALTIMORE AVE</td><td>8148</td></tr>
+              <tr><td>13</td><td>RECOMM</td><td>NG</td><td>N BERKELEY AVE</td><td>8326</td></tr>
+              <tr><td>14</td><td>RECOMM</td><td>NG</td><td>N BRIDGETON RD</td><td>8171</td></tr>
+              <tr><td>15</td><td>RECOMM</td><td>NG</td><td>N BURR AVE</td><td>8017</td></tr>
+              <tr><td>16</td><td>RECOMM</td><td>NG</td><td>N CHARLESTON AVE</td><td>8025</td></tr>
+              <tr><td>17</td><td>RECOMM</td><td>NG</td><td>N COLUMBIA BLVD</td><td>NA</td></tr>
+              <tr><td>18</td><td>RECOMM</td><td>NG</td><td>N COMMERCE ST</td><td>8033</td></tr>
+              <tr><td>19</td><td>RECOMM</td><td>NG</td><td>N COMMERCIAL AVE</td><td>NA</td></tr>
+              <tr><td>20</td><td>RECOMM</td><td>NG</td><td>N COOK ST</td><td>8151</td></tr>
+              <tr><td>21</td><td>RECOMM</td><td>NG</td><td>N DECATUR ST</td><td>NA</td></tr>
+              <tr><td>22</td><td>RECOMM</td><td>NG</td><td>N DEKUM ST</td><td>8016</td></tr>
+              <tr><td>23</td><td>RECOMM</td><td>NG</td><td>N DELAWARE AVE</td><td>NA</td></tr>
+              <tr><td>24</td><td>RECOMM</td><td>NG</td><td>N DELAWARE AVE</td><td>8036</td></tr>
+              <tr><td>25</td><td>RECOMM</td><td>NG</td><td>N DENVER AVE</td><td>8038</td></tr>
+              <tr><td>26</td><td>RECOMM</td><td>NG</td><td>N DIXON ST</td><td>NA</td></tr>
+              <tr><td>27</td><td>RECOMM</td><td>NG</td><td>N EDGEWATER ST</td><td>NA</td></tr>
+              <tr><td>28</td><td>RECOMM</td><td>NG</td><td>N EMERSON ST</td><td>NA</td></tr>
+              <tr><td>29</td><td>RECOMM</td><td>NG</td><td>N FAILING ST</td><td>8072</td></tr>
+              <tr><td>30</td><td>RECOMM</td><td>NG</td><td>N FARRAGUT ST</td><td>NA</td></tr>
+              <tr><td>31</td><td>RECOMM</td><td>NG</td><td>N FIR AVE</td><td>NA</td></tr>
+              <tr><td>32</td><td>RECOMM</td><td>NG</td><td>N FISKE AVE</td><td>8049</td></tr>
+              <tr><td>33</td><td>RECOMM</td><td>NG</td><td>N FLINT AVE</td><td>NA</td></tr>
+              <tr><td>34</td><td>RECOMM</td><td>NG</td><td>N GILBERT AVE</td><td>NA</td></tr>
+              <tr><td>35</td><td>RECOMM</td><td>NG</td><td>N GILBERT AVE</td><td>8111</td></tr>
+              <tr><td>36</td><td>RECOMM</td><td>NG</td><td>N HAIGHT AVE</td><td>NA</td></tr>
+              <tr><td>37</td><td>RECOMM</td><td>NG</td><td>N HALLECK ST</td><td>8056</td></tr>
+              <tr><td>38</td><td>RECOMM</td><td>NG</td><td>N HIGHLAND ST</td><td>NA</td></tr>
+              <tr><td>39</td><td>RECOMM</td><td>NG</td><td>N HOUGHTON ST</td><td>8049</td></tr>
+              <tr><td>40</td><td>RECOMM</td><td>NG</td><td>N INTERSTATE PL</td><td>NA</td></tr>
+              <tr><td>41</td><td>RECOMM</td><td>NG</td><td>N JANTZEN AVE</td><td>NA</td></tr>
+              <tr><td>42</td><td>RECOMM</td><td>NG</td><td>N JARRETT ST</td><td>NA</td></tr>
+              <tr><td>43</td><td>RECOMM</td><td>NG</td><td>N JERSEY ST</td><td>8091</td></tr>
+              <tr><td>44</td><td>RECOMM</td><td>NG</td><td>N KENTON BLVD</td><td>NA</td></tr>
+              <tr><td>45</td><td>RECOMM</td><td>NG</td><td>N KERBY AVE</td><td>NA</td></tr>
+              <tr><td>46</td><td>RECOMM</td><td>NG</td><td>N KILPATRICK ST</td><td>8056</td></tr>
+              <tr><td>47</td><td>RECOMM</td><td>NG</td><td>N MACRUM AVE</td><td>8119</td></tr>
+              <tr><td>48</td><td>RECOMM</td><td>NG</td><td>N MASON ST</td><td>8124</td></tr>
+              <tr><td>49</td><td>RECOMM</td><td>NG</td><td>N MCCLELLAN ST</td><td>NA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+<h2>Bikeway Completion</h2>
+    <div class="table-wrapper">
+      <div class="clusterize">
+        <div id="classificationsScroll" class="clusterize-scroll">
+          <table id="bikeway-gis-table">
+            <thead>
+            <tr>
+              <th role="columnheader">ID</th>
+              <th role="columnheader">Status</th>
+              <th role="columnheader">Facility</th>
+              <th role="columnheader">Segment Name</th>
+              <th role="columnheader">ProjectNum</th>
+            </tr>
+          </thead>
+            <tbody id="classificationsContent" class="clusterize-content">
+              <tr><td>1</td><td>RECOMM</td><td>NG</td><td>N CHARLESTON AVE</td><td>NA</td></tr>
+              <tr><td>2</td><td>RECOMM</td><td>NG</td><td>NW 8TH AVE</td><td>8184</td></tr>
+              <tr><td>3</td><td>RECOMM</td><td>NG</td><td>MT HOOD TRAIL</td><td>NA</td></tr>
+              <tr><td>4</td><td>RECOMM</td><td>NG</td><td>MT TABOR</td><td>NA</td></tr>
+              <tr><td>5</td><td>RECOMM</td><td>NG</td><td>N AINSWORTH ST</td><td>NA</td></tr>
+              <tr><td>6</td><td>RECOMM</td><td>NG</td><td>N ALBERTA ST</td><td>NA</td></tr>
+              <tr><td>7</td><td>RECOMM</td><td>NG</td><td>N AMHERST ST</td><td>8330</td></tr>
+              <tr><td>8</td><td>RECOMM</td><td>NG</td><td>N ARGYLE ST</td><td>NA</td></tr>
+              <tr><td>9</td><td>RECOMM</td><td>NG</td><td>N ARLINGTON PL</td><td>NA</td></tr>
+              <tr><td>10</td><td>RECOMM</td><td>NG</td><td>N BALLAST ST</td><td>8008</td></tr>
+              <tr><td>11</td><td>RECOMM</td><td>NG</td><td>N BALTIMORE AVE</td><td>NA</td></tr>
+              <tr><td>12</td><td>RECOMM</td><td>NG</td><td>N BALTIMORE AVE</td><td>8148</td></tr>
+              <tr><td>13</td><td>RECOMM</td><td>NG</td><td>N BERKELEY AVE</td><td>8326</td></tr>
+              <tr><td>14</td><td>RECOMM</td><td>NG</td><td>N BRIDGETON RD</td><td>8171</td></tr>
+              <tr><td>15</td><td>RECOMM</td><td>NG</td><td>N BURR AVE</td><td>8017</td></tr>
+              <tr><td>16</td><td>RECOMM</td><td>NG</td><td>N CHARLESTON AVE</td><td>8025</td></tr>
+              <tr><td>17</td><td>RECOMM</td><td>NG</td><td>N COLUMBIA BLVD</td><td>NA</td></tr>
+              <tr><td>18</td><td>RECOMM</td><td>NG</td><td>N COMMERCE ST</td><td>8033</td></tr>
+              <tr><td>19</td><td>RECOMM</td><td>NG</td><td>N COMMERCIAL AVE</td><td>NA</td></tr>
+              <tr><td>20</td><td>RECOMM</td><td>NG</td><td>N COOK ST</td><td>8151</td></tr>
+              <tr><td>21</td><td>RECOMM</td><td>NG</td><td>N DECATUR ST</td><td>NA</td></tr>
+              <tr><td>22</td><td>RECOMM</td><td>NG</td><td>N DEKUM ST</td><td>8016</td></tr>
+              <tr><td>23</td><td>RECOMM</td><td>NG</td><td>N DELAWARE AVE</td><td>NA</td></tr>
+              <tr><td>24</td><td>RECOMM</td><td>NG</td><td>N DELAWARE AVE</td><td>8036</td></tr>
+              <tr><td>25</td><td>RECOMM</td><td>NG</td><td>N DENVER AVE</td><td>8038</td></tr>
+              <tr><td>26</td><td>RECOMM</td><td>NG</td><td>N DIXON ST</td><td>NA</td></tr>
+              <tr><td>27</td><td>RECOMM</td><td>NG</td><td>N EDGEWATER ST</td><td>NA</td></tr>
+              <tr><td>28</td><td>RECOMM</td><td>NG</td><td>N EMERSON ST</td><td>NA</td></tr>
+              <tr><td>29</td><td>RECOMM</td><td>NG</td><td>N FAILING ST</td><td>8072</td></tr>
+              <tr><td>30</td><td>RECOMM</td><td>NG</td><td>N FARRAGUT ST</td><td>NA</td></tr>
+              <tr><td>31</td><td>RECOMM</td><td>NG</td><td>N FIR AVE</td><td>NA</td></tr>
+              <tr><td>32</td><td>RECOMM</td><td>NG</td><td>N FISKE AVE</td><td>8049</td></tr>
+              <tr><td>33</td><td>RECOMM</td><td>NG</td><td>N FLINT AVE</td><td>NA</td></tr>
+              <tr><td>34</td><td>RECOMM</td><td>NG</td><td>N GILBERT AVE</td><td>NA</td></tr>
+              <tr><td>35</td><td>RECOMM</td><td>NG</td><td>N GILBERT AVE</td><td>8111</td></tr>
+              <tr><td>36</td><td>RECOMM</td><td>NG</td><td>N HAIGHT AVE</td><td>NA</td></tr>
+              <tr><td>37</td><td>RECOMM</td><td>NG</td><td>N HALLECK ST</td><td>8056</td></tr>
+              <tr><td>38</td><td>RECOMM</td><td>NG</td><td>N HIGHLAND ST</td><td>NA</td></tr>
+              <tr><td>39</td><td>RECOMM</td><td>NG</td><td>N HOUGHTON ST</td><td>8049</td></tr>
+              <tr><td>40</td><td>RECOMM</td><td>NG</td><td>N INTERSTATE PL</td><td>NA</td></tr>
+              <tr><td>41</td><td>RECOMM</td><td>NG</td><td>N JANTZEN AVE</td><td>NA</td></tr>
+              <tr><td>42</td><td>RECOMM</td><td>NG</td><td>N JARRETT ST</td><td>NA</td></tr>
+              <tr><td>43</td><td>RECOMM</td><td>NG</td><td>N JERSEY ST</td><td>8091</td></tr>
+              <tr><td>44</td><td>RECOMM</td><td>NG</td><td>N KENTON BLVD</td><td>NA</td></tr>
+              <tr><td>45</td><td>RECOMM</td><td>NG</td><td>N KERBY AVE</td><td>NA</td></tr>
+              <tr><td>46</td><td>RECOMM</td><td>NG</td><td>N KILPATRICK ST</td><td>8056</td></tr>
+              <tr><td>47</td><td>RECOMM</td><td>NG</td><td>N MACRUM AVE</td><td>8119</td></tr>
+              <tr><td>48</td><td>RECOMM</td><td>NG</td><td>N MASON ST</td><td>8124</td></tr>
+              <tr><td>49</td><td>RECOMM</td><td>NG</td><td>N MCCLELLAN ST</td><td>NA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      new Tablesort(document.getElementById('greenway-gis-table'));
+      new Tablesort(document.getElementById('bikeway-gis-table'));
+    </script>
+
+  </div>
+</div>

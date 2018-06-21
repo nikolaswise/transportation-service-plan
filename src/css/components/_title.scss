@@ -1,7 +1,7 @@
 .title {
   position: relative;
   z-index: 10;
-  background-color: $blue;
+  background-color: $off-white;
   border-bottom: 2rem solid #60AFAF;
 }
 
@@ -10,25 +10,15 @@
   margin: $font-size;
 }
 
-.title-buffer {
-  padding-top: $baseline * 2;
-}
-
 .title-header {
-  letter-spacing: 0.05em;
-  white-space: pre;
-  font-weight: 500;
-  font-size: $pt21;
-  line-height: $baseline*1.5;
-  color: $off-white;
-  font-family: $system-sans;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .title-image {
-  opacity: 0.75;
-  img {
-    width: 100%;
-  }
+  mix-blend-mode: multiply;
 }
 
 .title-branding {
@@ -39,18 +29,23 @@
   width: 50%;
   margin-right: 50%;
   float: left;
-  border-bottom: 3px solid $off-white;
 }
 
 .title-subhead {
   font-size: $pt12;
-  color: $off-white;
   font-family: $system-sans;
   font-weight: 300;
   letter-spacing: 0.05em;
-  margin-bottom: $pt6
+  margin-top: 2 * $baseline;
+  margin-bottom: 0;
 }
-
+.title-subsubhead {
+  font-size: $pt12;
+  font-family: $system-sans;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
 
 @media (max-width: $single-pane-break) {
   .title-buffer {
