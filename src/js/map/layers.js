@@ -5,6 +5,7 @@ import popupRenderer from './classification-renderer';
 import popupProject from './project-renderer';
 import popupZoning from './zoning-renderer';
 import popupTaxlots from './taxlots-renderer';
+import popupCenters from './centers-renderer';
 
 /**
  * @property {object} designClassifications          - Object for GIS layer
@@ -267,7 +268,8 @@ export const greenwayProgram = {
 export const taxlots = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
-    pane: 'bottom'
+    pane: 'bottom',
+    style: feature => ({fillOpacity: 0.2})
   }),
   popup: popupTaxlots('foo', 'bar')
 }
@@ -279,6 +281,16 @@ export const zoning = {
     style: feature => ({fillOpacity: 0.2})
   }),
   popup: popupZoning('foo', 'bar')
+}
+
+
+export const centers = {
+  features: window.L.esri.featureLayer({
+    url: 'https://services.arcgis.com/quVN97tn06YNGj9s/ArcGIS/rest/services/centers/FeatureServer/0',
+    pane: 'bottom',
+    style: feature => ({fillOpacity: 0.2})
+  }),
+  popup: popupCenters('foo', 'bar')
 }
 
 

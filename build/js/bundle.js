@@ -759,6 +759,22 @@ var popupTaxlots = function (current, proposed) {
   };
 };
 
+/**
+ * Composes an HTML pop-up template that is displayed on feature clicks.
+ * This one is for the Street classification layers, where the user wishes
+ * to see current classification, and proposed classification.
+ *
+ * @param {String} The column in the GIS layer that maps to current classification.
+ * @param {String} The column in the GIS layer that maps to proposed classification.
+ * @returns {String} The rendered HTML string for the popup.
+ */
+
+var popupCenters = function (current, proposed) {
+  return function (feature) {
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature[NAME]) + "\n      </h5>\n    ");
+  };
+};
+
 // this needs to be named better, and there will be more of them I think.
 // this file just maps GIS data layers to their popups, and gives them a reference handle
 // so they can be got at by the map app
@@ -1023,7 +1039,8 @@ var greenwayProgram = {
 var taxlots = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
-    pane: 'bottom'
+    pane: 'bottom',
+    style: function (feature) { return ({fillOpacity: 0.2}); }
   }),
   popup: popupTaxlots('foo', 'bar')
 };
@@ -1035,6 +1052,16 @@ var zoning = {
     style: function (feature) { return ({fillOpacity: 0.2}); }
   }),
   popup: popupZoning('foo', 'bar')
+};
+
+
+var centers = {
+  features: window.L.esri.featureLayer({
+    url: 'https://services.arcgis.com/quVN97tn06YNGj9s/ArcGIS/rest/services/centers/FeatureServer/0',
+    pane: 'bottom',
+    style: function (feature) { return ({fillOpacity: 0.2}); }
+  }),
+  popup: popupCenters('foo', 'bar')
 };
 
 
@@ -1103,6 +1130,7 @@ var layers = Object.freeze({
 	greenwayProgram: greenwayProgram,
 	taxlots: taxlots,
 	zoning: zoning,
+	centers: centers,
 	centersRegional: centersRegional,
 	centersTown: centersTown,
 	centersNeighborhood: centersNeighborhood,
