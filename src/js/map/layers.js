@@ -12,11 +12,25 @@ import popupCenters from './centers-renderer';
  * @property {number} designClassifications.features - Esri Leaflet Feature Layer
  * @property {string} designClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const designClassifications = {
+ export const designFeaturs = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
+    style: function (feature) {
+      return {
+        fillOpacity: 0,
+        opacity: 0
+      }
+    }
   }),
+  pane: 'top',
   popup: popupRenderer('Design', 'ProposedDesign')
+};
+export const designClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [15,16],
+  }),
+  pane: 'bottom'
 };
 
 /**
@@ -24,11 +38,25 @@ export const designClassifications = {
  * @property {number} bicycleClassifications.features - Esri Leaflet Feature Layer
  * @property {string} bicycleClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const bicycleClassifications = {
+export const bicycleFeatures = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/22',
+      style: function (feature) {
+        return {
+          fillOpacity: 0,
+          opacity: 0
+        }
+      }
   }),
+  pane: 'top',
   popup: popupRenderer('Bicycle', 'ProposedBicycle')
+};
+export const bicycleClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [6,7],
+  }),
+  pane: 'bottom'
 };
 
 /**
@@ -36,11 +64,25 @@ export const bicycleClassifications = {
  * @property {number} transitClassifications.features - Esri Leaflet Feature Layer
  * @property {string} transitClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const transitClassifications = {
+export const transitFeatures = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/1',
+    style: function (feature) {
+      return {
+        fillOpacity: 0,
+        opacity: 0
+      }
+    }
   }),
+  pane: 'top',
   popup: popupRenderer('Transit', 'ProposedTransit')
+};
+export const transitClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [4,5],
+  }),
+  pane: 'bottom'
 };
 
 /**
@@ -48,23 +90,51 @@ export const transitClassifications = {
  * @property {number} trafficClassifications.features - Esri Leaflet Feature Layer
  * @property {string} trafficClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const trafficClassifications = {
+export const trafficFeatures = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4',
+    style: function (feature) {
+      return {
+        fillOpacity: 0,
+        opacity: 0
+      }
+    }
   }),
+  pane: 'top',
   popup: popupRenderer('Traffic', 'ProposedTraffic')
 };
+export const trafficClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [2,3],
+  }),
+  pane: 'bottom',
+}
 
 /**
  * @property {object} emergencyClassifications          - Object for GIS layer
  * @property {number} emergencyClassifications.features - Esri Leaflet Feature Layer
  * @property {string} emergencyClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const emergencyClassifications = {
+export const emergencyFeatures = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7',
+    style: function (feature) {
+      return {
+        fillOpacity: 0,
+        opacity: 0
+      }
+    }
   }),
+  pane: 'top',
   popup: popupRenderer('Emergency', 'ProposedEmergency')
+};
+export const emergencyClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [0,1],
+  }),
+  pane: 'bottom'
 };
 
 /**
@@ -72,11 +142,26 @@ export const emergencyClassifications = {
  * @property {number} pedestrianClassifications.features - Esri Leaflet Feature Layer
  * @property {string} pedestrianClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const pedestrianClassifications = {
+export const pedestrianFeatures = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13',
+    style: function (feature) {
+      return {
+        fillOpacity: 0,
+        opacity: 0
+      }
+    }
   }),
+  pane: 'top',
   popup: popupRenderer('Pedestrian', 'ProposedPedestrian')
+};
+
+export const pedestrianClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [9,10],
+  }),
+  pane: 'bottom'
 };
 
 /**
@@ -92,7 +177,6 @@ export const pedestrianDistricts = {
     }
   }),
   popup: popupRenderer('Pedestrian', 'ProposedPedestrian'),
-
 };
 
 /**
@@ -100,11 +184,25 @@ export const pedestrianDistricts = {
  * @property {number} freightClassifications.features - Esri Leaflet Feature Layer
  * @property {string} freightClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const freightClassifications = {
+export const freightFeatures = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17'
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/17',
+    style: function (feature) {
+      return {
+        fillOpacity: 0,
+        opacity: 0
+      }
+    }
   }),
+  pane: 'top',
   popup: popupRenderer('Freight', 'ProposedFreight')
+};
+export const freightClassifications = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
+    layers: [12,13],
+  }),
+  pane: 'bottom'
 };
 
 /**

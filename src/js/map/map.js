@@ -141,7 +141,9 @@ const openPopUp = (evt, layer) => {
  * @param {String} Layer key, eg 'projectPoints'
  */
 const resetLayerStyle = layer => {
-  layers[layer].features.resetStyle();
+  if (layers[layer].features.resetStyle) {
+    layers[layer].features.resetStyle();
+  }
 };
 
 /**

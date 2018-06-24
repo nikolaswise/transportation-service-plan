@@ -12,7 +12,7 @@ export default function (current, proposed) {
   return function (feature) {
     return `
       <h5 class="flush-top">
-        ${feature[NAME]}
+        ${feature.NAME}
       </h5>
     `;
   };
