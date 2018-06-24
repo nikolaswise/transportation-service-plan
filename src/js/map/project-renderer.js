@@ -22,10 +22,6 @@ export default function (current, proposed) {
             <td>${feature.ProjectStatus}</td>
           </tr>
           <tr>
-            <td>Source</td>
-            <td>${feature.ProjectSource}</td>
-          </tr>
-          <tr>
             <td>Lead Agency</td>
             <td>${feature.LeadAgency}</td>
           </tr>
@@ -34,12 +30,12 @@ export default function (current, proposed) {
             <td>${feature.EstimatedCost}</td>
           </tr>
           <tr>
-            <td>Estimated Timeframe</td>
+            <td>Estimated Time Frame</td>
             <td>${feature.EstimatedTimeframe}</td>
           </tr>
         </tbody>
       </table>
-      <p>Transportation Plan ID: <a href="#">${feature.TranPlanID}</a></p>
+      <p>Transportation Plan ID: ${feature.TranPlanID}</p>
     `;
   };
 }

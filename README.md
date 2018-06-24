@@ -52,43 +52,21 @@ The following are classes set on the body of the HTML to pass information to the
 | js-is-active | Javascript will run on this page. Go for the full experience |
 | map-is-active | The map pane is visible, and the map is drawn. |
 
----
 
-## My Punchlist
+### More Data
+https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer
 
-- [ ] Feed a table to Pandoc and see what happens
-- [x] Tooltip to explain what layers are and what they mean
-- [x] Disabled state for the layer toggles
-- [x] Projects: => TSP Projects
-  - [X] One Toggle Button
-  - [x] One GIS Layer
-- [x] Programs: => TSP Projects`
-- [x] View Reset Button on Map
-- [x] UX Sidebar => More Washington Posty
-- [ ] 'PDF this Section'
-- [x] Slide in the subsections on sidebar
-- [x] add currenty showing block in footer og map
-- [ ] sortable table of gis endpoint
-	- [ ] i need endpoints
-	- [ ] fields to show
-- [ ] check event binding
-- [ ] close things on esc bind
 
-## Today
 
-- [ ] Drop Erin's new Docx files into the site
 
-## This Week
+Taxlots:
+https://www.portlandmaps.com/arcgis/rest/services/Public/Taxlots/MapServer
 
-- [ ] Explore the rest of the docx files that Erin is getting done
+Centers & Boudaries
+https://services.arcgis.com/quVN97tn06YNGj9s/ArcGIS/rest/services/centers/FeatureServer
 
-## My Blockers
+Zoning / Taxlots
+https://www.portlandmaps.com/bps/zoning/#/map/R244214
 
-- [ ] New cover
-- [ ] Project and Program Endpoints
-- [ ] Cool Extra PDFs
-- [ ] .Docx Files of the TSP
-- [ ] Domain to Host on
-
----
-
+Popup Plan:
+https://docs.google.com/spreadsheets/d/1K0Hl3oR14pDwml7iKNbTU3_xZP21zMjncDhfYZqnkR8/edit#gid=0
