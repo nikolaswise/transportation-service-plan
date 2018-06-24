@@ -725,6 +725,40 @@ var popupProject = function (current, proposed) {
   };
 };
 
+/**
+ * Composes an HTML pop-up template that is displayed on feature clicks.
+ * This one is for the Street classification layers, where the user wishes
+ * to see current classification, and proposed classification.
+ *
+ * @param {String} The column in the GIS layer that maps to current classification.
+ * @param {String} The column in the GIS layer that maps to proposed classification.
+ * @returns {String} The rendered HTML string for the popup.
+ */
+
+var popupZoning = function (current, proposed) {
+  return function (feature) {
+    console.log(feature);
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.CMP) + "\n      </h5>\n      <p class=\"flush-bottom\">\n        <b>Zone:</b>\n        " + (feature.CMP_DESC) + "\n      </p>\n      <p>\n        <b>Overlay:</b>\n        " + (feature.OVRLY_DESC) + "\n      </p>\n    ");
+  };
+};
+
+/**
+ * Composes an HTML pop-up template that is displayed on feature clicks.
+ * This one is for the Street classification layers, where the user wishes
+ * to see current classification, and proposed classification.
+ *
+ * @param {String} The column in the GIS layer that maps to current classification.
+ * @param {String} The column in the GIS layer that maps to proposed classification.
+ * @returns {String} The rendered HTML string for the popup.
+ */
+
+var popupTaxlots = function (current, proposed) {
+  return function (feature) {
+    console.log(feature);
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.SITEADDR) + "\n      </h5>\n    ");
+  };
+};
+
 // this needs to be named better, and there will be more of them I think.
 // this file just maps GIS data layers to their popups, and gives them a reference handle
 // so they can be got at by the map app
@@ -991,7 +1025,7 @@ var taxlots = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
     pane: 'bottom'
   }),
-  popup: popupProject('foo', 'bar')
+  popup: popupTaxlots('foo', 'bar')
 };
 
 var zoning = {
@@ -1000,7 +1034,7 @@ var zoning = {
     pane: 'bottom',
     style: function (feature) { return ({fillOpacity: 0.2}); }
   }),
-  popup: popupProject('foo', 'bar')
+  popup: popupZoning('foo', 'bar')
 };
 
 

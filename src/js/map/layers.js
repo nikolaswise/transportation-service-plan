@@ -3,6 +3,8 @@
 // so they can be got at by the map app
 import popupRenderer from './classification-renderer';
 import popupProject from './project-renderer';
+import popupZoning from './zoning-renderer';
+import popupTaxlots from './taxlots-renderer';
 
 /**
  * @property {object} designClassifications          - Object for GIS layer
@@ -267,7 +269,7 @@ export const taxlots = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color/MapServer/8',
     pane: 'bottom'
   }),
-  popup: popupProject('foo', 'bar')
+  popup: popupTaxlots('foo', 'bar')
 }
 
 export const zoning = {
@@ -276,7 +278,7 @@ export const zoning = {
     pane: 'bottom',
     style: feature => ({fillOpacity: 0.2})
   }),
-  popup: popupProject('foo', 'bar')
+  popup: popupZoning('foo', 'bar')
 }
 
 
