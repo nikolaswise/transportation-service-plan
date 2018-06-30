@@ -12,7 +12,7 @@ import popupCenters from './centers-renderer';
  * @property {number} designClassifications.features - Esri Leaflet Feature Layer
  * @property {string} designClassifications.popup    - Rendered HTML string of desired popup.
  */
- export const designFeaturs = {
+ export const designFeatures = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
     style: function (feature) {

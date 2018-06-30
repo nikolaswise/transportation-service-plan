@@ -772,7 +772,7 @@ var popupCenters = function (current, proposed) {
  * @property {number} designClassifications.features - Esri Leaflet Feature Layer
  * @property {string} designClassifications.popup    - Rendered HTML string of desired popup.
  */
- var designFeaturs = {
+ var designFeatures = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/20',
     style: function (feature) {
@@ -1190,7 +1190,7 @@ var corridorsNeighborhood = {
 };
 
 var layers = Object.freeze({
-	designFeaturs: designFeaturs,
+	designFeatures: designFeatures,
 	designClassifications: designClassifications,
 	bicycleFeatures: bicycleFeatures,
 	bicycleClassifications: bicycleClassifications,
@@ -1372,6 +1372,13 @@ var getInactiveLayers = function () {
 var addLayers = function (layerSet) {
   if (!layerSet) { return; }
   layerSet.split(',').forEach(function (layer) { return addLayer(layer); });
+  // let layers = layerSet.split(',')
+
+  // let promises = layers.map(layer => addLayer(layer))
+
+  // Promise.all(promises)
+
+
 };
 
 /**
@@ -1379,19 +1386,59 @@ var addLayers = function (layerSet) {
  *
  * @param {String} Layer key, eg 'projectPoints'
  */
-var addLayer = function (layer) {
+
+var addLayer = function (layer) { return new Promise(function (resolve, reject) {
+
   if (!layers[layer]) {
+    reject();
     return
   }
+
+
   layers[layer].features.addTo(map);
+
   bus.emit('layer:reset', layer);
 
+  layers[layer].features.bindPopup(function (evt) {
+    if (evt) {
+      openPopUp(evt, layer);
+    }
+    return '';
+  }).on('popupclose', function () {
+    bus.emit('layer:reset', layer);
+  });
+
+  resolve();
+}); };
+
+// const addLayer = layer => {
+//   if (!layers[layer]) {
+//     return
+//   }
+//   layers[layer].features.addTo(map);
+//   bus.emit('layer:reset', layer);
   // layers[layer].features.bindPopup((evt) => {
   //   openPopUp(evt, layer);
   //   return '';
   // }).on('popupclose', function () {
   //   bus.emit('layer:reset', layer);
   // });
+// };
+
+/**
+ * Opens the independant (aka non-leaflet) popup from a click on a feature for a given layer.
+ *
+ * @param {Event} Click event from map feature.
+ * @param {String} Layer key, eg 'projectPoints'
+ */
+var openPopUp = function (evt, layer) {
+  evt.bringToFront();
+  evt.setStyle({
+    lineCap: 'round',
+    weight: 30,
+    color: '#34F644'
+  });
+  bus.emit('popup:opened', evt, layers[layer].popup);
 };
 
 /**
@@ -1432,7 +1479,7 @@ var removeLayer = function (layer) {
  * Adds any layers indicated as active from the layer toggle list to the map.
  */
 var drawLayers = function () {
-  console.log('redraw');
+
   var layers = getActiveLayers();
   bus.emit('map:legend', layers);
   layers.forEach(function (toggle) {
