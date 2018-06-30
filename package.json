@@ -12,7 +12,7 @@
     "js": "rollup -c",
     "img": "imagemin-newer src/img build/img",
     "html": "static-site -s src/ -b build/ -h helpers/texts.js",
-    "lib": "jandoc -d lib/ -r docx -o src/lib -t markdown --extract-media=src/img",
+    "lib": "jandoc -d lib/ -r docx -o src/lib -t md --extract-media=src/img",
     "pdf": "jandoc -d lib/ -o src/lib -r docx -w latex",
     "watch": "rerun-script",
     "test": "npm run lint && npm run test:lib && npm run test:app ",

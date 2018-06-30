@@ -1,8 +1,8 @@
 Street Classification Descriptions
 ==================================
 
-Pedestrian Classification Descriptions *(adopted 2002, currently under review. See the update of the [[Pedestrian Master Plan]{.underline}](https://www.seattle.gov/transportation/document-library/citywide-plans/modal-plans/pedestrian-master-plan))*
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pedestrian Classification Descriptions *(adopted 2002, currently under review. See the update of the Pedestrian Master Plan)*
+-----------------------------------------------------------------------------------------------------------------------------
 
 Pedestrian Classification Descriptions maintain a system of pedestrianways to serve all types of pedestrian trips, particularly those with a transportation function.
 

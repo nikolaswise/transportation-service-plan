@@ -1,3 +1,6 @@
+Introduction
+============
+
 Portland is projected to add 140,000 new jobs and 260,000 new residents over the next 20 years. As Portland and the region grow, however, there is a continuing challenge to maintain the natural environment, economic prosperity, and overall quality of life. If in 2035 the percentage of people who drive alone to work remains the same as it is now (nearly 60 percent), traffic, carbon emissions, and household spending on vehicles and fuel will all worsen significantly. In order to accommodate this growth, our transportation system must provide Portlanders safer and more convenient ways to walk, bike, and take transit for more trips. The 2035 Transportation System Plan guides investments to maintain and improve the livability of Portland by:
 
 -   supporting the City's commitment to Vision Zero by saving lives and reducing injuries to all people using our transportation system
@@ -27,7 +30,7 @@ The Transportation System Plan helps implement the City's 2035 Comprehensive Pla
 -   Strategies and regulations for implementation, including street classifications
 
 Elements of the TSP
-===================
+-------------------
 
 The goals and policies, street classification descriptions and maps, the financial plan and the master street plan maps in the TSP were adopted as part of the Comprehensive Plan by City Council in 2016. The TSP was adopted concurrently with the Comprehensive Plan, but published under a separate cover. Stage 3 Update will be adopted separately from the Comp Plan and Stages 1 and 2, then incorporated into one TSP document.
 
@@ -36,7 +39,7 @@ The TSP is both an implementation tool and a supporting document to the Comprehe
 ![Relation to Other Plans\_updated 10\_03\_14.png](/img/media/image2.png)
 
 Transportation System Plan Updates
-==================================
+----------------------------------
 
 In order to keep the TSP current and up-to-date with recent transportation planning and development activities, it is updated at regular intervals. The first two updates in the mid-2000s were not intended to include new policy initiatives. They were primarily technical in nature and included corrections, updates to project descriptions, updates on studies, and inclusion of new master street plans adopted as a part of planning efforts.
 
@@ -51,12 +54,11 @@ The Stage 2 TSP Update was a part of the City's Comprehensive Plan update and ch
 TSP Stage 3 TSP Update is incorporating regional information, updating geographic policies and objectives, updating objectives, adding a few policies, changes to street classification for traffic, transit and emergency response, modal plans, and other changes as identified. There is also parallel staff process to reformat the document and create a new user friendly digital document.
 
 Regulatory Framework
-====================
+--------------------
 
 The TSP addresses and complies with a number of State and regional goals, policies, and regulations, as summarized below.
 
 State of Oregon
----------------
 
 *Statewide Planning Goals*
 
@@ -71,7 +73,6 @@ The Transportation Planning Rule (TPR) implements statewide planning Goal 12: Tr
 The Oregon Transportation Plan (OTP) serves as the State's TSP. Regional and local TSPs must be consistent with the OTP.
 
 Regional Metro
---------------
 
 *Regional Transportation Plan*
 
@@ -108,7 +109,6 @@ Metro adopted the Urban Growth Management Functional Plan (UGMFP) in 1996 and up
 The Regional Framework Plan, adopted in 1997, identifies regional policies to implement the 2040 Growth Concept, preserving access to nature and building great communities for today and the future. The plan was amended in 2005 and 2010, and again in 2014 as part of the adoption of the Climate Smart Strategy.
 
 City of Portland
-----------------
 
 *Comprehensive Plan*
 
@@ -241,9 +241,9 @@ Chapter 2 policies are grouped in these major areas:
 -   Information design and development
 
 Seven Outcomes
-==============
+--------------
 
-Working with our partners at Metro, [the]{.underline} Bureau of Planning and Sustainability, and the Oregon Department of Transportation, with direction from the Portland Plan (2012), the Climate Action Plan (2010), Health Equity & the Transportation System Plan Report (2012), and from the Comprehensive Plan Update, PBOT staff developed an outcomes based approach to the TSP.
+Working with our partners at Metro, the Bureau of Planning and Sustainability, and the Oregon Department of Transportation, with direction from the Portland Plan (2012), the Climate Action Plan (2010), Health Equity & the Transportation System Plan Report (2012), and from the Comprehensive Plan Update, PBOT staff developed an outcomes based approach to the TSP.
 
 These seven outcomes directed policy choices as well as informed the development of criteria for selecting and prioritizing TSP Projects and Programs. The Transportation System Improvements Chapter contains details on the citywide project and programs process and evaluation.
 

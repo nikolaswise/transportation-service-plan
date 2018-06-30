@@ -1,22 +1,23 @@
+Glossary
+========
+
 The Transportation System Plan uses clear, everyday language as much as possible. Words and terms in the Glossary have the specific meaning stated below when used in the Comprehensive Plan and TSP, unless the context clearly indicates another meaning. Words not included in this Glossary are defined by their dictionary meaning, or in some cases, by their meaning in state or federal law.
 
-#### 2040 Growth Concept
+2040 Growth Concept
 
 A concept for the long-term growth management of our region, developed by Metro. It describes
 
 the preferred form of regional growth, including where growth should be clustered, what the
 
-#### appropriate densities are for various land use design types, and which areas should be protected as open space. The 2040 Growth Concept was adopted as part of the Regional Urban Growth Goals and Objectives (RUGGOs) in 1995. (Source: 2000 RTP)
+appropriate densities are for various land use design types, and which areas should be protected as open space. The 2040 Growth Concept was adopted as part of the Regional Urban Growth Goals and Objectives (RUGGOs) in 1995. (Source: 2000 RTP)
 
-#### 
-
-#### Access
+Access
 
 The ability to approach or make use of transportation facilities, parks and open space, public
 
 infrastructure, or businesses and services that are open to the public. Good access means within close proximity (up to ó mile) that is free from physical barriers for those with limited mobility.
 
-#### Access Management
+Access Management
 
 Measures regulating access to streets, roads, and highways from public roads and private
 
@@ -28,7 +29,7 @@ controls (such as signals and channelization, including raised medians) to reduc
 
 approach road traffic on the main facility.
 
-#### Accessibility
+Accessibility
 
 The ability to move easily from one mode of transportation to another mode or to a destination.
 
@@ -36,7 +37,7 @@ Accessibility increases when the number and quality of travel choices increases.
 
 affected by the mix of land uses and the travel alternatives available.
 
-#### Accessway
+Accessway
 
 A type of right-of-way, either public or private, that is primarily to provide pedestrian and
 
@@ -46,11 +47,11 @@ parking or for emergency vehicles. Accessways are typically short in length and 
 
 full street connections are not needed and/or are not physically feasible.
 
-#### Active Transportation
+Active Transportation
 
 Transportation that involves physical activity, including walking, biking and using transit.
 
-#### Activity Center
+Activity Center
 
 A cluster of uses that collectively generates many trips (e.g., school and park, neighborhood
 
@@ -58,7 +59,7 @@ commercial district). An activity center can be a single use that generates many
 
 stadium, large commercial outlet, large institution).
 
-#### Americans with Disabilities Act (ADA) of 1990
+Americans with Disabilities Act (ADA) of 1990
 
 Civil rights legislation enacted by Congress that mandates the development of a plan to address
 
@@ -66,7 +67,7 @@ discrimination and equal opportunity for disabled persons in employment, transpo
 
 public accommodation, public services, and telecommunications.
 
-#### Area Permit Parking Program
+Area Permit Parking Program
 
 A Portland Bureau of Transportation program to ensure that on-street parking associated with
 
@@ -76,7 +77,7 @@ residential neighborhoods. The program allows residents and firms a limited supp
 
 for on-street parking and restricts on-street parking for other potential users.
 
-#### Arterial
+Arterial
 
 Any street that is not a Local Service Traffic Street according to the traffic classification maps in
 
@@ -104,13 +105,13 @@ Arterial streets are usually spaced about one mile apart and are designed to acc
 
 bicycle, pedestrian, truck and transit travel.
 
-#### Attractor
+Attractor
 
 A use that, by its nature, draws large numbers of people to it for special events or regular
 
 activities. Regional attractors include uses such as sports arenas and convention centers.
 
-#### Auto-Oriented Development
+Auto-Oriented Development
 
 Development that is either: 1) auto-related (such as gas stations and auto repair shops) or 2)
 
@@ -118,7 +119,7 @@ auto-accommodating (by its design attracts primarily customers and employees arr
 
 automobile, such as drive-in restaurants).
 
-#### Benchmark
+Benchmark
 
 A specific target or goal to be achieved in a specific timeframe. Benchmarks are used to
 
@@ -126,7 +127,7 @@ determine the attainment of performance indicators and performance measures (def
 
 below).
 
-#### Bicycle
+Bicycle
 
 A vehicle having two tandem wheels, a minimum of 14 inches in diameter, propelled by
 
@@ -138,33 +139,33 @@ the same right to the roadways and must obey the same traffic laws as the operat
 
 other vehicles.
 
-#### Bicycle Boulevard
+Bicycle Boulevard
 
 See Neighborhood Greenway.
 
-#### Bicyclist
+Bicyclist
 
 Person riding a bicycle.
 
-#### Bike Share
+Bike Share
 
 Bike Share is an innovative transportation program that provides users access to
 
 bicycles on a short-term basis for one-way travel within a designated service area.
 
-#### Carpool
+Carpool
 
 A motor vehicle carrying two or three (depending on the context) or more people, usually
 
 commuting on a regular or semi-regular basis.
 
-#### Car Sharing
+Car Sharing
 
 An organization consisting of a group of individuals who share a fleet of cars. The purchase or
 
 lease of vehicles, fuel costs, maintenance and repair costs is borne by the organization.
 
-#### Centers
+Centers
 
 Places with concentrations of commercial and community services, housing, gathering places,
 
@@ -194,7 +195,7 @@ provide housing opportunities for about half the population needed to support a
 
 neighborhood business district.
 
-#### City Greenway
+City Greenway
 
 A system of distinctive pedestrian- and bicycle-friendly green streets and trails, enhanced by
 
@@ -214,7 +215,7 @@ infrastructure:
 
 4.  Neighborhood greenways are an extensive network of streets with low volumes of motor vehicle traffic that are prioritized for bicycles and enhanced for pedestrians, working in conjunction with the rest of the City Greenways system to extend the system into all neighborhoods.
 
-#### Collector of Regional Significance
+Collector of Regional Significance
 
 As designated in the 2000 Regional Transportation Plan, a route that connects the regional
 
@@ -222,7 +223,7 @@ arterial system and the local system by collecting and distributing neighborhood
 
 arterial streets. Collectors of regional significance have three purposes: 1) They ensure adequate access to the primary and secondary land use components of the 2040 Growth Concept; 2) They allow dispersion of arterial traffic over a number of lesser facilities where an adequate local network exists; 3) They help define appropriate collector level movement between jurisdictions. (Source: 2000 RTP)
 
-#### Collector street
+Collector street
 
 A class of street. Collector streets provide both access and circulation between residential,
 
@@ -236,27 +237,27 @@ Collectors may serve as bike, pedestrian and freight access routes, providing lo
 
 pedestrians and transit.
 
-#### Complete Streets
+Complete Streets
 
 Complete streets provide accessibility to all users of the right-of-way regardless of age, ability, or mode of transportation. They are designed and operated to make better places and to enhance safe access for all modes, including people walking and bicycling, those using a mobility device, motorists, and transit users.
 
-#### Community Uses
+Community Uses
 
 Community uses in the right of way include but are not limited to temporary uses such
 
 as public gathering spaces, events, food production or temporary festivals, etc.
 
-#### Congestion
+Congestion
 
 A condition characterized by unstable traffic flows that prevents reliable movement on a
 
 transportation facility.
 
-#### Connected Vehicle
+Connected Vehicle
 
 a vehicle that communicates with the Internet, other vehicles, wayside systems and/or passengers.
 
-#### Corridor
+Corridor
 
 1\. Corridors (2040 design type) -- A type of land use that is typically located along regional transit routes and arterial streets, providing a place for somewhat higher densities than is found in 2040 centers. These land uses should feature a high-quality pedestrian environment and
 
@@ -276,7 +277,7 @@ connection to adjacent neighborhoods and transit service.
 
 -   Freight Corridor: Primary routes into and through the city that support Portland as an important West Coast hub and a gateway for international and domestic trade. These facilities are integral to the growth of traded sector businesses such as manufacturing, warehousing, and distribution industries.
 
-#### Curb Zone
+Curb Zone
 
 The area of public right-of-way adjacent to the curb that can be used for a wide variety of
 
@@ -286,23 +287,23 @@ extensions, transit platforms, street trees, loading zones, on-street parking, b
 
 street seats.
 
-#### Early Bird Parking
+Early Bird Parking
 
 Parking that is provided to encourage its use primarily by commuters. Typically, the pricing
 
 strategy is to offer a lower all-day rate if the parker arrives before a certain time in the morning.
 
-#### **Electric Vehicle**
+Electric Vehicle
 
 An electric vehicle (EV), also referred to as an electric drive vehicle, is a vehicle which uses one or more electric motors for propulsion. Depending on the type of vehicle, motion may be provided by wheels or propellers driven by rotary motors, or in the case of tracked vehicles, by linear motors.
 
-#### Emergency Response Vehicles
+Emergency Response Vehicles
 
 Vehicles employed in responding to emergencies. Examples of emergency response vehicles
 
 include fire apparatus, ambulances, and police cars.
 
-#### ECO
+Employer Commute Options (ECO)
 
 DEQ ECO program required employers with more than 100 employees to provide commute
 
@@ -310,33 +311,33 @@ options to employees designed to reduce the number of cars driven to work in Por
 
 surrounding areas.
 
-#### Environmental Impact Statement
+Environmental Impact Statement
 
 An environmental assessment required by the National Environmental Protection Act for "any
 
 major Federal action that may significantly affect the environment."
 
-#### **FAVES**
+Faves
 
 Fleet, fully Automated Vehicles that are Electric and Shared.
 
-#### Freight
+Freight
 
 Raw and bulk materials and products that require value-adding or warehousing.
 
-#### Freight Intermodal Facility
+Freight Intermodal Facility
 
 An intercity facility where freight is transferred between two or more modes (e.g., truck to rail,
 
 rail to ship, truck to air, etc.).
 
-#### Frequent Service (Trimet)
+Frequent Service (Trimet)
 
 Bus or MAX Light Rail transit service that runs every 15 minutes or better most of the day, every
 
 day.
 
-#### Functional Plan
+Functional Plan
 
 A limited-purpose, multijurisdictional plan for an area or activity having significant districtwide
 
@@ -344,15 +345,15 @@ impact on the orderly and responsible development of the metropolitan area. A Fu
 
 serves as a guideline for local comprehensive plans consistent, with ORS 268.390.
 
-#### Goals
+Goals
 
 The broadest expressions of a community's desires. Goals give direction and are concerned with the long term; they often describe ideal situations.
 
-#### Goods
+Goods
 
 Finished products, commodities, and wares ready for the final consumer.
 
-#### Green Infrastructure
+Green Infrastructure
 
 Public or private assets --- either natural resources or engineered green facilities --- that protect,
 
@@ -362,7 +363,7 @@ health and safety, open space, and other complementary ecosystem services. Examp
 
 trees, ecoroofs, green street facilities, wetlands, and natural waterways.
 
-#### Green Street
+Green Street
 
 A green street is a street with a landscaped street-side planter or bioswale that captures
 
@@ -372,7 +373,7 @@ filter out pollutants. A green street is not the same as a City Greenway, though
 
 may include green street elements.
 
-#### High-capacity Transit
+High-capacity Transit
 
 High-capacity transit is public transit that bypasses congestion by making full or partial use of
 
@@ -386,7 +387,7 @@ transit can be provided by a variety of vehicle types including light rail, comm
 
 and bus.
 
-#### High-Occupancy Vehicle (HOV)
+High-Occupancy Vehicle (HOV)
 
 Any vehicle carrying two or more persons, including the driver. An HOV could be a transit bus,
 
@@ -396,15 +397,15 @@ Consistent with federal regulations, motorcycles (with or without passengers) ar
 
 HOVs.
 
-#### **Historically marginalized communities**
+Historically marginalized communities
 
 Communities included as part of the 2018 RTP Transportation Equity Assessment include: People of Color; People with Lower-Incomes; People with Limited English Proficiency; Older Adults; Young Persons
 
-#### Home-Based Work Trip Attractions
+Home-Based Work Trip Attractions
 
 The trips made by commuters from their homes to their places of work.
 
-#### Infrastructure
+Infrastructure
 
 Necessary municipal or public services, provided by the government or by private companies
 
@@ -416,31 +417,31 @@ communications, and information technology as necessary infrastructure investmen
 
 the community. See also Public facility.
 
-#### Intelligent Transportation Systems (ITS)
+Intelligent Transportation Systems (ITS)
 
 The application of a broad range of commutations-based information, control and electronics
 
 technologies to improve the efficiency and safety of the transportation systems.
 
-#### Local Improvement District (LID)
+Local Improvement District (LID)
 
 A method that allows a group of property owners to share the cost and benefits of public
 
 improvements.
 
-#### Locally Preferred Alternative
+Locally Preferred Alternative
 
 The option selected by local jurisdiction(s) following completion of a Draft Environmental
 
 Impact Statement (DEIS).
 
-#### Main Street
+Main Street
 
 Neighborhood shopping areas along an arterial street or at an intersection that have a unique
 
 character that draws people from outside the adjacent neighborhood.
 
-#### Metro
+Metro
 
 The regional government and designated metropolitan planning organization (MPO) of the
 
@@ -450,17 +451,17 @@ regional transportation planning activities, such as the preparation of the 2000
 
 Transportation Plan and the planning of regional transportation projects, including light rail.
 
-#### Mixed-Use Areas
+Mixed-Use Areas
 
 Compact areas of development that include a mix of uses, either within buildings or among
 
 buildings, and include residential development as one of the potential components.
 
-#### Mobility Zone
+Mobility Zone
 
 The area of the right-of-way used primarily for people and/or goods movement.
 
-#### Multimodal Mixed-Use Area (MMA)
+Multimodal Mixed-Use Area (MMA)
 
 The Multimodal Mixed-Use Area (MMA) is an ODOT designation applied by local governments
 
@@ -476,7 +477,7 @@ characteristics through development standards and an understanding that increase
 
 congestion within and around the MMA is accepted as a potential trade-off.
 
-#### Mobility
+Mobility
 
 The ability to move people and goods from place to place, or the potential for movement.
 
@@ -484,7 +485,7 @@ Mobility improves when the transportation network is refined or expanded to impr
 
 of one or more modes, allowing people and goods to move more quickly toward a destination.
 
-#### Mode Split
+Mode Split
 
 The percentage of trips taken by each of the possible modes of travel (motor vehicle, transit,
 
@@ -494,7 +495,7 @@ by a particular mode may increase, but the percentage of trips by that mode may 
 
 or be reduced if there is also growth in the overall number of trips for other modes.
 
-#### Motor Vehicle Level-of-Service (LOS)
+Motor Vehicle Level-of-Service (LOS)
 
 A qualitative measure describing operational conditions within a traffic stream. A level-of-service
 
@@ -506,31 +507,9 @@ ratings of 'A' through 'F' describe the traffic flow characteristics on streets 
 
 intersections, as shown on the following table:
 
-+----------------+-----------------------------------------------------------------------+
-| **LOS**        | **Traffic Flow Characteristics**                                      |
-+================+=======================================================================+
-| A              | Virtually free flow; completely unimpeded                             |
-+----------------+-----------------------------------------------------------------------+
-| B              | Stable flow with slight delays; reasonably unimpeded                  |
-+----------------+-----------------------------------------------------------------------+
-| C              | Stable flow with delays; less freedom to maneuver                     |
-+----------------+-----------------------------------------------------------------------+
-| D              | High density, but stable flow                                         |
-+----------------+-----------------------------------------------------------------------+
-| E              | Operating conditions at or near capacity; unstable flow               |
-+----------------+-----------------------------------------------------------------------+
-| F              | Forced flow; breakdown conditions                                     |
-+----------------+-----------------------------------------------------------------------+
-| Greater than F | Demand exceeds roadway capacity, limiting volume that can be carried  |
-|                |                                                                       |
-|                | and forcing excess demand onto parallel routes and extending the peak |
-|                |                                                                       |
-|                | period                                                                |
-+----------------+-----------------------------------------------------------------------+
+![](/img/media/image2.png)
 
-(Sources: 1985 Highway Capacity Manual \[A through F\]; Metro \[greater than F\])
-
-#### Multimodal
+Multimodal
 
 Having a variety of modes available for any given trip, such as being able to walk, ride a bicycle,
 
@@ -538,17 +517,17 @@ take a bus, or drive to a certain destination. In a transportation system, multi
 
 providing for many modes within a single transportation corridor.
 
-#### National Ambient Air Quality Standards (NAAQs)
+National Ambient Air Quality Standards (NAAQs)
 
 Air quality standards for a variety of pollutants.
 
-#### Neighborhood
+Neighborhood
 
 For the TSP classification system, a neighborhood is an area bounded by Major City Traffic
 
 Streets, District Collectors, and/or Neighborhood Collectors.
 
-#### Neighborhood Greenway
+Neighborhood Greenway
 
 Neighborhood greenways are an extensive network of streets with low volumes of motor vehicle
 
@@ -556,7 +535,7 @@ traffic that are prioritized for bicycles and enhanced for pedestrians, working 
 
 with the rest of the City Greenways system to extend the system into all neighborhoods.
 
-#### Neighborhood Corridor
+Neighborhood Corridor
 
 Main streets that connect neighborhoods with each other and to other parts of the city. They
 
@@ -568,23 +547,23 @@ higher-density housing development. They have less intense development and trans
 
 function than Civic Corridors.
 
-#### Objectives
+Objectives
 
 These are specific statements that carry out a plan in the short term. Objectives help assess
 
 incremental progress toward achieving the broader purposes expressed in goals and policies.
 
-#### Obstruction
+Obstruction
 
 Something that hinders from passage, action, or operation.
 
-#### Oregon Department of Transportation (ODOT)
+Oregon Department of Transportation (ODOT)
 
 State agency that oversees and maintains the State highway system, under the guidance of the
 
 Oregon Transportation Commission.
 
-#### Oregon's Statewide Planning Goals
+Oregon's Statewide Planning Goals
 
 The 19 goals that provide a foundation for the State's land use planning program. The 19 goals
 
@@ -594,7 +573,7 @@ development, and citizen involvement. Locally adopted comprehensive plans and re
 
 transportation plans must be consistent with the statewide planning goals.
 
-#### Paratransit
+Paratransit
 
 On-demand non-fixed route service that serves special transit markets, including disabled
 
@@ -602,7 +581,7 @@ populations unable to use regular transit service. Other examples include demand
 
 (e.g., dial-a-ride) and contracted fixed-route service.
 
-#### Park-and-Ride Facility
+Park-and-Ride Facility
 
 A parking lot or structure in association with a light rail station, transit stop, or transit transfer
 
@@ -612,7 +591,7 @@ directly served by transit. Bicycle and pedestrian access, as well as parking an
 
 bicycles, should be considered in locating new park-and-ride facilities.
 
-#### Pattern Areas
+Pattern Areas
 
 Five primary geographies in Portland that have differing physical characteristics, needs, and
 
@@ -630,37 +609,37 @@ their urban form. The five primary Pattern Areas are:
 
 -   River: This area includes the land along the Willamette and Columbia Rivers and the Columbia Slough.
 
-#### Peak Period
+Peak Period
 
 The period of the day during which the maximum amount of travel occurs. Peak periods in
 
 Portland metro area are generally defined as 7-9 AM and 4-6 PM.
 
-#### Peak Period Pricing
+Peak Period Pricing
 
 A transportation management tool that applies market pricing principles to roadway use. Peak-period pricing imposes user surcharges or tolls on congested facilities during peak traffic periods and may allow a reduced price for high-occupancy vehicle (HOV) use.
 
-#### Pedestrian
+Pedestrian
 
 A person on foot, in a wheelchair, or in another health-related mobility device.
 
-#### Performance Indicator
+Performance Indicator
 
 A term that describes a characteristic of the transportation system in order to measure progress
 
 towards a specific goal.
 
-#### Performance Measure
+Performance Measure
 
 A method used to assign a value to a performance indicator. Performance indicators measure
 
 change over time, and the performance measure is a specific activity or physical change that can be measured.
 
-#### Performance Targets and Standards
+Performance Targets and Standards
 
 A metric to demonstrate progress toward.
 
-#### Policies
+Policies
 
 The choices made to carry out goals in the foreseeable futures. Policies should be specific
 
@@ -668,7 +647,7 @@ enough to help determine whether or not a proposed project, program, or course o
 
 advance community values expressed in goals.
 
-#### Port of Portland
+Port of Portland
 
 A public agency that owns and maintains five marine terminals, four airports, and seven
 
@@ -676,11 +655,11 @@ business parks in the three-county area. The Port is governed by a nine-member c
 
 appointed by the governor.
 
-#### Protected Bike Lane
+Protected Bike Lane
 
 Bicycle lanes that are physically separated from motor vehicle and pedestrian travel. A protected bike lane is an exclusive bicycle facility that combines the user experience of a separated path with the on-street infrastructure of a conventional bike lane. A protected bike lane is physically separated from motor traffic and distinct from the sidewalk, using vertical elements such as physical curbs or flexible delineators.
 
-#### Public Facility
+Public Facility
 
 Any facility, including buildings, property, and capital assets, that is owned, leased, or otherwise
 
@@ -692,7 +671,7 @@ water supply and distribution facilities, streets, and other transportation asse
 
 public buildings. See also Infrastructure.
 
-#### Refinement Plans
+Refinement Plans
 
 Amendments to the Transportation System Plan. Refinement Plans resolve, at a systems level,
 
@@ -702,7 +681,7 @@ transportation system planning process because the detailed information needed t
 
 determinations was not available during that process. (Source: TPR)
 
-#### Regional Center (Metro)
+Regional Center (Metro)
 
 Compact, specifically defined areas where high density growth and a mix of intensive residential
 
@@ -710,7 +689,7 @@ and commercial land uses exists or is planned. regional centers are to be suppor
 
 efficient transit-oriented, multi-modal transportation system.
 
-#### Regional Transportation Functional Plan (RTFP)
+Regional Transportation Functional Plan (RTFP)
 
 A regional functional plan regulating transportation in the Metro region, as mandated by
 
@@ -718,7 +697,7 @@ Metro's Regional Framework Plan. The plan directs local plan implementation of t
 
 Transportation Plan.
 
-#### Regional Transportation Plan (RTP)
+Regional Transportation Plan (RTP)
 
 The 20-year transportation plan developed by Metro to guide transportation in the region. The
 
@@ -726,13 +705,13 @@ RTP is the region's transportation system plan that is required by the Transport
 
 Rule.
 
-#### Rideshare
+Rideshare
 
 A motor vehicle carrying two or more people for any trip purpose, including work, shopping,
 
 etc., but not on a regular schedule.
 
-#### Right-of-Way (ROW)
+Right-of-Way (ROW)
 
 A public area that allows for the passage of people or goods. Right-of-way includes
 
@@ -742,35 +721,33 @@ public right-of-way is one that is dedicated or deeded to the public for public 
 
 the control of a public agency.
 
-#### Shared Residential Street
+Shared Residential Street
 
 Shared residential street is a low-traffic street where all modes of travel mix within the paved
 
 roadway.
 
-#### Shared roadway bikeway
+Shared roadway bikeway
 
 Shared roadway bikeway is a facility type identified in the Portland Bicycle Plan for 2030, used
 
 on lower volume roadways where bicycles mix with motor vehicles
 
-#### 
-
-#### State Implementation Plan (SIP)
+State Implementation Plan (SIP)
 
 State plan for achieving air quality goals to ensure compliance with the requirements of the
 
 federal Clean Air Act.
 
-#### Speed cushion
+Speed cushion
 
 Speed cushions are either speed humps or speed tables that include wheel cutouts to allow large vehicles to pass unaffected, while reducing passenger car speeds. They can be offset to allow unimpeded passage by emergency vehicles and are typically used on key emergency response routes. Speed cushions extend across one direction of travel from the centerline, with longitudinal gap provided to allow wide wheel base vehicles to avoid going over the hump.
 
-#### Traffic Calming
+Traffic Calming
 
 Roadway design strategies to reduce vehicle speeds and volumes, prevent inappropriate through traffic and reduce motor vehicle travel speeds while also aimed at improving traffic safety and neighborhood livability. Traffic calming strategies provide speed bumps, curb extensions, planted median strips or round and narrowed travel lanes.
 
-#### Trails
+Trails
 
 Designated routes on land or water that provide public access for recreation or transportation
 
@@ -778,11 +755,11 @@ purposes, like walking and bicycling. Trails are often located along rivers, thr
 
 or along rail or highway rights-of-way, with connections to and through neighborhoods.
 
-#### Transit Center
+Transit Center
 
 A location where a number of bus and/or high-capacity transit vehicles stop. Generally, transit centers contain waiting areas, transit information, and timed transfer opportunities.
 
-#### Station Community
+Station Community
 
 Areas generally within a ¼ to 1/2 mile radius of a light rail station or other high capacity transit
 
@@ -790,27 +767,27 @@ stops that are planned as multi-modal, mixed use communities with substantial pe
 
 transit supportive design characteristics and improvements.
 
-#### Streetcar
+Streetcar
 
 Fixed guide-way transit service mixed in traffic for locally oriented trips within or between
 
 higher density mixed-use centers.
 
-#### Street Tree
+Street Tree
 
 A tree growing within the public right-of-way between the travel lanes and the property line.
 
-#### Sustainable
+Sustainable
 
 Methods, systems, or materials that will not deplete nonrenewable resources or harm natural
 
 cycles.
 
-#### Town Center
+Town Center
 
 Areas of mixed residential and commercial land uses that serve tens of thousands of people.
 
-#### Transit-Oriented Development
+Transit-Oriented Development
 
 A mix of residential, retail, office, and other uses and a supporting network of streets, bikeways,
 
@@ -820,7 +797,7 @@ Transit-oriented development should include high-density residential development
 
 service to support the neighborhood commercial uses and have a lower demand for parking than auto-oriented land uses.
 
-#### Transit station areas
+Transit station areas
 
 Areas within a half-mile of light rail and other high-capacity transit stations. Some transit
 
@@ -828,7 +805,7 @@ station areas are located within centers or civic corridors and are subject to p
 
 types of places.
 
-#### Transportation Demand Management (TDM)
+Transportation Demand Management (TDM)
 
 Actions taken to change travel behavior in order to improve the performance of transportation
 
@@ -840,25 +817,25 @@ vehicles (SOVs), ridesharing and vanpools, parking management, and trip-reductio
 
 ordinances.
 
-#### Transportation Disadvantaged
+Transportation Disadvantaged
 
 Individuals who have difficulty obtaining transportation because of their age, income, disability,
 
 or who are transit dependent for other reasons.
 
-#### Transportation District
+Transportation District
 
 For TSP purposes, one of the eight Transportation Districts identified: Central City, North,
 
 Northeast, Far Northeast, Southeast, Far Southeast, Northwest, and Southwest.
 
-#### Transportation Facilities
+Transportation Facilities
 
 Any physical facility that moves or assists in the movement of people or goods, but excluding
 
 electricity, sewage, and water systems. (Source: Transportation Planning Rule)
 
-#### Transportation Management Association (TMA)
+Transportation Management Association (TMA)
 
 Groups of businesses or institutions that develop TDM measures in order to reduce the need for
 
@@ -866,7 +843,7 @@ commuter and visitor parking. Measures may include carpool-matching services, tr
 
 subsidies, shuttle vans, or encouraging alternatives to the automobile.
 
-#### Transportation Planning Rule (TPR)
+Transportation Planning Rule (TPR)
 
 The implementing rule of Statewide Planning Goal 12 dealing with transportation, as adopted by
 
@@ -878,7 +855,7 @@ years, reducing parking spaces per capita by 10 percent in the next 20 years, an
 
 opportunities for alternatives to the automobile.
 
-#### Transportation System Management (TSM)
+Transportation System Management (TSM)
 
 Strategies and techniques for increasing the efficiency, safety, or level-of-service of a
 
@@ -890,7 +867,7 @@ channelization, access management, and ramp metering), incident response, target
 
 enforcement, preferential transit measures, and restriping for high-occupancy vehicle lanes.
 
-#### Transportation System Plan (TSP)
+Transportation System Plan (TSP)
 
 A plan for one or more transportation facilities that are planned, developed, operated, and
 
@@ -898,13 +875,13 @@ maintained in a coordinated manner to supply continuity of movement between mode
 
 within and between geographical and jurisdictional areas.
 
-#### TriMet
+TriMet
 
 Tri-County Metropolitan Transportation District, the transit agency for most of Clackamas,
 
 Multnomah, and Washington Counties.
 
-#### Trip
+Trip
 
 A journey made by any mode between an origin and a destination. Trips can be categorized as
 
@@ -922,11 +899,11 @@ follows:
 
 -   Non-local trip --A trip that extends beyond the length of the functional purpose described in a street's classification description.
 
-#### Trip End
+Trip End
 
 The origin or destination point of a journey.
 
-#### Urban Growth Management Functional Plan (UGMFP)
+Urban Growth Management Functional Plan (UGMFP)
 
 A regional functional plan with requirements binding on cities and counties in the Metro region,
 
@@ -936,13 +913,13 @@ projected regional population and job growth, regional parking management, water
 
 conservation, and limits on retail uses in employment and industrial areas.
 
-####  **Volume-to-capacity (v/c) Ratio**
+Volume-to-capacity (v/c) Ratio
 
 A measure of potential roadway capacity. A ratio expressing the relationship between the
 
 existing or anticipated volume of traffic on a roadway and the designed capacity of the facility.
 
-#### Vehicle Miles Traveled (VMT) per Capita
+Vehicle Miles Traveled (VMT) per Capita
 
 Miles driven in automobiles per person on average. The Transportation Planning Rule requires
 
