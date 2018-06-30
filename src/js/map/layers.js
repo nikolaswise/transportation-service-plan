@@ -374,7 +374,8 @@ export const taxlots = {
 
 export const zoning = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Zoning/MapServer/0',
+    // url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/39',
     pane: 'bottom',
     style: feature => ({fillOpacity: 0.2})
   }),
