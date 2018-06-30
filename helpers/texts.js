@@ -24,6 +24,7 @@ function apply (text, site, cb) {
  */
 module.exports = function (site, cb) {
   let sources = fs.readdirSync('./src/lib/');
+  console.log(sources)
   let text = getTexts(sources);
   apply(text, site, cb);
 };

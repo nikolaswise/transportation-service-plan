@@ -13,7 +13,6 @@ module.exports = function (site, cb) {
   return function (text) {
     site = site.map(function (page) {
       page.toc = generateToC(text);
-      console.log(page.toc);
       page.content = renderMarkdown(text);
       return page;
     });

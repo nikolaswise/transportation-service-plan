@@ -45,6 +45,7 @@ $opacity-transition: opacity 200ms linear;
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0,0,0);
   transition: $transform-transition;
+  display: flex;
 }
 
 @mixin drawer-left-is-active() {

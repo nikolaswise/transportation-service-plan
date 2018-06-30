@@ -764,6 +764,22 @@ var popupCenters = function (current, proposed) {
   };
 };
 
+/**
+ * Composes an HTML pop-up template that is displayed on feature clicks.
+ * This one is for the Street classification layers, where the user wishes
+ * to see current classification, and proposed classification.
+ *
+ * @param {String} The column in the GIS layer that maps to current classification.
+ * @param {String} The column in the GIS layer that maps to proposed classification.
+ * @returns {String} The rendered HTML string for the popup.
+ */
+
+var popupCorridors = function (current, proposed) {
+  return function (feature) {
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.LOCATION) + "\n      </h5>\n    ");
+  };
+};
+
 // this needs to be named better, and there will be more of them I think.
 // this file just maps GIS data layers to their popups, and gives them a reference handle
 // so they can be got at by the map app
@@ -1145,13 +1161,19 @@ var zoning = {
 
 var centers = {
   features: window.L.esri.featureLayer({
-    url: 'https://services.arcgis.com/quVN97tn06YNGj9s/ArcGIS/rest/services/centers/FeatureServer/0',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/46',
     pane: 'bottom',
     style: function (feature) { return ({fillOpacity: 0.2}); }
   }),
   popup: popupCenters('foo', 'bar')
 };
-
+var corridors = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/44',
+    pane: 'bottom'
+  }),
+  popup: popupCorridors('foo', 'bar')
+};
 
 var centersRegional = {
   features: window.L.esri.featureLayer({
@@ -1226,6 +1248,7 @@ var layers = Object.freeze({
 	taxlots: taxlots,
 	zoning: zoning,
 	centers: centers,
+	corridors: corridors,
 	centersRegional: centersRegional,
 	centersTown: centersTown,
 	centersNeighborhood: centersNeighborhood,

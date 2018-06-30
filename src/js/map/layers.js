@@ -6,6 +6,7 @@ import popupProject from './project-renderer';
 import popupZoning from './zoning-renderer';
 import popupTaxlots from './taxlots-renderer';
 import popupCenters from './centers-renderer';
+import popupCorridors from './corridors-renderer';
 
 /**
  * @property {object} designClassifications          - Object for GIS layer
@@ -385,13 +386,19 @@ export const zoning = {
 
 export const centers = {
   features: window.L.esri.featureLayer({
-    url: 'https://services.arcgis.com/quVN97tn06YNGj9s/ArcGIS/rest/services/centers/FeatureServer/0',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/46',
     pane: 'bottom',
     style: feature => ({fillOpacity: 0.2})
   }),
   popup: popupCenters('foo', 'bar')
 }
-
+export const corridors = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Thematic_Layers/MapServer/44',
+    pane: 'bottom'
+  }),
+  popup: popupCorridors('foo', 'bar')
+}
 
 export const centersRegional = {
   features: window.L.esri.featureLayer({
