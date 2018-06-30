@@ -109,14 +109,18 @@ const addLayers = (layerSet) => {
  * @param {String} Layer key, eg 'projectPoints'
  */
 const addLayer = layer => {
+  if (!layers[layer]) {
+    return
+  }
   layers[layer].features.addTo(map);
   bus.emit('layer:reset', layer);
-  layers[layer].features.bindPopup((evt) => {
-    openPopUp(evt, layer);
-    return '';
-  }).on('popupclose', function () {
-    bus.emit('layer:reset', layer);
-  });
+
+  // layers[layer].features.bindPopup((evt) => {
+  //   openPopUp(evt, layer);
+  //   return '';
+  // }).on('popupclose', function () {
+  //   bus.emit('layer:reset', layer);
+  // });
 };
 
 /**
@@ -162,6 +166,9 @@ const removeLayers = (layerSet) => {
  * @param {String} Layer key, eg 'projectPoints'
  */
 const removeLayer = layer => {
+  if (!layers[layer]) {
+    return
+  }
   layers[layer].features.removeFrom(map);
   layers[layer].features.unbindPopup();
 };
@@ -170,6 +177,7 @@ const removeLayer = layer => {
  * Adds any layers indicated as active from the layer toggle list to the map.
  */
 const drawLayers = () => {
+  console.log('redraw')
   let layers = getActiveLayers()
   bus.emit('map:legend', layers);
   layers.forEach((toggle) => {

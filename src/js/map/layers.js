@@ -108,7 +108,7 @@ export const trafficClassifications = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
     layers: [2,3],
   }),
-  pane: 'bottom',
+  pane: 'bottom'
 }
 
 /**

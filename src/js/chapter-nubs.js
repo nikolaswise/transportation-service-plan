@@ -49,19 +49,23 @@ const drawNubs = () => {
   })
   nubs.forEach(nub => {
     let html = renderNub(nub)
-    nubList.insertAdjacentHTML('beforeend', html)
+    if (nubList) {
+      nubList.insertAdjacentHTML('beforeend', html)
+    }
   })
   bus.emit('nubs:active', 'top');
 }
 
 const setActiveNub = id => {
-  let nubs = dom.nodeListToArray(nubList.querySelectorAll('.js-nub'))
-  nubs.forEach(nub => {
-    classy.remove(nub, 'is-active')
-    if (nub.getAttribute('data-nub') === id) {
-      classy.add(nub, 'is-active')
-    }
-  })
+  if (nubList) {
+    let nubs = dom.nodeListToArray(nubList.querySelectorAll('.js-nub'))
+    nubs.forEach(nub => {
+      classy.remove(nub, 'is-active')
+      if (nub.getAttribute('data-nub') === id) {
+        classy.add(nub, 'is-active')
+      }
+    })
+  }
 }
 
 const nubs = () => {
