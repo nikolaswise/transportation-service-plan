@@ -3,39 +3,21 @@ Glossary
 
 The Transportation System Plan uses clear, everyday language as much as possible. Words and terms in the Glossary have the specific meaning stated below when used in the Comprehensive Plan and TSP, unless the context clearly indicates another meaning. Words not included in this Glossary are defined by their dictionary meaning, or in some cases, by their meaning in state or federal law.
 
-2040 Growth Concept
+**2040 Growth Concept**
 
-A concept for the long-term growth management of our region, developed by Metro. It describes
+A concept for the long-term growth management of our region, developed by Metro. It describes the preferred form of regional growth, including where growth should be clustered, what the appropriate densities are for various land use design types, and which areas should be protected as open space. The 2040 Growth Concept was adopted as part of the Regional Urban Growth Goals and Objectives (RUGGOs) in 1995. (Source: 2000 RTP)
 
-the preferred form of regional growth, including where growth should be clustered, what the
+**Access**
 
-appropriate densities are for various land use design types, and which areas should be protected as open space. The 2040 Growth Concept was adopted as part of the Regional Urban Growth Goals and Objectives (RUGGOs) in 1995. (Source: 2000 RTP)
+The ability to approach or make use of transportation facilities, parks and open space, public infrastructure, or businesses and services that are open to the public. Good access means within close proximity (up to ó mile) that is free from physical barriers for those with limited mobility.
 
-Access
+**Access Management**
 
-The ability to approach or make use of transportation facilities, parks and open space, public
+Measures regulating access to streets, roads, and highways from public roads and private driveways. Measures may include, but are not limited to, restrictions on the siting of interchanges, restrictions on the type and amount of access to roadways, and use of physical controls (such as signals and channelization, including raised medians) to reduce impacts of approach road traffic on the main facility.
 
-infrastructure, or businesses and services that are open to the public. Good access means within close proximity (up to ó mile) that is free from physical barriers for those with limited mobility.
+**Accessibility**
 
-Access Management
-
-Measures regulating access to streets, roads, and highways from public roads and private
-
-driveways. Measures may include, but are not limited to, restrictions on the siting of
-
-interchanges, restrictions on the type and amount of access to roadways, and use of physical
-
-controls (such as signals and channelization, including raised medians) to reduce impacts of
-
-approach road traffic on the main facility.
-
-Accessibility
-
-The ability to move easily from one mode of transportation to another mode or to a destination.
-
-Accessibility increases when the number and quality of travel choices increases. Accessibility is
-
-affected by the mix of land uses and the travel alternatives available.
+The ability to move easily from one mode of transportation to another mode or to a destination. Accessibility increases when the number and quality of travel choices increases. Accessibility is affected by the mix of land uses and the travel alternatives available.
 
 Accessway
 
