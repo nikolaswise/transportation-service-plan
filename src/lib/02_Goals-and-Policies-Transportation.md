@@ -1,6 +1,3 @@
-Goals and Policies
-==================
-
 Transportation Goals
 ---------------------
 
@@ -245,7 +242,6 @@ System Management Policies
 >
 > **e:** By 2035, increase the mode share of daily non-drive alone trips to 70 percent citywide, and to the following in the five pattern areas:
 
-
 | **Pattern Area**      | **2035 Daily Target Mode Share** |
 | - | - |
 | Central City          | > 85%                            |
@@ -259,14 +255,14 @@ System Management Policies
 > **f:** By 2035, 70 percent of commuters walk, bike, take transit, carpool, or work from home at approximately the following rates:
 
 
-  | Mode | Mode Share |
-  | - | - |
-  | Walk | 7.5% |
-  | Bicycle | 25% |
-  | Transit | 25% |
-  | Carpool | 12.5% |
-  | Single Occupant Vehicle (SOV) | 30% or less |
-  | Work at home | 10% below the line (calculated outside of the modal targets above) |
+| **Mode** | **Mode Share** |
+| - | - |
+| Walk                           | 7.5% |
+| Bicycle                        | 25% |
+| Transit                        | 25% |
+| Carpool                        | 12.5% |
+| Single Occupant Vehicle (SOV)  | 30% or less |
+| Work at home                   | 10% below the line (calculated outside of the modal targets above) |
 
 
 > (Transportation System Plan Policy 9.49.f)
@@ -291,7 +287,7 @@ System Management Policies
 
 > **m:** Develop performance measures to track progress in creating and maintaining the transportation system. (Transportation System Plan Policy 9.49.m)
 
-![](/img/media/image4.png)
+![](src/img/media/image4.png)
 
 **Regional congestion management:** Coordinate with Metro to establish new regional multimodal mobility standards that prioritize transit, freight, and system completeness. (Comprehensive Plan Policy 9.50)
 
@@ -300,7 +296,7 @@ System Management Policies
 > **b:** In the interim, use the deficiency thresholds and operating standards of the Regional Mobility Policy, in Figure 9‐4, for evaluation of impacts to state facilities and the regional arterial and throughway network. (Transportation System Plan Policy 9.50.b)
 
   -----------------------------------------------------------------------------------------
-  ![](/img/media/image3.png)
+  ![](src/img/media/image3.png)
   -----------------------------------------------------------------------------------------
 
 **Multimodal Mixed-Use Area:** Designate a Central City Multimodal Mixed-Use Area (MMA) in the geography indicated in Figure 9‐2, which will render state congestion / mobility standards inapplicable to proposed plan amendments under OAR 660-0012-0060(10), subject to ODOT concurrence and execution of an agreement between ODOT and the City of Portland. The agreement should emphasize potential safety and operational impacts. (Comprehensive Plan Policy 9.51)

@@ -1,7 +1,7 @@
 Implementation Strategies
 =========================
 
-**Introduction**
+**INTRODUCTION**
 ----------------
 
 The State Transportation Planning Rule (TPR) defines a refinement plan as an amendment to a transportation system plan (TSP) that resolves, at the system level, the function, mode, or general location of a transportation project that was deferred during development of the TSP. A refinement plan is necessary when the detailed information required to address a transportation need could not be determined during the TSP process.
@@ -63,7 +63,7 @@ Long-term improvements are needed in this corridor to preserve access between th
 
 ● Implement access management measures throughout the corridor, including grade separations at intersections along Highway 224 between Harrison Street and I-205.
 
-● Discourage spillover traffic from McLoughlin and Highway 224 onto Tacoma Street, 17th Avenue, Johnson Creek Boulevard, 34th Avenue, and Lake Road.
+● Discourage spillover traffic from McLoughlin and Highway 224 onto Tacoma Street, 17^th^ Avenue, Johnson Creek Boulevard, 34^th^ Avenue, and Lake Road.
 
 ● Monitor and mitigate spillover traffic from McLoughlin and Highway 224 onto other local collectors.
 
@@ -155,7 +155,7 @@ Several outstanding transportation problems in the Pleasant Valley, Damascus and
 
 -   Explore the possibilities for potential new street connection improvements in the Mount Scott area that reduce local travel demand on Foster Road and improve access to the Pleasant Valley area.
 
--   Develop conceptual designs and determine right-of-way for an improvement and extension of SE 174th Avenue between Powell Boulevard and Giese Road, or another new north-south roadway in the area, to accommodate travel demand and improve access to Pleasant Valley. The alignment should consider engineering feasibility, land use and environmental effects, safety, and overall costs.
+-   Develop conceptual designs and determine right-of-way for an improvement and extension of SE 174^th^ Avenue between Powell Boulevard and Giese Road, or another new north-south roadway in the area, to accommodate travel demand and improve access to Pleasant Valley. The alignment should consider engineering feasibility, land use and environmental effects, safety, and overall costs.
 
 -   Further define the three-lane Highland Drive and Pleasant View Drive option that was recommended as part of Phase 1. This option needs to address design, operational, and safety-related issues.
 
@@ -199,7 +199,7 @@ Transportation solutions in the corridor should consider the following approache
 
 -   Coordination with previous planning studies and recommendations from the South Portland Circulation Study, Barbur Boulevard Streetscape Plan, and Barbur Boulevard Streamline Project
 
-**RTP Studies**
+**RTP Studies **
 ----------------
 
 ***Interstate 205 Ramp Study***
@@ -208,7 +208,7 @@ Transportation solutions in the corridor should consider the following approache
 
 Based on adopted policy, the City designed the freeway ramp and collector-distributor road system on either side of the I-205 freeway to operate so Powell Boulevard on the west side of I-205 and Division on the east side of I-205 provide a continuous route from Portland to Gresham. This design was intended to take automobile and truck traffic off the more transit-oriented Division Street west of I-205 and use Division east of I-205, in combination with the more auto-oriented Powell Boulevard west of I-205, for the bulk of trips between the two centers.
 
-The current design of the ramp termini reflects this policy intent. There has been recent interest, however, in revisiting the turn restrictions and physical restrictions imposed by the policy and design. ODOT and the City have agreed to analyze the type of improvements that might be necessary to remove the turn restrictions at SE 92nd and Powell Boulevard and allow for more balanced turn movements throughout the interchange area.
+The current design of the ramp termini reflects this policy intent. There has been recent interest, however, in revisiting the turn restrictions and physical restrictions imposed by the policy and design. ODOT and the City have agreed to analyze the type of improvements that might be necessary to remove the turn restrictions at SE 92^nd^ and Powell Boulevard and allow for more balanced turn movements throughout the interchange area.
 
 ***West Portland/I-5 Access and Crossings Study***
 
@@ -218,15 +218,15 @@ Because of the barrier effect of I-5 and SW Barbur, the existing street pattern 
 
 *I-5 Crossing*
 
-The existing pedestrian/bicycle connection across I-5 ramps down from the transit center, crosses I-5 on a pedestrian bridge, then ramps down to SW Willard at 40th. The West Portland Town Center Study (December 1997) recommended enhancing the existing pedestrian bridge crossing by reconfiguring the park-and-ride lot, providing a new local street crossing in the vicinity of the transit center, and potentially capping a portion of I-5. In addition, sidewalk improvements are needed on local streets south of I5 to improve connections to the existing pedestrian bridge.
+The existing pedestrian/bicycle connection across I-5 ramps down from the transit center, crosses I-5 on a pedestrian bridge, then ramps down to SW Willard at 40^th^. The West Portland Town Center Study (December 1997) recommended enhancing the existing pedestrian bridge crossing by reconfiguring the park-and-ride lot, providing a new local street crossing in the vicinity of the transit center, and potentially capping a portion of I-5. In addition, sidewalk improvements are needed on local streets south of I5 to improve connections to the existing pedestrian bridge.
 
 *Local Street Connectivity*
 
 Southwest Barbur and I-5 create barriers at the north and south ends of the West Portland town center. Only Capitol Highway and the pedestrian bridge at the transit center cross I-5 in the vicinity of the town center, resulting in a local street network with missing links. Potential locations for local street crossings of I-5 are:
 
--   Replacing the existing pedestrian/bicycle bridge over I-5 with a pedestrian-oriented, local street connection on the 39th/40th alignment, connecting to 40th at Wilbard Street and to SW 35th
+-   Replacing the existing pedestrian/bicycle bridge over I-5 with a pedestrian-oriented, local street connection on the 39^th^/40^th^ alignment, connecting to 40^th^ at Wilbard Street and to SW 35^th^
 
--   Constructing a new local street that extends SW 48th Avenue south on a new bridge structure to SW Huber Street and then connects to an extension of SW Alfred Street
+-   Constructing a new local street that extends SW 48^th^ Avenue south on a new bridge structure to SW Huber Street and then connects to an extension of SW Alfred Street
 
 ● Constructing a bicycle/pedestrian bridge between the Ash Creek and Crestwood neighborhood and the West Portland Park neighborhood in the vicinity of the Dickinson Street corridor, south of Markham School
 
@@ -303,15 +303,15 @@ The 2000 2014 RTP requires local jurisdictions to develop "conceptual new street
 
 Areas of the City without adopted street plans must be analyzed to determine where adequate connectivity does not exist. Some areas, such as inner Southeast, have high levels of street connectivity that exceed regional standards. Other districts, such as Northwest, exhibit high street connectivity near the Central City, but poor connectivity in outlying areas where topography and industrial zoning may preclude connectivity. At a district level, the Far Northeast exhibits the lowest levels of connectivity for areas not covered by an adopted street plan.
 
-####
+####  
 
-#### **Other Agency Common Priority Projects in Portland**
+#### **Other Agency Common Priority Projects in Portland** 
 
-#### This project is needed in order to collaborate with ODOT, the Port, Portland Parks and Recreation, and TriMet to identify common priority projects for the 2018 RTP. The 2018 RTP is proposed as a "major update." The City did not evaluate other agency proposed projects within Portland for the 2014 RTP, or the 2035 TSP update. This collaborative study, or three separate studies, would identify projects that the City and one or more of the other agencies agree should be advanced as priority projects in the 2018 RTP. The study will refine project evaluation criteria based on RTP and TSP adopted outcomes.
+#### This project is needed in order to collaborate with ODOT, the Port, Portland Parks and Recreation, and TriMet to identify common priority projects for the 2018 RTP. The 2018 RTP is proposed as a "major update." The City did not evaluate other agency proposed projects within Portland for the 2014 RTP, or the 2035 TSP update. This collaborative study, or three separate studies, would identify projects that the City and one or more of the other agencies agree should be advanced as priority projects in the 2018 RTP. The study will refine project evaluation criteria based on RTP and TSP adopted outcomes. 
 
 #### **Citywide All-Modes Needs Analysis**
 
-####
+#### 
 
 #### **Projected ODOT "Hot Spot" Locations Refinement Plan**
 
@@ -325,7 +325,7 @@ Studies
 
 ***Purpose:** Assess the long-term design and functional needs of state highways inside the City.*
 
-The City and ODOT are both interested in transitioning district highways within the City limits to Portland's jurisdiction and management. These may include Sandy Boulevard, NE/SE 82nd Avenue, N/NE Lombard, NE/SE Martin Luther King, Jr. Boulevard, and NE/SE Grand Avenue. Many of these highways have changed roles over time, as parallel state routes and limited-access highways were constructed. These district highways formerly served as through-routes, but now provide more local circulation and commercial access functions.
+The City and ODOT are both interested in transitioning district highways within the City limits to Portland's jurisdiction and management. These may include Sandy Boulevard, NE/SE 82^nd^ Avenue, N/NE Lombard, NE/SE Martin Luther King, Jr. Boulevard, and NE/SE Grand Avenue. Many of these highways have changed roles over time, as parallel state routes and limited-access highways were constructed. These district highways formerly served as through-routes, but now provide more local circulation and commercial access functions.
 
 The City's interest in assuming jurisdiction is based on land use (implementing 2040 main street development); development review (giving one agency permit authority for buildings, driveways, etc.); street design (incorporating multimodal features, more calmed traffic), and operations (implementing signalization, parking control, etc.).
 
@@ -357,15 +357,15 @@ This study would look at streets that cross jurisdictional lines, to identify ch
 
 Metro designates collector-level streets as part of the regional street system when a network of higher-classified streets is not present or lacks adequate capacity to carry regional traffic. Designated in the RTP as 'collectors of regional significance', these streets connect the regional arterial system and the local collector system and distribute neighborhood traffic to arterials. They have three purposes: 1) ensure adequate access to the primary and secondary land use components of the 2040 Growth Concept, 2) allow dispersion of arterial traffic over a number of lesser facilities where an adequate local network exists, and 3) define appropriate collector-level movement between jurisdictions.
 
-The RTP designates some district and neighborhood collectors in Portland as collectors of regional significance. Examples of Portland streets that have this designation and extend beyond Portland boundaries are SW Taylors Ferry, SW Terwilliger, SE 52nd, SE 112th, SE Johnson Creek, and NW Cornell.
+The RTP designates some district and neighborhood collectors in Portland as collectors of regional significance. Examples of Portland streets that have this designation and extend beyond Portland boundaries are SW Taylors Ferry, SW Terwilliger, SE 52^nd^, SE 112^th^, SE Johnson Creek, and NW Cornell.
 
 ***NE Glisan Street Transportation and Streetscape Study***
 
 ***Purpose**: Identify transportation and streetscape improvements that address commercial, pedestrian, bicycle, safety and neighborhood livability needs.*
 
-Northeast Glisan been NE 67th and 82nd Avenues has been designated a main street in the Region 2040 Growth Concept. The TSP designated this segment of Glisan as a Community Main Street for street design purposes. The TSP contains one project, bike lanes, for NE Glisan.
+Northeast Glisan been NE 67^th^ and 82^nd^ Avenues has been designated a main street in the Region 2040 Growth Concept. The TSP designated this segment of Glisan as a Community Main Street for street design purposes. The TSP contains one project, bike lanes, for NE Glisan.
 
-Currently, this segment of Glisan stretches between two light rail stations at 60th and 82nd. The land use and zoning pattern is storefront commercial, consistent with its main street designation. NE Glisan has the potential to be a thriving commercial district with multimodal connections. Barriers that prevent Glisan from realizing its potential include heavy automobile use as an alternative to I-84 during peak travel times; difficult pedestrian crossings and inadequate sidewalks and large curb cuts, missing bike lanes, intermittent on-street parking, and a lack of street trees.
+Currently, this segment of Glisan stretches between two light rail stations at 60^th^ and 82^nd^. The land use and zoning pattern is storefront commercial, consistent with its main street designation. NE Glisan has the potential to be a thriving commercial district with multimodal connections. Barriers that prevent Glisan from realizing its potential include heavy automobile use as an alternative to I-84 during peak travel times; difficult pedestrian crossings and inadequate sidewalks and large curb cuts, missing bike lanes, intermittent on-street parking, and a lack of street trees.
 
 Glisan St was given a road diet between 62nd and 81st avenues, improving pedestrian crossing conditions. However, nothing has yet been done on this stretch specifically for bicycle safety.
 
@@ -375,7 +375,7 @@ Glisan St was given a road diet between 62nd and 81st avenues, improving pedestr
 
 #### **Growing Transit Communities Investment Plan **
 
-#### This project will identify corridors within the City of Portland where the development of compact, transit oriented communities would be stimulated by targeted investments that support a high level of access to fast, reliable, and frequent transit service. It will then identify and prioritize the specific infrastructure, program and policy investments that are most needed in those corridors to produce the level and type of growth and mode shift targeted by the City and the region. The study will then develop funding and implementation strategies for the improvements. The project will result in an investment plan that will be a model for other jurisdictions in the region. It will be incorporated into future updates of the Transportation System Plan and the Regional Transportation Plan. This project is funded.
+#### This project will identify corridors within the City of Portland where the development of compact, transit oriented communities would be stimulated by targeted investments that support a high level of access to fast, reliable, and frequent transit service. It will then identify and prioritize the specific infrastructure, program and policy investments that are most needed in those corridors to produce the level and type of growth and mode shift targeted by the City and the region. The study will then develop funding and implementation strategies for the improvements. The project will result in an investment plan that will be a model for other jurisdictions in the region. It will be incorporated into future updates of the Transportation System Plan and the Regional Transportation Plan. This project is funded. 
 
 #### **Enhanced Transit Corridors**
 
@@ -401,7 +401,7 @@ Project-Specific Objectives:
 
 -   East Portland Project
 
-    -   Create enhanced next generation north-south transit service in East Portland, above and beyond the frequent service improvements currently contemplated with the 2015 Trimet Service Improvement Plans. Evaluate opportunities in Gateway, and on 82nd, 122nd, 148th and 162nd.
+    -   Create enhanced next generation north-south transit service in East Portland, above and beyond the frequent service improvements currently contemplated with the 2015 Trimet Service Improvement Plans. Evaluate opportunities in Gateway, and on 82^nd^, 122^nd^, 148^th^ and 162^nd^.
 
     -   The project will examine the employment location and commute patterns of east Portland residents, and evaluate ways to improve transit access to jobs in the Columbia/Airport Way corridors and elsewhere in the region from east Portland.
 
@@ -415,7 +415,7 @@ Project-Specific Objectives:
 
     -   Create enhanced next generation higher capacity transit service in Inner Ring corridors projected to experience high levels of residential and/or job growth sufficient to exceed projected transit capacity, frequency, and reliability.
 
-    -   The project will build from analysis completed with the 2009 Streetcar System Concept Plan, and subsequent economic impact studies. Gather projected ridership and traffic data for corridors such as Grand/MLK, Division, Macadam, Sandy, Burnside/Stark, Broadway, 18th/19th, Belmont/Hawthorne, and Vancouver/Williams. Identify 2-3 corridors for further evaluation.
+    -   The project will build from analysis completed with the 2009 Streetcar System Concept Plan, and subsequent economic impact studies. Gather projected ridership and traffic data for corridors such as Grand/MLK, Division, Macadam, Sandy, Burnside/Stark, Broadway, 18^th^/19^th^, Belmont/Hawthorne, and Vancouver/Williams. Identify 2-3 corridors for further evaluation.
 
     -   The project will examine transit demand, traffic and travel patterns in the highest demand corridors, and evaluate ways to improve transit frequency and reliability, from origins to destinations.
 
@@ -427,7 +427,7 @@ Project-Specific Objectives:
 
 #### **Industrial Lands Access Study**
 
-#### This study will identify, evaluate and prioritize potential industrial lands transportation access investments and revenue sources following adoption of the 2035 Comprehensive Plan and 2035 TSP.
+#### This study will identify, evaluate and prioritize potential industrial lands transportation access investments and revenue sources following adoption of the 2035 Comprehensive Plan and 2035 TSP. 
 
 #### **Pedestrian Master Plan**
 

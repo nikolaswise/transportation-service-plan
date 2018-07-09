@@ -1,7 +1,7 @@
 Modal Plans
 ===========
 
-**Motor Vehicle**
+**Motor Vehicle **
 ------------------
 
 Comp Plan policies were adopted that address motor vehicles. Specific policies include Policy 9.6 Transportation for People Movement; 9.7 Moving goods and delivery services. Policy 9.38 Automobile Transportation which states: Maintain acceptable levels of mobility and access for private automobiles while reducing overall vehicle miles traveled (VMT) and negative impacts of private automobiles on the environment and human health. This is a new policy specific to motor vehicles in the 2016 Comp Plan.
@@ -109,7 +109,7 @@ For more information please visit <https://www.portlandoregon.gov/transportation
 
 Transit Classification Descriptions and Maps were updated as part of TSP3, Section 4.
 
-**Pedestrian**
+**Pedestrian **
 ---------------
 
 **Comp Plan Policies**
@@ -213,6 +213,8 @@ Other bicycle programs, planning efforts and improvements include:
 
 -   City Greenway Plan and Implementation
 
+<!-- -->
+
 -   BetterNaito
 
 -   Protected bike lanes
@@ -260,6 +262,8 @@ Portland's freight hub is characterized by its 12,500 acres of industrial land s
 
 -   The Freight Master Plan is part of the City's Comprehensive Plan - the policy guide for City growth and development - and one of the modal elements of the City's Transportation System Plan, which elevates freight to the same level as the other modal plans (bicycle, pedestrian, motor vehicle, transportation demand management, transit) by addressing the unique characteristics, needs and impacts of freight movement.
 
+<!-- -->
+
 -   Established the Portland Freight Committee, which brought together a diverse group of members representing various multi-modal freight service providers, shippers, trade associations, and businesses involved in freight activities as well as public agency representatives from the local, state, and federal levels. The Portland Freight Committee serves as an advisory group to the Mayor, Portland City Council and the Portland Bureau of Transportation on freight related issues.
 
 **How is the Freight Master Plan Implemented?** The capital projects, programs and activities identified in Freight Master Plan were developed based on three core values:
@@ -268,11 +272,12 @@ Portland's freight hub is characterized by its 12,500 acres of industrial land s
 
 <https://www.portlandoregon.gov/transportation/article/357102>
 
-**Other Freight Planning, Projects and Programs**
+**Other Freight Planning, Projects and Programs **
 
 **St John's Transportation Concept Plan**
 
-The Portland Bureau of Transportation (PBOT), in partnership with the Portland Bureau of Planning and Sustainability, Portland Bureau of Environmental Services, Port of Portland, Metro, TriMet, and the Oregon Department of Transportation (ODOT), has developed a set of location‐specific and programmatic recommendations to address traffic circulation, freight mobility, and pedestrian access issues identified in the St. Johns Truck Strategy. Over a period of over two years, the Portland Bureau of Transportation, with assistance from a consultant team have been developing specific project and programmatic recommendations which advance the objectives identified in the St. Johns Truck Strategy, the St. Johns Lombard Plan, the Portland Transportation Systems Plan, the Portland freight, pedestrian and bicycle master plans, and other guiding documents.
+The Portland Bureau of Transportation (PBOT), in partnership with the Portland Bureau of Planning\
+and Sustainability, Portland Bureau of Environmental Services, Port of Portland, Metro, TriMet, and the Oregon Department of Transportation (ODOT), has developed a set of location‐specific and programmatic recommendations to address traffic circulation, freight mobility, and pedestrian access issues identified in the St. Johns Truck Strategy. Over a period of over two years, the Portland Bureau of Transportation, with assistance from a consultant team have been developing specific project and programmatic recommendations which advance the objectives identified in the St. Johns Truck Strategy, the St. Johns Lombard Plan, the Portland Transportation Systems Plan, the Portland freight, pedestrian and bicycle master plans, and other guiding documents.
 
 <https://www.portlandoregon.gov/transportation/article/650491>
 
@@ -294,8 +299,8 @@ The study includes the following elements:
 
 <https://www.portlandoregon.gov/transportation/73902>
 
-**Air, Rail, Water, Pipeline**
-------------------------------
+Air, Rail, Water, Pipeline
+--------------------------
 
 The Airport Futures Plan was adopted in 2010. Policies from the Airport Futures are incorporated into Comp Plan Policies 9.41 - 9.44.
 
