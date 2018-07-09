@@ -1,4 +1,5 @@
-# Introduction
+Introduction
+============
 
 Portland is projected to add 140,000 new jobs and 260,000 new residents over the next 20 years. As Portland and the region grow, however, there is a continuing challenge to maintain the natural environment, economic prosperity, and overall quality of life. If in 2035 the percentage of people who drive alone to work remains the same as it is now (nearly 60 percent), traffic, carbon emissions, and household spending on vehicles and fuel will all worsen significantly. In order to accommodate this growth, our transportation system must provide Portlanders safer and more convenient ways to walk, bike, and take transit for more trips. The 2035 Transportation System Plan guides investments to maintain and improve the livability of Portland by:
 
@@ -12,7 +13,7 @@ Portland is projected to add 140,000 new jobs and 260,000 new residents over the
 
 -   creating great places
 
-The Transportation System Plan is the 20-year plan to guide transportation policies and investments in Portland. The TSP meets state and regional planning requirements and addresses local transportation needs. Transportation planning that promotes active transportation modes is essential to preserving the City's livability and for the protection of the natural environment Constructing significant amounts of new automobile capacity to accommodate growth is not a viable option because of the enormous costs and impacts. Adding more streets and parking lots divides neighborhoods, uses valuable land, encourages urban sprawl, and has negative environmental impacts. Alternative approaches, supporting a safer, more affordable and more complete multimodal transportation network must be used to ensure integrated, comprehensive solutions. The first TSP was adopted by Council in 2002 (Ordinance 177028).
+The Transportation System Plan is the 20-year plan to guide transportation policies and investments in Portland. The TSP meets state and regional planning requirements and addresses local transportation needs. Transportation planning that promotes active transportation modes is essential to preserving the City's livability and for the protection of the natural environment. Constructing significant amounts of new automobile capacity to accommodate growth is not a viable option because of the enormous costs and impacts. Adding more streets and parking lots divides neighborhoods, uses valuable land, encourages urban sprawl, and has negative environmental impacts. Alternative approaches, supporting a safer, more affordable and more complete multimodal transportation network must be used to ensure integrated, comprehensive solutions. The first TSP was adopted by Council in 2002 (Ordinance 177028).
 
 The Transportation System Plan helps implement the City's 2035 Comprehensive Plan in addition to the region's 2040 Growth Concept by supporting a transportation system that makes it more convenient for people to walk, bicycle, use transit, and drive less to meet their daily needs. The TSP also recognizes that the transportation system must help grow and sustain the City's economic health by accommodating the needs of businesses and supporting Portland's role in the international economy.
 
@@ -48,7 +49,7 @@ The second update was completed and adopted by City Council on April 5, 2007 (ef
 
 Stage 1 TSP Update was a part of the City's Comprehensive Plan update process and a component of the state's Periodic Work Plan Task 4. It included Goals, Policies, Projects and Programs and a Financial Plan. It was adopted by City Council in June 2016.
 
-The Stage 2 TSP Update was a part of the City's Comprehensive Plan update and changes were made to implement the Comp Plan, as well as reflect adopted plans and classification changes since the last update in 2007. Periodic Work Plan Task 5. It was adopted by City Council in December 2016.
+The Stage 2 TSP Update was a part of the City's Comprehensive Plan update and changes were made to implement the Comp Plan, as well as reflect adopted plans and classification changes since the last update in 2007. Periodic Work Plan Task 5 was adopted by City Council in December 2016.
 
 TSP Stage 3 TSP Update is incorporating regional information, updating geographic policies and objectives, updating objectives, adding a few policies, changes to street classification for traffic, transit and emergency response, modal plans, and other changes as identified. There is also parallel staff process to reformat the document and create a new user friendly digital document.
 
@@ -242,7 +243,7 @@ Chapter 2 policies are grouped in these major areas:
 Seven Outcomes
 --------------
 
-Working with our partners at Metro, the Bureau of Planning and Sustainability, and the Oregon Department of Transportation, with direction from the Portland Plan (2012), the Climate Action Plan (2010), Health Equity & the Transportation System Plan Report (2012), and from the Comprehensive Plan Update, PBOT staff developed an outcomes based approach to the TSP.
+Working with our partners at Metro, the Bureau of Planning and Sustainability, and the Oregon Department of Transportation, with direction from the Portland Plan (2012), the Climate Action Plan (2010), Health Equity & the Transportation System Plan Report (2012), and from the Comprehensive Plan Update, PBOT staff developed an outcome based approach to the TSP.
 
 These seven outcomes directed policy choices as well as informed the development of criteria for selecting and prioritizing TSP Projects and Programs. The Transportation System Improvements Chapter contains details on the citywide project and programs process and evaluation.
 

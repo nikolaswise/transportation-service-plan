@@ -109,7 +109,7 @@ A system of distinctive pedestrian- and bicycle-friendly green streets and trail
 
 As designated in the 2000 Regional Transportation Plan, a route that connects the regional arterial system and the local system by collecting and distributing neighborhood traffic to arterial streets. Collectors of regional significance have three purposes: 1) They ensure adequate access to the primary and secondary land use components of the 2040 Growth Concept; 2) They allow dispersion of arterial traffic over a number of lesser facilities where an adequate local network exists; 3) They help define appropriate collector level movement between jurisdictions. (Source: 2000 RTP)
 
-**Collector street**
+**Collector Street**
 
 A class of street. Collector streets provide both access and circulation between residential, commercial, industrial and agricultural community areas and the arterial system. As such, collectors tend to carry fewer motor vehicles than arterial streets, with reduced travel speeds. Collector streets are usually spaced at half-mile intervals, midway between arterial streets. Collectors may serve as bike, pedestrian and freight access routes, providing local connections to the arterial street network and transit system. While the focus for collectors has been on motor vehicle traffic, they are developed as multi-modal facilities that accommodate bicycles, pedestrians and transit.
 
@@ -127,7 +127,7 @@ A condition characterized by unstable traffic flows that prevents reliable movem
 
 **Connected Vehicle**
 
-a vehicle that communicates with the Internet, other vehicles, wayside systems and/or passengers.
+A vehicle that communicates with the Internet, other vehicles, wayside systems and/or passengers.
 
 **Corridor**
 
@@ -183,7 +183,7 @@ Bus or MAX Light Rail transit service that runs every 15 minutes or better most 
 
 **Functional Plan**
 
-A limited-purpose, multijurisdictional plan for an area or activity having significant districtwide impact on the orderly and responsible development of the metropolitan area. A Functional Plan serves as a guideline for local comprehensive plans consistent, with ORS 268.390.
+A limited-purpose, multijurisdictional plan for an area or activity having significant districtwide impact on the orderly and responsible development of the metropolitan area. A Functional Plan serves as a guideline for local comprehensive plans consistent with ORS 268.390.
 
 **Goals**
 
@@ -209,7 +209,7 @@ High-capacity transit is public transit that bypasses congestion by making full 
 
 Any vehicle carrying two or more persons, including the driver. An HOV could be a transit bus, vanpool, carpool, or any other vehicle that meets the minimum occupancy requirements. Consistent with federal regulations, motorcycles (with or without passengers) are considered HOVs.
 
-**Historically marginalized communities**
+**Historically Marginalized Communities**
 
 Communities included as part of the 2018 RTP Transportation Equity Assessment include: People of Color; People with Lower-Incomes; People with Limited English Proficiency; Older Adults; Young Persons
 
@@ -265,7 +265,7 @@ The percentage of trips taken by each of the possible modes of travel (motor veh
 
 A qualitative measure describing operational conditions within a traffic stream. A level-of-service definition generally describes these conditions in terms of such factors as speed and travel time, freedom to maneuver, traffic interruptions, comfort, convenience, and safety. LOS ratings of 'A' through 'F' describe the traffic flow characteristics on streets and highways and at intersections, as shown on the following table:
 
-![](src/img/media/image2.png){width="6.5in" height="3.3194444444444446in"}
+![](/img/media/image2.png)
 
 **Multimodal**
 
@@ -371,7 +371,7 @@ Amendments to the Transportation System Plan. Refinement Plans resolve, at a sys
 
 **Regional Center (Metro)**
 
-Compact, specifically defined areas where high density growth and a mix of intensive residential and commercial land uses exists or is planned. regional centers are to be supported by an efficient transit-oriented, multi-modal transportation system.
+Compact, specifically defined areas where high density growth and a mix of intensive residential and commercial land uses exist or are planned. regional centers are to be supported by an efficient transit-oriented, multi-modal transportation system.
 
 **Regional Transportation Functional Plan (RTFP)**
 
@@ -393,15 +393,15 @@ A public area that allows for the passage of people or goods. Right-of-way inclu
 
 Shared residential street is a low-traffic street where all modes of travel mix within the paved roadway.
 
-**Shared roadway bikeway**
+**Shared Roadway Bikeway**
 
-Shared roadway bikeway is a facility type identified in the Portland Bicycle Plan for 2030, used on lower volume roadways where bicycles mix with motor vehicles
+Shared roadway bikeway is a facility type identified in the Portland Bicycle Plan for 2030, used on lower volume roadways where bicycles mix with motor vehicles.
 
 **State Implementation Plan (SIP)**
 
 State plan for achieving air quality goals to ensure compliance with the requirements of the federal Clean Air Act.
 
-**Speed cushion**
+**Speed Cushion**
 
 Speed cushions are either speed humps or speed tables that include wheel cutouts to allow large vehicles to pass unaffected, while reducing passenger car speeds. They can be offset to allow unimpeded passage by emergency vehicles and are typically used on key emergency response routes. Speed cushions extend across one direction of travel from the centerline, with longitudinal gap provided to allow wide wheel base vehicles to avoid going over the hump.
 
@@ -485,8 +485,7 @@ Tri-County Metropolitan Transportation District, the transit agency for most of 
 
 A journey made by any mode between an origin and a destination. Trips can be categorized as follows:
 
--   Regional trip -- A trip that has neither trip origin nor destination within the Portland metro\
-    > area.
+-   Regional trip -- A trip that has neither trip origin nor destination within the Portland metro area.
 
 -   Interregional trip -- A trip that has one trip end within the Portland region and the other trip end outside the Portland region.
 

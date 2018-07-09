@@ -1,8 +1,10 @@
 Street Classification Descriptions
 ==================================
 
-Pedestrian Classification Descriptions *(adopted 2002, currently under review. See the update of the Pedestrian Master Plan)*
------------------------------------------------------------------------------------------------------------------------------
+Pedestrian Classification Descriptions
+--------------------------------------
+
+*(adopted 2002, currently under review. See the update of the Pedestrian Master Plan at https://www.portlandoregon.gov/transportation/72504)*
 
 Pedestrian Classification Descriptions maintain a system of pedestrianways to serve all types of pedestrian trips, particularly those with a transportation function.
 
@@ -10,7 +12,7 @@ Pedestrian Classification Descriptions maintain a system of pedestrianways to se
 
 Pedestrian Districts are intended to give priority to pedestrian access in areas where high levels of pedestrian activity exist or are planned, including the Central City, Gateway regional center, town centers, and station communities.
 
-> **Land Use:** Zoning should allow a transit-supportive density of residential and commercial uses that support lively and intensive pedestrian activity. Auto- oriented development should be discouraged in Pedestrian Districts. Institutional campuses that generate high levels of pedestrian activity may be included in Pedestrian Districts. Exceptions to the density and zoning criteria may be appropriate in some designated historic districts with a strong pedestrian orientation.
+> **Land Use:** Zoning should allow a transit-supportive density of residential and commercial uses that support lively and intensive pedestrian activity. Auto-oriented development should be discouraged in Pedestrian Districts. Institutional campuses that generate high levels of pedestrian activity may be included in Pedestrian Districts. Exceptions to the density and zoning criteria may be appropriate in some designated historic districts with a strong pedestrian orientation.
 >
 > **Streets within a District:** Make walking the mode of choice for all trips within a Pedestrian District. All streets within a Pedestrian District are equal in importance in serving pedestrian trips and should have sidewalks on both sides.
 >
@@ -67,7 +69,7 @@ Major City Bikeways form the backbone of the city's bikeway network and are inte
 >
 > **Improvements:** Major City Bikeways should be designed to accommodate large volumes of bicyclists, to maximize their comfort and to minimize delays by emphasizing the movement of bicycles. Build the highest quality bikeway facilities. Motor vehicle lanes and on-street parking may be removed on Major City Bikeways to provide needed width for separated-in-roadway facilities where compatible with adjacent land uses and only after performing careful analysis to determine potential impacts to the essential movement of all modes. Where improvements to the bicycling environment are needed but the ability to reallocate road space is limited, consider alternative approaches that include property acquisition, or dedication, parallel routes and/or less desirable facilities. On Major City Bikeways developed as shared roadways, use all appropriate tools to achieve recommended performance guidelines. Where conditions warrant and where practical, Major City Bikeways should have separated facilities for bicycles and pedestrians.
 
-### 
+###
 
 ### City Bikeways
 
@@ -419,8 +421,6 @@ Enhanced Greenway Corridors are designed to provide a network of scenic low-stre
 > **Land Use:** Enhanced Greenway Corridors connect parks, open spaces, and singular attractions throughout the City to each other and to surrounding neighborhoods via a network of scenic and low-stress walking and/or bicycling routes. They can run through a variety of different land use contexts, including residential neighborhoods, natural areas, industrial areas, and employment centers.
 >
 > **Design Elements:** Enhanced Greenway Corridor design can take many forms, and should use flexible design treatments appropriate to adjacent land use context. Design elements may include: neighborhood greenways; traffic calming; motor vehicle diversion; multi-use paths; wide sidewalks; boardwalks; trails; separated bikeways; broad-canopy trees and landscaping; scenic views; stormwater management; underground utilities; special lighting; and way-finding. Where appropriate, pedestrian and bicycle routes may use separate parallel routes or streets along a corridor.
-
-[ ]{.underline}
 
 ### Greenscape Streets
 

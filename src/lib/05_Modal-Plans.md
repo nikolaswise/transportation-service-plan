@@ -1,23 +1,23 @@
 Modal Plans
 ===========
 
-**Motor Vehicle **
+**Motor Vehicle**
 ------------------
 
 Comp Plan policies were adopted that address motor vehicles. Specific policies include Policy 9.6 Transportation for People Movement; 9.7 Moving goods and delivery services. Policy 9.38 Automobile Transportation which states: Maintain acceptable levels of mobility and access for private automobiles while reducing overall vehicle miles traveled (VMT) and negative impacts of private automobiles on the environment and human health. This is a new policy specific to motor vehicles in the 2016 Comp Plan.
 
-**Public Transportation** 
+**Public Transportation**
 --------------------------
 
 **TriMet Service Enhancement Plans**
 
 PBOT worked with Trimet, riders, residents, neighborhood groups, governments, schools and businesses to plan improvements to transit service. The long-term vision developed identifies and prioritizes opportunities to improve bus service as well as pedestrian and bike access to transit.
 
-[[http://news.trimet.org/category/service-enhancement-plans/]{.underline}](http://news.trimet.org/category/service-enhancement-plans/)
+[http://news.trimet.org/category/service-enhancement-plans/](http://news.trimet.org/category/service-enhancement-plans/)
 
 **Growing Transit Communities Plan (GTC)**
 
-The Growing Transit Communities Plan is an effort to identify and prioritize the most beneficial improvements that would make getting to the bus and using the bus, a safer and more convenient option along sections of 3 bus lines 87, 77, and 20. The purpose of the GTC Plan) s to determine a package of transportation investments on a corridor level that would best create transit-oriented neighborhoods, places where transit (along with walking and bicycling for short trips) is truly the mode of choice for getting to and from work, school, shops, or other destinations. Frequent transit service is one essential component of a transit-oriented community, but other components include safe access to transit, bus stop quality, sidewalk and bikeway network connections, crossings of busy streets, and the overall built environment. Deficiencies in these other factors often lead to lower ridership, and make frequent service less viable to implement.
+The Growing Transit Communities Plan is an effort to identify and prioritize the most beneficial improvements that would make getting to the bus and using the bus, a safer and more convenient option along sections of 3 bus lines 87, 77, and 20. The purpose of the GTC Plan is to determine a package of transportation investments on a corridor level that would best create transit-oriented neighborhoods, places where transit (along with walking and bicycling for short trips) is truly the mode of choice for getting to and from work, school, shops, or other destinations. Frequent transit service is one essential component of a transit-oriented community, but other components include safe access to transit, bus stop quality, sidewalk and bikeway network connections, crossings of busy streets, and the overall built environment. Deficiencies in these other factors often lead to lower ridership, and make frequent service less viable to implement.
 
 The Portland Plan and the Climate Action Plan have established a mode split goal of 25% of all trips on transit by 2035, and the 2035 Regional Transportation Plan includes a goal of tripling transit mode share over 2005 levels. Increasing transit service frequency and targeted investments in access to transit are ways to increase transit ridership. Implementation of this Plan will help the City reach these policy goals and accommodate future growth.
 
@@ -25,7 +25,7 @@ Data from Metro's 2011 Travel Activity Survey indicates that 6.6% of trips in Po
 
 Transit and higher density zoning alone are not sufficient to produce the levels of development and transit use to meet regional goals. Without safe pedestrian and bicycle access to transit, high-quality transit stops, fast and reliable transit operations, parking management, and effective demand management, the automobile will likely be the preferred mode. TriMet's future investment and improving and expanding the frequent transit network will be prioritized based on the level of local access investments, transit-supportive policies, and priority treatments. TriMet and the City will work together to update corridors with transit-supportive investments to help support both frequent transit service and transit-oriented development. Targeted investments in access to transit, stop amenities, transit priority treatments, and demand management are ways to increase transit ridership. This project will help the City reach the adopted Climate Action Plan goal of achieving a 25% transit mode share by 2035. Making early investments before anticipated development will ensure future residents and employees find transit to be an attractive travel choice when they are moving or changing jobs and are most receptive to a change in mode choice. Transit-supportive investments have additional benefits by improving pedestrian and bicycle networks and enhancing transit service used by a wider population than those who work and live along the corridor. These investments will also help corridors meet TriMet's criteria for frequent service expansion, allowing the City to leverage investments for increased transit service hours.
 
-For more information please visit [[https://www.portlandoregon.gov/transportation/68193]{.underline}](https://www.portlandoregon.gov/transportation/68193)
+For more information please visit <https://www.portlandoregon.gov/transportation/68193>
 
 **Recent Transit Improvements**
 
@@ -33,19 +33,19 @@ For more information please visit [[https://www.portlandoregon.gov/transportatio
 
 Since first opening service from NW 23rd Avenue to Portland State University in 2001, PBOT and Portland Streetcar, Inc. have worked together to continuously fine tune and improve the efficiency and reliability of Portland Streetcar. A subcommittee of the Citizen Advisory Committee created a list of projects that could reduce travel times and improve reliability. The next suggestion on the list is the consolidation of stops.
 
-[[https://portlandstreetcar.org/news/2016/01/track-to-the-future]{.underline}](https://portlandstreetcar.org/news/2016/01/track-to-the-future)
+<https://portlandstreetcar.org/news/2016/01/track-to-the-future>
 
 **Light Rail**
 
 The Orange and Green Lines were built to connect to Clackamas Town Center (Green) and Downtown Milwaukee (Orange). The Orange line opened in September 2015 with the addition of the Tilikum Crossing, a bridge that does not accommodate motor vehicles but is for bikes, peds and transit.
 
-**Southwest Corridor Plan (SWC) **
+**Southwest Corridor Plan (SWC)**
 
 A key part of the Southwest Corridor Plan is a proposed 12-mile MAX light rail line from downtown Portland to Tigard and Bridgeport Village in Tualatin, along with numerous walking, biking and roadway projects to help people access stations. This plan has been created as a partnership of seven cities, Washington County and the Metro Council, along with TriMet and the Oregon Department of Transportation.
 
 The Southwest Corridor Plan includes:
 
--   A new 12-mile MAX line from downtown Portland to Tigard and Bridgeport Village in Tualatin [[Learn more]{.underline}](http://www.oregonmetro.gov/public-projects/southwest-corridor-plan/light-rail-study)
+-   A new 12-mile MAX line from downtown Portland to Tigard and Bridgeport Village in Tualatin [Learn more](http://www.oregonmetro.gov/public-projects/southwest-corridor-plan/light-rail-study)
 
 -   Roadway, bicycle and pedestrian projects to help people get to transit
 
@@ -55,13 +55,13 @@ The Southwest Corridor Plan includes:
 
 -   A Shared Investment Strategy for transportation improvements that connect the corridor's communities well beyond the proposed light rail line
 
-[[http://www.oregonmetro.gov/public-projects/southwest-corridor-plan]{.underline}](http://www.oregonmetro.gov/public-projects/southwest-corridor-plan)
+<http://www.oregonmetro.gov/public-projects/southwest-corridor-plan>
 
 **Division Transit Project**
 
 The Division Transit Project will improve travel between Downtown Portland, Southeast and East Portland and Gresham with easier, faster and more reliable bus service. Metro began planning for the project in 2014 by convening a project Steering Committee and holding a series of public open houses and meetings. Metro transferred project leadership to TriMet on December 20, 2016. The Division Transit Project will include design elements such as improved pedestrian crossings at stations, and coordination with other efforts, such as the City of Portland's Outer SE Division Near-Term Safety Strategy and the Powell-Division Transit and Development Project (Powell-Division), to make Division safer for all users.
 
-[[https://trimet.org/division/index.htm]{.underline}](https://trimet.org/division/index.htm)
+<https://trimet.org/division/index.htm>
 
 **Fareless Square discontinued**
 
@@ -103,13 +103,13 @@ A successful streetcar system will:
 
 The SSCP project has expanded the conversation about streetcar from a downtown incrementally-growing transit mode into citywide strategic economic development tool and neighborhood circulator.
 
-For more information please visit [[https://www.portlandoregon.gov/transportation/article/321180]{.underline}](https://www.portlandoregon.gov/transportation/article/321180)
+For more information please visit <https://www.portlandoregon.gov/transportation/article/321180>
 
 **TSP: Transit Classification Descriptions**
 
 Transit Classification Descriptions and Maps were updated as part of TSP3, Section 4.
 
-**Pedestrian **
+**Pedestrian**
 ---------------
 
 **Comp Plan Policies**
@@ -120,11 +120,11 @@ Comp Plan policies 9.6 and 9.17-19 are pedestrian policies. There are additional
 
 PedPDX is Portland's citywide pedestrian plan. It will prioritize sidewalk and crossing improvements and other investments to make walking safer and more comfortable across the city. The plan will identify the key strategies and tools we will use to make Portland a truly great walking city.
 
-PedPDX is an update of the [[1998 Pedestrian Master Plan]{.underline}](https://www.portlandoregon.gov/transportation/index.cfm?a=90244) (PMP). Since 1998, the PMP has guided pedestrian-friendly design and policies in Portland, and has served as a model across the country. The PMP developed a project list that has guided investment over the past 18 years.
+PedPDX is an update of the [1998 Pedestrian Master Plan](https://www.portlandoregon.gov/transportation/index.cfm?a=90244) (PMP). Since 1998, the PMP has guided pedestrian-friendly design and policies in Portland, and has served as a model across the country. The PMP developed a project list that has guided investment over the past 18 years.
 
 There is more we can do to make Portland a great walking city. Despite consistent investment in the pedestrian network, significant gaps and deficiencies remain, and new policy questions have emerged. An incomplete pedestrian network limits the City's ability to absorb growth and meet the livability and access needs of residents, including safe walking access to public transit and essential services. The 1998 Pedestrian Master Plan has served inner Portland well, but has often struggled to provide adequate guidance for areas such as East Portland and Southwest Portland that present environmental challenges and right-of-way constraints.
 
-PedPDX will reflect changes to pedestrian policy and design best practices that have emerged since the original Pedestrian Master Plan was adopted, including an emerging understanding of transportation equity and a [[Vision Zero]{.underline}](https://www.portlandoregon.gov/transportation/40390) approach to pedestrian safety. The updated plan will ensure that the City continues to lead the way in walkability, and will allow Portland to absorb growth in a sustainable way that encourages residents to walk, whether for commuting, shopping, going to school, or recreation.
+PedPDX will reflect changes to pedestrian policy and design best practices that have emerged since the original Pedestrian Master Plan was adopted, including an emerging understanding of transportation equity and a [Vision Zero](https://www.portlandoregon.gov/transportation/40390) approach to pedestrian safety. The updated plan will ensure that the City continues to lead the way in walkability, and will allow Portland to absorb growth in a sustainable way that encourages residents to walk, whether for commuting, shopping, going to school, or recreation.
 
 The PedPDX citywide pedestrian plan will:
 
@@ -142,9 +142,9 @@ The PedPDX citywide pedestrian plan will:
 
 -   Identify the performance measures we will use to track our progress implementing the plan over time
 
-Future phases of PedPDX will update the [[1998 Pedestrian Design Guide]{.underline}](https://www.portlandoregon.gov/transportation/article/84048).
+Future phases of PedPDX will update the [1998 Pedestrian Design Guide](https://www.portlandoregon.gov/transportation/article/84048).
 
-For more information please visit [[https://www.portlandoregon.gov/transportation/72504]{.underline}](https://www.portlandoregon.gov/transportation/72504)
+For more information please visit <https://www.portlandoregon.gov/transportation/72504>
 
 **Other Pedestrian Programs and Projects**
 
@@ -174,7 +174,7 @@ Other pedestrian programs, planning efforts and improvements include:
 
 -   Tilikum Crossing (bridge)
 
-**Bicycle** 
+**Bicycle**
 ------------
 
 **Comp Plan Policies**
@@ -203,15 +203,13 @@ Bicycling creates safer streets, reduces the causes of global climate change, pr
 
 Projects identified in the Portland Bicycle Plan for 2030 have been added into the 2016 TSP list of projects.
 
-For more information please visit [[https://www.portlandoregon.gov/transportation/44597]{.underline}](https://www.portlandoregon.gov/transportation/44597)
+For more information please visit <https://www.portlandoregon.gov/transportation/44597>
 
 **Other Bicycle Programs and Projects**
 
 Other bicycle programs, planning efforts and improvements include:
 
 -   BikeTOWN; Portland's Bike Share system plus Adaptive Bikes
-
-<!-- -->
 
 -   City Greenway Plan and Implementation
 
@@ -231,8 +229,8 @@ Other bicycle programs, planning efforts and improvements include:
 
 -   Educational Programs
 
-**Freight **
-------------
+**Freight**
+-----------
 
 **Comp Plan Policies**
 
@@ -262,25 +260,21 @@ Portland's freight hub is characterized by its 12,500 acres of industrial land s
 
 -   The Freight Master Plan is part of the City's Comprehensive Plan - the policy guide for City growth and development - and one of the modal elements of the City's Transportation System Plan, which elevates freight to the same level as the other modal plans (bicycle, pedestrian, motor vehicle, transportation demand management, transit) by addressing the unique characteristics, needs and impacts of freight movement.
 
-<!-- -->
-
 -   Established the Portland Freight Committee, which brought together a diverse group of members representing various multi-modal freight service providers, shippers, trade associations, and businesses involved in freight activities as well as public agency representatives from the local, state, and federal levels. The Portland Freight Committee serves as an advisory group to the Mayor, Portland City Council and the Portland Bureau of Transportation on freight related issues.
 
 **How is the Freight Master Plan Implemented?** The capital projects, programs and activities identified in Freight Master Plan were developed based on three core values:
 
 **Fact Sheet: Portland Freight Master Plan**
 
-[[https://www.portlandoregon.gov/transportation/article/357102]{.underline}](https://www.portlandoregon.gov/transportation/article/357102)
+<https://www.portlandoregon.gov/transportation/article/357102>
 
-**Other Freight Planning, Projects and Programs **
+**Other Freight Planning, Projects and Programs**
 
 **St John's Transportation Concept Plan**
 
-The Portland Bureau of Transportation (PBOT), in partnership with the Portland Bureau of Planning\
-and Sustainability, Portland Bureau of Environmental Services, Port of Portland, Metro, TriMet, and the Oregon Department of Transportation (ODOT), has developed a set of location‐specific and programmatic recommendations to address traffic circulation, freight mobility, and pedestrian access issues identified in the St. Johns Truck Strategy. Over a period of over two years, the Portland\
-Bureau of Transportation, with assistance from a consultant team have been developing specific project and programmatic recommendations which advance the objectives identified in the St. Johns Truck Strategy, the St. Johns Lombard Plan, the Portland Transportation Systems Plan, the Portland freight, pedestrian and bicycle master plans, and other guiding documents.
+The Portland Bureau of Transportation (PBOT), in partnership with the Portland Bureau of Planning and Sustainability, Portland Bureau of Environmental Services, Port of Portland, Metro, TriMet, and the Oregon Department of Transportation (ODOT), has developed a set of location‐specific and programmatic recommendations to address traffic circulation, freight mobility, and pedestrian access issues identified in the St. Johns Truck Strategy. Over a period of over two years, the Portland Bureau of Transportation, with assistance from a consultant team have been developing specific project and programmatic recommendations which advance the objectives identified in the St. Johns Truck Strategy, the St. Johns Lombard Plan, the Portland Transportation Systems Plan, the Portland freight, pedestrian and bicycle master plans, and other guiding documents.
 
-[[https://www.portlandoregon.gov/transportation/article/650491]{.underline}](https://www.portlandoregon.gov/transportation/article/650491)
+<https://www.portlandoregon.gov/transportation/article/650491>
 
 Regional Over-Dimensional Truck Route Study
 
@@ -296,12 +290,12 @@ The study includes the following elements:
 
 -   Toolbox of solutions to address barriers
 
--   System-wide and corridor-specific recommendations for\
-    > improvement
+-   System-wide and corridor-specific recommendations for improvement
 
-[[https://www.portlandoregon.gov/transportation/73902]{.underline}](https://www.portlandoregon.gov/transportation/73902)
+<https://www.portlandoregon.gov/transportation/73902>
 
-Air, Rail, Water, Pipeline
+**Air, Rail, Water, Pipeline**
+------------------------------
 
 The Airport Futures Plan was adopted in 2010. Policies from the Airport Futures are incorporated into Comp Plan Policies 9.41 - 9.44.
 
