@@ -127,7 +127,9 @@ const addLayer = layer => new Promise((resolve, reject) => {
 
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup((err, evt) => {
-    console.log(evt)
+    err.feature
+      ? evt = err
+      : err = err
     if (evt) {
       openPopUp(evt, layer);
     }
@@ -248,14 +250,14 @@ const setMapToFeature = (latlng, zoom) => {
  * @param {Object} A Leaflet feature
  */
 const zoomToFeature = feature => {
-  if (feature.getBounds) {
-    let bounds = feature.getBounds();
-    bus.emit('map:fitBounds', bounds);
-  } else {
-    let latlng = feature._latlng
-    let zoom = 16
-    bus.emit('map:setFeature', latlng, zoom)
-  }
+  // if (feature.getBounds) {
+  //   let bounds = feature.getBounds();
+  //   bus.emit('map:fitBounds', bounds);
+  // } else {
+  //   let latlng = feature._latlng
+  //   let zoom = 16
+  //   bus.emit('map:setFeature', latlng, zoom)
+  // }
 };
 
 const drawLegend = layers => {

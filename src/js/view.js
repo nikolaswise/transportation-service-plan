@@ -15,7 +15,10 @@ const handlePopUp = (evt, renderTemplate) => {
   let popUpContainer = document.querySelector('.js-pop-up');
   let popUpTemplate = document.querySelector('.js-template');
   classy.add(popUpContainer, 'is-active');
-  popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties);
+  evt.feature
+    ? popUpTemplate.innerHTML = renderTemplate(evt.feature.properties)
+    : popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties)
+
   bindScroll(popUpTemplate)
 };
 

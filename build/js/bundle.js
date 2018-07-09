@@ -626,7 +626,10 @@ var handlePopUp = function (evt, renderTemplate) {
   var popUpContainer = document.querySelector('.js-pop-up');
   var popUpTemplate = document.querySelector('.js-template');
   add(popUpContainer, 'is-active');
-  popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties);
+  evt.feature
+    ? popUpTemplate.innerHTML = renderTemplate(evt.feature.properties)
+    : popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties);
+
   bind(popUpTemplate);
 };
 
@@ -747,6 +750,12 @@ var popupRenderer = function (current, proposed) {
   };
 };
 
+var numberWithCommas = function (x) {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+};
+
 /**
  * Composes an HTML pop-up template that is displayed on feature clicks.
  * This one is for the Street classification layers, where the user wishes
@@ -759,7 +768,7 @@ var popupRenderer = function (current, proposed) {
 
 var popupProject = function (current, proposed) {
   return function (feature) {
-    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.ProjectName) + "\n      </h5>\n      <p> " + (feature.ProjectDescription) + " </p>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Status</td>\n            <td>" + (feature.ProjectStatus) + "</td>\n          </tr>\n          <tr>\n            <td>Lead Agency</td>\n            <td>" + (feature.LeadAgency) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Cost</td>\n            // Use Formatted field\n            <td>" + (feature.EstimatedCost) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Time Frame</td>\n            <td>" + (feature.EstimatedTimeframe) + "</td>\n          </tr>\n        </tbody>\n      </table>\n      // move to Plan ID\n      <p>Transportation Plan ID: " + (feature.TranPlanID) + "</p>\n    ");
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.ProjectName) + "\n      </h5>\n      <p> " + (feature.ProjectDescription) + " </p>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Status</td>\n            <td>" + (feature.ProjectStatus) + "</td>\n          </tr>\n          <tr>\n            <td>Lead Agency</td>\n            <td>" + (feature.LeadAgency) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Cost</td>\n            <td>$" + (numberWithCommas(feature.EstimatedCost)) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Time Frame</td>\n            <td>" + (feature.EstimatedTimeframe) + "</td>\n          </tr>\n        </tbody>\n      </table>\n      <p> Project ID: " + (feature.ProjectNumber) + "</p>\n    ");
   };
 };
 
@@ -937,8 +946,9 @@ var Freight = {
 var projectPoints = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/1',
-    pane: 'top'
+    pane: 'top',
   }),
+  pane: 'top',
   popup: popupProject('foo', 'bar')
 };
 
@@ -952,6 +962,7 @@ var projectLines = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
     pane: 'top'
   }),
+  pane: 'bottom',
   popup: popupProject('foo', 'bar')
 };
 
@@ -963,8 +974,9 @@ var projectLines = {
 var projectPolygons = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
-    pane: 'bottom'
+    pane: 'bottom',
   }),
+  pane: 'bottom',
   popup: popupProject('foo', 'bar')
 };
 
@@ -1345,7 +1357,9 @@ var addLayer = function (layer) { return new Promise(function (resolve, reject) 
 
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup(function (err, evt) {
-    console.log(evt);
+    err.feature
+      ? evt = err
+      : err = err;
     if (evt) {
       openPopUp(evt, layer);
     }
@@ -1466,14 +1480,14 @@ var setMapToFeature = function (latlng, zoom) {
  * @param {Object} A Leaflet feature
  */
 var zoomToFeature = function (feature) {
-  if (feature.getBounds) {
-    var bounds = feature.getBounds();
-    bus.emit('map:fitBounds', bounds);
-  } else {
-    var latlng = feature._latlng;
-    var zoom = 16;
-    bus.emit('map:setFeature', latlng, zoom);
-  }
+  // if (feature.getBounds) {
+  //   let bounds = feature.getBounds();
+  //   bus.emit('map:fitBounds', bounds);
+  // } else {
+  //   let latlng = feature._latlng
+  //   let zoom = 16
+  //   bus.emit('map:setFeature', latlng, zoom)
+  // }
 };
 
 var drawLegend = function (layers) {

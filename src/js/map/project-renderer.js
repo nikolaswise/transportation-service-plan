@@ -1,3 +1,9 @@
+const numberWithCommas = (x) => {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+}
+
 /**
  * Composes an HTML pop-up template that is displayed on feature clicks.
  * This one is for the Street classification layers, where the user wishes
@@ -27,8 +33,7 @@ export default function (current, proposed) {
           </tr>
           <tr>
             <td>Estimated Cost</td>
-            // Use Formatted field
-            <td>${feature.EstimatedCost}</td>
+            <td>$${numberWithCommas(feature.EstimatedCost)}</td>
           </tr>
           <tr>
             <td>Estimated Time Frame</td>
@@ -36,8 +41,7 @@ export default function (current, proposed) {
           </tr>
         </tbody>
       </table>
-      // move to Plan ID
-      <p>Transportation Plan ID: ${feature.TranPlanID}</p>
+      <p> Project ID: ${feature.ProjectNumber}</p>
     `;
   };
 }
