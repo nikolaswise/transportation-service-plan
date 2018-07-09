@@ -20,15 +20,10 @@ export default function (current, proposed) {
         <tbody>
           <tr>
             <td>${current} Class:</td>
-            <td>${feature[current]}</td>
+            <td><a href="#${feature[current]}">${feature[current]}</a></td>
           </tr>
         </tbody>
       </table>
-      <p class="lead-bottom">
-        <b>${feature[current]}:</b>
-        ${acronym[feature[current]]}
-      </p>
-
       <p>Transportation Plan ID: <a href="#">${feature.TranPlanID}</a></p>
     `;
   };

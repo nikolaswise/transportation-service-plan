@@ -117,42 +117,26 @@ const addLayers = (layerSet) => {
  */
 
 const addLayer = layer => new Promise((resolve, reject) => {
-
   if (!layers[layer]) {
     reject()
     return
   }
-
-
+  console.log(layers[layer].features)
   layers[layer].features.addTo(map);
+  console.log('all done')
 
   bus.emit('layer:reset', layer);
-
-  layers[layer].features.bindPopup((evt) => {
+  layers[layer].features.bindPopup((err, evt) => {
+    console.log(evt)
     if (evt) {
       openPopUp(evt, layer);
     }
-    return '';
+    return 'hey';
   }).on('popupclose', function () {
     bus.emit('layer:reset', layer);
   });
-
   resolve()
 })
-
-// const addLayer = layer => {
-//   if (!layers[layer]) {
-//     return
-//   }
-//   layers[layer].features.addTo(map);
-//   bus.emit('layer:reset', layer);
-  // layers[layer].features.bindPopup((evt) => {
-  //   openPopUp(evt, layer);
-  //   return '';
-  // }).on('popupclose', function () {
-  //   bus.emit('layer:reset', layer);
-  // });
-// };
 
 /**
  * Opens the independant (aka non-leaflet) popup from a click on a feature for a given layer.
@@ -161,12 +145,6 @@ const addLayer = layer => new Promise((resolve, reject) => {
  * @param {String} Layer key, eg 'projectPoints'
  */
 const openPopUp = (evt, layer) => {
-  evt.bringToFront();
-  evt.setStyle({
-    lineCap: 'round',
-    weight: 30,
-    color: '#34F644'
-  });
   bus.emit('popup:opened', evt, layers[layer].popup);
 };
 
@@ -208,7 +186,6 @@ const removeLayer = layer => {
  * Adds any layers indicated as active from the layer toggle list to the map.
  */
 const drawLayers = () => {
-
   let layers = getActiveLayers()
   bus.emit('map:legend', layers);
   layers.forEach((toggle) => {
