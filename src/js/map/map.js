@@ -127,9 +127,11 @@ const addLayer = layer => new Promise((resolve, reject) => {
 
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup((err, evt) => {
-    err.feature
-      ? evt = err
-      : err = err
+    if (err) {
+      err.feature
+        ? evt = err
+        : err = err
+    }
     if (evt) {
       openPopUp(evt, layer);
     }
