@@ -228,7 +228,7 @@ export const freightDistricts = {
  */
 export const projectPoints = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/1',
     pane: 'top'
   }),
   popup: popupProject('foo', 'bar')
@@ -241,7 +241,7 @@ export const projectPoints = {
  */
 export const projectLines = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
     pane: 'top'
   }),
   popup: popupProject('foo', 'bar')
@@ -254,7 +254,7 @@ export const projectLines = {
  */
 export const projectPolygons = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
     pane: 'bottom'
   }),
   popup: popupProject('foo', 'bar')

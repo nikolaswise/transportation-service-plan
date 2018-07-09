@@ -21,8 +21,9 @@ export default function (current, proposed) {
       </p>
       <p>
         <b>Overlay:</b>
-        ${feature.OVRLY_DESC}
+        ${feature.OVRLY_DESC || 'None'}
       </p>
+      // Link to Zoning Map So Cool
     `;
   };
 }

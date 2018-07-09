@@ -27,6 +27,7 @@ export default function (current, proposed) {
           </tr>
           <tr>
             <td>Estimated Cost</td>
+            // Use Formatted field
             <td>${feature.EstimatedCost}</td>
           </tr>
           <tr>
@@ -35,6 +36,7 @@ export default function (current, proposed) {
           </tr>
         </tbody>
       </table>
+      // move to Plan ID
       <p>Transportation Plan ID: ${feature.TranPlanID}</p>
     `;
   };
