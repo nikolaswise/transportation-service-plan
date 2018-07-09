@@ -20,7 +20,7 @@ export default function (current, proposed) {
         <tbody>
           <tr>
             <td>${current} Class:</td>
-            <td><a href="#${feature[current]}">${feature[current]}</a></td>
+            <td><a href="#${feature[current].replace(/ /g, '-').toLowerCase()}s">${feature[current]}</a></td>
           </tr>
         </tbody>
       </table>

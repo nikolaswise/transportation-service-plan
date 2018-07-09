@@ -1,5 +1,7 @@
 import bus from './helpers/bus.js';
 import * as classy from './helpers/classy.js';
+import bindScroll from './helpers/scroll-to-anchor.js';
+
 // import responsiveType from './responsive-type.js';
 
 /**
@@ -14,6 +16,7 @@ const handlePopUp = (evt, renderTemplate) => {
   let popUpTemplate = document.querySelector('.js-template');
   classy.add(popUpContainer, 'is-active');
   popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties);
+  bindScroll(popUpTemplate)
 };
 
 /**

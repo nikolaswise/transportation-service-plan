@@ -524,6 +524,95 @@ var intent = function () {
   bus.emit('bind:intent');
 };
 
+function getOffsetTop( elem )
+{
+    var offsetTop = 0;
+    do {
+      if ( !isNaN( elem.offsetTop ) )
+      {
+          offsetTop += elem.offsetTop;
+      }
+    } while( elem = elem.offsetParent );
+    return offsetTop;
+}
+
+// easing functions http://goo.gl/5HLl8
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d/2;
+  if (t < 1) {
+    return c/2*t*t + b
+  }
+  t--;
+  return -c/2 * (t*(t-2) - 1) + b;
+};
+
+Math.easeInCubic = function(t, b, c, d) {
+  var tc = (t/=d)*t*t;
+  return b+c*(tc);
+};
+
+Math.inOutQuintic = function(t, b, c, d) {
+  var ts = (t/=d)*t,
+  tc = ts*t;
+  return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
+};
+
+// requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
+var requestAnimFrame = (function(){
+  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
+})();
+
+var scrollTo = function (node, to, callback, duration) {
+  // because it's so fucking difficult to detect the scrolling element, just move them all
+  function move(amount) {
+    node.scrollTop = amount;
+  }
+  function position() {
+    return node.scrollTop;
+  }
+  var start = position(),
+    change = to - start,
+    currentTime = 0,
+    increment = 20;
+  duration = (typeof(duration) === 'undefined') ? 500 : duration;
+  var animateScroll = function() {
+    // increment the time
+    currentTime += increment;
+    // find the value with the quadratic in-out easing function
+    var val = Math.easeInOutQuad(currentTime, start, change, duration);
+    // move the document.body
+    move(val);
+    // do the animation unless its over
+    if (currentTime < duration) {
+      requestAnimFrame(animateScroll);
+    } else {
+      if (callback && typeof(callback) === 'function') {
+        // the animation is done so lets callback
+        callback();
+      }
+    }
+  };
+  animateScroll();
+};
+
+var bind = function (node) {
+  if ( node === void 0 ) node = document;
+
+  var contentArea = document.querySelector('.js-text-area');
+  var anchors = Array.apply(void 0, node.querySelectorAll('a'));
+  var internals = anchors.filter(function (a) { return a.attributes.href.value.charAt(0) == '#'; });
+  internals.forEach(function (a) {
+    var id = a.attributes.href.value;
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      console.log(id);
+      var node = document.querySelector(id);
+      var position = getOffsetTop(node) - 60;
+      scrollTo(contentArea, position);
+    });
+  });
+};
+
 // import responsiveType from './responsive-type.js';
 
 /**
@@ -538,6 +627,7 @@ var handlePopUp = function (evt, renderTemplate) {
   var popUpTemplate = document.querySelector('.js-template');
   add(popUpContainer, 'is-active');
   popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties);
+  bind(popUpTemplate);
 };
 
 /**
@@ -653,7 +743,7 @@ var view = function () {
 
 var popupRenderer = function (current, proposed) {
   return function (feature) {
-    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.StreetName) + "\n      </h5>\n      <table class=\"flush-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>" + current + " Class:</td>\n            <td><a href=\"#" + (feature[current]) + "\">" + (feature[current]) + "</a></td>\n          </tr>\n        </tbody>\n      </table>\n      <p>Transportation Plan ID: <a href=\"#\">" + (feature.TranPlanID) + "</a></p>\n    ");
+    return ("\n      <h5 class=\"flush-top\">\n        " + (feature.StreetName) + "\n      </h5>\n      <table class=\"flush-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>" + current + " Class:</td>\n            <td><a href=\"#" + (feature[current].replace(/ /g, '-').toLowerCase()) + "s\">" + (feature[current]) + "</a></td>\n          </tr>\n        </tbody>\n      </table>\n      <p>Transportation Plan ID: <a href=\"#\">" + (feature.TranPlanID) + "</a></p>\n    ");
   };
 };
 
@@ -1706,18 +1796,6 @@ function drawer () {
   bus.emit('drawer:bind');
 }
 
-function getOffsetTop( elem )
-{
-    var offsetTop = 0;
-    do {
-      if ( !isNaN( elem.offsetTop ) )
-      {
-          offsetTop += elem.offsetTop;
-      }
-    } while( elem = elem.offsetParent );
-    return offsetTop;
-}
-
 var options = {
   startTag : "<b class='highlight'>", // could be a hyperlink
   endTag   : "</b>" // or you could use <i> instead of <b> ... want it? ask!
@@ -1761,65 +1839,6 @@ function highlight(keywords, text) {
 }
 
 var keywordHighlighter = highlight;
-
-// easing functions http://goo.gl/5HLl8
-Math.easeInOutQuad = function (t, b, c, d) {
-  t /= d/2;
-  if (t < 1) {
-    return c/2*t*t + b
-  }
-  t--;
-  return -c/2 * (t*(t-2) - 1) + b;
-};
-
-Math.easeInCubic = function(t, b, c, d) {
-  var tc = (t/=d)*t*t;
-  return b+c*(tc);
-};
-
-Math.inOutQuintic = function(t, b, c, d) {
-  var ts = (t/=d)*t,
-  tc = ts*t;
-  return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
-};
-
-// requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
-var requestAnimFrame = (function(){
-  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ window.setTimeout(callback, 1000 / 60); };
-})();
-
-var scrollTo = function (node, to, callback, duration) {
-  // because it's so fucking difficult to detect the scrolling element, just move them all
-  function move(amount) {
-    node.scrollTop = amount;
-  }
-  function position() {
-    return node.scrollTop;
-  }
-  var start = position(),
-    change = to - start,
-    currentTime = 0,
-    increment = 20;
-  duration = (typeof(duration) === 'undefined') ? 500 : duration;
-  var animateScroll = function() {
-    // increment the time
-    currentTime += increment;
-    // find the value with the quadratic in-out easing function
-    var val = Math.easeInOutQuad(currentTime, start, change, duration);
-    // move the document.body
-    move(val);
-    // do the animation unless its over
-    if (currentTime < duration) {
-      requestAnimFrame(animateScroll);
-    } else {
-      if (callback && typeof(callback) === 'function') {
-        // the animation is done so lets callback
-        callback();
-      }
-    }
-  };
-  animateScroll();
-};
 
 // Cool Helpers
 /**
@@ -2086,7 +2105,7 @@ var toggle$1 = function (node) {
   toggle(target, 'is-active');
 };
 
-var bind = function () {
+var bind$1 = function () {
   var links = Array.apply(void 0, document.querySelectorAll('.toc a'));
   links.forEach(function (link) {
     link.addEventListener('click', function (e) {
@@ -2106,29 +2125,13 @@ var bind = function () {
 
 
 var listen = function () {
-  bus.on('toc:bind', bind);
+  bus.on('toc:bind', bind$1);
   bus.on('toc:toggle', toggle$1);
   bus.on('toc:close', close);
   bus.on('keyboard:escape', close);
   bus.on('drawer:close', close);
   bus.on('keyboard:arrow:left', close);
   bus.emit('toc:bind');
-};
-
-var bind$1 = function () {
-  var contentArea = document.querySelector('.js-text-area');
-  var anchors = Array.apply(void 0, document.querySelectorAll('a'));
-  var internals = anchors.filter(function (a) { return a.attributes.href.value.charAt(0) == '#'; });
-  internals.forEach(function (a) {
-    var id = a.attributes.href.value;
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      console.log(id);
-      var node = document.querySelector(id);
-      var position = getOffsetTop(node) - 60;
-      scrollTo(contentArea, position);
-    });
-  });
 };
 
 // The JS Checker
@@ -2160,7 +2163,7 @@ var initApp = function () {
   search();
   nubs();
   breadcrumbs();
-  bind$1();
+  bind();
   listen();
 };
 
