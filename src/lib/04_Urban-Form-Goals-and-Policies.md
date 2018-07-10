@@ -1,46 +1,40 @@
-Urban Form
-==========
+Urban Form Goals
+================
 
 (Comprehensive Plan Chapter 3)
 
-Urban Form Goals
-----------------
-
-**A city designed for people** 
-===============================
+### A city designed for people
 
 Portland's built environment is designed to serve the needs and aspirations of all Portlanders, promoting prosperity, health, equity, and resiliency. New development, redevelopment, and public investments reduce disparities and encourage social interaction to create a healthy connected city. (Comprehensive Plan Goal 3.A)
 
-**A climate and hazard resilient urban form**
-=============================================
+### A climate and hazard resilient urban form
 
 Portland's compact urban form, sustainable building development practices, green infrastructure, and active transportation system reduce carbon emissions, reduce natural hazard risks and impacts, and improve resilience to the effects of climate change. (Comprehensive Plan Goal 3.B)
 
-**Focused growth**
-==================
+### Focused growth
 
 Household and employment growth is focused in the Central City and other centers, corridors, and transit station areas, creating compact urban development in areas with a high level of service and amenities, while allowing the relative stability of lower-density single-family residential areas. (Comprehensive Plan Goal 3.C)
 
-A system of centers and corridors
-=================================
+### A system of centers and corridors
 
 Portland's interconnected system of centers and corridors provides diverse housing options and employment opportunities, robust multimodal transportation connections, access to local services and amenities, and supports low-carbon complete, healthy, and equitable communities. (Comprehensive Plan Goal 3.D)
 
-Connected public realm and open spaces
-======================================
+### Connected public realm and open spaces
 
 A network of parks, streets, City Greenways, and other public spaces supports community interaction; connects neighborhoods, districts, and destinations; and improves air, water, land quality, and environmental health. (Comprehensive Plan Goal 3.E)
 
 Urban Form Policies
--------------------
+===================
+
+(Comprehensive Plan Chapter 3)
 
 Citywide Design and Development Policies
-========================================
+----------------------------------------
 
 **All ages and abilities**: Strive for a built environment that provides a safe, healthful, and attractive environment for people of all ages and abilities. (Comprehensive Plan Policy 3.4)
 
 Centers Policies
-================
+----------------
 
 **Investments in centers:** Encourage public and private investment in infrastructure, economic development, and community services in centers to ensure that all centers will support the populations they serve. (Comprehensive Plan Policy 3.15)
 
@@ -51,7 +45,7 @@ Centers Policies
 **Green infrastructure in centers:** Integrate nature and green infrastructure into centers and enhance public views and connections to the surrounding natural features. (Comprehensive Plan Policy 3.20)
 
 Central City Policies
-=====================
+---------------------
 
 **Transportation hub:** Enhance the Central City as the region's multimodal transportation hub and optimize regional access as well as the movement of people and goods among key destinations. (Comprehensive Plan Policy 3.25)
 
@@ -88,29 +82,29 @@ Central City Policies
 **Loading:** Support the delivery of goods in the Central City. Pursue strategies that bring new ways of delivering goods to the Central City in a way that optimizes loading and freight access and makes efficient use of limited urban space. (Central City 2035 TSP Policy 9.55)
 
 Gateway Regional Center Policies
-================================
+--------------------------------
 
 **Transportation:** Enhance Gateway's role as a regional high-capacity transit hub that serves as an anchor for East Portland's multimodal transportation system. (Comprehensive Plan Policy 3.29)
 
 Town Centers Policies
-=====================
+---------------------
 
 **Transportation:** Improve Town Centers as multimodal transportation hubs that optimize access from the broad area of the city they serve and are linked to the region's high-capacity transit system. (Comprehensive Plan Policy 3.33)
 
 Neighborhood Centers Policies
-=============================
+-----------------------------
 
 **Transportation:** Design Neighborhood Centers as multimodal transportation hubs that are served by frequent-service transit and optimize pedestrian and bicycle access from adjacent neighborhoods. (Comprehensive Plan Policy 3.37)
 
 Inner Ring Districts Policies
-=============================
+-----------------------------
 
 **Corridors:** Guide growth in corridors to transition to mid-rise scale close to the Central City, especially along Civic Corridors. (Comprehensive Plan Policy 3.40)
 
 **Active transportation:** Enhance the role of the Inner Ring Districts' extensive transit, bicycle, and pedestrian networks in conjunction with land uses that optimize the ability for more people to utilize this network. Improve the safety of pedestrian and bike connections to the Central City. Strengthen transit connections between the Inner Ring Districts and to the Central City. (Comprehensive Plan Policy 3.43)
 
 Corridors Policies
-==================
+------------------
 
 **Growth and mobility:** Coordinate transportation and land use strategies along corridors to accommodate growth and mobility needs for people of all ages and abilities. (Comprehensive Plan Policy 3.44)
 
@@ -121,7 +115,7 @@ Corridors Policies
 **Green infrastructure in corridors:** Enhance corridors with distinctive green infrastructure, including landscaped stormwater facilities, extensive tree plantings, and other landscaping that both provide environmental function and contribute to a quality pedestrian environment. (Comprehensive Plan Policy 3.47)
 
 Civic Corridors Policies
-========================
+------------------------
 
 **Integrated land use and mobility:** Enhance Civic Corridors as distinctive places that are models of ecological urban design, with transit-supportive densities of housing and employment, prominent street trees and other green features, and high-quality transit service and pedestrian and bicycle facilities. (Comprehensive Plan Policy 3.48)
 
@@ -132,12 +126,12 @@ Civic Corridors Policies
 **Freight:** Maintain freight mobility and access on Civic Corridors that are also Major or Priority Truck Streets. (Comprehensive Plan Policy 3.51)
 
 Neighborhood Corridors Policies
-===============================
+-------------------------------
 
 **Neighborhood Corridors:** Enhance Neighborhood Corridors as important places that support vibrant neighborhood business districts with quality multi-family housing, while providing transportation connections that link neighborhoods. (Comprehensive Plan Policy 3.52)
 
 Transit Station Area Policies
-=============================
+-----------------------------
 
 **Transit-oriented development:** Encourage transit-oriented development and transit-supportive concentrations of housing and jobs, and multimodal connections at and adjacent to high-capacity transit stations. (Comprehensive Plan Policy 3.53)
 
@@ -146,7 +140,7 @@ Transit Station Area Policies
 **Transit station area safety:** Design transit areas to improve pedestrian, bicycle, and personal safety. (Comprehensive Plan Policy 3.55)
 
 City Greenways Policies
-=======================
+-----------------------
 
 **Connections:** Create a network of distinctive and attractive City Greenways that link centers, parks, schools, rivers, natural areas, and other key community destinations. (Comprehensive Plan Policy 3.60)
 
@@ -157,31 +151,31 @@ City Greenways Policies
 **Design:** Use design options such as distinctive street design, motor vehicle diversion, landscaping, tree plantings, scenic views, and other appropriate design options, to create City Greenways that extend the experience of open spaces and nature into neighborhoods, while improving stormwater management and calming traffic. (Comprehensive Plan Policy 3.63)
 
 Employment Areas Policies
-=========================
+-------------------------
 
 **Regional Truck Corridors:** Enhance designated streets to accommodate forecast freight growth and support intensified industrial use in nearby freight districts. See Figure 3-7 --- Employment Areas. Designated regional truckways and priority truck streets (Transportation System Plan classifications are shown to illustrate this network). (Comprehensive Plan Policy 3.68)
 
-Pattern Areas 
+Pattern Areas
 --------------
 
 Portland has five distinct Pattern Areas. The development patterns and characteristics of these areas are influenced by the natural landscape and how and when these parts of the city were developed.
 
-1.  **Rivers**
+1. **Rivers**
 
-2.  **Central City**
+2. **Central City**
 
-3.  **Inner Neighborhoods**
+3. **Inner Neighborhoods**
 
-4.  **Western Neighborhoods**
+4. **Western Neighborhoods**
 
-5.  **Eastern Neighborhoods**
+5. **Eastern Neighborhoods**
 
 Each Pattern Area has unique physical, social, cultural, and environmental qualities that differentiate them and create their sense of place. To maintain and enhance the positive qualities and sense of place in each pattern area, it is desirable to have policies and regulations that respond to each area's unique natural and built assets.
 
 The following policies identify key positive characteristics of each of Portland's Pattern Areas that are relevant to decisions related to future development in these areas. Area and neighborhood plans should be consulted for more detailed guidance on design priorities in different parts of the city.
 
 Rivers Pattern Area Policies
-============================
+----------------------------
 
 **River transportation:** Recognize and enhance the roles of the Willamette and Columbia rivers as part of Portland's historic, current, and future transportation infrastructure, including for freight, commerce, commuting, and other public and private transportation functions. (Comprehensive Plan Policy 3.70)
 
@@ -203,7 +197,7 @@ distribution facilities. (Comprehensive Plan Policy 3.72)
 **Willamette River Greenway:** Maintain multi-objective plans and regulations to guide development, infrastructure investments, and natural resource protection and enhancement within and along the Willamette Greenway. (Comprehensive Plan Policy 3.82)
 
 Central City Pattern Area Policies
-==================================
+----------------------------------
 
 **Central City pedestrian system:** Maintain and expand the Central City's highly interconnected pedestrian system. (Comprehensive Plan Policy 3.85)
 
@@ -225,7 +219,7 @@ Inner Neighborhoods Pattern Area Policies
 > **b:** Promote and guide the implementation of alley improvements that result in alleys that are safe, well maintained, and an asset for the community. (Transportation System Plan Policy 3.91.b)
 
 Eastern Neighborhoods Pattern Area Policies
-===========================================
+-------------------------------------------
 
 **Eastern Neighborhoods street, block, and lot pattern:** Guide the evolving street and block system in the Eastern Neighborhoods in ways that build on positive aspects of the area's large blocks, such as opportunities to continue mid-block open space patterns and create new connections through blocks that make it easier to access community destinations. (Comprehensive Plan Policy 3.92)
 
@@ -242,7 +236,7 @@ Eastern Neighborhoods Pattern Area Policies
 > **b:** Support development of, access to, and service enhancement for North-South transit. (Transportation System Plan Policy 3.97.b)
 
 Western Neighborhoods Pattern Area Policies
-===========================================
+-------------------------------------------
 
 **Western Neighborhoods active transportation:** Provide safe and accessible pedestrian and bicycle connections, as well as off-street trail connections, to and from residential neighborhoods. (Comprehensive Plan Policy 3.99)
 

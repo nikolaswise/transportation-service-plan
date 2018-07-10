@@ -103,7 +103,7 @@ The plans' recommendations include information about the location, level of alig
 
 While the master street plans identify a number of future connections, the absence of a connection does not mean a connection is not needed or feasible. All areas within the study areas are still subject to relevant policy and spacing standards.
 
-### **Area-Specific Master Street Plans**
+###**Area-Specific Master Street Plans**
 
 Street plans have been completed, but not adopted into the Comprehensive Plan, for other areas of the City over the past several years. Although they are not specifically intended to meet the State and regional requirements, they do function as master street plans. These plans cover the following areas:
 
@@ -141,7 +141,7 @@ The South Waterfront District of the Central City of Portland lies along the Wil
 \
 The primary development constraint in the District is transportation access to and from regional highway and transit systems. The South Waterfront Plan of January 20, 2003 includes a vision, policies and an Urban Design Plan that promotes high density housing and commercial development with a full range of businesses that contribute to the region's job growth. The vision also includes frequent public connections to the river, limiting the size and amount of surface parking lots, and integrating development and services.
 
-![](src/img/media/image6.png)
+![](/img/media/image4.png)
 
 In 1998 the North Macadam District Street Design Standards and Criteria Plan: Transportation Report considered and analyzed South Waterfront's limited access and adjacency to I-5 and Ross Island Bridge ramps. The analysis included the three district portal intersections: River Parkway and Harbor Drive (north), Curry and Macadam (center) and Bancroft and Macadam (south). The analysis was based on the District's 20-year goals for accommodating 10,000 jobs and 3,000 housing units and a 30 percent mode split. The housing goal has since been increased to 5,000 units.
 
@@ -189,7 +189,7 @@ Specific changes made to the Concept Street Plan map are as follows:
 
 -   "Special Design Area" beneath the Ross Island Bridge has been relocated to reflect the location of the potential active-use park. Grover St is aligned on either side of the Ross Island Bridge.
 
-![](src/img/media/image8.png)
+![](/img/media/image6.png)
 
 ### GATEWAY REGIONAL CENTER STREET PLAN
 
@@ -213,7 +213,7 @@ The concept plan map calls for a traditional block configuration, which will hel
 
 As the major north-south arterial, 102nd Avenue is the spine of the district and is targeted for improvements for all modes. Changes to 99th Avenue would allow it to act as an additional north-south carrier, improving access for development projects and creating a new local identity the length of the district. Major east-west streets (Stark/Washington, Halsey/Weidler, Burnside, and Glisan) will continue to carry significant volumes of through-traffic. Better local north-south street connections will link the two main large shopping areas together, and improved connectivity will be provided within each of these shopping areas.
 
-![](src/img/media/image7.png)
+![](/img/media/image5.png)
 
 Central Gateway Street Plan 2009
 
@@ -245,13 +245,13 @@ Extension of 101st Ave. between Washington St. and Pacific St. The revised stree
 
 Extension of 100th Ave. between Oak St. and Washington St. (The revised street plan does not include any connectivity at this location. Vehicles, pedestrians, and bicycles could access the area from connections at 97th Ave., and 101st.
 
-![](src/img/media/image13.png)
+![](/img/media/image13.png)
 
 ### Cully Neighborhood Local Street Plan (2012)
 
 The Cully Commercial Corridor and Local Street Plan was adopted by Resolution 36952 in August 2012. Its development was funded by a Transportation Growth Management Grant from the Oregon Department of Transportation. Its recommendations were also influenced by the Portland Plan (April 2012) which had recommendations related to alternative right of way improvements, developing new options for unimproved rights-of-way and accelerating the creation of safe pedestrian connections. The Cully Neighborhood Local Street Plan identified new street or pedestrian/bicycle connections to improve street connectivity and address gaps in transportation networks.
 
-![](src/img/media/image10.png)
+![](/img/media/image12.png)
 
 ### FAR SOUTHEAST PORTLAND MASTER STREET PLAN
 
@@ -279,7 +279,7 @@ Long-term county stewardship, along with recent population growth, has resulted 
 
 Barriers (such as terrain, streams, and existing development) will continue to limit a connected street system, including bicycle/pedestrian accessways, in Far Southeast Portland. With expected increases in the number of households and dwelling units in the area, however, completion of the local street system will be needed even more to provide multimodal access to areas of new development and from those areas to neighborhood activity centers, transit, and arterials.
 
-![](src/img/media/image15.png)
+![](/img/media/image15.png)
 
 ### Outer Powell Blvd Conceptual Plan Design (2012)
 
@@ -321,7 +321,7 @@ Goals and Objectives: The overall goal is to develop a Neighborhood Street Plan 
 
 The Street Plan identified implementation methods for introducing new street and pathway connections and options for improving deficient local streets. The plan recommended adding New Future Public Connections across Existing Private Property.
 
-![](src/img/media/image14.png)
+![](/img/media/image14.png)
 
 ### Tryon-Stephens Headwaters Neighborhood Street Plan
 
@@ -331,7 +331,7 @@ The Portland Bureau of Transportation (PBOT) and the Portland Bureau of Environm
 
 The plan recommends modifying the City of Portland's Southwest Master Street Plan (2001) to add future local street/pathway connections in two locations within the study area, as shown on the following map (page 52 of the Tryon-Stevens plan). Recommended new connections are in the Hillsdale neighborhood linking SW Nevada Court to SW Vermont Street between SW 26th Avenue and Capitol Hill Road, and in the Markham Neighborhood linking SW Marigold Street between SW 23rd and SW 26th Avenues.
 
-![](src/img/media/image16.png)
+![](/img/media/image16.png)
 
 ### Additional Master Street Plans
 
@@ -349,4 +349,4 @@ In addition, the TSP retains the following adopted Master Street Plans:
 
 **St. Johns Town Center Master Street Plan**
 
-**Multnomah County Unincorporated Urban Pockets **
+**Multnomah County Unincorporated Urban Pockets**

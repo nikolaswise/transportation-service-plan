@@ -1,7 +1,7 @@
 Modal Plans
 ===========
 
-**Motor Vehicle **
+**Motor Vehicle**
 ------------------
 
 Comp Plan policies were adopted that address motor vehicles. Specific policies include Policy 9.6 Transportation for People Movement; 9.7 Moving goods and delivery services. Policy 9.38 Automobile Transportation which states: Maintain acceptable levels of mobility and access for private automobiles while reducing overall vehicle miles traveled (VMT) and negative impacts of private automobiles on the environment and human health. This is a new policy specific to motor vehicles in the 2016 Comp Plan.
@@ -13,7 +13,7 @@ Comp Plan policies were adopted that address motor vehicles. Specific policies i
 
 PBOT worked with Trimet, riders, residents, neighborhood groups, governments, schools and businesses to plan improvements to transit service. The long-term vision developed identifies and prioritizes opportunities to improve bus service as well as pedestrian and bike access to transit.
 
-[http://news.trimet.org/category/service-enhancement-plans/](http://news.trimet.org/category/service-enhancement-plans/)
+[[http://news.trimet.org/category/service-enhancement-plans/]{.underline}](http://news.trimet.org/category/service-enhancement-plans/)
 
 **Growing Transit Communities Plan (GTC)**
 
@@ -109,7 +109,7 @@ For more information please visit <https://www.portlandoregon.gov/transportation
 
 Transit Classification Descriptions and Maps were updated as part of TSP3, Section 4.
 
-**Pedestrian **
+**Pedestrian**
 ---------------
 
 **Comp Plan Policies**
@@ -272,7 +272,7 @@ Portland's freight hub is characterized by its 12,500 acres of industrial land s
 
 <https://www.portlandoregon.gov/transportation/article/357102>
 
-**Other Freight Planning, Projects and Programs **
+**Other Freight Planning, Projects and Programs**
 
 **St John's Transportation Concept Plan**
 

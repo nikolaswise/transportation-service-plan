@@ -53,6 +53,9 @@ The following are classes set on the body of the HTML to pass information to the
 | map-is-active | The map pane is visible, and the map is drawn. |
 
 
+jandoc -d -r docx -o src/lib -t markdown --wrap=none --extract-media=src/img lib/0
+
+
 ### More Data
 https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer
 
