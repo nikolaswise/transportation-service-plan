@@ -1,7 +1,7 @@
 export default {
   'MCB': 'Major City Bikeway',
   'CB': 'City Bikeway',
-  'LS': 'Local Service',
+  'LS': 'Local Service Streets',
   'UT': 'Urban Throughway',
   'UH': 'Urban Highway',
   'RMS': 'Regional Main Street',

@@ -12,6 +12,7 @@ import acronym from './classifications.js'
 
 export default function (current, proposed) {
   return function (feature) {
+    console.log(feature[current])
     return `
       <h5 class="flush-top">
         ${feature.StreetName}
@@ -20,11 +21,14 @@ export default function (current, proposed) {
         <tbody>
           <tr>
             <td>${current} Class:</td>
-            <td><a href="#${feature[current].replace(/ /g, '-').toLowerCase()}s">${feature[current]}</a></td>
+            <td><a href="#${acronym[feature[current]].replace(/ /g, '-').toLowerCase()}">${feature[current]}</a></td>
           </tr>
         </tbody>
       </table>
-      <p>Transportation Plan ID: <a href="#">${feature.TranPlanID}</a></p>
+      <p class="lead-top">
+        <b>${feature[current]}:</b>
+        <a href="#${acronym[feature[current]].replace(/ /g, '-').toLowerCase()}">${acronym[feature[current]]}</a>
+      </p>
     `;
   };
 }

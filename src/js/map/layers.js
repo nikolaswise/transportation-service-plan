@@ -15,8 +15,8 @@ import popupCorridors from './corridors-renderer';
  */
 export const Design = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [15,16],
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [10],
   }),
   pane: 'top',
   popup: popupRenderer('Design')
@@ -29,8 +29,8 @@ export const Design = {
  */
 export const Bicycle = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [6,7],
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [12],
   }),
   pane: 'top',
   popup: popupRenderer('Bicycle')
@@ -43,8 +43,9 @@ export const Bicycle = {
  */
 export const Transit = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [4,5],
+
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [3],
   }),
   pane: 'top',
   popup: popupRenderer('Transit')
@@ -57,8 +58,8 @@ export const Transit = {
  */
 export const Traffic = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [2,3],
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [4],
   }),
   pane: 'top',
   popup: popupRenderer('Traffic')
@@ -71,8 +72,8 @@ export const Traffic = {
  */
 export const Emergency = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [0,1],
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [7],
   }),
   pane: 'top',
   popup: popupRenderer('Emergency')
@@ -85,8 +86,8 @@ export const Emergency = {
  */
 export const Pedestrian = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [9,10],
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [15],
   }),
   pane: 'bottom',
   popup: popupRenderer('Pedestrian')
@@ -99,8 +100,8 @@ export const Pedestrian = {
  */
 export const Freight = {
   features: window.L.esri.dynamicMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer',
-    layers: [12,13],
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [19],
   }),
   pane: 'top',
   popup: popupRenderer('Freight')
@@ -112,7 +113,7 @@ export const Freight = {
  */
 export const projectPoints = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/1',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/1',
     pane: 'top',
   }),
   pane: 'top',
@@ -126,7 +127,7 @@ export const projectPoints = {
  */
 export const projectLines = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/5',
     pane: 'top'
   }),
   pane: 'bottom',
@@ -140,7 +141,7 @@ export const projectLines = {
  */
 export const projectPolygons = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/6',
     pane: 'bottom',
   }),
   pane: 'bottom',

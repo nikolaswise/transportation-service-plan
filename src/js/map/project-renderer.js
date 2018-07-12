@@ -41,7 +41,6 @@ export default function (current, proposed) {
           </tr>
         </tbody>
       </table>
-      <p> Project ID: ${feature.ProjectNumber}</p>
     `;
   };
 }
