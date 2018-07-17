@@ -140,9 +140,9 @@ export const FreightFacilities = {
  * @property {number} projectPoints.features - Esri Leaflet Feature Layer
  * @property {string} projectPoints.popup    - Rendered HTML string of desired popup.
  */
-export const projectPoints = {
+export const ProjectPoints = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/1',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/1',
     pane: 'top',
   }),
   pane: 'top',
@@ -154,9 +154,9 @@ export const projectPoints = {
  * @property {number} projectLines.features - Esri Leaflet Feature Layer
  * @property {string} projectLines.popup    - Rendered HTML string of desired popup.
  */
-export const projectLines = {
+export const ProjectLines = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/5',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
     pane: 'top'
   }),
   pane: 'bottom',
@@ -168,102 +168,15 @@ export const projectLines = {
  * @property {number} projectPolygons.features - Esri Leaflet Feature Layer
  * @property {string} projectPolygons.popup    - Rendered HTML string of desired popup.
  */
-export const projectPolygons = {
+export const ProjectPolygons = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/6',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
     pane: 'bottom',
   }),
   pane: 'bottom',
   popup: popupProject('foo', 'bar')
 };
 
-
-export const projLinesConstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-
-export const projLinesUnconstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-
-export const projLinesCC2035 = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projLinesOther = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPointsConstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPointsUnconstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPointsCC2035 = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPointsOther = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPolygonsConstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPolygonsUnconstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPolygonsCC2035 = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-}
-export const projPolygonsOther = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-}
 
 export const bikeProgram = {
   features: window.L.esri.featureLayer({

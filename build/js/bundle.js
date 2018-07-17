@@ -1071,9 +1071,9 @@ var FreightFacilities = {
  * @property {number} projectPoints.features - Esri Leaflet Feature Layer
  * @property {string} projectPoints.popup    - Rendered HTML string of desired popup.
  */
-var projectPoints = {
+var ProjectPoints = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/1',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/1',
     pane: 'top',
   }),
   pane: 'top',
@@ -1085,9 +1085,9 @@ var projectPoints = {
  * @property {number} projectLines.features - Esri Leaflet Feature Layer
  * @property {string} projectLines.popup    - Rendered HTML string of desired popup.
  */
-var projectLines = {
+var ProjectLines = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/5',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
     pane: 'top'
   }),
   pane: 'bottom',
@@ -1099,102 +1099,15 @@ var projectLines = {
  * @property {number} projectPolygons.features - Esri Leaflet Feature Layer
  * @property {string} projectPolygons.popup    - Rendered HTML string of desired popup.
  */
-var projectPolygons = {
+var ProjectPolygons = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Archive/MapServer/6',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
     pane: 'bottom',
   }),
   pane: 'bottom',
   popup: popupProject('foo', 'bar')
 };
 
-
-var projLinesConstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-
-var projLinesUnconstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-
-var projLinesCC2035 = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projLinesOther = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/5',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPointsConstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPointsUnconstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPointsCC2035 = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPointsOther = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/1',
-    pane: 'top'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPolygonsConstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPolygonsUnconstrained = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPolygonsCC2035 = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-};
-var projPolygonsOther = {
-  features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_ReadOnly/MapServer/6',
-    pane: 'bottom'
-  }),
-  popup: popupProject('foo', 'bar')
-};
 
 var bikeProgram = {
   features: window.L.esri.featureLayer({
@@ -1296,21 +1209,9 @@ var layers = Object.freeze({
 	FreightClassifications: FreightClassifications,
 	FreightDistricts: FreightDistricts,
 	FreightFacilities: FreightFacilities,
-	projectPoints: projectPoints,
-	projectLines: projectLines,
-	projectPolygons: projectPolygons,
-	projLinesConstrained: projLinesConstrained,
-	projLinesUnconstrained: projLinesUnconstrained,
-	projLinesCC2035: projLinesCC2035,
-	projLinesOther: projLinesOther,
-	projPointsConstrained: projPointsConstrained,
-	projPointsUnconstrained: projPointsUnconstrained,
-	projPointsCC2035: projPointsCC2035,
-	projPointsOther: projPointsOther,
-	projPolygonsConstrained: projPolygonsConstrained,
-	projPolygonsUnconstrained: projPolygonsUnconstrained,
-	projPolygonsCC2035: projPolygonsCC2035,
-	projPolygonsOther: projPolygonsOther,
+	ProjectPoints: ProjectPoints,
+	ProjectLines: ProjectLines,
+	ProjectPolygons: ProjectPolygons,
 	bikeProgram: bikeProgram,
 	greenwayProgram: greenwayProgram,
 	taxlots: taxlots,
