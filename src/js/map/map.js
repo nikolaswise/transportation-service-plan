@@ -100,14 +100,8 @@ const getInactiveLayers = () => {
  */
 const addLayers = (layerSet) => {
   if (!layerSet) { return; }
+  layerSet = layerSet.replace(/ /g, '');
   layerSet.split(',').forEach((layer) => addLayer(layer));
-  // let layers = layerSet.split(',')
-
-  // let promises = layers.map(layer => addLayer(layer))
-
-  // Promise.all(promises)
-
-
 };
 
 /**
@@ -121,10 +115,7 @@ const addLayer = layer => new Promise((resolve, reject) => {
     reject()
     return
   }
-  console.log(layers[layer].features)
   layers[layer].features.addTo(map);
-  console.log('all done')
-
   bus.emit('layer:reset', layer);
   layers[layer].features.bindPopup((err, evt) => {
     if (err) {
@@ -170,6 +161,7 @@ const resetLayerStyle = layer => {
  */
 const removeLayers = (layerSet) => {
   if (!layerSet) { return; }
+  layerSet = layerSet.replace(/ /g, '');
   layerSet.split(',').forEach((layer) => removeLayer(layer));
 };
 

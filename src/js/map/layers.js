@@ -2,6 +2,7 @@
 // this file just maps GIS data layers to their popups, and gives them a reference handle
 // so they can be got at by the map app
 import popupRenderer from './classification-renderer';
+import popupDistricts from './district-renderer';
 import popupProject from './project-renderer';
 import popupZoning from './zoning-renderer';
 import popupTaxlots from './taxlots-renderer';
@@ -27,15 +28,20 @@ export const Design = {
  * @property {number} bicycleClassifications.features - Esri Leaflet Feature Layer
  * @property {string} bicycleClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const Bicycle = {
+export const BicycleClassifications = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [12],
   }),
-  pane: 'top',
   popup: popupRenderer('Bicycle')
 };
-
+export const BicycleDistricts = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [13],
+  }),
+  popup: popupDistricts('Bicycle', 'BD')
+};
 /**
  * @property {object} transitClassifications          - Object for GIS layer
  * @property {number} transitClassifications.features - Esri Leaflet Feature Layer
@@ -84,13 +90,23 @@ export const Emergency = {
  * @property {number} pedestrianClassifications.features - Esri Leaflet Feature Layer
  * @property {string} pedestrianClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const Pedestrian = {
+export const PedestrianClassifications = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [15],
+    pane: 'top'
+  }),
+  pane: 'top',
+  popup: popupRenderer('Pedestrian')
+};
+export const PedestrianDistricts = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [16],
+    pane: 'bottom'
   }),
   pane: 'bottom',
-  popup: popupRenderer('Pedestrian')
+  popup: popupDistricts('Pedestrian', 'PD')
 };
 
 /**
@@ -98,12 +114,25 @@ export const Pedestrian = {
  * @property {number} freightClassifications.features - Esri Leaflet Feature Layer
  * @property {string} freightClassifications.popup    - Rendered HTML string of desired popup.
  */
-export const Freight = {
+export const FreightClassifications = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [19],
   }),
-  pane: 'top',
+  popup: popupRenderer('Freight')
+};
+export const FreightDistricts = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [20],
+  }),
+  popup: popupDistricts('Freight', 'FD')
+};
+export const FreightFacilities = {
+  features: window.L.esri.dynamicMapLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
+    layers: [18],
+  }),
   popup: popupRenderer('Freight')
 };
 /**
