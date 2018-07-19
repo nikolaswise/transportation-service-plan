@@ -110,7 +110,7 @@ The South Waterfront District of the Central City of Portland lies along the Wil
 
 The primary development constraint in the District is transportation access to and from regional highway and transit systems. The South Waterfront Plan of January 20, 2003 includes a vision, policies and an Urban Design Plan that promotes high density housing and commercial development with a full range of businesses that contribute to the region's job growth. The vision also includes frequent public connections to the river, limiting the size and amount of surface parking lots, and integrating development and services.
 
-![](/img/media/image8.png){width="5.375in" height="8.354166666666666in"}
+![](/img/media/image8.png)
 
 In 1998 the North Macadam District Street Design Standards and Criteria Plan: Transportation Report considered and analyzed South Waterfront's limited access and adjacency to I-5 and Ross Island Bridge ramps. The analysis included the three district portal intersections: River Parkway and Harbor Drive (north), Curry and Macadam (center) and Bancroft and Macadam (south). The analysis was based on the District's 20-year goals for accommodating 10,000 jobs and 3,000 housing units and a 30 percent mode split. The housing goal has since been increased to 5,000 units.
 
@@ -208,19 +208,19 @@ Because large parcels were maintained for development and redevelopment, the rev
 
 -   Extension of 100th Ave. between Oak St. and Washington St. The revised street plan does not include any connectivity at this location. Vehicles, pedestrians, and bicycles could access the area from connections at 97th Ave., and 101st.
 
-![](/img/media/image14.png){width="5.651042213473316in" height="7.6417497812773405in"}
+![](/img/media/image14.png)
 
 #### Cully Neighborhood Local Street Plan (2012)
 
 The Cully Commercial Corridor and Local Street Plan was adopted by Resolution 36952 in August 2012. Its development was funded by a Transportation Growth Management Grant from the Oregon Department of Transportation. Its recommendations were also influenced by the Portland Plan (April 2012) which had recommendations related to alternative right-of-way improvements, developing new options for unimproved rights-of-way and accelerating the creation of safe pedestrian connections. The Cully Neighborhood Local Street Plan identified new street or pedestrian/bicycle connections to improve street connectivity and address gaps in transportation networks.
 
-![](/img/media/image9.png){width="5.463541119860017in" height="7.159739720034995in"}
+![](/img/media/image9.png)
 
 #### River District Master Street Plan
 
 Revisions to the River District Master Street Plan were adopted by City Council on May 24^th^ 2018.
 
-###### ![](/img/media/image12.jpg){width="5.854166666666667in" height="8.07638888888889in"}
+###### ![](/img/media/image12.jpg)
 
 #### Southwest and Far Southeast
 
@@ -290,7 +290,7 @@ Long-term county stewardship, along with recent population growth, has resulted 
 
 Barriers (such as terrain, streams, and existing development) will continue to limit a connected street system, including bicycle/pedestrian accessways, in Far Southeast Portland. With expected increases in the number of households and dwelling units in the area, however, completion of the local street system will be needed even more to provide multimodal access to areas of new development and from those areas to neighborhood activity centers, transit, and arterials.
 
-![](/img/media/image10.png){width="6.333333333333333in" height="8.71875in"}
+![](/img/media/image10.png)
 
 ###### Outer Powell Blvd Conceptual Plan Design (2012)
 
@@ -332,7 +332,7 @@ Goals and Objectives: The overall goal is to develop a Neighborhood Street Plan 
 
 The Street Plan identified implementation methods for introducing new street and pathway connections and options for improving deficient local streets. The plan recommended adding New Future Public Connections across Existing Private Property.
 
-![](/img/media/image13.png){width="6.364583333333333in" height="6.875in"}
+![](/img/media/image13.png)
 
 ##### Southwest Portland Master Street Plans
 
@@ -344,7 +344,7 @@ The Portland Bureau of Transportation (PBOT) and the Portland Bureau of Environm
 
 The plan recommends modifying the City of Portland's Southwest Master Street Plan (2001) to add future local street/pathway connections in two locations within the study area, as shown on the following map (page 52 of the Tryon-Stevens plan). Recommended new connections are in the Hillsdale neighborhood linking SW Nevada Court to SW Vermont Street between SW 26th Avenue and Capitol Hill Road, and in the Markham Neighborhood linking SW Marigold Street between SW 23rd and SW 26th Avenues.
 
-![](/img/media/image5.png){width="5.140624453193351in" height="6.793558617672791in"}
+![](/img/media/image5.png)
 
 **Areas not covered by Master Street Plans**
 --------------------------------------------

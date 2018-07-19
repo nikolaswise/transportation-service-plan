@@ -265,7 +265,7 @@ The percentage of trips taken by each of the possible modes of travel (motor veh
 
 A qualitative measure describing operational conditions within a traffic stream. A level-of-service definition generally describes these conditions in terms of such factors as speed and travel time, freedom to maneuver, traffic interruptions, comfort, convenience, and safety. LOS ratings of 'A' through 'F' describe the traffic flow characteristics on streets and highways and at intersections, as shown on the following table:
 
-![](/img/media/image2.png){width="6.5in" height="3.3194444444444446in"}
+![](/img/media/image2.png)
 
 **Multimodal**
 
