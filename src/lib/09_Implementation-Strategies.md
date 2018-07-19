@@ -199,7 +199,7 @@ Transportation solutions in the corridor should consider the following approache
 
 -   Coordination with previous planning studies and recommendations from the South Portland Circulation Study, Barbur Boulevard Streetscape Plan, and Barbur Boulevard Streamline Project
 
-**RTP Studies**
+**RTP Studies **
 ----------------
 
 ***Interstate 205 Ramp Study***
@@ -303,17 +303,17 @@ The 2000 2014 RTP requires local jurisdictions to develop "conceptual new street
 
 Areas of the City without adopted street plans must be analyzed to determine where adequate connectivity does not exist. Some areas, such as inner Southeast, have high levels of street connectivity that exceed regional standards. Other districts, such as Northwest, exhibit high street connectivity near the Central City, but poor connectivity in outlying areas where topography and industrial zoning may preclude connectivity. At a district level, the Far Northeast exhibits the lowest levels of connectivity for areas not covered by an adopted street plan.
 
-####
+####  
 
-####**Other Agency Common Priority Projects in Portland**
+#### **Other Agency Common Priority Projects in Portland** 
 
-#### This project is needed in order to collaborate with ODOT, the Port, Portland Parks and Recreation, and TriMet to identify common priority projects for the 2018 RTP. The 2018 RTP is proposed as a "major update." The City did not evaluate other agency proposed projects within Portland for the 2014 RTP, or the 2035 TSP update. This collaborative study, or three separate studies, would identify projects that the City and one or more of the other agencies agree should be advanced as priority projects in the 2018 RTP. The study will refine project evaluation criteria based on RTP and TSP adopted outcomes.
+#### This project is needed in order to collaborate with ODOT, the Port, Portland Parks and Recreation, and TriMet to identify common priority projects for the 2018 RTP. The 2018 RTP is proposed as a "major update." The City did not evaluate other agency proposed projects within Portland for the 2014 RTP, or the 2035 TSP update. This collaborative study, or three separate studies, would identify projects that the City and one or more of the other agencies agree should be advanced as priority projects in the 2018 RTP. The study will refine project evaluation criteria based on RTP and TSP adopted outcomes. 
 
-####**Citywide All-Modes Needs Analysis**
+#### **Citywide All-Modes Needs Analysis**
 
-####
+#### 
 
-####**Projected ODOT "Hot Spot" Locations Refinement Plan**
+#### **Projected ODOT "Hot Spot" Locations Refinement Plan**
 
 This analysis will identify plan-level solutions for locations with safety and/current or projected capacity problems on or near State Highways. The study refinement plan will also develop and evaluate alternative performance measures, including alternative mobility targets, for State Highways, consistent with Action 1F3 of the Oregon Highway Plan, in collaboration with the Oregon Department of Transportation.
 
@@ -369,15 +369,15 @@ Currently, this segment of Glisan stretches between two light rail stations at 6
 
 Glisan St was given a road diet between 62nd and 81st avenues, improving pedestrian crossing conditions. However, nothing has yet been done on this stretch specifically for bicycle safety.
 
-####**Columbia Corridor Access Study**
+#### **Columbia Corridor Access Study**
 
 #### This study would identify priority connectivity needs for all modes along and across the Kenton rail line in Northeast Portland. North south access points across the railroad are currently limited to few locations, are substandard for all modes, and include several deficient bridges. If Union Pacific double-tracks the Kenton railroad line, north south access could be significantly impacted for freight, transit, bicyclists, pedestrians, and drivers. Traffic analysis has also indicated significant and growing freight delay along Columbia Blvd, improved pedestrian and bicycle access to transit is also needed to support a proposed bus line along Columbia Blvd. The study would identify key connectivity needs for all modes, and develop a proposal to work with Union Pacific, other public sector agencies, and private sector organizations to ensure ongoing connectivity needs are met.
 
-####**Growing Transit Communities Investment Plan**
+#### **Growing Transit Communities Investment Plan **
 
-#### This project will identify corridors within the City of Portland where the development of compact, transit oriented communities would be stimulated by targeted investments that support a high level of access to fast, reliable, and frequent transit service. It will then identify and prioritize the specific infrastructure, program and policy investments that are most needed in those corridors to produce the level and type of growth and mode shift targeted by the City and the region. The study will then develop funding and implementation strategies for the improvements. The project will result in an investment plan that will be a model for other jurisdictions in the region. It will be incorporated into future updates of the Transportation System Plan and the Regional Transportation Plan. This project is funded.
+#### This project will identify corridors within the City of Portland where the development of compact, transit oriented communities would be stimulated by targeted investments that support a high level of access to fast, reliable, and frequent transit service. It will then identify and prioritize the specific infrastructure, program and policy investments that are most needed in those corridors to produce the level and type of growth and mode shift targeted by the City and the region. The study will then develop funding and implementation strategies for the improvements. The project will result in an investment plan that will be a model for other jurisdictions in the region. It will be incorporated into future updates of the Transportation System Plan and the Regional Transportation Plan. This project is funded. 
 
-####**Enhanced Transit Corridors**
+#### **Enhanced Transit Corridors**
 
 #### This study will identify corridors needing higher transit capacity to accommodate projected growth and to support TSP outcomes including prosperity, equity, safety, and climate. The study will identify the general types of improvements needed in each corridor. The result will be projects for the next RTP and/or TSP.
 
@@ -421,27 +421,27 @@ Project-Specific Objectives:
 
     -   Project timing: 11-20 years.
 
-####**Pleasant Valley Area Need and Feasibility Analysis**
+#### **Pleasant Valley Area Need and Feasibility Analysis**
 
 #### This study will conduct a high-level needs and feasibility analysis for several projects from the 2007 TSP and the 2014 RTP in the Pleasant Valley area. These projects include retrofits of Jenne Road, 174th Avenue, Barbra Welch Road, and Foster Road, as well as the extension of 174th Ave as proposed by the City of Gresham. The study will use updated transportation modeling from Metro and current population and employment growth projections to re access the need for these project as well as the identified solutions. The study will also access the feasibility of projects that call for new or widened roadways with full pedestrian and bicycle facilities along environmentally constrained corridors.
 
-####**Industrial Lands Access Study**
+#### **Industrial Lands Access Study**
 
-#### This study will identify, evaluate and prioritize potential industrial lands transportation access investments and revenue sources following adoption of the 2035 Comprehensive Plan and 2035 TSP.
+#### This study will identify, evaluate and prioritize potential industrial lands transportation access investments and revenue sources following adoption of the 2035 Comprehensive Plan and 2035 TSP. 
 
-####**Pedestrian Master Plan**
+#### **Pedestrian Master Plan**
 
 #### The Pedestrian Master Plan established a 20- year framework for improvements that will enhance the pedestrian environment and increase opportunities to choose walking as a mode of transportation. The Pedestrian Master Plan Update includes a review of the City\'s pedestrian policies, pedestrian street classifications, pedestrian design guidelines, a list of capital projects and a set or recommended funding strategies.
 
-####**Southwest In Motion**
+#### **Southwest In Motion**
 
 #### Develop a 5- year active transportation strategy for all of Southwest Portland. It will incorporate projects from the updated TSP project list, the Portland Bicycle Plan for 2030, the Barbur Concept Plan, the Southwest Corridor Plan, the SW Urban Trails Plan, the Barbur Concept Plan, and community-led Platinum Bicycle Facility Strategy in Southwest Portland. This project is funded.
 
-####**Portland Central City Truck Loading and Parking Plan**
+#### **Portland Central City Truck Loading and Parking Plan**
 
 #### This project will develop a comprehensive truck loading and parking strategy for the Central City to increase efficiency of the on-street loading system, increase compliance with City loading regulations, and balance commercial loading and parking needs with other uses in the public right-of-way. This project will recommend strategies and street design options applicable to the Central City. This project is funded.
 
-####**Hayden Island**
+#### **Hayden Island**
 
 In coordination with regional, state and federal partners, develop and evaluate access options to Hayden Island from Marine Drive. Access would include Pedestrian, Bike, Transit, Auto and freight to support the Hayden Island Plan.
 

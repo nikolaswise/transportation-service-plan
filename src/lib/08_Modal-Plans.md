@@ -13,7 +13,7 @@ Comp Plan policies were adopted that address motor vehicles. Specific policies i
 
 PBOT worked with Trimet, riders, residents, neighborhood groups, governments, schools and businesses to plan improvements to transit service. The long-term vision developed identifies and prioritizes opportunities to improve bus service as well as pedestrian and bike access to transit.
 
-[[http://news.trimet.org/category/service-enhancement-plans/]{.underline}](http://news.trimet.org/category/service-enhancement-plans/)
+[http://news.trimet.org/category/service-enhancement-plans/](http://news.trimet.org/category/service-enhancement-plans/)
 
 **Growing Transit Communities Plan (GTC)**
 

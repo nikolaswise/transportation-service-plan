@@ -51,61 +51,33 @@ The Regional Transportation Functional Plan (RTFP), adopted in 2010 (Ordinance 1
 
 -   Includes street cross-sections
 
-**Areas Meeting Connectivity Requirements**
+**Areas meeting connectivity requirements**
+-------------------------------------------
 
-Many areas of Portland meet the RTP connectivity standards or are not required to have master street plans. The district maps in Chapter 2 of the TSP (Maps 11.11.9-11.11.16) show these areas. Areas not required to meet connectivity standards include industrial sanctuaries, open space, and protected environmental areas. In Portland these are areas zoned IG1, IG2, IH, OS, and p.
+Many areas of Portland meet the RTP connectivity standards or are not required to have master street plans. Areas not required to meet connectivity standards include industrial sanctuaries, open space, and protected environmental areas.
 
-Existing Master Street Plans
-----------------------------
+**Existing Master Street Plans**
+--------------------------------
 
-### Southwest and Far Southeast
+### Master Street Plans retained by the TSP
 
-The City completed master street plans for the Southwest and Far Southeast transportation districts in June 2001. These two master street plans satisfy the State and regional requirements to identify the location and type of new local street connections. The methodology and criteria used to develop the plans are described briefly below. The SW and Far SE Master Street Plan -- Final Report and Recommendations contains quarter-section level maps and tables that detail the recommended connections. The report identifies three objectives to be met:
+The TSP retains the following street plans, which were not changed since the Transportation System Plan was last updated in 2007:
 
--   Reduce the uncertainty in the development review process regarding when and where new street connections will be an issue.
+-   Bridgeton Neighborhood Street Plan
 
--   Provide for better coordination of the local street system development.
+-   Airport Way Street Plan
 
--   Comply with the mandates of the State Transportation Planning Rule and Regional Transportation Plan for street connectivity.
+-   Southwest District Master Street Plan
 
-The Southwest and Far Southeast master street plans were developed through a number of steps, with mapping associated with each step:
+-   South Portland Circulation Study
 
-**\
-**Step One
+-   St. Johns Town Center Master Street Plan
 
--   Define blocks in the study area that meet the spacing standard.
+-   Multnomah County Unincorporated Urban Pockets
 
--   Define areas being excluded (areas where streets are complete or underway; parcels zoned as park, open space, or industrial; religious or educational institutions).
+### Master Street Plans updated or added since 2007
 
-Step Two
-
--   Define remaining areas that have development or redevelopment potential (land value greater than improvement value; different Comprehensive Plan and zoning designations; two-acre or larger parcels).
-
--   Define development constraints (street spacing not met, but parcels don't meet development potential).
-
-Step Thre*e*
-
--   Define blocks with barriers to connectivity (environmentally constrained).
-
-Step Four
-
--   Group the remaining areas into focus areas.
-
-Step Five
-
--   Define locations of new connections.
-
--   Determine specificity of connections -- specific points or along a block face).
-
--   Apply type of connection -- street or pedestrian/bicycle.
-
-The plans' recommendations include information about the location, level of alignment specificity, type of connection, barriers, presence of environmental zones, traffic impacts, field notes, and comments from the public or technical staff.
-
-While the master street plans identify a number of future connections, the absence of a connection does not mean a connection is not needed or feasible. All areas within the study areas are still subject to relevant policy and spacing standards.
-
-###**Area-Specific Master Street Plans**
-
-Street plans have been completed, but not adopted into the Comprehensive Plan, for other areas of the City over the past several years. Although they are not specifically intended to meet the State and regional requirements, they do function as master street plans. These plans cover the following areas:
+The following Master Street Plans were completed or updated since the TSP was last updated in 2007; they have since been adopted into the Comprehensive Plan. Although they are not specifically intended to meet the State and regional requirements, they do function as Master Street Plans. These plans cover the following areas:
 
 -   Gateway Regional Center
 
@@ -125,23 +97,19 @@ Street plans have been completed, but not adopted into the Comprehensive Plan, f
 
 -   Tryon-Stephens Headwaters Neighborhood Street Plan
 
-Each plan or study is summarized below, along with maps derived from the original documents.\
-\
-**Areas Not Covered by Master Street Plans**\
-\
-Master Street plans have not been completed for all or parts of the North, Northeast, Far Northeast, Southeast, Northwest, and Central City districts. Other areas were excluded from the Southwest and Far Southeast Master Street Plans: the east light rail corridor (102nd to the city limits, NE Glisan to SE Stark), the Hillsdale town center, and the West Portland town center. Master Street plans for these areas will be completed as refinement plans of the TSP. Until such plans are completed, the location and implementation of new street and pedestrian/bicycle connections will be governed by Title 17: Public Improvements, and Title 33: Planning and Zoning, requirements in City Code. Title 17 regulations govern developing or redeveloping sites that do not include a land division, and Title 33 regulations govern developing or redeveloping sites that do include a land division. The spacing standards in each title are 530 feet for full street connections and 330 feet for pedestrian/bicycle connections where full street connections are not feasible.
+Each plan or study is summarized below, along with maps derived from the original documents.
 
-### SOUTH WATERFRONT DISTRICT STREET PLAN, CRITERIA AND STANDARDS
+#### South Waterfront District Street Plan, Criteria, and Standards
 
-Background\
-\
-In 1996, the Portland City Council accepted the City Engineer's Report titled North Macadam District Street Plan, which identified and classified a street system for the North Macadam District. On January 20, 2003, City Council adopted amendments to the Central City Plan and updated the District's special design guidelines and the zoning code. At the same time, City Council changed the North Macadam District name to South Waterfront District (the District). By authority of the City Engineer under Title 17 City Code, the South Waterfront Street Plan, Criteria and Standards was amended in 2007 providing updated design criteria and standard details for the District's public rights-of-way. The 2009 document update amends the North District (the area south of Sheridan St and north of Gibbs St) rights-of-way alignment and standards to accommodate future light rail and property development, as well as expanded streetcar service and bicycle and pedestrian infrastructure.\
-\
-The South Waterfront District of the Central City of Portland lies along the Willamette River and south of downtown. The district boundaries are the River, Interstate 5, the Marquam Bridge and SW Hamilton Court. Adopted City policy envisions this as a mixed-use neighborhood with significant residential development along the River and commercial development focused along transit corridors. With just over one mile of River frontage the District contains approximately 140 acres. Some land is developed or being developed and some land is vacant land or has redevelopment potential.\
-\
+**Background**
+
+In 1996, the Portland City Council accepted the City Engineer's Report titled North Macadam District Street Plan, which identified and classified a street system for the North Macadam District. On January 20, 2003, City Council adopted amendments to the Central City Plan and updated the District's special design guidelines and the zoning code. At the same time, City Council changed the North Macadam District name to South Waterfront District (the District). By authority of the City Engineer under Title 17 City Code, the South Waterfront Street Plan, Criteria and Standards was amended in 2007 providing updated design criteria and standard details for the District's public rights-of-way. The 2009 document update amends the North District (the area south of Sheridan St and north of Gibbs St) rights-of-way alignment and standards to accommodate future light rail and property development, as well as expanded streetcar service and bicycle and pedestrian infrastructure.
+
+The South Waterfront District of the Central City of Portland lies along the Willamette River and south of downtown. The district boundaries are the River, Interstate 5, the Marquam Bridge and SW Hamilton Court. Adopted City policy envisions this as a mixed-use neighborhood with significant residential development along the River and commercial development focused along transit corridors. With just over one mile of River frontage the District contains approximately 140 acres. Some land is developed or being developed and some land is vacant land or has redevelopment potential.
+
 The primary development constraint in the District is transportation access to and from regional highway and transit systems. The South Waterfront Plan of January 20, 2003 includes a vision, policies and an Urban Design Plan that promotes high density housing and commercial development with a full range of businesses that contribute to the region's job growth. The vision also includes frequent public connections to the river, limiting the size and amount of surface parking lots, and integrating development and services.
 
-![](/img/media/image4.png)
+![](/img/media/image8.png)
 
 In 1998 the North Macadam District Street Design Standards and Criteria Plan: Transportation Report considered and analyzed South Waterfront's limited access and adjacency to I-5 and Ross Island Bridge ramps. The analysis included the three district portal intersections: River Parkway and Harbor Drive (north), Curry and Macadam (center) and Bancroft and Macadam (south). The analysis was based on the District's 20-year goals for accommodating 10,000 jobs and 3,000 housing units and a 30 percent mode split. The housing goal has since been increased to 5,000 units.
 
@@ -159,11 +127,9 @@ The 1998 transportation analysis demonstrated that while the District will exper
 
 Since the 1998 report, plans for portal improvements have been altered. Through the South Portal Study, conducted in 2006, the recommended south portal shifted south to Hamilton St and Macadam. In addition, the planned central portal improvements at Curry have been scaled back and north portal improvements at River Parkway and Harbor Drive have been added. In fact, in 2009 the Portland Bureau of Transportation updated the technical analysis through the North Macadam Transportation Development Strategy (resolution no. 36696 adopted April 8, 2009). The report identified multi-modal project priorities and a funding strategy to guide project implementation necessary to support continued development of the urban renewal area, including portal improvements.
 
-The 2007 update of the South Waterfront District Street Plan, Criteria and Standards primarily responded to development in the Central District and completion of infrastructure projects, including the Portland Streetcar extension to Lowell St and the Portland Aerial Tram to Oregon Health Sciences University. Transportation studies, such as the 2004 South Waterfront District Transportation Improvements Evaluation and 2006 South Portal Study had also been completed. Major updates included changes to the street lighting design standards, certain street furniture standards, and the modification of the street plan based on the recommendations of the South Portal Study and the new Greenstreet Policy (resolution no. 36500 adopted in April of 2007). Other changes included modest refinements to various street dimensional standards developed through preliminary engineering and construction of these streets and to refinements of various performance criteria.
+The 2007 update of the South Waterfront District Street Plan, Criteria and Standards primarily responded to development in the Central District and completion of infrastructure projects, including the Portland Streetcar extension to Lowell St and the Portland Aerial Tram to Oregon Health Sciences University. Transportation studies, such as the 2004 South Waterfront District Transportation Improvements Evaluation and 2006 South Portal Study had also been completed. Major updates included changes to the street lighting design standards, certain street furniture standards, and the modification of the street plan based on the recommendations of the South Portal Study and the new Greenstreet Policy (Resolution no. 36500 adopted in April of 2007). Other changes included modest refinements to various street dimensional standards developed through preliminary engineering and construction of these streets and to refinements of various performance criteria.
 
-Overview South Waterfront
-
-2009 Update
+**South Waterfront 2009 Update**
 
 Since the 2007 update, the City of Portland has endorsed the Locally Preferred Alternative (LPA) for the Portland to Milwaukie Light Rail alignment. This alignment extended light rail south into the North District and included bus service and streetcar utilizing the same alignment. In addition, the OHSU Schnitzer Campus master plan and the North Macadam Transportation Development Strategy report, with a prioritized list of multi-modal projects and a funding strategy, have been completed. These activities generated the need to refine and update various elements of the Street Plan. Major updates include changes to the street alignments and designations in the Concept Street Plan Map, updates of some street widths in the Right-of-Way Width Map changes to street descriptions in the Street Classification and Function Table, and adjustments to the Standard Street Sections.
 
@@ -189,9 +155,7 @@ Specific changes made to the Concept Street Plan map are as follows:
 
 -   "Special Design Area" beneath the Ross Island Bridge has been relocated to reflect the location of the potential active-use park. Grover St is aligned on either side of the Ross Island Bridge.
 
-![](/img/media/image6.png)
-
-### GATEWAY REGIONAL CENTER STREET PLAN
+#### Gateway Regional Center Street Plan
 
 **Background**
 
@@ -201,21 +165,19 @@ The Central Gateway portion of the Gateway District Master Street Plan was amend
 
 **Street Connectivity**
 
-A discontinuous network of streets and sidewalks, high volumes of through-traffic, and underutilized property characterize Gateway regional center. Access to the transit stations in Gateway's northwest corner and at 102nd and Burnside is problematic. Discontinuous streets discourage walking and bicycling, resulting in significant out-of-direction travel for all modes.
+A discontinuous network of streets and sidewalks, high volumes of through-traffic, and underutilized property characterize Gateway regional center. Access to the transit stations in Gateway's northwest corner and at 102^nd^ and Burnside is problematic. Discontinuous streets discourage walking and bicycling, resulting in significant out-of-direction travel for all modes.
 
 Increasing street connectivity would disperse trips among many alternate routes, thereby reducing congestion, shortening trip lengths, and increasing the mode split for alternatives to the automobile.
 
-Concept Plan Map
+**Concept Plan Map**
 
 The Opportunity Gateway Concept Plan and Redevelopment Strategy is intended to serve as the 'appropriate vision' for the redevelopment of Gateway as a regional center. The concept plan map is a picture of the regional center's redevelopment potential and build-out in 2019. While the plan map affixes buildings and parks to specific locations, the reality is that new construction will appear somewhat differently. While new streets and connections are identified, they are also subject to change to respond to development opportunities. The Opportunity Gateway report states: "It is rigid enough to be a statement of what is and is not desirable in the Regional Center, and flexible enough to be useful even as redevelopment circumstances change." The map graphically depicts the vision described in the report.
 
-The concept plan map calls for a traditional block configuration, which will help unify the regional center's character. Some of the proposed new connections would greatly change existing circulation patterns. Northeast Multnomah between Fred Meyer's and Mervyn's at the Gateway Shopping Center is shown as a fully functional street, intended to help disperse traffic associated with the transit center. In the southern part of the regional center, several new public streets are shown in the Mall 205 and Plaza 205 properties, breaking up what are now large expanses of parking. Pedestrian pathways connect important routes and destinations where full streets are not possible or appropriate, such as between SE 105th and the Adventist Medical Center.
+The concept plan map calls for a traditional block configuration, which will help unify the regional center's character. Some of the proposed new connections would greatly change existing circulation patterns. Northeast Multnomah between Fred Meyer's and Mervyn's at the Gateway Shopping Center is shown as a fully functional street, intended to help disperse traffic associated with the transit center. In the southern part of the regional center, several new public streets are shown in the Mall 205 and Plaza 205 properties, breaking up what are now large expanses of parking. Pedestrian pathways connect important routes and destinations where full streets are not possible or appropriate, such as between SE 105^th^ and the Adventist Medical Center.
 
-As the major north-south arterial, 102nd Avenue is the spine of the district and is targeted for improvements for all modes. Changes to 99th Avenue would allow it to act as an additional north-south carrier, improving access for development projects and creating a new local identity the length of the district. Major east-west streets (Stark/Washington, Halsey/Weidler, Burnside, and Glisan) will continue to carry significant volumes of through-traffic. Better local north-south street connections will link the two main large shopping areas together, and improved connectivity will be provided within each of these shopping areas.
+As the major north-south arterial, 102^nd^ Avenue is the spine of the district and is targeted for improvements for all modes. Changes to 99^th^ Avenue would allow it to act as an additional north-south carrier, improving access for development projects and creating a new local identity the length of the district. Major east-west streets (Stark/Washington, Halsey/Weidler, Burnside, and Glisan) will continue to carry significant volumes of through-traffic. Better local north-south street connections will link the two main large shopping areas together, and improved connectivity will be provided within each of these shopping areas.
 
-![](/img/media/image5.png)
-
-Central Gateway Street Plan 2009
+**Central Gateway Street Plan 2009**
 
 The Central Gateway Master Street Plan revision was developed to provide flexibility for connections while maintaining larger parcels for redevelopment, recognizing existing parcel lines, provide connections on the local network without altering the district or neighborhood collectors and to foster redevelopment in the City's only Regional Center. Criteria were established for consideration in the proposed plan. Other goals of the plan included aligning streets on parcel boundaries for shared investment in right-of-way improvements; consider common or multiple parcel ownership; minimize parcel impacts and maintain reminder parcels; preserve some large parcels or contiguous ownership parcels; discourage cut-through traffic while providing access; discourage off-set intersections; consider potential spacing of crosswalks or signals.
 
@@ -223,53 +185,101 @@ With these criteria and goals, a revised street plan for Central Gateway was dev
 
 Characteristics of the revised street plan:
 
-East-west connections between 97th Ave. and 102nd Ave. on Flanders St. and Davis St. North-south connection on 100th Ave. between Oak St. and Burnside and also between Oregon St. and Pacific St.
+-   East-west connections between 97th Ave. and 102nd Ave. on Flanders St. and Davis St. North-south connection on 100th Ave. between Oak St. and Burnside and also between Oregon St. and Pacific St.
 
-North--south connection on 101st Ave. between Stark St. and approximately Flanders St., improving multi-modal access to the light-rail station on 102nd and Burnside.
+-   North--south connection on 101st Ave. between Stark St. and approximately Flanders St., improving multi-modal access to the light-rail station on 102nd and Burnside.
 
-Internal connection on Oregon St. approximately Hoyt St., Coach St., and 101st Ave.
+-   Internal connection on Oregon St. approximately Hoyt St., Coach St., and 101st Ave.
 
-Vacating portions of 97th Ave. to allow developable parcels near I-205. This would continue to allow multi-modal access to the parcels.
+-   Vacating portions of 97th Ave. to allow developable parcels near I-205. This would continue to allow multi-modal access to the parcels.
 
-Maintaining existing large parcels for development and redevelopment while also providing public bicycle and pedestrian access ways. Large parcels would have the option to have public bike and pedestrian access ways on the site rather than full streets, as was required in the prior master street plan. Public bike and pedestrian access ways will be required on certain blocks such that spacing of public connections shall be no more than 330 feet where full street connections are more than 530 feet. Additionally, pedestrian connections would be required throughout Central Gateway.
+-   Maintaining existing large parcels for development and redevelopment while also providing public bicycle and pedestrian access ways. Large parcels would have the option to have public bike and pedestrian access ways on the site rather than full streets, as was required in the prior master street plan. Public bike and pedestrian access ways will be required on certain blocks such that spacing of public connections shall be no more than 330 feet where full street connections are more than 530 feet. Additionally, pedestrian connections would be required throughout Central Gateway.
 
 Because large parcels were maintained for development and redevelopment, the revised street plan does not include some of the proposed streets that were in the previous in the street plan for the Gateway District. These include:
 
-Extension of Oregon St. between 97th Ave. and 98th Ave. However, the revised street plan proposes to keep the Irving St. alignment as existing between 97th Ave. and 100th Ave., whereas the prior plan showed this segment as vacated.
+-   Extension of Oregon St. between 97th Ave. and 98th Ave. However, the revised street plan proposes to keep the Irving St. alignment as existing between 97th Ave. and 100th Ave., whereas the prior plan showed this segment as vacated.
 
-Full street connection of Hoyt St. between 97th Ave. and 104th Ave.
+-   Full street connection of Hoyt St. between 97th Ave. and 104th Ave.
 
-Full street connection of roughly the Davis St. alignment between 97th Ave. and 103rd Ave. The revised street plan proposes that some portions of the alignment would be full street while other portions would be pedestrian connection.
+-   Full street connection of roughly the Davis St. alignment between 97th Ave. and 103rd Ave. The revised street plan proposes that some portions of the alignment would be full street while other portions would be pedestrian connection.
 
-Extension of 101st Ave. between Washington St. and Pacific St. The revised street plan proposes a mix of full streets and pedestrian connections on some portions of the 101st Ave. alignment. Other portions of the alignment would not have connections. Unlike as in the prior plan, the revised street plan does not intend for 101st Ave. to become a neighborhood collector. Rather, 99th Ave. would be a through street, with 100th Ave. also providing significant connectivity).
+-   Extension of 101st Ave. between Washington St. and Pacific St. The revised street plan proposes a mix of full streets and pedestrian connections on some portions of the 101st Ave. alignment. Other portions of the alignment would not have connections. Unlike as in the prior plan, the revised street plan does not intend for 101st Ave. to become a neighborhood collector. Rather, 99th Ave. would be a through street, with 100th Ave. also providing significant connectivity.
 
-Extension of 100th Ave. between Oak St. and Washington St. (The revised street plan does not include any connectivity at this location. Vehicles, pedestrians, and bicycles could access the area from connections at 97th Ave., and 101st.
+-   Extension of 100th Ave. between Oak St. and Washington St. The revised street plan does not include any connectivity at this location. Vehicles, pedestrians, and bicycles could access the area from connections at 97th Ave., and 101st.
 
-![](/img/media/image13.png)
+![](/img/media/image14.png)
 
-### Cully Neighborhood Local Street Plan (2012)
+#### Cully Neighborhood Local Street Plan (2012)
 
-The Cully Commercial Corridor and Local Street Plan was adopted by Resolution 36952 in August 2012. Its development was funded by a Transportation Growth Management Grant from the Oregon Department of Transportation. Its recommendations were also influenced by the Portland Plan (April 2012) which had recommendations related to alternative right of way improvements, developing new options for unimproved rights-of-way and accelerating the creation of safe pedestrian connections. The Cully Neighborhood Local Street Plan identified new street or pedestrian/bicycle connections to improve street connectivity and address gaps in transportation networks.
+The Cully Commercial Corridor and Local Street Plan was adopted by Resolution 36952 in August 2012. Its development was funded by a Transportation Growth Management Grant from the Oregon Department of Transportation. Its recommendations were also influenced by the Portland Plan (April 2012) which had recommendations related to alternative right-of-way improvements, developing new options for unimproved rights-of-way and accelerating the creation of safe pedestrian connections. The Cully Neighborhood Local Street Plan identified new street or pedestrian/bicycle connections to improve street connectivity and address gaps in transportation networks.
 
-![](/img/media/image12.png)
+![](/img/media/image9.png)
 
-### FAR SOUTHEAST PORTLAND MASTER STREET PLAN
+#### River District Master Street Plan
+
+Revisions to the River District Master Street Plan were adopted by City Council on May 24^th^ 2018.
+
+###### ![](/img/media/image12.jpg)
+
+#### Southwest and Far Southeast
+
+The City completed master street plans for the Southwest and Far Southeast transportation districts in June 2001. These two master street plans satisfy the State and regional requirements to identify the location and type of new local street connections. The methodology and criteria used to develop the plans are described briefly below. The SW and Far SE Master Street Plan -- Final Report and Recommendations contains quarter-section level maps and tables that detail the recommended connections. The report identifies three objectives to be met:
+
+-   Reduce the uncertainty in the development review process regarding when and where new street connections will be an issue.
+
+-   Provide for better coordination of the local street system development.
+
+-   Comply with the mandates of the State Transportation Planning Rule and Regional Transportation Plan for street connectivity.
+
+The Southwest and Far Southeast master street plans were developed through a number of steps, with mapping associated with each step:
+
+*Step One*
+
+-   Define blocks in the study area that meet the spacing standard.
+
+-   Define areas being excluded (areas where streets are complete or underway; parcels zoned as park, open space, or industrial; religious or educational institutions).
+
+*Step Two*
+
+-   Define remaining areas that have development or redevelopment potential (land value greater than improvement value; different Comprehensive Plan and zoning designations; two-acre or larger parcels).
+
+-   Define development constraints (street spacing not met, but parcels don't meet development potential).
+
+*Step Three*
+
+-   Define blocks with barriers to connectivity (environmentally constrained).
+
+*Step Four*
+
+-   Group the remaining areas into focus areas.
+
+*Step Five*
+
+-   Define locations of new connections.
+
+-   Determine specificity of connections -- specific points or along a block face.
+
+-   Apply type of connection -- street or pedestrian/bicycle.
+
+The plans' recommendations include information about the location, level of alignment specificity, type of connection, barriers, presence of environmental zones, traffic impacts, field notes, and comments from the public or technical staff.
+
+While the master street plans identify a number of future connections, the absence of a connection does not mean a connection is not needed or feasible. All areas within the study areas are still subject to relevant policy and spacing standards.
+
+##### Far Southeast Portland Master Street Plans
 
 **Study Area**
 
-The Far Southeast Portland Master Street Plan includes nearly all of the Far Southeast Transportation District, from I-205 east to the City limit, and from Burnside south to the City limits. Some portions of this area are excluded from the plan: the Gateway regional center because a street plan already exists, and Burnside light rail station areas (102nd to 162nd,
+The Far Southeast Portland Master Street Plan includes nearly all of the Far Southeast Transportation District, from I-205 east to the City limit, and from Burnside south to the City limits. Some portions of this area are excluded from the plan: the Gateway regional center because a street plan already exists, and Burnside light rail station areas (102^nd^ to 162^nd^, NE Glisan to SE Stark), where master street plans will be completed as part of TSP refinement plans.
 
-NE Glisan to SE Stark), where master street plans will be completed as part of TSP refinement plans.
+*Land Use*
 
-***Land Use***
+The Far Southeast is predominantly in residential use, with interspersed commercial/retail uses. Commercial/retail uses are located in strip commercial development along arterials such as 122^nd^ and Division or in malls such as Mall 205 or the San Rafael Shopping Center. Institutions, such as colleges, hospitals, and schools, can create barriers, but offer limited opportunities for street connections. Cemeteries and parks also occupy significant tracts of land in the district. There are only a few pockets of industrial uses, principally near the Lents town center.
 
-The Far Southeast is predominantly in residential use, with interspersed commercial/retail uses. Commercial/retail uses are located in strip commercial development along arterials such as 122nd and Division or in malls such as Mall 205 or the San Rafael Shopping Center. Institutions, such as colleges, hospitals, and schools, can create barriers, but offer limited opportunities for street connections. Cemeteries and parks also occupy significant tracts of land in the district. There are only a few pockets of industrial uses, principally near the Lents town center.
-
-***Zoning***
+*Zoning*
 
 The Far Southeast Master Street Plan Study area includes virtually all of the various City commercial zones, except some designed specifically for the Central City. The area includes nearly all the residential zones, excluding only the most dense zones. The employment and industrial zoning currently in place is confined primarily to the southern edge of the district. Significant tracts of open space zoning exist, with Powell Butte the largest. Environmental overlays are applied to areas with steep slopes and near streams and wetland areas, principally in the southeast portion of the district.
 
-Area Character
+*Area Character*
 
 Terrain and the density of development largely determine the area's character. Some less developed areas display a rural appearance, with open fields and large out-buildings. The majority of the district has a more suburban appearance, with large tracts of single-dwelling homes on medium to large lots. Some areas display a more urban character, with smaller lots and buildings closer to the street. Steep slopes with numerous streams and gullies are located in the southern portion of the area, along Johnson Creek and in Pleasant Valley.
 
@@ -279,9 +289,9 @@ Long-term county stewardship, along with recent population growth, has resulted 
 
 Barriers (such as terrain, streams, and existing development) will continue to limit a connected street system, including bicycle/pedestrian accessways, in Far Southeast Portland. With expected increases in the number of households and dwelling units in the area, however, completion of the local street system will be needed even more to provide multimodal access to areas of new development and from those areas to neighborhood activity centers, transit, and arterials.
 
-![](/img/media/image15.png)
+![](/img/media/image10.png)
 
-### Outer Powell Blvd Conceptual Plan Design (2012)
+###### Outer Powell Blvd Conceptual Plan Design (2012)
 
 The City of Portland Bureau of Transportation, in coordination with the Oregon Department of Transportation (ODOT), developed a conceptual design plan for Outer SE Powell Blvd. from the I-205 to SE 174th Ave (city limits). This stretch of SE Powell Blvd is designated State Highway No. 26. Therefore, ODOT has jurisdiction along SE Powell Blvd.
 
@@ -291,19 +301,19 @@ A component of the plan was improving local connectivity around Powell Blvd. A L
 
 Six types of connections were identified in the Local Streets and Accessways Report.
 
-Separated In-Roadway Bicycle Facilities. Facilities that separate the bicycle travel lane from the motor vehicle lane with striping or a physical barrier. Examples are a standard bike lane, buffered bike lane, and cycle track.
+-   **Separated In-Roadway Bicycle Facilities.** Facilities that separate the bicycle travel lane from the motor vehicle lane with striping or a physical barrier. Examples are a standard bike lane, buffered bike lane, and cycle track.
 
-Bicycle Boulevards/Advisory Bike Lanes. Facilities on low traffic volume streets where through movement of bicycles is given priority over motor vehicles Advisory bike lanes include dashed bike lane striping and single motor vehicle lane. Vehicles are allowed to enter bike lanes to pass each other.
+-   **Bicycle Boulevards/Advisory Bike Lanes.** Facilities on low traffic volume streets where through movement of bicycles is given priority over motor vehicles Advisory bike lanes include dashed bike lane striping and single motor vehicle lane. Vehicles are allowed to enter bike lanes to pass each other.
 
-Pedestrian and Bicycle Pathways. These facilities are outside of the roadway right-of way and fully separated from the roadway.
+-   **Pedestrian and Bicycle Pathways.** These facilities are outside of the roadway right-of way and fully separated from the roadway.
 
-Street Connections. New local streets built to City standards. Sidewalks accommodate pedestrian travel and bike travel share the roadway with vehicles.
+-   **Street Connections.** New local streets built to City standards. Sidewalks accommodate pedestrian travel and bike travel share the roadway with vehicles.
 
-Pedestrian and Bicycle Crossings. Two types of crossings were identified. The first type is provided by the existing traffic signals. New signals were not recommended. The second crossing type is shown at generally desired locations between signalized intersections. Specific design treatments were not determined (e.g. pedestrian refuge island, HAWK signal, etc.)
+-   **Pedestrian and Bicycle Crossings.** Two types of crossings were identified. The first type is provided by the existing traffic signals. New signals were not recommended. The second crossing type is shown at generally desired locations between signalized intersections. Specific design treatments were not determined (e.g. pedestrian refuge island, HAWK signal, etc.)
 
-Potential Street Realignment. Opportunities to realign existing streets through future redevelopment. The objective is to align intersections on opposite sides of Powell Boulevard to improve pedestrian crossings or access to transit stops.
+-   **Potential Street Realignment.** Opportunities to realign existing streets through future redevelopment. The objective is to align intersections on opposite sides of Powell Boulevard to improve pedestrian crossings or access to transit stops.
 
-### Division-Midway Neighborhood Street Plan
+###### Division-Midway Neighborhood Street Plan
 
 (Adopted by Resolution No. 37157 October 15, 2015)
 
@@ -321,9 +331,11 @@ Goals and Objectives: The overall goal is to develop a Neighborhood Street Plan 
 
 The Street Plan identified implementation methods for introducing new street and pathway connections and options for improving deficient local streets. The plan recommended adding New Future Public Connections across Existing Private Property.
 
-![](/img/media/image14.png)
+![](/img/media/image13.png)
 
-### Tryon-Stephens Headwaters Neighborhood Street Plan
+##### Southwest Portland Master Street Plans
+
+###### Tryon-Stephens Headwaters Neighborhood Street Plan
 
 (Adopted by Resolution No. 37162, November 2015)
 
@@ -331,22 +343,9 @@ The Portland Bureau of Transportation (PBOT) and the Portland Bureau of Environm
 
 The plan recommends modifying the City of Portland's Southwest Master Street Plan (2001) to add future local street/pathway connections in two locations within the study area, as shown on the following map (page 52 of the Tryon-Stevens plan). Recommended new connections are in the Hillsdale neighborhood linking SW Nevada Court to SW Vermont Street between SW 26th Avenue and Capitol Hill Road, and in the Markham Neighborhood linking SW Marigold Street between SW 23rd and SW 26th Avenues.
 
-![](/img/media/image16.png)
+![](/img/media/image7.png)
 
-### Additional Master Street Plans
+**Areas not covered by Master Street Plans**
+--------------------------------------------
 
-In addition, the TSP retains the following adopted Master Street Plans:
-
-**Bridgeton Neighborhood Street Plan**
-
-**Airport Way Street Plan**
-
-**River District Street Plan**
-
-**Southwest District Master Street Plan**
-
-**South Portland Circulation Study**
-
-**St. Johns Town Center Master Street Plan**
-
-**Multnomah County Unincorporated Urban Pockets**
+Master Street plans have not been completed for all or parts of the North, Northeast, Far Northeast, Southeast, Northwest, and Central City districts. Other areas were excluded from the Southwest and Far Southeast Master Street Plans: the east light rail corridor (102nd to the city limits, NE Glisan to SE Stark), the Hillsdale town center, and the West Portland town center. Master Street plans for these areas will be completed as refinement plans of the TSP. Until such plans are completed, the location and implementation of new street and pedestrian/bicycle connections will be governed by Title 17: Public Improvements, and Title 33: Planning and Zoning, requirements in City Code. Title 17 regulations govern developing or redeveloping sites that do not include a land division, and Title 33 regulations govern developing or redeveloping sites that do include a land division. The spacing standards in each title are 530 feet for full street connections and 330 feet for pedestrian/bicycle connections where full street connections are not feasible.

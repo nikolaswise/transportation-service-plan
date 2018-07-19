@@ -3,7 +3,7 @@ Urban Form Goals
 
 (Comprehensive Plan Chapter 3)
 
-### A city designed for people
+### A city designed for people 
 
 Portland's built environment is designed to serve the needs and aspirations of all Portlanders, promoting prosperity, health, equity, and resiliency. New development, redevelopment, and public investments reduce disparities and encourage social interaction to create a healthy connected city. (Comprehensive Plan Goal 3.A)
 
@@ -155,20 +155,20 @@ Employment Areas Policies
 
 **Regional Truck Corridors:** Enhance designated streets to accommodate forecast freight growth and support intensified industrial use in nearby freight districts. See Figure 3-7 --- Employment Areas. Designated regional truckways and priority truck streets (Transportation System Plan classifications are shown to illustrate this network). (Comprehensive Plan Policy 3.68)
 
-Pattern Areas
+Pattern Areas 
 --------------
 
 Portland has five distinct Pattern Areas. The development patterns and characteristics of these areas are influenced by the natural landscape and how and when these parts of the city were developed.
 
-1. **Rivers**
+1.  **Rivers**
 
-2. **Central City**
+2.  **Central City**
 
-3. **Inner Neighborhoods**
+3.  **Inner Neighborhoods**
 
-4. **Western Neighborhoods**
+4.  **Western Neighborhoods**
 
-5. **Eastern Neighborhoods**
+5.  **Eastern Neighborhoods**
 
 Each Pattern Area has unique physical, social, cultural, and environmental qualities that differentiate them and create their sense of place. To maintain and enhance the positive qualities and sense of place in each pattern area, it is desirable to have policies and regulations that respond to each area's unique natural and built assets.
 
