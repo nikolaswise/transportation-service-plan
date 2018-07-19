@@ -1,4 +1,4 @@
-Transportation Goals 
+Transportation Goals
 =====================
 
 (Comprehensive Plan Chapter 9)
@@ -301,7 +301,7 @@ System Management Policies
 
 > **m:** Develop performance measures to track progress in creating and maintaining the transportation system. (Transportation System Plan Policy 9.49.m)
 
-![](src/img/media/image4.png){width="6.5in" height="2.1944444444444446in"}
+![](/img/media/image4.png){width="6.5in" height="2.1944444444444446in"}
 
 **Regional congestion management:** Coordinate with Metro to establish new regional multimodal mobility standards that prioritize transit, freight, and system completeness. (Comprehensive Plan Policy 9.50)
 
@@ -310,7 +310,7 @@ System Management Policies
 > **b:** In the interim, use the deficiency thresholds and operating standards of the Regional Mobility Policy, in Figure 9‐4, for evaluation of impacts to state facilities and the regional arterial and throughway network. (Transportation System Plan Policy 9.50.b)
 
   -----------------------------------------------------------------------------------------
-  ![](src/img/media/image2.png){width="5.760416666666667in" height="5.729166666666667in"}
+  ![](/img/media/image2.png){width="5.760416666666667in" height="5.729166666666667in"}
   -----------------------------------------------------------------------------------------
 
 **Multimodal Mixed-Use Area:** Designate a Central City Multimodal Mixed-Use Area (MMA) in the geography indicated in Figure 9‐2, which will render state congestion / mobility standards inapplicable to proposed plan amendments under OAR 660-0012-0060(10), subject to ODOT concurrence and execution of an agreement between ODOT and the City of Portland. The agreement should emphasize potential safety and operational impacts. (Comprehensive Plan Policy 9.51)
