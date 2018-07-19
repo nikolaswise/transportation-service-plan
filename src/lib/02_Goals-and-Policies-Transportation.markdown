@@ -244,40 +244,29 @@ System Management Policies
 >
 > **e:** By 2035, increase the mode share of daily non-drive alone trips to 70 percent citywide, and to the following in the five pattern areas:
 
-+-----------------------+----------------------------------+
+
 | **Pattern Area**      | **2035 Daily Target Mode Share** |
-+=======================+==================================+
+| - | - |
 | Central City          | > 85%                            |
-+-----------------------+----------------------------------+
 | Inner Neighborhoods   | > 70%                            |
-+-----------------------+----------------------------------+
 | Western Neighborhoods | > 65%                            |
-+-----------------------+----------------------------------+
 | Eastern Neighborhoods | > 65%                            |
-+-----------------------+----------------------------------+
 | Industrial and River  | > 55%                            |
-+-----------------------+----------------------------------+
+
 
 > (Transportation System Plan Policy 9.49.e)
 >
 > **f:** By 2035, 70 percent of commuters walk, bike, take transit, carpool, or work from home at approximately the following rates:
 
-  ---------------------------------------------------------------------------------
-  **Mode**                        **Mode Share**
-  ------------------------------- -------------------------------------------------
-  Walk                            7.5%
 
-  Bicycle                         25%
-
-  Transit                         25%
-
-  Carpool                         12.5%
-
-  Single Occupant Vehicle (SOV)   30% or less
-
-  Work at home                    10% below the line\
-                                  (calculated outside of the modal targets above)
-  ---------------------------------------------------------------------------------
+| **Mode**                       | **Mode Share** |
+| - | - |
+| Walk                           | 7.5% |
+| Bicycle                        | 25% |
+| Transit                        | 25% |
+| Carpool                        | 12.5% |
+| Single Occupant Vehicle (SOV)  | 30% or less |
+| Work at home                   | 10% below the line (calculated outside of the modal targets above) |
 
 > (Transportation System Plan Policy 9.49.f)
 >
