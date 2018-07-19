@@ -1,37 +1,37 @@
 Master Street Plans
 ====================
 
-The purpose of the Master Street Plans is to increase the efficiency of the transportation system through increased street connectivity and a finer mesh of pedestrian and bikeways. A dense grid of streets helps spread local vehicle trips more evenly over the local street network and reduces congestion on the arterial system. Studies show that improved local street connectivity improves arterial system capacity by as much as 25 percent.\
-\
-Studies show that distance is one of the most important factors in mode choice. The lack of a dense grid of streets and pedestrian/bicycle connections results in out-of-direction travel that is particularly discouraging to potential pedestrians and bicyclists. The result is increased use of the automobile for trips to nearby (as the crow flies) destinations. Trips need to be relatively short and direct to encourage travel on foot or by bicycle.\
-\
+The purpose of the Master Street Plans is to increase the efficiency of the transportation system through increased street connectivity and a finer mesh of pedestrian and bikeways. A dense grid of streets helps spread local vehicle trips more evenly over the local street network and reduces congestion on the arterial system. Studies show that improved local street connectivity improves arterial system capacity by as much as 25 percent.
+
+Studies show that distance is one of the most important factors in mode choice. The lack of a dense grid of streets and pedestrian/bicycle connections results in out-of-direction travel that is particularly discouraging to potential pedestrians and bicyclists. The result is increased use of the automobile for trips to nearby (as the crow flies) destinations. Trips need to be relatively short and direct to encourage travel on foot or by bicycle.
+
 Good street connectivity improves emergency response times. Police, fire, and ambulance services can reach their destinations more quickly because there is less out-of-direction travel. Multiple access routes can reduce travel times and provide access options if one route is blocked.
 
 Good local street connections can reduce traffic volumes on other streets by spreading traffic over a denser network. With more intersections, traffic also moves more slowly because side street traffic and stop signs discourage drivers from speeding.
 
 As properties are subdivided and developed, access needs are met primarily through new streets. The City's local street network has grown over time, as outlying areas became more urbanized or older areas are redeveloped. In the past, development was not always required to address connections to adjacent areas as well as internal circulation. The result has been large areas of the City with poor connectivity, particularly in newer areas where the counties previously regulated development.
 
-**State Requirements**\
-\
-Street connectivity must be part of transportation system plans (TSPs) and adopting Ordinances. The Oregon Administrative Rule for State Land Use Goal 12, Transportation, Section 660-012-0020, Elements of Transportation Systems Plans, requires:\
-\
-A road plan for a system of arterials and collectors and standards for the layout of local streets and other important non-collector street connections\.... The standards for the layout of local streets shall provide for safe and convenient bike and pedestrian circulation necessary to carry out OAR 660-012-045(3)(b).\
-\
-The State Transportation Planning Rule (TPR) states that the intent of the requirement is to provide guidance on the spacing of future extensions and connections along existing and future streets that are needed to provide reasonably direct routes for bicycle and pedestrian travel.\
-The rule referenced above goes on to state:\
-\
-On-site facilities shall be provided which accommodate safe and convenient pedestrian and bicycle access from within new subdivisions, multi-family developments, planned developments, shopping centers, and commercial districts to adjacent residential areas and transit stops, and to neighborhood activity centers within one-half mile of the development. Single-family residential developments shall generally include streets and accessways. Pedestrian circulation through parking lots should generally be provided in the form of accessways.\
-\
+**State Requirements**
+
+Street connectivity must be part of transportation system plans (TSPs) and adopting Ordinances. The Oregon Administrative Rule for State Land Use Goal 12, Transportation, Section 660-012-0020, Elements of Transportation Systems Plans, requires:
+
+A road plan for a system of arterials and collectors and standards for the layout of local streets and other important non-collector street connections.... The standards for the layout of local streets shall provide for safe and convenient bike and pedestrian circulation necessary to carry out OAR 660-012-045(3)(b).
+
+The State Transportation Planning Rule (TPR) states that the intent of the requirement is to provide guidance on the spacing of future extensions and connections along existing and future streets that are needed to provide reasonably direct routes for bicycle and pedestrian travel.
+The rule referenced above goes on to state:
+
+On-site facilities shall be provided which accommodate safe and convenient pedestrian and bicycle access from within new subdivisions, multi-family developments, planned developments, shopping centers, and commercial districts to adjacent residential areas and transit stops, and to neighborhood activity centers within one-half mile of the development. Single-family residential developments shall generally include streets and accessways. Pedestrian circulation through parking lots should generally be provided in the form of accessways.
+
 The TPR also states that local jurisdictions should establish their own standards or criteria for providing streets and accessways consistent with the intent stated above. This may be accomplished through standards for spacing of streets or accessways, and standards for excessive out-of-direction travel. The TPR defines 'safe and convenient' access as being:
 
 -   Reasonably free from hazards
 
 -   Meeting the needs of cyclists and pedestrians, considering destination and length of trip
 
-**Metro Requirements**\
-\
-The Regional Transportation Functional Plan (RTFP), adopted in 2010 (Ordinance 10-1241B) and updated in 2012, requires jurisdictions to implement two types of street plans:\
-\
+**Metro Requirements**
+
+The Regional Transportation Functional Plan (RTFP), adopted in 2010 (Ordinance 10-1241B) and updated in 2012, requires jurisdictions to implement two types of street plans:
+
 1. Conceptual street plans that:
 
 -   Map contiguous areas of vacant and redevelopable parcels of five or more acres planned or zoned for residential or mixed-use development
@@ -40,7 +40,7 @@ The Regional Transportation Functional Plan (RTFP), adopted in 2010 (Ordinance 1
 
 -   Demonstrate opportunities to extend and connect to existing streets, provide direct public right-of-way routes, and limit the potential of cul-de-sac and other closed-end street designs
 
-2\. A street map for new residential or mixed-use development that will require construction of a new street(s) that:
+2. A street map for new residential or mixed-use development that will require construction of a new street(s) that:
 
 -   Responds to and expands on the conceptual street plan map
 
