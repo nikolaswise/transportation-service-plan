@@ -12,10 +12,6 @@ import acronym from './classifications.js'
 
 export default function (current, proposed) {
   return function (feature) {
-    console.log(feature)
-    console.log(current)
-    console.log(feature[current])
-    console.log(acronym[current])
     return `
       <h5 class="flush-top">
         ${feature.StreetName}

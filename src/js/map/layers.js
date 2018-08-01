@@ -39,6 +39,7 @@ export const BicycleDistricts = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [13],
+    style: feature => ({fillOpacity: 0.5})
   }),
   popup: popupDistricts('Bicycle', 'BD')
 };
@@ -103,7 +104,8 @@ export const PedestrianDistricts = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [16],
-    pane: 'bottom'
+    pane: 'bottom',
+    style: feature => ({fillOpacity: 0.5})
   }),
   pane: 'bottom',
   popup: popupDistricts('Pedestrian', 'PD')
@@ -125,6 +127,7 @@ export const FreightDistricts = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [20],
+    style: feature => ({fillOpacity: 0.5})
   }),
   popup: popupDistricts('Freight', 'FD')
 };
@@ -172,6 +175,7 @@ export const ProjectPolygons = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
     pane: 'bottom',
+    style: feature => ({fillOpacity: 0.2})
   }),
   pane: 'bottom',
   popup: popupProject('foo', 'bar')

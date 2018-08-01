@@ -16,6 +16,7 @@ const numberWithCommas = (x) => {
 
 export default function (current, proposed) {
   return function (feature) {
+    console.log(feature)
     return `
       <h5 class="flush-top">
         ${feature.ProjectName}
@@ -41,6 +42,7 @@ export default function (current, proposed) {
           </tr>
         </tbody>
       </table>
+      <p>Transportation Plan ID: ${feature.TranPlanID}</p>
     `;
   };
 }

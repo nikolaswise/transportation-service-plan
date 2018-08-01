@@ -21,7 +21,7 @@ const drawMap = () => {
     minZoom: 12,
     zoom: position.zoom,
     zoomControl: false,
-    scrollWheelZoom: false
+    scrollWheelZoom: true
   });
 
   map.createPane('bottom');
@@ -110,9 +110,8 @@ const addLayers = (layerSet) => {
  * @param {String} Layer key, eg 'projectPoints'
  */
 
-const addLayer = layer => new Promise((resolve, reject) => {
+const addLayer = layer => {
   if (!layers[layer]) {
-    reject()
     return
   }
   layers[layer].features.addTo(map);
@@ -130,8 +129,7 @@ const addLayer = layer => new Promise((resolve, reject) => {
   }).on('popupclose', function () {
     bus.emit('layer:reset', layer);
   });
-  resolve()
-})
+}
 
 /**
  * Opens the independant (aka non-leaflet) popup from a click on a feature for a given layer.
