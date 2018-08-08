@@ -42,7 +42,7 @@ export default function (current, proposed) {
           </tr>
         </tbody>
       </table>
-      <p>Transportation Plan ID: ${feature.TranPlanID}</p>
+      <p>Project Number: ${feature.ProjectNumber}</p>
     `;
   };
 }
