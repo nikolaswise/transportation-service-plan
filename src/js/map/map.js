@@ -37,6 +37,10 @@ const drawMap = () => {
     position.zoom = map.getZoom();
   });
   createGeocoder();
+
+  map.on('click', (e) => {
+    console.debug(`map click:`, e)
+  })
 };
 
 /**

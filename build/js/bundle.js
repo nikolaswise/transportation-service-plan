@@ -1090,7 +1090,7 @@ var ProjectLines = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
     pane: 'top'
   }),
-  pane: 'bottom',
+  pane: 'top',
   popup: popupProject('foo', 'bar')
 };
 
@@ -1301,6 +1301,10 @@ var drawMap = function () {
     position.zoom = map.getZoom();
   });
   createGeocoder();
+
+  map.on('click', function (e) {
+    console.debug("map click:", e);
+  });
 };
 
 /**
