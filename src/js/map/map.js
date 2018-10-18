@@ -116,7 +116,9 @@ const addLayer = layer => {
   }
   layers[layer].features.addTo(map);
   bus.emit('layer:reset', layer);
+  console.debug(`This is a set of features for layer ${layer}:`, layers[layer].features)
   layers[layer].features.bindPopup((err, evt) => {
+    console.debug(`this is a very nice popup bind`, err, evt)
     if (err) {
       err.feature
         ? evt = err

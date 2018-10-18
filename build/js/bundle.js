@@ -863,7 +863,7 @@ var numberWithCommas = function (x) {
 
 var popupProject = function (current, proposed) {
   return function (feature) {
-    console.log(feature);
+    console.debug("nice feature:", feature);
     return ("\n      <h5 class=\"flush-top\">\n        " + (feature.ProjectName) + "\n      </h5>\n      <p> " + (feature.ProjectDescription) + " </p>\n      <table class=\"lead-bottom lead-top\">\n        <tbody>\n          <tr>\n            <td>Status</td>\n            <td>" + (feature.ProjectStatus) + "</td>\n          </tr>\n          <tr>\n            <td>Lead Agency</td>\n            <td>" + (feature.LeadAgency) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Cost</td>\n            <td>$" + (numberWithCommas(feature.EstimatedCost)) + "</td>\n          </tr>\n          <tr>\n            <td>Estimated Time Frame</td>\n            <td>" + (feature.EstimatedTimeframe) + "</td>\n          </tr>\n        </tbody>\n      </table>\n      <p>Project Number: " + (feature.ProjectNumber) + "</p>\n    ");
   };
 };
@@ -1380,7 +1380,9 @@ var addLayer = function (layer) {
   }
   layers[layer].features.addTo(map);
   bus.emit('layer:reset', layer);
+  console.debug(("This is a set of features for layer " + layer + ":"), layers[layer].features);
   layers[layer].features.bindPopup(function (err, evt) {
+    console.debug("this is a very nice popup bind", err, evt);
     if (err) {
       err.feature
         ? evt = err

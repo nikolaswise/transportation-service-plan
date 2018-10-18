@@ -1007,7 +1007,6 @@ button {
     display: none; } }
 
 .drawer {
-  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1043,7 +1042,8 @@ button {
   -webkit-overflow-scrolling: touch;
   transform: translate3d(0, 0, 0);
   transition: transform 200ms cubic-bezier(0.215, 0.44, 0.42, 0.88);
-  display: flex; }
+  display: flex;
+  z-index: 100; }
 
 .drawer-left .drawer-nav {
   left: -300px;
