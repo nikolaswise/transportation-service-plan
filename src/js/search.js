@@ -42,7 +42,7 @@ const indexContent = () => {
   window.content = window.content.concat(headerFourss)
   window.content = window.content.concat(headerFivess)
   window.content = window.content.concat(headerSixess)
-  window.content = window.content.concat(paragraphs)
+  // window.content = window.content.concat(paragraphs)
 }
 
 const matchStringToNode = (node, string) => {

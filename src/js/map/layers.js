@@ -162,7 +162,7 @@ export const ProjectLines = {
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
     pane: 'top'
   }),
-  pane: 'bottom',
+  pane: 'top',
   popup: popupProject('foo', 'bar')
 };
 
