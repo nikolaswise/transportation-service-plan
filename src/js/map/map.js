@@ -15,6 +15,7 @@ let position = {
  */
 
 const drawMap = () => {
+  console.debug(`begin draw map`)
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -23,13 +24,16 @@ const drawMap = () => {
     zoomControl: false,
     scrollWheelZoom: true
   });
+  console.debug(`created map`, map)
 
   map.createPane('bottom');
   map.createPane('top');
-
-  window.L.esri.tiledMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
-  }).addTo(map);
+  console.debug(`plz add basemap`)
+  window.L.esri.basemapLayer("Gray").addTo(map);
+  // window.L.esri.tiledMapLayer({
+  //   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
+  // }).addTo(map);
+  console.debug(`added basemap`)
 
   // stateful side effects!!
   map.on('moveend', function () {
@@ -280,6 +284,7 @@ const drawLegend = layers => {
  * Binds all side effect listeners, exposes the API, and draws the map
  */
 export default function () {
+  console.debug(`Bind map events`)
   bus.on('popup:opened', zoomToFeature);
   bus.on('popup:closed', closePopUps);
   bus.on('map:redraw', redrawMap);
