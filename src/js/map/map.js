@@ -126,6 +126,12 @@ const addLayer = layer => {
         : err = err
     }
     if (evt && layers[layer].popup) {
+      evt.bringToFront()
+      evt.setStyle({
+        lineCap: 'round',
+        weight: 24,
+        color: '#98CBCC'
+      });
       openPopUp(evt, layer);
     }
     return 'hey';
