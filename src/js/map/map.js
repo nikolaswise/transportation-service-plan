@@ -25,8 +25,11 @@ const drawMap = () => {
     scrollWheelZoom: true
   });
 
+  window.map = map
+
   map.createPane('bottom');
   map.createPane('top');
+
   window.L.esri.basemapLayer("Gray").addTo(map);
 
   // stateful side effects!!
@@ -36,9 +39,9 @@ const drawMap = () => {
   });
   createGeocoder();
 
-  map.on('click', (e) => {
-    console.debug(`map click:`, e)
-  })
+  // map.on('click', (e) => {
+  //   console.debug(`map click:`, e)
+  // })
 };
 
 /**
@@ -114,8 +117,10 @@ const addLayers = (layerSet) => {
 
 const addLayer = layer => {
   if (!layers[layer]) {
+    console.log('no layer here tho')
     return
   }
+  console.debug(`this is a featureLayer??`, layers[layer].features)
   layers[layer].features.addTo(map);
   bus.emit('layer:reset', layer);
   console.debug(`This is a set of features for layer ${layer}:`, layers[layer].features)

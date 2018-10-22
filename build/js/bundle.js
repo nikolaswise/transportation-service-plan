@@ -1404,8 +1404,11 @@ var drawMap = function () {
     scrollWheelZoom: true
   });
 
+  window.map = map;
+
   map.createPane('bottom');
   map.createPane('top');
+
   window.L.esri.basemapLayer("Gray").addTo(map);
 
   // stateful side effects!!
@@ -1415,9 +1418,9 @@ var drawMap = function () {
   });
   createGeocoder();
 
-  map.on('click', function (e) {
-    console.debug("map click:", e);
-  });
+  // map.on('click', (e) => {
+  //   console.debug(`map click:`, e)
+  // })
 };
 
 /**
@@ -1493,8 +1496,10 @@ var addLayers = function (layerSet) {
 
 var addLayer = function (layer) {
   if (!layers[layer]) {
+    console.log('no layer here tho');
     return
   }
+  console.debug("this is a featureLayer??", layers[layer].features);
   layers[layer].features.addTo(map);
   bus.emit('layer:reset', layer);
   console.debug(("This is a set of features for layer " + layer + ":"), layers[layer].features);
