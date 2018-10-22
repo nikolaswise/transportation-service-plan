@@ -120,10 +120,13 @@ const addLayer = layer => {
     console.log('no layer here tho')
     return
   }
-  console.debug(`this is a featureLayer??`, layers[layer].features)
   layers[layer].features.addTo(map);
+  layers[layer].features.legend(function(error, legend) {
+    if (!error && legend.layers.length == 1) {
+      bus.emit('layer:legend', legend.layers[0]);
+    }
+  });
   bus.emit('layer:reset', layer);
-  console.debug(`This is a set of features for layer ${layer}:`, layers[layer].features)
   layers[layer].features.bindPopup((err, evt) => {
     if (err) {
       err.feature
@@ -266,22 +269,48 @@ const zoomToFeature = feature => {
   // }
 };
 
-const drawLegend = layers => {
-  let legend = document.querySelector('.js-legend')
-  legend.innerHTML = 'Viewing:'
-  layers = layers.filter(layer => {
-    return layer.getAttribute('data-layers') != null
+// const drawLegend = layers => {
+//   let legend = document.querySelector('.js-legend')
+//   legend.innerHTML = 'Viewing:'
+//   layers = layers.filter(layer => {
+//     return layer.getAttribute('data-layers') != null
+//   })
+//   layers.forEach(layer => {
+//     legend.insertAdjacentHTML('beforeend', `
+//       <span class="legend-layer">
+//         ${layer.getAttribute('data-layers')},
+//       </span>
+//     `)
+//   })
+//   if ( layers.length < 1 ) {
+//     legend.insertAdjacentHTML('beforeend', `None`)
+//   }
+// }
+
+
+const parseLegendData = data => `
+  <strong>${data.layerName}</strong>
+  <ul>
+    ${data.legend.map(layer => (
+      `<li>
+        <img width="${layer.height}" height="${layer.height}" alt="Symbol" src="data:image/gif;base64,${layer.imageData}" />
+        ${layer.label}
+      </li>`
+    )).join('')}
+  </ul>
+`
+
+const drawLayerLegend = data => {
+  console.debug(`this is the legend layer to draw plz`, data)
+  let nodes = Array(...document.querySelectorAll('.js-layer-legend'))
+  nodes.forEach(node => {
+    node.insertAdjacentHTML(`beforeend`, parseLegendData(data))
   })
-  layers.forEach(layer => {
-    legend.insertAdjacentHTML('beforeend', `
-      <span class="legend-layer">
-        ${layer.getAttribute('data-layers')},
-      </span>
-    `)
-  })
-  if ( layers.length < 1 ) {
-    legend.insertAdjacentHTML('beforeend', `None`)
-  }
+}
+
+const clearLayerLegend = () => {
+  let nodes = Array(...document.querySelectorAll('.js-layer-legend'))
+  nodes.forEach(node => node.innerHTML = '')
 }
 
 /**
@@ -300,6 +329,7 @@ export default function () {
   bus.on('layers:draw', drawLayers);
   bus.on('map:layer:add', addLayers);
   bus.on('map:layer:remove', removeLayers);
+  bus.on('map:layer:remove', clearLayerLegend);
   bus.on('layer:reset', resetLayerStyle);
-  bus.on('map:legend', drawLegend);
+  bus.on('layer:legend', drawLayerLegend);
 }

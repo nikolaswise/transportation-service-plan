@@ -20,6 +20,17 @@
   font-family: $system-sans;
 }
 
+
+.layer-legend {
+  position: absolute;
+  bottom: $frame/4;
+  right: $frame/4;
+  font-size: $pt10;
+  font-family: $system-sans;
+  background-color: $off-white;
+  padding-left: $baseline/2;
+}
+
 .map-frame {
   background-color: $off-white;
   position: absolute;

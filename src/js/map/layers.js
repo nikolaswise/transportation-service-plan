@@ -247,10 +247,10 @@ export const FreightFacillitiesFeatures = {
 export const ProjectPoints = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
-    pane: 'top',
+    pane: 'top'
   }),
   pane: 'top',
-  // popup: popupProject('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -264,7 +264,7 @@ export const ProjectLines = {
     pane: 'top'
   }),
   pane: 'top',
-  // popup: popupProject('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 /**

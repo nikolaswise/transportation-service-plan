@@ -1178,10 +1178,10 @@ var FreightFacillitiesFeatures = {
 var ProjectPoints = {
   features: window.L.esri.featureLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
-    pane: 'top',
+    pane: 'top'
   }),
   pane: 'top',
-  // popup: popupProject('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -1195,7 +1195,7 @@ var ProjectLines = {
     pane: 'top'
   }),
   pane: 'top',
-  // popup: popupProject('foo', 'bar')
+  popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -1499,10 +1499,13 @@ var addLayer = function (layer) {
     console.log('no layer here tho');
     return
   }
-  console.debug("this is a featureLayer??", layers[layer].features);
   layers[layer].features.addTo(map);
+  layers[layer].features.legend(function(error, legend) {
+    if (!error && legend.layers.length == 1) {
+      bus.emit('layer:legend', legend.layers[0]);
+    }
+  });
   bus.emit('layer:reset', layer);
-  console.debug(("This is a set of features for layer " + layer + ":"), layers[layer].features);
   layers[layer].features.bindPopup(function (err, evt) {
     if (err) {
       err.feature
@@ -1645,18 +1648,40 @@ var zoomToFeature = function (feature) {
   // }
 };
 
-var drawLegend = function (layers) {
-  var legend = document.querySelector('.js-legend');
-  legend.innerHTML = 'Viewing:';
-  layers = layers.filter(function (layer) {
-    return layer.getAttribute('data-layers') != null
+// const drawLegend = layers => {
+//   let legend = document.querySelector('.js-legend')
+//   legend.innerHTML = 'Viewing:'
+//   layers = layers.filter(layer => {
+//     return layer.getAttribute('data-layers') != null
+//   })
+//   layers.forEach(layer => {
+//     legend.insertAdjacentHTML('beforeend', `
+//       <span class="legend-layer">
+//         ${layer.getAttribute('data-layers')},
+//       </span>
+//     `)
+//   })
+//   if ( layers.length < 1 ) {
+//     legend.insertAdjacentHTML('beforeend', `None`)
+//   }
+// }
+
+
+var parseLegendData = function (data) { return ("\n  <strong>" + (data.layerName) + "</strong>\n  <ul>\n    " + (data.legend.map(function (layer) { return (
+      ("<li>\n        <img width=\"" + (layer.height) + "\" height=\"" + (layer.height) + "\" alt=\"Symbol\" src=\"data:image/gif;base64," + (layer.imageData) + "\" />\n        " + (layer.label) + "\n      </li>")
+    ); }).join('')) + "\n  </ul>\n"); };
+
+var drawLayerLegend = function (data) {
+  console.debug("this is the legend layer to draw plz", data);
+  var nodes = Array.apply(void 0, document.querySelectorAll('.js-layer-legend'));
+  nodes.forEach(function (node) {
+    node.insertAdjacentHTML("beforeend", parseLegendData(data));
   });
-  layers.forEach(function (layer) {
-    legend.insertAdjacentHTML('beforeend', ("\n      <span class=\"legend-layer\">\n        " + (layer.getAttribute('data-layers')) + ",\n      </span>\n    "));
-  });
-  if ( layers.length < 1 ) {
-    legend.insertAdjacentHTML('beforeend', "None");
-  }
+};
+
+var clearLayerLegend = function () {
+  var nodes = Array.apply(void 0, document.querySelectorAll('.js-layer-legend'));
+  nodes.forEach(function (node) { return node.innerHTML = ''; });
 };
 
 /**
@@ -1675,8 +1700,9 @@ var map$1 = function () {
   bus.on('layers:draw', drawLayers);
   bus.on('map:layer:add', addLayers);
   bus.on('map:layer:remove', removeLayers);
+  bus.on('map:layer:remove', clearLayerLegend);
   bus.on('layer:reset', resetLayerStyle);
-  bus.on('map:legend', drawLegend);
+  bus.on('layer:legend', drawLayerLegend);
 };
 
 // ┌────────────────┐
@@ -2039,6 +2065,7 @@ var indexContent = function () {
   var headerFourss = nodeListToArray(contentArea.getElementsByTagName('h4'));
   var headerFivess = nodeListToArray(contentArea.getElementsByTagName('h5'));
   var headerSixess = nodeListToArray(contentArea.getElementsByTagName('h6'));
+  var tablecells = nodeListToArray(contentArea.getElementsByTagName('td'));
   var paragraphs = nodeListToArray(contentArea.getElementsByTagName('p'));
   window.content = window.content.concat(headerOnes);
   window.content = window.content.concat(headerTwos);
@@ -2046,6 +2073,7 @@ var indexContent = function () {
   window.content = window.content.concat(headerFourss);
   window.content = window.content.concat(headerFivess);
   window.content = window.content.concat(headerSixess);
+  window.content = window.content.concat(tablecells);
   // window.content = window.content.concat(paragraphs)
 };
 

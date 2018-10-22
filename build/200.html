@@ -37,6 +37,9 @@
     <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
     <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/esri-leaflet-legend@2.0.1/dist/esri-leaflet-legend-compat.js"></script>
+
+
     <link rel="stylesheet" href="/css/style.css">
 
   </head>
@@ -186,7 +189,7 @@
       <b>Projects</b>
     </legend>
     <label class="label">
-      <input class="input js-layer-toggle" type="checkbox" data-layers="Project Points">View All
+      <input class="input js-layer-toggle" type="checkbox" data-layers="Project Points,Project Lines,Project Polygons">View All
     </label>
   </fieldset>
 
@@ -2571,6 +2574,6006 @@ and Sustainability, Portland Bureau of Environmental Services, Port of Portland,
         </div>
         <div class="text-container">
   <div class="text-block">
+    <h1 id="projects">Projects:</h1>
+    <table>
+<thead>
+<tr>
+<th>TSP ID</th>
+<th>Lead Agency</th>
+<th>Facility Owner</th>
+<th>Project Name</th>
+<th>Project Location</th>
+<th>Project Description</th>
+<th>Estimated Cost</th>
+<th>Financially Constrained?</th>
+<th>Estimated Timeframe</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Pedestrian Network Completion Program</td>
+<td>Citywide</td>
+<td>Gaps and deficiencies in Portland's pedestrian network present significant barriers to pedestrians. Many of these can be remedied through modest expenditures to address the most critically needed improvements. These projects should contribute to an increase in safe walking as disincentives to usage are eliminated and the continuity of the pedestrian network is improved. Example projects include sidewalk gap infill, sidewalk improvements, safer shoulders, shared streets, pathways, trails, crossing improvements, wayfinding improvements, accessibility improvements, and signal modifications. The program will also work to identify and implement needed improvements in designated Pedestrian Districts.</td>
+<td>$60,200,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10006</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bikeway Network Completion Program</td>
+<td>Citywide</td>
+<td>Gaps and deficiencies in Portland's bikeway network present significant barriers to bicyclists. Many of these can be remedied through modest expenditures to address the most critically needed improvements. These projects should contribute to an increase in safe bicycling as disincentives to usage are eliminated and the continuity of the bikeway network is improved. Example projects include new bike lanes and sharrows, improvements to existing bikeways, wayfinding improvements, colored bike boxes and lanes, and signal modifications. This program will coordinate with paving projects to ensure that new striping designs are developed ahead of time and implemented in conjunction with paving. The program will also work to identify and implement needed improvements in designated Bicycle Districts.</td>
+<td>$24,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10007</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Neighborhood Greenways Program</td>
+<td>Citywide</td>
+<td>The Neighborhood Greenway system provides a network of safe and comfortable pedestrian/bicycle priority routes on low-volume, low-speed streets. The Neighborhood Greenway network will be improved and expanded over time through inexpensive treatments that lower speeds, reduce automobile volumes, create safer crossings of busy streets, and provide wayfinding. Example project elements include speed bumps, sharrows, signage, diverters, curb ramps, lighting, and improved crossings.</td>
+<td>$19,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10008</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>High Crash Corridor Program</td>
+<td>Citywide</td>
+<td>High Crash Corridors are streets in Portland with a high concentration of crashes. The High Crash Corridor program uses relatively inexpensive education, enforcement and engineering solutions to address crash problems in a short period of time. Example projects include improved crossings, lane reorganizations, curb extensions, median islands, speed reader boards, and speed/crosswalk enforcement.</td>
+<td>$67,100,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10009</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Safe Routes to School Program</td>
+<td>Citywide</td>
+<td>Portland Safe Routes to School is a partnership of the City of Portland, schools, neighborhoods, community organizations and agencies that advocates for and implements programs that make walking and biking around our neighborhoods and schools fun, easy, safe and healthy for all students and families while reducing our reliance on cars. The Portland Safe Routes to School program currently provides Education, Encouragement, Engineering, Enforcement, and Evaluation in an Equitable manner (6 ‘E's) to support students in schools to be safe, have fun, grow healthy and get there.</td>
+<td>$71,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10010</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Transit Priority Program</td>
+<td>Citywide</td>
+<td>Improve transit speed, reliability, safety, and access along major transit corridors. Example projects include sidewalk infill, crossing improvements, stop improvements, stop consolidation or relocation, signal priority, queue jumps, and transit-only lanes. The program will coordinate with TriMet and other transit agencies to identify and implement these improvements.</td>
+<td>$9,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10011</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Freight Priority Program</td>
+<td>Citywide</td>
+<td>Improve freight speed, reliability, safety, and access along major freight routes. Example projects include signal priority, freight-only lanes, queue jumps, loading zones, and turning radius improvements. The program will coordinate with the Port of Portland and other freight-related organizations to identify and implement these improvements.</td>
+<td>$9,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10012</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Transportation System Management Program</td>
+<td>Citywide</td>
+<td>Transportation System Management (TSM) seeks to identify improvements to enhance the capacity of existing system through operational improvements.  Through better management and operation of existing transportation facilities, these techniques are designed to improve traffic flow, air quality, and movement of vehicles and goods, as well as enhance system accessibility and safety. Example projects include corridor signal timing, electronic message boards, variable speed limits, traveler information services, traffic cameras, bluetooth readers, and other intelligent transportation system (ITS) elements.</td>
+<td>$9,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10013</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Transportation &amp; Parking Demand Management Program</td>
+<td>Citywide</td>
+<td>Transportation &amp; Parking Demand Management (TDM) seeks to better utilize existing capacity in the transportation system and parking supply by reducing single-occupant automobile trips through demand management strategies. This is achieved by encouraging people through education, outreach, incentives and pricing to choose other modes, share rides, travel outside peak times, and telecommute, among other methods. TDM program elements include SmartTrips outreach, TDM Plan requirements for new development, and parking management planning and implementation.   TDM is often implemented in partnerships with community organizations, neighborhood and business assocations, developers and property managers.</td>
+<td>$19,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>10014</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Alternative Street Design Program</td>
+<td>Citywide</td>
+<td>Many streets in the City of Portland do not meet full City standards. Unimproved and substandard streets cause safety, access and mobility issues for all users and fail to manage stormwater runoff. The Alternative Street Design Program will plan and implement lower-cost alternative design treatments that enhance safety, access, and mobility when funds are lacking for more extensive upgrades. Ideally, these design treatments would be concurrent with stormwater improvements. Example projects include “shared street” improvements to gravel streets, new connections through undeveloped rights-of-way, and improvements to substandard paved streets.  The program could be funded by a combination of Local Improvement Districts, development impact fees, local transportation funds (e.g. Our Streets), Bureau of Environmental Services (BES) stormwater funds, and other grant and community investment opportunities.</td>
+<td>$20,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20002</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>I-405 Corridor ITS</td>
+<td>14th/16th, NW (Glisan - Burnside); 13th/14th, SW (Burnside - Clay)</td>
+<td>ITS improvements at six signals between Clay and Glisan including communications infrastructure; closed circuit TV cameras, variable message signs for remote monitoring and control of traffic flow.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Fields Park Pedestrian / Bicycle Bridge</td>
+<td>10th, NW (Overton - Naito Parkway)</td>
+<td>Construct a pedestrian/bicycle bridge over the railroad tracks.</td>
+<td>$2,300,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20007</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>South Portal Intersection Improvements</td>
+<td>Bancroft / Hood / Macadam, SW</td>
+<td>Improve the South Portal to the North Macadam District (intersection of Bancroft, Hood, and Macadam) to address safety and capacity issues.</td>
+<td>$8,138,078</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20010</td>
+<td>Multnomah County</td>
+<td>Multnomah County</td>
+<td>Broadway Bridge Rehabilitation</td>
+<td>Broadway Bridge</td>
+<td>Rehabilitate mechanical system, approach structure, corrosion control, phase 1 seismic.</td>
+<td>$22,700,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20011</td>
+<td>Multnomah County</td>
+<td>Multnomah County</td>
+<td>Burnside Bridge Rehabilitation, Phase 1</td>
+<td>Burnside Bridge</td>
+<td>Rehabilitate mechanical system, approach structure, corrosion control, phase 1 seismic.</td>
+<td>$25,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20012</td>
+<td>Portland / Multnomah County</td>
+<td>Portland / Multnomah County</td>
+<td>Burnside Bridge Access Improvements</td>
+<td>Burnside Bridge, E/W</td>
+<td>Construct a stairway and elevator to provide access from the Burnside Bridge to Waterfront Park. Construct an elevator alongside existing staircase to provide an accessible connection between the Eastbank Esplanade and the Burnside Bridge.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20014</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>W Burnside Corridor Improvements</td>
+<td>Burnside St, W (NW 15th to NW 23rd)</td>
+<td>Design and construct boulevard improvements including pavement reconstruction, wider sidewalks, curb extensions, safer crossings, new traffic signals, and traffic management.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20016</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>Central City TSM</td>
+<td>Central City</td>
+<td>Implement Central City TSM improvements to arterials.</td>
+<td>$3,250,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20040</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>South Waterfront Street Connections</td>
+<td>Multiple Streets, SW (River Parkway - Moody)</td>
+<td>New streets will be constructed in phases according to the South Waterfront District Street Plan as development occurs.</td>
+<td>$5,250,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20049</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Portal Street Improvements</td>
+<td>Sheridan St, SW (Water - Bond); Water / Corbett Ave, SW (Sheridan - Kelly)</td>
+<td>Improve access into the northern end of the North Macadam District by improving SW Corbett and SW Sheridan Street, including their connections with SW Kelly Way, SW Harbor Drive, and SW River Parkway.</td>
+<td>$9,250,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20050</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>Southern Triangle Access Improvements</td>
+<td>Powell Blvd, SE (8th - 17th)</td>
+<td>Improve traffic access to the Southern Triangle district from eastbound Powell Blvd.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20057</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Willamette Greenway Trail Extension</td>
+<td>Willamette Greenway Trail, SW (Marquam Br - Hamilton)</td>
+<td>Provide two paths in order to separate bicyclists from pedestrians in remaining gaps of South Waterfront's Willamette Greenway trail.</td>
+<td>$2,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20063</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Central Eastside Belmont/Morrison Bikeway</td>
+<td>Belmont/Morrison St, SE (Water - 12th)</td>
+<td>Design and implement an east-west bikeway along the Belmont/Morrison corridor from Water to 12th.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20065.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Interstate Semi-viaduct Replacement</td>
+<td>Interstate Ave, N (North of Broadway Bridge)</td>
+<td>Replace the existing weight-restricted, poor-condition Interstate Semi-viaduct (Bridge #152). Provide enhanced bicycle facilities on new structure if feasible.</td>
+<td>$2,150,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20065.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Interstate-Larrabee Overpass</td>
+<td>Interstate-Larrabee Ramp, N (Tillamook - Broadway)</td>
+<td>Remove the existing weight-restricted, low-clearance, poor-condition Interstate to Larrabee southbound flyover ramp (Bridge #153) and replace with a new overpass including a multi-use path to connect the future N Portland Greenway Trail to the Broadway Bridge. Assess the costs and benefits of providing vehicle access on the new structure as part of project development.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20068</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 12th Ave Bridge Replacement</td>
+<td>12th Ave, NE (over I-84 and railroad tracks)</td>
+<td>Replace the existing fracture critical and seismically deficient 12th Ave bridge (Bridge #025) over I-84 and railroad tracks with a new structure. Provide multimodal transportation improvements on the new structure.</td>
+<td>$13,236,245</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20069</td>
+<td>Portland</td>
+<td>Railroad</td>
+<td>NW Marshall Pedestrian/Bicycle Bridge</td>
+<td>Marshall, NW (9th - Naito Parkway)</td>
+<td>Construct a pedestrian/bicycle bridge over the railroad tracks, potentially connecting to Broadway Bridge.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20070</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW Naito/Front Safety Improvements</td>
+<td>Naito Pkwy / Front Ave, NW (9th - 21st)</td>
+<td>Construct multimodal safety and capacity improvements including a lane reconfiguration, pedestrian improvements, and bicycle facilities.</td>
+<td>$2,600,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20073</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Stark / Washington Safety and Access Improvements</td>
+<td>Stark / Washington, SE (Water - Sandy)</td>
+<td>Improve freight and bicycle connectivity and mobility by reconfiguring traffic flow and turning movements on Stark and Washington Streets between Water and Sandy. Requires signals and/or crossings at Grand and MLK (see project 20205). Consider protected intersections at Sandy &amp; Washington and Sandy &amp; Stark during project design.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20075</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Water Ave Corridor Improvements</td>
+<td>Water Ave, SE (Stark - Clay)</td>
+<td>Remove rails from roadway, repair pavement, build sidewalks, and enhance existing bikeway.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20077</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sullivan's Crossing Pedestrian/Bicycle Bridge</td>
+<td>7th Ave, NE (over I-84)</td>
+<td>Construct a pedestrian/bicycle bridge across Interstate 84 connecting the Lloyd District to the Central Eastside Industrial District. Supports future Green Loop project.</td>
+<td>$12,548,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20078</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Lloyd District Streetscape Improvements</td>
+<td>7th/9th Ave, NE (Broadway - Lloyd Blvd)</td>
+<td>Construct sidewalk improvements, mid-block crossings, and other enhancements to create a more pedestrian-oriented streetscape.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20079</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sullivan’s Gulch Trail: Lloyd Blvd. Alignment</td>
+<td>Lloyd Blvd, NE (Easbank Esplanade - 12th)</td>
+<td>Design and construct a multi-use path or two-way protected bikeway on the south side of Lloyd Blvd, connecting to Sullivan's Crossing ped/bike bridge and future Sullivan's Gulch Trail.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20089</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>W Burnside/Couch Corridor Improvements, Phase 1</td>
+<td>Burnside/Couch, W/NW (Burnside Bridge - NW 15th)</td>
+<td>Construct transportation improvements including pavement reconstruction, traffic signals, turn lanes, curb extensions, bicycle network improvements, and crossing improvements.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20091</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>W Burnside/Couch Corridor Improvements, Phase 2</td>
+<td>Burnside/Couch, W/NW (Burnside Bridge - NW 15th)</td>
+<td>Implements a one-couplet design including new traffic signals, widened sidewalks, curb extensions, bike lanes, on-street parking and street trees. This project will be coordinated with ODOT to address potential impacts to the I-405 interchanges, overcrossings and ramps.</td>
+<td>$70,000,000</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20097</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Flanders Crossing and Neighborhood Greenway</td>
+<td>Flanders St, NW (24th - Steel Bridge)</td>
+<td>Design and implement a neighborhood greenway from the Steel Bridge to NW 24th, including a pedestrian/bicycle bridge over I-405, signal at 16th, signal at Broadway, improved crossing at Naito, and other crossing and traffic calming improvements as needed.</td>
+<td>$8,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20102.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bond Ave Extension, Phase 1</td>
+<td>Bond Ave, SW (River Parkway -Porter)</td>
+<td>Extend SW Bond one-way northbound from Porter to River Parkway.</td>
+<td>$9,569,600</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20102.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bond Ave Extension, Phase 2</td>
+<td>Bond Ave, SW (Porter - Whitaker)</td>
+<td>Extend SW Bond one-way northbound from SW Whitaker to Porter, extend Portland Streetcar service north of the Tram, and convert Moody to one-way southbound operation to form a couplet.</td>
+<td>$16,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20105</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW 14th Ave Bikeway and Crossing Improvements</td>
+<td>14th Ave, NW (Burnside - Thurman)</td>
+<td>Construct improved crossings at neighborhood greenway crossings of NW 14th Ave. Enhance existing bikeway at major intersections and explore feasibility of providing a southbound bikeway on 14th or a parallel street.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20107</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 4th Ave Corridor Improvements</td>
+<td>4th Ave, SW (Sheridan - Madison)</td>
+<td>Improves the street environment on SW 4th Avenue adjacent to Portland State University by adding bicycle facilities, curb bulb-outs, enhanced pedestrian crossings, traffic signals, and green street features. As part of the project, reconfigure 4th Ave from Sheridan to Lincoln to enhance and extend the bike lane over I-405, and modify the signal at Lincoln to improve bicycle access.</td>
+<td>$2,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20108</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Broadway Bikeway and Streetscape Improvements</td>
+<td>Broadway, SW (Clay - Sherman)</td>
+<td>Enhances the existing protected bikeway and sidewalks on SW Broadway adjacent to Portland State University. Includes the construction of a raised bikeway, sidewalk amenities, green street features, ADA improvements, pedestrian islands, curb bulb-outs, and a full signal at Harrison. Enhance the existing bikeway on SW Broadway from Jackson to Sherman across I-405 to improve safety and comfort.</td>
+<td>$1,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20109</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Moody Ave Extension</td>
+<td>Moody Ave, SW (Bancroft - Hamilton Ct)</td>
+<td>Extend SW Moody Ave from Bancroft to Hamilton Ct to improve circulation within the South Waterfront neighborhood.</td>
+<td>$34,168,374</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20110</td>
+<td>Portland</td>
+<td>Railroad / ODOT</td>
+<td>Sullivan's Gulch Trail, Segment 1</td>
+<td>Banfield Corridor, NE (Eastbank Esplanade - 21st)</td>
+<td>Construct a multi-use trail for pedestrians and bicycles within the Banfield (I-84) Corridor from the Eastbank Esplanade to NE 21st Ave.</td>
+<td>$40,000,000</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20112</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Multnomah Protected Bikeway Improvements</td>
+<td>Multnomah St, NE (Interstate - 16th)</td>
+<td>Construct permanent improvements to the NE Multnomah St protected bikeway.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20113</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Broadway Corridor Improvements, Phase 1</td>
+<td>Broadway/Weidler, N/NE (Broadway Bridge - 24th)</td>
+<td>Enhance existing bike lanes and improve pedestrian/bicycle crossings. Add traffic signals, improve signal timing, improve transit stops, and construct streetscape improvements.</td>
+<td>$9,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20116</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>I-405 Safety and Operational Improvements</td>
+<td>15th/16th/Burnside/Couch, NW (at I-405 interchange)</td>
+<td>Improve pedestrian and bike access from NW Portland to Central City across I-405 at Burnside and Couch. Improves traffic operations for I-405 off-ramp.</td>
+<td>$2,240,094</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20117</td>
+<td>Multnomah County</td>
+<td>Multnomah County</td>
+<td>Morrison Bridge Rehabilitation</td>
+<td>Morrison Bridge</td>
+<td>Rehabilitate mechanical system, approach structure, corrosion control, phase 1 seismic.</td>
+<td>$45,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20118</td>
+<td>Multnomah County</td>
+<td>Multnomah County</td>
+<td>Hawthorne Bridge Rehabilitation</td>
+<td>Hawthorne Bridge</td>
+<td>Rehabilitate mechanical system, approach structure, corrosion control, phase 1 seismic.</td>
+<td>$13,300,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20119</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Broadway/Weidler Interchange, Planning and PE</td>
+<td>Interstate 5, N/NE (I-405 - I-84)</td>
+<td>Conduct planning, preliminary engineering and environmental work to improve safety and operations on I-5, connection between I-84 and I-5, and access to the Lloyd District and Rose Quarter.</td>
+<td>$44,400,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20120</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Broadway/Weidler Interchange, Right-of-Way</td>
+<td>Interstate 5, N/NE (I-405 - I-84)</td>
+<td>Acquire right-of-way to improve safety and operations on I-5, connection between I-84 and I-5, and access to the Lloyd District and Rose Quarter.</td>
+<td>$40,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20121</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Broadway/Weidler Interchange, Construction</td>
+<td>Interstate 5, N/NE (I-405 - I-84)</td>
+<td>Construct improvements to enhance safety and operations on I-5, connection between I-84 and I-5, and access to the Lloyd District and Rose Quarter. Project includes a pedestrian/bicycle bridge across I-5 at Clackamas St.</td>
+<td>$127,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20122</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 9th Ave Bikeway</td>
+<td>9th Ave, NE (Lloyd - Broadway)</td>
+<td>Design and implement separated bicycle facilities from Lloyd Blvd to Broadway.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20123</td>
+<td>Portland / ODOT</td>
+<td>Portland / ODOT</td>
+<td>SW Broadway Traffic Improvements</td>
+<td>Broadway, SW (Grant - 5th)</td>
+<td>Make improvements on SW Broadway and/or other city streets to reduce the vehicle queue on the I-405 SB Exit Ramp that connects to SW Broadway.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20124</td>
+<td>Portland / ODOT</td>
+<td>Portland / ODOT</td>
+<td>I-405 / Glisan Traffic Improvements</td>
+<td>I-405 / Glisan, NW (southbound off-ramp)</td>
+<td>Make improvements on city streets near the I-405 SB Exit Ramp to reduce the queue on the exit ramp.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20125</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Portland Streetcar Operational Improvements</td>
+<td>Central City</td>
+<td>Design and implement projects to improve the operational efficiency of Portland Streetcar.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20126</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>1st / 2nd / 3rd Ave Bikeway</td>
+<td>1st / 2nd / 3rd Ave, SW (Arthur - Flanders)</td>
+<td>Design and implement bikeways on 1st / 2nd / 3rd from Arthur to Flanders to create a safe and comfortable north-south bicycle connection through the Central City. Project includes a traffic signal at SW 2nd &amp; Clay.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20127</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Naito Parkway Corridor Improvements</td>
+<td>Naito Pkwy, NW/SW (Steel Bridge - Harrison)</td>
+<td>Improve roadway and provide separated pedestrian and bicycle facilities along the eastside of Naito Parkway. Add or upgrade crossings at Montgomery, Clay, Jefferson, Main, Davis, and Everett. Improve pedestrian and bicycle access across Naito, including detection and signal timing adjustments where appropriate. Signalize the top of the ramp from Naito to Hawthorne Bridge to improve traffic flow.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20128</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Broadway Multimodal Streetscape Improvements</td>
+<td>Broadway, NW/SW (Hoyt - Clay)</td>
+<td>Enhance the existing bikeway on Broadway. Includes the construction of a protected bikeway, signal improvements, short-term parking and loading zones, and shorter pedestrian crossings. Consider a protected intersection at Broadway/Burnside and a northbound bicycle facility from Oak to Hoyt during project design.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20129</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>South Park Blocks Bikeway</td>
+<td>9th / Park Ave, SW (Clifton - Oak)</td>
+<td>Design and implement a bikeway, with traffic calming and improved crossings as needed. Supports future Green Loop project.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20130</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 12th Ave Bikeway</td>
+<td>12th Ave, SW (Montgomery - Stark)</td>
+<td>Design and implement a bikeway on 12th Ave to provide a safe and comfortable northbound bicycle connection through the Central City.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20131</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Jefferson / Columbia Bikeway</td>
+<td>Jefferson / Columbia St, SW (Naito - 18th)</td>
+<td>Design and implement a bikeway on SW Columbia St and enhance existing bikeway on SW Jefferson St to create a safe and comfortable east-west bicycle connection through the Central City.</td>
+<td>$1,250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20132</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Salmon / Taylor Bikeway</td>
+<td>Salmon / Taylor, SW (Naito - 16th)</td>
+<td>Design and implement bikeways on Salmon and Taylor Streets to create a safe and comfortable east-west bicycle connection through the Central City.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20133</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Main / Madison Bikeway and Transit Improvements</td>
+<td>Main / Madison St, SW (1st - 5th)</td>
+<td>Enhance and extend bikeways on Main and Madison to create a safe and comfortable east-west bicycle connection in the Central City. Reconfigure roadway to add a bus-only lane on SW Madison from 5th to 1st, with right turns allowed where necessary.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20135</td>
+<td>Portland</td>
+<td>Portland / MultCo</td>
+<td>Hawthorne Bridgehead Pedestrian Improvements</td>
+<td>Hawthorne Bridgehead, SW</td>
+<td>Add improved crossings at Naito/Jefferson and Naito/Main.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20136</td>
+<td>Portland</td>
+<td>Portland / MultCo</td>
+<td>Morrison Bridgehead Pedestrian Improvements</td>
+<td>Morrison Bridgehead, SW</td>
+<td>Add missing crosswalks at 2nd &amp; Alder and 2nd &amp; Washington to improve pedestrian safety and connectivity. Convert dual left-turn lanes to single left-turn lanes at 3rd &amp; Washington and 4th &amp; Alder to improve pedestrian crossing safety.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20138</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Burnside / 10th Pedestrian Improvements</td>
+<td>Burnside / 10th, SW</td>
+<td>Convert the &quot;jughandle&quot; left turn lane at Burnside &amp; 10th into public space. Improve pedestrian safety at the intersection.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20139</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Burnside / Broadway Pedestrian Improvements</td>
+<td>Burnside / Ankeny / Broadway, SW</td>
+<td>Reconfigure the section of Broadway between Burnside, Pine, and Ankeny to improve pedestrian safety and provide public space. Consider closing Ankeny to vehicle traffic.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20140</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Burnside / 20th Pedestrian Improvements</td>
+<td>Burnside / 20th Place, SW</td>
+<td>Convert the slip lane at Burnside &amp; 20th Pl into public space. Improve pedestrian safety at the intersection.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20141</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Collins Circle Public Space Improvements</td>
+<td>Jefferson / Columbia / 18th, SW</td>
+<td>Improve Collins Circle to make the public space more accessible and engaging for the community.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20142</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Firefighters Park Public Space Improvements</td>
+<td>18th / 19th / Alder, SW</td>
+<td>Improve Firefighters Park to make the public space more accessible and engaging for the community.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20143</td>
+<td>TriMet</td>
+<td>TriMet</td>
+<td>Goose Hollow Bike Hub</td>
+<td>Goose Hollow/SW Jefferson MAX Station</td>
+<td>Establish a west-side commuter bike hub at the Goose Hollow/SW Jefferson MAX station, accommodating the needs of transit riders transferring to or from bicycles at this location.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20144</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Goose Hollow Ped/Bike Connectivity Improvements</td>
+<td>Goose Hollow</td>
+<td>Improve bicycle and pedestrian connectivity throughout Goose Hollow, including connections on SW 16th Ave through the Lincoln High School site.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20146</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW 18th/19th/Alder Bikeway</td>
+<td>18th / 19th Ave, NW (Alder - Glisan); Alder St, SW (14th - 18th); Alder / Washington, SW (14th - Broadway)</td>
+<td>Design and implement separated bike lanes to extend the 18th/19th Bikeway and connect to Alder. Provide bike lanes in both directions along Alder from 18th to 14th, and add bike lanes on the Alder/Washington couplet from 14th to Broadway.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20147</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Jefferson Main Street Improvements</td>
+<td>Jefferson St, SW (14th - 20th)</td>
+<td>Construct streetscape improvements to enhance SW Jefferson as a Main Street for the Goose Hollow neighborhood.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20148</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>SW Salmon/Taylor Pedestrian Improvements</td>
+<td>Salmon / Taylor / I-405, SW</td>
+<td>Pedestrian improvements at the SW Salmon / I-405 off-ramp area and SW Taylor / I-405 on-ramp area, including adding pedestrian facilities on the south side of the Salmon and Taylor overpasses between 13th and 14th Avenues.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20149</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Vista Bridge Renovation</td>
+<td>Vista Bridge, SW</td>
+<td>Renovate the structurally deficient Vista Bridge (Bridge #036).</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20151</td>
+<td>Portland</td>
+<td>Portland / MultCo</td>
+<td>Inner Burnside Multimodal Improvements</td>
+<td>Burnside St, W/E (SW Park - SE 12th)</td>
+<td>Reconfigure lanes from SW Park Ave to SE 12th Ave to reduce transit delay and improve pedestrian and bicycle safety. Enhance existing bike lanes across the bridge to provide climbing lanes and more physical separation from traffic. Extend bike lanes west to SW 4th Ave and improve pedestrian crossing at SW 2nd Ave. Project may include signal modifications to improve transit operations and pedestrian safety. Explore feasibility of eastbound bus-only lane as part of project design.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20152</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Ankeny Pedestrian Street Improvements</td>
+<td>Ankeny St, SW (Naito - Park)</td>
+<td>Develop SW Ankeny as a pedestrian-oriented street, including some pedestrian-only segments providing public space and outdoor seating.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20153</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Park Blocks Bikeway</td>
+<td>8th / Park Ave, NW/SW (Oak - Glisan)</td>
+<td>Design and implement a bikeway, with traffic calming, signals, and improved crossings as needed. Supports future Green Loop project.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20154</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW 9th Ave Bikeway</td>
+<td>9th Ave, NW (Hoyt - Naito)</td>
+<td>Design and implement a separated bikeway to provide a safe and comfortable bicycle connection from the Pearl District to Naito Parkway.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20155</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW 12th Ave Bikeway</td>
+<td>12th Ave, NW (Burnside - Pettygrove); 13th Ave, NW (Burnside - Davis)</td>
+<td>Design and implement a bikeway, with traffic calming, signals, and improved crossings as needed.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20156</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW 15th Ave Walkway / Bikeway</td>
+<td>15th Ave, NW (Johnson - Savier)</td>
+<td>Restripe NW 15th Ave to provide a striped pedestrian walkway on the west side of the street and bicycle sharrows in the travel lanes. Remove abandoned railroad tracks from the roadway as part of the project.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20158</td>
+<td>Portland</td>
+<td>Railroad</td>
+<td>NW 13th Ave Ped/Bike Bridge</td>
+<td>13th Ave, NW (Raleigh - Naito)</td>
+<td>Construct a pedestrian and bicycle bridge over the railroad tracks to connect the North Pearl District to Naito and the waterfront.</td>
+<td>$2,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20159</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW Davis St Neighborhood Greenway</td>
+<td>Davis St, NW (Naito - 13th)</td>
+<td>Design and implement a neighborhood greenway, with traffic calming, signals, and improved crossings as needed.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20160</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Park Blocks Festival Streets</td>
+<td>Davis St, NW (Park - 8th); Flanders St, NW (Park - 8th)</td>
+<td>Redesign streets crossing the Park Blocks with special designs and traffic calming to enhance the pedestrian environment and complement the function of the park.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20162</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW Hoyt St Bikeway</td>
+<td>Hoyt St, NW (9th - Broadway)</td>
+<td>Redesign NW Hoyt Street to provide bike lanes in both directions.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20165</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW Northrup Traffic Signals</td>
+<td>Pearl District, NW</td>
+<td>Construct new traffic signals at Northrup &amp; 11th, Northrup &amp; 12th, Northrup &amp; 13th, Northrup &amp; 14th, Northrup &amp; 15th, and Northrup &amp; 16th to improve traffic flow and streetcar operations.</td>
+<td>$1,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20166</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Harrison / Montgomery Bikeway</td>
+<td>Harrison St, SW (Naito - 11th); Montgomery St, SW (11th - 14th)</td>
+<td>Design and implement bikeways along SW Harrison St from Naito to 4th to complete the bicycle connection between the Tilikum Bridge and PSU. Improve pedestrian crossings of Harrison from Naito to 4th. Continue bikeway through PSU campus along Harrison and Montgomery.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20167</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 6th &amp; Jackson Crossing Improvement</td>
+<td>6th &amp; Jackson, SW</td>
+<td>Enhance safety at existing pedestrian crossing.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20168</td>
+<td>Portland</td>
+<td>ODOT / TriMet</td>
+<td>SW 6th Ave &amp; I-405 Multimodal Improvements</td>
+<td>Broadway, SW (4th - 6th); 6th Ave, SW (Broadway - Jackson); Jackson St, SW (6th - Park)</td>
+<td>Restripe SW Broadway to direct two lanes of traffic onto the freeway on-ramp. Reconfigure intersection of SW 6th, Jackson, and freeway off-ramp to provide a signalized pedestrian crossing and allow westbound buses on Jackson to access 6th Ave northbound. Extend sidewalk and build a bus platform on east side of 6th Ave south of Jackson. Enhance and extend the bike lane on 6th north to Jackson and south to Broadway. Design and implement a bikeway on Jackson St from 6th to Park.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20169</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>1st Ave / I-405 Crossing Improvements</td>
+<td>1st Ave / I-405, SW</td>
+<td>Add improved pedestrian crossings of 1st Ave on either side of I-405.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20170</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Naito Pkwy Multi-use Path</td>
+<td>Naito Pkwy, SW (I-405 - Lincoln)</td>
+<td>Extend multi-use path on east side of Naito from Lincoln to I-405, with a connection to Caruthers and/or Grant to allow southbound bicycle access to Gibbs Street Bridge and Tilikum Crossing.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20171</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 15th/16th Ave Bikeway</td>
+<td>15th/16th Ave, SW (Burnside - Salmon)</td>
+<td>Design and implement a bikeway couplet, with traffic calming and crossing improvements as needed.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20172</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Upper I-405 Trail</td>
+<td>I-405 (Water - 4th)</td>
+<td>Design and implement a pedestrian and bicycle connection along the I-405 off-ramp to 4th &amp; Lincoln. Supports future Green Loop project.</td>
+<td>$2,800,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20173</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 9th Ave Crossing Improvements</td>
+<td>9th Ave, SE (at Hawthorne, Madison, Belmont, Morrison, Stark, Sandy)</td>
+<td>Provide enhanced pedestrian crossings at major intersections to improve safety and reduce pedestrian delay.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20174</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Salmon Neighborhood Greenway Improvements</td>
+<td>Salmon St, SE (Eastbank Esplanade - 12th)</td>
+<td>Improve existing neighborhood greenway by installing improved crossings at 7th, 11th, and 12th. Once traffic signals are constructed at MLK/Grand (see project 20073), extend the Salmon neighborhood greenway from 7th to the Eastbank Esplanade.</td>
+<td>$400,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20175</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Ankeny Neighborhood Greenway Improvements</td>
+<td>Ankeny St, SE (3rd - 12th); 3rd Ave, SE/NE (Ankeny - Couch)</td>
+<td>Once traffic signals are constructed at MLK and 11th/Sandy (see project 20073), extend the Ankeny neighborhood greenway to 3rd Ave, along 3rd north to Couch Ct, and connecting to the Burnside Bridge.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20176</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>11th/12th Ave Multimodal Safety Improvements</td>
+<td>11th/12th Ave, SE (Burnside - Clinton)</td>
+<td>Enhance pedestrian and bicycle safety and access by installing improved crossings at Ankeny, Salmon, Madison, Clay, and Harrison. Design and implement improvements to enhance bicycle travel on 11th and 12th.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20177</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Harrison Neighborhood Greenway</td>
+<td>Harrison St, SE (7th - Ladd Circle)</td>
+<td>Extend the Harrison Neighborhood Greenway from Ladd Circle to 7th, including traffic calming and improved crossings at 7th, 11th, and 12th.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20181</td>
+<td>Portland</td>
+<td>MultCo</td>
+<td>Inner Hawthorne Multimodal Corridor Improvements</td>
+<td>Hawthorne Blvd, SW/SE (SW Naito - SE 12th)</td>
+<td>Signalize the top of the ramp from SW Naito to Hawthorne Bridge to improve safety and capacity for all modes. Construct an eastbound protected bikeway with transit islands to improve pedestrian and bicycle safety and comfort as well as transit operational efficiency. Explore feasibility of eastbound bus-only lane as part of project design.</td>
+<td>$2,600,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20184</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Yamhill / Taylor Couplet</td>
+<td>Yamhill / Taylor, SE (Water - Grand)</td>
+<td>Improve traffic safety and capacity by converting Yamhill and Taylor to couplet operation between Water and Grand Ave, including new traffic signals at Yamhill / MLK, Yamhill / Grand, and Taylor / Water. As part of the project, reconfigure the ramp from Belmont viaduct to MLK.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20185</td>
+<td>Portland</td>
+<td>TriMet</td>
+<td>Gideon Street Pedestrian / Bicycle Bridge</td>
+<td>Clinton MAX Station</td>
+<td>Construct a pedestrian / bicycle bridge over the railroad and light rail tracks to connect the Clinton MAX Station with the adjacent neighborhood.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20186</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 7th Ave Bikeway Improvements</td>
+<td>7th Ave, NE (Lloyd - Broadway)</td>
+<td>Enhance the existing bikeway on 7th from Lloyd to Broadway to improve safety and comfort, including protected bikeway elements where needed, separation from traffic, and crossing improvements.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20187</td>
+<td>Portland / ODOT</td>
+<td>Portland / ODOT</td>
+<td>Yamhill &amp; Water Traffic Improvements</td>
+<td>Yamhill / Water, SE</td>
+<td>Install signal at the SE Yamhill St / SE Water Ave intersection with turn lane and queue detection treatments on the I-5 NB Exit Ramp to reduce queue length and/or provide advanced warning sign of queue on the exit ramp.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20188</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Lloyd District Grand / MLK Traffic Signals</td>
+<td>Grand / MLK, NE (Lloyd - Broadway)</td>
+<td>Improve multimodal safety and traffic flow by constructing additional traffic signals at intersections along Grand and MLK.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20189</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Oregon / Grand Streetcar Turnaround</td>
+<td>Oregon / Grand, NE</td>
+<td>Construct a streetcar turnaround to enable east-west streetcar service between NW 23rd and the Lloyd District.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20190</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Grand / Weidler Streetcar Turnaround</td>
+<td>Grand / Weidler, NE</td>
+<td>Construct a streetcar turnaround to enable standalone north-south streetcar service on the Eastside.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20191</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Freeway Underpass Improvements</td>
+<td>Lloyd Blvd / Multnomah St / Holladay St / Oregon St / Russell St, N/NE (under I-5)</td>
+<td>Enhance the pedestrian and bicycling environment under the I-5 freeway at Lloyd Blvd, Multnomah, Holladay, Oregon, and Russell. Improve the appearance of publicly owned storage yeards located under and adjacent to the I-5 and I-405 freeways.</td>
+<td>$100,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20192</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>N River St Reconstruction</td>
+<td>River St, N (Tillamook - Essex)</td>
+<td>Rebuild N River Street from the Tillamook overpass to Essex Street.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20193.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Post Office Blocks Transportation Improvements, Phase 1</td>
+<td>Johnson St, NW (9th - Station Way); Park Ave, NW (Hoyt - Johnson); 9th &amp; Everett; 9th &amp; Glisan</td>
+<td>Extend Johnson St as an east-west multimodal street through the Post Office Blocks redevelopment site, including diverter at 9th Ave. Extend Park Ave north to Johnson. Add traffic signals at 9th/Everett and 9th/Glisan. Create pedestrian connections throughout the site.</td>
+<td>$16,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20193.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Post Office Blocks Transportation Improvements, Phase 2</td>
+<td>NW 9th to Broadway; NW Lovejoy to Hoyt</td>
+<td>Extend the Green Loop through the Broadway Corridor redevelopment site from North Park Blocks to Broadway Bridge. Enhance existing bike lanes along Broadway and Lovejoy viaducts.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20194</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Central Eastside 7th Ave Corridor Improvements</td>
+<td>7th Ave, SE (Flanders - Division)</td>
+<td>Design and implement a bikeway from I-84 to Division, connecting to Sullivan's Crossing ped/bike bridge, with separated bikeway segments, neighborhood greenway segments, pedestrian improvements, and crossing improvements as needed. Includes enhancement of existing bicycle facilities on 7th Ave from Sandy to Division  Consider a protected intersection design at 7th/Washington/Sandy. Supports future Green Loop Project.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20196</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Grand &amp; I-84 Transit Improvements</td>
+<td>Grand Ave, NE (Burnside - Lloyd)</td>
+<td>Adjust streetcar track alignment, reconfigure lanes, and modify signals to reduce bus and streetcar delay due to freeway on-ramp queue.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20197</td>
+<td>Portland</td>
+<td>Railroad / ODOT</td>
+<td>Steel Bridge Transit Improvements</td>
+<td>Steel Bridge</td>
+<td>Design and implement transit priority improvements to reduce transit delay on the Steel Bridge and its approaches.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20198</td>
+<td>TriMet / Portland</td>
+<td>TriMet / Portland</td>
+<td>Rose Quarter Transit Center Redesign</td>
+<td>Rose Quarter Transit Center</td>
+<td>Redesign the Rose Quarter Transit Center and Steel Bridge to improve transit system capacity and operations, improve customer experience and ease transfers, minimize conflicts with other modes and provide areas for community spaces, enhanced facilities for pedestrians and cyclists and redevelopment.</td>
+<td>$300,000,000</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20199</td>
+<td>TriMet</td>
+<td>Portland</td>
+<td>SW 1st Ave Light Rail Turnaround</td>
+<td>Morrison St &amp; 1st Ave, SW</td>
+<td>Develop a turnaround to allow eastbound light rail trains to turn westbound to improve transit operations.</td>
+<td>$10,000,000</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20200</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW/NW 4th Ave Bikeway</td>
+<td>4th Ave, SW/NW (Madison - Flanders)</td>
+<td>Design and implement a protected bikeway on 4th Ave to provide a bikeway couplet with Broadway connecting PSU, Downtown, and Old Town / Chinatown.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20201</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Central Eastside Sandy Blvd Corridor Improvements</td>
+<td>Sandy Blvd, SE (Washington - Burnside)</td>
+<td>Enhance existing bicycle facilities to improve safety and comfort. Modify intersections to improve pedestrian crossing safety. Consider a protected intersection design at 7th/Washington/Sandy and Stark/Sandy.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20202</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bicycle / Rail Safety Improvements</td>
+<td>Central City</td>
+<td>Install pavement markings and signage on rail streets where needed to improve bicycle safety and comfort.</td>
+<td>$250,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20203</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Union Station, Phase 3</td>
+<td>Union Station</td>
+<td>Core building improvements, operational improvements, and railside improvements for Union Station.</td>
+<td>$150,000,000</td>
+<td>No</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>20204</td>
+<td>Portland / ODOT</td>
+<td>Portland / ODOT</td>
+<td>Broadway / Weidler Interchange Area Multimodal Improvements</td>
+<td>Broadway / Weidler / I-5</td>
+<td>Construct multimodal transportation improvements supporting the ODOT Broadway / Weidler (Rose Quarter) Interchange Project, including enhancements of surface streets, lids over the freeway, and a new ped/bike bridge over I-5 at Clackamas St, consistent with the adopted N/NE Quadrant Plan and Broadway / Weidler Facility Plan. Supports future Green Loop project.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>20205</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Central Eastside Access and Circulation Enhancement Project</td>
+<td>Central Eastside</td>
+<td>Improve access and circulation in the Central Eastside by adding new signals and crossings at Hawthorne &amp; Clay ramp, Salmon &amp; Grand, Salmon &amp; MLK, Washington &amp; Grand, Washington &amp; MLK, Ankeny &amp; MLK, Ankeny &amp; Sandy, 16th &amp; Irving, modifying signals at Stark &amp; Grand, Clay &amp; Grand, Mill &amp; MLK, and reconstructing SE Clay St from Water to Grand.</td>
+<td>$5,400,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>20206</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Water Ave Realignment, Phase 2</td>
+<td>Water Ave, SE (Clay – 2nd Pl)</td>
+<td>Realign Water Ave to the east along railroad tracks to support OMSI area redevelopment.</td>
+<td>$8,000,000</td>
+<td>Yes</td>
+<td>Years 1-10</td>
+<td></td>
+</tr>
+<tr>
+<td>30001</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Ainsworth Bridge Pedestrian/Bicycle Improvements</td>
+<td>Ainsworth St, N (Bridge over I-5)</td>
+<td>Construct improvements to the bridge to create a safe and pleasant crossing for pedestrians and bicyclists over I-5.</td>
+<td>$1,375,950</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30004</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia Blvd Pedestrian Improvements</td>
+<td>Columbia Blvd, N (Swift - Portland Rd; Argyle Way - Albina)</td>
+<td>Construct sidewalks and crossing improvements. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$4,213,209</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia Blvd / Railroad Bridge Replacement</td>
+<td>Columbia Blvd, N (bridge over railroad tracks)</td>
+<td>Replace the existing fracture critical Columbia Blvd bridge (#078) over railroad tracks with a new structure, and perform seismic upgrades on parallel bridge (#078A).</td>
+<td>$3,839,995</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30006</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia Blvd Noise Walls</td>
+<td>Columbia Blvd, N (Oswego - Denver)</td>
+<td>Install noise walls on the south side.</td>
+<td>$1,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30008</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia Blvd ITS</td>
+<td>Columbia Blvd, N/NE (I-205 - Burgard)</td>
+<td>Communications infrastructure including closed circuit TV cameras, truck priority detection, variable message signs for remote monitoring and control of traffic flow for six signals.</td>
+<td>$390,059</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30010</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>I-5 Delta Park, Phase 2</td>
+<td>Denver Ave, N (Victory - Argyle)</td>
+<td>Construct shared-use path; rehabilitate, resurface and restripe Denver Ave for buffered bike lanes; connect shared-use path to Columbia Slough levee trail.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30014</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Failing Street Neighborhood Greenway</td>
+<td>Shaver St, N (Concord - Montana); Montana Ave, N (Shaver - Failing); Failing St, N/NE (Concord - 19th); Ridgewood Dr, NE (19th - 26th)</td>
+<td>Design and implement a neighborhood greenway from Concord to 26th &amp; Regents. Construct street improvements to provide a safe and pleasant connection between the Overlook MAX station and the Mississippi District, including pedestrian/bicycle way-finding and festival street treatments. Redesign intersection of 26th &amp; Regents to improve traffic flow and safety.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30015</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Going St ITS</td>
+<td>Going St, N (Interstate - Greeley)</td>
+<td>Install needed ITS infrastructure (communication network, new traffic controllers, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system.</td>
+<td>$557,250</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30016</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Going/Greeley Interchange Improvements</td>
+<td>Going/Greeley, N</td>
+<td>Redesign Going/Greeley interchange including climbing lane on Going to improve truck movement between Swan Island, Lower Albina, and I-5.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$16,750,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30018</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Hayden Island Street Network Improvements, Phase 1</td>
+<td>Hayden Island, N</td>
+<td>Implement street plan for Hayden Island to improve circulation and access for all modes.</td>
+<td>$1,834,600</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30020</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Columbia River Crossing</td>
+<td>I-5, N (Victory Blvd - Washington border)</td>
+<td>Replace I-5/Columbia River bridges and improve interchanges on I-5.</td>
+<td>$2,982,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30028</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Killingsworth Street Improvements</td>
+<td>Killingsworth St, N/NE (Interstate - MLK Jr)</td>
+<td>Construct street improvements to improve pedestrian connections to Interstate MAX LRT and to establish a main street character promoting pedestrian-oriented activities.</td>
+<td>$3,728,869</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30030</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>N Killingsworth Streetscape Improvements</td>
+<td>Killingsworth St, N (Greeley - Denver)</td>
+<td>Design and implement streetscape improvements to enhance sidewalks, lighting, crossings, transit stops, and signals.</td>
+<td>$1,851,960</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30033</td>
+<td>TriMet</td>
+<td>TriMet</td>
+<td>Portland Vancouver Light Rail</td>
+<td>Expo Center - Vancouver, WA</td>
+<td>Extend light rail service from Expo Center to Vancouver, WA.</td>
+<td>$1,075,965,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30035</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Lombard St ITS</td>
+<td>Lombard St, N/NE (MLK Jr - Philadelphia)</td>
+<td>Communications infrastructure including closed circuit TV camera, Bluetooth detection, improved bus priority variable message signs for remote monitoring and control of traffic flow at the intersections with MLK Jr, Interstate, Greeley, Portsmouth, Philadelphia/Ivanhoe.</td>
+<td>$673,440</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30037</td>
+<td>Portland / ODOT</td>
+<td>ODOT</td>
+<td>N Lombard Corridor Improvements</td>
+<td>Lombard St, N (Woolsey - MLK)</td>
+<td>Design and implement transportation and streetscape improvements to improve safety and promote pedestrian-oriented uses along the corridor and to create a safe, pleasant pedestrian link over I-5, including intersections improvements at Montana &amp; Lombard and an improved pedestrian crossing of the Interstate 5 on-ramp.The project will be coordinated with ODOT to address potential impacts to Lombard and the I-5 interchange.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30038</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marine Dr ITS</td>
+<td>Marine Dr, N/NE (Portland Rd - 185th)</td>
+<td>Install CCTV at N Portland Rd and changeable message signs at Portland Rd, Vancouver and 185th</td>
+<td>$238,510</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30039</td>
+<td>Port</td>
+<td>Railroad</td>
+<td>Marine Dr Rail Overcrossing</td>
+<td>Marine Dr, N (at Rivergate West)</td>
+<td>Reroute rail tracks and construct an above-grade rail crossing at Rivergate West entrance to improve safety and reduce vehicle and rail traffic conflicts.</td>
+<td>$13,644,200</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30042</td>
+<td>Portland</td>
+<td>TriMet</td>
+<td>MLK Jr Blvd Transit Improvements</td>
+<td>MLK Jr Blvd, NE (Broadway - Lombard)</td>
+<td>Provide capital improvements that enhance the frequent bus service along MLK Jr Blvd.</td>
+<td>$1,926,330</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30050</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>St Johns Pedestrian Improvements</td>
+<td>St Johns Pedestrian District, N</td>
+<td>Enhance pedestrian access to transit, improve safety, and enhance the streetscape such as better lighting and crossings. Improvements including realigning the &quot;ivy&quot; island, curb extensions, a new traffic signal at Richmond/Lombard, and pedestrian connections between St. Johns and the riverfront based on the St Johns/Lombard Plan.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30055</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>North Portland Junction: Undoing the &quot;X&quot;</td>
+<td>North Portland Junction, N</td>
+<td>Eliminate the at-grade crossing of UPRR and BNSF tracks at North Portland Junction.</td>
+<td>$33,598,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30056</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia Blvd Protected Bikeway</td>
+<td>Columbia Blvd, N/NE (MLK Jr Blvd - Lombard St)</td>
+<td>Design and implement a protected bikeway or multi-use path. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$6,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30059</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>N Lombard Main Street Improvements</td>
+<td>Lombard, N (N Tyler - N Woolsey)</td>
+<td>Implement main street improvements along N Lombard consistent with the St Johns/Lombard Plan, including curb extensions and street lighting. Provide separated in-roadway bicycle facilities from Ida to Portsmouth.</td>
+<td>$1,834,600</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30063</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>Railroad Bridge and Track Improvements</td>
+<td>BNSF Mainline at Willamette and Columbia River Bridges, N</td>
+<td>Improve rail track conditions on approaches to Willametter River and Columbia River bridges to increase railroad speed and capacity.</td>
+<td>$10,751,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30065</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>North Portland Junction Crossover Improvements</td>
+<td>North Portland Junction, N</td>
+<td>Upgrade rail track with revised crossovers, centralized traffic control tie-in, and increased turning radius to accommodate higher rail speeds and capacity.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$23,600,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30066</td>
+<td>Region</td>
+<td>Portland</td>
+<td>Columbia Blvd Rail Overcrossing</td>
+<td>Columbia Blvd &amp; Peninsula Junction, N</td>
+<td>Grade separate Columbia Blvd at Penn Junction to eliminate three at-grade rail crossings.</td>
+<td>$28,935,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30068</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Burgard St Viaduct Replacement</td>
+<td>Burgard, N (Bridge over UPRR)</td>
+<td>Replace the existing N Burgard St Viaduct (#001) over the UPRR tracks. Include pedestrian and bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$3,045,241</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30069</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>Columbia Slough Rail Bridge</td>
+<td>Terminal 6 - South Rivergate (across Columbia Slough)</td>
+<td>Construct a rail bridge across Columbia Slough to provide rail connection to South Rivergate from Terminal 6.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$10,840,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30070</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>St Johns Truck Strategy, Phase 2</td>
+<td>Lombard St, N (Bruce - St Louis); Fessenden, N (Columbia Way - St Louis); St Louis, N (Lombard - Fessenden); Columbia Blvd &amp; Portland Rd (intersection)</td>
+<td>Address pedestrian safety, bicycle safety and neighborhood livability impacts associated with cut-through truck traffic on N St Louis Ave and N Fessenden St. Construct pedestrian crossing safety and traffic calming improvements, such as curb extensions and median islands, and redesign the Columbia/Portland intersection as outlined in the St Johns Truck Strategy Phase II.</td>
+<td>$3,346,126</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30072</td>
+<td>Portland/Port</td>
+<td>Portland</td>
+<td>Rivergate ITS</td>
+<td>Rivergate, N</td>
+<td>Connect real-time information to ODOT's Highway ITC systems.</td>
+<td>$480,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30076</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>Columbia River Rail Bridge Improvements</td>
+<td>BNSF Rail Bridge (over Columbia River)</td>
+<td>Replace existing swing span with lift span and relocate position to mid-river channel. Project creates wider and quicker opening, reduces I-5 lifts, eases river navigation, and could accommodate a third rail track.</td>
+<td>$35,548,800</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30077</td>
+<td>Port</td>
+<td>Railroad</td>
+<td>Barnes Yard to Terminal 4 Rail Access</td>
+<td>Barnes Yard - Terminal 4, N</td>
+<td>Add dedicated track for Terminal 4 through Barnes Yard and add new track from Barnes Yard to Terminal 4.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30080</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Burgard/Lombard Corridor Improvements</td>
+<td>Burgard/Lombard, N (UPRR Bridge - Columbia Blvd)</td>
+<td>Improve the intersection of Burgard &amp; Time Oil Rd to add turn lanes and construct a multi-use path along Burgard.</td>
+<td>$2,635,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30081</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>N Argyle Corridor Improvements</td>
+<td>Argyle Way, N (Columbia - Denver)</td>
+<td>Design and implement pedestrian and bicycle facilities on N Argyle from N Columbia Blvd to N Denver Ave. Construct safety and connectivity improvements at the Columbia, Brandon, and Denver intersections.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30083</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Hayden Island Street Network Improvements, Phase 2</td>
+<td>Hayden Island, N</td>
+<td>Implement street plan for Hayden Island to improve circulation and access for all modes.</td>
+<td>$1,834,600</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30084</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia Blvd / Columbia Way Bridge Replacement</td>
+<td>Columbia Blvd, N (bridge over Columbia Way)</td>
+<td>Replace the existing structurally deficient Columbia Blvd bridge (#079) over Columbia Way with a new structure.</td>
+<td>$6,993,958</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30086</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Swan Island Active Transportation Improvements</td>
+<td>Swan Island, N</td>
+<td>Improve access and mobility on Swan Island by constructing the recommended bikeway and trail network in the Portland Bicycle Plan for 2030, including an improved bikeway connection from Basin to Going Ct.</td>
+<td>$9,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30087</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Portland Greenway Trail, Segment 1</td>
+<td>Kelley Point Park - Columbia Blvd, N</td>
+<td>Build a multi-use trail connecting Kelley Point Park to N Columbia Blvd at Chimney Park.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$9,559,102</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30088</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Portland Greenway Trail, Segment 2</td>
+<td>Columbia Blvd - Cathedral Park, N</td>
+<td>Build a multi-use trail connecting Chimney Park, Pier Park, Baltimore Woods, Cathedral Park, and St Johns.</td>
+<td>$2,083,874</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30089</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Portland Greenway Trail, Segment 3</td>
+<td>Cathedral Park - Swan Island, N</td>
+<td>Build a multi-use trail connecting the Cathedral Park with Swan Island via University of Portland and</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Willamette Cove.</td>
+<td>$14,787,630</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30090</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>North Portland Greenway Trail, Segment 4</td>
+<td>Swan Island - Going St, N</td>
+<td>Build a multi-use trail connecting Waud Bluff Trail to N Going Street through Swan Island.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$5,256,420</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30091</td>
+<td>Portland</td>
+<td>Railroad</td>
+<td>North Portland Greenway Trail, Segment 5</td>
+<td>Albina Yard from Swan Island to Rose Quarter</td>
+<td>Build a multi-use trail along the Albina Yard connecting Swan Island to the Rose Quarter.</td>
+<td>$7,306,910</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30092</td>
+<td>Portland / Port</td>
+<td>Portland / Port</td>
+<td>Rivergate Blvd Overcrossing</td>
+<td>Rivergate Blvd, N (over railroad tracks)</td>
+<td>Build an over-crossing to grade-separate N Rivergate Blvd from the railroad tracks in the Rivergate Industrial Area. Install ITS communication infrastructure including advance notification systems for rail blockage and CCTV cameras to monitor truck and rail traffic in the South Rivergate Industrial District.</td>
+<td>$14,200,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30093</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NoPo Greenway Trail: Columbia Blvd Bridge</td>
+<td>Columbia Blvd, N (at Chimney Park)</td>
+<td>Construct a pedestrian/bicycle bridge over Columbia Blvd and adjacent connections. Connects North Portland Greenway Trail segments 1 and 2.</td>
+<td>$2,612,381</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30094</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>N Fessenden St Bridge Replacement</td>
+<td>Fessenden St, N (over railroad cut)</td>
+<td>Replace existing structurally-deficient, weight-restricted bridge (owned by BNSF) over railroad cut.</td>
+<td>$4,700,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30095</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>N Willamette Blvd Bridge Replacement</td>
+<td>Willamette Blvd, N (over railroad cut)</td>
+<td>Replace existing structurally-deficient, weight-restricted bridge (owned by BNSF) over railroad cut.</td>
+<td>$9,750,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30096</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>N Willamette Blvd  Semi-Viaduct Replacement</td>
+<td>Willamette Blvd, N (semi-viaduct on bluff near Chase Ave)</td>
+<td>Replace existing poor-condition, weight-restricted semi-viaduct (#007) to ensure continued use by transit and emergency response.</td>
+<td>$532,751</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30097</td>
+<td>Port</td>
+<td>Port</td>
+<td>T6 Internal Overcrossing</td>
+<td>Marine Dr - Terminal 6, N</td>
+<td>Construct an elevated roadway between Marine Dr and Terminal 6.</td>
+<td>$3,649,084</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30098</td>
+<td>Port</td>
+<td>Port</td>
+<td>T6 Modernization</td>
+<td>Terminal 6</td>
+<td>Provide improvements to container terminal including crane electronics and stormwater improvements.</td>
+<td>$8,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30099</td>
+<td>Port</td>
+<td>Port</td>
+<td>T4 Modernization</td>
+<td>Terminal 4</td>
+<td>Renovate operation areas at T4 to create intermodal processing areas. Rail spur relocation and expansion, grain elevator demolition, wharf removal.</td>
+<td>$14,906,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30100</td>
+<td>Port</td>
+<td>Port</td>
+<td>T6 Second Entrance from Marine Drive</td>
+<td>Terminal 6</td>
+<td>Construct 2nd entrance from Marine Drive and internal rail overcrossing to Terminal 6.</td>
+<td>$12,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30101</td>
+<td>Port</td>
+<td>Port</td>
+<td>T6 Suttle Road entrance</td>
+<td>Terminal 6</td>
+<td>Access to T6 off the terminus of Suttle Road, improvements to existing Suttle Road.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30102</td>
+<td>Port</td>
+<td>Port</td>
+<td>Terminal 6 Rail Support Yard Improvements</td>
+<td>Terminal 6, N</td>
+<td>Increase Terminal 6 rail capacity.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30103</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>I-5 Delta Park, Phase 3</td>
+<td>Denver Ave, N (Argyle-Schmeer)</td>
+<td>Construct highest priority improvements consistent with the Delta-Lombard Environmental Assessment. Replace Denver Viaducts over Columbia Slough and Columbia Blvd / UPRR.</td>
+<td>$30,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>30104</td>
+<td>Port</td>
+<td>Railroad</td>
+<td>Bonneville Rail Yard Build Out</td>
+<td>Bonneville Rail Yard</td>
+<td>Construct two interior yard tracks at Bonneville Yard and complete the double track lead from the wye at the east end of the yard to UP Barnes Yard. Add rail staging capacity for South Rivergate.</td>
+<td>$3,600,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30105</td>
+<td>Port</td>
+<td>Port</td>
+<td>Ramsey Yard Utilization</td>
+<td>Ramsey Yard</td>
+<td>Connect the existing set out track along the west side of the main lead with the industrial lead near the south end to provide a location to store a unit train.</td>
+<td>$1,700,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30106</td>
+<td>Port</td>
+<td>Port</td>
+<td>Time Oil Road Reconstruction</td>
+<td>Time Oil Rd, N (Lombard - Rivergate)</td>
+<td>Reconstruct Time Oil Road</td>
+<td>$9,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30107</td>
+<td>Portland/Port</td>
+<td>Railroad</td>
+<td>Cathedral Park Quiet Zone</td>
+<td>Cathedral Park UPRR Tracks, N</td>
+<td>Address rail switching noise related to the Toyota operations at T-4 by improving multiple public rail crossings in the St. Johns Cathedral Park area.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>$9,324,497</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30108</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>N Hayden Island Dr Ped/Bike Improvements</td>
+<td>Hayden Island Dr, N</td>
+<td>Construct a multi-use path on one side of N Hayden Island Dr, and install pedestrian/bicycle crossing improvements.</td>
+<td>$3,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30109</td>
+<td>Region</td>
+<td>Region</td>
+<td>Willamette River Channel Deepening</td>
+<td>Willamette River</td>
+<td>Deepen the portions of the Willamette River with deep draft infrastructure to ~43' where appropriate. Allow Willamette River terminals to also benefit from the Columbia River's new controlling depth.</td>
+<td>$200,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30110</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Willamette Blvd Bikeway</td>
+<td>Willamette Blvd, N (Interstate - Menlo); Amherst / Yale, N (Woolsey - Peninsular Crossing Trail)</td>
+<td>Design and implement a neighborhood greenway from Interstate to Rosa Parks, enhance existing bikeway from Rosa Parks to Woolsey, and provide a neighborhood greenway on Yale and Amherst.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>30111</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Hayden Island Bridge</td>
+<td>Oregon Slough west of I-5</td>
+<td>Design and construct an arterial bridge from Expo Center to East Hayden Island. Explore feasibility of designs that would prioritize transit, bikes, and emergency vehicle access, and not facilitate cut-through traffic for vehicles that do not have origins or destinations on the island.</td>
+<td>$80,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40001</td>
+<td>Region</td>
+<td>Portland</td>
+<td>11th/13th Ave Rail Overcrossing</td>
+<td>11th/13th Ave, NE (over Kenton Line railroad)</td>
+<td>Construct roadway overcrossing at NE 11th/13th over Kenton line.</td>
+<td>$35,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40006</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marine Dr &amp; 33rd Intersection Improvements</td>
+<td>Marine Dr &amp; 33rd Ave, NE</td>
+<td>Signalize intersection to improve freight operations.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40007</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 42nd/47th Ave Bridge &amp; Corridor Improvements</td>
+<td>42nd/47th Ave, NE (Killingsworth - Columbia)</td>
+<td>Replace the weight-restricted NE 42nd Ave Bridge (#075) over NE Portland Hwy and the adjacent railway, and add pedestrian and bicycle facilities to the bridge and the roadway from Killingsworth to Columbia. This project will remove the weight restriction, maintain vertical clearance for over-dimensional freight, and provide pedestrian and bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40009</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 47th Ave Corridor Improvements</td>
+<td>47th Ave, NE (Columbia - Cornfoot)</td>
+<td>Improve street and reconfigure intersections between Columbia and Cornfoot to better facilitate freight access to industrial areas. Street improvement will include pedestrian and bicycle facilities.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40012</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 72nd Ave Pedestrian Improvements</td>
+<td>72nd Ave, NE (Thomas Cully Park - Prescott)</td>
+<td>Construct sidewalks, curbs, and storm drainage improvements along 72nd and improve pedestrian crossings..</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40013</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>82nd Ave Corridor Improvements</td>
+<td>82nd Ave, NE/SE, (Killingsworth -Clatsop)</td>
+<td>Design and implement multimodal improvements to sidewalks, crossings, transit stops, striping, and signals to enhance ped/bike safety, access to transit, and transit operations. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40016</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>NE 82nd Ave Ped/Bike Improvements, Phase 2</td>
+<td>82nd, NE (Alderwood - Columbia Blvd)</td>
+<td>Construct pedestrian and bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$3,603,402</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40018</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Killingsworth/I-205 Interchange Improvements</td>
+<td>Killingsworth/I-205, NE</td>
+<td>Widen the southbound on-ramp to three lanes.</td>
+<td>$750,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40020</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 92nd Ave Ped/Bike Improvements</td>
+<td>92nd Ave, NE (Fremont - Halsey)</td>
+<td>Construct a walkway for pedestrian travel and access to transit, and design and implement bicycle facilities.</td>
+<td>$2,750,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40023</td>
+<td>Port</td>
+<td>Port</td>
+<td>Airport Way Return and Exit Roads</td>
+<td>PDX Terminal Area</td>
+<td>Relocate Airport Way exit roadway and construct new return roadway (Terminal Access Study,  projects R4 and R5; to be scoped by PDX Master Plan).</td>
+<td>$6,400,900</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40025</td>
+<td>Port</td>
+<td>Port</td>
+<td>82nd &amp; Airport Way Grade Separation</td>
+<td>82nd Ave &amp; Airport Way, NE</td>
+<td>Construct a grade-separated overcrossing to allow for uninterrupted flow along Airport Way and remove at-grade light rail crossing.</td>
+<td>$50,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40027</td>
+<td>Portland/Port</td>
+<td>Portland</td>
+<td>Alderwood Bikeway, Phase 2</td>
+<td>Alderwood St, NE, (Cornfoot - Columbia Blvd)</td>
+<td>Design and implement a multi-use path along the west side of Alderwood Rd.</td>
+<td>$2,491,662</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40028</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Argyle Street Extension</td>
+<td>Argyle, NE (14th - MLK Jr)</td>
+<td>Extend NE Argyle to provide a more connected street grid. This street will serve as a collector/distributor for industrial businesses and reduce traffic congestion at the MLK/Columbia intersection.</td>
+<td>$11,397,579</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40032</td>
+<td>Port</td>
+<td>Portland</td>
+<td>Columbia/Alderwood Intersection Improvements</td>
+<td>Columbia/Alderwood, NE</td>
+<td>Reconstruct intersections to provide left turn pockets, enhance turning radii, and improve circulation for trucks serving expanding air cargo facilities south of Portland. Improve traffic operations and freight mobility on Columbia Blvd between Cully and Alderwood.</td>
+<td>$5,527,760</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40036</td>
+<td>Portland/Port</td>
+<td>Portland</td>
+<td>Cornfoot Rd Corridor Improvements</td>
+<td>Cornfoot Rd, NE (47th - Alderwood)</td>
+<td>Construct a multi-use path on the north side of Cornfoot Rd and install missing guardrail segments on the south side. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$3,626,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40037</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Cully Blvd Safety Improvements, Phase 2</td>
+<td>Cully Blvd, NE (Columbia - Killingsworth; Prescott - Fremont)</td>
+<td>Construct sidewalk infill on both sides of street, provide new bicycle facilities (Columbia - Killingsworth), and enhance existing bicycle facilities (Prescott - Fremont).</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40039</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Fremont Streetscape Improvements</td>
+<td>Fremont St, NE (42nd-52nd)</td>
+<td>Design and implement streetscape improvements to enhance sidewalks, lighting, crossings, transit stops, and signals.</td>
+<td>$7,446,133</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40042</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Halsey St Bridge Seismic Retrofit</td>
+<td>Halsey St, NE (67th - 68th)</td>
+<td>Retrofit existing seismically vulnerable bridge across I-84 (#021) to ensure emergency response and economic recovery in the event of an earthquake.</td>
+<td>$7,670,501</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40045</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Hollywood Town Center Safety Improvements</td>
+<td>Hollywood Town Center, NE</td>
+<td>Implement multimodal safety improvements including traffic signals, restriping, improved pedestrian crossings, and connections to transit center.</td>
+<td>$7,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40046</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>I-205 Northbound Auxiliary Lane</td>
+<td>I-205, NE/SE (I-84 - Killingsworth)</td>
+<td>Construct an auxiliary lane</td>
+<td>$15,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40053</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Killingworth Safety Improvements</td>
+<td>Killingsworth St, NE (Williams - 33rd)</td>
+<td>Design and implement traffic calming and pedestrian crossing improvements.</td>
+<td>$900,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40058</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Grand/MLK ITS</td>
+<td>Grand/MLK, NE/SE (Columbia Blvd - Clay)</td>
+<td>Install ITS infrastructure (communication network, enhanced bus detection, Bluetooth detection, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system consistent with our policies of moving people more effectively.</td>
+<td>$989,115</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40059</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>MLK Jr Blvd Freight Improvements</td>
+<td>MLK Jr, NE (Columbia - Lombard)</td>
+<td>Expand roadway to provide better connection between streets for improved freight movement in and through the area.</td>
+<td>$12,605,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40061</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Columbia/MLK Intersection Improvements, Phase 1</td>
+<td>Columbia/MLK, NE</td>
+<td>Intersection and signalization improvements with right turn lane from westbound Columbia to northbound MLK.</td>
+<td>$3,850,187</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40062</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>N Mississippi Streetscape Improvements</td>
+<td>Mississippi Ave, N (Fremont - Skidmore)</td>
+<td>Construct streetscape improvements to enhance the area as a Pedestrian District.</td>
+<td>$2,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40065</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Prescott Safety Improvements</td>
+<td>Prescott St, NE (81st - 122nd)</td>
+<td>Construct bicycle facilities, sidewalks, and crossing improvements for pedestrian and bicycle safety and to improve access to transit.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40068</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sandy Blvd Corridor Improvements, Phase 2</td>
+<td>Sandy Blvd, NE (47th - 101st)</td>
+<td>Retrofit existing street with multi-modal street improvements including bicycle facilities, redesign of selected intersections to improve pedestrian crossings, streetscape, and safety improvements. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$6,481,860</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40069</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sandy Blvd ITS</td>
+<td>Sandy Blvd, NE (82nd - Burnside)</td>
+<td>Install ITS infrastructure (communication network, enhanced bus detection, Bluetooth detection, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system consistent with our policies of moving people more effectively.</td>
+<td>$519,110</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40071</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Mason Neighborhood Greenway</td>
+<td>Mason St, NE (Michigan - Sandy)</td>
+<td>Design and implement a bikeway using neighborhood greenway and/or separated in-roadway treatments, with crossing improvements as needed.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40073</td>
+<td>Port</td>
+<td>Port</td>
+<td>SW Quad Access</td>
+<td>Southwest Quad, NE (at 33rd)</td>
+<td>Provide street access from NE 33rd Ave into the SW Quad property.</td>
+<td>$5,917,500</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40074</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Twenties Bikeway</td>
+<td>20s and 30s Aves, NE/SE (Lombard - Crystal Springs)</td>
+<td>Design and implement a bikeway from Lombard to Crystal Springs &amp; 45th using neighborhood greenways and bike lanes with a varying alignment along the NE/SE 20s and 30s Avenues.</td>
+<td>$3,353,690</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40079</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marine Dr Intersection Improvements</td>
+<td>Marine/Bridgeton and Marine/Faloma/6th, NE</td>
+<td>Intersection improvements at NE Bridgeton Rd and NE Faloma &amp; 6th.</td>
+<td>$1,866,706</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40081</td>
+<td>Port</td>
+<td>Port/TriMet</td>
+<td>PDX Light Rail Station/Track Realignment</td>
+<td>PDX Terminal Area</td>
+<td>Realign light rail track into airport terminal building to accommodate terminal expansion plans.</td>
+<td>$16,330,700</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40082</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Seventies Bikeway</td>
+<td>70s Aves, NE (Thomas Cully Park - I-84)</td>
+<td>Design and implement a bikeway using neighborhood greenway and/or separated in-roadway treatments, with crossing improvements as needed at major streets. Construct a multi-use path on the east side of NE 72nd Dr through the golf course.</td>
+<td>$1,409,019</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40085</td>
+<td>Region</td>
+<td>Railroad</td>
+<td>Kenton Rail Line Upgrade</td>
+<td>Kenton Line, N/NE</td>
+<td>Upgrade existing track to second main track with new double track from Peninsula Junction to I-205 and increase track speeds between North Portland, Peninsula Junction, to Reynolds on UP's Kenton Line. Part of triangle project with ODOT.</td>
+<td>$48,165,537</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40086.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Halsey St Bikeway, Phase 1</td>
+<td>Halsey St, NE (67th - 81st)</td>
+<td>Implement a lane reconfiguration including bicycle facilities, with improved pedestrian/bicycle crossings and connections to other pedestrian/bicycle routes.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40086.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Halsey St Bikeway, Phase 2</td>
+<td>Halsey St, NE (81st - I-205)</td>
+<td>Design and implement bicycle facilities and improved crossings.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40091</td>
+<td>Port / Portland</td>
+<td>Port / Portland</td>
+<td>PIC Ped/Bike Improvements</td>
+<td>92nd Dr, NE (Columbia - Alderwood); Portland International Center, NE</td>
+<td>Construct bicycle and pedestrian facilities as shown in the PDX Bicycle and Pedestrian Master Plan.</td>
+<td>$1,163,835</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40093</td>
+<td>Port</td>
+<td>Portland/Port</td>
+<td>Airtrans/Cornfoot Intersection Improvements</td>
+<td>Airtrans/Cornfoot, NE</td>
+<td>Add signals and improve turn lanes at AirTrans Way / Cornfoot Rd.</td>
+<td>$650,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40097</td>
+<td>Port</td>
+<td>Portland</td>
+<td>Airport Way Braided Ramps</td>
+<td>Airport Way, NE (I-205 - Mt Hood Ave)</td>
+<td>Construct braided ramps between I-205 interchange and Mt Hood interchange.</td>
+<td>$59,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40100</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 33rd Ave Bridge Replacement</td>
+<td>33rd Ave, NE (over railroad tracks and Columbia Blvd)</td>
+<td>Replace the existing seismically vulnerable 33rd Ave bridge (#009) over railroad tracks and provide pedestrian and bicycle facilities on the new structure. Improve and signalize the intersection of 33rd &amp; Columbia, and remove the seismically vulnerable, fracture critical ramp over Columbia (#009A). Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$9,200,443</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40102</td>
+<td>Portland/Port</td>
+<td>Portland</td>
+<td>Columbia Blvd Freight Improvements</td>
+<td>Columbia Blvd, NE (60th - 82nd)</td>
+<td>Construct street and intersection modifications to improve freight reliability and access to industrial properties. This project will be refined through the proposed Columbia Corridor Access Study.</td>
+<td>$14,859,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40104</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Connected Cully</td>
+<td>Killingsworth, NE (42nd - Cully); Prescott, NE (42nd - Cully); 60th, NE (Prescott - Portland Hwy); 72nd, NE (Emerson - Killingsworth); 54th/55th (Prescott - Killingsworth); 66th/67th (Sandy - Prescott)</td>
+<td>Make improvements to calm traffic, fill in the missing sidewalks along transit routes, and increase walking and bicycling by creating new north/south connections to schools.</td>
+<td>$3,337,372</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40106</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Sandy Blvd Bikeway</td>
+<td>Sandy Blvd, NE (12th - 47th)</td>
+<td>Design and implement separated in-roadway or protected bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$4,476,520</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40107</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Alberta Neighborhood Greenway</td>
+<td>Alberta St, NE (72nd - I-205 Path)</td>
+<td>Design and implement a neighborhood greenway.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40108</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Broadway Corridor Improvements, Phase 2</td>
+<td>Broadway, NE (24th - 42nd)</td>
+<td>Design and implement bicycle facilities and improve pedestrian/bicycle crossings. Construct traffic signals, improve transit stops, and construct streetscape improvements.</td>
+<td>$5,618,659</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40109</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 14th Ave Neighborhood Greenway</td>
+<td>14th Ave, NE (Halsey - Lombard)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$774,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40110</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Upper NE 22nd Ave Neighborhood Greenway</td>
+<td>22nd Ave, NE (Tillamook - Lombard)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$685,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40111</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE Simpson St Neighborhood Greenway</td>
+<td>Simpson St, NE (33rd - Portland Hwy)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$560,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40112</td>
+<td>Portland/Port</td>
+<td>Portland</td>
+<td>Columbia/Cully Intersection Improvements</td>
+<td>Columbia / Cully, NE</td>
+<td>Construct northbound right turn lane on NE Cully and signalize the intersection of NE Cully Blvd &amp; NE Columbia Blvd. Construct pedestrian and bicycle facilities around intersection.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40113</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Columbia/MLK Intersection Improvements, Phase 2</td>
+<td>Columbia/MLK, NE</td>
+<td>Intersection and signalization improvements with a dedicated northbound right turn lane, a second dedicated southbound left turn lane, wider sidewalks adjacent to the roadway, and improvements to the geometry of the existing southbound through/right turn lane.</td>
+<td>$12,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40114</td>
+<td>Portland</td>
+<td>Portland / Port</td>
+<td>Columbia Slough Trail Gaps</td>
+<td>Columbia Slough Trail, N/NE</td>
+<td>Close gaps in Columbia Slough Trail:  North Portland Greenway to North Portland Rd; Vancouver to 47th; Elrod to Marine Dr; I-205 to 158th.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40115</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>60th Ave MAX Station Area Improvements</td>
+<td>60th Ave MAX Station Area, NE</td>
+<td>Implement pedestrian and bicycle improvements in the 60th Ave MAX Station Area identified in the Eastside MAX Station Area Communities Project.</td>
+<td>$7,570,723</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40116</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 7th/9th Ave Neighborhood Greenway</td>
+<td>7th/9th Ave, NE (Weidler - Holman)</td>
+<td>Design and implement a neighborhood greenway along the NE 7th/9th Ave corridor from Weidler to Holman (alignment to be determined during design phase), using traffic calming treatments as needed to meet recommended performance guidelines for neighborhood greenways and adjacent local streets.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40117</td>
+<td>Portland</td>
+<td>Railroad/ODOT</td>
+<td>Sullivan's Gulch Trail, Segment 2</td>
+<td>Banfield Corridor, NE (21st - Hollywood)</td>
+<td>Construct a multi-use trail for pedestrians and bicycles within the Banfield (I-84) Corridor from 21st Ave to the Hollywood Transit Center.</td>
+<td>$7,700,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40118.1</td>
+<td>Portland</td>
+<td>Railroad</td>
+<td>Sullivan's Gulch Trail, Segment 3</td>
+<td>Banfield Corridor, NE (Hollywood - Broadway)</td>
+<td>Construct a multi-use trail for pedestrians and bicycles within the Banfield (I-84) Corridor from the Hollywood Transit Center to NE Broadway.</td>
+<td>$9,200,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40118.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sullivan's Gulch Trail, Segment 4</td>
+<td>Broadway / Jonesmore / Schuyler, NE (62nd - 92nd)</td>
+<td>Construct a multi-use trail for pedestrians and bicycles along Broadway and Jonesmore adjacent to the I-84 sound wall, with an improved crossing of 74th Ave. Provide neighborhood greenway bikeway connections west to 62nd &amp; Hancock and east to 92nd &amp; Schuyler, with an improved crossing of 82nd Ave..</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40118.3</td>
+<td>Portland</td>
+<td>Railroad</td>
+<td>Sullivan's Gulch Trail, Segment 5</td>
+<td>Banfield Corridor, NE (Jonesmore - Halsey)</td>
+<td>Construct a multi-use trail for pedestrians and bicycles within the Banfield (I-84) Corridor from Jonesmore to Halsey.</td>
+<td>$3,600,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40119</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Sullivan's Gulch Trail, Segment 6</td>
+<td>Banfield Corridor, NE (92nd - I-205 Path)</td>
+<td>Construct a multi-use trail for pedestrians and bicycles underneath the I-205 structure, connecting to the I-205 Path and Gateway Green. Provide a bikeway connection to 92nd Ave via NE Halsey St Frontage Road.</td>
+<td>$3,377,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40120</td>
+<td>Port</td>
+<td>Port</td>
+<td>Airport Way Terminal  Entrance Roadway Relocation</td>
+<td>PDX Terminal Area</td>
+<td>Relocate and widen Airport Way northerly at Terminal entrance  (to be scoped by PDX Master Plan).</td>
+<td>$12,818,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40121</td>
+<td>Port</td>
+<td>Port</td>
+<td>PDX Transportation Demand Management (TDM)</td>
+<td>PDX and PIC, NE</td>
+<td>Implement strategies at PDX and PIC properties that reduce auto trips in the airport area.  Programs to be undertaken with other area businesses/developers to maximize effectiveness; possible administration through a transportation management association.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40122</td>
+<td>Port</td>
+<td>Port</td>
+<td>Airport Way East Terminal Access Link Roadway</td>
+<td>PDX</td>
+<td>Construct Airport Way East Terminal access link roadway. Facilitates direct East Terminal Access, preventing failure of Main Terminal Roadway</td>
+<td>$19,092,300</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>40123</td>
+<td>Region</td>
+<td>Portland</td>
+<td>Cully Blvd Rail Overcrossing</td>
+<td>Cully Blvd, NE (over Kenton Line railroad)</td>
+<td>Construct roadway overcrossing at NE Cully Blvd. over Kenton line.</td>
+<td>$35,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40124</td>
+<td>Port</td>
+<td>Port</td>
+<td>Northside Redevelopment</td>
+<td>PDX Airport</td>
+<td>Construct a new apron for business aviation.</td>
+<td>$5,800,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40125</td>
+<td>Port</td>
+<td>Port</td>
+<td>Terminal Exit Roadway Lanes</td>
+<td>PDX Airport</td>
+<td>Add new lanes at Post Office Curves and Parking Plaza to provide additional capacity for anticipated growth in passenger traffic.</td>
+<td>$2,604,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40126</td>
+<td>Port</td>
+<td>Port</td>
+<td>Airport Way Westbound Approaching Return Road</td>
+<td>PDX Airport</td>
+<td>Add new lane to provide additional capacity for anticipated growth in passenger traffic.</td>
+<td>$1,080,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40127</td>
+<td>Port</td>
+<td>Port</td>
+<td>Terminal Deplaning Curbside Roadway Lanes</td>
+<td>PDX Airport</td>
+<td>Add new lane to provide additional capacity for anticipated growth in passenger traffic.</td>
+<td>$2,976,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40128</td>
+<td>Port</td>
+<td>Port</td>
+<td>Terminal Enplaning Rdwy Expansion</td>
+<td>PDX Airport</td>
+<td>Add one lane on the approach and one lane on the exit to the terminal upper roadway</td>
+<td>$3,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>40129</td>
+<td>Port</td>
+<td>Port</td>
+<td>Airport Way Outbound Roadway Widening</td>
+<td>PDX Airport</td>
+<td>Add new lane in outbound direction east of 82nd to provide additional capacity for anticipated growth in passenger traffic.</td>
+<td>$3,335,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40130</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>MLK Streetcar Extension</td>
+<td>MLK Jr Blvd, NE (Broadway - Killingsworth)</td>
+<td>Public outreach, planning, design, engineering, and construction for future streetcar extension from Lloyd District to NE Portland.</td>
+<td>$65,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40131</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Hollywood Streetcar Extension</td>
+<td>Sandy Blvd, NE (14th - 42nd); Burnside St, E (Grand - 14th); Broadway/Weidler, NE (Grand - 42nd)</td>
+<td>Alternatives analysis, public outreach, planning, design, engineering, and construction for future streetcar extension from Central City to Hollywood Town Center via either Sandy Blvd or Broadway/Weidler.</td>
+<td>$70,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>50001</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Parkrose Connectivity Improvements</td>
+<td>102nd and 109th, NE (Killingsworth - Sandy); Killingsworth, NE (109nd - 102nd)</td>
+<td>Supplement access route for commercial properties in Parkrose by creating a loop road connection serving truck access functions, pedestrian, and bike connections.</td>
+<td>$10,612,379</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>50003</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>102nd Ave Streetscape Improvements, Phase 3</td>
+<td>102nd Ave, SE (Burnside - Washington)</td>
+<td>Implement Gateway regional center plan with boulevard design retrofit, new traffic signals, improved pedestrian facilities and crossings, street lighting and new bicycle facilities.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50004</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 102nd Ave Corridor Improvements</td>
+<td>102nd Ave, NE (Sandy - Weidler)</td>
+<td>Construct sidewalks and improved crossings, install bicycle facilities, and make traffic safety improvements.</td>
+<td>$5,224,878</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>122nd Ave ITS</td>
+<td>122nd Ave, NE/SE (Airport Way - Powell)</td>
+<td>Install needed ITS infrastructure (communication network, new traffic controllers, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system.</td>
+<td>$515,703</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50009</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 148th Ave Safety Improvements</td>
+<td>148th Ave, NE (Airport Way - Sacramento)</td>
+<td>Design and implement pedestrian and bicycle facilities, including intersection crossing improvements at 148th &amp; Sandy. Improve traffic safety by addressing line of sight issues just north of I-84.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50012</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 162nd Ave Bikeway</td>
+<td>162nd Ave, NE (Sandy - Thompson)</td>
+<td>Design and implement separated in-roadway bicycle facilities.</td>
+<td>$4,107,779</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50014.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway 99th Ave Streetscape Improvements</td>
+<td>99th Ave, NE (Stark - Pacific)</td>
+<td>Construct streetscape improvements including wider sidewalks, lighting, street trees, center turn lane, bike lanes, and new signals.</td>
+<td>$26,947,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50014.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway Pacific St Streetscape Improvements</td>
+<td>Pacific St, NE (99th - 102nd)</td>
+<td>Construct streetscape improvements including wider sidewalks, lighting, street trees, center turn lane, bike lanes, and new signals.</td>
+<td>$7,540,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>50015</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway 99th/96th Streetscape Improvements</td>
+<td>99th/96th Ave, SE (Stark - Market)</td>
+<td>Construct streetscape improvements including wider sidewalks, lighting, street trees, center turn lane, bike lanes, and new signals.</td>
+<td>$4,209,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50016</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Airport Way ITS</td>
+<td>Airport Way, NE (I-205 - 158th)</td>
+<td>Install needed ITS infrastructure (communication network, new traffic controllers, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system.</td>
+<td>$278,251</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50019</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway Local Street Improvements, Phase 1</td>
+<td>Gateway Regional Center, NE/SE</td>
+<td>High priority local street and pedestrian improvements in regional center.</td>
+<td>$8,418,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50020</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway Local Street Improvements, Phase 2</td>
+<td>Gateway Regional Center, NE/SE</td>
+<td>High priority local street and pedestrian improvements in regional center.</td>
+<td>$8,418,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50022</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway Regional Center TSM</td>
+<td>Gateway Regional Center, NE/SE</td>
+<td>Implement a comprehensive traffic management plan throughout the regional center to reduce cut-through traffic on residential streets and improve traffic flow on regional streets. Project includes utility improvements.</td>
+<td>$1,944,558</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50024</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway--Glisan Streetscape Improvements</td>
+<td>Glisan St, NE (I-205 - 106th)</td>
+<td>Implement Gateway regional center plan with boulevard design retrofit, new traffic signals, bike facilities, improved pedestrian facilities and crossings, and street lighting.</td>
+<td>$3,240,930</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50025</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Glisan Safety and Streetscape Improvements</td>
+<td>Glisan St, NE (122nd - City Limits)</td>
+<td>Install bicycle facilities on existing street. Install street trees (requires sidewalk widening, curb extensions, and/or bioswales). Install a signal at 131st Pl to improve pedestrian and vehicular access to Glisan St.</td>
+<td>$1,963,022</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50027</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>San Rafael Pedestrian Improvements</td>
+<td>Halsey - San Rafael &amp; 118th - 132nd, NE</td>
+<td>Improve pedestrian access to the San Rafael Shopping Center, including street trees.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50028</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Halsey Pedestrian Improvements</td>
+<td>Halsey St, NE (122nd-162nd)</td>
+<td>Construct sidewalks, crossing improvements for pedestrian travel, and access to transit improvements.</td>
+<td>$6,389,475</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50030</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marine Dr &amp; 122nd Intersection Improvements</td>
+<td>Marine Dr &amp; 122nd, NE</td>
+<td>Signalize and widen dike to install left turn lane on Marine Drive.</td>
+<td>$2,361,249</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50032</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Parkrose Pedestrian Improvements</td>
+<td>105th Ave, NE (Sandy - Skidmore)</td>
+<td>Construct sidewalk and crossing improvements to provide access to transit and schools.</td>
+<td>$1,277,895</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50035</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Outer Sandy Blvd Corridor Improvements</td>
+<td>Sandy Blvd, NE (141st - City Limits)</td>
+<td>Widen street to three lanes with a sidewalk and bike lanes. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$2,751,900</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50037</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>San Rafael/Tillamook Neighborhood Greenway</td>
+<td>San Rafael/Tillamook, NE (108th - 148th)</td>
+<td>Design and implement a neighborhood greenway, with improved crossings at major streets.</td>
+<td>$1,777,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50038</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Parkrose Heights Pedestrian Improvements</td>
+<td>San Rafael, NE (111th-122nd); 111th Ave/Dr, NE (Klickitat - Halsey)</td>
+<td>Construct a sidewalk and crossing improvements to provide access to transit and schools.</td>
+<td>$5,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50039</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Halsey/Weidler Streetscape Improvements</td>
+<td>Halsey/Weidler, NE (I-205 - 114th)</td>
+<td>Implement Gateway Regional Center Plan boulevard design including new traffic signals, improved pedestrian facilities and crossings and street lighting.</td>
+<td>$16,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>50041</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marine Drive Trail Gaps</td>
+<td>Marine Dr, N/NE (I-5 - 185th)</td>
+<td>Close gaps in Marine Dr Trail.</td>
+<td>$1,077,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50044</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Parkrose Neighborhood Greenway</td>
+<td>Fremont St/Ct, NE (102nd - 115th); 115th Ave, NE (Fremont Ct - Sandy); New trail (I-205 Path - Fremont)</td>
+<td>Design and implement a neighborhood greenway. Project includes a multi-use path and bridge from I-205 Path to NE Fremont St and sidepath along the south side of NE Fremont St.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50045</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Woodland Park Neighborhood Greenway</td>
+<td>Multnomah St, NE (Gateway Transit Center - 99th); 99th Ave, NE (Multnomah - Halsey); Halsey St, NE (99th - 100th); 100th/Weidler/101st/Bell/102nd, NE (Halsey - Tillamook); Tillamook St, NE (102nd - 108th)</td>
+<td>Design and implement a neighborhood greenway. Project potentially includes cycle tracks on 99th, Halsey, and 102nd.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50046</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Knott/Russell Neighborhood Greenway</td>
+<td>Knott/Russell/Brazee/Sacramento/Thompson, NE (102nd - 162nd)</td>
+<td>Design and implement a neighborhood greenway. Project includes crossing improvements at 102nd, 122nd, and 148th.</td>
+<td>$292,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50047</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Holladay/Oregon/Pacific (HOP) Greenway</td>
+<td>Holladay/Oregon/Pacific, NE (Gateway TC - East Holladay Park)</td>
+<td>Design and implement a neighborhood greenway. Project includes crossing improvements at 102nd and 122nd and improvement of gravel streets at Oregon (110th - 111th) and Holladay (118th - 119th).</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50049</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>122nd Ave Corridor Improvements</td>
+<td>122nd Ave, NE/SE (Sandy - Foster)</td>
+<td>Design and implement multimodal improvements to sidewalks, crossings, bicycle facilities, transit stops, striping, and signals to enhance ped/bike safety, access to transit, and transit operations. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$8,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50050</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>East Fremont Bikeway</td>
+<td>Fremont St, NE (122nd - 141st)</td>
+<td>Design and implement bicycle facilities, with traffic calming elements as needed.</td>
+<td>$951,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50051</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>East Shaver Bikeway</td>
+<td>Shaver St, NE (I-205 Path - 141st Dr)</td>
+<td>Design and implement bicycle facilities, with traffic calming elements as needed.</td>
+<td>$529,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>50053</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NE 148th Ave Sidewalk Infill</td>
+<td>148th Ave, NE (Halsey - Glisan)</td>
+<td>Construct a 6-foot curb-tight sidewalk on the west side of the street.</td>
+<td>$891,332</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>50054</td>
+<td>Portland / Gresham</td>
+<td>Portland / Gresham</td>
+<td>Gresham-Fairview Trail, Phase 5</td>
+<td>Sandy - Marine, NE (on or near 185th Ave)</td>
+<td>Design and construct a multi-use path connecting Sandy Blvd and Marine Dr (Segment E in Gresham Fairview Trail Master Plan).</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>60004</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>NW Bridge Ave Multi-use Path</td>
+<td>Bridge Ave, NW (St Helens Rd - St Helens Rd)</td>
+<td>Construct a multi-use path along Bridge Avenue between both St Helens Rd intersections.</td>
+<td>$1,447,178</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>60005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Barnes &amp; Burnside Intersection Improvements</td>
+<td>Barnes/Burnside, NW</td>
+<td>Install a signal or 4-way stop at Barnes &amp; Burnside near the Wildwood Trail and Pittock Mansion entrance.</td>
+<td>$458,650</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60006</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer W Burnside Corridor Improvements</td>
+<td>Burnside St, W (23rd - Skyline)</td>
+<td>Widen street to add bicycle facilities, improve sidewalks, lighting, and crossings.</td>
+<td>$11,723,745</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60007</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Cornell Bikeway</td>
+<td>Cornell, NW (30th - City Limits)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$19,171,451</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60008</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW Everett/Glisan Corridor Improvements</td>
+<td>Everett/Glisan, NW (Broadway - 23rd)</td>
+<td>Install improved pedestrian crossings, remodel traffic signals, improve signage at freeway crossings, install new and/or enhance existing bicycle facilities, and provide additional improvements along the corridor to improve safety at high crash locations.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>60012</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Kittridge Bridge Seismic Retrofit</td>
+<td>Kittridge Ave, NW (Front - Yeon)</td>
+<td>Retrofit existing seismically vulnerable bridge (#010) across railroad tracks to ensure emergency response and access to petroleum supplies located along the Willamette River in the event of an earthquake.</td>
+<td>$15,249,213</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60015</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Skyline Bikeway</td>
+<td>Skyline, NW (Hwy 26 - City Limits)</td>
+<td>Widen street in order to add bicycle facilities and gravel shoulders.</td>
+<td>$8,088,812</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60018</td>
+<td>Portland</td>
+<td>ODOT / Railroad</td>
+<td>Willbridge Industrial Area Rail Overcrossing</td>
+<td>Willbridge Industrial Area, NW (St Helens Rd - Front Ave)</td>
+<td>Provide an alternative crossing of the BNSF Railroad to improve connectivity and safety between US 30 and the industrial properties served by NW Front Avenue in the Willbridge area of the NW Industrial District.</td>
+<td>$23,113,022</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60019</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>NW St Helens Rd Safety Improvements</td>
+<td>St Helens Rd, NW (107th - Kittridge)</td>
+<td>Design and implement pedestrian and bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>60023</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Yeon/St Helens ITS</td>
+<td>Yeon/St Helens, NW (US30)</td>
+<td>Install needed ITS infrastructure (communication network, new traffic controllers, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system.</td>
+<td>$885,499</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>60024</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Wildwood Trail Bridge</td>
+<td>Wildwood Trail &amp; Burnside, W</td>
+<td>Construct a pedestrian overcrossing or signalized at-grade pedestrian crossing where Burnside intersects the Wildwood Trail.</td>
+<td>$2,126,948</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>60025</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Fairview Blvd Bikeway</td>
+<td>Fairview Blvd, SW (Kingston - Skyline)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$13,479,832</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60027</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>Con-way Access Improvements</td>
+<td>20th Ave, NW (Upshur - Raleigh); 23rd &amp; Vaughn, NW</td>
+<td>Extend and improve NW 20th Ave from Upshur to Raleigh and improve the intersection of 23rd &amp; Vaughn in accordance with the adopted Northwest Master Plan for Con-way Site.</td>
+<td>$4,300,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>60029</td>
+<td>Portland</td>
+<td>Multnomah County</td>
+<td>NW Miller Rd Bikeway</td>
+<td>Miller, NW (Stark - Cornell)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$5,392,035</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>60030</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>NW/SW 20th Ave Neighborhood Greenway</td>
+<td>20th Ave, NW/SW (Mill - Raleigh)</td>
+<td>Design and implement a neighborhood greenway, with traffic calming and improved crossings as needed.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>60031</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>W Burnside &amp; Skyline Intersection Improvements</td>
+<td>Burnside/Skyline, NW/SW</td>
+<td>Construct intersection improvements at both legs of the double intersection to improve safety for all modes.</td>
+<td>$1,850,716</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>60033</td>
+<td>Port</td>
+<td>Port</td>
+<td>T2 Redevelopment</td>
+<td>Terminal 2</td>
+<td>Construct  rail, rail scale, and crane modernization.</td>
+<td>$4,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>60034</td>
+<td>Port</td>
+<td>Port</td>
+<td>T2 Track Reconfiguration and Siding</td>
+<td>Terminal 2</td>
+<td>Construct rail loops and support siding.</td>
+<td>$8,900,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>60035</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Montgomery Park Streetcar Extension</td>
+<td>NW 18th/19th Ave to Montgomery Park (various route options)</td>
+<td>Public outreach, planning, design, engineering, and construction for future streetcar extension from NW 18th/19th Ave to Montgomery Park.</td>
+<td>$35,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70001</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 13th Ave Streetscape Improvements</td>
+<td>13th Ave, SE (Malden - Tacoma)</td>
+<td>Plan and implement streetscape and transportation improvements, including crossing improvements, to increase opportunities to walk and enhance the main street character.</td>
+<td>$2,223,555</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Cesar Chavez Corridor Improvements</td>
+<td>Cesar Chavez Blvd, NE/SE (Sandy - Woodstock)</td>
+<td>Repair street, upgrade sidewalks, and add pedestrian/bicycle crossing improvements. Upgrade signals and make striping changes to improve traffic safety and transit operations.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70006</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>60th Ave Corridor Improvements</td>
+<td>60th Ave, NE/SE (Glisan - Belmont)</td>
+<td>Design and implement signal and intersection improvements to improve safety. Includes the intersections with Belmont, Stark, Burnside, and Glisan.</td>
+<td>$2,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70008</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 92nd Ave Bikeway</td>
+<td>92nd Ave, SE (Holgate - Woodstock)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70009</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Belmont Streetscape Improvements</td>
+<td>Belmont St, SE (25th - 43rd)</td>
+<td>Design and implement streetscape improvements to enhance sidewalks, lighting, crossings, transit stops, and signals.</td>
+<td>$5,722,698</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70010</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner E Burnside Ped/Bike Improvements</td>
+<td>Burnside St, E (28th - 82nd)</td>
+<td>Design and implement bicycle facilities and improve pedestrian crossings to provide access to schools and transit.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70013</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Division Corridor Improvements, Phase 2</td>
+<td>Division St, SE (Cesar Chavez - 60th)</td>
+<td>Design and implement streetscape improvements to enhance sidewalks, lighting, crossings, access to transit, transit stops, and signals. Add separated in-roadway bicycle facilities (52nd - 60th).</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70014</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Division Corridor Improvements, Phase 3</td>
+<td>Division St, SE (60th - I-205)</td>
+<td>Construct improvements that enhance access to transit, improve safety and enhance the streetscape such as traffic signals, lighting, bus shelters, benches, and crossings.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70015</td>
+<td>Portland</td>
+<td>TriMet</td>
+<td>SE Division St Transit Improvements</td>
+<td>Division St, SE (7th - City Limits)</td>
+<td>Provide capital improvements that benefit frequent bus service along Division from downtown Portland to Gresham.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70017</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Ellis Ped/Bike Improvements</td>
+<td>Ellis St, SE (92nd - Foster)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$2,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70019</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Flavel Dr Roadway Improvements</td>
+<td>Flavel Dr, SE (45th - Clatsop)</td>
+<td>Fully improve street from SE 45th to Clatsop Street with travel lanes, curbs, swales, sidewalks, and separated in-roadway bicycle facilities from 52nd to Clatsop.</td>
+<td>$7,294,088</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70020</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Flavel St Pedestrian Improvements</td>
+<td>Flavel St, SE (82nd - 92nd)</td>
+<td>Construct sidewalks and crossing improvements.</td>
+<td>$1,277,895</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70021</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Foster Road Corridor Improvements</td>
+<td>Foster Rd, SE (Powell - 90th)</td>
+<td>Improve sidewalks, lighting, crossings, bus shelters, and benches on Foster and improve pedestrian crossings to benefit access to transit. Install separated in-roadway bicycle facilities and widen substandard sidewalks.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70024</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Lents Town Center Improvements, Phase 2</td>
+<td>Foster/Woodstock, SE (94th - 101st)</td>
+<td>Implement Lents Town Center Business District Transportation Plan with new traffic signals, pedestrian amenities, wider sidewalks, pedestrian crossings, and street lighting.</td>
+<td>$11,510,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70027</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Harney Dr Bikeway</td>
+<td>Harney Dr, SE (52nd - Flavel)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,252,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70028</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Harold St Bikeway</td>
+<td>Harold St, SE (52nd - Foster)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,414,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70030</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>SE McLoughlin Blvd Roadway Improvements</td>
+<td>McLoughlin Blvd, SE (Ross Island Bridge - Tacoma)</td>
+<td>Provide access management, operational improvements, and safety improvements from Ross Island Bridge to Harold. Widen to six lanes from Harold to Tacoma and construct pedestrian and bike facilities.</td>
+<td>$96,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70031</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Middle Holgate Bikeway</td>
+<td>Holgate Blvd, SE (52nd - I-205)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70032</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Holgate Blvd Corridor Improvements</td>
+<td>Holgate Blvd, SE (39th - 52nd)</td>
+<td>Reconstruct pavement structure and stormwater drainage facilities, improve corner curb ramps to ADA standards, improve pedestrian crossings, and add bicycle facilities.</td>
+<td>$3,995,925</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70033</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Holgate Bikeway</td>
+<td>Holgate Blvd, SE (McLoughlin - 39th)</td>
+<td>Design and implement bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70034</td>
+<td>Portland/ODOT</td>
+<td>ODOT</td>
+<td>I-205 Multi-use Path Crossings</td>
+<td>I-205 Multi-Use Path &amp; Glisan, NE; I-205 Multi-Use Path &amp; Stark/Washington, SE</td>
+<td>Improve crossings and access to I-205 multi-use path at Glisan, Stark/Washington, and other intersections as needed.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70041</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Milwaukie Streetscape Improvements</td>
+<td>Milwaukie Ave, SE (Gideon - Mall)</td>
+<td>Design and implement streetscape improvements to enhance sidewalks, lighting, crossings, transit stops, and signals.</td>
+<td>$4,838,299</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70042</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Milwaukie Streetscape Improvements</td>
+<td>Milwaukie Ave, SE (Yukon - Tacoma)</td>
+<td>Design and implement streetscape improvements to enhance sidewalks, lighting, crossings, transit stops, and signals.</td>
+<td>$5,386,378</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70044</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Mt Scott Blvd Ped/Bike Improvements</td>
+<td>Flavel / Mt Scott Blvd, SE (92nd - 112th)</td>
+<td>Build a continuous walkway for pedestrian travel and access to transit with crossing improvements at transit stop locations. Design and implement bicycle facilities.</td>
+<td>$4,676,654</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>70045</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Inner Powell Blvd Corridor Improvements</td>
+<td>Powell Blvd, SE (Ross Island Bridge - 50th)</td>
+<td>Retrofit existing street with multimodal safety improvements including enhanced pedestrian and bicycle crossings, pedestrian and bike activated signals, median islands with trees, redesign of selected intersections and stormwater management facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$7,997,100</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70046</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Inner Powell Bikeway</td>
+<td>Powell Blvd, SE (71st - I-205)</td>
+<td>Design and implement bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$4,767,667</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70047</td>
+<td>Portland</td>
+<td>TriMet</td>
+<td>Foster Rd Transit Improvements</td>
+<td>Foster Rd, SE (Powell - 90th)</td>
+<td>Construct improvements that enhance frequent bus service along Foster Rd.</td>
+<td>$667,784</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70049</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Reedway Ped/Bike Overcrossing</td>
+<td>Reedway St, SE (23rd - 26th)</td>
+<td>Construct a pedestrian/bicycle overcrossing of McLoughlin Blvd, light rail, and railroad tracks.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70050</td>
+<td>Multnomah County</td>
+<td>Multnomah County</td>
+<td>Sellwood Bridge Replacement</td>
+<td>Sellwood Bridge, SE/SW</td>
+<td>Replace weight-restricted bridge.</td>
+<td>$88,776,380</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70052</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Seventies Bikeway</td>
+<td>74th to 80th Aves, NE/SE (I-84 - Clatsop)</td>
+<td>Design and implement a bikeway using neighborhood greenway and/or separated in-roadway treatments, with crossing improvements as needed at major streets.</td>
+<td>$2,818,037</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70053</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Springwater Gap Trail</td>
+<td>Springwater Corridor, SE (Umatilla - 19th)</td>
+<td>Construct trail-with-rail multi-use path between Umatilla and 19th to fill in the &quot;Springwater Gap.&quot;</td>
+<td>$3,032,411</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70055</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Tacoma Main Street Improvements</td>
+<td>Tacoma St, SE (Sellwood Bridge - McLoughlin)</td>
+<td>Implement boulevard design based on Tacoma Main Street study recommendations and incorporate McLoughlin Neighborhoods Project recommendations.</td>
+<td>$5,842,113</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70057</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Tacoma St ITS</td>
+<td>Tacoma St, SE (Sellwood Bridge - 45th/Johnson Creek)</td>
+<td>Communications infrastructure; closed circuit TV cameras, variable message signs for remote monitoring and control of traffic flow for four signals.</td>
+<td>$231,495</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70059</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Glisan Bikeway</td>
+<td>Glisan St, NE (47th - I-205)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$5,352,131</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70070</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 14th/15th Neighborhood Greenway</td>
+<td>14th/15th Ave, SE (Ellis - Linn)</td>
+<td>Design and implement a neighborhood greenway including jogs on Malden, Tolman, and Ellisa.</td>
+<td>$688,530</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70071</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sixties Neighborhood Greenway</td>
+<td>60s Aves, NE/SE (Hancock - Springwater Trail)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70072</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Washington Bikeway Gap</td>
+<td>Washington St, SE (76th - 92nd)</td>
+<td>Design and implement bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$783,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70073</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 34th Ave Neighborhood Greenway</td>
+<td>34th Ave, SE (Gladstone - Burnside)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$540,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70074</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner SE Steele Bikeway</td>
+<td>Steele St, SE (33rd - 52nd)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,077,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70075</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Knapp/Ogden Neighborhood Greenway</td>
+<td>Knapp/Ogden, SE (27th - 92nd)</td>
+<td>Design and implement a neighborhood greenway.</td>
+<td>$882,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70076</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>PMLR Active Transportation Improvements</td>
+<td>Portland-Milwaukie Light Rail Corridor, SE</td>
+<td>Construct a shared-use path along SE McLoughlin Blvd from 17th Ave to the Springwater Corridor Trail and build a bicycle parking center at the Tacoma/Springwater light rail station. This project will be coordinated with ODOT to determine the alignment along McLoughlin Blvd.</td>
+<td>$8,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70077</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 9th Ave Bikeway</td>
+<td>9th Ave, SE (Division - Center); Center St, SE (9th - 17th)</td>
+<td>Design and implement a neighborhood greenway on 9th Ave, with separated bicycle facility segments and crossing improvements as needed.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70078</td>
+<td>Portland</td>
+<td>Portland/ODOT</td>
+<td>I-84 Active Corridor Management</td>
+<td>I-84/Powell/Glisan/Sandy</td>
+<td>This project expands traveler information and enables incident management techniques that reduce traveler delay and improve safety through the I-84 corridor.</td>
+<td>$1,207,937</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70079</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Glisan St Bridge Replacement</td>
+<td>Glisan St, NE (over abandoned railroad at 90th Ave)</td>
+<td>Replace existing poor-condition, weight-restricted bridge (#033) to ensure continued use by trucks, transit, and emergency response.</td>
+<td>$975,800</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70080</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Interstate 205 Southbound Auxiliary Lane</td>
+<td>I-205, NE/SE (I-84 - Stark/Washington)</td>
+<td>Extend existing auxiliary lane.</td>
+<td>$8,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70081</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 21st Ave Bikeway</td>
+<td>21st Ave, SE (Clinton - Gladstone)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>70083</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Thorburn / Gilham Safety Improvements</td>
+<td>Thorburn St, SE (62nd - 74th); Gilham Ave, SE (Burnside - Thorburn)</td>
+<td>Design and implement a pedestrian walkway, improved crossings, and traffic calming elements.</td>
+<td>$3,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>70084</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Belmont/Morrison Bikeway</td>
+<td>Belmont/Morrison St, SE (12th - 34th)</td>
+<td>Design and implement an east-west bikeway along the Belmont/Morrison corridor from 12th to 34th.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80001</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Cherry Blossom/112th/111th Ped/Bike Improvements</td>
+<td>Cherry Blossom / 112th Ave / 111th Ave, SE (Washington - Mt Scott Blvd)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$2,070,127</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80004</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 136th Ave Ped/Bike Improvements</td>
+<td>136th Ave, SE (Division - Foster)</td>
+<td>Construct missing sidewalks on both sides of the street and add bicycle facilities.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 148th Ave Pedestrian Improvements</td>
+<td>148th Ave, SE (Division - Powell Butte Park)</td>
+<td>Construct sidewalks, curbs, and drainage improvements.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80009</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Division Corridor Improvements</td>
+<td>Division St, SE (I-205 - 174th)</td>
+<td>Construct streetscape improvements to enhance sidewalks, lighting, crossings, bus shelters and benches, and bicycle facilties.</td>
+<td>$5,710,912</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80010</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Foster Rd Pedestrian Improvements</td>
+<td>Foster Rd, SE (102nd - Foster Pl)</td>
+<td>Construct sidewalks and crossing improvements to facilitate pedestrian travel and access to transit.</td>
+<td>$1,403,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80012</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Holgate Ped/Bike Improvements</td>
+<td>Holgate Blvd, SE (92nd - 136th)</td>
+<td>Construct sidewalks and crossing improvements to facilitate pedestrian travel and access to transit. Extend bicycle facilities from 130th to 136th.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80014</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Mill Park Pedestrian Improvements</td>
+<td>Market St, SE (96th - 130th); Mill St, SE (130th - 148th); 101st Ave, SE (Market - Division); 117th Ave, SE (Stark - Division); 130th Ave, SE (Stark - Division)</td>
+<td>Construct sidewalks and crossing improvements to enhance pedestrian travel and access to transit and schools.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80015</td>
+<td>ODOT/Portland</td>
+<td>ODOT</td>
+<td>Outer Powell Blvd Corridor Improvements, Phase 1</td>
+<td>Powell Blvd, SE (116th - 136th)</td>
+<td>Widen street to three lanes (inclusive of a center turn lane) with sidewalks and buffered bike lanes or other enhanced bike facility. Add enhanced pedestrian and bike crossings.</td>
+<td>$24,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80016</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Powellhurst/Gilbert Pedestrian Improvements</td>
+<td>Ramona St, SE (122nd - 136th); Harold St, SE (102nd-128th); Boise St, SE (116th - 127th); 103rd/104th Ave, SE (Powell-Foster); 130th Ave, SE (Powell - Holgate)</td>
+<td>Construct sidewalks, curbs, and drainage, as well as crossing improvements to enhance pedestrian travel and access to transit and schools.</td>
+<td>$10,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80017</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Stark Ped/Bike Improvements</td>
+<td>Stark, SE (108th - City Limits)</td>
+<td>Construct sidewalks and crossing improvements and provide bicycle facilities. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$8,209,130</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80018</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Gateway--Stark/Washington Streetscape Improvements</td>
+<td>Stark/Washington, SE (92nd - 111th)</td>
+<td>Implement Gateway regional center plan with boulevard design retrofit including new traffic signals, improved pedestrian facilities and crossings, and street lighting. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$6,157,767</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80020</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>4M Bikeway</td>
+<td>Market / Mill / Millmain / Main, SE (I-205 - 174th)</td>
+<td>Design and implement a bikeway, with improved crossings at major streets.</td>
+<td>$1,750,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80021</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE Clatsop St Corridor Improvements</td>
+<td>Clatsop, SE (Deardorf / 132nd - 162nd)</td>
+<td>Design and implement multimodal improvements based on Pleasant Valley Concept and Implementation Plan recommendations.</td>
+<td>$7,013,394</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>80023</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>162nd &amp; Clatsop Intersection Improvements</td>
+<td>162nd &amp; Clatsop, SE</td>
+<td>Install a signal at the intersection.</td>
+<td>$500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>80024</td>
+<td>Portland</td>
+<td>Multnomah Co / Clackamas Co</td>
+<td>Clatsop Street Extension</td>
+<td>Clatsop, SE (162nd - Cheldelin Rd)</td>
+<td>Extend street east into Pleasant Valley based on the Pleasant Valley Implementation Plan.</td>
+<td>$4,202,582</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>80025</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Pleasant Valley Foster Rd  Extension</td>
+<td>Foster Rd, SE (Jenne - Giese Rd)</td>
+<td>Design and implement multimodal improvements based on the Pleasant Valley Implementation Plan recommendations.</td>
+<td>$2,525,400</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>80026</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE 162nd Ave Corridor Improvements</td>
+<td>162nd, SE (Foster Rd - Clatsop)</td>
+<td>Construct multimodal improvements based on the Pleasant Valley Concept and Implementation Plan recommendations.</td>
+<td>$6,421,100</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>80028</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE/NE 135th Ave Neighborhood Greenway</td>
+<td>135th Ave, SE/NE (Division - Pacific)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$914,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80029</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE/NE 146th Ave Neighborhood Greenway</td>
+<td>146th Ave, SE/NE (Powell - Glisan)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$562,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80030</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Harold Bikeway</td>
+<td>Harold St, SE (104th - 136th)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,566,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80031</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SE/NE 117th Ave Neighborhood Greenway</td>
+<td>117th Ave, SE/NE (Springwater Trail - I-84)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$1,289,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80032</td>
+<td>ODOT/Portland</td>
+<td>ODOT</td>
+<td>Outer Powell Blvd Corridor Improvements, Phase 2</td>
+<td>Powell Blvd, SE (99th - 116th; 136th - 174th)</td>
+<td>Widen street to three lanes (inclusive of a center turn lane), or four lanes from 162nd – 174th if specific traffic conditions are met, with sidewalks and buffered bike lanes or other enhanced bike facility. Add enhanced pedestrian and bike crossings.</td>
+<td>$67,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80033</td>
+<td>Portland</td>
+<td>TriMet</td>
+<td>Eastside MAX Station Pedestrian Improvements</td>
+<td>82nd Ave, 148th Ave, &amp; 162nd Ave MAX Stations, NE/SE</td>
+<td>Retrofit existing streets along eastside MAX and at intersecting streets to include better sidewalks and crossings, curb extensions, bus shelters, and benches at 82nd, 148th, and 162nd stations.</td>
+<td>$3,156,750</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80034</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>East Portland Access to Transit</td>
+<td>Division St, SE (I-205 - 174th); 130s Aves (San Rafael - Foster)</td>
+<td>Construct SE Division St sidewalk infill and 130s Bikeway.</td>
+<td>$4,472,488</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80035</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>East Portland Access to Employment</td>
+<td>East Portland</td>
+<td>This project will build sidewalks and crossing improvements on Powell Blvd, improve sidewalks for access to transit, improve transit stops, improve transit operations, and build the 100s and 150s Neighborhood Greenways.</td>
+<td>$5,870,072</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80036</td>
+<td>TriMet</td>
+<td>TriMet</td>
+<td>Renew the Blue Station Rehabilitation</td>
+<td>Eastside MAX Light Rail Stations, NE/SE</td>
+<td>Construct station improvements at Eastside MAX Stations.</td>
+<td>$12,315,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80037</td>
+<td>TriMet</td>
+<td>Portland/ODOT</td>
+<td>Powell-Division Safety and Access to Transit</td>
+<td>Powell-Division Corridor, SE (22nd - City Limits)</td>
+<td>Construct improvements for safety, access to transit, and transit operations in the Powell-Division corridor.</td>
+<td>$2,800,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80038</td>
+<td>Gresham</td>
+<td>Portland/Multnomah Co.</td>
+<td>SE 174th N/S Improvements</td>
+<td>174th Ave, SE (Giese - 174th/Jenne)</td>
+<td>Construction of new roadway that adds n/s capacity in vicinity of 174/Jenne. This facility will have two travel lanes in each direction (total 4 travel lanes), and a median/turn lane which will be primarily a median, with left turn pockets at the intersection of the New Road/Giese, and also New Road/McKinley.</td>
+<td>$27,498,638</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>80039</td>
+<td>TriMet</td>
+<td>Portland</td>
+<td>Powell/Division HCT--Project Development</td>
+<td>Powell/Division Corridor (Portland to Gresham)</td>
+<td>Project Development through ROW acquisition/early construction for High Capacity Transit project between Portland and Gresham.</td>
+<td>$75,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80040</td>
+<td>TriMet</td>
+<td>Portland/ODOT</td>
+<td>Powell-Division Corridor HCT--Capital Construction</td>
+<td>Central City Portland to Gresham</td>
+<td>Capital construction of High Capacity Transit project between Portland and Gresham along Powell/Division Corridor.</td>
+<td>$75,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>80041</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Interstate 205 Northbound Phase 1 Auxiliary Lane</td>
+<td>I-205, NE/SE (Powell - Stark/Washington)</td>
+<td>Extend existing acceleration lane to Washington and construct 2 lane exit.</td>
+<td>$7,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>80042</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>I-205 Northbound Phase 2: Auxiliary Lane Extension</td>
+<td>I-205, NE/SE (Division - I-84)</td>
+<td>Extend existing auxiliary lane.</td>
+<td>$8,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90001</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Montgomery to Vista Bikeway</td>
+<td>12th/Broadway/Cardinell/Davenport, SW (Montgomery - Vista)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$4,135,188</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90002</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 19th / Capitol Hill Rd Safety Improvements</td>
+<td>19th, SW (Barbur - Spring Garden); Capitol Hill Rd, SW (Barbur - Bertha)</td>
+<td>Design and implement bicycle and pedestrian facilities to create a safe and convenient crossing of I-5, Multnomah Blvd, and Barbur Blvd. Design and implement enhanced shared roadway bicycle facilities on Capitol Hill Rd from Barbur to Bertha.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90003</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 25th/Kanan Pedestrian Improvements</td>
+<td>25th/Kanan, SW (23rd - Beaverton-Hillsdale Hwy)</td>
+<td>Construct a walkway for pedestrian travel and access to transit.</td>
+<td>$1,597,369</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90004</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>26th Ave Ped/Bike Improvements</td>
+<td>26th Ave, SW (30th - Taylors Ferry)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90005</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 30th Ave Ped/Bike Improvements</td>
+<td>30th Ave, SW (Vermont - Beaverton-Hillsdale Hwy)</td>
+<td>Construct a pedestrian walkway and bicycle facilities, and improve the pedestrian crossing at Beaverton-Hillsdale Hwy &amp; 30th.</td>
+<td>$1,839,333</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90006</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner SW 35th Ave Ped/Bike Improvements</td>
+<td>35th Ave, SW (Vermont - Multnomah)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$2,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90007</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer SW 35th Ave Ped/Bike Improvements</td>
+<td>35th Ave, SW (Taylors Ferry - Stephenson); Taylors Ferry, SW (35th - 26th)</td>
+<td>Add bicycle facilities, sidewalks, crossing improvements, and median islands.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90008.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 45th Ave Ped/Bike  Improvements, Segment 1</td>
+<td>45th Ave, SW (Cameron - Illinois)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$1,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90008.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 45th Ave Ped/Bike  Improvements, Segment 2</td>
+<td>45th Ave, SW (Illinois - Nevada)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90008.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 45th Ave Ped/Bike  Improvements, Segment 3</td>
+<td>45th Ave, SW (Nevada - Multnomah)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$1,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90008.4</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 45th/48th Ave Ped/Bike  Improvements</td>
+<td>45th Ave / 45th Dr / 48th Ave, SW (Multnomah - Taylors Ferry)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$4,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90011</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Pomona/64th Ped/Bike Improvements</td>
+<td>Pomona/63rd/64th, SW (61st - Barbur)</td>
+<td>Construct sidewalks and bicycle facilities.</td>
+<td>$2,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90012</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 62nd/61st Ped/Bike Improvements</td>
+<td>62nd/61st, SW (Taylors Ferry - Pomona)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$3,250,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90013</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Arnold Ped/Bike Improvements</td>
+<td>Arnold, SW (Boones Ferry - 35th)</td>
+<td>Design and implement bicycle and pedestrian facilities.</td>
+<td>$3,191,287</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90014</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Barbur Blvd ITS</td>
+<td>Barbur Blvd, SW</td>
+<td>Install intelligent transportation system infrastructure to improve safety and enhance traffic flow.</td>
+<td>$550,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90016</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Inner Barbur Corridor Improvements</td>
+<td>Barbur Blvd, SW (3rd - Terwilliger)</td>
+<td>Construct Improvements for transit, bikes and pedestrians. Transit improvements include preferential signals, pullouts, shelters, left turn lanes and sidewalks.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90017</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Outer Barbur Corridor Improvements</td>
+<td>Barbur Blvd, SW (Terwilliger - City Limits)</td>
+<td>Complete boulevard design improvements including sidewalks and street trees, safe pedestrian crossings, enhance transit access and stop locations, traffic signal at Barbur/30th, and bike lanes (Bertha - City Limits).</td>
+<td>$24,833,100</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90018</td>
+<td>TriMet</td>
+<td>ODOT</td>
+<td>Barbur/OR-99W Safety and Access to Transit</td>
+<td>Barbur Blvd, SW (Hooker - 53rd)</td>
+<td>Construct improvements for safety, access to transit, and transit operations in the Barbur corridor.</td>
+<td>$3,605,001</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90019</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Beaverton-Hillsdale Hwy ITS</td>
+<td>Beaverton-Hillsdale Hwy, SW</td>
+<td>Install needed ITS infrastructure (communication network, new traffic controllers, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system.</td>
+<td>$315,675</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90020</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Beaverton-Hillsdale Hwy Corridor Improvements</td>
+<td>Beaverton-Hillsdale Hwy, SW (Capitol Hwy - 65th)</td>
+<td>Build new sidewalks, improve crossings, and enhance access to transit. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$3,565,023</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90023</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Boones Ferry Rd Bikeway</td>
+<td>Boones Ferry Rd, SW (Terwilliger - City Limits)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$7,015,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90024</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Broadway Dr Pedestrian Improvements</td>
+<td>Broadway Dr, SW (Sherwood - Grant)</td>
+<td>Construct a walkway and crossing improvements.</td>
+<td>$4,676,654</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90025</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Cameron Rd Pedestrian Improvements</td>
+<td>Cameron Rd, SW (45th - Shattuck)</td>
+<td>Construct a walkway for pedestrian travel and access to transit.</td>
+<td>$2,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90026</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Capitol Hwy Corridor Improvements</td>
+<td>Capitol Hwy, SW (Multnomah Blvd - Taylors Ferry)</td>
+<td>Improve SW Capitol Highway from SW Multnomah Boulevard to SW Taylors Ferry Road to include a continuous sidewalk(s), safe crossings and bicycle access along the corridor.</td>
+<td>$12,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90027</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Capitol Hwy Corridor Improvements</td>
+<td>Capitol Hwy, SW (West Portland Town Center - 49th)</td>
+<td>Construct curb extensions, medians, improved crossings, and other pedestrian improvements. Make safety improvements including left turn pockets and improved signal timing.</td>
+<td>$1,553,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90028</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>B-H Hwy/Bertha/Capitol Hwy Improvements</td>
+<td>Beaverton-Hillsdale /Bertha/Capitol Hwy, SW</td>
+<td>Redesign intersection to improve safety.</td>
+<td>$1,403,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90029</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Capitol Hwy Corridor Improvements</td>
+<td>Capitol Hwy, SW (Terwilliger - Sunset)</td>
+<td>Construct sidewalks, crossing improvements for access to transit, and bike improvements, and install left turn lane at the Capitol/Burlingame intersection.</td>
+<td>$2,806,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90031.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Dosch Rd Interim Safety Improvements</td>
+<td>Dosch Rd, SW (B-H Hwy - Patton)</td>
+<td>Construct an enhanced shoulder to improve safety for all modes.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90031.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Dosch Rd Ped/Bike Improvements, Segment 1</td>
+<td>Dosch Rd, SW (B-H Hwy - Hamilton)</td>
+<td>Construct a pedestrian walkway and climbing bike lane.</td>
+<td>$3,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90031.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Dosch Rd Ped/Bike Improvements, Segment 2</td>
+<td>Dosch Rd, SW (Hamilton - Patton)</td>
+<td>Construct a pedestrian walkway and climbing bike lane.</td>
+<td>$3,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90033</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Garden Home Ped/Bike Improvements</td>
+<td>Garden Home Rd, SW (Multnomah - Capitol Hwy)</td>
+<td>Construct pedestrian and bicycle safety improvements, including drainage designed for constrained right-of-way.</td>
+<td>$1,795,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90034.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bridlemile Ped/Bike Improvements, Phase 1</td>
+<td>Hamilton St, SW (Scholls Ferry - 53rd; 48th - 45th); Shattuck Rd, SW (B-H Hwy - 53rd)</td>
+<td>Construct a pedestrian walkway, bicycle facilities, and crossing improvements.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90034.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bridlemile Ped/Bike Improvements, Phase 2</td>
+<td>Hamilton St, SW (53rd - 48th; 45th - Dosch); Shattuck Rd, SW (53rd - Hamilton)</td>
+<td>Construct a pedestrian walkway, bicycle facilities, and crossing improvements.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90034.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Bridlemile Ped/Bike Improvements, Phase 3</td>
+<td>Shattuck Rd, SW (Hamilton - Patton)</td>
+<td>Construct a pedestrian walkway, bicycle facilities, and crossing improvements.</td>
+<td>$2,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90038</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Humphrey Blvd Ped/Bike Improvements</td>
+<td>Humphrey Blvd, SW (Patton - Scholls Ferry)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$4,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90043</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Lancaster Rd Ped/Bike Improvements</td>
+<td>Lancaster Rd, SW (Taylors Ferry - Stephenson)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$10,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90046</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Macadam ITS</td>
+<td>Macadam, SW (Bancroft - Sellwood Br)</td>
+<td>Install needed ITS infrastructure (communication network, new traffic controllers, CCTV cameras, and vehicle /pedestrian detectors). These ITS devices allow us to provide more efficient and safe operation of our traffic signal system.</td>
+<td>$401,794</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90047</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>SW Macadam Ped/Bike Improvements</td>
+<td>Macadam, SW (Bancroft - County line)</td>
+<td>Improve pedestrian and bicycle crossings of Macadam and connections to the Willamette Greenway Trail. Project design will consider freight movement needs, consistent with policies, street classification(s) and uses.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90048</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Markham School Pedestrian/Bicycle Overpass</td>
+<td>SW 52nd - Markham School (bridge over I-5 and Barbur Blvd)</td>
+<td>Construct pedestrian/bicycle path and bridge over Barbur Blvd and I-5 to connect SW Alfred and SW 52nd to the rear of Markham School.</td>
+<td>$4,861,395</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90049.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marquam Hill Rd Interim Safety Improvements</td>
+<td>Marquam Hill Rd, SW (Gibbs - Fairmount)</td>
+<td>Construct an enhanced shoulder to improve safety for all modes.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90049.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marquam Hill Ped/Bike Improvements, Segment 1</td>
+<td>Gibbs St, SW (13th - 11th)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90049.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marquam Hill Ped/Bike Improvements, Segment 2</td>
+<td>Marquam Hill Rd, SW (Gibbs - Fairmount)</td>
+<td>Construct a pedestrian walkway and climbing bike lane.</td>
+<td>$2,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90050</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Multnomah Blvd Ped/Bike Improvements, Phase 2</td>
+<td>Multnomah Blvd, SW (31st - 45th)</td>
+<td>Provide separated pedestrian and bicycle facilities, along with stormwater management facilities.</td>
+<td>$5,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90052</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Palatine Hill / Primrose Bikeway</td>
+<td>Palatine Hill Rd, SW (Boones Ferry - Palater); Primrose St, SW (Terwilliger - Boones Ferry)</td>
+<td>Design and implement a bikeway from Terwilliger to Palater, including improved crossings at Primrose &amp; Terwilliger and Primrose &amp; Boones Ferry.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90053</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Palatine Street Extension</td>
+<td>Palatine St, SW (27th-Lancaster)</td>
+<td>Complete neighborhood collector to provide multimodal access to Lancaster Rd.</td>
+<td>$2,120,098</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90054.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Patton Rd Ped/Bike Improvements, Segment 1</td>
+<td>Patton Rd, SW (Vista - Talbot)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$2,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90054.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Patton Rd Ped/Bike Improvements, Segment 2</td>
+<td>Patton Rd, SW (Hewett - Shattuck)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$3,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90054.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Patton / Talbot Ped/Bike Improvements</td>
+<td>Patton Rd, SW (Talbot - Hewett); Talbot Rd, SW (Patton - Fairmount)</td>
+<td>Construct a pedestrian walkway and bicycle facilities, with improved crossings where needed.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90055</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Pomona St Ped/Bike Improvements</td>
+<td>Pomona St, SW (35th - Barbur)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$2,476,710</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90059.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Shattuck Rd Ped/Bike Improvements, Segment 1</td>
+<td>Shattuck Rd, SW (B-H Hwy - Cameron)</td>
+<td>Construct a pedestrian walkway, climbing bike lane, and crossing improvements.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90059.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Shattuck Rd Ped/Bike Improvements, Segment 2</td>
+<td>Shattuck Rd, SW (Cameron - Illinois)</td>
+<td>Construct a pedestrian walkway, climbing bike lane, and crossing improvements.</td>
+<td>$1,500,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90059.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Shattuck Rd Ped/Bike Improvements, Segment 3</td>
+<td>Shattuck Rd, SW (Illinois - Vermont)</td>
+<td>Construct a pedestrian walkway, climbing bike lane, and crossing improvements.</td>
+<td>$1,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90060</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>South Portland Corridor Improvements</td>
+<td>Naito Pkwy, SW (Arthur - Barbur)</td>
+<td>Reconstruct Naito Pkwy as a two-lane road with bicycle facilities, sidewalks, left turn pockets, and on-street parking. Includes realignment/regrading at intersecting streets; removal of Barbur tunnel, Ross Island Br ramps, Arthur/Kelly viaduct, and Grover pedestrian bridge. This project will be coordinated with ODOT and with the Southwest Corridor Plan, and will consider impacts to ODOT facilities including Naito Parkway and the Ross Island Bridge.</td>
+<td>$39,695,079</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90061</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Spring Garden St Ped/Bike Improvements</td>
+<td>Spring Garden/22nd, SW (Taylors Ferry - Multnomah)</td>
+<td>Design and implement pedestrian and bicycle facilities, including improved crossings at 22nd &amp; Barbur and 22nd &amp; Multnomah.</td>
+<td>$2,500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90062</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Stephenson Ped/Bike Improvements</td>
+<td>Stephenson, SW (Boones Ferry - 35th)</td>
+<td>Construct pedestrian and bicycle facilities.</td>
+<td>$2,374,408</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90063</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Sunset Blvd Ped/Bike Improvements</td>
+<td>Sunset Blvd, SW (Dosch - 18th)</td>
+<td>Construct a pedestrian walkway and climbing bike lane.</td>
+<td>$2,300,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90064.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Taylors Ferry Safety Improvements, Segment 1</td>
+<td>Taylors Ferry, SW (Capitol Hwy - 48th)</td>
+<td>Widen shoulder to provide bicycle climbing lane and construct a walkway for pedestrian travel and access to transit.</td>
+<td>$2,175,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90064.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Outer Taylors Ferry Safety Improvements, Segment 2</td>
+<td>Taylors Ferry, SW (48th - City Limits)</td>
+<td>Widen shoulder to provide bicycle climbing lane and construct a walkway for pedestrian travel and access to transit.</td>
+<td>$3,452,184</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90065.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Taylors Ferry Safety Improvements, Segment 1</td>
+<td>Taylors Ferry, SW (Macadam - Terwilliger)</td>
+<td>Widen shoulder to provide bicycle climbing lane and construct a walkway for pedestrian travel and access to transit.</td>
+<td>$3,530,642</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90065.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Taylors Ferry Safety Improvements, Segment 2</td>
+<td>Taylors Ferry, SW (Terwilliger - Spring Garden)</td>
+<td>Widen shoulder to provide bicycle climbing lane and construct a walkway for pedestrian travel and access to transit.</td>
+<td>$1,883,009</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90065.3</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Taylors Ferry Safety Improvements, Segment 3</td>
+<td>Taylors Ferry, SW (Spring Garden - 26th)</td>
+<td>Widen shoulder to provide bicycle climbing lane and construct a walkway for pedestrian travel and access to transit.</td>
+<td>$4,500,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90066.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Terwilliger Corridor Improvements, Segment 1</td>
+<td>Terwilliger, SW (Taylors Ferry - Palater)</td>
+<td>Construct sidewalks and bicycle facilities. Redesign intersection of Terwilliger &amp; Boones Ferry to improve safety for all modes.</td>
+<td>$4,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90066.2</td>
+<td>Portland</td>
+<td>Portland / Multnomah Co.</td>
+<td>SW Terwilliger Corridor Improvements, Segment 2</td>
+<td>Terwilliger, SW (Palater - County Limits)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$5,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90067.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Vermont St Ped/Bike Improvements, Segment 1</td>
+<td>Vermont St, SW (30th - 36th)</td>
+<td>Construct multi-modal street improvements including bicycle and pedestrian facilities.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90067.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Vermont St Ped/Bike Improvements, Segment 2</td>
+<td>Vermont St, SW (45th - 52nd)</td>
+<td>Construct multi-modal street improvements including bicycle and pedestrian facilities.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90068</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>West Portland Town Center Pedestrian Improvements</td>
+<td>West Portland Town Center, SW</td>
+<td>Improve sidewalks, lighting, crossings, bus shelters, and benches on Barbur, Capitol Hwy, and surrounding neighborhood streets.</td>
+<td>$7,015,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90069</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>West Portland Crossroads Intersection Improvements</td>
+<td>Barbur / Capitol / Huber / Taylors Ferry, SW</td>
+<td>Construct safety improvements for all modes at the intersections of Capitol Hwy, Taylors Ferry, Huber, and Barbur, including possible modifications to the I-5 ramps. This project will be coordinated with ODOT because it is within the interchange influence area.</td>
+<td>$40,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90070</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Capitol/Vermont/30th Intersection Improvements</td>
+<td>Capitol Hwy, SW (Vermont - 30th)</td>
+<td>Realign the Capitol/Vermont/30th intersection and provide sidewalks, bike lanes, and drainage improvements.</td>
+<td>$1,898,314</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90071</td>
+<td>Lake Oswego</td>
+<td>Various</td>
+<td>Lake Oswego to Portland Trail</td>
+<td>Willamette River Greenway Trail, SW (Sellwood Bridge - Lake Oswego)</td>
+<td>3.15 mile multi-use pathway adjacent to existing Hwy 43 Corridor, increasing ROW. Connects Lake Oswego to Portland at Sellwood Bridge. Part of the Willamette River Greenway Trail.</td>
+<td>$80,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90072</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Lesser Road Ped/Bike Improvements</td>
+<td>Lesser Rd / Capitol Hwy, SW (49th - Kruse Ridge)</td>
+<td>Design and implement pedestrian and bicycle facilities.</td>
+<td>$6,792,853</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90073</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Dolph Ct Ped/Bike Improvements</td>
+<td>Dolph Ct, SW (26th - Capitol Hwy)</td>
+<td>Construct a walkway for pedestrian travel and install a neighborhood greenway.</td>
+<td>$2,746,055</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90077</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Capitol Hwy Bridge Seismic Retrofit</td>
+<td>Capitol Hwy, SW (over Barbur and along hillside)</td>
+<td>Retrofit existing seismically vulnerable bridge over Barbur (#139) and semi-viaduct along hillside (#140) to ensure emergency response and economic recovery in the event of an earthquake.</td>
+<td>$3,705,915</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90078</td>
+<td>Multnomah County</td>
+<td>Portland</td>
+<td>Scholls Ferry Multimodal  Improvements</td>
+<td>Scholls Ferry, SW (Humphrey - County line)</td>
+<td>Add bicycle and pedestrian facilities and make intersection improvements at Patton Road consistent with the Scholls Ferry Road Conceptual Design Plan.</td>
+<td>$3,226,900</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90086</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Slavin Rd Bikeway</td>
+<td>Slavin Rd, SW (Barbur - Corbett)</td>
+<td>Build a bikeway on Slavin Road connecting Barbur to Corbett, and construct an improved pedestrian/bicycle crossing of Barbur at the Capitol Hwy on-ramp.</td>
+<td>$2,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90087</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Hood Ave Pedestrian Improvements</td>
+<td>Hood Ave, SW (Lane - Macadam)</td>
+<td>Install sidewalk with barrier along east side and pedestrian crossing at Lane Street.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90088</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Marquam Hill Pedestrian Connector</td>
+<td>Gibbs Street right-of-way, SW (Barbur - Terwilliger)</td>
+<td>Construct a new pedestrian walkway under the tram within the Gibbs right-of-way through the Terwilliger Parkway. The steep grade and forested area will require lighting and stairs.</td>
+<td>$3,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90089</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Multnomah Viaduct Safety Improvements</td>
+<td>Multnomah Blvd, SW (I-5 Crossing)</td>
+<td>Construct new bicycle and pedestrian facilities at or parallel to Multnomah Blvd viaduct crossing I-5.</td>
+<td>$1,664,243</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90090</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Barbur to PCC Neighborhood Greenway</td>
+<td>53rd Ave, SW (Barbur - PCC)</td>
+<td>Design and implement a neighborhood greenway connection between Barbur Blvd and PCC. Improve intersection at 53rd and Pomona to increase safety.</td>
+<td>$850,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90091</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Terwilliger Bikeway Gaps</td>
+<td>Terwilliger, SW</td>
+<td>Design and implement bicycle facilities to fill in gaps in the Terwilliger Bikeway.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90092</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Inner Canby Neighborhood Greenway</td>
+<td>Canby St, SW (45th - 35th)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$516,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90093</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Nevada Ct Neighborhood Greenway</td>
+<td>Nevada Ct, SW (45th - Capitol Hill Rd)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$653,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90094</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Fairmount Blvd Bikeway</td>
+<td>Fairmount Blvd, SW (loop from Talbot Rd to Talbot Rd)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$845,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90095.1</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Montgomery Bikeway, Phase 1</td>
+<td>Montgomery St/Dr, SW (Vista - 16th)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$300,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90095.2</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Montgomery Bikeway, Phase 2</td>
+<td>Montgomery St/Dr, SW (Patton - Vista)</td>
+<td>Design and implement bicycle facilities.</td>
+<td>$782,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90096</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>US 26 Multi-use Path</td>
+<td>US 26 (Canyon Ct - Canyon Rd / Murray St)</td>
+<td>Design and implement a multi-use path.</td>
+<td>$1,596,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90097</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Lower I-405 Trail</td>
+<td>I-405 (6th - Montgomery)</td>
+<td>Design and implement a multi-use path.</td>
+<td>$1,000,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90098</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Capitol Hwy / Bertha Blvd Bridge Replacement</td>
+<td>Capitol Hwy, SW (bridge over Bertha Blvd)</td>
+<td>Replace existing weight-restricted bridge over Bertha Blvd (#081) with a new structure with improved vertical clearance.</td>
+<td>$5,326,682</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90099</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Capitol Hwy / Multnomah Blvd Bridge Replacement</td>
+<td>Capitol Hwy, SW (bridge over Multnomah Blvd)</td>
+<td>Replace existing weight-restricted bridge over Multnomah Blvd (#082) with a new structure.</td>
+<td>$7,156,281</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90100</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW 30th/Hume/31st Ped/Bike Improvements</td>
+<td>30th Ave, SW (Dolph - Hume); Hume St, SW (30th - 31st); 31st Ave, SW (Hume - Troy)</td>
+<td>Construct a pedestrian walkway and bicycle facilities.</td>
+<td>$2,800,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90101</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Garden Home &amp; Multnomah Intersection Improvements</td>
+<td>Garden Home Rd &amp; Multnomah Blvd, SW</td>
+<td>Improve and signalize the intersection of Garden Home &amp; Multnomah.</td>
+<td>$1,931,033</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90102</td>
+<td>Portland</td>
+<td>Portland / ODOT</td>
+<td>Johns Landing Streetcar Extension</td>
+<td>Lowell - Willamette Park, SW</td>
+<td>Corridor Alternatives Analysis, public outreach, planning, design, engineering, and construction for future streetcar extension from Portland to Johns Landing.</td>
+<td>$80,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90104</td>
+<td>Portland</td>
+<td>ODOT</td>
+<td>Barbur Active Transportation Demonstration Project</td>
+<td>Barbur Blvd, SW (19th - 26th)</td>
+<td>Make minor improvements to existing signalized intersections and provide two new enhanced crossings for pedestrians and cyclists along SW Barbur Blvd.</td>
+<td>$1,999,413</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90105</td>
+<td>TriMet</td>
+<td>Portland</td>
+<td>SW Corridor HCT--Project Development</td>
+<td>Southwest Corridor (Portland to Tualatin/Tigard)</td>
+<td>Project Development through ROW acquisition/early construction for High Capacity Transit project between Portland and Tualatin via Tigard.</td>
+<td>$75,000,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90106</td>
+<td>TriMet</td>
+<td>Portland/ODOT</td>
+<td>Southwest Corridor HCT--Capital Construction</td>
+<td>Central City Portland to Tualatin/Tigard</td>
+<td>Capital construction of High Capacity Transit project between Portland and Tualatin via Tigard.</td>
+<td>$1,000,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90107</td>
+<td>ODOT</td>
+<td>ODOT</td>
+<td>Barbur Viaducts Reconstruction</td>
+<td>Barbur Blvd, SW (Vermont and Newbury Viaducts)</td>
+<td>Reconstruct existing viaducts to address seismic needs and include bicycle and pedestrian facilities on or parallel to the structures.</td>
+<td>$32,000,000</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>90108</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Red Electric Trail, Segment 1</td>
+<td>Red Electric Trail, SW (Dover - Cameron)</td>
+<td>Construct Segment 1 of the Red Electric Trail as recommended in the Red Electric Trail Planning Study.</td>
+<td>$1,565,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90109</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Red Electric Trail, Segment 2</td>
+<td>Red Electric Trail, SW (Cameron - 39th)</td>
+<td>Construct Segment 2 of the Red Electric Trail as recommended in the Red Electric Trail Planning Study.</td>
+<td>$3,425,700</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90110</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Red Electric Trail, Segment 3</td>
+<td>Red Electric Trail, SW (39th - 30th)</td>
+<td>Construct Segment 3 of the Red Electric Trail as recommended in the Red Electric Trail Planning Study.</td>
+<td>$2,348,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90111</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Red Electric Trail, Segment 4</td>
+<td>Red Electric Trail, SW (30th - 21st)</td>
+<td>Construct Segment 4 of the Red Electric Trail as recommended in the Red Electric Trail Planning Study.</td>
+<td>$3,207,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td>90112</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Red Electric Trail, Segment 5</td>
+<td>Red Electric Trail, SW (21st - Terwilliger)</td>
+<td>Construct Segment 5 of the Red Electric Trail as recommended in the Red Electric Trail Planning Study.</td>
+<td>$2,369,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90113</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>Red Electric Trail, Segment 6</td>
+<td>Red Electric Trail, SW (Terwilliger - Willamette Park)</td>
+<td>Construct Segment 6 of the Red Electric Trail as recommended in the Red Electric Trail Planning Study.</td>
+<td>$4,739,000</td>
+<td>Yes</td>
+<td>Years 11 - 20</td>
+<td></td>
+</tr>
+<tr>
+<td>90114</td>
+<td>Portland</td>
+<td>Portland</td>
+<td>SW Hewett Blvd Bikeway</td>
+<td>Hewett Blvd, SW (Patton - Scholls Ferry)</td>
+<td>Design and implement enhanced shared roadway bicycle facilities.</td>
+<td>$500,000</td>
+<td>Yes</td>
+<td>Years 1 - 10</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+</div>
+<div class="text-container">
+  <div class="text-block">
     <h1 id="downloads">Downloads:</h1>
     <ul>
     <li>
@@ -2656,9 +8659,7 @@ and Sustainability, Portland Bureau of Environmental Services, Port of Portland,
 
 <div id="map"></div>
 
-<div class="map-legend js-legend">
-  <span>Some Layer</span>
-</div>
+<div class="layer-legend js-layer-legend"></div>
 
 <div class="pop-up-container js-pop-up">
   <div class="pop-up-panel">

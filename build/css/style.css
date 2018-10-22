@@ -370,6 +370,15 @@ a {
   font-size: 0.833rem;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif; }
 
+.layer-legend {
+  position: absolute;
+  bottom: 13.25px;
+  right: 13.25px;
+  font-size: 0.833rem;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
+  background-color: #fafafa;
+  padding-left: 0.8rem; }
+
 .map-frame {
   background-color: #fafafa;
   position: absolute;
@@ -883,6 +892,15 @@ button {
   left: 13.25px;
   font-size: 0.833rem;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif; }
+
+.layer-legend {
+  position: absolute;
+  bottom: 13.25px;
+  right: 13.25px;
+  font-size: 0.833rem;
+  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
+  background-color: #fafafa;
+  padding-left: 0.8rem; }
 
 .map-frame {
   background-color: #fafafa;
