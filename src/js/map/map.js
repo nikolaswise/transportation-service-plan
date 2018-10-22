@@ -15,7 +15,7 @@ let position = {
  */
 
 const drawMap = () => {
-  console.debug(`begin draw map`)
+
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -24,16 +24,10 @@ const drawMap = () => {
     zoomControl: false,
     scrollWheelZoom: true
   });
-  console.debug(`created map`, map)
 
   map.createPane('bottom');
   map.createPane('top');
-  console.debug(`plz add basemap`)
   window.L.esri.basemapLayer("Gray").addTo(map);
-  // window.L.esri.tiledMapLayer({
-  //   url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
-  // }).addTo(map);
-  console.debug(`added basemap`)
 
   // stateful side effects!!
   map.on('moveend', function () {
@@ -126,13 +120,12 @@ const addLayer = layer => {
   bus.emit('layer:reset', layer);
   console.debug(`This is a set of features for layer ${layer}:`, layers[layer].features)
   layers[layer].features.bindPopup((err, evt) => {
-    console.debug(`this is a very nice popup bind`, err, evt)
     if (err) {
       err.feature
         ? evt = err
         : err = err
     }
-    if (evt) {
+    if (evt && layers[layer].popup) {
       openPopUp(evt, layer);
     }
     return 'hey';

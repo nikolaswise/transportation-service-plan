@@ -1,4 +1,4 @@
-// this needs to be named better, and there will be more of them I think.
+asdf// this needs to be named better, and there will be more of them I think.
 // this file just maps GIS data layers to their popups, and gives them a reference handle
 // so they can be got at by the map app
 import popupRenderer from './classification-renderer';
@@ -18,10 +18,19 @@ export const Design = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [10],
+    maxZoom: 14
+  }),
+  pane: 'top',
+};
+export const DesignFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/10',
+    pane: 'top',
+    minZoom: 15
   }),
   pane: 'top',
   popup: popupRenderer('Design')
-};
+}
 
 /**
  * @property {object} bicycleClassifications          - Object for GIS layer
@@ -32,17 +41,35 @@ export const BicycleClassifications = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [12],
-  }),
-  popup: popupRenderer('Bicycle')
+    maxZoom: 14
+  })
 };
+export const BicycleFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/12',
+    pane: 'top',
+    minZoom: 15
+  }),
+  pane: 'top',
+  popup: popupRenderer('Bicycle')
+}
 export const BicycleDistricts = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [13],
+    maxZoom: 14,
     style: feature => ({fillOpacity: 0.5})
-  }),
-  popup: popupDistricts('Bicycle', 'BD')
+  })
 };
+export const BicycleDistrictFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/13',
+    pane: 'bottom',
+    minZoom: 15
+  }),
+  pane: 'bottom',
+  popup: popupRenderer('Bicycle')
+}
 /**
  * @property {object} transitClassifications          - Object for GIS layer
  * @property {number} transitClassifications.features - Esri Leaflet Feature Layer
@@ -50,14 +77,22 @@ export const BicycleDistricts = {
  */
 export const Transit = {
   features: window.L.esri.dynamicMapLayer({
-
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [3],
+    maxZoom: 14
+  }),
+  pane: 'top',
+  // popup: popupRenderer('Transit')
+};
+export const TransitFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/3',
+    pane: 'top',
+    minZoom: 15
   }),
   pane: 'top',
   popup: popupRenderer('Transit')
-};
-
+}
 /**
  * @property {object} trafficClassifications          - Object for GIS layer
  * @property {number} trafficClassifications.features - Esri Leaflet Feature Layer
@@ -67,11 +102,19 @@ export const Traffic = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [4],
+    maxZoom: 14
+  }),
+  pane: 'top',
+}
+export const TrafficFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/4',
+    pane: 'top',
+    minZoom: 15
   }),
   pane: 'top',
   popup: popupRenderer('Traffic')
 }
-
 /**
  * @property {object} emergencyClassifications          - Object for GIS layer
  * @property {number} emergencyClassifications.features - Esri Leaflet Feature Layer
@@ -81,11 +124,20 @@ export const Emergency = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [7],
+    maxZoom: 14
+  }),
+  pane: 'top',
+  // popup: popupRenderer('Emergency')
+};
+export const EmergencyFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/7',
+    pane: 'top',
+    minZoom: 15
   }),
   pane: 'top',
   popup: popupRenderer('Emergency')
-};
-
+}
 /**
  * @property {object} pedestrianClassifications          - Object for GIS layer
  * @property {number} pedestrianClassifications.features - Esri Leaflet Feature Layer
@@ -95,22 +147,41 @@ export const PedestrianClassifications = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [15],
+    maxZoom: 14,
     pane: 'top'
   }),
   pane: 'top',
-  popup: popupRenderer('Pedestrian')
+  // popup: popupRenderer('Pedestrian')
 };
+export const PedestrianFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/15',
+    pane: 'top',
+    minZoom: 15
+  }),
+  pane: 'top',
+  popup: popupRenderer('Pedestrian')
+}
 export const PedestrianDistricts = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [16],
+    maxZoom: 14,
     pane: 'bottom',
     style: feature => ({fillOpacity: 0.5})
   }),
   pane: 'bottom',
-  popup: popupDistricts('Pedestrian', 'PD')
+  // popup: popupDistricts('Pedestrian', 'PD')
 };
-
+export const PedestrianDistrictFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/16',
+    pane: 'bottom',
+    minZoom: 15
+  }),
+  pane: 'bottom',
+  popup: popupRenderer('Pedestrian`')
+}
 /**
  * @property {object} freightClassifications          - Object for GIS layer
  * @property {number} freightClassifications.features - Esri Leaflet Feature Layer
@@ -120,24 +191,54 @@ export const FreightClassifications = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [19],
+    maxZoom: 14
   }),
-  popup: popupRenderer('Freight')
+  // popup: popupRenderer('Freight')
 };
+export const FreightFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/19',
+    pane: 'top',
+    minZoom: 15
+  }),
+  pane: 'top',
+  popup: popupRenderer('Freight')
+}
 export const FreightDistricts = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [20],
+    maxZoom: 14,
     style: feature => ({fillOpacity: 0.5})
   }),
   popup: popupDistricts('Freight', 'FD')
 };
+export const FreightDistrictFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/20',
+    pane: 'bottom',
+    minZoom: 15
+  }),
+  pane: 'bottom',
+  popup: popupRenderer('Freight')
+}
 export const FreightFacilities = {
   features: window.L.esri.dynamicMapLayer({
     url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer',
     layers: [18],
+    maxZoom: 14
   }),
-  popup: popupRenderer('Freight')
+  // popup: popupRenderer('Freight')
 };
+export const FreightFacillitiesFeatures = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/18',
+    pane: 'top',
+    minZoom: 15
+  }),
+  pane: 'top',
+  popup: popupRenderer('Freight')
+}
 /**
  * @property {object} projectPoints          - Object for GIS layer
  * @property {number} projectPoints.features - Esri Leaflet Feature Layer
@@ -145,11 +246,11 @@ export const FreightFacilities = {
  */
 export const ProjectPoints = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/1',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
     pane: 'top',
   }),
   pane: 'top',
-  popup: popupProject('foo', 'bar')
+  // popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -159,11 +260,11 @@ export const ProjectPoints = {
  */
 export const ProjectLines = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/5',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
     pane: 'top'
   }),
   pane: 'top',
-  popup: popupProject('foo', 'bar')
+  // popup: popupProject('foo', 'bar')
 };
 
 /**
@@ -173,7 +274,7 @@ export const ProjectLines = {
  */
 export const ProjectPolygons = {
   features: window.L.esri.featureLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/BPS_Proposal_Archive/MapServer/6',
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
     pane: 'bottom',
     style: feature => ({fillOpacity: 0.2})
   }),
