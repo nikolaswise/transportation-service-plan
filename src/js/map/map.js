@@ -138,13 +138,25 @@ const addLayer = layer => {
   layers[layer].features.on('click', (e) => {
     getFeaturesAtPoint(e.latlng, layers[layer])
   })
-  layers[layer].features.bindPopup((err, evt) => {
-    if (err) {
-      err.feature
-        ? evt = err
-        : err = err
+  layers[layer].features.bindPopup((evt) => {
+    let tempFeature
+    if (!evt.feature) {
+      console.debug(`no feature, go get`)
+      layers[layer].features.query().nearby(evt._latlng, 10).ids((error, ids) => {
+        if (!ids) {
+          return
+        }
+        let targets = ids.map(id => layers[layer].features.getFeature(id)).filter(feature => feature)
+        tempFeature = targets[0].feature
+        console.log(tempFeature)
+        evt.feature
+          ? evt.feature = evt.feature
+          : evt.feature = tempFeature
+        openPopUp(evt, layer);
+      })
     }
-    if (evt && layers[layer].popup) {
+
+    if (evt.bringToFront && layers[layer].popup) {
       evt.bringToFront()
       evt.setStyle({
         lineCap: 'round',
@@ -312,7 +324,6 @@ const parseLegendData = data => `
 `
 
 const drawLayerLegend = data => {
-  console.debug(`this is the legend layer to draw plz`, data)
   let nodes = Array(...document.querySelectorAll('.js-layer-legend'))
   nodes.forEach(node => {
     node.insertAdjacentHTML(`beforeend`, parseLegendData(data))
@@ -328,7 +339,6 @@ const clearLayerLegend = () => {
  * Binds all side effect listeners, exposes the API, and draws the map
  */
 export default function () {
-  console.debug(`Bind map events`)
   bus.on('popup:opened', zoomToFeature);
   bus.on('popup:closed', closePopUps);
   bus.on('map:redraw', redrawMap);

@@ -629,7 +629,6 @@ var handlePopUp = function (evt, renderTemplate) {
   evt.feature
     ? popUpTemplate.innerHTML = renderTemplate(evt.feature.properties)
     : popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties);
-
   bind(popUpTemplate);
 };
 
@@ -1659,13 +1658,25 @@ var addLayer = function (layer) {
   layers[layer].features.on('click', function (e) {
     getFeaturesAtPoint(e.latlng, layers[layer]);
   });
-  layers[layer].features.bindPopup(function (err, evt) {
-    if (err) {
-      err.feature
-        ? evt = err
-        : err = err;
+  layers[layer].features.bindPopup(function (evt) {
+    var tempFeature;
+    if (!evt.feature) {
+      console.debug("no feature, go get");
+      layers[layer].features.query().nearby(evt._latlng, 10).ids(function (error, ids) {
+        if (!ids) {
+          return
+        }
+        var targets = ids.map(function (id) { return layers[layer].features.getFeature(id); }).filter(function (feature) { return feature; });
+        tempFeature = targets[0].feature;
+        console.log(tempFeature);
+        evt.feature
+          ? evt.feature = evt.feature
+          : evt.feature = tempFeature;
+        openPopUp(evt, layer);
+      });
     }
-    if (evt && layers[layer].popup) {
+
+    if (evt.bringToFront && layers[layer].popup) {
       evt.bringToFront();
       evt.setStyle({
         lineCap: 'round',
@@ -1825,7 +1836,6 @@ var parseLegendData = function (data) { return ("\n  <strong>" + (data.layerName
     ); }).join('')) + "\n  </ul>\n"); };
 
 var drawLayerLegend = function (data) {
-  console.debug("this is the legend layer to draw plz", data);
   var nodes = Array.apply(void 0, document.querySelectorAll('.js-layer-legend'));
   nodes.forEach(function (node) {
     node.insertAdjacentHTML("beforeend", parseLegendData(data));
@@ -1841,7 +1851,6 @@ var clearLayerLegend = function () {
  * Binds all side effect listeners, exposes the API, and draws the map
  */
 var map$1 = function () {
-  console.debug("Bind map events");
   bus.on('popup:opened', zoomToFeature);
   bus.on('popup:closed', closePopUps);
   bus.on('map:redraw', redrawMap);

@@ -417,6 +417,9 @@ a {
   .map-frame {
     display: none; } }
 
+.leaflet-marker-icon {
+  max-width: none; }
+
 fieldset {
   margin: 0;
   padding: 0;
@@ -943,6 +946,9 @@ button {
   #map,
   .map-frame {
     display: none; } }
+
+.leaflet-marker-icon {
+  max-width: none; }
 
 .layer-panel {
   box-sizing: border-box;

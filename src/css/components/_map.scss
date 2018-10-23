@@ -81,6 +81,10 @@
   }
 }
 
+.leaflet-marker-icon {
+  max-width: none;
+}
+
 // // shame!
 // .geocoder-control-suggestions {
 //   opacity: 0;

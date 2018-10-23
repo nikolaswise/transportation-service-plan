@@ -18,7 +18,6 @@ const handlePopUp = (evt, renderTemplate) => {
   evt.feature
     ? popUpTemplate.innerHTML = renderTemplate(evt.feature.properties)
     : popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties)
-
   bindScroll(popUpTemplate)
 };
 
