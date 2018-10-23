@@ -28,7 +28,13 @@
   font-size: $pt10;
   font-family: $system-sans;
   background-color: $off-white;
-  padding-left: $baseline/2;
+  padding: $baseline/2;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style-type: none;
+  }
 }
 
 .map-frame {

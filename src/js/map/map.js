@@ -10,6 +10,8 @@ let position = {
   zoom: 12
 };
 
+
+
 /**
  * Interacts with the Esri Leaflet API to draw a map in the dom Node with an id of 'map'
  */
@@ -38,10 +40,6 @@ const drawMap = () => {
     position.zoom = map.getZoom();
   });
   createGeocoder();
-
-  // map.on('click', (e) => {
-  //   console.debug(`map click:`, e)
-  // })
 };
 
 /**
@@ -109,6 +107,17 @@ const addLayers = (layerSet) => {
   layerSet.split(',').forEach((layer) => addLayer(layer));
 };
 
+
+const getFeaturesAtPoint = (coords, layer) => {
+  layer.features.query().intersects(coords).ids((error, ids) => {
+    if (!ids) {
+      return
+    }
+    let targets = ids.map(id => layer.features.getFeature(id)).filter(feature => feature)
+    bus.emit('popup:nested', targets, layer.popup, layer)
+  })
+}
+
 /**
  * Adds a single of layers from './layers.js' to the map.
  *
@@ -117,7 +126,6 @@ const addLayers = (layerSet) => {
 
 const addLayer = layer => {
   if (!layers[layer]) {
-    console.log('no layer here tho')
     return
   }
   layers[layer].features.addTo(map);
@@ -127,6 +135,9 @@ const addLayer = layer => {
     }
   });
   bus.emit('layer:reset', layer);
+  layers[layer].features.on('click', (e) => {
+    getFeaturesAtPoint(e.latlng, layers[layer])
+  })
   layers[layer].features.bindPopup((err, evt) => {
     if (err) {
       err.feature

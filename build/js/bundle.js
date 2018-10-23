@@ -633,6 +633,54 @@ var handlePopUp = function (evt, renderTemplate) {
   bind(popUpTemplate);
 };
 
+
+var handlePopUpMultiple = function (targets, template, layer) {
+  var popUpContainer = document.querySelector('.js-pop-up');
+  var popUpTemplate = document.querySelector('.js-template');
+
+  popUpContainer.classList.add('has-multiple');
+  popUpTemplate.insertAdjacentHTML('afterend', ("\n    <div class=\"popup-buttons js-multiple-popups\" data-feature=" + (targets.length - 1) + ">\n      <button class=\"js-prev-popup pt6\">Previous Feature</button>\n      <button class=\"js-next-popup pt6\">Next Feature</button>\n    </div>\n  "));
+
+  var popups = targets.map(function (target) { return template(target.feature.properties); });
+  var prev = popUpContainer.querySelector(".js-prev-popup");
+  var next = popUpContainer.querySelector(".js-next-popup");
+  var state = popUpContainer.querySelector(".js-multiple-popups");
+
+  prev.addEventListener('click', function (e) {
+    e.preventDefault();
+    var current = parseInt(state.getAttribute("data-feature"));
+    var newState;
+    current - 1 < 0
+      ? newState = targets.length - 1
+      : newState = current - 1;
+    state.setAttribute("data-feature", newState);
+    layer.features.resetStyle();
+    popUpTemplate.innerHTML = popups[newState];
+    targets[newState].setStyle({
+      lineCap: 'round',
+      weight: 24,
+      color: '#98CBCC'
+    });
+  });
+
+  next.addEventListener('click', function (e) {
+    e.preventDefault();
+    var current = parseInt(state.getAttribute("data-feature"));
+    var newState;
+    current + 1 > targets.length - 1
+      ? newState = 0
+      : newState = current + 1;
+    state.setAttribute("data-feature", newState);
+    layer.features.resetStyle();
+    popUpTemplate.innerHTML = popups[newState];
+    targets[newState].setStyle({
+      lineCap: 'round',
+      weight: 24,
+      color: '#98CBCC'
+    });
+  });
+};
+
 /**
  * Removes `is-active` class from pop node.
  * Emits event on bus.
@@ -642,6 +690,10 @@ var handlePopUp = function (evt, renderTemplate) {
  */
 var closePopUp = function () {
   var popUpContainer = document.querySelector('.js-pop-up');
+  var buttons = popUpContainer.querySelectorAll('.js-multiple-popups');
+  buttons.forEach(function (node) {
+    node.remove();
+  });
   remove(popUpContainer, 'is-active');
   bus.emit('popup:closed');
 };
@@ -728,6 +780,7 @@ var view = function () {
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
   bus.on('popup:opened', handlePopUp);
+  bus.on('popup:nested', handlePopUpMultiple);
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   // bus.on('type:size', sizeTextTo);
@@ -1183,7 +1236,33 @@ var ProjectPoints = {
   pane: 'top',
   popup: popupProject('foo', 'bar')
 };
-
+var ProjectPointsTen = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
+    pane: 'top',
+    where: "EstimatedTimeframe = '1-10_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+var ProjectPointsTwenty = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
+    pane: 'top',
+    where: "EstimatedTimeframe = '11-20_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+var ProjectPointsOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
+    pane: 'top',
+    where: "EstimatedTimeframe = 'NA'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
 /**
  * @property {object} projectLines          - Object for GIS layer
  * @property {number} projectLines.features - Esri Leaflet Feature Layer
@@ -1197,7 +1276,33 @@ var ProjectLines = {
   pane: 'top',
   popup: popupProject('foo', 'bar')
 };
-
+var ProjectLinesTen = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
+    pane: 'top',
+    where: "EstimatedTimeframe = '1-10_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+var ProjectLinesTwenty = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
+    pane: 'top',
+    where: "EstimatedTimeframe = '11-20_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+var ProjectLinesOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
+    pane: 'top',
+    where: "EstimatedTimeframe = 'NA'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
 /**
  * @property {object} projectPolygons          - Object for GIS layer
  * @property {number} projectPolygons.features - Esri Leaflet Feature Layer
@@ -1212,8 +1317,36 @@ var ProjectPolygons = {
   pane: 'bottom',
   popup: popupProject('foo', 'bar')
 };
-
-
+var ProjectPolygonsTen = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
+    pane: 'bottom',
+    where: "EstimatedTimeframe = '1-10_YRS'",
+    style: function (feature) { return ({fillOpacity: 0.2}); }
+  }),
+  pane: 'bottom',
+  popup: popupProject('foo', 'bar')
+};
+var ProjectPolygonsTwenty = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
+    pane: 'bottom',
+    where: "EstimatedTimeframe = '11-20_YRS'",
+    style: function (feature) { return ({fillOpacity: 0.2}); }
+  }),
+  pane: 'bottom',
+  popup: popupProject('foo', 'bar')
+};
+var ProjectPolygonsOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
+    pane: 'bottom',
+    where: "EstimatedTimeframe = 'NA'",
+    style: function (feature) { return ({fillOpacity: 0.2}); }
+  }),
+  pane: 'bottom',
+  popup: popupProject('foo', 'bar')
+};
 var bikeProgram = {
   features: window.L.esri.featureLayer({
     url: 'https://services.arcgis.com/quVN97tn06YNGj9s/arcgis/rest/services/TSPBikePrograms_temp_2018_03_15/FeatureServer/0',
@@ -1326,8 +1459,17 @@ var layers = Object.freeze({
 	FreightFacilities: FreightFacilities,
 	FreightFacillitiesFeatures: FreightFacillitiesFeatures,
 	ProjectPoints: ProjectPoints,
+	ProjectPointsTen: ProjectPointsTen,
+	ProjectPointsTwenty: ProjectPointsTwenty,
+	ProjectPointsOther: ProjectPointsOther,
 	ProjectLines: ProjectLines,
+	ProjectLinesTen: ProjectLinesTen,
+	ProjectLinesTwenty: ProjectLinesTwenty,
+	ProjectLinesOther: ProjectLinesOther,
 	ProjectPolygons: ProjectPolygons,
+	ProjectPolygonsTen: ProjectPolygonsTen,
+	ProjectPolygonsTwenty: ProjectPolygonsTwenty,
+	ProjectPolygonsOther: ProjectPolygonsOther,
 	bikeProgram: bikeProgram,
 	greenwayProgram: greenwayProgram,
 	taxlots: taxlots,
@@ -1389,6 +1531,8 @@ var position = {
   zoom: 12
 };
 
+
+
 /**
  * Interacts with the Esri Leaflet API to draw a map in the dom Node with an id of 'map'
  */
@@ -1417,10 +1561,6 @@ var drawMap = function () {
     position.zoom = map.getZoom();
   });
   createGeocoder();
-
-  // map.on('click', (e) => {
-  //   console.debug(`map click:`, e)
-  // })
 };
 
 /**
@@ -1488,6 +1628,17 @@ var addLayers = function (layerSet) {
   layerSet.split(',').forEach(function (layer) { return addLayer(layer); });
 };
 
+
+var getFeaturesAtPoint = function (coords, layer) {
+  layer.features.query().intersects(coords).ids(function (error, ids) {
+    if (!ids) {
+      return
+    }
+    var targets = ids.map(function (id) { return layer.features.getFeature(id); }).filter(function (feature) { return feature; });
+    bus.emit('popup:nested', targets, layer.popup, layer);
+  });
+};
+
 /**
  * Adds a single of layers from './layers.js' to the map.
  *
@@ -1496,7 +1647,6 @@ var addLayers = function (layerSet) {
 
 var addLayer = function (layer) {
   if (!layers[layer]) {
-    console.log('no layer here tho');
     return
   }
   layers[layer].features.addTo(map);
@@ -1506,6 +1656,9 @@ var addLayer = function (layer) {
     }
   });
   bus.emit('layer:reset', layer);
+  layers[layer].features.on('click', function (e) {
+    getFeaturesAtPoint(e.latlng, layers[layer]);
+  });
   layers[layer].features.bindPopup(function (err, evt) {
     if (err) {
       err.feature
@@ -2340,6 +2493,25 @@ var listen = function () {
 /**
  * Initializes app and app components.
  */
+
+
+// Remove Node Polyfill
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if (this.parentNode !== null)
+          { this.parentNode.removeChild(this); }
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
 var initApp = function () {
   console.debug("App init started");

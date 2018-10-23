@@ -377,7 +377,11 @@ a {
   font-size: 0.833rem;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
   background-color: #fafafa;
-  padding-left: 0.8rem; }
+  padding: 0.8rem; }
+  .layer-legend ul {
+    padding-left: 0; }
+  .layer-legend li {
+    list-style-type: none; }
 
 .map-frame {
   background-color: #fafafa;
@@ -900,7 +904,11 @@ button {
   font-size: 0.833rem;
   font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "segoe ui", "fira sans", roboto, noto, "droid sans", "liberation sans", "lucida grande", "helvetica neue", helvetica, "franklin gothic medium", "century gothic", cantarell, oxygen, ubuntu, sans-serif;
   background-color: #fafafa;
-  padding-left: 0.8rem; }
+  padding: 0.8rem; }
+  .layer-legend ul {
+    padding-left: 0; }
+  .layer-legend li {
+    list-style-type: none; }
 
 .map-frame {
   background-color: #fafafa;

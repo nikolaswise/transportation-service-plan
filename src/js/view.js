@@ -22,6 +22,59 @@ const handlePopUp = (evt, renderTemplate) => {
   bindScroll(popUpTemplate)
 };
 
+
+const handlePopUpMultiple = (targets, template, layer) => {
+  let popUpContainer = document.querySelector('.js-pop-up');
+  let popUpTemplate = document.querySelector('.js-template');
+
+  popUpContainer.classList.add('has-multiple')
+  popUpTemplate.insertAdjacentHTML('afterend', `
+    <div class="popup-buttons js-multiple-popups" data-feature=${targets.length - 1}>
+      <button class="js-prev-popup pt6">Previous Feature</button>
+      <button class="js-next-popup pt6">Next Feature</button>
+    </div>
+  `)
+
+  let popups = targets.map(target => template(target.feature.properties))
+  let prev = popUpContainer.querySelector(`.js-prev-popup`)
+  let next = popUpContainer.querySelector(`.js-next-popup`)
+  let state = popUpContainer.querySelector(`.js-multiple-popups`)
+
+  prev.addEventListener('click', e => {
+    e.preventDefault()
+    let current = parseInt(state.getAttribute(`data-feature`))
+    let newState
+    current - 1 < 0
+      ? newState = targets.length - 1
+      : newState = current - 1
+    state.setAttribute(`data-feature`, newState)
+    layer.features.resetStyle()
+    popUpTemplate.innerHTML = popups[newState]
+    targets[newState].setStyle({
+      lineCap: 'round',
+      weight: 24,
+      color: '#98CBCC'
+    })
+  })
+
+  next.addEventListener('click', e => {
+    e.preventDefault()
+    let current = parseInt(state.getAttribute(`data-feature`))
+    let newState
+    current + 1 > targets.length - 1
+      ? newState = 0
+      : newState = current + 1
+    state.setAttribute(`data-feature`, newState)
+    layer.features.resetStyle()
+    popUpTemplate.innerHTML = popups[newState]
+    targets[newState].setStyle({
+      lineCap: 'round',
+      weight: 24,
+      color: '#98CBCC'
+    })
+  })
+}
+
 /**
  * Removes `is-active` class from pop node.
  * Emits event on bus.
@@ -31,6 +84,10 @@ const handlePopUp = (evt, renderTemplate) => {
  */
 const closePopUp = () => {
   let popUpContainer = document.querySelector('.js-pop-up');
+  let buttons = popUpContainer.querySelectorAll('.js-multiple-popups')
+  buttons.forEach(node => {
+    node.remove()
+  })
   classy.remove(popUpContainer, 'is-active');
   bus.emit('popup:closed');
 };
@@ -136,6 +193,7 @@ export default function () {
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
   bus.on('popup:opened', handlePopUp);
+  bus.on('popup:nested', handlePopUpMultiple)
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   // bus.on('type:size', sizeTextTo);

@@ -252,7 +252,33 @@ export const ProjectPoints = {
   pane: 'top',
   popup: popupProject('foo', 'bar')
 };
-
+export const ProjectPointsTen = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
+    pane: 'top',
+    where: "EstimatedTimeframe = '1-10_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+export const ProjectPointsTwenty = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
+    pane: 'top',
+    where: "EstimatedTimeframe = '11-20_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+export const ProjectPointsOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/22',
+    pane: 'top',
+    where: "EstimatedTimeframe = 'NA'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
 /**
  * @property {object} projectLines          - Object for GIS layer
  * @property {number} projectLines.features - Esri Leaflet Feature Layer
@@ -266,7 +292,33 @@ export const ProjectLines = {
   pane: 'top',
   popup: popupProject('foo', 'bar')
 };
-
+export const ProjectLinesTen = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
+    pane: 'top',
+    where: "EstimatedTimeframe = '1-10_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+export const ProjectLinesTwenty = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
+    pane: 'top',
+    where: "EstimatedTimeframe = '11-20_YRS'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
+export const ProjectLinesOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/23',
+    pane: 'top',
+    where: "EstimatedTimeframe = 'NA'",
+  }),
+  pane: 'top',
+  popup: popupProject('foo', 'bar')
+};
 /**
  * @property {object} projectPolygons          - Object for GIS layer
  * @property {number} projectPolygons.features - Esri Leaflet Feature Layer
@@ -281,8 +333,36 @@ export const ProjectPolygons = {
   pane: 'bottom',
   popup: popupProject('foo', 'bar')
 };
-
-
+export const ProjectPolygonsTen = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
+    pane: 'bottom',
+    where: "EstimatedTimeframe = '1-10_YRS'",
+    style: feature => ({fillOpacity: 0.2})
+  }),
+  pane: 'bottom',
+  popup: popupProject('foo', 'bar')
+};
+export const ProjectPolygonsTwenty = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
+    pane: 'bottom',
+    where: "EstimatedTimeframe = '11-20_YRS'",
+    style: feature => ({fillOpacity: 0.2})
+  }),
+  pane: 'bottom',
+  popup: popupProject('foo', 'bar')
+};
+export const ProjectPolygonsOther = {
+  features: window.L.esri.featureLayer({
+    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Transportation_System_Plan/MapServer/24',
+    pane: 'bottom',
+    where: "EstimatedTimeframe = 'NA'",
+    style: feature => ({fillOpacity: 0.2})
+  }),
+  pane: 'bottom',
+  popup: popupProject('foo', 'bar')
+};
 export const bikeProgram = {
   features: window.L.esri.featureLayer({
     url: 'https://services.arcgis.com/quVN97tn06YNGj9s/arcgis/rest/services/TSPBikePrograms_temp_2018_03_15/FeatureServer/0',
