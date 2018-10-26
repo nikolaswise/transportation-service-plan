@@ -12,8 +12,16 @@ import bindScroll from './helpers/scroll-to-anchor.js';
  * @param {Function} Render template function from `./layers.hs`
  */
 const handlePopUp = (evt, renderTemplate) => {
+
   let popUpContainer = document.querySelector('.js-pop-up');
   let popUpTemplate = document.querySelector('.js-template');
+  let buttons = popUpContainer.querySelectorAll('.js-multiple-popups')
+  buttons.forEach(node => {
+    console.log('remove plz?')
+    node.remove()
+  })
+  console.log(popUpContainer.querySelectorAll('.js-multiple-popups'))
+
   classy.add(popUpContainer, 'is-active');
   evt.feature
     ? popUpTemplate.innerHTML = renderTemplate(evt.feature.properties)
@@ -26,11 +34,17 @@ const handlePopUpMultiple = (targets, template, layer) => {
   let popUpContainer = document.querySelector('.js-pop-up');
   let popUpTemplate = document.querySelector('.js-template');
 
+  let buttons = popUpContainer.querySelectorAll('.js-multiple-popups')
+  buttons.forEach(node => {
+    node.remove()
+  })
+
   popUpContainer.classList.add('has-multiple')
-  popUpTemplate.insertAdjacentHTML('afterend', `
+  console.log('make some buttons')
+  popUpTemplate.insertAdjacentHTML('beforebegin', `
     <div class="popup-buttons js-multiple-popups" data-feature=${targets.length - 1}>
-      <button class="js-prev-popup pt6">Previous Feature</button>
-      <button class="js-next-popup pt6">Next Feature</button>
+      <button class="js-prev-popup pt6">←</button>
+      <button class="js-next-popup pt6"> →</button>
     </div>
   `)
 

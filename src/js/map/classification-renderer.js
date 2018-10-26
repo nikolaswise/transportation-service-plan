@@ -23,13 +23,14 @@ export default function (current, proposed) {
         <tbody>
           <tr>
             <td>${current} Class:</td>
-            <td><a href="#${acronym[current][feature[current]].replace(/ /g, '-').toLowerCase()}">${feature[current]}</a></td>
+            <td><a href="#${acronym[current][feature[current]] ? acronym[current][feature[current]].replace(/ /g, '-').toLowerCase() :
+            '' }">${feature[current]}</a></td>
           </tr>
         </tbody>
       </table>
       <p class="lead-top">
         <b>${feature[current]}:</b>
-        <a href="#${acronym[current][feature[current]].replace(/ /g, '-').toLowerCase()}">${acronym[current][feature[current]]}</a>
+        <a href="#${acronym[current][feature[current]] ? acronym[current][feature[current]].replace(/ /g, '-').toLowerCase() : ''}">${acronym[current][feature[current]]}</a>
       </p>
     `;
   };

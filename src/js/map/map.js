@@ -1,5 +1,6 @@
 import * as dom from '../helpers/dom.js';
 import bus from '../helpers/bus.js';
+import * as classy from '../helpers/classy.js';
 import * as layers from './layers';
 import ZoomMin from '../lib/L.Control.ZoomMin.js'
 
@@ -109,12 +110,15 @@ const addLayers = (layerSet) => {
 
 
 const getFeaturesAtPoint = (coords, layer) => {
-  layer.features.query().intersects(coords).ids((error, ids) => {
+  layer.features.query().nearby(coords, 10).ids((error, ids) => {
     if (!ids) {
       return
     }
     let targets = ids.map(id => layer.features.getFeature(id)).filter(feature => feature)
-    bus.emit('popup:nested', targets, layer.popup, layer)
+    targets.length > 1
+      ? bus.emit('popup:nested', targets, layer.popup, layer)
+      : bus.emit('popup:single', targets, layer.popup, layer)
+
   })
 }
 
@@ -128,6 +132,7 @@ const addLayer = layer => {
   if (!layers[layer]) {
     return
   }
+  console.log(layers[layer].features)
   layers[layer].features.addTo(map);
   layers[layer].features.legend(function(error, legend) {
     if (!error && legend.layers.length == 1) {
@@ -140,30 +145,30 @@ const addLayer = layer => {
   })
   layers[layer].features.bindPopup((evt) => {
     let tempFeature
-    if (!evt.feature) {
-      console.debug(`no feature, go get`)
-      layers[layer].features.query().nearby(evt._latlng, 10).ids((error, ids) => {
-        if (!ids) {
-          return
-        }
-        let targets = ids.map(id => layers[layer].features.getFeature(id)).filter(feature => feature)
-        tempFeature = targets[0].feature
-        console.log(tempFeature)
-        evt.feature
-          ? evt.feature = evt.feature
-          : evt.feature = tempFeature
-        openPopUp(evt, layer);
-      })
-    }
+    if (evt) {
+      if (!evt.feature) {
+        layers[layer].features.query().nearby(evt._latlng, 10).ids((error, ids) => {
+          if (!ids) {
+            return
+          }
+          let targets = ids.map(id => layers[layer].features.getFeature(id)).filter(feature => feature)
+          tempFeature = targets[0].feature
+          evt.feature
+            ? evt.feature = evt.feature
+            : evt.feature = tempFeature
+          openPopUp(evt, layer);
+        })
+      }
 
-    if (evt.bringToFront && layers[layer].popup) {
-      evt.bringToFront()
-      evt.setStyle({
-        lineCap: 'round',
-        weight: 24,
-        color: '#98CBCC'
-      });
-      openPopUp(evt, layer);
+      if (evt.bringToFront && layers[layer].popup) {
+        evt.bringToFront()
+        evt.setStyle({
+          lineCap: 'round',
+          weight: 24,
+          color: '#98CBCC'
+        });
+        openPopUp(evt, layer);
+      }
     }
     return 'hey';
   }).on('popupclose', function () {
@@ -311,9 +316,14 @@ const zoomToFeature = feature => {
 // }
 
 
-const parseLegendData = data => `
-  <strong>${data.layerName}</strong>
-  <ul>
+
+const slugify = (string) => string.trim().replace(/\s/g, '-');
+
+const parseLegendData = (data, i) => `
+  <button class="pt8 button button-clear legend-toggle js-legend-toggle" data-legend="${slugify(data.layerName)}">
+    ${data.layerName}
+  </button>
+  <ul class="legend-group js-legend-group" data-legend="${slugify(data.layerName)}">
     ${data.legend.map(layer => (
       `<li>
         <img width="${layer.height}" height="${layer.height}" alt="Symbol" src="data:image/gif;base64,${layer.imageData}" />
@@ -323,11 +333,44 @@ const parseLegendData = data => `
   </ul>
 `
 
+const closeToggles = () => {
+  let toggles = Array(...document.querySelectorAll('.js-legend-toggle'))
+  let nodes = Array(...document.querySelectorAll('.js-legend-group'))
+  nodes.forEach(node => {
+    classy.remove(node, 'is-active')
+  })
+  toggles.forEach(node => {
+    classy.remove(node, 'is-active')
+  })
+}
+
+const toggleLegend = (e) => {
+  e.preventDefault()
+  let isOpen = classy.has(e.target, 'is-active')
+  closeToggles()
+  if (!isOpen) {
+    let target = e.target.getAttribute('data-legend')
+    classy.add(e.target, 'is-active')
+    let nodes = Array(...document.querySelectorAll('.js-legend-group')).filter(node => node.getAttribute('data-legend') == target)
+    nodes.forEach(node => {
+      classy.add(node, 'is-active')
+    })
+  }
+}
+
+const bindLegendInteraction = () => {
+  let toggles = Array(...document.querySelectorAll('.js-legend-toggle'))
+  toggles.forEach(node => {
+    node.addEventListener('click', toggleLegend)
+  })
+}
+
 const drawLayerLegend = data => {
   let nodes = Array(...document.querySelectorAll('.js-layer-legend'))
-  nodes.forEach(node => {
+  nodes.forEach((node) => {
     node.insertAdjacentHTML(`beforeend`, parseLegendData(data))
   })
+  bindLegendInteraction()
 }
 
 const clearLayerLegend = () => {

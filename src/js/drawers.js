@@ -27,9 +27,9 @@ function drawer () {
    * @param {Object} Options object: {id: drawer-id}
    */
   function openDrawer (options) {
-    bus.emit('drawer:close');
     var drawer = document.querySelector(`.js-drawer[data-drawer="${options.id}"]`);
-    if (drawer) {
+    if (drawer && !classy.has(drawer, 'is-active')) {
+      bus.emit('drawer:close');
       var right = classy.has(drawer, 'drawer-right');
       var left = classy.has(drawer, 'drawer-left');
 
@@ -45,6 +45,8 @@ function drawer () {
       aria.hide([wrapper]);
       event.add(drawer, event.click(), closeClick);
       event.add(document, 'focusin', fenceDrawer);
+    } else {
+      bus.emit('drawer:close');
     }
   }
 
@@ -130,7 +132,6 @@ function drawer () {
   function toggleClick (e) {
     event.preventDefault(e);
     var drawerId = e.target.getAttribute('data-drawer');
-    classy.add(e.target, 'is-active');
     bus.emit('drawer:open', {id: drawerId});
   }
 

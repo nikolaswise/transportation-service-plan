@@ -22,8 +22,7 @@ export default function (current, acr) {
       <table class="flush-bottom lead-top">
         <tbody>
           <tr>
-            <td>${current} Class:</td>
-            <td><a href="#${acronym[current][acr].replace(/ /g, '-').toLowerCase()}">${acr}</a></td>
+            <td><a href="#${current.replace(/ /g, '-').toLowerCase()}-districts">${current} Districts</a></td>
           </tr>
         </tbody>
       </table>

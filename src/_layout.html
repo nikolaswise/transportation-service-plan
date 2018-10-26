@@ -57,6 +57,9 @@
             {% autoescape false %}
               {{ toc }}
             {% endautoescape %}
+            <ul>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
             <!-- <a href="#data-tables">Data Tables</a>
             <a href="#downloads">Downloads</a> -->
           </div>
@@ -100,18 +103,20 @@
           </div>
         </div>
 
-        <div class="text-wrapper">
-          <div class="text-container">
-            <article class="text-block">
-              <section class="text-section js-search-content">
-                {% autoescape false %}
-                  {{ content }}
-                {% endautoescape %}
-              </section>
-            </article>
+        <div class="js-search-content">
+          <div class="text-wrapper">
+            <div class="text-container">
+              <article class="text-block">
+                <section class="text-section">
+                  {% autoescape false %}
+                    {{ content }}
+                  {% endautoescape %}
+                </section>
+              </article>
+            </div>
           </div>
+          {% include "_last-half.html" %}
         </div>
-        {% include "_last-half.html" %}
       </div>
 
       <div class="panel panel-map">
