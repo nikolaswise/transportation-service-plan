@@ -477,6 +477,14 @@ table {
     table tr:last-child {
       border-bottom: none; }
 
+.project-table thead th:nth-child(6) {
+  min-width: 20rem; }
+
+.project-table {
+  max-height: none; }
+  .project-table tr {
+    vertical-align: top; }
+
 .btn,
 button {
   position: relative;

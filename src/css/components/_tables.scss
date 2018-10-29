@@ -49,3 +49,14 @@ table {
     }
   }
 }
+
+.project-table thead th:nth-child(6) {
+  min-width: 20rem;
+}
+
+.project-table {
+  max-height: none;
+  tr {
+    vertical-align: top;
+  }
+}
