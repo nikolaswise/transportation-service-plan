@@ -321,6 +321,7 @@ const slugify = (string) => string.trim().replace(/\s/g, '-');
 
 const parseLegendData = (data, i) => `
   <button class="pt8 button button-clear legend-toggle js-legend-toggle" data-legend="${slugify(data.layerName)}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="icon legend-icon"><path d="M10 2l14 14-14 14V2z"/></svg>
     ${data.layerName}
   </button>
   <ul class="legend-group js-legend-group" data-legend="${slugify(data.layerName)}">

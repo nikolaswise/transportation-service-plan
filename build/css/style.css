@@ -1432,3 +1432,13 @@ button {
   display: none; }
   .legend-group.is-active {
     display: block; }
+
+.legend-icon {
+  height: 1em;
+  width: 1em;
+  transition: transform 200ms ease-in-out;
+  transform: rotate(0deg); }
+
+.is-active .legend-icon {
+  transition: transform 200ms ease-in-out;
+  transform: rotate(90deg); }

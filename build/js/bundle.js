@@ -1841,7 +1841,7 @@ var zoomToFeature = function (feature) {
 
 var slugify = function (string) { return string.trim().replace(/\s/g, '-'); };
 
-var parseLegendData = function (data, i) { return ("\n  <button class=\"pt8 button button-clear legend-toggle js-legend-toggle\" data-legend=\"" + (slugify(data.layerName)) + "\">\n    " + (data.layerName) + "\n  </button>\n  <ul class=\"legend-group js-legend-group\" data-legend=\"" + (slugify(data.layerName)) + "\">\n    " + (data.legend.map(function (layer) { return (
+var parseLegendData = function (data, i) { return ("\n  <button class=\"pt8 button button-clear legend-toggle js-legend-toggle\" data-legend=\"" + (slugify(data.layerName)) + "\">\n    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" class=\"icon legend-icon\"><path d=\"M10 2l14 14-14 14V2z\"/></svg>\n    " + (data.layerName) + "\n  </button>\n  <ul class=\"legend-group js-legend-group\" data-legend=\"" + (slugify(data.layerName)) + "\">\n    " + (data.legend.map(function (layer) { return (
       ("<li>\n        <img width=\"" + (layer.height) + "\" height=\"" + (layer.height) + "\" alt=\"Symbol\" src=\"data:image/gif;base64," + (layer.imageData) + "\" />\n        " + (layer.label) + "\n      </li>")
     ); }).join('')) + "\n  </ul>\n"); };
 
