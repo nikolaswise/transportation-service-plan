@@ -1,7 +1,8 @@
 #map {
+  background-color: $off-white;
   top: $frame;
-  right: $frame;
-  bottom: $frame;
+  right: 0;
+  bottom: 0;
   left: 0;
   position: absolute;
   margin: 0;
@@ -11,25 +12,42 @@
   transition: $transition;
 }
 
-.map-is-active {
-  #map {
-    left: $frame;
+.map-legend {
+  position: absolute;
+  bottom: $frame/4;
+  left: $frame/4;
+  font-size: $pt10;
+  font-family: $system-sans;
+}
+
+
+.layer-legend {
+  position: absolute;
+  bottom: $frame/4;
+  right: $frame/4;
+  font-size: $pt10;
+  font-family: $system-sans;
+  background-color: $off-white;
+  padding: $baseline/2;
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style-type: none;
   }
 }
 
 .map-frame {
   background-color: $off-white;
   position: absolute;
-  right: $frame;
-  left: 0;
+  right: $frame/2;
+  left: $frame/2;
   z-index: 20;
   transition: $transition;
 }
 
-.map-is-active {
-  .map-frame {
-    left: $frame;
-  }
+.map-frame-top {
+  padding-top: 2px;
 }
 
 
@@ -38,34 +56,21 @@
 }
 .is-active {
   .rotate-if-active {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
     transition: 100ms linear all;
   }
 }
-
-@media (max-width: $single-pane-break) {
-  .map-is-active {
-    .leaflet-control-zoom {
-      display: none;
-    }
-    .leaflet-top {
-      top: auto;
-      bottom: 2rem;
-    }
-    .map-frame {
-      background-color: transparent;
-      padding: 0.5rem;
-    }
-    #map,
-    .map-frame {
-      background-color: transparent;
-      left: 0;
-      right: 0;
-    }
-    #map {
-      top: 0;
-      bottom: 0;
-    }
+.map-is-active {
+  #map,
+  .map-frame {
+    top: 0;
+    background-color: transparent;
+    padding: 0.5rem;
+    left: 0;
+    right: 0;
+  }
+  .leaflet-top {
+    top: $frame;
   }
 }
 
@@ -75,3 +80,12 @@
     display: none;
   }
 }
+
+.leaflet-marker-icon {
+  max-width: none;
+}
+
+// // shame!
+// .geocoder-control-suggestions {
+//   opacity: 0;
+// }

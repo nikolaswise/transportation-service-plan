@@ -1,19 +1,26 @@
 
-  <button class="left js-modal-toggle serif pt8" data-modal="search">
-    {% include "_icon-map-2.html" %}
-    Search Document
+  <button class="left js-drawer-toggle serif pt8 hide-if-no-js" data-drawer="navigation">
+    {% include "_icon-search.html" %}
+    Search
   </button>
 
-<!--   <button class="left js-modal-toggle js-running-section serif pt8 button-clear" >Transportation Service Plan
+  <a href="#top" class="gutter-left pt10 nav-top-link">Back to Top</a>
+  <div class="js-breadcrumbs breadcrumbs"></div>
+<!--   <button class="left js-modal-toggle js-running-section serif pt8" >Transportation Service Plan
   </button> -->
 
-  <button class="right pt8 serif js-view-control hide-small hide-text  button-clear" data-panel="text">
+  <button class="right pt8 serif js-view-control hide-small hide-text hide-if-no-js" data-panel="text">
     {% include "_icon-map-2.html" %} hide map
   </button>
-  <button class="right pt8 serif js-view-control show-small  button-clear" data-panel="map">
+  <button class="right pt8 serif js-view-control show-small hide-if-no-js" data-panel="map">
     {% include "_icon-map-2.html" %} show map
   </button>
-  <button class="right pt8 serif js-view-control hide-small hide-split  button-clear" data-panel="split">
+  <button class="right pt8 serif js-view-control hide-small hide-split hide-if-no-js" data-panel="split">
     {% include "_icon-map-2.html" %} show map
   </button>
 
+
+
+  <div class="text-container show-if-no-js">
+    <p class="navigation-no-js-text">Portland Transportation Service Plan</p>
+  </div>

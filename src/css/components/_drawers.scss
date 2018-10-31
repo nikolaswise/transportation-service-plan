@@ -1,0 +1,105 @@
+$drawer-width: 300px;
+$transform-transition: transform 200ms cubic-bezier(0.215, 0.440, 0.420, 0.880);
+$opacity-transition: opacity 200ms linear;
+
+@mixin drawer() {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background: black;
+  transition: visibility 0ms linear, $opacity-transition;
+  z-index: 1001;
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    background-color: transparent;
+    transition: visibility 0ms linear, $opacity-transition;
+
+    &.drawer-left .drawer-nav {
+      transform: translate3d($drawer-width,0,0);
+      transision: $transform-transition;
+    }
+    &.drawer-right .drawer-nav {
+      transform: translate3d(-$drawer-width,0,0);
+      transision: $transform-transition;
+    }
+  }
+}
+
+@mixin drawer-nav() {
+  border-right: 1px solid $gray;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: $off-white;
+  height: 100%;
+  width: $drawer-width;
+  margin: 0;
+  list-style: none;
+  // overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0,0,0);
+  transition: $transform-transition;
+  display: flex;
+  z-index: 100;
+}
+
+@mixin drawer-left-is-active() {
+  opacity: 1;
+  transition: $transform-transition;
+  transform: translate3d($drawer-width,0,0);
+}
+@mixin drawer-right-is-active() {
+  opacity: 1;
+  transition: $transform-transition;
+  transform: translate3d(-$drawer-width,0,0);
+}
+
+
+.drawer { @include drawer();}
+.drawer-nav { @include drawer-nav();}
+.drawer-left .drawer-nav  {
+  left: -$drawer-width;
+  transition: $transform-transition;
+}
+.drawer-right .drawer-nav {
+  left: 100%;
+  transition: $transform-transition;
+}
+
+.panels {
+  opacity: 1;
+  visibillity: visible;
+  transition: $transform-transition;
+}
+
+.drawer-left-is-active {
+  .navigation,
+  .panel-text,
+  .panel-map {
+    opacity: 1;
+    @include drawer-left-is-active();
+  }
+}
+.drawer-right-is-active {
+  .navigation,
+  .panel-text,
+  .panel-map {
+    opacity: 1;
+    @include drawer-right-is-active();
+  }
+}
+
+.map-is-active.drawer-right-is-active {
+  .navigation,
+  .panel-text {
+    transform: translate3d(-100%, 0, 0);
+  }
+  .panel-map {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

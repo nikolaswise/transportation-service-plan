@@ -1,11 +1,23 @@
 .navigation {
   position: fixed;
   height: $frame;
+  padding-left: $frame/2;
+  padding-right: $frame/2;
+  padding-top: 0.1rem;
   width: 100%;
   z-index: 10;
   background-color: $off-white;
-  border-bottom: 1px solid $gray;
+  color: $color-text-small;
   transition: $transition;
+  box-sizing: border-box;
+  border-bottom: 1px solid $pbot-light-gray;
+}
+
+.bottom-navigation {
+  bottom: 0;
+  padding-top: 12px;
+  text-align: center;
+
 }
 
 .map-is-active,
@@ -18,14 +30,14 @@
 .map-is-active {
   .navigation {
     width: 50%;
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
 .panel-text {
   .navigation {
     width: 100%;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -46,7 +58,7 @@
   .split-is-active {
     .navigation {
       width: 100%;
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 }
@@ -57,3 +69,23 @@
   }
 }
 
+.gutter-left {
+  margin-left: $gutter;
+}
+
+.navigation-no-js-text {
+  padding-top: $baseline/3;
+}
+
+.nav-top-link {
+  color: $color-text-small;
+  margin-top: $baseline/2;
+  display: inline-block;
+  &:visited {
+    color: $color-text-small;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-top-link {display: none;}
+}

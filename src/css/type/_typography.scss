@@ -39,7 +39,8 @@ html.type-small {
 
 /* Type Colors */
 body {
-  background-color: $color-background;
+  background-color: $off-white;
+  // background-color: $pbot-dark-gray;
   color: $color-text-small;
 }
 
@@ -48,26 +49,31 @@ h2,
 h3,
 h4 {
   color: $color-text-big;
-  margin-top: calc(#{$baseline} * 1.5);
+  margin-top: $baseline*1.5;
   margin-bottom: $baseline;
 }
 
 /* Type Sizes */
 h1 {
-  font-size: $pt36;
-  line-height: calc(#{$baseline} * 2);
+  font-size: $pt24;
+  line-height: $baseline*2;
+  margin-top: $baseline*3;
+  padding-top: $baseline*1.5;
+  border-top: 0.5rem solid $blue;
 }
 h2 {
-  font-size: $pt24;
+  font-size: $pt21;
+  line-height: $baseline*1.5;
 }
 h3 {
-  font-size: $pt21;
+  font-size: $pt18;
+  line-height: $baseline*1.25;
 }
 h4 {
-  font-size: $pt18;
+  font-size: $pt14;
 }
 h5 {
-  font-size: $pt14;
+  font-size: $pt12;
   margin-bottom: calc(#{$baseline} / 2);
 }
 h6 {
@@ -99,7 +105,6 @@ h6 {
 p,
 ul,
 ol {
-  padding: 0;
   margin-top: 0;
   line-height: $baseline;
   margin-bottom: $baseline;
@@ -107,6 +112,7 @@ ol {
 li {
   line-height: $baseline;
   margin-bottom: 0;
+
 }
 
 /* Link Styles */
@@ -117,7 +123,7 @@ a {
     color: $color-text-small;
   }
   &:hover {
-    color: $rich-blue;
+    color: $blue;
     text-decoration: underline;
   }
 }

@@ -1,5 +1,75 @@
 .table-of-contents {
   padding-top: $baseline * 3;
   padding-bottom: $baseline * 5;
-  background-color: $pale-blue;
+  background-color: $light-blue;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  li {
+   padding: 0;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      color: $pbot-dark-gray;
+    }
+  }
+}
+
+.toc {
+  ul {
+    list-style-type: none;
+    position: relative;
+    padding-left: 0;
+    margin: 0;
+    background-color: $white;
+    transform: translate3d(0, 0, 0);
+    transition: transform 300ms ease-in-out;
+    &.is-active {
+      transform: translate3d(-100%, 0, 0);
+      transition: transform 300ms ease-in-out;
+    }
+    ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 1px solid $gray;
+      transform: translate3d(200%, 0, 0);
+      transition: transform 300ms ease-in-out;
+      &:hover {
+        background-color: $lightest-gray;
+      }
+      &.is-active {
+        transform: translate3d(100%, 0, 0);
+        transition: transform 300ms ease-in-out;
+      }
+      &:after {
+        content: '← Back';
+        display: block;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        padding: $baseline/4 $baseline/2;
+        cursor: pointer;
+      }
+    }
+  }
+  li {
+   padding: 0;
+  }
+  a {
+    text-decoration: none;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: $baseline/4 $baseline/2;
+    border-bottom: 1px solid $gray;
+    background-color: $white;
+    &:hover {
+      background-color: $lightest-gray;
+    }
+  }
 }

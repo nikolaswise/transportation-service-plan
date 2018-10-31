@@ -7,30 +7,33 @@
 .pop-up-container {
   visibility: hidden;
   position: absolute;
-  left: 2*$frame;
+  left: $frame;
   top: $frame;
   bottom: $frame;
   pointer-events: none;
   transition: $transition;
   opacity: 0;
-  transform: translateY(-1%);
+  transform: translate3d(0, -1%, 0);
   &.is-active {
     visibility: visible;
     opacity: 1;
     display: inline-block;
-    vertical-align: middle;
     transition: $transition;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
     .pop-up-panel {
       display: inline-block;
       opacity: 1;
+    }
+  }
+  &.has-multiple {
+    .pop-up-panel {
+
     }
   }
   &:before {
     content: '';
     display: inline-block;
     height: 100%;
-    vertical-align: middle;
     margin-right: -0.25em; /* Adjusts for spacing */
   }
 }
@@ -44,19 +47,21 @@
   }
   .pop-up-panel {
     width: 100%;
+
   }
 }
 
 .pop-up-panel {
   display: none;
   opacity: 0;
-  vertical-align: middle;
+  max-width: 24rem;
+  top: 2*$frame;
   background-color: $off-white;
   box-shadow: 0 0 10px $dark-gray;
   border: 1px solid $light-gray;
   border-radius: 5px;
   padding: $gutter;
   pointer-events: auto;
-  max-height: 80%;
+  max-height: 75vh;
   overflow: auto;
 }

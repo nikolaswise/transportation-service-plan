@@ -1,43 +1,78 @@
 .layer-panel {
-  position: absolute;
-  transition: $transition;
-  transform: translate3d(0,-120%,0);
-  left: $frame;
-  right: $frame;
-  top: $frame;
-  background-color: $off-white;
-  padding: $gutter;
-  border-bottom: 1px solid $lighter-gray;
-  max-height: 60vh;
-  overflow: auto;
-  z-index: 10;
-}
-
-.layer-panel-section {
   box-sizing: border-box;
-  padding: $gutter;
-  width: 33%;
-  float: left;
+  background-color: $off-white;
+  // padding-top: $frame;
+  padding-right: $frame/2;
+  padding-left: $frame/2;
 }
 
-.layer-panel.is-active {
-  transform: translate3d(0,0,0);
+.close-layers {
+  padding-top: $baseline;
+  padding-bottom: $baseline;
 }
 
-.split-is-active .layer-panel {
-  left: 0
+.layer-panel-section {}
+
+.fieldset {
+  margin-bottom: 1*$baseline;
+  border-bottom: 0.25em solid $blue;
 }
+
+.legend {
+  box-sizing: border-box;
+  width: 100%;
+  padding: $baseline/4 $baseline/4 $baseline/4 1.5*$baseline;
+  border: 0.25em solid $blue;
+  margin: 0;
+}
+
+.label {
+  line-height: 0.75*$baseline;
+  margin: 0;
+  padding: $baseline/4 $baseline/4 $baseline/4 1.5*$baseline;
+  border-bottom: 0.25em solid $blue;
+  border-left:   0.25em solid $blue;
+  border-right:  0.25em solid $blue;
+  &.is-disabled,
+  &:disabled {
+    background-color: $lighter-gray;
+    color: $darkest-gray;
+  }
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.2*$baseline;
+  height: 1.2*$baseline;
+  margin: 0;
+  &:before {
+    font-size: $pt10;
+    width: 1.2*$baseline;
+    height: 1.2*$baseline;
+    display: block;
+    content: "";
+    background-color: $off-white;
+    border-right: 0.25em solid $blue;
+    border-bottom: 0.25em solid $blue;
+  }
+}
+.input:checked {
+  &:before {
+    background-color: $blue;
+  }
+}
+.input:disabled {
+  &:before {
+    background-color: $light-gray;
+  }
+}
+
 @media (max-width: $single-pane-break) {
   .map-is-active,
   .map-is-active {
-    .layer-panel {
-      padding-top: $frame;
-      left: 0;
-      right: 0;
-      top: 0;
-    }
+    .layer-panel {}
   }
-  .layer-panel-section {
-    width: 100%;
-  }
+  .layer-panel-section {}
 }

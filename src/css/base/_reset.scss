@@ -1,6 +1,7 @@
  /*Always show vertical scroll bars, standardize type size*/
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
   height: 100%;
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -10,7 +11,7 @@ html {
 
  /*Make body full height*/
 body {
-  overflow: hide;
+  overflow: hidden;
   min-height: 100%;
   max-width: 100%;
   margin: 0;

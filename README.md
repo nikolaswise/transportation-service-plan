@@ -43,12 +43,22 @@ $ npm test
 
 ## Notes
 
-### Body Classes
+### Jandoc Parsing
 
-The following are classes set on the body of the HTML to pass information to the rest of the DOM.
+jandoc -r docx -o src/lib -t markdown --wrap=none --extract-media=src/img -d lib/0
 
-| class | denotes |
-| ----- | ------- |
-| js-is-active | Javascript will run on this page. Go for the full experience |
-| map-is-active | The map pane is visible, and the map is drawn. |
 
+### More Data
+https://www.portlandmaps.com/arcgis/rest/services/Public/PBOT_Transportation_System_Plan_Proposal/MapServer
+
+Taxlots:
+https://www.portlandmaps.com/arcgis/rest/services/Public/Taxlots/MapServer
+
+Centers & Boudaries
+https://services.arcgis.com/quVN97tn06YNGj9s/ArcGIS/rest/services/centers/FeatureServer
+
+Zoning / Taxlots
+https://www.portlandmaps.com/bps/zoning/#/map/R244214
+
+Popup Plan:
+https://docs.google.com/spreadsheets/d/1K0Hl3oR14pDwml7iKNbTU3_xZP21zMjncDhfYZqnkR8/edit#gid=0

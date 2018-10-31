@@ -28,12 +28,57 @@
 @import "components/introduction.scss";
 @import "components/colophon.scss";
 @import "components/map.scss";
-@import "components/scale.scss";
 @import "components/layer-control.scss";
 @import "components/modal.scss";
+@import "components/drawers.scss";
 @import "components/pop-up.scss";
 @import "components/text-panel-shadow.scss";
-@import "components/clusterize-table.scss";
+@import "components/loader.scss";
+@import "components/chapter-nubs.scss";
+@import "components/tooltips.scss";
+@import "components/breadcrumbs.scss";
 
 // Helpers
 @import "helpers.scss";
+
+.is-loading {
+  * {
+    transition-duration: 0s;
+  }
+}
+
+
+@import "lib/leaflet-control-zoom-min.scss";
+
+.hidden {
+  display: none;
+}
+
+
+
+// legend
+
+.legend-toggle {
+  color: black;
+  display: block;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.legend-group {
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}
+
+.legend-icon {
+  height: 1em;
+  width: 1em;
+  transition: transform 200ms ease-in-out;
+  transform: rotate(0deg);
+}
+.is-active .legend-icon {
+  transition: transform 200ms ease-in-out;
+  transform: rotate(90deg);
+}

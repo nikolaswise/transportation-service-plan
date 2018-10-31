@@ -1,0 +1,54 @@
+.loader-wrapper {
+  position: fixed;
+  width: auto;
+  margin: auto;
+  left: 50%;
+  top: 45%;
+  transform: translateX(-50%);
+  text-align: center;
+  animation-name: slowOut;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+  opacity: 0;
+  &.is-active {
+    opacity: 1;
+  }
+}
+
+
+.loader {
+  position: relative;
+  margin: auto;
+  border: 8px solid $pbot-light-gray; /* Light grey */
+  border-top: 8px solid $blue; /* Blue */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 0.66s linear infinite;
+}
+
+.loader-text {
+  color: $color-text-small;
+  font-size: 18px;
+  padding-top: 0px;
+  margin-top: 9px;
+  line-height: 2;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slowOut {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

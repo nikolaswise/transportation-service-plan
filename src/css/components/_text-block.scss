@@ -1,3 +1,8 @@
+.text-wrapper {
+  background-color: $off-white;
+  overflow-x: hidden;
+}
+
 .text-container {
   margin: auto;
   width: $wrapper-width;
@@ -6,16 +11,18 @@
 .text-block {
   position: relative;
   padding: $gutter;
+  padding-left: $frame;
+  padding-right: $frame;
   max-width: $text-measure;
+  margin: auto;
   overflow: hide;
+  p img {
+    width: 100%;
+  }
 }
 
 @media (max-width: $single-pane-break) {
   .text-container {
     width: 100%;
-  }
-  .text-block {
-    padding: $gutter;
-    padding-left: 1.5*$gutter;
   }
 }

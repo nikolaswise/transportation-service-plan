@@ -14,6 +14,9 @@ import bus from './helpers/bus';
 // Emitting a modal id toggle that modals state.
 // Emitting false or null closes all modals.
 
+/**
+ * Initializes modal pattern and binds events.
+ */
 function modal () {
   // Cool nodes
   var toggles = dom.findElements('.js-modal-toggle');
@@ -25,11 +28,21 @@ function modal () {
   bus.on('modal:close', closeModal);
   bus.on('modal:bind', bindModals);
 
+  /**
+   * Find nodes that are effected by opening the modal
+   *
+   * @returns {Array} Array of DOM Nodes
+   */
   function dependentNodes () {
     var nodes = [];
     return nodes;
   }
 
+  /**
+   * Opens a modal
+   *
+   * @param {String} Id of modal to open
+   */
   function openModal (modalId) {
     bus.emit('modal:close');
     if (!modalId) return;
@@ -41,6 +54,11 @@ function modal () {
     modal.focus();
   }
 
+  /**
+   * Closes a modal. If no id passed, closes all modals.
+   *
+   * @param {String} Id of modal to open
+   */
   function closeModal (modalId) {
     if (!modalId) return classy.removeActive(modals);
     var modal = document.querySelector(`.js-modal[data-modal="${modalId}"]`);
@@ -50,6 +68,11 @@ function modal () {
     aria.show(dependentNodes());
   }
 
+  /**
+   * Binds event listeners on a node: binds all modals if no node is provided
+   *
+   * @param {Node} Dom node to bind listeners on.
+   */
   function bindModals (node) {
     if (!node) {
       toggles.forEach(function (toggle) {
@@ -60,6 +83,11 @@ function modal () {
     }
   }
 
+  /**
+   * Prevents focus from leaving modal component while modal is open.
+   *
+   * @param {Event} Event
+   */
   function fenceModal (e) {
     if (!dom.closest('js-modal', e.target)) {
       modals.forEach(function (modal) {
@@ -70,6 +98,11 @@ function modal () {
     }
   }
 
+  /**
+   * Toggles the state of a modal when the modals controller is clicked.
+   *
+   * @param {Event} Event
+   */
   function toggleClick (e) {
     event.preventDefault(e);
     var modalId = e.target.dataset.modal;

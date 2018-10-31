@@ -1,9 +1,19 @@
-import babel from 'rollup-plugin-babel';
+import buble from 'rollup-plugin-buble';
+import commonjs from 'rollup-plugin-commonjs';
+import nodeResolve from 'rollup-plugin-node-resolve';
 
 export default {
-  moduleName: 'tsp',
   entry: 'src/js/main.js',
-  format: 'umd',
-  plugins: [ babel() ],
-  dest: 'build/js/bundle.js'
+  dest: 'build/js/bundle.js',
+  format: 'iife',
+  plugins: [
+    nodeResolve({
+      jsnext: true,
+      main: true
+    }),
+    commonjs({
+      include: 'node_modules/**',
+    }),
+    buble()
+  ]
 };

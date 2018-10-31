@@ -1,50 +1,71 @@
-
-<div class="text-wrapper">
-  <div class="text-container">
-    <article class="text-block">
-
-      <section class="text-section">
-        <h2 id="appendix-a" class="js-section">Appendix A</h2>
-        <h3>Compiled goals, policies, and objectives</h3>
-      </section>
-
-      <section class="text-section">
-        <h2 id="appendix-b" class="js-section">Appendix B</h2>
-        <h3>Compiled Projects, Plans, and Classifications</h3>
-      </section>
-    </article>
-  </div>
-</div>
-
-<div class="table-wrapper">
-  <div class="clusterize">
-    <table>
-      <thead>
-        <tr>
-          <th>Headers</th>
-        </tr>
-      </thead>
-    </table>
-    <div id="classificationsScroll" class="clusterize-scroll">
-      <table>
-        <tbody id="classificationsContent" class="clusterize-content">
-          <tr class="clusterize-no-data">
-            <td>Loading data…</td>
-          </tr>
-        </tbody>
-      </table>
+<div class="text-container">
+  <div class="text-block">
+    <h1 id="projects">Projects:</h1>
+    <div class="table-wrapper project-table">
+      {% markdown %}
+        {% include './_features.md' %}
+      {% endmarkdown %}
     </div>
   </div>
 </div>
+<div class="text-container">
+  <div class="text-block">
+    <h1 id="downloads">Downloads:</h1>
+    <ul>
+    <li>
+      <a target="_blank" href="/pdf/01_Introduction.pdf">
+        Introduction
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/02_Goals-and-Policies.pdf">
+        Goals and Policies
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/03_Street-Classification-Descriptions.pdf">
+        Street Classification Descriptions
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/04_Master-Street-Plans.pdf">
+        Master Street Plans
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/05_Modal-Plans.pdf">
+        Modal Plans
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/06_Implementation-Strategies.pdf">
+        Implementation Strategies
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/07_Glossary.pdf">
+        Glossary
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/Download_Financial-Plan.pdf">
+        Financial Plan
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="/pdf/Download_Major-Projects-&-Programs.PDF">
+        Major Projects & Programs
+      </a>
+    </li>
+    </ul>
+  </div>
+</div>
+
 
 <div class="colophon">
   <div class="text-container">
     <div class="text-block">
       <p>Published by Portland Bureau of Transportation 2017</p>
-      <p>Department Press is a publishing house and design studio specializing in printed matter, digital experiences, and special projects. Department works with artists, public bureaus, and other partners who are open to collaborative process and value art and design.</p>
-{% markdown %}
-{% include "_table-of-contents.md" %}
-{% endmarkdown %}
     </div>
   </div>
 </div>

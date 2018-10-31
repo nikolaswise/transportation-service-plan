@@ -3,7 +3,11 @@
 // └────────────────┘
 // utilities to help manage aria properties
 
-// toggles `aria-hidden` on a domNode
+/**
+ * Toggles `aria-hidden` property on DOM nodes.
+ *
+ * @param {Array} Array of DOM Nodes
+ */
 export function toggleHidden (array) {
   array.forEach(function (node) {
     if (!node) {
@@ -18,7 +22,11 @@ export function toggleHidden (array) {
   });
 }
 
-// adds `aria-hidden` on a domNode
+/**
+ * Adds `aria-hidden` on DOM nodes.
+ *
+ * @param {Array} Array of DOM Nodes
+ */
 export function hide (array) {
   array.forEach(function (node) {
     if (!node) {
@@ -28,7 +36,11 @@ export function hide (array) {
   });
 }
 
-// removes `aria-hidden` on a domNode
+/**
+ * Removes `aria-hidden` on DOM nodes.
+ *
+ * @param {Array} Array of DOM Nodes
+ */
 export function show (array) {
   array.forEach(function (node) {
     if (!node) {
@@ -38,6 +50,11 @@ export function show (array) {
   });
 }
 
+/**
+ * Toggles `aria-expanded` property on a single DOM node.
+ *
+ * @param {Node} A DOM node.
+ */
 export function toggleExpanded (domNode) {
   if (!domNode) {
     return;

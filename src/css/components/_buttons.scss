@@ -2,11 +2,11 @@
 button {
   position: relative;
   display: inline-block;
-  padding: 0.66em;
+  padding: 0.66em 0.66em 0.75em 0.66em;
   width: auto;
-  color: $rich-blue;
-  border: 0.25em solid $rich-blue;
-  background-color: transparent;
+  color: $pbot-dark-gray;
+  border: 1px solid $pbot-dark-gray;
+  background-color: $off-white;
   box-sizing: border-box;
   transition: all 300ms linear;
   cursor: pointer;
@@ -14,11 +14,11 @@ button {
   font-size: $pt11;
   font-family: $system-sans;
   letter-spacing: 0.05em;
+  border-radius: 3px;
   &:hover, &:focus {
     transition: all 300ms linear;
     text-decoration: none;
-    background-color: $rich-blue;
-    color: $white;
+    background-color: $pbot-light-gray;
   }
 }
 
@@ -28,21 +28,24 @@ button {
   &:hover, &:focus {
     text-decoration: none;
     background-color: $white;
-    color: $rich-blue;
+    color: $blue;
   }
 }
 
 .button-white-fill {
-  color: $rich-blue;
+  color: $blue;
   background-color: $white;
   border: 4px solid $white;
   &:hover, &:focus {
     text-decoration: none;
-    background-color: $rich-blue;
+    background-color: $blue;
     color: $white;
   }
 }
 
 .button-clear {
-  border-color: transparent;
+  background-color: transparent;
+  color: $off-white;
+  border: 0.125em solid $off-white;
+  margin: 0 15px;
 }

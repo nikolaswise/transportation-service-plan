@@ -1,7 +1,8 @@
 .title {
   position: relative;
   z-index: 10;
-  background-color: $rich-blue;
+  background-color: $off-white;
+  border-bottom: 2rem solid #60AFAF;
 }
 
 .title-view-control {
@@ -9,32 +10,42 @@
   margin: $font-size;
 }
 
-.title-buffer {
-  padding-top: $baseline * 3;
-  padding-bottom: $baseline * 5;
+.title-header {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
-.title-header {
-  font-weight: 300;
-  color: $off-white;
+.title-image {
+  mix-blend-mode: multiply;
+}
+
+.title-branding {
+  max-width: 12rem;
 }
 
 .title-rule {
   width: 50%;
   margin-right: 50%;
   float: left;
-  border-bottom: 3px solid $off-white;
 }
 
 .title-subhead {
-  padding-top: $baseline * 1.5;
-  font-size: $pt14;
-  color: $off-white;
+  font-size: $pt12;
   font-family: $system-sans;
   font-weight: 300;
   letter-spacing: 0.05em;
+  margin-top: 2 * $baseline;
+  margin-bottom: 0;
 }
-
+.title-subsubhead {
+  font-size: $pt12;
+  font-family: $system-sans;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
 
 @media (max-width: $single-pane-break) {
   .title-buffer {

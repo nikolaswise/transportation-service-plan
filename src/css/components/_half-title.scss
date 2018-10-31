@@ -1,10 +1,9 @@
 .half-title {
   background-color: $off-white;
   padding-top: 6*$baseline;
-  // padding-top: 18vh;
-
   padding-bottom: 8*$baseline;
-  // padding-bottom: 35vh;
+  padding-right: $frame;
+  border-bottom: 3px solid $pbot-light-gray;
 }
 
 .half-title-plate {

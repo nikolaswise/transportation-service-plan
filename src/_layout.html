@@ -1,102 +1,133 @@
 <!DOCTYPE html>
-<html lang="en" class="type-small">
+<html lang="en" class="type-small js-is-inactive is-loading">
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width">
 
-  <meta name="description" content="Portland Bureau of Transportation Service Plan 2035">
+    <meta name="description" content="Portland Bureau of Transportation Service Plan 2035">
 
-  <title>T.S.P. 2035 | P.B.O.T.</title>
+    <title>T.S.P. 2035 | P.B.O.T.</title>
 
-  <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="">
-  <meta name="twitter:site" content="@PBOTinfo">
-  <meta name="twitter:creator" content="@PBOTinfo">
-  <meta name="twitter:title" content="T.S.P. 2035">
-  <meta name="twitter:description" content="Portland Bureau of Transportation Service Plan 2035">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:site" content="@PBOTinfo">
+    <meta name="twitter:creator" content="@PBOTinfo">
+    <meta name="twitter:title" content="T.S.P. 2035">
+    <meta name="twitter:description" content="Portland Bureau of Transportation Service Plan 2035">
 
-  <meta property="og:image" content="">
-  <meta property="og:title" content="T.S.P. 2035">
-  <meta property="og:url" content="{{url}}">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="T.S.P. 2035">
+    <meta property="og:url" content="{{url}}">
 
-  <!-- Load Leaflet from CDN-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
-  <!-- Load Esri Leaflet from CDN -->
-  <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
-  <!-- Esri Leaflet Geocoder -->
-  <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.0/dist/esri-leaflet-geocoder.css">
-  <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.0"></script>
-  <!-- Load Esri Leaflet Renderers -->
-  <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
-  <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
+    <!-- Load Leaflet from CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet-src.js"></script>
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.0.4"></script>
 
-  <!-- Load fancy leaflet scalebar technology -->
-  <script src="/js/Leaflet.GraphicScale.min.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
+    <!-- Esri Leaflet Geocoder -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.4/dist/esri-leaflet-geocoder.css">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.4"></script>
+
+    <!-- Load Esri Leaflet Renderers -->
+    <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
+    <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/esri-leaflet-legend@2.0.1/dist/esri-leaflet-legend-compat.js"></script>
+
+
+    <link rel="stylesheet" href="/css/style.css">
 
   </head>
 
   <body>
-    <div class="panels js-panels">
-
-      <div class="js-modal modal-overlay" data-modal='search'>
-        <div class="text-container">
-          <div class="text-block">
-            <button class="sans-serif search-label js-modal-toggle close-button">close</button>
+    <!-- Search Form Sidebar V. Nice -->
+    <div class="drawer drawer-left js-drawer" data-drawer="navigation" tabindex="0">
+      <nav class="drawer-nav" role="navigation">
+        <aside class="side-nav search-panel">
+          {% include "_search-form.html" %}
+          <div class="loader-wrapper js-search-loader">
+            <div class="loader"></div>
           </div>
-        </div>
-        <div class="modal">
-          <div class="text-container">
-            {% include "_search-form.html" %}
-            <div class="text-block links-white text-white">
-              {% include "_table-of-contents.html" %}
-            </div>
-
+          <div class="toc js-search-hide">
+            {% autoescape false %}
+              {{ toc }}
+            {% endautoescape %}
+            <ul>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
+            <!-- <a href="#data-tables">Data Tables</a>
+            <a href="#downloads">Downloads</a> -->
           </div>
-        </div>
-      </div>
+          <div class="js-search-results search-results"></div>
+        </aside>
+      </nav>
+    </div>
 
-      <div class="js-modal modal-overlay" data-modal='contents'>
-        <div class="modal">
-          <button class="cancel-button js-modal-toggle">close</button>
-          <div class="text-container">
-            <div class="text-block links-white text-white">
-              {% include "_table-of-contents.html" %}
-            </div>
-            <button class="cancel-button js-modal-toggle">close</button>
-          </div>
-        </div>
-      </div>
+    <!-- Layers Drawer V. Nice -->
+    <div class="drawer drawer-right js-drawer" data-drawer="layers" tabindex="0">
+      <nav class="drawer-nav layer-panel" role="navigation">
+        <aside class="side-nav">
+          {% include "_layers.html" %}
+        </aside>
+      </nav>
+    </div>
+
+    <!-- Main Page Loader V. Nice -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+      <p class="loader-text">Loading &hellip;</p>
+    </div>
+
+
+    <div class="panels js-panels text-is-active">
 
       <nav class="navigation">
         {% include "_navigation.html" %}
       </nav>
 
       <div class="panel panel-text js-text-area">
-        {% include "_first-half.html" %}
-        <div class="text-wrapper">
+        {% include "_title.html" %}
+
+        <div class="table-of-contents">
           <div class="text-container">
-            <article class="text-block">
-              <section class="text-section">
-                {% autoescape false %}
-                  {{ content }}
-                {% endautoescape %}
-              </section>
-            </article>
+            <div class="text-block">
+              <button class="js-drawer-toggle" data-drawer="navigation">Search the Text</button>
+              <button class="js-view-control" data-panel="map" >View the Map</button>
+              <a href="#downloads">Download Document</a>
+            </div>
           </div>
         </div>
-        {% include "_last-half.html" %}
+
+        <div class="js-search-content">
+          <div class="text-wrapper">
+            <div class="text-container">
+              <article class="text-block">
+                <section class="text-section">
+                  {% autoescape false %}
+                    {{ content }}
+                  {% endautoescape %}
+                </section>
+              </article>
+            </div>
+          </div>
+          {% include "_last-half.html" %}
+        </div>
       </div>
+
       <div class="panel panel-map">
         {% include "_map.html" %}
       </div>
+<!--
+      <nav class="navigation bottom-navigation">
+        <small>Built by the Portland Bureau of Transportation 2017</small>
+      </nav>
+ -->
     </div>
-
-  <script src="js/bundle.js"></script>
+    <script src="/js/bundle.js"></script>
   </body>
 </html>

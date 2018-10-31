@@ -26,3 +26,16 @@
   .show-small { display: block; }
   .hide-small { display: none; }
 }
+
+.show-if-no-js {
+  display: none;
+}
+
+.js-is-inactive {
+  .hide-if-no-js {
+    display: none;
+  }
+  .show-if-no-js {
+    display: block;
+  }
+}

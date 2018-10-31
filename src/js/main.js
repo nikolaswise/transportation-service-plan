@@ -1,34 +1,76 @@
-import checkJs from './js-checker.js';
-import route from './routing.js';
+// The JS Checker
+import hasJS from './js-checker';
 
-import * as map from './map/map.js';
-import * as classy from './helpers/classy.js'
-import * as dom from './helpers/dom.js'
-import * as event from './helpers/event.js'
-import bus from './helpers/bus.js'
+// Neat Helpers
+import route from './routing.js';
+import bus from './helpers/bus.js';
 
 // View and Intent
-import intent from './intent.js'
-import view from './view.js'
+import intent from './intent.js';
+import view from './view.js';
 
 // Cool Components
-import sticky from './sticky-navigation.js'
-import modal from './modal.js'
-import runningHead from './running-head.js'
-import renderTable from './table.js'
+// import responsiveType from './responsive-type.js';
+import map from './map/map.js';
+import modal from './modal.js';
+import drawer from './drawers.js';
+import search from './search.js';
+import nubs from './chapter-nubs.js';
+import breadcrumbs from './breadcrumbs.js';
+import toc from './toc.js';
+import scrollToAnchor from './helpers/scroll-to-anchor.js';
+/**
+ * Initializes app and app components.
+ */
 
-route()
-modal()
 
-map.draw()
+// Remove Node Polyfill
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if (this.parentNode !== null)
+          this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
 
-let textPane = document.querySelector('.js-text-area')
-let width =  textPane.offsetWidth
+const initApp = () => {
+  console.debug(`App init started`)
+  // Model, View, Intent
+  // Intent and View are the larger, containing component.
+  // This app has no model: all data is consumed via GIS API.
+  view();
+  intent();
 
-if (width > 785) {
-  bus.emit(`type:size`, 'large')
-} else if (width > 599) {
-  bus.emit(`type:size`, 'medium')
-} else if (width < 600) {
-  bus.emit(`type:size`, 'small')
-}
+  // The router controls the application state
+  // everything derives from URL
+  route();
+
+  // Components each handle their own MVI loops:
+  // This makes them compasble, replaceable, and easier to work on.
+  // Easy to maintain, easy to delete!
+  modal();
+  drawer();
+  map();
+  search();
+  nubs();
+  breadcrumbs();
+  scrollToAnchor();
+  toc();
+  console.debug(`App init finished`)
+};
+
+// This loads the application and makes sure that there IS javascript running on the page.
+// If there is no JS available, than the default minimum-viable-app is loaded:
+// this app is basically just text on a screen. How nice!
+console.debug(`We are loading our goodness`)
+bus.on('has:javascript', initApp);
+hasJS();

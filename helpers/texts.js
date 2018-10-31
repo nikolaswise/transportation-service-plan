@@ -1,42 +1,30 @@
-var fs = require('fs')
-var md = require('markdown-it')({
-  typographer: true,
-  quotes: '“”‘’'
-}).use(require('markdown-it-sanitizer'), {
-  imageClass: 'img',
-  removeUnbalanced: true,
-  removeUnknown: true
-});
+var fs = require('fs');
+var getTexts = require('./get-texts');
+var addToPage = require('./add-to-page');
 
-var typeset = require('typeset');
-
-module.exports = function (site, cb) {
-
-  var getFiles = function (err, files) {
-    if (err) {
-      return err
-    }
-    let text
-    files.map(function (file) {
-      text += fs.readFileSync('./src/text/' + file, 'utf8')
-      text += "\n"
-    })
-    content(text)
-  }
-
-  var stuff = function (site, cb) {
-    return function (text) {
-      site = site.map(function (page) {
-        page.content = text
-        page.content = md.render(page.content)
-        page.content = typeset(page.content)
-        return page
-      })
-      cb(null, site)
-    }
-  }
-
-  let content = stuff(site, cb)
-
-  fs.readdir('./src/text/', getFiles)
+/**
+ * Generates HTML from Markdown
+ *
+ * @param {String} String of Markdown
+ * @param {Object} Static Site site object
+ * @param {Function} Static Site helper callback
+ * @returns {String} String of HTML
+ */
+function apply (text, site, cb) {
+  var helper = addToPage(site, cb);
+  return helper(text);
 }
+
+/**
+ * Generates HTML with Table of Contents from directory of markdown files.
+ * Runs on compilation of static site.
+ *
+ * @param {String} String of Markdown
+ * @returns {String} String of HTML
+ */
+module.exports = function (site, cb) {
+  let sources = fs.readdirSync('./src/lib/');
+  console.log(sources)
+  let text = getTexts(sources);
+  apply(text, site, cb);
+};
