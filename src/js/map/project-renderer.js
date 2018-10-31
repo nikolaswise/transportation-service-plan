@@ -16,7 +16,6 @@ const numberWithCommas = (x) => {
 
 export default function (current, proposed) {
   return function (feature) {
-    console.debug(`nice feature:`, feature)
     return `
       <h5 class="flush-top">
         ${feature.ProjectName}

@@ -1,5 +1,6 @@
 import * as dom from '../helpers/dom.js';
 import bus from '../helpers/bus.js';
+import * as classy from '../helpers/classy.js';
 import * as layers from './layers';
 import ZoomMin from '../lib/L.Control.ZoomMin.js'
 
@@ -10,11 +11,14 @@ let position = {
   zoom: 12
 };
 
+
+
 /**
  * Interacts with the Esri Leaflet API to draw a map in the dom Node with an id of 'map'
  */
 
 const drawMap = () => {
+
   map = window.L.map('map', {
     trackResize: true,
     center: position.center,
@@ -24,12 +28,12 @@ const drawMap = () => {
     scrollWheelZoom: true
   });
 
+  window.map = map
+
   map.createPane('bottom');
   map.createPane('top');
 
-  window.L.esri.tiledMapLayer({
-    url: 'https://www.portlandmaps.com/arcgis/rest/services/Public/Basemap_Color_Complete/MapServer'
-  }).addTo(map);
+  window.L.esri.basemapLayer("Gray").addTo(map);
 
   // stateful side effects!!
   map.on('moveend', function () {
@@ -37,10 +41,6 @@ const drawMap = () => {
     position.zoom = map.getZoom();
   });
   createGeocoder();
-
-  map.on('click', (e) => {
-    console.debug(`map click:`, e)
-  })
 };
 
 /**
@@ -108,6 +108,20 @@ const addLayers = (layerSet) => {
   layerSet.split(',').forEach((layer) => addLayer(layer));
 };
 
+
+const getFeaturesAtPoint = (coords, layer) => {
+  layer.features.query().nearby(coords, 10).ids((error, ids) => {
+    if (!ids) {
+      return
+    }
+    let targets = ids.map(id => layer.features.getFeature(id)).filter(feature => feature)
+    targets.length > 1
+      ? bus.emit('popup:nested', targets, layer.popup, layer)
+      : bus.emit('popup:single', targets, layer.popup, layer)
+
+  })
+}
+
 /**
  * Adds a single of layers from './layers.js' to the map.
  *
@@ -118,18 +132,43 @@ const addLayer = layer => {
   if (!layers[layer]) {
     return
   }
+  console.log(layers[layer].features)
   layers[layer].features.addTo(map);
-  bus.emit('layer:reset', layer);
-  console.debug(`This is a set of features for layer ${layer}:`, layers[layer].features)
-  layers[layer].features.bindPopup((err, evt) => {
-    console.debug(`this is a very nice popup bind`, err, evt)
-    if (err) {
-      err.feature
-        ? evt = err
-        : err = err
+  layers[layer].features.legend(function(error, legend) {
+    if (!error && legend.layers.length == 1) {
+      bus.emit('layer:legend', legend.layers[0]);
     }
+  });
+  bus.emit('layer:reset', layer);
+  layers[layer].features.on('click', (e) => {
+    getFeaturesAtPoint(e.latlng, layers[layer])
+  })
+  layers[layer].features.bindPopup((evt) => {
+    let tempFeature
     if (evt) {
-      openPopUp(evt, layer);
+      if (!evt.feature) {
+        layers[layer].features.query().nearby(evt._latlng, 10).ids((error, ids) => {
+          if (!ids) {
+            return
+          }
+          let targets = ids.map(id => layers[layer].features.getFeature(id)).filter(feature => feature)
+          tempFeature = targets[0].feature
+          evt.feature
+            ? evt.feature = evt.feature
+            : evt.feature = tempFeature
+          openPopUp(evt, layer);
+        })
+      }
+
+      if (evt.bringToFront && layers[layer].popup) {
+        evt.bringToFront()
+        evt.setStyle({
+          lineCap: 'round',
+          weight: 24,
+          color: '#98CBCC'
+        });
+        openPopUp(evt, layer);
+      }
     }
     return 'hey';
   }).on('popupclose', function () {
@@ -258,22 +297,86 @@ const zoomToFeature = feature => {
   // }
 };
 
-const drawLegend = layers => {
-  let legend = document.querySelector('.js-legend')
-  legend.innerHTML = 'Viewing:'
-  layers = layers.filter(layer => {
-    return layer.getAttribute('data-layers') != null
+// const drawLegend = layers => {
+//   let legend = document.querySelector('.js-legend')
+//   legend.innerHTML = 'Viewing:'
+//   layers = layers.filter(layer => {
+//     return layer.getAttribute('data-layers') != null
+//   })
+//   layers.forEach(layer => {
+//     legend.insertAdjacentHTML('beforeend', `
+//       <span class="legend-layer">
+//         ${layer.getAttribute('data-layers')},
+//       </span>
+//     `)
+//   })
+//   if ( layers.length < 1 ) {
+//     legend.insertAdjacentHTML('beforeend', `None`)
+//   }
+// }
+
+
+
+const slugify = (string) => string.trim().replace(/\s/g, '-');
+
+const parseLegendData = (data, i) => `
+  <button class="pt8 button button-clear legend-toggle js-legend-toggle" data-legend="${slugify(data.layerName)}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="icon legend-icon"><path d="M10 2l14 14-14 14V2z"/></svg>
+    ${data.layerName}
+  </button>
+  <ul class="legend-group js-legend-group" data-legend="${slugify(data.layerName)}">
+    ${data.legend.map(layer => (
+      `<li>
+        <img width="${layer.height}" height="${layer.height}" alt="Symbol" src="data:image/gif;base64,${layer.imageData}" />
+        ${layer.label}
+      </li>`
+    )).join('')}
+  </ul>
+`
+
+const closeToggles = () => {
+  let toggles = Array(...document.querySelectorAll('.js-legend-toggle'))
+  let nodes = Array(...document.querySelectorAll('.js-legend-group'))
+  nodes.forEach(node => {
+    classy.remove(node, 'is-active')
   })
-  layers.forEach(layer => {
-    legend.insertAdjacentHTML('beforeend', `
-      <span class="legend-layer">
-        ${layer.getAttribute('data-layers')},
-      </span>
-    `)
+  toggles.forEach(node => {
+    classy.remove(node, 'is-active')
   })
-  if ( layers.length < 1 ) {
-    legend.insertAdjacentHTML('beforeend', `None`)
+}
+
+const toggleLegend = (e) => {
+  e.preventDefault()
+  let isOpen = classy.has(e.target, 'is-active')
+  closeToggles()
+  if (!isOpen) {
+    let target = e.target.getAttribute('data-legend')
+    classy.add(e.target, 'is-active')
+    let nodes = Array(...document.querySelectorAll('.js-legend-group')).filter(node => node.getAttribute('data-legend') == target)
+    nodes.forEach(node => {
+      classy.add(node, 'is-active')
+    })
   }
+}
+
+const bindLegendInteraction = () => {
+  let toggles = Array(...document.querySelectorAll('.js-legend-toggle'))
+  toggles.forEach(node => {
+    node.addEventListener('click', toggleLegend)
+  })
+}
+
+const drawLayerLegend = data => {
+  let nodes = Array(...document.querySelectorAll('.js-layer-legend'))
+  nodes.forEach((node) => {
+    node.insertAdjacentHTML(`beforeend`, parseLegendData(data))
+  })
+  bindLegendInteraction()
+}
+
+const clearLayerLegend = () => {
+  let nodes = Array(...document.querySelectorAll('.js-layer-legend'))
+  nodes.forEach(node => node.innerHTML = '')
 }
 
 /**
@@ -291,6 +394,7 @@ export default function () {
   bus.on('layers:draw', drawLayers);
   bus.on('map:layer:add', addLayers);
   bus.on('map:layer:remove', removeLayers);
+  bus.on('map:layer:remove', clearLayerLegend);
   bus.on('layer:reset', resetLayerStyle);
-  bus.on('map:legend', drawLegend);
+  bus.on('layer:legend', drawLayerLegend);
 }

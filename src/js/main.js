@@ -23,7 +23,27 @@ import scrollToAnchor from './helpers/scroll-to-anchor.js';
  * Initializes app and app components.
  */
 
+
+// Remove Node Polyfill
+(function (arr) {
+  arr.forEach(function (item) {
+    if (item.hasOwnProperty('remove')) {
+      return;
+    }
+    Object.defineProperty(item, 'remove', {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: function remove() {
+        if (this.parentNode !== null)
+          this.parentNode.removeChild(this);
+      }
+    });
+  });
+})([Element.prototype, CharacterData.prototype, DocumentType.prototype]);
+
 const initApp = () => {
+  console.debug(`App init started`)
   // Model, View, Intent
   // Intent and View are the larger, containing component.
   // This app has no model: all data is consumed via GIS API.
@@ -45,10 +65,12 @@ const initApp = () => {
   breadcrumbs();
   scrollToAnchor();
   toc();
+  console.debug(`App init finished`)
 };
 
 // This loads the application and makes sure that there IS javascript running on the page.
 // If there is no JS available, than the default minimum-viable-app is loaded:
 // this app is basically just text on a screen. How nice!
+console.debug(`We are loading our goodness`)
 bus.on('has:javascript', initApp);
 hasJS();

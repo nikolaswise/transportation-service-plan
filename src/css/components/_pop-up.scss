@@ -25,6 +25,11 @@
       opacity: 1;
     }
   }
+  &.has-multiple {
+    .pop-up-panel {
+
+    }
+  }
   &:before {
     content: '';
     display: inline-block;

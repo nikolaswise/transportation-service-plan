@@ -37,6 +37,9 @@
     <!-- This will hook into Esri Leaflet and draw the predefined World Regions -->
     <script src="https://cdn.jsdelivr.net/leaflet.esri.renderers/2.0.4/esri-leaflet-renderers.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/esri-leaflet-legend@2.0.1/dist/esri-leaflet-legend-compat.js"></script>
+
+
     <link rel="stylesheet" href="/css/style.css">
 
   </head>
@@ -54,6 +57,9 @@
             {% autoescape false %}
               {{ toc }}
             {% endautoescape %}
+            <ul>
+              <li><a href="#projects">Projects</a></li>
+            </ul>
             <!-- <a href="#data-tables">Data Tables</a>
             <a href="#downloads">Downloads</a> -->
           </div>
@@ -97,18 +103,20 @@
           </div>
         </div>
 
-        <div class="text-wrapper">
-          <div class="text-container">
-            <article class="text-block">
-              <section class="text-section js-search-content">
-                {% autoescape false %}
-                  {{ content }}
-                {% endautoescape %}
-              </section>
-            </article>
+        <div class="js-search-content">
+          <div class="text-wrapper">
+            <div class="text-container">
+              <article class="text-block">
+                <section class="text-section">
+                  {% autoescape false %}
+                    {{ content }}
+                  {% endautoescape %}
+                </section>
+              </article>
+            </div>
           </div>
+          {% include "_last-half.html" %}
         </div>
-        {% include "_last-half.html" %}
       </div>
 
       <div class="panel panel-map">

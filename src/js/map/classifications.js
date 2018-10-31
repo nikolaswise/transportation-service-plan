@@ -26,6 +26,7 @@ export default {
   'Transit': {
     'RT': 'Regional Transitways',
     'RTMTP': 'Major Transit Priority Streets',
+    'MTP': 'Major Transit Priority Streets',
     'TA': 'Transit Access Streets',
     'LS': 'Local Service Transit Streets',
     'IPR': 'Intercity Passenger Rail',

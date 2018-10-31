@@ -53,3 +53,32 @@
 .hidden {
   display: none;
 }
+
+
+
+// legend
+
+.legend-toggle {
+  color: black;
+  display: block;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.legend-group {
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}
+
+.legend-icon {
+  height: 1em;
+  width: 1em;
+  transition: transform 200ms ease-in-out;
+  transform: rotate(0deg);
+}
+.is-active .legend-icon {
+  transition: transform 200ms ease-in-out;
+  transform: rotate(90deg);
+}

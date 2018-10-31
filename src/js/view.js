@@ -12,15 +12,81 @@ import bindScroll from './helpers/scroll-to-anchor.js';
  * @param {Function} Render template function from `./layers.hs`
  */
 const handlePopUp = (evt, renderTemplate) => {
+
   let popUpContainer = document.querySelector('.js-pop-up');
   let popUpTemplate = document.querySelector('.js-template');
+  let buttons = popUpContainer.querySelectorAll('.js-multiple-popups')
+  buttons.forEach(node => {
+    console.log('remove plz?')
+    node.remove()
+  })
+  console.log(popUpContainer.querySelectorAll('.js-multiple-popups'))
+
   classy.add(popUpContainer, 'is-active');
   evt.feature
     ? popUpTemplate.innerHTML = renderTemplate(evt.feature.properties)
     : popUpTemplate.innerHTML = renderTemplate(evt.features[0].properties)
-
   bindScroll(popUpTemplate)
 };
+
+
+const handlePopUpMultiple = (targets, template, layer) => {
+  let popUpContainer = document.querySelector('.js-pop-up');
+  let popUpTemplate = document.querySelector('.js-template');
+
+  let buttons = popUpContainer.querySelectorAll('.js-multiple-popups')
+  buttons.forEach(node => {
+    node.remove()
+  })
+
+  popUpContainer.classList.add('has-multiple')
+  console.log('make some buttons')
+  popUpTemplate.insertAdjacentHTML('beforebegin', `
+    <div class="popup-buttons js-multiple-popups" data-feature=${targets.length - 1}>
+      <button class="js-prev-popup pt6">←</button>
+      <button class="js-next-popup pt6"> →</button>
+    </div>
+  `)
+
+  let popups = targets.map(target => template(target.feature.properties))
+  let prev = popUpContainer.querySelector(`.js-prev-popup`)
+  let next = popUpContainer.querySelector(`.js-next-popup`)
+  let state = popUpContainer.querySelector(`.js-multiple-popups`)
+
+  prev.addEventListener('click', e => {
+    e.preventDefault()
+    let current = parseInt(state.getAttribute(`data-feature`))
+    let newState
+    current - 1 < 0
+      ? newState = targets.length - 1
+      : newState = current - 1
+    state.setAttribute(`data-feature`, newState)
+    layer.features.resetStyle()
+    popUpTemplate.innerHTML = popups[newState]
+    targets[newState].setStyle({
+      lineCap: 'round',
+      weight: 24,
+      color: '#98CBCC'
+    })
+  })
+
+  next.addEventListener('click', e => {
+    e.preventDefault()
+    let current = parseInt(state.getAttribute(`data-feature`))
+    let newState
+    current + 1 > targets.length - 1
+      ? newState = 0
+      : newState = current + 1
+    state.setAttribute(`data-feature`, newState)
+    layer.features.resetStyle()
+    popUpTemplate.innerHTML = popups[newState]
+    targets[newState].setStyle({
+      lineCap: 'round',
+      weight: 24,
+      color: '#98CBCC'
+    })
+  })
+}
 
 /**
  * Removes `is-active` class from pop node.
@@ -31,6 +97,10 @@ const handlePopUp = (evt, renderTemplate) => {
  */
 const closePopUp = () => {
   let popUpContainer = document.querySelector('.js-pop-up');
+  let buttons = popUpContainer.querySelectorAll('.js-multiple-popups')
+  buttons.forEach(node => {
+    node.remove()
+  })
   classy.remove(popUpContainer, 'is-active');
   bus.emit('popup:closed');
 };
@@ -136,6 +206,7 @@ export default function () {
   bus.on('keyboard:escape', closeControl);
   bus.on('keyboard:escape', closePopUp);
   bus.on('popup:opened', handlePopUp);
+  bus.on('popup:nested', handlePopUpMultiple)
   bus.on('popup:close', closePopUp);
   bus.on('popup:leafletclosed', closePopUp);
   // bus.on('type:size', sizeTextTo);
