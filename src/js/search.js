@@ -22,7 +22,7 @@ if (!String.prototype.includes) {
     } else {
       return this.indexOf(search, start) !== -1;
     }
-  };
+  }
 }
 
 // this is prolly not so good
@@ -35,6 +35,7 @@ const indexContent = () => {
   let headerFourss = dom.nodeListToArray(contentArea.getElementsByTagName('h4'))
   let headerFivess = dom.nodeListToArray(contentArea.getElementsByTagName('h5'))
   let headerSixess = dom.nodeListToArray(contentArea.getElementsByTagName('h6'))
+  let tablecells = dom.nodeListToArray(contentArea.getElementsByTagName('td'))
   let paragraphs = dom.nodeListToArray(contentArea.getElementsByTagName('p'))
   window.content = window.content.concat(headerOnes)
   window.content = window.content.concat(headerTwos)
@@ -42,6 +43,7 @@ const indexContent = () => {
   window.content = window.content.concat(headerFourss)
   window.content = window.content.concat(headerFivess)
   window.content = window.content.concat(headerSixess)
+  window.content = window.content.concat(tablecells)
   // window.content = window.content.concat(paragraphs)
 }
 
@@ -138,6 +140,7 @@ window.scrollToPosition = function (position) {
 }
 
 const getClosestHeader = node => {
+  let sourceNode = node
   let lastNode
   while (node.tagName[0] != 'H') {
     lastNode = node
@@ -146,7 +149,21 @@ const getClosestHeader = node => {
       node = lastNode.parentNode
     }
   }
-  return node.innerHTML
+  console.log(node.innerHTML, sourceNode.innerHTML)
+  if (node.innerHTML == sourceNode.innerHTML) {
+    return false
+  } else {
+    return node.innerHTML
+  }
+}
+
+
+const needsHeader = section => {
+  if (section) {
+    return `<h6 class="search-result-header">${section}</h6>`
+  } else {
+    return ``
+  }
 }
 
 const loadResults = function (count, results, term) {
@@ -163,7 +180,7 @@ const loadResults = function (count, results, term) {
       let highlighted = highlighter(term, preview)
       div.insertAdjacentHTML('beforeend', `
         <a class="search-result" onclick="scrollToPosition(${nodePos})">
-          <h6 class="search-result-header">${section}</h6>
+          ${needsHeader(section)}
           <p class="search-result-preview">${highlighted}</p>
         </a>
       `)
